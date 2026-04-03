@@ -16790,3 +16790,21 @@ ul {
   color: var(--bs-dark);
   background-color: var(--bs-white);
 }/*# sourceMappingURL=styles.css.map */
+/* Tab fade animation for services section */
+.tab-pane {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.tab-pane.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.tab-content > .tab-pane {
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.tab-content > .active {
+  height: auto;
+}
