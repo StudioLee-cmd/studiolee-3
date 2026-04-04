@@ -17214,3 +17214,17 @@ ul {
     font-size: 24px;
   }
 }
+
+/* CTA button on lime background — stay dark on hover */
+.bg-primary .btn-dark {
+  background: #1F2A2E !important;
+  color: #fff !important;
+}
+.bg-primary .btn-dark:hover {
+  background: #fff !important;
+  color: #1F2A2E !important;
+}
+.bg-primary .cta-shine:hover {
+  background: #fff !important;
+  color: #1F2A2E !important;
+}
