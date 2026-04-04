@@ -17165,3 +17165,52 @@ ul {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* ── Comparison card gear track ── */
+.gear-track {
+  position: absolute !important;
+  right: 20px !important;
+  bottom: 20px !important;
+  width: 32px !important;
+  height: 100px !important;
+  pointer-events: none;
+  z-index: 2;
+}
+.gear-track .gear-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-radius: 1px;
+}
+.gear-track .gear-mover {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: 32px !important;
+  height: 32px !important;
+  transition: bottom 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+.gear-track .gear-mover iconify-icon {
+  font-size: 28px;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+}
+@media (max-width: 768px) {
+  .gear-track {
+    right: 12px !important;
+    bottom: 12px !important;
+    height: 80px !important;
+    width: 28px !important;
+  }
+  .gear-track .gear-mover {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .gear-track .gear-mover iconify-icon {
+    font-size: 24px;
+  }
+}
