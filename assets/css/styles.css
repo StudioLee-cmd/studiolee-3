@@ -17247,3 +17247,11 @@ ul {
 .menu-icon-circle iconify-icon {
   font-size: 16px !important;
 }
+
+/* Remove blog whitespace gap */
+.blog-detail {
+  padding-bottom: 0 !important;
+}
+.related-articles {
+  padding-top: 1rem !important;
+}
