@@ -17107,3 +17107,8 @@ ul {
   color: var(--bs-primary) !important;
   background: #2a3a40 !important;
 }
+
+/* ── Service tab titles use Enligas ── */
+.services-tab .nav-link {
+  font-family: 'Enligas', sans-serif !important;
+}
