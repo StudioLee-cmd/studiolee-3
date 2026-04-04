@@ -17127,7 +17127,7 @@ ul {
   font-family: 'Enligas', sans-serif !important;
 }
 
-/* ── Menu item icons — circular with spin ── */
+/* ── Menu item icons — circular with continuous spin ── */
 .menu-icon-circle {
   width: 36px;
   height: 36px;
@@ -17137,13 +17137,22 @@ ul {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), background 0.3s;
+  animation: iconSpin 8s linear infinite;
+  transition: background 0.3s;
 }
 .header-link:hover .menu-icon-circle {
-  transform: rotate(360deg);
   background: rgba(193,255,114,0.2);
+  animation: iconSpinFast 1.5s linear infinite;
 }
 .menu-icon-circle iconify-icon {
   font-size: 18px;
   color: var(--bs-primary);
+}
+@keyframes iconSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes iconSpinFast {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
