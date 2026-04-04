@@ -11,39 +11,80 @@
   <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="/assets/css/styles.css" />
 <style>
-/* Service images — circular with shadow */
+/* ── Service section: circular images ── */
 .services-tab .tab-content img {
   border-radius: 50%;
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 8px rgba(193,255,114,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 6px rgba(193,255,114,0.08);
   margin: 0 auto;
   display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.services-tab .tab-content .tab-pane.active img {
+  transform: scale(1);
 }
 .services-tab .tab-content .tab-pane {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  min-height: 360px;
-}
-.services-tab .tab-content .tab-pane:not(.active) {
-  display: none;
+  min-height: 340px;
 }
 .services-tab .tab-content .tab-pane.active {
   display: flex;
 }
-/* Fix service text overflow */
-.services-tab .nav-tabs .nav-item .row {
-  flex-wrap: nowrap;
+
+/* ── Service tabs: active state animation ── */
+.services-tab .nav-tabs {
+  border: none !important;
 }
+.services-tab .nav-tabs .nav-item {
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.services-tab .nav-tabs .nav-item .nav-link {
+  transition: font-size 0.35s ease, color 0.35s ease, transform 0.35s ease;
+  white-space: nowrap;
+}
+/* Active tab: title is large and prominent */
+.services-tab .nav-tabs .nav-item .nav-link.active {
+  font-size: clamp(1.8rem, 3vw, 2.8rem) !important;
+  color: #fff !important;
+}
+/* Inactive tab: title is smaller */
+.services-tab .nav-tabs .nav-item .nav-link:not(.active) {
+  font-size: clamp(1rem, 1.5vw, 1.4rem) !important;
+  color: rgba(255,255,255,0.4) !important;
+}
+/* Description text: show on active, hide on inactive */
+.services-tab .nav-tabs .nav-item .desc-text {
+  transition: opacity 0.35s ease, max-height 0.35s ease;
+  overflow: hidden;
+}
+.services-tab .nav-tabs .nav-item:has(.nav-link.active) .desc-text {
+  opacity: 1;
+  max-height: 200px;
+}
+.services-tab .nav-tabs .nav-item:not(:has(.nav-link.active)) .desc-text {
+  opacity: 0;
+  max-height: 0;
+  padding: 0 !important;
+}
+
+/* Fix text overflow */
+.services-tab .nav-tabs .nav-item .row {
+  align-items: flex-start;
+}
+.services-tab .nav-tabs .nav-item p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 @media (max-width: 991px) {
   .services-tab .tab-content img {
-    width: 240px;
-    height: 240px;
-  }
-  .services-tab .nav-tabs .nav-item .row {
-    flex-wrap: wrap;
+    width: 220px;
+    height: 220px;
   }
 }
 </style>
@@ -553,70 +594,38 @@
               </div>
               <div class="col-xl-8">
                 <div class="d-flex flex-column gap-5">
-                  <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-delay="200"
-                    data-aos-duration="1000">
-                    <li
-                      class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                      role="presentation">
-                      <div class="row w-100 align-items-center gx-3">
-                        <div class="col-lg-6 col-xxl-5">
-                          <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0 active"
-                            id="one-tab" data-bs-toggle="tab" data-bs-target="#one" type="button" role="tab"
-                            aria-controls="one" aria-selected="true">AI & Google Vindbaarheid</button>
-                        </div>
-                        <div class="col-lg-6 col-xxl-7">
-                          <p class="text-white text-opacity-70 mb-0">
-                            Dominantie in ChatGPT en Google. Wij zorgen dat jouw bedrijf bovenaan staat — met dagelijkse SEO-content, technische optimalisatie en AI-zichtbaarheid.
-                          </p>
-                        </div>
+                  <ul class="nav nav-tabs flex-column" id="myTab" role="tablist" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0 active"
+                        id="one-tab" data-bs-toggle="tab" data-bs-target="#one" type="button" role="tab"
+                        aria-controls="one" aria-selected="true">AI &amp; Google Vindbaarheid</button>
+                      <div class="desc-text mt-3">
+                        <p class="text-white text-opacity-70 mb-0 fs-6">Dominantie in ChatGPT en Google. Wij zorgen dat jouw bedrijf bovenaan staat — met dagelijkse SEO-content, technische optimalisatie en AI-zichtbaarheid.</p>
                       </div>
                     </li>
-                    <li
-                      class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                      role="presentation">
-                      <div class="row w-100 align-items-center gx-3">
-                        <div class="col-lg-6 col-xxl-5">
-                          <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0" id="two-tab"
-                            data-bs-toggle="tab" data-bs-target="#two" type="button" role="tab" aria-controls="two"
-                            aria-selected="false">AI Chatbot</button>
-                        </div>
-                        <div class="col-lg-6 col-xxl-7">
-                          <p class="text-white text-opacity-70 mb-0">
-                            24/7 leadopvang en klantvragen beantwoorden. Onze AI-chatbots draaien op jouw kennis, spreken jouw taal en converteren bezoekers naar klanten — ook buiten kantoortijden.
-                          </p>
-                        </div>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0"
+                        id="two-tab" data-bs-toggle="tab" data-bs-target="#two" type="button" role="tab"
+                        aria-controls="two" aria-selected="false">AI Chatbot</button>
+                      <div class="desc-text mt-3">
+                        <p class="text-white text-opacity-70 mb-0 fs-6">24/7 leadopvang en klantvragen beantwoorden. Onze AI-chatbots draaien op jouw kennis, spreken jouw taal en converteren bezoekers naar klanten — ook buiten kantoortijden.</p>
                       </div>
                     </li>
-                    <li
-                      class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                      role="presentation">
-                      <div class="row w-100 align-items-center gx-3">
-                        <div class="col-lg-6 col-xxl-5">
-                          <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
-                            id="three-tab" data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab"
-                            aria-controls="three" aria-selected="false">Review Management</button>
-                        </div>
-                        <div class="col-lg-6 col-xxl-7">
-                          <p class="text-white text-opacity-70 mb-0">
-                            Verzamel en beheer 5-sterren reviews op autopilot. Wij automatiseren het verzamelproces, reageren professioneel en bouwen aan jouw online reputatie.
-                          </p>
-                        </div>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0"
+                        id="three-tab" data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab"
+                        aria-controls="three" aria-selected="false">Review Management</button>
+                      <div class="desc-text mt-3">
+                        <p class="text-white text-opacity-70 mb-0 fs-6">Verzamel en beheer 5-sterren reviews op autopilot. Wij automatiseren het verzamelproces, reageren professioneel en bouwen aan jouw online reputatie.</p>
                       </div>
                     </li>
-                    <li
-                      class="nav-item py-4 py-lg-8 border-top border-white border-opacity-10 d-flex align-items-center w-100"
-                      role="presentation">
-                      <div class="row w-100 align-items-center gx-3">
-                        <div class="col-lg-6 col-xxl-5">
-                          <button class="nav-link fs-10 fw-bold py-1 px-0 border-0 rounded-0 flex-shrink-0"
-                            id="four-tab" data-bs-toggle="tab" data-bs-target="#four" type="button" role="tab"
-                            aria-controls="four" aria-selected="false">Social Media</button>
-                        </div>
-                        <div class="col-lg-6 col-xxl-7">
-                          <p class="text-white text-opacity-70 mb-0">
-                            Van content creatie tot beheer en scheduling. Wij nemen je volledige social media over — consistent, on-brand en altijd actueel.
-                          </p>
-                        </div>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0"
+                        id="four-tab" data-bs-toggle="tab" data-bs-target="#four" type="button" role="tab"
+                        aria-controls="four" aria-selected="false">Social Media</button>
+                      <div class="desc-text mt-3">
+                        <p class="text-white text-opacity-70 mb-0 fs-6">Van content creatie tot beheer en scheduling. Wij nemen je volledige social media over — consistent, on-brand en altijd actueel.</p>
                       </div>
                     </li>
                   </ul>
