@@ -17054,3 +17054,15 @@ ul {
   color: rgba(255,255,255,0.4);
   font-size: 0.8rem;
 }
+
+/* ── Side menu hover fix ── */
+.menu-dropdown .header-link:hover,
+.menu-dropdown .header-link:focus {
+  color: var(--bs-primary) !important;
+  opacity: 1;
+}
+.menu-dropdown .header-link {
+  transition: color 0.2s ease;
+}
+/* Breadcrumb: only show on inner pages, not homepage */
+.banner-section:first-of-type .breadcrumb-nav { display: block; }
