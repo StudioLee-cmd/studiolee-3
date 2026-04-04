@@ -111,16 +111,25 @@
     </div>
   </header>
 
+  <div class="menu-backdrop" id="menuBackdrop" onclick="document.querySelector('.hamburger-btn').classList.remove('is-open');this.classList.remove('is-open');document.getElementById('slideMenu').classList.remove('is-open');"></div>
+
   <div class="page-wrapper overflow-hidden">
-    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end" style="background: linear-gradient(135deg, #1a2428 0%, #2a3a40 100%); min-height: 400px;">
+    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end" style="background: linear-gradient(135deg, #1a2428 0%, #2a3a40 100%); min-height: 420px;">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-3">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li class="active" aria-current="page">Tim van der Lee</li>
+            </ol>
+          </nav>
           <div class="d-flex align-items-center gap-4" data-aos="fade-up">
             <img src="/assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
             <p class="mb-0 text-white fs-5 text-opacity-70">Auteur</p>
           </div>
           <h1 class="mb-0 fs-15 text-white lh-1">Tim van der Lee</h1>
-          <p class="text-white text-opacity-70 fs-5" style="max-width: 600px;">Oprichter van StudioLee — AI-gedreven marketing voor het MKB. Schrijft over SEO, automatisering, reviews en alles wat lokale ondernemers helpt groeien.</p>
+          <p class="text-white text-opacity-70 fs-5" style="max-width: 650px;">Oprichter van StudioLee. Schrijft over SEO, AI-automatisering, review management en online groei voor het MKB. Alles wat lokale ondernemers helpt om gevonden te worden en te groeien.</p>
         </div>
       </div>
     </section>
@@ -129,20 +138,21 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <h3 class="fs-8 mb-5">Alle artikelen</h3>
-            <div class="d-flex flex-column gap-5" id="author-articles">
-              <p class="fs-5 text-white text-opacity-50">Artikelen worden geladen...</p>
+            <h2 class="mb-5">Alle artikelen</h2>
+            <div id="author-articles" class="d-flex flex-column gap-5">
+              <p class="text-white text-opacity-50">Artikelen laden...</p>
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="bg-dark p-5 rounded-4 position-sticky" style="top: 120px;">
-              <h4 class="fs-7 mb-4 text-primary">Over Tim</h4>
+            <div class="bg-dark p-5 rounded-4 position-sticky" style="top: 120px; border: 1px solid rgba(255,255,255,0.08);">
+              <h3 class="mb-4" style="color: var(--bs-primary);">Over Tim</h3>
               <p class="fs-6 text-white text-opacity-70 mb-3">Tim van der Lee runt StudioLee, een full-service AI-bureau dat MKB-bedrijven helpt groeien met SEO, social media, review management en AI-vindbaarheid.</p>
-              <p class="fs-6 text-white text-opacity-70 mb-4">Met de Groei-of-Geld-Terug Garantie ligt het risico 100% bij StudioLee.</p>
-              <a href="/free-trial" class="btn btn-primary text-dark fw-bold w-100 py-3">Start gratis</a>
+              <p class="fs-6 text-white text-opacity-70 mb-4">Groei-of-Geld-Terug Garantie: het risico ligt 100% bij StudioLee.</p>
+              <a href="/free-trial" class="btn btn-primary text-dark fw-bold w-100 py-3 mb-3">Start gratis</a>
+              <a href="https://calendly.com/tim-studiolee" target="_blank" class="btn btn-outline-light w-100 py-3">Plan een gesprek</a>
               <div class="mt-4 d-flex flex-column gap-2">
                 <a href="mailto:tim@studiolee.nl" class="text-white text-opacity-50 fs-7">tim@studiolee.nl</a>
-                <a href="https://calendly.com/tim-studiolee" class="text-white text-opacity-50 fs-7" target="_blank">Plan een gesprek</a>
+                <a href="tel:+31611594862" class="text-white text-opacity-50 fs-7">+31 6 11 59 48 62</a>
               </div>
             </div>
           </div>
@@ -221,3 +231,42 @@
 
 </html>
 
+
+  <script>
+  // Auto-load all blog articles by fetching the blog listing page
+  (async function() {
+    try {
+      const resp = await fetch('/blog');
+      const html = await resp.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+
+      // Find all blog article links/cards on the blog listing page
+      const articles = [];
+      doc.querySelectorAll('a[href*="/blog/"]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('/blog/') && href !== '/blog/' && !href.includes('author')) {
+          // Get the text content (title)
+          const title = link.textContent.trim();
+          if (title && title.length > 5 && !articles.find(a => a.href === href)) {
+            articles.push({ href, title });
+          }
+        }
+      });
+
+      const container = document.getElementById('author-articles');
+      if (articles.length > 0) {
+        container.innerHTML = articles.map(a => `
+          <a href="${a.href}" class="d-block p-4 rounded-4 text-decoration-none" style="border: 1px solid rgba(255,255,255,0.08); transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(193,255,114,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+            <h3 class="fs-7 text-white mb-2">${a.title}</h3>
+            <span class="text-white text-opacity-50 fs-6">Lees artikel →</span>
+          </a>
+        `).join('');
+      } else {
+        container.innerHTML = '<p class="text-white text-opacity-50">Geen artikelen gevonden.</p>';
+      }
+    } catch(e) {
+      console.error('Failed to load articles:', e);
+    }
+  })();
+  </script>

@@ -57,24 +57,37 @@ blockquote, .quote, .pullquote, .testimonial-text {
 }
 
 /* Author link style */
-.author-link {
-  color: inherit;
+.author-link, .blog-author-link {
+  color: var(--bs-primary) !important;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  transition: border-color 0.2s, color 0.2s;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(193,255,114,0.3);
+  transition: border-color 0.2s, opacity 0.2s;
 }
-.author-link:hover {
+.author-link:hover, .blog-author-link:hover {
   border-color: var(--bs-primary);
-  color: var(--bs-primary);
+  opacity: 0.8;
 }
 
 /* Breadcrumb nav */
 .breadcrumb-nav { padding: 0; margin: 0; }
-.breadcrumb-nav ol { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 0.35rem; font-size: 0.85rem; font-family: 'Outfit', sans-serif !important; }
+.breadcrumb-nav ol { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 0.35rem; font-size: 0.85rem; font-family: 'Outfit', sans-serif !important; justify-content: flex-start; }
 .breadcrumb-nav li+li::before { content: "/"; color: rgba(255,255,255,0.3); margin-right: 0.35rem; }
 .breadcrumb-nav a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
 .breadcrumb-nav a:hover { color: var(--bs-primary); }
 .breadcrumb-nav .active { color: rgba(255,255,255,0.4); font-weight: 400; }
+/* Author link in blog banner — make it prominent */
+.blog-author-link {
+  color: var(--bs-primary) !important;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(193,255,114,0.3);
+  transition: border-color 0.2s, opacity 0.2s;
+}
+.blog-author-link:hover {
+  border-color: var(--bs-primary);
+  opacity: 0.8;
+}
 /*!
  * Bootstrap  v5.3.6 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
