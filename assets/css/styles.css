@@ -25,11 +25,29 @@
   font-weight: normal; font-style: italic; font-display: swap;
 }
 
-/* Headlines — Enligas (all headings, all display sizes) */
-h1, h2, h3, .fs-8, .fs-9, .fs-10, .fs-11, .fs-12, .fs-13, .fs-14, .fs-15, .fs-16, .fs-17,
-.nav-link.fw-bold, .btn-text {
+/* Headlines — Enligas (headings + display sizes only, NOT nav/buttons) */
+h1, h2, h3, .fs-10, .fs-11, .fs-12, .fs-13, .fs-14, .fs-15, .fs-16, .fs-17 {
   font-family: 'Enligas', sans-serif !important;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+}
+/* Enligas size corrections — display font is wider than Manrope, scale down */
+h1 { font-size: calc(1.6rem + 5vw) !important; }
+@media (min-width: 1200px) { h1 { font-size: 5.5rem !important; } }
+h2 { font-size: calc(1.3rem + 1.5vw) !important; }
+@media (min-width: 1200px) { h2 { font-size: 2.5rem !important; } }
+h3 { font-size: calc(1.2rem + 0.8vw) !important; }
+@media (min-width: 1200px) { h3 { font-size: 1.85rem !important; } }
+/* Hero headline (.fs-16) — scale down from 8rem to 5.5rem */
+.fs-16 { font-size: calc(1.7rem + 5.5vw) !important; }
+@media (min-width: 1200px) { .fs-16 { font-size: 5.5rem !important; } }
+/* Section subheadings (.fs-8, .fs-9) — keep Outfit for readability */
+.fs-8, .fs-9 {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600;
+}
+/* Nav + buttons stay Outfit */
+.nav-link, .btn-text, .header-link, .footer-menu a {
+  font-family: 'Outfit', sans-serif !important;
 }
 
 /* Pull quotes & accents — Swarsh Daisy */
