@@ -16,3 +16,13 @@
 .card.bg-dark .list-unstyled .border-bottom {
   border-color: rgba(255,255,255,0.1) !important;
 }
+
+/* Banner content above ::before overlay */
+.banner-section .container {
+  position: relative;
+  z-index: 2;
+}
+.banner-inner-section .container {
+  position: relative;
+  z-index: 2;
+}
