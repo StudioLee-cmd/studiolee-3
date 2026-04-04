@@ -17127,30 +17127,36 @@ ul {
   font-family: 'Enligas', sans-serif !important;
 }
 
-/* ── Menu item icons — spin on hover + active page ── */
+/* ── Menu item icons — gradient circles, spin on hover/active ── */
 .menu-icon-circle {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: rgba(193,255,114,0.1);
+  background: linear-gradient(135deg, rgba(193,255,114,0.15) 0%, rgba(193,255,114,0.05) 100%);
+  border: 1px solid rgba(193,255,114,0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), background 0.3s;
+  transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 .header-link:hover .menu-icon-circle {
-  background: rgba(193,255,114,0.2);
+  background: linear-gradient(135deg, rgba(193,255,114,0.25) 0%, rgba(193,255,114,0.1) 100%);
+  border-color: rgba(193,255,114,0.3);
+  box-shadow: 0 0 12px rgba(193,255,114,0.15);
   animation: iconSpin 2s linear infinite;
 }
 .header-link.active .menu-icon-circle {
-  background: rgba(193,255,114,0.2);
+  background: linear-gradient(135deg, rgba(193,255,114,0.3) 0%, rgba(193,255,114,0.1) 100%);
+  border-color: rgba(193,255,114,0.4);
+  box-shadow: 0 0 16px rgba(193,255,114,0.2);
   animation: iconSpin 3s linear infinite;
 }
 .menu-icon-circle iconify-icon {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--bs-primary);
 }
+
 @keyframes iconSpin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
