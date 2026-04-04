@@ -205,17 +205,19 @@
               </div>
             </div>
             <div class="col-xl-8">
-              <form class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <form id="freeTrialForm" class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
+                action="https://n8n.aireclamestudio.nl/webhook/Client-sign-up" method="POST">
+                <input type="hidden" name="source" value="studiolee-3-free-trial">
                 <div>
-                  <input type="email" class="form-control border-bottom border-dark" id="trialEmail"
+                  <input type="email" class="form-control border-bottom border-dark" id="trialEmail" name="email"
                     placeholder="Email" required>
                 </div>
                 <div>
-                  <input type="text" class="form-control border-bottom border-dark" id="trialBedrijfsnaam"
+                  <input type="text" class="form-control border-bottom border-dark" id="trialBedrijfsnaam" name="bedrijfsnaam"
                     placeholder="Bedrijfsnaam" required>
                 </div>
                 <div>
-                  <select class="form-control border-bottom border-dark" id="trialNiche" required>
+                  <select class="form-control border-bottom border-dark" id="trialNiche" name="niche" required>
                     <option value="" disabled selected>Selecteer je niche</option>
                     <option value="kapper">Kapper</option>
                     <option value="loodgieter">Loodgieter</option>
@@ -233,18 +235,37 @@
                   </select>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="trialAkkoord" required>
+                  <input class="form-check-input" type="checkbox" id="trialAkkoord" name="akkoord" required>
                   <label class="form-check-label fs-5" for="trialAkkoord">
                     Ik ga akkoord met de <a href="/privacy" class="fw-bold">Privacy Policy</a> en
                     <a href="/algemene-voorwaarden" class="fw-bold">Algemene Voorwaarden</a>.
                   </label>
                 </div>
-                <button type="submit" class="btn w-100 justify-content-center">
+                <div id="trialError" class="d-none">
+                  <div class="alert alert-danger mb-0 fs-5"></div>
+                </div>
+                <button type="submit" id="trialSubmitBtn" class="btn w-100 justify-content-center">
                   <span class="btn-text">Start Gratis Proefperiode</span>
                   <iconify-icon icon="lucide:arrow-up-right"
                     class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
                 </button>
               </form>
+              <!-- Success message (hidden by default) -->
+              <div id="trialSuccess" class="d-none text-center py-5">
+                <div class="d-flex flex-column align-items-center gap-4">
+                  <span class="round-64 rounded-circle bg-primary hstack justify-content-center">
+                    <iconify-icon icon="lucide:check" class="fs-6 text-dark"></iconify-icon>
+                  </span>
+                  <h3 class="mb-0">Aanmelding ontvangen!</h3>
+                  <p class="fs-5 text-muted mb-0">We nemen zo snel mogelijk contact met je op om je gratis scan te bespreken.</p>
+                  <a href="https://wa.me/31611594862?text=Hoi!%20Ik%20heb%20net%20een%20gratis%20scan%20aangevraagd%20via%20studiolee.nl"
+                    target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary text-dark fw-bold fs-6 px-4 py-3 hstack gap-2 justify-content-center rounded-pill mt-3">
+                    <iconify-icon icon="lucide:message-circle" class="fs-7"></iconify-icon>
+                    Direct chatten via WhatsApp
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -415,6 +436,61 @@
   <script src="/assets/js/custom.js"></script>
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+  <!-- Form submission handler -->
+  <script>
+  (function() {
+    var form = document.getElementById('freeTrialForm');
+    var submitBtn = document.getElementById('trialSubmitBtn');
+    var errorBox = document.getElementById('trialError');
+    var successBox = document.getElementById('trialSuccess');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Validate checkbox
+      var akkoord = document.getElementById('trialAkkoord');
+      if (!akkoord.checked) {
+        errorBox.classList.remove('d-none');
+        errorBox.querySelector('.alert').textContent = 'Je moet akkoord gaan met de voorwaarden om door te gaan.';
+        return;
+      }
+
+      // Disable button and show loading
+      submitBtn.disabled = true;
+      submitBtn.querySelector('.btn-text').textContent = 'Bezig met verwerken...';
+      errorBox.classList.add('d-none');
+
+      // Collect form data
+      var data = {
+        email: document.getElementById('trialEmail').value,
+        bedrijfsnaam: document.getElementById('trialBedrijfsnaam').value,
+        niche: document.getElementById('trialNiche').value,
+        source: 'studiolee-3-free-trial'
+      };
+
+      fetch('https://n8n.aireclamestudio.nl/webhook/Client-sign-up', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(response) {
+        if (response.ok) {
+          form.classList.add('d-none');
+          successBox.classList.remove('d-none');
+        } else {
+          throw new Error('Er is iets misgegaan bij het versturen van je aanmelding.');
+        }
+      })
+      .catch(function(err) {
+        errorBox.classList.remove('d-none');
+        errorBox.querySelector('.alert').textContent = err.message || 'Er is een fout opgetreden. Probeer het later opnieuw.';
+        submitBtn.disabled = false;
+        submitBtn.querySelector('.btn-text').textContent = 'Start Gratis Proefperiode';
+      });
+    });
+  })();
+  </script>
 </body>
 
 </html>
