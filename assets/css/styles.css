@@ -17298,3 +17298,11 @@ section::after {
 .menu-dropdown button {
   pointer-events: auto;
 }
+
+/* Fix: text visible in dark comparison cards */
+.card.bg-dark .list-unstyled span {
+  color: #fff !important;
+}
+.card.bg-dark .list-unstyled .border-bottom {
+  border-color: rgba(255,255,255,0.1) !important;
+}
