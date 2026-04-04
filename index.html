@@ -729,19 +729,17 @@
     </section>
 
     <script>
-    // DoubleSmart-style: text slides up with transform, details fold open below
     document.querySelectorAll('.ds-card').forEach(card => {
       const inner = card.querySelector('.ds-card-inner');
       const details = card.querySelector('.ds-card-details');
-      // Measure card height to calculate slide distance
       card.addEventListener('mouseenter', () => {
         if (!inner || !details) return;
-        const cardH = card.offsetHeight;
-        const innerH = inner.offsetHeight;
-        const shift = cardH - innerH - 60;
-        inner.style.transform = 'translateY(-' + shift + 'px)';
         details.style.maxHeight = '250px';
         details.style.opacity = '1';
+        // Wait a frame so maxHeight is applied, then shift up by half that space
+        requestAnimationFrame(() => {
+          inner.style.transform = 'translateY(-120px)';
+        });
       });
       card.addEventListener('mouseleave', () => {
         if (!inner || !details) return;
