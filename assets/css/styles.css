@@ -17231,27 +17231,38 @@ ul {
 
 
 
-/* Tighter menu item spacing */
-.header-menu .header-item {
-  padding: 4px 0 !important;
-}
-.header-menu .header-link {
-  padding: 6px 0 !important;
-  font-size: 1.1rem !important;
-}
-.menu-icon-circle {
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-}
-.menu-icon-circle iconify-icon {
-  font-size: 16px !important;
-}
-
 /* Remove blog whitespace gap */
 .blog-detail {
   padding-bottom: 0 !important;
 }
 .related-articles {
   padding-top: 1rem !important;
+}
+
+/* Compact slide menu — fits 15 items on screen */
+.menu-dropdown {
+  overflow-y: auto !important;
+  padding-top: 60px !important;
+  padding-bottom: 16px !important;
+}
+.header-menu {
+  gap: 0 !important;
+}
+.header-menu .header-item {
+  padding: 0 !important;
+}
+.header-menu .header-link {
+  padding: 5px 0 !important;
+  font-size: 0.9rem !important;
+}
+.header-menu .header-link .menu-icon-circle {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+}
+.header-menu .header-link .menu-icon-circle iconify-icon {
+  font-size: 14px !important;
+}
+.header-menu .header-link.hstack {
+  gap: 8px !important;
 }
