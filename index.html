@@ -24,15 +24,33 @@
 }
 .services-tab .tab-content .tab-pane.active img {
   transform: scale(1);
+  animation: imgBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.services-tab .tab-content .tab-pane {
-  display: none;
-  align-items: center;
-  justify-content: center;
+@keyframes imgBounce {
+  0% { transform: scale(0.8) rotate(-5deg); opacity: 0.3; }
+  50% { transform: scale(1.05) rotate(1deg); }
+  75% { transform: scale(0.97) rotate(-0.5deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+.services-tab .tab-content {
+  position: relative;
   min-height: 340px;
 }
+.services-tab .tab-content .tab-pane {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.85) rotate(-3deg);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
 .services-tab .tab-content .tab-pane.active {
-  display: flex;
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  pointer-events: auto;
 }
 
 /* ── Service tabs: active state animation ── */
@@ -1183,6 +1201,21 @@
   <script src="/assets/js/custom.js"></script>
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+<script>
+// Retrigger bounce animation on tab switch
+document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => {
+  btn.addEventListener('shown.bs.tab', e => {
+    const pane = document.querySelector(e.target.dataset.bsTarget);
+    const img = pane?.querySelector('img');
+    if (img) {
+      img.style.animation = 'none';
+      img.offsetHeight; // force reflow
+      img.style.animation = '';
+    }
+  });
+});
+</script>
 </body>
 
 </html>
