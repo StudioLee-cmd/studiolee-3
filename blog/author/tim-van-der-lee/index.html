@@ -159,9 +159,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <h2 class="mb-5">Alle artikelen</h2>
+            <h2 class="mb-5 text-dark">Alle artikelen</h2>
             <div id="author-articles" class="d-flex flex-column gap-5">
-              <p class="text-white text-opacity-50">Artikelen laden...</p>
+              <p class="text-dark text-opacity-50">Artikelen laden...</p>
             </div>
           </div>
           <div class="col-lg-4">
@@ -279,9 +279,9 @@
       const container = document.getElementById('author-articles');
       if (articles.length > 0) {
         container.innerHTML = articles.map(a => `
-          <a href="${a.href}" class="d-block p-4 rounded-4 text-decoration-none" style="border: 1px solid rgba(255,255,255,0.08); transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(193,255,114,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
-            <h3 class="fs-7 text-white mb-2">${a.title}</h3>
-            <span class="text-white text-opacity-50 fs-6">Lees artikel →</span>
+          <a href="${a.href}" class="d-block p-4 rounded-4 text-decoration-none" style="border: 1px solid rgba(0,0,0,0.1); transition: border-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.borderColor='rgba(193,255,114,0.6)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.1)';this.style.boxShadow='none'">
+            <h3 class="fs-7 text-dark mb-2">${a.title}</h3>
+            <span class="text-dark text-opacity-50 fs-6">Lees artikel →</span>
           </a>
         `).join('');
       } else {
