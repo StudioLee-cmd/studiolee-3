@@ -70,11 +70,11 @@ blockquote, .quote, .pullquote, .testimonial-text {
 
 /* Breadcrumb nav */
 .breadcrumb-nav { padding: 0; margin: 0; }
-.breadcrumb-nav ol { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 0.25rem; font-size: 0.85rem; }
-.breadcrumb-nav li+li::before { content: "›"; color: rgba(255,255,255,0.5); margin-right: 0.25rem; }
-.breadcrumb-nav a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.breadcrumb-nav ol { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 0.35rem; font-size: 0.85rem; font-family: 'Outfit', sans-serif !important; }
+.breadcrumb-nav li+li::before { content: "/"; color: rgba(255,255,255,0.3); margin-right: 0.35rem; }
+.breadcrumb-nav a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
 .breadcrumb-nav a:hover { color: var(--bs-primary); }
-.breadcrumb-nav .active { color: rgba(255,255,255,0.5); }
+.breadcrumb-nav .active { color: rgba(255,255,255,0.4); font-weight: 400; }
 /*!
  * Bootstrap  v5.3.6 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
