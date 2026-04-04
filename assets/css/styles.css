@@ -17089,3 +17089,21 @@ ul {
   position: relative;
   z-index: 1;
 }
+
+/* ── Menu CTA button hover fix ── */
+.menu-dropdown .cta-shine,
+.menu-dropdown .btn-primary {
+  color: #1F2A2E !important;
+}
+.menu-dropdown .cta-shine:hover,
+.menu-dropdown .btn-primary:hover {
+  color: #1F2A2E !important;
+  background: var(--bs-primary) !important;
+}
+.menu-dropdown .btn-dark {
+  color: #fff !important;
+}
+.menu-dropdown .btn-dark:hover {
+  color: var(--bs-primary) !important;
+  background: #2a3a40 !important;
+}
