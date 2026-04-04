@@ -1,5 +1,61 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+/* ── StudioLee Font System ────────────────────────────────────── */
+/* Primary (headlines): Enligas — freestyle display */
+@font-face {
+  font-family: 'Enligas';
+  src: url('/assets/fonts/Enligas-Regular.woff2') format('woff2');
+  font-weight: normal; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Enligas';
+  src: url('/assets/fonts/Enligas-Italic.woff2') format('woff2');
+  font-weight: normal; font-style: italic; font-display: swap;
+}
+/* Accent (quotes): Swarsh Daisy — elegant serif */
+@font-face {
+  font-family: 'SwarshDaisy';
+  src: url('/assets/fonts/SwarshDaisy-Regular.woff2') format('woff2');
+  font-weight: normal; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'SwarshDaisy';
+  src: url('/assets/fonts/SwarshDaisy-Italic.woff2') format('woff2');
+  font-weight: normal; font-style: italic; font-display: swap;
+}
+
+/* Headlines — Enligas */
+h1, .fs-15, .fs-17 {
+  font-family: 'Enligas', sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* Pull quotes & accents — Swarsh Daisy */
+blockquote, .quote, .pullquote, .testimonial-text {
+  font-family: 'SwarshDaisy', serif !important;
+  font-style: italic;
+}
+
+/* Author link style */
+.author-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: border-color 0.2s, color 0.2s;
+}
+.author-link:hover {
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+/* Breadcrumb nav */
+.breadcrumb-nav { padding: 0; margin: 0; }
+.breadcrumb-nav ol { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 0.25rem; font-size: 0.85rem; }
+.breadcrumb-nav li+li::before { content: "›"; color: rgba(255,255,255,0.5); margin-right: 0.25rem; }
+.breadcrumb-nav a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.breadcrumb-nav a:hover { color: var(--bs-primary); }
+.breadcrumb-nav .active { color: rgba(255,255,255,0.5); }
 /*!
  * Bootstrap  v5.3.6 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
@@ -70,7 +126,7 @@
   --bs-dark-border-subtle: #1F2A2E;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: "Manrope", sans-serif;
+  --bs-font-sans-serif: "Outfit", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
