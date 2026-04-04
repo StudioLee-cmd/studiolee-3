@@ -10,6 +10,43 @@
   <link rel="stylesheet" href="/assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="/assets/css/styles.css" />
+<style>
+/* Service images — circular with shadow */
+.services-tab .tab-content img {
+  border-radius: 50%;
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 8px rgba(193,255,114,0.08);
+  margin: 0 auto;
+  display: block;
+}
+.services-tab .tab-content .tab-pane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+}
+.services-tab .tab-content .tab-pane:not(.active) {
+  display: none;
+}
+.services-tab .tab-content .tab-pane.active {
+  display: flex;
+}
+/* Fix service text overflow */
+.services-tab .nav-tabs .nav-item .row {
+  flex-wrap: nowrap;
+}
+@media (max-width: 991px) {
+  .services-tab .tab-content img {
+    width: 240px;
+    height: 240px;
+  }
+  .services-tab .nav-tabs .nav-item .row {
+    flex-wrap: wrap;
+  }
+}
+</style>
 </head>
 
 <body>
