@@ -662,7 +662,7 @@
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="ds-card rounded-4 h-100" style="background: #1a2226; min-height: 380px; position: relative; overflow: hidden; cursor: pointer;">
               <div style="position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; border-radius: 50%; background: #C1FF72; opacity: 0.7; z-index: 2;"></div>
-              <div class="ds-card-inner" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 32px 32px; transition: bottom 0.45s cubic-bezier(0.34,1.2,0.64,1);">
+              <div class="ds-card-inner" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 32px 32px; transition: transform 0.45s cubic-bezier(0.34,1.2,0.64,1);">
                 <div class="ds-card-top">
                   <h3 class="text-white mb-3" style="font-size: 1.35rem; font-style: italic;">Zonder systeem</h3>
                   <p class="text-white text-opacity-60 mb-0" style="font-size: 0.95rem;">Elke ochtend 30 minuten voicemails afluisteren en terugbellen. Klanten bellen 's avonds en in het weekend. Social media? Opgegeven. Nieuwsbrief? Nooit aan begonnen.</p>
@@ -684,7 +684,7 @@
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="ds-card rounded-4 h-100" style="background: #3a3f42; min-height: 380px; position: relative; overflow: hidden; cursor: pointer;">
               <div style="position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.2); z-index: 2;"></div>
-              <div class="ds-card-inner" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 32px 32px; transition: bottom 0.45s cubic-bezier(0.34,1.2,0.64,1);">
+              <div class="ds-card-inner" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 32px 32px; transition: transform 0.45s cubic-bezier(0.34,1.2,0.64,1);">
                 <div class="ds-card-top">
                   <h3 class="text-white mb-3" style="font-size: 1.35rem;">Jouw investering</h3>
                   <p class="text-white text-opacity-60 mb-0" style="font-size: 0.95rem;">Geen website die converteert. Geen reviews die vertrouwen wekken. Elke gemiste oproep is een gemiste klant. Elke week zonder content is een week dat je concurrent w&eacute;l groeit.</p>
@@ -706,7 +706,7 @@
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="ds-card rounded-4 h-100" style="background: #2d4a3a; min-height: 380px; position: relative; overflow: hidden; cursor: pointer;">
               <div style="position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; border-radius: 50%; background: #C1FF72; opacity: 0.6; z-index: 2;"></div>
-              <div class="ds-card-inner" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 32px 32px; transition: bottom 0.45s cubic-bezier(0.34,1.2,0.64,1);">
+              <div class="ds-card-inner" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 32px 32px; transition: transform 0.45s cubic-bezier(0.34,1.2,0.64,1);">
                 <div class="ds-card-top">
                   <h3 style="color: #C1FF72; font-size: 1.35rem;" class="mb-3">Met STUDIOLEE</h3>
                   <p class="text-white text-opacity-60 mb-0" style="font-size: 0.95rem;">25 tools in &eacute;&eacute;n systeem, vanaf &euro;79/mo. AI beantwoordt je telefoon, vangt leads op, verzamelt reviews, publiceert blogs, beheert social media, verstuurt facturen. Jij werkt aan je klanten.</p>
@@ -729,20 +729,25 @@
     </section>
 
     <script>
-    // DoubleSmart-style: text slides up, details fold open below
+    // DoubleSmart-style: text slides up with transform, details fold open below
     document.querySelectorAll('.ds-card').forEach(card => {
+      const inner = card.querySelector('.ds-card-inner');
+      const details = card.querySelector('.ds-card-details');
+      // Measure card height to calculate slide distance
       card.addEventListener('mouseenter', () => {
-        const inner = card.querySelector('.ds-card-inner');
-        const details = card.querySelector('.ds-card-details');
-        if (inner) inner.style.bottom = 'auto';
-        if (inner) inner.style.top = '60px';
-        if (details) { details.style.maxHeight = '250px'; details.style.opacity = '1'; }
+        if (!inner || !details) return;
+        const cardH = card.offsetHeight;
+        const innerH = inner.offsetHeight;
+        const shift = cardH - innerH - 60;
+        inner.style.transform = 'translateY(-' + shift + 'px)';
+        details.style.maxHeight = '250px';
+        details.style.opacity = '1';
       });
       card.addEventListener('mouseleave', () => {
-        const inner = card.querySelector('.ds-card-inner');
-        const details = card.querySelector('.ds-card-details');
-        if (inner) { inner.style.top = ''; inner.style.bottom = '0'; }
-        if (details) { details.style.maxHeight = '0'; details.style.opacity = '0'; }
+        if (!inner || !details) return;
+        inner.style.transform = 'translateY(0)';
+        details.style.maxHeight = '0';
+        details.style.opacity = '0';
       });
     });
     </script>
