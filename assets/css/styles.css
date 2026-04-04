@@ -25,10 +25,11 @@
   font-weight: normal; font-style: italic; font-display: swap;
 }
 
-/* Headlines — Enligas */
-h1, .fs-15, .fs-17 {
+/* Headlines — Enligas (all headings, all display sizes) */
+h1, h2, h3, .fs-8, .fs-9, .fs-10, .fs-11, .fs-12, .fs-13, .fs-14, .fs-15, .fs-16, .fs-17,
+.nav-link.fw-bold, .btn-text {
   font-family: 'Enligas', sans-serif !important;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 /* Pull quotes & accents — Swarsh Daisy */
