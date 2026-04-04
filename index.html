@@ -194,6 +194,9 @@
     ]
 }
   </script>
+<style>
+@keyframes gearSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
 </head>
 
 <body>
@@ -657,7 +660,12 @@
           <!-- Card 1: Zonder -->
           <div class="col-xl-4" data-aos="fade-up" data-aos-delay="100">
             <div class="comparison-card p-5 rounded-4 h-100 d-flex flex-column" style="background: #1a2226; min-height: 480px; position: relative; overflow: hidden; cursor: pointer;">
-              <div style="position: absolute; top: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: #C1FF72;"></div>
+              <div class="gear-path" style="position: absolute; right: 24px; top: 0; bottom: 0; width: 40px; pointer-events: none;">
+                <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: rgba(193,255,114,0.15); left: 19px;"></div>
+                <div class="gear-icon" style="position: absolute; bottom: 24px; left: 0; width: 40px; height: 40px; transition: bottom 0.6s cubic-bezier(0.34,1.56,0.64,1);">
+                  <iconify-icon icon="solar:settings-bold-duotone" style="font-size: 36px; color: #C1FF72; display: block; animation: gearSpin 4s linear infinite;"></iconify-icon>
+                </div>
+              </div>
               <div class="card-default mt-auto" style="transition: opacity 0.4s ease, transform 0.4s ease;">
                 <h3 class="text-white mb-4" style="font-size: 1.5rem;">Zonder systeem</h3>
                 <p class="text-white text-opacity-60 fs-6 mb-0">Elke ochtend 30 minuten voicemails afluisteren en terugbellen. Klanten bellen 's avonds en in het weekend. Social media? Opgegeven. Nieuwsbrief? Nooit aan begonnen. Reviews vragen vergeet je steeds.</p>
@@ -678,7 +686,12 @@
           <!-- Card 2: Het probleem -->
           <div class="col-xl-4" data-aos="fade-up" data-aos-delay="200">
             <div class="comparison-card p-5 rounded-4 h-100 d-flex flex-column" style="background: #3a3f42; min-height: 480px; position: relative; overflow: hidden; cursor: pointer;">
-              <div style="position: absolute; top: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.5);"></div>
+              <div class="gear-path" style="position: absolute; right: 24px; top: 0; bottom: 0; width: 40px; pointer-events: none;">
+                <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.1); left: 19px;"></div>
+                <div class="gear-icon" style="position: absolute; bottom: 24px; left: 0; width: 40px; height: 40px; transition: bottom 0.6s cubic-bezier(0.34,1.56,0.64,1);">
+                  <iconify-icon icon="solar:settings-bold-duotone" style="font-size: 36px; color: rgba(255,255,255,0.4); display: block; animation: gearSpin 5s linear infinite;"></iconify-icon>
+                </div>
+              </div>
               <div class="card-default mt-auto" style="transition: opacity 0.4s ease, transform 0.4s ease;">
                 <h3 class="text-white mb-4" style="font-size: 1.5rem;">Wat het je kost</h3>
                 <p class="text-white text-opacity-60 fs-6 mb-0">Geen website die converteert. Geen reviews die vertrouwen wekken. Elke gemiste oproep is een gemiste klant. Elke week zonder blog is een week dat je concurrent wél groeit. Het kost je niet alleen geld — het kost je groei.</p>
@@ -699,7 +712,12 @@
           <!-- Card 3: Met STUDIOLEE -->
           <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
             <div class="comparison-card p-5 rounded-4 h-100 d-flex flex-column" style="background: #2d4a3a; min-height: 480px; position: relative; overflow: hidden; cursor: pointer;">
-              <div style="position: absolute; top: 24px; right: 24px; width: 40px; height: 40px; border-radius: 50%; background: rgba(193,255,114,0.4);"></div>
+              <div class="gear-path" style="position: absolute; right: 24px; top: 0; bottom: 0; width: 40px; pointer-events: none;">
+                <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: rgba(193,255,114,0.1); left: 19px;"></div>
+                <div class="gear-icon" style="position: absolute; bottom: 24px; left: 0; width: 40px; height: 40px; transition: bottom 0.6s cubic-bezier(0.34,1.56,0.64,1);">
+                  <iconify-icon icon="solar:settings-bold-duotone" style="font-size: 36px; color: rgba(193,255,114,0.5); display: block; animation: gearSpin 6s linear infinite;"></iconify-icon>
+                </div>
+              </div>
               <div class="card-default mt-auto" style="transition: opacity 0.4s ease, transform 0.4s ease;">
                 <h3 style="color: #C1FF72; font-size: 1.5rem;" class="mb-4">Met STUDIOLEE</h3>
                 <p class="text-white text-opacity-60 fs-6 mb-0">25 tools in één systeem, vanaf €79/mo. AI beantwoordt je telefoon, vangt leads op, verzamelt reviews, publiceert blogs, beheert social media, verstuurt facturen. Jij werkt aan je klanten. Wij werken aan je groei.</p>
@@ -721,19 +739,23 @@
     </section>
 
     <script>
-    // Comparison cards: fold-out animation on hover
+    // Comparison cards: fold-out animation + gear travels up on hover
     document.querySelectorAll('.comparison-card').forEach(card => {
       card.addEventListener('mouseenter', () => {
         card.querySelector('.card-default').style.opacity = '0';
         card.querySelector('.card-default').style.transform = 'translateY(-20px)';
         card.querySelector('.card-hover').style.transform = 'translateY(0)';
         card.querySelector('.card-hover').style.opacity = '1';
+        const gear = card.querySelector('.gear-icon');
+        if (gear) gear.style.bottom = 'calc(100% - 64px)';
       });
       card.addEventListener('mouseleave', () => {
         card.querySelector('.card-default').style.opacity = '1';
         card.querySelector('.card-default').style.transform = 'translateY(0)';
         card.querySelector('.card-hover').style.transform = 'translateY(100%)';
         card.querySelector('.card-hover').style.opacity = '0';
+        const gear = card.querySelector('.gear-icon');
+        if (gear) gear.style.bottom = '24px';
       });
     });
     </script>
