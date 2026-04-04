@@ -16808,3 +16808,13 @@ ul {
 .tab-content > .active {
   height: auto;
 }
+
+/* Blog body link color — softer than neon primary */
+.blog-detail a.text-primary {
+  color: #5B8A3C !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.blog-detail a.text-primary:hover {
+  color: #C1FF72 !important;
+}
