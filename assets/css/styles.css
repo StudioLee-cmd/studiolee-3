@@ -17070,20 +17070,34 @@ ul {
 /* ── Geometric background pattern on blog detail pages ── */
 .blog-detail {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 .blog-detail::before {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 600px;
-  height: 600px;
+  bottom: -100px;
+  left: -100px;
+  width: 800px;
+  height: 800px;
+  background: url('/assets/images/backgrounds/stats-facts-bg.svg') no-repeat center;
+  background-size: contain;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+.blog-detail::after {
+  content: '';
+  position: absolute;
+  top: 100px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
   background: url('/assets/images/backgrounds/stats-facts-bg.svg') no-repeat center;
   background-size: contain;
   opacity: 0.04;
   pointer-events: none;
   z-index: 0;
+  transform: rotate(45deg);
 }
 .blog-detail > .container {
   position: relative;
