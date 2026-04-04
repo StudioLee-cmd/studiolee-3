@@ -3,50 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Video Hover Test — Niche Labels</title>
+  <title>Video Hover Test</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
   <style>
-    body { margin: 0; background: #1F2A2E; padding: 40px; font-family: 'Outfit', sans-serif; color: #fff; }
-    h1 { text-align: center; margin-bottom: 40px; opacity: 0.7; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
-    .card { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 16/9; cursor: pointer; }
-    .card img.bg { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; transition: opacity 0.4s; }
-    .card video { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.4s; }
-    .card:hover video { opacity: 1; }
-    .card:hover img.bg { opacity: 0; }
-    .card .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, transparent 100%); z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; transition: background 0.3s; }
-    .card:hover .overlay { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%); }
-    .card .overlay h3 { margin: 0 0 8px; font-size: 1.4rem; color: #fff; }
-    .card .overlay .btn { display: inline-block; padding: 8px 20px; background: #C1FF72; color: #1F2A2E; font-weight: 700; border-radius: 50px; text-decoration: none; font-size: 0.85rem; opacity: 0; transform: translateY(10px); transition: opacity 0.3s, transform 0.3s; }
-    .card:hover .overlay .btn { opacity: 1; transform: translateY(0); }
+    body { background: #f5f5f5; padding: 40px; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+    .portfolio-img > video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.4s;
+      z-index: 0;
+    }
+    .portfolio-img:hover > video { opacity: 1; }
+    .portfolio-img:hover > img { opacity: 0; }
+    .portfolio-img > img { transition: opacity 0.4s; z-index: 1; }
+    .portfolio-overlay { z-index: 2; }
   </style>
 </head>
 <body>
-  <h1>Hover to preview — click to visit</h1>
-  <div class="grid">
-    <div class="card" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause();this.querySelector('video').currentTime=0">
-      <img class="bg" src="/assets/images/labels/kapperai.jpg" alt="KapperAI">
-      <video muted loop preload="metadata" src="/assets/video/kapperai.mp4"></video>
-      <div class="overlay">
-        <h3>KapperAI</h3>
-        <a href="https://www.kapperai.nl" target="_blank" rel="noopener" class="btn">Bekijk live</a>
+  <div class="container mb-5">
+    <h2>Hover over de kaarten — video speelt af, overlay + knop werken normaal</h2>
+  </div>
+  <div class="test-grid">
+
+    <div class="portfolio d-flex flex-column gap-6">
+      <div class="portfolio-img position-relative overflow-hidden"
+           onmouseenter="this.querySelector('video').play()"
+           onmouseleave="this.querySelector('video').pause();this.querySelector('video').currentTime=0">
+        <img src="/assets/images/labels/kapperai.jpg" alt="KapperAI" class="img-fluid">
+        <video muted loop preload="metadata" src="/assets/video/kapperai.mp4"></video>
+        <div class="portfolio-overlay">
+          <a href="https://www.kapperai.nl" target="_blank" rel="noopener"
+            class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
+            <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      <div class="portfolio-details d-flex flex-column gap-3">
+        <h3 class="mb-0">KapperAI</h3>
+        <div class="hstack gap-2">
+          <span class="badge text-dark border">Niche Website</span>
+          <span class="badge text-dark border">SEO</span>
+        </div>
       </div>
     </div>
-    <div class="card" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause();this.querySelector('video').currentTime=0">
-      <img class="bg" src="/assets/images/labels/loodgieterai.jpg" alt="LoodgieterAI">
-      <video muted loop preload="metadata" src="/assets/video/loodgieterai.mp4"></video>
-      <div class="overlay">
-        <h3>LoodgieterAI</h3>
-        <a href="https://www.loodgieterai.nl" target="_blank" rel="noopener" class="btn">Bekijk live</a>
+
+    <div class="portfolio d-flex flex-column gap-6">
+      <div class="portfolio-img position-relative overflow-hidden"
+           onmouseenter="this.querySelector('video').play()"
+           onmouseleave="this.querySelector('video').pause();this.querySelector('video').currentTime=0">
+        <img src="/assets/images/labels/loodgieterai.jpg" alt="LoodgieterAI" class="img-fluid">
+        <video muted loop preload="metadata" src="/assets/video/loodgieterai.mp4"></video>
+        <div class="portfolio-overlay">
+          <a href="https://www.loodgieterai.nl" target="_blank" rel="noopener"
+            class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
+            <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      <div class="portfolio-details d-flex flex-column gap-3">
+        <h3 class="mb-0">LoodgieterAI</h3>
+        <div class="hstack gap-2">
+          <span class="badge text-dark border">Niche Website</span>
+          <span class="badge text-dark border">SEO</span>
+        </div>
       </div>
     </div>
-    <div class="card" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause();this.querySelector('video').currentTime=0">
-      <img class="bg" src="/assets/images/labels/elektroai.jpg" alt="ElektroAI">
-      <video muted loop preload="metadata" src="/assets/video/elektroai.mp4"></video>
-      <div class="overlay">
-        <h3>ElektroAI</h3>
-        <a href="https://www.elektroai.nl" target="_blank" rel="noopener" class="btn">Bekijk live</a>
+
+    <div class="portfolio d-flex flex-column gap-6">
+      <div class="portfolio-img position-relative overflow-hidden"
+           onmouseenter="this.querySelector('video').play()"
+           onmouseleave="this.querySelector('video').pause();this.querySelector('video').currentTime=0">
+        <img src="/assets/images/labels/elektroai.jpg" alt="ElektroAI" class="img-fluid">
+        <video muted loop preload="metadata" src="/assets/video/elektroai.mp4"></video>
+        <div class="portfolio-overlay">
+          <a href="https://www.elektroai.nl" target="_blank" rel="noopener"
+            class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
+            <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      <div class="portfolio-details d-flex flex-column gap-3">
+        <h3 class="mb-0">ElektroAI</h3>
+        <div class="hstack gap-2">
+          <span class="badge text-dark border">Niche Website</span>
+          <span class="badge text-dark border">SEO</span>
+        </div>
       </div>
     </div>
+
   </div>
 </body>
 </html>
