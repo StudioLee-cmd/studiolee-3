@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Een chatbot op je website — STUDIOLEE</title>
+  <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon.svg" />
+  <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <header class="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
+    <div class="container">
+      <div class="header-wrapper d-flex align-items-center justify-content-between">
+        <div class="logo"><a href="/" class="logo-white"><img src="/assets/images/logos/logo-white.svg" alt="STUDIOLEE" class="img-fluid"></a><a href="/" class="logo-dark"><img src="/assets/images/logos/logo-dark.svg" alt="STUDIOLEE" class="img-fluid"></a></div>
+        <div class="d-flex align-items-center gap-4">
+          <div class="btn-group">
+            <button class="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false"><iconify-icon icon="solar:hamburger-menu-line-duotone" class="menu-icon fs-8 text-dark"></iconify-icon></button>
+            <ul class="dropdown-menu dropdown-menu-end p-4">
+              <div class="d-flex flex-column gap-6">
+                <div class="hstack justify-content-between border-bottom pb-6"><p class="mb-0 fs-5 text-dark">Menu</p><button type="button" class="btn-close opacity-75" aria-label="Sluiten"></button></div>
+                <div class="d-flex flex-column gap-3">
+                  <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
+                    <li class="header-item"><a href="/" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img src="/assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20" class="img-fluid animate-spin">Home</a></li>
+                    <li class="header-item">
+                      <a href="/chatbot" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="/assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">AI Chatbot</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/voice-ai" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="/assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">AI Telefonist</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/seo" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="/assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">SEO &amp; Vindbaarheid</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/social-media" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="/assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Social Media</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/reviews" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img
+                          src="/assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20"
+                          class="img-fluid animate-spin">Review Management</a>
+                    </li>
+                    <li class="header-item"><a href="/tarieven" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img src="/assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20" class="img-fluid animate-spin">Tarieven</a></li>
+                    <li class="header-item"><a href="/blog" class="header-link active hstack gap-2 fs-7 fw-bold text-dark"><img src="/assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20" class="img-fluid animate-spin">Blog</a></li>
+                    <li class="header-item"><a href="/projects" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><img src="/assets/images/svgs/secondary-leaf.svg" alt="" width="20" height="20" class="img-fluid animate-spin">Portfolio</a></li>
+                  </ul>
+                  <div class="hstack gap-3"><a href="https://calendly.com/tim-studiolee" class="btn btn-dark text-white fs-6 bg-dark px-3 py-2 w-100 hstack justify-content-center">Plan Een Gesprek</a></div>
+                </div>
+                <div><a class="text-dark" href="tel:+3197010223669">+31 970 102 23669</a><br><a class="fs-8 text-dark fw-bold" href="mailto:tim@studiolee.nl">tim@studiolee.nl</a></div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-wrapper overflow-hidden">
+    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end" style="background-image: url(/assets/images/blog/chatbot-website-mkb-wanneer-werkt-het.png); background-size: cover; background-position: center;">
+      <div class="container">
+        <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+          <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <img src="/assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
+            <p class="mb-0 text-white fs-5 text-opacity-70">20 maart 2026 &bull; Tim van der Lee</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <h1 class="mb-0 fs-15 text-white lh-1">Een chatbot op je website</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-detail py-5 py-lg-11 py-xl-12">
+      <div class="container">
+        <div class="d-flex flex-column gap-7 gap-xl-11">
+          <div class="row justify-content-end">
+            <div class="col-lg-8">
+              <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <h3 class="mt-5 mb-3 fs-8">Wat is een chatbot precies</h3>
+                <p class="fs-5 mb-4">Een chatbot is een geautomatiseerd gesprekssysteem op je website dat vragen van bezoekers beantwoordt. Het kan varieren van een simpel FAQ-menu tot een AI-gestuurde assistent die natuurlijke gesprekken voert en taken uitvoert.</p>
+                <p class="fs-5 mb-4">Voor MKB-bedrijven is de chatbot een veelbesproken onderwerp. Sommige ondernemers zien het als de toekomst, anderen als een irritante pop-up. De waarheid zit ertussenin — het hangt af van je situatie. In dit artikel helpen we je bepalen of een chatbot voor jouw bedrijf zinvol is.</p>
+                <h3 class="mt-5 mb-3 fs-8">Wanneer een chatbot wel werkt</h3>
+                <p class="fs-5 mb-4">Een chatbot voegt waarde toe als:</p>
+                <ul class="mb-4">
+                <li><strong>Je veel herhalende vragen krijgt</strong>: openingstijden, prijzen, beschikbaarheid — een chatbot beantwoordt ze 24/7</li>
+                <li><strong>Je leads mist buiten kantoortijden</strong>: bezoekers die 's avonds je website bezoeken en niemand kunnen bereiken</li>
+                <li><strong>Je team overbelast is</strong>: de chatbot vangt eenvoudige vragen op, zodat je team zich kan richten op complexe klantvragen</li>
+                <li><strong>Je een duidelijk aanbod hebt</strong>: de chatbot kan bezoekers naar de juiste dienst of productpagina leiden</li>
+                </ul>
+                <p class="fs-5 mb-4">Een goed voorbeeld: een installatiebedrijf dat dagelijks dezelfde vragen krijgt over beschikbaarheid en prijzen. Een chatbot beantwoordt die vragen, verzamelt contactgegevens en plant een terugbelafspraak — allemaal terwijl de monteur bezig is met werk. Dit past bij de bredere trend van <a href="/blog/ai-agents-mkb-groeien-zonder-personeel" class="text-primary">AI-agents die het MKB helpen groeien</a>.</p>
+                <h3 class="mt-5 mb-3 fs-8">Wanneer een chatbot niet werkt</h3>
+                <p class="fs-5 mb-4">Investeer niet in een chatbot als:</p>
+                <ul class="mb-4">
+                <li><strong>Je weinig websiteverkeer hebt</strong>: onder de 500 bezoekers per maand is de investering niet rendabel</li>
+                <li><strong>Je product uitleg vereist</strong>: complexe B2B-diensten verkoop je niet via een chatbot — daar heb je persoonlijk contact voor</li>
+                <li><strong>Je geen tijd hebt voor onderhoud</strong>: een chatbot met verouderde antwoorden doet meer kwaad dan goed</li>
+                <li><strong>Je doelgroep het niet verwacht</strong>: sommige doelgroepen (oudere consumenten, traditionele sectoren) ervaren chatbots als irritant</li>
+                </ul>
+                <p class="fs-5 mb-4">Een slecht geconfigureerde chatbot frustreert bezoekers. "Ik begrijp uw vraag niet" na drie pogingen drijft klanten weg in plaats van ze te helpen.</p>
+                <h3 class="mt-5 mb-3 fs-8">AI-chatbots vs regelgebaseerde chatbots</h3>
+                <p class="fs-5 mb-4">Er zijn twee typen:</p>
+                <p class="fs-5 mb-4"><strong>Regelgebaseerd</strong>: een beslisboom met vooraf bepaalde antwoorden. De bezoeker kiest uit opties ("Prijzen bekijken", "Afspraak maken", "Contact opnemen"). Simpel, betrouwbaar, maar beperkt.</p>
+                <p class="fs-5 mb-4"><strong>AI-gestuurd</strong>: gebruikt grote taalmodellen (zoals Claude of ChatGPT) om natuurlijke gesprekken te voeren. Kan complexere vragen beantwoorden, is flexibeler, maar vereist meer configuratie en kost meer.</p>
+                <p class="fs-5 mb-4">Voor de meeste MKB-bedrijven is een regelgebaseerde chatbot voldoende. Een AI-chatbot is interessant als je veel variatie in klantvragen hebt of als je de chatbot wilt laten integreren met je CRM of boekingssysteem. Lees meer over <a href="/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026" class="text-primary">wat AI-automatisering betekent voor het MKB</a>.</p>
+                <h3 class="mt-5 mb-3 fs-8">Kosten en implementatie</h3>
+                <p class="fs-5 mb-4">De kosten varieren sterk:</p>
+                <ul class="mb-4">
+                <li><strong>Gratis opties</strong>: Tidio, Tawk.to — basisversies met beperkte functionaliteit</li>
+                <li><strong>Betaalbaar</strong>: €20-50/maand — Tidio Pro, Drift Lite, of een custom-integratie</li>
+                <li><strong>Premium</strong>: €100-500/maand — AI-gestuurde chatbots met CRM-integratie en geavanceerde flows</li>
+                </ul>
+                <p class="fs-5 mb-4">Begin klein: installeer een gratis chatbot met je 10 meest gestelde vragen. Meet na een maand hoeveel gesprekken er plaatsvinden en hoeveel leads eruit voortkomen. Schaal op als het werkt, verwijder het als het niet rendeert.</p>
+                <p class="fs-5 mb-4">Implementatie is doorgaans eenvoudig: een script toevoegen aan je website, antwoorden invoeren en live gaan. De meeste tools bieden drag-and-drop builders die geen technische kennis vereisen.</p>
+                <h3 class="mt-5 mb-3 fs-8">Conclusie</h3>
+                <p class="fs-5 mb-4">Een chatbot kan een waardevolle aanvulling zijn voor je MKB-website — maar alleen als de omstandigheden kloppen. Heb je veel herhalende vragen, mis je leads buiten kantoortijden en heb je voldoende websiteverkeer? Dan loont het. Begin met een gratis regelgebaseerde chatbot en evalueer na een maand. Wil je ontdekken welke AI-tools het beste passen bij jouw bedrijf? Bekijk onze <a href="/tarieven" class="text-primary">tarieven</a> of start met een <a href="/free-trial" class="text-primary">gratis proefperiode</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-end mt-5">
+          <div class="col-lg-8">
+            <div class="bg-dark p-5 text-center" data-aos="fade-up">
+              <h3 class="text-white fs-8 mb-3">Klaar om te groeien?</h3>
+              <p class="text-white text-opacity-70 mb-4">Ontdek hoe STUDIOLEE jouw bedrijf kan transformeren.</p>
+              <a href="/free-trial" class="btn btn-primary text-dark fw-bold px-5 py-3">Start gratis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 mb-8 mb-xl-0">
+          <h2 class="mb-0 text-white">Laten we samenwerken</h2>
+          <div class="d-flex flex-column gap-2 mt-5">
+            <a href="mailto:tim@studiolee.nl" class="link-hover hstack gap-3 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>tim@studiolee.nl</a>
+            <a href="tel:+3197010223669" class="link-hover hstack gap-3 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>+31 970 102 23669</a>
+          </div>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/">Home</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/tarieven">Tarieven</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/blog">Blog</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/projects">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/free-trial">Gratis Scan</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/free-website">Gratis Website</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/privacy-policy">Privacy</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/terms-and-conditions">Voorwaarden</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-3 mb-8 mb-xl-0"><p class="mb-0 text-white text-opacity-70 text-md-end">&copy; 2026 STUDIOLEE</p></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/libs/aos-master/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="/assets/js/custom.js"></script>
+</body>
+</html>
