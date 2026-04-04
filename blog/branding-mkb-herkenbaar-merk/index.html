@@ -7,6 +7,17 @@
   <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon.svg" />
   <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="/assets/css/styles.css" />
+<style>
+.breadcrumb-nav{padding:100px 0 0;margin:0 auto;max-width:1200px;padding-left:1rem;padding-right:1rem}
+.breadcrumb-nav ol{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0;gap:0.25rem;font-size:0.85rem}
+.breadcrumb-nav li+li::before{content:"›";color:rgba(255,255,255,0.5);margin-right:0.25rem}
+.breadcrumb-nav a{color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
+.breadcrumb-nav a:hover{color:#C1FF72}
+.breadcrumb-nav .active{color:rgba(255,255,255,0.5)}
+.author-link{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.3);transition:border-color 0.2s}
+.author-link:hover{border-color:#C1FF72;color:#C1FF72}
+</style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://studiolee-3.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://studiolee-3.vercel.app/blog"}, {"@type": "ListItem", "position": 3, "name": "Branding voor het MKB"}]}</script>
 </head>
 <body>
   <header class="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
@@ -63,6 +74,13 @@
   </header>
 
   <div class="page-wrapper overflow-hidden">
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active" aria-current="page">Branding voor het MKB</li>
+      </ol>
+    </nav>
     <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end" style="background-image: url(/assets/images/blog/branding-mkb-herkenbaar-merk.png); background-size: cover; background-position: center;">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
