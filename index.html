@@ -195,7 +195,7 @@
 }
   </script>
 <style>
-@keyframes gearSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+/* gear only spins during movement — controlled by JS */
 </style>
 </head>
 
@@ -660,86 +660,41 @@
           <!-- Card 1: Zonder -->
           <div class="col-xl-4" data-aos="fade-up" data-aos-delay="100">
             <div class="comparison-card p-5 rounded-4 h-100 d-flex flex-column" style="background: #1a2226; min-height: 480px; position: relative; overflow: hidden; cursor: pointer;">
-              <div class="gear-path" style="position: absolute; right: 24px; top: 0; bottom: 0; width: 40px; pointer-events: none;">
-                <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: rgba(193,255,114,0.15); left: 19px;"></div>
-                <div class="gear-icon" style="position: absolute; bottom: 24px; left: 0; width: 40px; height: 40px; transition: bottom 0.6s cubic-bezier(0.34,1.56,0.64,1);">
-                  <iconify-icon icon="solar:settings-bold-duotone" style="font-size: 36px; color: #C1FF72; display: block; animation: gearSpin 4s linear infinite;"></iconify-icon>
+              <div class="gear-path" style="position: absolute; right: 24px; bottom: 24px; width: 40px; height: 120px; pointer-events: none;">
+                <div style="position: absolute; left: 19px; top: 0; bottom: 0; width: 2px; background: rgba(193,255,114,0.12); border-radius: 1px;"></div>
+                <div class="gear-icon" style="position: absolute; bottom: 0; left: 0; width: 40px; height: 40px; transition: bottom 0.5s cubic-bezier(0.34,1.56,0.64,1);">
+                  <iconify-icon icon="solar:settings-bold-duotone" style="font-size: 32px; color: #C1FF72; opacity: 0.6; display: block; transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);"></iconify-icon>
                 </div>
               </div>
-              <div class="card-default mt-auto" style="transition: opacity 0.4s ease, transform 0.4s ease;">
-                <h3 class="text-white mb-4" style="font-size: 1.5rem;">Zonder systeem</h3>
-                <p class="text-white text-opacity-60 fs-6 mb-0">Elke ochtend 30 minuten voicemails afluisteren en terugbellen. Klanten bellen 's avonds en in het weekend. Social media? Opgegeven. Nieuwsbrief? Nooit aan begonnen. Reviews vragen vergeet je steeds.</p>
-              </div>
-              <div class="card-hover" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; transform: translateY(100%); opacity: 0; transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;">
-                <h3 class="text-white mb-3" style="font-size: 1.2rem;">Wat we dagelijks horen:</h3>
-                <div class="d-flex flex-column gap-2">
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ "Ik heb geen tijd voor social media"</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ "Mensen bellen me 's avonds, ik word er gek van"</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ "Mijn concurrent staat overal bovenaan"</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ "Ik heb maar 6 reviews, hij heeft er 80"</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ "Offertes maak ik nog steeds met de hand"</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <!-- Card 2: Het probleem -->
           <div class="col-xl-4" data-aos="fade-up" data-aos-delay="200">
             <div class="comparison-card p-5 rounded-4 h-100 d-flex flex-column" style="background: #3a3f42; min-height: 480px; position: relative; overflow: hidden; cursor: pointer;">
-              <div class="gear-path" style="position: absolute; right: 24px; top: 0; bottom: 0; width: 40px; pointer-events: none;">
-                <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.1); left: 19px;"></div>
-                <div class="gear-icon" style="position: absolute; bottom: 24px; left: 0; width: 40px; height: 40px; transition: bottom 0.6s cubic-bezier(0.34,1.56,0.64,1);">
-                  <iconify-icon icon="solar:settings-bold-duotone" style="font-size: 36px; color: rgba(255,255,255,0.4); display: block; animation: gearSpin 5s linear infinite;"></iconify-icon>
+              <div class="gear-path" style="position: absolute; right: 24px; bottom: 24px; width: 40px; height: 120px; pointer-events: none;">
+                <div style="position: absolute; left: 19px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.08); border-radius: 1px;"></div>
+                <div class="gear-icon" style="position: absolute; bottom: 0; left: 0; width: 40px; height: 40px; transition: bottom 0.5s cubic-bezier(0.34,1.56,0.64,1);">
+                  <iconify-icon icon="solar:settings-bold-duotone" style="font-size: 32px; color: rgba(255,255,255,0.5); opacity: 0.4; display: block; transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);"></iconify-icon>
                 </div>
               </div>
-              <div class="card-default mt-auto" style="transition: opacity 0.4s ease, transform 0.4s ease;">
-                <h3 class="text-white mb-4" style="font-size: 1.5rem;">Wat het je kost</h3>
-                <p class="text-white text-opacity-60 fs-6 mb-0">Geen website die converteert. Geen reviews die vertrouwen wekken. Elke gemiste oproep is een gemiste klant. Elke week zonder blog is een week dat je concurrent wél groeit. Het kost je niet alleen geld — het kost je groei.</p>
-              </div>
-              <div class="card-hover" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; transform: translateY(100%); opacity: 0; transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;">
-                <h3 class="text-white mb-3" style="font-size: 1.2rem;">De echte kosten:</h3>
-                <div class="d-flex flex-column gap-2">
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ 2-3 gemiste klanten per week door onbereikbaarheid</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ 5+ uur per week aan werk dat geautomatiseerd kan</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ Facturen en offertes handmatig — fouten en vertraging</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ €0 return op een website die niemand vindt</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ Geen data, geen richting, geen groei</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <!-- Card 3: Met STUDIOLEE -->
           <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
             <div class="comparison-card p-5 rounded-4 h-100 d-flex flex-column" style="background: #2d4a3a; min-height: 480px; position: relative; overflow: hidden; cursor: pointer;">
-              <div class="gear-path" style="position: absolute; right: 24px; top: 0; bottom: 0; width: 40px; pointer-events: none;">
-                <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 2px; background: rgba(193,255,114,0.1); left: 19px;"></div>
-                <div class="gear-icon" style="position: absolute; bottom: 24px; left: 0; width: 40px; height: 40px; transition: bottom 0.6s cubic-bezier(0.34,1.56,0.64,1);">
-                  <iconify-icon icon="solar:settings-bold-duotone" style="font-size: 36px; color: rgba(193,255,114,0.5); display: block; animation: gearSpin 6s linear infinite;"></iconify-icon>
+              <div class="gear-path" style="position: absolute; right: 24px; bottom: 24px; width: 40px; height: 120px; pointer-events: none;">
+                <div style="position: absolute; left: 19px; top: 0; bottom: 0; width: 2px; background: rgba(193,255,114,0.08); border-radius: 1px;"></div>
+                <div class="gear-icon" style="position: absolute; bottom: 0; left: 0; width: 40px; height: 40px; transition: bottom 0.5s cubic-bezier(0.34,1.56,0.64,1);">
+                  <iconify-icon icon="solar:settings-bold-duotone" style="font-size: 32px; color: rgba(193,255,114,0.6); opacity: 0.5; display: block; transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);"></iconify-icon>
                 </div>
               </div>
-              <div class="card-default mt-auto" style="transition: opacity 0.4s ease, transform 0.4s ease;">
-                <h3 style="color: #C1FF72; font-size: 1.5rem;" class="mb-4">Met STUDIOLEE</h3>
-                <p class="text-white text-opacity-60 fs-6 mb-0">25 tools in één systeem, vanaf €79/mo. AI beantwoordt je telefoon, vangt leads op, verzamelt reviews, publiceert blogs, beheert social media, verstuurt facturen. Jij werkt aan je klanten. Wij werken aan je groei.</p>
-              </div>
-              <div class="card-hover" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 40px; transform: translateY(100%); opacity: 0; transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;">
-                <h3 style="color: #C1FF72; font-size: 1.2rem;" class="mb-3">Wat er verandert:</h3>
-                <div class="d-flex flex-column gap-2">
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ AI Telefonist — ook 's avonds en weekends</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ Reviews groeien van 6 naar 60+ automatisch</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ Offertes en facturen vanuit het dashboard</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ Elke week nieuw artikel + social media</p>
-                  <p class="text-white text-opacity-50 fs-6 mb-0">→ Eén dashboard, alles draait, meetbaar resultaat</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
     <script>
-    // Comparison cards: fold-out animation + gear travels up on hover
+    // Comparison cards: fold-out + gear spins only while moving
     document.querySelectorAll('.comparison-card').forEach(card => {
       card.addEventListener('mouseenter', () => {
         card.querySelector('.card-default').style.opacity = '0';
@@ -747,7 +702,10 @@
         card.querySelector('.card-hover').style.transform = 'translateY(0)';
         card.querySelector('.card-hover').style.opacity = '1';
         const gear = card.querySelector('.gear-icon');
-        if (gear) gear.style.bottom = 'calc(100% - 64px)';
+        if (gear) {
+          gear.style.bottom = '80px';
+          gear.querySelector('iconify-icon').style.transform = 'rotate(360deg)';
+        }
       });
       card.addEventListener('mouseleave', () => {
         card.querySelector('.card-default').style.opacity = '1';
@@ -755,7 +713,10 @@
         card.querySelector('.card-hover').style.transform = 'translateY(100%)';
         card.querySelector('.card-hover').style.opacity = '0';
         const gear = card.querySelector('.gear-icon');
-        if (gear) gear.style.bottom = '24px';
+        if (gear) {
+          gear.style.bottom = '0';
+          gear.querySelector('iconify-icon').style.transform = 'rotate(0deg)';
+        }
       });
     });
     </script>
