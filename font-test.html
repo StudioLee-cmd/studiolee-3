@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Font Test — STUDIOLEE</title>
+  <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    @font-face { font-family: 'Enligas'; src: url('/assets/fonts/Enligas-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Enligas'; src: url('/assets/fonts/Enligas-Italic.woff2') format('woff2'); font-weight: normal; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'SaltyAges'; src: url('/assets/fonts/SaltyAges-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'SwarshDaisy'; src: url('/assets/fonts/SwarshDaisy-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'SwarshDaisy'; src: url('/assets/fonts/SwarshDaisy-Italic.woff2') format('woff2'); font-weight: normal; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Aimla'; src: url('/assets/fonts/Aimla.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
+
+    body { background: #1F2A2E; color: #fff; }
+    .test-section { padding: 60px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .font-label { font-family: 'Manrope', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: #C1FF72; margin-bottom: 16px; }
+    .test-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .test-h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.2; margin-bottom: 12px; opacity: 0.9; }
+    .test-body { font-family: 'Manrope', sans-serif; font-size: 1.1rem; line-height: 1.7; opacity: 0.7; max-width: 600px; }
+    .combo-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 40px; margin-bottom: 30px; }
+    .combo-card:hover { border-color: #C1FF72; }
+    .accent { color: #C1FF72; }
+    .hero-test { padding: 120px 0 80px; text-align: center; }
+    .divider { width: 60px; height: 3px; background: #C1FF72; margin: 24px 0; }
+    .badge-pick { display: inline-block; background: #C1FF72; color: #1F2A2E; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="hero-test">
+      <p class="font-label">STUDIOLEE Font Test Page</p>
+      <h1 style="font-family: 'Manrope', sans-serif; font-size: 2rem; opacity: 0.5;">Scroll down to compare 4 display fonts with Manrope body text</h1>
+    </div>
+
+    <!-- OPTION A: Enligas -->
+    <div class="test-section">
+      <div class="combo-card">
+        <p class="font-label">Option A — Enligas (Freestyle Display)</p>
+        <h1 class="test-h1" style="font-family: 'Enligas', sans-serif;">AI-gedreven groei voor het <span class="accent">MKB</span></h1>
+        <h2 class="test-h2" style="font-family: 'Enligas', sans-serif;">Wij regelen alles. Jij focust op je bedrijf.</h2>
+        <div class="divider"></div>
+        <p class="test-body">StudioLee is een full-service AI-bureau dat het MKB helpt groeien met SEO, social media, review management en AI-vindbaarheid. Geen gedoe, geen leren — wij doen het voor je.</p>
+      </div>
+      <div class="combo-card">
+        <p class="font-label">Enligas — Blog context</p>
+        <h1 class="test-h1" style="font-family: 'Enligas', sans-serif; font-size: 2.5rem;">Managed service voor het MKB: waarom uitbesteden slimmer is</h1>
+        <p class="test-body">Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online.</p>
+      </div>
+    </div>
+
+    <!-- OPTION B: Salty Ages -->
+    <div class="test-section">
+      <div class="combo-card">
+        <p class="font-label">Option B — Salty Ages (Bold Retro Serif)</p>
+        <h1 class="test-h1" style="font-family: 'SaltyAges', serif;">AI-gedreven groei voor het <span class="accent">MKB</span></h1>
+        <h2 class="test-h2" style="font-family: 'SaltyAges', serif;">Wij regelen alles. Jij focust op je bedrijf.</h2>
+        <div class="divider"></div>
+        <p class="test-body">StudioLee is een full-service AI-bureau dat het MKB helpt groeien met SEO, social media, review management en AI-vindbaarheid. Geen gedoe, geen leren — wij doen het voor je.</p>
+      </div>
+      <div class="combo-card">
+        <p class="font-label">Salty Ages — Blog context</p>
+        <h1 class="test-h1" style="font-family: 'SaltyAges', serif; font-size: 2.5rem;">Managed service voor het MKB: waarom uitbesteden slimmer is</h1>
+        <p class="test-body">Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online.</p>
+      </div>
+    </div>
+
+    <!-- OPTION C: Swarsh Daisy -->
+    <div class="test-section">
+      <div class="combo-card">
+        <p class="font-label">Option C — Swarsh Daisy (Elegant Serif Display)</p>
+        <h1 class="test-h1" style="font-family: 'SwarshDaisy', serif;">AI-gedreven groei voor het <span class="accent">MKB</span></h1>
+        <h2 class="test-h2" style="font-family: 'SwarshDaisy', serif;">Wij regelen alles. Jij focust op je bedrijf.</h2>
+        <div class="divider"></div>
+        <p class="test-body">StudioLee is een full-service AI-bureau dat het MKB helpt groeien met SEO, social media, review management en AI-vindbaarheid. Geen gedoe, geen leren — wij doen het voor je.</p>
+      </div>
+      <div class="combo-card">
+        <p class="font-label">Swarsh Daisy — Blog context</p>
+        <h1 class="test-h1" style="font-family: 'SwarshDaisy', serif; font-size: 2.5rem;">Managed service voor het MKB: waarom uitbesteden slimmer is</h1>
+        <p class="test-body">Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online.</p>
+      </div>
+      <div class="combo-card">
+        <p class="font-label">Swarsh Daisy Italic — Accent / pull quote</p>
+        <blockquote style="font-family: 'SwarshDaisy', serif; font-style: italic; font-size: 1.8rem; line-height: 1.4; border-left: 3px solid #C1FF72; padding-left: 24px; opacity: 0.9;">
+          "Het risico ligt 100% bij ons. Jij hebt niets te verliezen."
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- OPTION D: Aimla -->
+    <div class="test-section">
+      <div class="combo-card">
+        <p class="font-label">Option D — Aimla</p>
+        <h1 class="test-h1" style="font-family: 'Aimla', sans-serif;">AI-gedreven groei voor het <span class="accent">MKB</span></h1>
+        <h2 class="test-h2" style="font-family: 'Aimla', sans-serif;">Wij regelen alles. Jij focust op je bedrijf.</h2>
+        <div class="divider"></div>
+        <p class="test-body">StudioLee is een full-service AI-bureau dat het MKB helpt groeien met SEO, social media, review management en AI-vindbaarheid. Geen gedoe, geen leren — wij doen het voor je.</p>
+      </div>
+      <div class="combo-card">
+        <p class="font-label">Aimla — Blog context</p>
+        <h1 class="test-h1" style="font-family: 'Aimla', sans-serif; font-size: 2.5rem;">Managed service voor het MKB: waarom uitbesteden slimmer is</h1>
+        <p class="test-body">Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online.</p>
+      </div>
+    </div>
+
+    <!-- COMBOS -->
+    <div class="test-section">
+      <p class="font-label" style="font-size: 14px; margin-bottom: 40px;">Recommended Pairings</p>
+
+      <div class="combo-card">
+        <span class="badge-pick">My Pick</span>
+        <p class="font-label">Combo 1 — Swarsh Daisy titles + Manrope body</p>
+        <h1 class="test-h1" style="font-family: 'SwarshDaisy', serif;">AI-bureau op MKB-niveau</h1>
+        <h2 class="test-h2" style="font-family: 'Manrope', sans-serif; font-weight: 600;">SEO, social media en reviews — volledig gemanaged</h2>
+        <p class="test-body">Een elegant serif geeft premiumgevoel. Manrope houdt de rest clean en modern. Best of both worlds voor een agency dat professioneel maar toegankelijk wil overkomen.</p>
+      </div>
+
+      <div class="combo-card">
+        <p class="font-label">Combo 2 — Enligas titles + Swarsh Daisy accents + Manrope body</p>
+        <h1 class="test-h1" style="font-family: 'Enligas', sans-serif;">Groei zonder gedoe</h1>
+        <blockquote style="font-family: 'SwarshDaisy', serif; font-style: italic; font-size: 1.4rem; opacity: 0.8; margin: 16px 0;">"Wij regelen het — jij focust op je bedrijf"</blockquote>
+        <p class="test-body">Enligas voor impact headlines, Swarsh Daisy for elegant quotes, Manrope for everything else. Three-font system met duidelijke rolverdeling.</p>
+      </div>
+
+      <div class="combo-card">
+        <p class="font-label">Combo 3 — Aimla titles + Manrope body</p>
+        <h1 class="test-h1" style="font-family: 'Aimla', sans-serif;">Slimmer groeien met AI</h1>
+        <h2 class="test-h2" style="font-family: 'Manrope', sans-serif; font-weight: 600;">Marketing uitbesteden kost minder dan je denkt</h2>
+        <p class="test-body">Aimla geeft een uniek, herkenbaar karakter. Manrope houdt alles leesbaar. Een simpele twee-font setup.</p>
+      </div>
+    </div>
+
+    <div style="padding: 80px 0; text-align: center; opacity: 0.5;">
+      <p>Test page — niet gelinkt in navigatie</p>
+      <p><a href="/" style="color: #C1FF72;">← Terug naar homepage</a></p>
+    </div>
+
+  </div>
+  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
