@@ -17266,3 +17266,35 @@ ul {
 .header-menu .header-link.hstack {
   gap: 8px !important;
 }
+
+/* Fix: prevent any decorative pseudo-elements from blocking clicks */
+section::before,
+section::after {
+  pointer-events: none !important;
+}
+
+/* Fix: ensure menu backdrop is truly invisible when closed */
+.menu-backdrop {
+  pointer-events: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.menu-backdrop.is-open {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Fix: ensure menu dropdown doesn't block when closed */
+.menu-dropdown {
+  pointer-events: none;
+}
+.menu-dropdown.is-open {
+  pointer-events: auto;
+}
+.menu-dropdown .header-menu,
+.menu-dropdown .header-link,
+.menu-dropdown a,
+.menu-dropdown button {
+  pointer-events: auto;
+}
