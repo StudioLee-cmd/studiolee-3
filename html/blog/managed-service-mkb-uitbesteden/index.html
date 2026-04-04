@@ -16,10 +16,12 @@
         <div class="logo"><a href="../../index.html" class="logo-white"><img src="../../assets/images/logos/logo-white.svg" alt="STUDIOLEE" class="img-fluid"></a><a href="../../index.html" class="logo-dark"><img src="../../assets/images/logos/logo-dark.svg" alt="STUDIOLEE" class="img-fluid"></a></div>
         <div class="d-flex align-items-center gap-4">
           <div class="btn-group">
-            <button class="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><iconify-icon icon="solar:hamburger-menu-line-duotone" class="menu-icon fs-8 text-dark"></iconify-icon></button>
-            <ul class="dropdown-menu dropdown-menu-end p-4">
+            <button class="hamburger-btn" aria-label="Menu" onclick="this.classList.toggle('is-open');document.getElementById('slideMenu').classList.toggle('is-open');document.getElementById('menuBackdrop').classList.toggle('is-open');">
+              <div class="bar-wrap"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </button>
+            <ul class="menu-dropdown" id="slideMenu">
               <div class="d-flex flex-column gap-6">
-                <div class="hstack justify-content-between border-bottom pb-6"><p class="mb-0 fs-5 text-dark">Menu</p><button type="button" class="btn-close opacity-75" aria-label="Sluiten"></button></div>
+                <!-- menu header removed -->
                 <div class="d-flex flex-column gap-3">
                   <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
                     <li class="header-item"><a href="../../index.html" class="header-link hstack gap-2 fs-7 fw-bold text-dark">Home</a></li>
