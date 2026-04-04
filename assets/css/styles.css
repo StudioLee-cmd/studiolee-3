@@ -17228,3 +17228,29 @@ ul {
   background: #fff !important;
   color: #1F2A2E !important;
 }
+
+/* ── Brand Spinning Animations (Laat het draaien) ── */
+@keyframes spin-slow { 100% { transform: rotate(360deg); } }
+@keyframes spin-reverse { 100% { transform: rotate(-360deg); } }
+
+.brand-spin { display: inline-block; }
+.brand-spin-slow { animation: spin-slow 12s linear infinite; }
+.brand-spin-medium { animation: spin-slow 6s linear infinite; }
+.brand-spin-reverse { animation: spin-reverse 10s linear infinite; }
+.brand-spin-hover { transition: transform 0.5s ease; }
+.brand-spin-hover:hover { transform: rotate(180deg); }
+
+/* Spinning brand decorations */
+.brand-deco {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.08;
+  z-index: 0;
+}
+.brand-deco iconify-icon {
+  display: block;
+  color: #C1FF72;
+}
+/* CTA section decorations - slightly more visible */
+.bg-primary .brand-deco { opacity: 0.15; }
+.bg-primary .brand-deco iconify-icon { color: #1F2A2E; }
