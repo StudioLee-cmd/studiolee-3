@@ -3,143 +3,140 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Font Test — STUDIOLEE</title>
-  <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <title>Font Pairing Test — Swarsh Daisy + Body Fonts — STUDIOLEE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    @font-face { font-family: 'Enligas'; src: url('/assets/fonts/Enligas-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Enligas'; src: url('/assets/fonts/Enligas-Italic.woff2') format('woff2'); font-weight: normal; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'SaltyAges'; src: url('/assets/fonts/SaltyAges-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
     @font-face { font-family: 'SwarshDaisy'; src: url('/assets/fonts/SwarshDaisy-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
     @font-face { font-family: 'SwarshDaisy'; src: url('/assets/fonts/SwarshDaisy-Italic.woff2') format('woff2'); font-weight: normal; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Enligas'; src: url('/assets/fonts/Enligas-Regular.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
     @font-face { font-family: 'Aimla'; src: url('/assets/fonts/Aimla.woff2') format('woff2'); font-weight: normal; font-style: normal; font-display: swap; }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #1F2A2E; color: #fff; }
-    .test-section { padding: 60px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .font-label { font-family: 'Manrope', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: #C1FF72; margin-bottom: 16px; }
-    .test-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
-    .test-h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.2; margin-bottom: 12px; opacity: 0.9; }
-    .test-body { font-family: 'Manrope', sans-serif; font-size: 1.1rem; line-height: 1.7; opacity: 0.7; max-width: 600px; }
-    .combo-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 40px; margin-bottom: 30px; }
-    .combo-card:hover { border-color: #C1FF72; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .hero { padding: 100px 0 40px; text-align: center; }
+    .hero h1 { font-family: 'SwarshDaisy', serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .hero p { font-size: 1rem; opacity: 0.5; font-family: system-ui; }
     .accent { color: #C1FF72; }
-    .hero-test { padding: 120px 0 80px; text-align: center; }
-    .divider { width: 60px; height: 3px; background: #C1FF72; margin: 24px 0; }
-    .badge-pick { display: inline-block; background: #C1FF72; color: #1F2A2E; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .section { padding: 50px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .label { font-family: system-ui; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #C1FF72; margin-bottom: 24px; font-weight: 600; }
+    .card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 48px; margin-bottom: 24px; transition: border-color 0.3s; }
+    .card:hover { border-color: rgba(193,255,114,0.3); }
+    .card h2 { font-family: 'SwarshDaisy', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); line-height: 1.15; margin-bottom: 8px; }
+    .card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 16px; opacity: 0.85; }
+    .card p { font-size: 1.05rem; line-height: 1.75; opacity: 0.7; margin-bottom: 12px; }
+    .card .meta { font-size: 0.85rem; opacity: 0.4; margin-bottom: 20px; }
+    .card ul { font-size: 1.05rem; line-height: 1.75; opacity: 0.7; padding-left: 20px; margin-bottom: 12px; }
+    .card li { margin-bottom: 6px; }
+    .divider { width: 50px; height: 2px; background: #C1FF72; margin: 20px 0; }
+    .badge { display: inline-block; background: #C1FF72; color: #1F2A2E; padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-family: system-ui; }
+    .cta { display: inline-block; background: #C1FF72; color: #1F2A2E; padding: 12px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; margin-top: 16px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    .footer { padding: 60px 0; text-align: center; opacity: 0.3; font-family: system-ui; font-size: 0.9rem; }
   </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- Hero -->
-    <div class="hero-test">
-      <p class="font-label">STUDIOLEE Font Test Page</p>
-      <h1 style="font-family: 'Manrope', sans-serif; font-size: 2rem; opacity: 0.5;">Scroll down to compare 4 display fonts with Manrope body text</h1>
-    </div>
-
-    <!-- OPTION A: Enligas -->
-    <div class="test-section">
-      <div class="combo-card">
-        <p class="font-label">Option A — Enligas (Freestyle Display)</p>
-        <h1 class="test-h1" style="font-family: 'Enligas', sans-serif;">AI-gedreven groei voor het <span class="accent">MKB</span></h1>
-        <h2 class="test-h2" style="font-family: 'Enligas', sans-serif;">Wij regelen alles. Jij focust op je bedrijf.</h2>
-        <div class="divider"></div>
-        <p class="test-body">StudioLee is een full-service AI-bureau dat het MKB helpt groeien met SEO, social media, review management en AI-vindbaarheid. Geen gedoe, geen leren — wij doen het voor je.</p>
-      </div>
-      <div class="combo-card">
-        <p class="font-label">Enligas — Blog context</p>
-        <h1 class="test-h1" style="font-family: 'Enligas', sans-serif; font-size: 2.5rem;">Managed service voor het MKB: waarom uitbesteden slimmer is</h1>
-        <p class="test-body">Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online.</p>
-      </div>
-    </div>
-
-    <!-- OPTION B: Salty Ages -->
-    <div class="test-section">
-      <div class="combo-card">
-        <p class="font-label">Option B — Salty Ages (Bold Retro Serif)</p>
-        <h1 class="test-h1" style="font-family: 'SaltyAges', serif;">AI-gedreven groei voor het <span class="accent">MKB</span></h1>
-        <h2 class="test-h2" style="font-family: 'SaltyAges', serif;">Wij regelen alles. Jij focust op je bedrijf.</h2>
-        <div class="divider"></div>
-        <p class="test-body">StudioLee is een full-service AI-bureau dat het MKB helpt groeien met SEO, social media, review management en AI-vindbaarheid. Geen gedoe, geen leren — wij doen het voor je.</p>
-      </div>
-      <div class="combo-card">
-        <p class="font-label">Salty Ages — Blog context</p>
-        <h1 class="test-h1" style="font-family: 'SaltyAges', serif; font-size: 2.5rem;">Managed service voor het MKB: waarom uitbesteden slimmer is</h1>
-        <p class="test-body">Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online.</p>
-      </div>
-    </div>
-
-    <!-- OPTION C: Swarsh Daisy -->
-    <div class="test-section">
-      <div class="combo-card">
-        <p class="font-label">Option C — Swarsh Daisy (Elegant Serif Display)</p>
-        <h1 class="test-h1" style="font-family: 'SwarshDaisy', serif;">AI-gedreven groei voor het <span class="accent">MKB</span></h1>
-        <h2 class="test-h2" style="font-family: 'SwarshDaisy', serif;">Wij regelen alles. Jij focust op je bedrijf.</h2>
-        <div class="divider"></div>
-        <p class="test-body">StudioLee is een full-service AI-bureau dat het MKB helpt groeien met SEO, social media, review management en AI-vindbaarheid. Geen gedoe, geen leren — wij doen het voor je.</p>
-      </div>
-      <div class="combo-card">
-        <p class="font-label">Swarsh Daisy — Blog context</p>
-        <h1 class="test-h1" style="font-family: 'SwarshDaisy', serif; font-size: 2.5rem;">Managed service voor het MKB: waarom uitbesteden slimmer is</h1>
-        <p class="test-body">Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online.</p>
-      </div>
-      <div class="combo-card">
-        <p class="font-label">Swarsh Daisy Italic — Accent / pull quote</p>
-        <blockquote style="font-family: 'SwarshDaisy', serif; font-style: italic; font-size: 1.8rem; line-height: 1.4; border-left: 3px solid #C1FF72; padding-left: 24px; opacity: 0.9;">
-          "Het risico ligt 100% bij ons. Jij hebt niets te verliezen."
-        </blockquote>
-      </div>
-    </div>
-
-    <!-- OPTION D: Aimla -->
-    <div class="test-section">
-      <div class="combo-card">
-        <p class="font-label">Option D — Aimla</p>
-        <h1 class="test-h1" style="font-family: 'Aimla', sans-serif;">AI-gedreven groei voor het <span class="accent">MKB</span></h1>
-        <h2 class="test-h2" style="font-family: 'Aimla', sans-serif;">Wij regelen alles. Jij focust op je bedrijf.</h2>
-        <div class="divider"></div>
-        <p class="test-body">StudioLee is een full-service AI-bureau dat het MKB helpt groeien met SEO, social media, review management en AI-vindbaarheid. Geen gedoe, geen leren — wij doen het voor je.</p>
-      </div>
-      <div class="combo-card">
-        <p class="font-label">Aimla — Blog context</p>
-        <h1 class="test-h1" style="font-family: 'Aimla', sans-serif; font-size: 2.5rem;">Managed service voor het MKB: waarom uitbesteden slimmer is</h1>
-        <p class="test-body">Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online.</p>
-      </div>
-    </div>
-
-    <!-- COMBOS -->
-    <div class="test-section">
-      <p class="font-label" style="font-size: 14px; margin-bottom: 40px;">Recommended Pairings</p>
-
-      <div class="combo-card">
-        <span class="badge-pick">My Pick</span>
-        <p class="font-label">Combo 1 — Swarsh Daisy titles + Manrope body</p>
-        <h1 class="test-h1" style="font-family: 'SwarshDaisy', serif;">AI-bureau op MKB-niveau</h1>
-        <h2 class="test-h2" style="font-family: 'Manrope', sans-serif; font-weight: 600;">SEO, social media en reviews — volledig gemanaged</h2>
-        <p class="test-body">Een elegant serif geeft premiumgevoel. Manrope houdt de rest clean en modern. Best of both worlds voor een agency dat professioneel maar toegankelijk wil overkomen.</p>
-      </div>
-
-      <div class="combo-card">
-        <p class="font-label">Combo 2 — Enligas titles + Swarsh Daisy accents + Manrope body</p>
-        <h1 class="test-h1" style="font-family: 'Enligas', sans-serif;">Groei zonder gedoe</h1>
-        <blockquote style="font-family: 'SwarshDaisy', serif; font-style: italic; font-size: 1.4rem; opacity: 0.8; margin: 16px 0;">"Wij regelen het — jij focust op je bedrijf"</blockquote>
-        <p class="test-body">Enligas voor impact headlines, Swarsh Daisy for elegant quotes, Manrope for everything else. Three-font system met duidelijke rolverdeling.</p>
-      </div>
-
-      <div class="combo-card">
-        <p class="font-label">Combo 3 — Aimla titles + Manrope body</p>
-        <h1 class="test-h1" style="font-family: 'Aimla', sans-serif;">Slimmer groeien met AI</h1>
-        <h2 class="test-h2" style="font-family: 'Manrope', sans-serif; font-weight: 600;">Marketing uitbesteden kost minder dan je denkt</h2>
-        <p class="test-body">Aimla geeft een uniek, herkenbaar karakter. Manrope houdt alles leesbaar. Een simpele twee-font setup.</p>
-      </div>
-    </div>
-
-    <div style="padding: 80px 0; text-align: center; opacity: 0.5;">
-      <p>Test page — niet gelinkt in navigatie</p>
-      <p><a href="/" style="color: #C1FF72;">← Terug naar homepage</a></p>
-    </div>
-
+  <div class="hero">
+    <p class="label">Swarsh Daisy + welke body font?</p>
+    <h1>Kies de perfecte <span class="accent">combinatie</span></h1>
+    <p>Swarsh Daisy staat vast als headline font. Scroll voor 6 body font opties.</p>
   </div>
-  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- OPTION 1: Plus Jakarta Sans -->
+  <div class="section">
+    <div class="card" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+      <span class="badge">Aanbevolen</span>
+      <p class="label">1. Plus Jakarta Sans</p>
+      <h2>Managed service voor het <span class="accent">MKB</span></h2>
+      <p class="meta">Tim van der Lee · 4 april 2026 · 6 min leestijd</p>
+      <h3>Waarom steeds meer ondernemers uitbesteden</h3>
+      <p>Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online. SEO, social media, reviews, advertenties. Het is te veel om er zelf structureel aandacht aan te geven.</p>
+      <ul><li>SEO en content — wekelijks blogartikelen die je ranking opbouwen</li><li>Review management — automatisch reviews verzamelen en reageren</li><li>Social media — regelmatige posts op de juiste platforms</li></ul>
+      <p><strong>Karakter:</strong> Elegant, licht afgerond, premium. Populair bij Linear, Framer, Vercel.</p>
+      <a href="#" class="cta">Start gratis</a>
+    </div>
+  </div>
+
+  <!-- OPTION 2: DM Sans -->
+  <div class="section">
+    <div class="card" style="font-family: 'DM Sans', sans-serif;">
+      <p class="label">2. DM Sans</p>
+      <h2>Managed service voor het <span class="accent">MKB</span></h2>
+      <p class="meta">Tim van der Lee · 4 april 2026 · 6 min leestijd</p>
+      <h3>Waarom steeds meer ondernemers uitbesteden</h3>
+      <p>Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online. SEO, social media, reviews, advertenties. Het is te veel om er zelf structureel aandacht aan te geven.</p>
+      <ul><li>SEO en content — wekelijks blogartikelen die je ranking opbouwen</li><li>Review management — automatisch reviews verzamelen en reageren</li><li>Social media — regelmatige posts op de juiste platforms</li></ul>
+      <p><strong>Karakter:</strong> Clean, modern, licht geometrisch maar warmer dan Manrope. Google Font.</p>
+      <a href="#" class="cta">Start gratis</a>
+    </div>
+  </div>
+
+  <!-- OPTION 3: Space Grotesk -->
+  <div class="section">
+    <div class="card" style="font-family: 'Space Grotesk', sans-serif;">
+      <p class="label">3. Space Grotesk</p>
+      <h2>Managed service voor het <span class="accent">MKB</span></h2>
+      <p class="meta">Tim van der Lee · 4 april 2026 · 6 min leestijd</p>
+      <h3>Waarom steeds meer ondernemers uitbesteden</h3>
+      <p>Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online. SEO, social media, reviews, advertenties. Het is te veel om er zelf structureel aandacht aan te geven.</p>
+      <ul><li>SEO en content — wekelijks blogartikelen die je ranking opbouwen</li><li>Review management — automatisch reviews verzamelen en reageren</li><li>Social media — regelmatige posts op de juiste platforms</li></ul>
+      <p><strong>Karakter:</strong> Technisch, monospace-achtig maar leesbaar. Al op SL2 in gebruik. Techy agency vibe.</p>
+      <a href="#" class="cta">Start gratis</a>
+    </div>
+  </div>
+
+  <!-- OPTION 4: Outfit -->
+  <div class="section">
+    <div class="card" style="font-family: 'Outfit', sans-serif;">
+      <p class="label">4. Outfit</p>
+      <h2>Managed service voor het <span class="accent">MKB</span></h2>
+      <p class="meta">Tim van der Lee · 4 april 2026 · 6 min leestijd</p>
+      <h3>Waarom steeds meer ondernemers uitbesteden</h3>
+      <p>Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online. SEO, social media, reviews, advertenties. Het is te veel om er zelf structureel aandacht aan te geven.</p>
+      <ul><li>SEO en content — wekelijks blogartikelen die je ranking opbouwen</li><li>Review management — automatisch reviews verzamelen en reageren</li><li>Social media — regelmatige posts op de juiste platforms</li></ul>
+      <p><strong>Karakter:</strong> Modern, afgerond, friendly maar professioneel. Iets speelser dan DM Sans.</p>
+      <a href="#" class="cta">Start gratis</a>
+    </div>
+  </div>
+
+  <!-- OPTION 5: Sora -->
+  <div class="section">
+    <div class="card" style="font-family: 'Sora', sans-serif;">
+      <p class="label">5. Sora</p>
+      <h2>Managed service voor het <span class="accent">MKB</span></h2>
+      <p class="meta">Tim van der Lee · 4 april 2026 · 6 min leestijd</p>
+      <h3>Waarom steeds meer ondernemers uitbesteden</h3>
+      <p>Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online. SEO, social media, reviews, advertenties. Het is te veel om er zelf structureel aandacht aan te geven.</p>
+      <ul><li>SEO en content — wekelijks blogartikelen die je ranking opbouwen</li><li>Review management — automatisch reviews verzamelen en reageren</li><li>Social media — regelmatige posts op de juiste platforms</li></ul>
+      <p><strong>Karakter:</strong> OpenAI-achtig. Geometrisch maar met eigen karakter. Clean, tech-forward.</p>
+      <a href="#" class="cta">Start gratis</a>
+    </div>
+  </div>
+
+  <!-- OPTION 6: Enligas as body -->
+  <div class="section">
+    <div class="card" style="font-family: 'Enligas', sans-serif;">
+      <p class="label">6. Enligas (jouw font, als body)</p>
+      <h2>Managed service voor het <span class="accent">MKB</span></h2>
+      <p class="meta">Tim van der Lee · 4 april 2026 · 6 min leestijd</p>
+      <h3 style="font-family: 'Enligas', sans-serif;">Waarom steeds meer ondernemers uitbesteden</h3>
+      <p>Als ondernemer in het MKB doe je alles: klantgesprekken, administratie, inkoop, personeelsplanning — en tussendoor moet je ook nog zichtbaar zijn online. SEO, social media, reviews, advertenties. Het is te veel om er zelf structureel aandacht aan te geven.</p>
+      <ul><li>SEO en content — wekelijks blogartikelen die je ranking opbouwen</li><li>Review management — automatisch reviews verzamelen en reageren</li><li>Social media — regelmatige posts op de juiste platforms</li></ul>
+      <p><strong>Karakter:</strong> Freestyle, playful, Figma-achtig. Uniek maar mogelijk te expressief voor lange tekst.</p>
+      <a href="#" class="cta">Start gratis</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Test page — niet zichtbaar in navigatie</p>
+    <p><a href="/" style="color: #C1FF72;">← Terug naar homepage</a></p>
+  </div>
+
+</div>
 </body>
 </html>
