@@ -311,9 +311,13 @@
 
     <!--  Banner Section -->
     <section class="banner-section position-relative d-flex align-items-end min-vh-100">
-      <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
-        <source src="/assets/video/hero.mp4" poster="/assets/images/hero-poster.png" type="video/mp4" />
+      <video id="heroVidA" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted playsinline style="z-index:0;">
+        <source src="/assets/video/hero.mp4" type="video/mp4" />
       </video>
+      <video id="heroVidB" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" muted playsinline style="z-index:0;opacity:0;">
+        <source src="/assets/video/hero.mp4" type="video/mp4" />
+      </video>
+      <img src="/assets/images/hero-poster.png" alt="" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" style="z-index:-1;">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-8 position-relative z-1">
           <div class="row align-items-center">
@@ -1363,7 +1367,53 @@ document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => 
   });
 });
 </script>
-</body>
+
+    <script>
+    // Seamless video loop crossfade (0.5s overlap)
+    (function(){
+      var a = document.getElementById('heroVidA');
+      var b = document.getElementById('heroVidB');
+      if(!a||!b) return;
+      var fade = 0.5; // seconds of crossfade
+      var active = a, next = b;
+      
+      function startCrossfade(){
+        var dur = active.duration;
+        if(!dur) return;
+        var triggerAt = dur - fade;
+        
+        active.addEventListener('timeupdate', function check(){
+          if(active.currentTime >= triggerAt){
+            active.removeEventListener('timeupdate', check);
+            // Start next video
+            next.currentTime = 0;
+            next.play();
+            // Crossfade
+            next.style.transition = 'opacity ' + fade + 's ease';
+            next.style.opacity = '1';
+            active.style.transition = 'opacity ' + fade + 's ease';
+            active.style.opacity = '0';
+            // After fade, swap roles
+            setTimeout(function(){
+              var tmp = active;
+              active = next;
+              next = tmp;
+              next.pause();
+              next.currentTime = 0;
+              next.style.transition = 'none';
+              next.style.opacity = '0';
+              active.style.transition = 'none';
+              active.style.opacity = '1';
+              startCrossfade();
+            }, fade * 1000 + 50);
+          }
+        });
+      }
+      
+      a.addEventListener('loadedmetadata', function(){ startCrossfade(); });
+    })();
+    </script>
+  </body>
 
 </html
 
@@ -1417,6 +1467,52 @@ document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => 
   });
 });
 </script>
-</body>
+
+    <script>
+    // Seamless video loop crossfade (0.5s overlap)
+    (function(){
+      var a = document.getElementById('heroVidA');
+      var b = document.getElementById('heroVidB');
+      if(!a||!b) return;
+      var fade = 0.5; // seconds of crossfade
+      var active = a, next = b;
+      
+      function startCrossfade(){
+        var dur = active.duration;
+        if(!dur) return;
+        var triggerAt = dur - fade;
+        
+        active.addEventListener('timeupdate', function check(){
+          if(active.currentTime >= triggerAt){
+            active.removeEventListener('timeupdate', check);
+            // Start next video
+            next.currentTime = 0;
+            next.play();
+            // Crossfade
+            next.style.transition = 'opacity ' + fade + 's ease';
+            next.style.opacity = '1';
+            active.style.transition = 'opacity ' + fade + 's ease';
+            active.style.opacity = '0';
+            // After fade, swap roles
+            setTimeout(function(){
+              var tmp = active;
+              active = next;
+              next = tmp;
+              next.pause();
+              next.currentTime = 0;
+              next.style.transition = 'none';
+              next.style.opacity = '0';
+              active.style.transition = 'none';
+              active.style.opacity = '1';
+              startCrossfade();
+            }, fade * 1000 + 50);
+          }
+        });
+      }
+      
+      a.addEventListener('loadedmetadata', function(){ startCrossfade(); });
+    })();
+    </script>
+  </body>
 
 </html>
