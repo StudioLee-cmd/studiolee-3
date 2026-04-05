@@ -51,31 +51,9 @@ $(function () {
 	});
 
 
-    // ScrollToTop
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    const btn = document.getElementById("scrollToTopBtn");
-    btn.addEventListener("click", scrollToTop);
-
-    window.onscroll = function () {
-        const btn = document.getElementById("scrollToTopBtn");
-        if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
-            btn.style.display = "flex";
-        } else {
-            btn.style.display = "none";
-        }
-    };
-
-
     // Aos
 	AOS.init({
 		once: true,
 	});
 
 });
-
