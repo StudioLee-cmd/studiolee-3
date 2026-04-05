@@ -849,7 +849,7 @@
     </section>
 
     <!--  FAQ Section -->
-    <section class="faq py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <section class="faq py-5 py-lg-11 py-xl-12">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
           <div class="row gap-7 gap-xl-0">
@@ -868,135 +868,54 @@
                   <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <h2 class="mb-0">Veelgestelde vragen</h2>
-                    <p class="fs-5 mb-0">Alles wat je wilt weten over onze AI chatbot — van chatbot kosten tot installatie en resultaat.</p>
+                    <p class="fs-5 mb-0 text-opacity-70">Alles wat je wilt weten over onze AI chatbot — van chatbot kosten tot installatie en resultaat.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="row justify-content-end">
-            <div class="col-xl-8">
-              <div class="accordion accordion-flush" id="chatbotFaqAccordion" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1000">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-1" aria-expanded="false" aria-controls="chatbot-faq-1">
-                      Hoe snel kan de chatbot live staan?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-1" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Na het intakegesprek hebben wij de chatbot meestal binnen 2-3 werkdagen klaar. De installatie op je website duurt slechts 5 minuten — wij doen dat voor je.</div>
-                  </div>
+            <div class="col-xl-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <div class="faq-timeline">
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoe snel kan de chatbot live staan?</div>
+                  <div class="faq-tl-a">Na het intakegesprek hebben wij de chatbot meestal binnen 2-3 werkdagen klaar. De installatie op je website duurt slechts 5 minuten — wij doen dat voor je.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-2" aria-expanded="false" aria-controls="chatbot-faq-2">
-                      Werkt het ook op mijn WordPress / Wix website?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-2" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Ja, onze chatbot werkt op elk platform: WordPress, Wix, Squarespace, Shopify, of een custom-built website. Het enige wat nodig is, is een klein stukje code dat wij voor je plaatsen.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Werkt het ook op mijn WordPress / Wix website?</div>
+                  <div class="faq-tl-a">Ja, onze chatbot werkt op elk platform: WordPress, Wix, Squarespace, Shopify, of een custom-built website. Het enige wat nodig is, is een klein stukje code dat wij voor je plaatsen.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-3" aria-expanded="false" aria-controls="chatbot-faq-3">
-                      Kan ik de chatbot aanpassen aan mijn huisstijl?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-3" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Absoluut. Kleuren, logo, welkomstbericht, tone-of-voice — alles wordt afgestemd op jouw merk. Het voelt als een natuurlijk onderdeel van je website, niet als een los tooltje.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Kan ik de chatbot aanpassen aan mijn huisstijl?</div>
+                  <div class="faq-tl-a">Absoluut. Kleuren, logo, welkomstbericht, tone-of-voice — alles wordt afgestemd op jouw merk. Het voelt als een natuurlijk onderdeel van je website, niet als een los tooltje.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-4" aria-expanded="false" aria-controls="chatbot-faq-4">
-                      Wat als de chatbot een vraag niet kan beantwoorden?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-4" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Dan escaleert hij netjes. De bezoeker krijgt de optie om contact op te nemen via WhatsApp, e-mail of telefoon. Jij ontvangt een notificatie met de volledige gesprekscontext zodat je direct kunt helpen.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Wat als de chatbot een vraag niet kan beantwoorden?</div>
+                  <div class="faq-tl-a">Dan escaleert hij netjes. De bezoeker krijgt de optie om contact op te nemen via WhatsApp, e-mail of telefoon. Jij ontvangt een notificatie met de volledige gesprekscontext zodat je direct kunt helpen.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-5" aria-expanded="false" aria-controls="chatbot-faq-5">
-                      Is de chatbot AVG / GDPR-proof?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-5" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Ja. Alle data wordt verwerkt en opgeslagen binnen de EU. We gebruiken geen third-party tracking en alle persoonsgegevens worden verwerkt conform de AVG-richtlijnen.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Is de chatbot AVG / GDPR-proof?</div>
+                  <div class="faq-tl-a">Ja. Alle data wordt verwerkt en opgeslagen binnen de EU. We gebruiken geen third-party tracking en alle persoonsgegevens worden verwerkt conform de AVG-richtlijnen.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-6" aria-expanded="false" aria-controls="chatbot-faq-6">
-                      Wat kost een AI chatbot?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-6" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">De chatbot kosten hangen af van je situatie en wensen. Onze AI chatbot is onderdeel van managed service pakketten — alles inbegrepen, geen verborgen kosten. Bekijk onze <a href="/tarieven" class="text-primary fw-bold">tarieven</a> of <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="text-primary fw-bold">plan een gratis gesprek</a> om te ontdekken welk pakket bij je past. Groei-of-Geld-Terug Garantie inbegrepen.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Wat kost een AI chatbot?</div>
+                  <div class="faq-tl-a">De chatbot kosten hangen af van je situatie en wensen. Onze AI chatbot is onderdeel van managed service pakketten — alles inbegrepen, geen verborgen kosten. Bekijk onze <a href="/tarieven" class="text-primary fw-bold">tarieven</a> of <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="text-primary fw-bold">plan een gratis gesprek</a> om te ontdekken welk pakket bij je past. Groei-of-Geld-Terug Garantie inbegrepen.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-7" aria-expanded="false" aria-controls="chatbot-faq-7">
-                      Hoe werkt een AI chatbot op mijn website?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-7" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">De AI chatbot verschijnt als een chatvenster op je website. Zodra een bezoeker een vraag stelt, antwoordt de chatbot direct — op basis van jouw bedrijfsinformatie. Hij kan leads kwalificeren, afspraken inplannen en veelgestelde vragen beantwoorden. Alles automatisch, 24/7, zonder dat jij er iets voor hoeft te doen.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoe werkt een AI chatbot op mijn website?</div>
+                  <div class="faq-tl-a">De AI chatbot verschijnt als een chatvenster op je website. Zodra een bezoeker een vraag stelt, antwoordt de chatbot direct — op basis van jouw bedrijfsinformatie. Hij kan leads kwalificeren, afspraken inplannen en veelgestelde vragen beantwoorden. Alles automatisch, 24/7, zonder dat jij er iets voor hoeft te doen.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-8" aria-expanded="false" aria-controls="chatbot-faq-8">
-                      Kan de chatbot mijn bedrijfskennis leren?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-8" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Ja, dat is precies wat onze AI chatbot onderscheidt. Wij trainen hem op jouw website, brochures, FAQ's en interne documenten. De chatbot kent jouw diensten, prijzen en werkwijze — en wordt slimmer met elk gesprek. Zo geeft hij antwoorden die echt kloppen, in jouw tone-of-voice.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Kan de chatbot mijn bedrijfskennis leren?</div>
+                  <div class="faq-tl-a">Ja, dat is precies wat onze AI chatbot onderscheidt. Wij trainen hem op jouw website, brochures, FAQ's en interne documenten. De chatbot kent jouw diensten, prijzen en werkwijze — en wordt slimmer met elk gesprek. Zo geeft hij antwoorden die echt kloppen, in jouw tone-of-voice.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-9" aria-expanded="false" aria-controls="chatbot-faq-9">
-                      Wat is een chatbot?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-9" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Een chatbot is een AI-programma dat automatisch gesprekken voert met bezoekers op je website. Onze chatbots zijn getraind op jouw bedrijfsinformatie en beantwoorden vragen, kwalificeren leads en boeken afspraken — 24/7, zonder dat jij erbij hoeft te zijn. <a href="/free-trial" class="text-primary fw-bold">Vraag een gratis demo aan</a>.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Wat is een chatbot?</div>
+                  <div class="faq-tl-a">Een chatbot is een AI-programma dat automatisch gesprekken voert met bezoekers op je website. Onze chatbots zijn getraind op jouw bedrijfsinformatie en beantwoorden vragen, kwalificeren leads en boeken afspraken — 24/7, zonder dat jij erbij hoeft te zijn. <a href="/free-trial" class="text-primary fw-bold">Vraag een gratis demo aan</a>.</div>
                 </div>
-                <div class="accordion-item border-bottom">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#chatbot-faq-10" aria-expanded="false" aria-controls="chatbot-faq-10">
-                      Kan een chatbot afspraken inplannen?
-                    </button>
-                  </h2>
-                  <div id="chatbot-faq-10" class="accordion-collapse collapse"
-                    data-bs-parent="#chatbotFaqAccordion">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Ja, onze AI chatbot koppelt met je agenda (Google Calendar, Outlook of Calendly) en plant afspraken direct in tijdens het gesprek. De bezoeker krijgt een bevestiging en jij ontvangt een notificatie. Geen heen-en-weer mailen meer.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Kan een chatbot afspraken inplannen?</div>
+                  <div class="faq-tl-a">Ja, onze AI chatbot koppelt met je agenda (Google Calendar, Outlook of Calendly) en plant afspraken direct in tijdens het gesprek. De bezoeker krijgt een bevestiging en jij ontvangt een notificatie. Geen heen-en-weer mailen meer.</div>
                 </div>
               </div>
             </div>
