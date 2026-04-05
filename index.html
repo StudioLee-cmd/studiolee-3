@@ -311,10 +311,10 @@
 
     <!--  Banner Section -->
     <section class="banner-section position-relative d-flex align-items-end min-vh-100">
-      <video id="heroVid" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline poster="/assets/images/hero-poster.png">
+      <video id="heroVid" style="transition:opacity 0.5s ease;" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline poster="/assets/images/hero-poster.png">
         <source src="/assets/video/hero.mp4" type="video/mp4" />
       </video>
-      <canvas id="heroFade" class="position-absolute top-0 start-0 w-100 h-100" style="z-index:0;pointer-events:none;object-fit:cover;"></canvas>
+      
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-8 position-relative z-1">
           <div class="row align-items-center">
@@ -1366,48 +1366,33 @@ document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => 
 </script>
 
     <script>
-    // Seamless loop: capture first frame, fade it in over the loop point
+    // Seamless loop crossfade using requestAnimationFrame
     (function(){
       var vid = document.getElementById('heroVid');
-      var canvas = document.getElementById('heroFade');
-      if(!vid||!canvas) return;
-      var ctx = canvas.getContext('2d');
-      var firstFrameCaptured = false;
-      var fadeMs = 500;
+      if(!vid) return;
+      var fading = false;
       
-      function resizeCanvas(){
-        canvas.width = vid.videoWidth || vid.offsetWidth;
-        canvas.height = vid.videoHeight || vid.offsetHeight;
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
-        canvas.style.objectFit = 'cover';
+      function checkLoop(){
+        if(vid.duration && !fading){
+          var remaining = vid.duration - vid.currentTime;
+          if(remaining < 0.6 && remaining > 0){
+            fading = true;
+            vid.style.opacity = '0';
+            // Wait for loop to happen, then fade back in
+            setTimeout(function(){
+              vid.style.opacity = '1';
+              setTimeout(function(){ fading = false; }, 600);
+            }, remaining * 1000 + 100);
+          }
+        }
+        requestAnimationFrame(checkLoop);
       }
       
-      // Capture the very first frame
-      vid.addEventListener('playing', function onPlay(){
-        vid.removeEventListener('playing', onPlay);
-        setTimeout(function(){
-          resizeCanvas();
-          ctx.drawImage(vid, 0, 0, canvas.width, canvas.height);
-          firstFrameCaptured = true;
-          canvas.style.opacity = '0';
-        }, 100);
+      vid.addEventListener('loadedmetadata', function(){
+        requestAnimationFrame(checkLoop);
       });
-      
-      // Near the end: fade canvas (first frame) in
-      vid.addEventListener('timeupdate', function(){
-        if(!firstFrameCaptured || !vid.duration) return;
-        var remaining = vid.duration - vid.currentTime;
-        if(remaining <= fadeMs/1000){
-          // Fade in the first-frame canvas
-          var progress = 1 - (remaining / (fadeMs/1000));
-          canvas.style.opacity = Math.min(progress, 1);
-        } else if(vid.currentTime < 0.5){
-          // Just looped — fade canvas back out
-          var progress = vid.currentTime / 0.5;
-          canvas.style.opacity = Math.max(1 - progress, 0);
-        }
-      });
+      // Fallback if already loaded
+      if(vid.readyState >= 1) requestAnimationFrame(checkLoop);
     })();
     </script>
   </body>
@@ -1466,48 +1451,33 @@ document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => 
 </script>
 
     <script>
-    // Seamless loop: capture first frame, fade it in over the loop point
+    // Seamless loop crossfade using requestAnimationFrame
     (function(){
       var vid = document.getElementById('heroVid');
-      var canvas = document.getElementById('heroFade');
-      if(!vid||!canvas) return;
-      var ctx = canvas.getContext('2d');
-      var firstFrameCaptured = false;
-      var fadeMs = 500;
+      if(!vid) return;
+      var fading = false;
       
-      function resizeCanvas(){
-        canvas.width = vid.videoWidth || vid.offsetWidth;
-        canvas.height = vid.videoHeight || vid.offsetHeight;
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
-        canvas.style.objectFit = 'cover';
+      function checkLoop(){
+        if(vid.duration && !fading){
+          var remaining = vid.duration - vid.currentTime;
+          if(remaining < 0.6 && remaining > 0){
+            fading = true;
+            vid.style.opacity = '0';
+            // Wait for loop to happen, then fade back in
+            setTimeout(function(){
+              vid.style.opacity = '1';
+              setTimeout(function(){ fading = false; }, 600);
+            }, remaining * 1000 + 100);
+          }
+        }
+        requestAnimationFrame(checkLoop);
       }
       
-      // Capture the very first frame
-      vid.addEventListener('playing', function onPlay(){
-        vid.removeEventListener('playing', onPlay);
-        setTimeout(function(){
-          resizeCanvas();
-          ctx.drawImage(vid, 0, 0, canvas.width, canvas.height);
-          firstFrameCaptured = true;
-          canvas.style.opacity = '0';
-        }, 100);
+      vid.addEventListener('loadedmetadata', function(){
+        requestAnimationFrame(checkLoop);
       });
-      
-      // Near the end: fade canvas (first frame) in
-      vid.addEventListener('timeupdate', function(){
-        if(!firstFrameCaptured || !vid.duration) return;
-        var remaining = vid.duration - vid.currentTime;
-        if(remaining <= fadeMs/1000){
-          // Fade in the first-frame canvas
-          var progress = 1 - (remaining / (fadeMs/1000));
-          canvas.style.opacity = Math.min(progress, 1);
-        } else if(vid.currentTime < 0.5){
-          // Just looped — fade canvas back out
-          var progress = vid.currentTime / 0.5;
-          canvas.style.opacity = Math.max(1 - progress, 0);
-        }
-      });
+      // Fallback if already loaded
+      if(vid.readyState >= 1) requestAnimationFrame(checkLoop);
     })();
     </script>
   </body>
