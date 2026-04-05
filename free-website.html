@@ -190,7 +190,7 @@
             </div>
             <div class="col-xl-8">
               <form id="freeWebsiteForm" class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
-                action="https://n8n.aireclamestudio.nl/webhook/free-scan" method="POST">
+                action="https://n8n.aireclamestudio.nl/webhook/freewebsite" method="POST">
                 <input type="hidden" name="source" value="studiolee-3-free-website">
                 <div>
                   <input type="text" class="form-control border-bottom border-dark" id="fwBedrijfsnaam" name="bedrijfsnaam"
@@ -431,7 +431,7 @@
         source: 'studiolee-3-free-website'
       };
 
-      fetch('https://n8n.aireclamestudio.nl/webhook/free-scan', {
+      fetch('https://n8n.aireclamestudio.nl/webhook/freewebsite', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
