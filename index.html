@@ -1365,36 +1365,7 @@ document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => 
 });
 </script>
 
-    <script>
-    // Seamless loop crossfade using requestAnimationFrame
-    (function(){
-      var vid = document.getElementById('heroVid');
-      if(!vid) return;
-      var fading = false;
-      
-      function checkLoop(){
-        if(vid.duration && !fading){
-          var remaining = vid.duration - vid.currentTime;
-          if(remaining < 0.6 && remaining > 0){
-            fading = true;
-            vid.style.opacity = '0';
-            // Wait for loop to happen, then fade back in
-            setTimeout(function(){
-              vid.style.opacity = '1';
-              setTimeout(function(){ fading = false; }, 600);
-            }, remaining * 1000 + 100);
-          }
-        }
-        requestAnimationFrame(checkLoop);
-      }
-      
-      vid.addEventListener('loadedmetadata', function(){
-        requestAnimationFrame(checkLoop);
-      });
-      // Fallback if already loaded
-      if(vid.readyState >= 1) requestAnimationFrame(checkLoop);
-    })();
-    </script>
+    
   </body>
 
 </html
