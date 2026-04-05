@@ -510,7 +510,7 @@
     </section>
 
     <!--  FAQ Section -->
-    <section class="faq py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <section class="faq py-5 py-lg-11 py-xl-12">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
           <div class="row gap-7 gap-xl-0">
@@ -529,80 +529,38 @@
                   <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <h2 class="mb-0">Veelgestelde vragen</h2>
+                    <p class="fs-5 mb-0 text-opacity-70"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="row justify-content-end">
-            <div class="col-xl-8">
-              <div class="accordion accordion-flush" id="accordionHer" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1000">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#her-faq-1" aria-expanded="false" aria-controls="her-faq-1">
-                      Hoe werkt een afspraakherinnering via WhatsApp?
-                    </button>
-                  </h2>
-                  <div id="her-faq-1" class="accordion-collapse collapse" data-bs-parent="#accordionHer">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Zodra een klant een afspraak boekt in je systeem, wordt automatisch een herinnering ingepland. 24 uur voor de afspraak krijgt de klant een WhatsApp-bericht met de details en een bevestigingsknop. 2 uur van tevoren volgt een tweede herinnering. Bevestigt de klant niet? Dan krijg jij een melding zodat je de plek kunt opvullen.</div>
-                  </div>
+            <div class="col-xl-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <div class="faq-timeline">
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoe werkt een afspraakherinnering via WhatsApp?</div>
+                  <div class="faq-tl-a">Zodra een klant een afspraak boekt in je systeem, wordt automatisch een herinnering ingepland. 24 uur voor de afspraak krijgt de klant een WhatsApp-bericht met de details en een bevestigingsknop. 2 uur van tevoren volgt een tweede herinnering. Bevestigt de klant niet? Dan krijg jij een melding zodat je de plek kunt opvullen.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#her-faq-2" aria-expanded="false" aria-controls="her-faq-2">
-                      Welke nieuwsbrief tool gebruiken jullie?
-                    </button>
-                  </h2>
-                  <div id="her-faq-2" class="accordion-collapse collapse" data-bs-parent="#accordionHer">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Wij werken met GoHighLevel, Mailchimp of Brevo, afhankelijk van jouw situatie. Heb je al een e-mail tool? Dan koppelen wij daar op aan. Heb je nog niks? Dan adviseren wij de beste optie voor jouw budget en behoeften. Bij GoHighLevel zit alles in 1 platform: CRM, herinneringen en nieuwsbrieven.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Welke nieuwsbrief tool gebruiken jullie?</div>
+                  <div class="faq-tl-a">Wij werken met GoHighLevel, Mailchimp of Brevo, afhankelijk van jouw situatie. Heb je al een e-mail tool? Dan koppelen wij daar op aan. Heb je nog niks? Dan adviseren wij de beste optie voor jouw budget en behoeften. Bij GoHighLevel zit alles in 1 platform: CRM, herinneringen en nieuwsbrieven.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#her-faq-3" aria-expanded="false" aria-controls="her-faq-3">
-                      Hoe verstuur ik een nieuwsbrief automatisch?
-                    </button>
-                  </h2>
-                  <div id="her-faq-3" class="accordion-collapse collapse" data-bs-parent="#accordionHer">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Wij stellen een maandelijks schema in. Onze AI schrijft de content op basis van jouw diensten, seizoen en doelgroep. Jij krijgt een preview ter goedkeuring. Na jouw akkoord wordt de nieuwsbrief automatisch verzonden naar het juiste segment. Het enige dat jij doet is 2 minuten reviewen.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoe verstuur ik een nieuwsbrief automatisch?</div>
+                  <div class="faq-tl-a">Wij stellen een maandelijks schema in. Onze AI schrijft de content op basis van jouw diensten, seizoen en doelgroep. Jij krijgt een preview ter goedkeuring. Na jouw akkoord wordt de nieuwsbrief automatisch verzonden naar het juiste segment. Het enige dat jij doet is 2 minuten reviewen.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#her-faq-4" aria-expanded="false" aria-controls="her-faq-4">
-                      Hoeveel kost een afspraakherinnering systeem?
-                    </button>
-                  </h2>
-                  <div id="her-faq-4" class="accordion-collapse collapse" data-bs-parent="#accordionHer">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Het complete pakket met WhatsApp, SMS en e-mail herinneringen begint vanaf &euro;79 per maand excl. BTW. Daarin zit de setup, templates, koppelingen en doorlopend onderhoud. WhatsApp-berichten hebben extra kosten per bericht (ca. &euro;0,05), maar bij de meeste bedrijven is dat verwaarloosbaar ten opzichte van de opbrengst van minder no-shows.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoeveel kost een afspraakherinnering systeem?</div>
+                  <div class="faq-tl-a">Het complete pakket met WhatsApp, SMS en e-mail herinneringen begint vanaf &euro;79 per maand excl. BTW. Daarin zit de setup, templates, koppelingen en doorlopend onderhoud. WhatsApp-berichten hebben extra kosten per bericht (ca. &euro;0,05), maar bij de meeste bedrijven is dat verwaarloosbaar ten opzichte van de opbrengst van minder no-shows.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#her-faq-5" aria-expanded="false" aria-controls="her-faq-5">
-                      Kan ik herinneringen en nieuwsbrieven combineren?
-                    </button>
-                  </h2>
-                  <div id="her-faq-5" class="accordion-collapse collapse" data-bs-parent="#accordionHer">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Absoluut, en dat raden wij ook aan. Herinneringen zorgen voor minder no-shows en directe omzet. Nieuwsbrieven houden je top-of-mind bij bestaande klanten en stimuleren herhaalbezoeken. Samen vormen ze een krachtige combinatie voor klantbehoud en groei. Via GoHighLevel draait alles vanuit 1 platform.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Kan ik herinneringen en nieuwsbrieven combineren?</div>
+                  <div class="faq-tl-a">Absoluut, en dat raden wij ook aan. Herinneringen zorgen voor minder no-shows en directe omzet. Nieuwsbrieven houden je top-of-mind bij bestaande klanten en stimuleren herhaalbezoeken. Samen vormen ze een krachtige combinatie voor klantbehoud en groei. Via GoHighLevel draait alles vanuit 1 platform.</div>
                 </div>
-                <div class="accordion-item border-bottom">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#her-faq-6" aria-expanded="false" aria-controls="her-faq-6">
-                      Werkt dit ook met mijn huidige boekingssysteem?
-                    </button>
-                  </h2>
-                  <div id="her-faq-6" class="accordion-collapse collapse" data-bs-parent="#accordionHer">
-                    <div class="accordion-body pt-0 fs-5 text-dark">In de meeste gevallen wel. Wij koppelen met populaire systemen zoals Salonized, Treatwell, SimplyBook, Calendly en Google Calendar. Heb je een ander systeem? Dan checken wij tijdens de intake of er een koppeling mogelijk is. Meestal is dat het geval via API of webhooks.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Werkt dit ook met mijn huidige boekingssysteem?</div>
+                  <div class="faq-tl-a">In de meeste gevallen wel. Wij koppelen met populaire systemen zoals Salonized, Treatwell, SimplyBook, Calendly en Google Calendar. Heb je een ander systeem? Dan checken wij tijdens de intake of er een koppeling mogelijk is. Meestal is dat het geval via API of webhooks.</div>
                 </div>
               </div>
             </div>
