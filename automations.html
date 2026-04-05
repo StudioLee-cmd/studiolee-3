@@ -481,7 +481,7 @@
     </section>
 
     <!--  FAQ Section -->
-    <section class="faq py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <section class="faq py-5 py-lg-11 py-xl-12">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
           <div class="row gap-7 gap-xl-0">
@@ -500,80 +500,38 @@
                   <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <h2 class="mb-0">Veelgestelde vragen over automatisering</h2>
+                    <p class="fs-5 mb-0 text-opacity-70"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="row justify-content-end">
-            <div class="col-xl-8">
-              <div class="accordion accordion-flush" id="accordionAuto" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1000">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#auto-faq-1" aria-expanded="false" aria-controls="auto-faq-1">
-                      Welke processen kan ik automatiseren?
-                    </button>
-                  </h2>
-                  <div id="auto-faq-1" class="accordion-collapse collapse" data-bs-parent="#accordionAuto">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Vrijwel elk repetitief proces. De meest voorkomende: lead opvolging, e-mail flows, factuurverwerking, review-verzoeken, data synchronisatie tussen tools, social media posting, rapportages en klant-onboarding. Als het een vast patroon volgt, kunnen wij het automatiseren.</div>
-                  </div>
+            <div class="col-xl-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <div class="faq-timeline">
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Welke processen kan ik automatiseren?</div>
+                  <div class="faq-tl-a">Vrijwel elk repetitief proces. De meest voorkomende: lead opvolging, e-mail flows, factuurverwerking, review-verzoeken, data synchronisatie tussen tools, social media posting, rapportages en klant-onboarding. Als het een vast patroon volgt, kunnen wij het automatiseren.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#auto-faq-2" aria-expanded="false" aria-controls="auto-faq-2">
-                      Wat kost het om processen te automatiseren?
-                    </button>
-                  </h2>
-                  <div id="auto-faq-2" class="accordion-collapse collapse" data-bs-parent="#accordionAuto">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Een simpele workflow (bijv. lead notificatie of review-verzoek) begint vanaf &euro;600 excl. BTW. Complexere systemen zoals een volledig AI Content Writer System starten vanaf &euro;3.000. Tijdens de intake krijg je een exacte offerte zonder verrassingen achteraf.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Wat kost het om processen te automatiseren?</div>
+                  <div class="faq-tl-a">Een simpele workflow (bijv. lead notificatie of review-verzoek) begint vanaf &euro;600 excl. BTW. Complexere systemen zoals een volledig AI Content Writer System starten vanaf &euro;3.000. Tijdens de intake krijg je een exacte offerte zonder verrassingen achteraf.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#auto-faq-3" aria-expanded="false" aria-controls="auto-faq-3">
-                      Welke tools koppelen jullie?
-                    </button>
-                  </h2>
-                  <div id="auto-faq-3" class="accordion-collapse collapse" data-bs-parent="#accordionAuto">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Wij werken met N8N en koppelen vrijwel elke tool die een API heeft. Populaire koppelingen: GoHighLevel, HubSpot, Pipedrive, WhatsApp Business, Google Sheets, Airtable, Mailchimp, Brevo, Stripe, Mollie, Exact Online en tientallen meer. Geen API? Dan zoeken wij een alternatieve route via webhooks of scraping.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Welke tools koppelen jullie?</div>
+                  <div class="faq-tl-a">Wij werken met N8N en koppelen vrijwel elke tool die een API heeft. Populaire koppelingen: GoHighLevel, HubSpot, Pipedrive, WhatsApp Business, Google Sheets, Airtable, Mailchimp, Brevo, Stripe, Mollie, Exact Online en tientallen meer. Geen API? Dan zoeken wij een alternatieve route via webhooks of scraping.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#auto-faq-4" aria-expanded="false" aria-controls="auto-faq-4">
-                      Hoe lang duurt het bouwen van een workflow?
-                    </button>
-                  </h2>
-                  <div id="auto-faq-4" class="accordion-collapse collapse" data-bs-parent="#accordionAuto">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Een simpele automatisering is binnen 1-2 weken live. Complexere systemen met meerdere koppelingen en logica duren 2-4 weken. Het AI Content Writer System is een project van 4-6 weken. Bij de intake krijg je een realistische planning.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoe lang duurt het bouwen van een workflow?</div>
+                  <div class="faq-tl-a">Een simpele automatisering is binnen 1-2 weken live. Complexere systemen met meerdere koppelingen en logica duren 2-4 weken. Het AI Content Writer System is een project van 4-6 weken. Bij de intake krijg je een realistische planning.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#auto-faq-5" aria-expanded="false" aria-controls="auto-faq-5">
-                      Wat als er iets misgaat met de automatisering?
-                    </button>
-                  </h2>
-                  <div id="auto-faq-5" class="accordion-collapse collapse" data-bs-parent="#accordionAuto">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Elke workflow heeft ingebouwde error handling en monitoring. Als er iets faalt, krijg je (en wij) direct een melding. Na oplevering krijg je een maand gratis support. Daarna bieden wij optioneel een onderhoudscontract aan voor doorlopende monitoring en aanpassingen.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Wat als er iets misgaat met de automatisering?</div>
+                  <div class="faq-tl-a">Elke workflow heeft ingebouwde error handling en monitoring. Als er iets faalt, krijg je (en wij) direct een melding. Na oplevering krijg je een maand gratis support. Daarna bieden wij optioneel een onderhoudscontract aan voor doorlopende monitoring en aanpassingen.</div>
                 </div>
-                <div class="accordion-item border-bottom">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#auto-faq-6" aria-expanded="false" aria-controls="auto-faq-6">
-                      Kan ik de automatisering later aanpassen of uitbreiden?
-                    </button>
-                  </h2>
-                  <div id="auto-faq-6" class="accordion-collapse collapse" data-bs-parent="#accordionAuto">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Absoluut. Alle workflows worden gebouwd in N8N, een open-source platform. Jij hebt volledige eigenaarschap. Wij documenteren alles zodat jij of een andere partij het kan aanpassen. Natuurlijk helpen wij ook graag met uitbreidingen als je bedrijf groeit en er nieuwe behoeften ontstaan.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Kan ik de automatisering later aanpassen of uitbreiden?</div>
+                  <div class="faq-tl-a">Absoluut. Alle workflows worden gebouwd in N8N, een open-source platform. Jij hebt volledige eigenaarschap. Wij documenteren alles zodat jij of een andere partij het kan aanpassen. Natuurlijk helpen wij ook graag met uitbreidingen als je bedrijf groeit en er nieuwe behoeften ontstaan.</div>
                 </div>
               </div>
             </div>
