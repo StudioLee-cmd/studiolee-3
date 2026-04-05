@@ -1149,48 +1149,49 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-xl-6 mb-7 mb-xl-0">
-              <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
-                data-aos-duration="1000">
-                <a href="/blog/ai-automatisering-mkb-vijf-processen"
-                  class="resources-img resources-img-first position-relative overflow-hidden d-block">
-                  <img src="/assets/images/blog/ai-automatisering-mkb-vijf-processen.jpg" alt="AI-automatisering voor het MKB" class="img-fluid">
-                </a>
-                <div class="resources-details">
-                  <p class="mb-0">3 apr 2026</p>
-                  <h4 class="mb-0">AI-automatisering voor het MKB: 5 processen om te starten</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
-              <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1000">
-                <a href="/blog/lokale-vindbaarheid-mkb-complete-gids" class="resources-img position-relative overflow-hidden d-block">
-                  <img src="/assets/images/blog/lokale-vindbaarheid-mkb-complete-gids.jpg" alt="Lokale vindbaarheid voor het MKB" class="img-fluid">
-                </a>
-                <div class="resources-details">
-                  <p class="mb-0">3 apr 2026</p>
-                  <h4 class="mb-0">Lokale vindbaarheid voor het MKB: complete gids</h4>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
-              <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="300"
-                data-aos-duration="1000">
-                <a href="/blog/marketing-uitbesteden-mkb-kosten" class="resources-img position-relative overflow-hidden d-block">
-                  <img src="/assets/images/blog/marketing-uitbesteden-mkb-kosten.jpg" alt="Marketing uitbesteden als MKB" class="img-fluid">
-                </a>
-                <div class="resources-details">
-                  <p class="mb-0">2 apr 2026</p>
-                  <h4 class="mb-0">Marketing uitbesteden als MKB: wat kost het en wanneer loont het?</h4>
-                </div>
-              </div>
-            </div>
+          <div class="row gap-7 gap-lg-0" id="homepage-latest-blogs">
+            <p class="text-muted">Laden...</p>
+          </div>
+          <div class="text-center mt-5">
+            <a href="/blog" class="btn">
+              <span class="btn-text">Alle artikelen</span>
+              <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+            </a>
           </div>
         </div>
       </div>
     </section>
+    <script>
+    // Load 3 most recent blog posts from clusters.json
+    fetch('/blog/clusters.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var posts = data.posts.slice(0, 3);
+        var container = document.getElementById('homepage-latest-blogs');
+        if (!container || !posts.length) return;
+        
+        var first = posts[0];
+        var html = '<div class="col-lg-7 mb-7 mb-lg-0"><div class="resources d-flex flex-column gap-6">' +
+          '<a href="/blog/' + first.slug + '/" class="resources-img resources-img-first position-relative overflow-hidden d-block">' +
+          '<img src="' + first.image + '" alt="' + first.title + '" class="img-fluid"></a>' +
+          '<div class="resources-details"><p class="mb-0">' + first.date + '</p>' +
+          '<h4 class="mb-0"><a href="/blog/' + first.slug + '/" class="text-dark">' + first.title + '</a></h4></div></div></div>';
+        
+        html += '<div class="col-lg-5"><div class="d-flex flex-column gap-7">';
+        for (var i = 1; i < posts.length; i++) {
+          var p = posts[i];
+          html += '<div class="resources d-flex flex-column gap-6">' +
+            '<a href="/blog/' + p.slug + '/" class="resources-img resources-img-blog position-relative overflow-hidden d-block">' +
+            '<img src="' + p.image + '" alt="' + p.title + '" class="img-fluid"></a>' +
+            '<div class="resources-details"><p class="mb-0">' + p.date + '</p>' +
+            '<h4 class="mb-0"><a href="/blog/' + p.slug + '/" class="text-dark">' + p.title + '</a></h4></div></div>';
+        }
+        html += '</div></div>';
+        
+        container.innerHTML = html;
+      })
+      .catch(function() {});
+    </script>
 
     <!--  FAQ Section -->
     <section class="faq py-5 py-lg-11 py-xl-12 bg-light-gray">
