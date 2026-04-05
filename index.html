@@ -21,7 +21,7 @@
   width: 300px;
   height: 300px;
   object-fit: cover;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 6px rgba(193,255,114,0.08);
+  box-shadow: none;
   margin: 0 auto;
   display: block;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -36,8 +36,12 @@
   75% { transform: scale(0.97) rotate(-0.5deg); }
   100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
+.services-tab .row {
+  align-items: flex-start !important;
+}
 .services-tab .tab-content {
-  position: relative;
+  position: sticky;
+  top: 120px;
   min-height: 340px;
 }
 .services-tab .tab-content .tab-pane {
