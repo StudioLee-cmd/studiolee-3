@@ -17322,3 +17322,16 @@ section::after {
 .header .logo img {
   max-height: 100px !important;
 }
+
+/* FAQ section — transparent accordion items */
+.faq .accordion-item {
+  background-color: transparent;
+  border-color: rgba(31, 42, 46, 0.15);
+}
+.faq .accordion-button {
+  background-color: transparent;
+}
+.faq .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  box-shadow: none;
+}
