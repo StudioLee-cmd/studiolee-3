@@ -193,20 +193,20 @@
                     <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Google Reviews score</li>
                     <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Binnen 2 min in je inbox</li>
                   </ul>
-                  <form id="freeScanForm" class="d-flex flex-column gap-4 mt-auto"
+                  <form id="freeScanForm" class="d-flex flex-column gap-3"
                     action="https://n8n.aireclamestudio.nl/webhook/free-scan" method="POST">
                     <input type="hidden" name="source" value="studiolee-3-free-scan">
-                    <input type="email" class="form-control border-bottom border-dark bg-transparent" name="email" placeholder="Je e-mailadres" required>
-                    <input type="url" class="form-control border-bottom border-dark bg-transparent" name="website" placeholder="Je website URL" required>
+                    <input type="email" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="email" placeholder="Je e-mailadres" required>
+                    <input type="url" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="website" placeholder="Je website URL" required>
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="scanAkkoord" required>
                       <label class="form-check-label" for="scanAkkoord">
                         Ik ga akkoord met de <a href="/privacy" class="fw-bold">Privacy Policy</a>
                       </label>
                     </div>
-                    <button type="submit" class="btn w-100 justify-content-center">
-                      <span class="btn-text">Ontvang Gratis Scan</span>
-                      <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                    <button type="submit" class="btn btn-dark w-100 justify-content-center rounded-pill py-3" style="background:#1F2A2E !important;color:#fff !important;">
+                      <span class="btn-text text-white">Ontvang Gratis Scan</span>
+                      <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-primary text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
                     </button>
                     <p class="mb-0 text-center" style="font-size:0.85rem;opacity:0.7;">Check ook je spam als je het rapport niet ziet.</p>
                   </form>
@@ -239,12 +239,12 @@
                   <div class="rounded-3 p-3" style="background:rgba(193,255,114,0.1);border:1px solid rgba(193,255,114,0.2);">
                     <p class="mb-0 text-white" style="font-size:0.9rem;"><iconify-icon icon="lucide:info" class="text-primary me-1"></iconify-icon> Na 14 dagen wordt je abonnement automatisch verlengd voor €79/maand (excl. BTW). Je kunt altijd opzeggen vóór het einde van je proefperiode — dan betaal je niets.</p>
                   </div>
-                  <form id="freeTrialForm" class="d-flex flex-column gap-4 mt-auto"
+                  <form id="freeTrialForm" class="d-flex flex-column gap-3"
                     action="https://n8n.aireclamestudio.nl/webhook/Client-sign-up" method="POST">
                     <input type="hidden" name="source" value="studiolee-3-free-trial">
-                    <input type="email" class="form-control border-bottom border-light bg-transparent text-white" name="email" placeholder="Je e-mailadres" required style="color:#fff !important;">
-                    <input type="text" class="form-control border-bottom border-light bg-transparent text-white" name="bedrijfsnaam" placeholder="Bedrijfsnaam" required style="color:#fff !important;">
-                    <select class="form-control border-bottom border-light bg-transparent text-white" name="niche" required style="color:#fff !important;">
+                    <input type="email" class="form-control border border-light rounded-3 px-3 py-3 bg-transparent text-white" name="email" placeholder="Je e-mailadres" required style="color:#fff !important;">
+                    <input type="text" class="form-control border border-light rounded-3 px-3 py-3 bg-transparent text-white" name="bedrijfsnaam" placeholder="Bedrijfsnaam" required style="color:#fff !important;">
+                    <select class="form-control border border-light rounded-3 px-3 py-3 bg-transparent text-white" name="niche" required style="color:#fff !important;">
                       <option value="" disabled selected>Selecteer je niche</option>
                       <option value="kapper">Kapper</option>
                       <option value="loodgieter">Loodgieter</option>
