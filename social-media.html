@@ -975,7 +975,7 @@
     </section>
 
     <!--  FAQ Section -->
-    <section class="faq py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <section class="faq py-5 py-lg-11 py-xl-12">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
           <div class="row gap-7 gap-xl-0">
@@ -984,7 +984,7 @@
                 data-aos-duration="1000">
                 <span
                   class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">12</span>
-                <hr class="border-line bg-white">
+                <hr class="border-line">
                 <span class="badge text-bg-dark">FAQ</span>
               </div>
             </div>
@@ -994,125 +994,54 @@
                   <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <h2 class="mb-0">Veelgestelde vragen over social media uitbesteden</h2>
+                    <p class="fs-5 mb-0 text-opacity-70"></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="row justify-content-end">
-            <div class="col-xl-8">
-              <div class="accordion accordion-flush" id="accordionSocial" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1000">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-1" aria-expanded="false" aria-controls="social-faq-1">
-                      Op welke platformen posten jullie?
-                    </button>
-                  </h2>
-                  <div id="social-faq-1" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Wij beheren Instagram, Facebook, LinkedIn, TikTok, Google Business Profile en meer. Per platform optimaliseren wij de content voor het specifieke format en algoritme. Samen bepalen we welke platformen het meest relevant zijn voor jouw doelgroep.</div>
-                  </div>
+            <div class="col-xl-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <div class="faq-timeline">
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Op welke platformen posten jullie?</div>
+                  <div class="faq-tl-a">Wij beheren Instagram, Facebook, LinkedIn, TikTok, Google Business Profile en meer. Per platform optimaliseren wij de content voor het specifieke format en algoritme. Samen bepalen we welke platformen het meest relevant zijn voor jouw doelgroep.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-2" aria-expanded="false" aria-controls="social-faq-2">
-                      Hoe vaak wordt er gepost?
-                    </button>
-                  </h2>
-                  <div id="social-faq-2" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Standaard publiceren wij 3-5 keer per week, afhankelijk van het platform en jouw pakket. De frequentie wordt afgestemd op wat optimaal werkt voor jouw branche en doelgroep. Consistentie is belangrijker dan kwantiteit.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoe vaak wordt er gepost?</div>
+                  <div class="faq-tl-a">Standaard publiceren wij 3-5 keer per week, afhankelijk van het platform en jouw pakket. De frequentie wordt afgestemd op wat optimaal werkt voor jouw branche en doelgroep. Consistentie is belangrijker dan kwantiteit.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-3" aria-expanded="false" aria-controls="social-faq-3">
-                      Moet ik content aanleveren of foto's maken?
-                    </button>
-                  </h2>
-                  <div id="social-faq-3" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Nee, dat is niet nodig. Wij creeren alle content zelf met AI-tools en stockfotografie. Als je eigen foto's of video's hebt is dat een bonus, maar het is zeker geen vereiste. Wij zorgen voor alles.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Moet ik content aanleveren of foto's maken?</div>
+                  <div class="faq-tl-a">Nee, dat is niet nodig. Wij creeren alle content zelf met AI-tools en stockfotografie. Als je eigen foto's of video's hebt is dat een bonus, maar het is zeker geen vereiste. Wij zorgen voor alles.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-4" aria-expanded="false" aria-controls="social-faq-4">
-                      Kan ik posts goedkeuren voor publicatie?
-                    </button>
-                  </h2>
-                  <div id="social-faq-4" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Ja, als je dat wilt. Wij kunnen werken met een goedkeuringsflow waarbij je posts vooraf kunt reviewen. Maar de meeste klanten kiezen ervoor om ons volledig te vertrouwen na de eerste maand — zo bespaar je maximaal tijd.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Kan ik posts goedkeuren voor publicatie?</div>
+                  <div class="faq-tl-a">Ja, als je dat wilt. Wij kunnen werken met een goedkeuringsflow waarbij je posts vooraf kunt reviewen. Maar de meeste klanten kiezen ervoor om ons volledig te vertrouwen na de eerste maand — zo bespaar je maximaal tijd.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-5" aria-expanded="false" aria-controls="social-faq-5">
-                      Reageren jullie ook op comments en DM's?
-                    </button>
-                  </h2>
-                  <div id="social-faq-5" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Community management kan onderdeel zijn van het pakket. Wij reageren op comments, beantwoorden DM's en zorgen dat jouw volgers zich gehoord voelen. Dit verhoogt engagement en bouwt een loyale community op.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Reageren jullie ook op comments en DM's?</div>
+                  <div class="faq-tl-a">Community management kan onderdeel zijn van het pakket. Wij reageren op comments, beantwoorden DM's en zorgen dat jouw volgers zich gehoord voelen. Dit verhoogt engagement en bouwt een loyale community op.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-6" aria-expanded="false" aria-controls="social-faq-6">
-                      Wat kost social media uitbesteden?
-                    </button>
-                  </h2>
-                  <div id="social-faq-6" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">De kosten van social media uitbesteden hangen af van het aantal platformen, de publicatiefrequentie en of je extra diensten zoals community management wilt. Bij STUDIOLEE betaal je MKB-tarieven voor premium kwaliteit. <a href="/tarieven" class="text-primary fw-bold">Bekijk onze tarieven</a> of plan een gratis gesprek voor een voorstel op maat. Geen verrassingen, geen verborgen kosten.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Wat kost social media uitbesteden?</div>
+                  <div class="faq-tl-a">De kosten van social media uitbesteden hangen af van het aantal platformen, de publicatiefrequentie en of je extra diensten zoals community management wilt. Bij STUDIOLEE betaal je MKB-tarieven voor premium kwaliteit. <a href="/tarieven" class="text-primary fw-bold">Bekijk onze tarieven</a> of plan een gratis gesprek voor een voorstel op maat. Geen verrassingen, geen verborgen kosten.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-7" aria-expanded="false" aria-controls="social-faq-7">
-                      Op welke platformen beheren jullie social media?
-                    </button>
-                  </h2>
-                  <div id="social-faq-7" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Wij beheren Instagram, Facebook, LinkedIn, TikTok, Google Business Profile en meer. Per platform optimaliseren wij de content voor het specifieke format en algoritme. Of je nu TikTok marketing wilt inzetten of LinkedIn voor B2B-leads, wij bepalen samen welke platformen het meest relevant zijn voor jouw doelgroep en branche.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Op welke platformen beheren jullie social media?</div>
+                  <div class="faq-tl-a">Wij beheren Instagram, Facebook, LinkedIn, TikTok, Google Business Profile en meer. Per platform optimaliseren wij de content voor het specifieke format en algoritme. Of je nu TikTok marketing wilt inzetten of LinkedIn voor B2B-leads, wij bepalen samen welke platformen het meest relevant zijn voor jouw doelgroep en branche.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-8" aria-expanded="false" aria-controls="social-faq-8">
-                      Hoe vaak wordt er gepost als ik social media laat beheren?
-                    </button>
-                  </h2>
-                  <div id="social-faq-8" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Standaard publiceren wij 3-5 keer per week, afhankelijk van het platform en jouw pakket. De frequentie is onderdeel van je social media strategie en wordt afgestemd op wat optimaal werkt voor jouw branche. Consistentie is belangrijker dan kwantiteit — en daar zorgen wij voor.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoe vaak wordt er gepost als ik social media laat beheren?</div>
+                  <div class="faq-tl-a">Standaard publiceren wij 3-5 keer per week, afhankelijk van het platform en jouw pakket. De frequentie is onderdeel van je social media strategie en wordt afgestemd op wat optimaal werkt voor jouw branche. Consistentie is belangrijker dan kwantiteit — en daar zorgen wij voor.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-9" aria-expanded="false" aria-controls="social-faq-9">
-                      Is TikTok geschikt voor mijn bedrijf?
-                    </button>
-                  </h2>
-                  <div id="social-faq-9" class="accordion-collapse collapse" data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">TikTok voor bedrijven werkt in vrijwel elke branche, van hoveniers en schoonmaakbedrijven tot klinieken en rijscholen. Het platform beloont creativiteit boven budget, waardoor ook kleinere bedrijven enorm bereik kunnen genereren. Wij bedenken creatieve concepten die passen bij jouw niche en helpen je om TikTok marketing effectief in te zetten.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Is TikTok geschikt voor mijn bedrijf?</div>
+                  <div class="faq-tl-a">TikTok voor bedrijven werkt in vrijwel elke branche, van hoveniers en schoonmaakbedrijven tot klinieken en rijscholen. Het platform beloont creativiteit boven budget, waardoor ook kleinere bedrijven enorm bereik kunnen genereren. Wij bedenken creatieve concepten die passen bij jouw niche en helpen je om TikTok marketing effectief in te zetten.</div>
                 </div>
-                <div class="accordion-item border-bottom">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#social-faq-10" aria-expanded="false" aria-controls="social-faq-10">
-                      Social media zelf doen of uitbesteden?
-                    </button>
-                  </h2>
-                  <div id="social-faq-10" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionSocial">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Social media zelf doen kost al snel 5-10 uur per week als je het goed wilt doen. Uitbesteden aan STUDIOLEE betekent dat je consistent, professionele content krijgt zonder er zelf tijd aan te besteden. Wij kennen de algoritmes, maken de visuals en plannen alles in. <a href="/free-trial" class="text-primary fw-bold">Start met een gratis scan</a> en ontdek wat wij voor jouw bedrijf kunnen betekenen.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Social media zelf doen of uitbesteden?</div>
+                  <div class="faq-tl-a">Social media zelf doen kost al snel 5-10 uur per week als je het goed wilt doen. Uitbesteden aan STUDIOLEE betekent dat je consistent, professionele content krijgt zonder er zelf tijd aan te besteden. Wij kennen de algoritmes, maken de visuals en plannen alles in. <a href="/free-trial" class="text-primary fw-bold">Start met een gratis scan</a> en ontdek wat wij voor jouw bedrijf kunnen betekenen.</div>
                 </div>
               </div>
             </div>
