@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "slug": "mkb-groei-ai-systemen",
+      "title": "MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren",
+      "date": "2026-04-05",
+      "cluster": "mkb-groei",
+      "image": "/assets/images/blog/mkb-groei-ai-systemen.jpg"
+    },
+    {
+      "slug": "branding-mkb-belang",
+      "title": "Branding voor het MKB: waarom je merk belangrijker is dan je product",
+      "date": "2026-04-05",
+      "cluster": "branding",
+      "image": "/assets/images/blog/branding-mkb-belang.jpg"
+    },
+    {
       "slug": "managed-service-mkb-uitbesteden",
       "title": "Managed service voor het MKB: waarom uitbesteden slimmer is",
       "date": "2026-04-04",
