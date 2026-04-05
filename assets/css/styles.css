@@ -16503,7 +16503,7 @@ textarea.form-control-lg {
 }
 .header.fixed-header {
   padding: 20px 0;
-  background-color: var(--bs-primary);
+  background-color: var(--bs-dark);
 }
 .header.fixed-header .logo .logo-dark {
   display: block;
