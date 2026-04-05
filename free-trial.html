@@ -171,103 +171,121 @@
                   <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <h2 class="mb-0">Probeer het gratis</h2>
-                    <p class="fs-5 mb-0 text-opacity-70">Vul het formulier in en ontdek hoe STUDIOLEE jouw bedrijf kan
-                      laten groeien met AI. Geen creditcard nodig, geen verplichtingen.</p>
+                    <p class="fs-5 mb-0 text-opacity-70">Kies wat bij je past: een snelle AI-scan per e-mail, of een volledige proefperiode met persoonlijke onboarding.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row justify-content-between gap-7 gap-xl-0">
-            <div class="col-xl-3">
-              <div class="d-flex flex-column gap-4" data-aos="fade-right" data-aos-delay="100"
-                data-aos-duration="1000">
-                <h4 class="mb-0">Wat krijg je?</h4>
-                <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-                  <li class="hstack gap-2 fs-5">
-                    <iconify-icon icon="lucide:check" class="text-primary fs-7"></iconify-icon>
-                    Gratis SEO & marketing scan
-                  </li>
-                  <li class="hstack gap-2 fs-5">
-                    <iconify-icon icon="lucide:check" class="text-primary fs-7"></iconify-icon>
-                    AI-chatbot demo voor jouw niche
-                  </li>
-                  <li class="hstack gap-2 fs-5">
-                    <iconify-icon icon="lucide:check" class="text-primary fs-7"></iconify-icon>
-                    Persoonlijk adviesgesprek
-                  </li>
-                  <li class="hstack gap-2 fs-5">
-                    <iconify-icon icon="lucide:check" class="text-primary fs-7"></iconify-icon>
-                    Geen verplichtingen
-                  </li>
-                </ul>
+          <div class="row gap-7 gap-lg-0 justify-content-center">
+            <!-- Option 1: Free AI Scan -->
+            <div class="col-lg-6 mb-7 mb-lg-0" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+              <div class="card bg-primary h-100">
+                <div class="card-body d-flex flex-column gap-5 p-4 p-xl-5">
+                  <div>
+                    <span class="badge text-bg-dark mb-3">Optie 1 — Gratis</span>
+                    <h3 class="mb-2">Gratis AI Scan</h3>
+                    <p class="mb-0 fs-5">Ontvang binnen 2 minuten een volledig AI-rapport van jouw online aanwezigheid per e-mail. Geen gesprek nodig.</p>
+                  </div>
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> SEO & vindbaarheid analyse</li>
+                    <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Social media check</li>
+                    <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Google Reviews score</li>
+                    <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Binnen 2 min in je inbox</li>
+                  </ul>
+                  <form id="freeScanForm" class="d-flex flex-column gap-4 mt-auto"
+                    action="https://n8n.aireclamestudio.nl/webhook/free-scan" method="POST">
+                    <input type="hidden" name="source" value="studiolee-3-free-scan">
+                    <input type="email" class="form-control border-bottom border-dark bg-transparent" name="email" placeholder="Je e-mailadres" required>
+                    <input type="url" class="form-control border-bottom border-dark bg-transparent" name="website" placeholder="Je website URL" required>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="scanAkkoord" required>
+                      <label class="form-check-label" for="scanAkkoord">
+                        Ik ga akkoord met de <a href="/privacy" class="fw-bold">Privacy Policy</a>
+                      </label>
+                    </div>
+                    <button type="submit" class="btn w-100 justify-content-center">
+                      <span class="btn-text">Ontvang Gratis Scan</span>
+                      <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                    </button>
+                    <p class="mb-0 text-center" style="font-size:0.85rem;opacity:0.7;">Check ook je spam als je het rapport niet ziet.</p>
+                  </form>
+                  <div id="scanSuccess" class="d-none text-center py-4">
+                    <span class="round-64 rounded-circle bg-dark hstack justify-content-center d-inline-flex mb-3">
+                      <iconify-icon icon="lucide:check" class="fs-6 text-primary"></iconify-icon>
+                    </span>
+                    <h4 class="mb-2">Scan verstuurd!</h4>
+                    <p class="mb-0">Check je inbox (en spam) — je ontvangt het rapport binnen 2 minuten.</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-xl-8">
-              <form id="freeTrialForm" class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"
-                action="https://n8n.aireclamestudio.nl/webhook/Client-sign-up" method="POST">
-                <input type="hidden" name="source" value="studiolee-3-free-trial">
-                <div>
-                  <input type="email" class="form-control border-bottom border-dark" id="trialEmail" name="email"
-                    placeholder="Email" required>
-                </div>
-                <div>
-                  <input type="text" class="form-control border-bottom border-dark" id="trialBedrijfsnaam" name="bedrijfsnaam"
-                    placeholder="Bedrijfsnaam" required>
-                </div>
-                <div>
-                  <select class="form-control border-bottom border-dark" id="trialNiche" name="niche" required>
-                    <option value="" disabled selected>Selecteer je niche</option>
-                    <option value="kapper">Kapper</option>
-                    <option value="loodgieter">Loodgieter</option>
-                    <option value="elektricien">Elektricien</option>
-                    <option value="hovenier">Hovenier</option>
-                    <option value="schilder">Schilder</option>
-                    <option value="dakdekker">Dakdekker</option>
-                    <option value="schoonmaak">Schoonmaak</option>
-                    <option value="auto">Auto</option>
-                    <option value="restaurant">Restaurant</option>
-                    <option value="tandarts">Tandarts</option>
-                    <option value="fysiotherapie">Fysiotherapie</option>
-                    <option value="vastgoed">Vastgoed</option>
-                    <option value="overig">Overig</option>
-                  </select>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="trialAkkoord" name="akkoord" required>
-                  <label class="form-check-label fs-5" for="trialAkkoord">
-                    Ik ga akkoord met de <a href="/privacy" class="fw-bold">Privacy Policy</a> en
-                    <a href="/algemene-voorwaarden" class="fw-bold">Algemene Voorwaarden</a>.
-                  </label>
-                </div>
-                <div id="trialError" class="d-none">
-                  <div class="alert alert-danger mb-0 fs-5"></div>
-                </div>
-                <button type="submit" id="trialSubmitBtn" class="btn w-100 justify-content-center">
-                  <span class="btn-text">Start Gratis Proefperiode</span>
-                  <iconify-icon icon="lucide:arrow-up-right"
-                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-                </button>
-              </form>
-              <!-- Success message (hidden by default) -->
-              <div id="trialSuccess" class="d-none text-center py-5">
-                <div class="d-flex flex-column align-items-center gap-4">
-                  <span class="round-64 rounded-circle bg-primary hstack justify-content-center">
-                    <iconify-icon icon="lucide:check" class="fs-6 text-dark"></iconify-icon>
-                  </span>
-                  <h3 class="mb-0">Aanmelding ontvangen!</h3>
-                  <p class="fs-5 text-muted mb-0">We nemen zo snel mogelijk contact met je op om je gratis scan te bespreken.</p>
-                  <a href="https://wa.me/31611594862?text=Hoi!%20Ik%20heb%20net%20een%20gratis%20scan%20aangevraagd%20via%20studiolee.nl"
-                    target="_blank" rel="noopener noreferrer"
-                    class="btn btn-primary text-dark fw-bold fs-6 px-4 py-3 hstack gap-2 justify-content-center rounded-pill mt-3">
-                    <iconify-icon icon="lucide:message-circle" class="fs-7"></iconify-icon>
-                    Direct chatten via WhatsApp
-                  </a>
+
+            <!-- Option 2: Free Trial -->
+            <div class="col-lg-6 mb-7 mb-lg-0" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <div class="card bg-dark h-100">
+                <div class="card-body d-flex flex-column gap-5 p-4 p-xl-5">
+                  <div>
+                    <span class="badge bg-primary text-dark mb-3">Optie 2 — Proefperiode</span>
+                    <h3 class="mb-2 text-white">Gratis Proefperiode</h3>
+                    <p class="mb-0 fs-5 text-white text-opacity-70">Ervaar onze managed service 14 dagen gratis. Persoonlijke onboarding, volledige setup, geen verplichtingen.</p>
+                  </div>
+                  <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li class="hstack gap-2 fs-5 text-white"><iconify-icon icon="lucide:check" class="fs-7 text-primary"></iconify-icon> AI-chatbot demo voor jouw niche</li>
+                    <li class="hstack gap-2 fs-5 text-white"><iconify-icon icon="lucide:check" class="fs-7 text-primary"></iconify-icon> Persoonlijk adviesgesprek</li>
+                    <li class="hstack gap-2 fs-5 text-white"><iconify-icon icon="lucide:check" class="fs-7 text-primary"></iconify-icon> Volledige setup & onboarding</li>
+                    <li class="hstack gap-2 fs-5 text-white"><iconify-icon icon="lucide:check" class="fs-7 text-primary"></iconify-icon> Geen creditcard nodig</li>
+                  </ul>
+                  <form id="freeTrialForm" class="d-flex flex-column gap-4 mt-auto"
+                    action="https://n8n.aireclamestudio.nl/webhook/Client-sign-up" method="POST">
+                    <input type="hidden" name="source" value="studiolee-3-free-trial">
+                    <input type="email" class="form-control border-bottom border-light bg-transparent text-white" name="email" placeholder="Je e-mailadres" required style="color:#fff !important;">
+                    <input type="text" class="form-control border-bottom border-light bg-transparent text-white" name="bedrijfsnaam" placeholder="Bedrijfsnaam" required style="color:#fff !important;">
+                    <select class="form-control border-bottom border-light bg-transparent text-white" name="niche" required style="color:#fff !important;">
+                      <option value="" disabled selected>Selecteer je niche</option>
+                      <option value="kapper">Kapper</option>
+                      <option value="loodgieter">Loodgieter</option>
+                      <option value="elektricien">Elektricien</option>
+                      <option value="hovenier">Hovenier</option>
+                      <option value="schilder">Schilder</option>
+                      <option value="dakdekker">Dakdekker</option>
+                      <option value="schoonmaak">Schoonmaak</option>
+                      <option value="auto">Auto</option>
+                      <option value="restaurant">Restaurant</option>
+                      <option value="tandarts">Tandarts</option>
+                      <option value="fysiotherapie">Fysiotherapie</option>
+                      <option value="vastgoed">Vastgoed</option>
+                      <option value="overig">Overig</option>
+                    </select>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="trialAkkoord" required>
+                      <label class="form-check-label text-white" for="trialAkkoord">
+                        Ik ga akkoord met de <a href="/privacy" class="text-primary fw-bold">Privacy Policy</a> en
+                        <a href="/algemene-voorwaarden" class="text-primary fw-bold">Algemene Voorwaarden</a>.
+                      </label>
+                    </div>
+                    <button type="submit" class="btn w-100 justify-content-center">
+                      <span class="btn-text">Start Gratis Proefperiode</span>
+                      <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                    </button>
+                  </form>
+                  <div id="trialSuccess" class="d-none text-center py-4">
+                    <span class="round-64 rounded-circle bg-primary hstack justify-content-center d-inline-flex mb-3">
+                      <iconify-icon icon="lucide:check" class="fs-6 text-dark"></iconify-icon>
+                    </span>
+                    <h4 class="mb-2 text-white">Aanmelding ontvangen!</h4>
+                    <p class="mb-0 text-white text-opacity-70">We nemen zo snel mogelijk contact met je op.</p>
+                    <a href="https://wa.me/31611594862?text=Hoi!%20Ik%20heb%20net%20een%20gratis%20proefperiode%20aangevraagd%20via%20studiolee.nl"
+                      target="_blank" rel="noopener noreferrer"
+                      class="btn btn-primary text-dark fw-bold px-4 py-3 hstack gap-2 justify-content-center rounded-pill mt-3">
+                      <iconify-icon icon="lucide:message-circle" class="fs-7"></iconify-icon>
+                      Direct chatten via WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
           <!-- Trust Signal -->
           <div class="row justify-content-center mt-7">
             <div class="col-xl-8 text-center">
@@ -491,6 +509,29 @@
     });
   })();
   </script>
-</body>
+
+    <script>
+    // Handle both forms with fetch
+    ['freeScanForm','freeTrialForm'].forEach(function(id){
+      var form = document.getElementById(id);
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, {method:'POST', body: data})
+          .then(function(){
+            form.classList.add('d-none');
+            var success = document.getElementById(id === 'freeScanForm' ? 'scanSuccess' : 'trialSuccess');
+            if(success) success.classList.remove('d-none');
+          })
+          .catch(function(){
+            form.classList.add('d-none');
+            var success = document.getElementById(id === 'freeScanForm' ? 'scanSuccess' : 'trialSuccess');
+            if(success) success.classList.remove('d-none');
+          });
+      });
+    });
+    </script>
+  </body>
 
 </html>
