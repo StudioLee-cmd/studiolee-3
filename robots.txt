@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.studiolee.nl/sitemap.xml
-
-Disallow: /faq-test.html
