@@ -1190,7 +1190,7 @@
     </script>
 
     <!--  FAQ Section -->
-    <section class="faq py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <section class="faq py-5 py-lg-11 py-xl-12">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
           <div class="row gap-7 gap-xl-0">
@@ -1199,7 +1199,7 @@
                 data-aos-duration="1000">
                 <span
                   class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">08</span>
-                <hr class="border-line bg-white">
+                <hr class="border-line">
                 <span class="badge text-bg-dark">FAQ</span>
               </div>
             </div>
@@ -1216,104 +1216,39 @@
             </div>
           </div>
           <div class="row justify-content-end">
-            <div class="col-xl-8">
-              <div class="accordion accordion-flush" id="accordionFlushExample" data-aos="fade-up" data-aos-delay="200"
-                data-aos-duration="1000">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                      Moet ik zelf met software aan de slag?
-                    </button>
-                  </h2>
-                  <div id="flush-collapseOne" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Nee. Wij regelen alles — jij gebruikt het systeem, wij bouwen en onderhouden het.</div>
-                  </div>
+            <div class="col-xl-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <div class="faq-timeline">
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Moet ik zelf met software aan de slag?</div>
+                  <div class="faq-tl-a">Nee. Wij regelen alles — jij gebruikt het systeem, wij bouwen en onderhouden het.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                      Is het 100% AI of zit er ook een mens achter?
-                    </button>
-                  </h2>
-                  <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Beide. AI doet het zware werk, maar er zit altijd een specialist achter die controleert en bijstuurt.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Is het 100% AI of zit er ook een mens achter?</div>
+                  <div class="faq-tl-a">Beide. AI doet het zware werk, maar er zit altijd een specialist achter die controleert en bijstuurt.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                      Welke bedrijfsprocessen kunnen worden geautomatiseerd?
-                    </button>
-                  </h2>
-                  <div id="flush-collapseThree" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Lead opvolging, review verzameling, afspraakherinneringen, facturatie, content creatie, social media — vrijwel elk repetitief proces.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Welke bedrijfsprocessen kunnen worden geautomatiseerd?</div>
+                  <div class="faq-tl-a">Lead opvolging, review verzameling, afspraakherinneringen, facturatie, content creatie, social media — vrijwel elk repetitief proces.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                      Wat is de meerwaarde van de Roadmap Sessie?
-                    </button>
-                  </h2>
-                  <div id="flush-collapseFour" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">In 2 uur brengen we je hele bedrijf in kaart en maken een concreet automatiseringsplan. Kosten worden verrekend bij samenwerking. <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="text-primary fw-bold">Plan direct een sessie</a>.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Wat is de meerwaarde van de Roadmap Sessie?</div>
+                  <div class="faq-tl-a">In 2 uur brengen we je hele bedrijf in kaart en maken een concreet automatiseringsplan. Kosten worden verrekend bij samenwerking. <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="text-primary fw-bold">Plan direct een sessie</a>.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                      Hoe verhoudt dit zich tot mijn huidige personeel?
-                    </button>
-                  </h2>
-                  <div id="flush-collapseFive" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Het vervangt geen mensen — het maakt ze productiever. Je team besteedt minder tijd aan herhaalwerk en meer aan klanten.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoe verhoudt dit zich tot mijn huidige personeel?</div>
+                  <div class="faq-tl-a">Het vervangt geen mensen — het maakt ze productiever. Je team besteedt minder tijd aan herhaalwerk en meer aan klanten.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                      Bouwen jullie ook websites?
-                    </button>
-                  </h2>
-                  <div id="flush-collapseSix" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Ja. Professionele websites op maat, SEO-geoptimaliseerd, binnen 2 weken live. Vanaf €79/mo inclusief hosting. Bekijk onze <a href="/tarieven" class="text-primary fw-bold">tarieven</a>.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Bouwen jullie ook websites?</div>
+                  <div class="faq-tl-a">Ja. Professionele websites op maat, SEO-geoptimaliseerd, binnen 2 weken live. Vanaf €79/mo inclusief hosting. Bekijk onze <a href="/tarieven" class="text-primary fw-bold">tarieven</a>.</div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-                      Hoe waarborgen jullie kwaliteit en resultaat?
-                    </button>
-                  </h2>
-                  <div id="flush-collapseSeven" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Met de Groei-of-Geld-Terug Garantie bij Managed Pro. Plus maandelijkse rapportages met harde cijfers.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Hoe waarborgen jullie kwaliteit en resultaat?</div>
+                  <div class="faq-tl-a">Met de Groei-of-Geld-Terug Garantie bij Managed Pro. Plus maandelijkse rapportages met harde cijfers.</div>
                 </div>
-                <div class="accordion-item border-bottom">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed fs-8 fw-bold" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
-                      Bieden jullie exclusiviteit?
-                    </button>
-                  </h2>
-                  <div id="flush-collapseEight" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body pt-0 fs-5 text-dark">Ja. Per regio werken we met maximaal één klant per branche om concurrentie te voorkomen.</div>
-                  </div>
+                <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+                  <div class="faq-tl-q">Bieden jullie exclusiviteit?</div>
+                  <div class="faq-tl-a">Ja. Per regio werken we met maximaal één klant per branche om concurrentie te voorkomen.</div>
                 </div>
               </div>
             </div>
