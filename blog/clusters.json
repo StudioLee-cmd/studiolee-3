@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "slug": "ai-zoekgedrag-verandering",
+      "title": "Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen",
+      "date": "2026-04-06",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/ai-zoekgedrag-verandering.jpg"
+    },
+    {
+      "slug": "roi-ai-automatisering-mkb",
+      "title": "ROI van AI-automatisering: wat levert het je MKB écht op?",
+      "date": "2026-04-06",
+      "cluster": "roi-automatisering",
+      "image": "/assets/images/blog/roi-ai-automatisering-mkb.jpg"
+    },
+    {
       "slug": "mkb-groei-ai-systemen",
       "title": "MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren",
       "date": "2026-04-05",
