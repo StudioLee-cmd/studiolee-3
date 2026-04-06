@@ -1174,19 +1174,19 @@
         
         var first = posts[0];
         var html = '<div class="col-lg-7 mb-7 mb-lg-0"><div class="resources d-flex flex-column gap-6">' +
-          '<a href="/blog/' + first.slug + '/" class="resources-img resources-img-first position-relative overflow-hidden d-block">' +
+          '<a href="/blog/' + first.slug + '" class="resources-img resources-img-first position-relative overflow-hidden d-block">' +
           '<img src="' + first.image + '" alt="' + first.title + '" class="img-fluid"></a>' +
           '<div class="resources-details"><p class="mb-0">' + first.date + '</p>' +
-          '<h4 class="mb-0"><a href="/blog/' + first.slug + '/" class="text-dark">' + first.title + '</a></h4></div></div></div>';
+          '<h4 class="mb-0"><a href="/blog/' + first.slug + '" class="text-dark">' + first.title + '</a></h4></div></div></div>';
         
         html += '<div class="col-lg-5"><div class="d-flex flex-column gap-7">';
         for (var i = 1; i < posts.length; i++) {
           var p = posts[i];
           html += '<div class="resources d-flex flex-column gap-6">' +
-            '<a href="/blog/' + p.slug + '/" class="resources-img resources-img-blog position-relative overflow-hidden d-block">' +
+            '<a href="/blog/' + p.slug + '" class="resources-img resources-img-blog position-relative overflow-hidden d-block">' +
             '<img src="' + p.image + '" alt="' + p.title + '" class="img-fluid"></a>' +
             '<div class="resources-details"><p class="mb-0">' + p.date + '</p>' +
-            '<h4 class="mb-0"><a href="/blog/' + p.slug + '/" class="text-dark">' + p.title + '</a></h4></div></div>';
+            '<h4 class="mb-0"><a href="/blog/' + p.slug + '" class="text-dark">' + p.title + '</a></h4></div></div>';
         }
         html += '</div></div>';
         
