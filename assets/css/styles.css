@@ -17402,3 +17402,34 @@ section::after {
 .faq-tl-item + .faq-tl-item {
   border-top: 1px solid rgba(31,42,46,0.1);
 }
+
+/* ===== Services section mobile fix ===== */
+@media (max-width: 991.98px) {
+  .services .tab-content {
+    margin-bottom: 1.5rem;
+  }
+  .services-tab .nav-tabs .nav-item .nav-link {
+    font-size: 1.4rem !important;
+  }
+  .services-tab .nav-tabs .nav-item .row {
+    flex-direction: column;
+  }
+  .services-tab .nav-tabs .nav-item .row > div {
+    width: 100%;
+  }
+  .services-tab .nav-tabs .nav-item p {
+    margin-top: 0.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .services-tab .nav-tabs .nav-item {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .services-tab .nav-tabs .nav-item .nav-link {
+    font-size: 1.15rem !important;
+  }
+  .services-tab .nav-tabs .nav-item p {
+    font-size: 0.9rem !important;
+  }
+}
