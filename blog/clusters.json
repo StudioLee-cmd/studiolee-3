@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "lokale-vindbaarheid-verbeteren-mkb-gids",
+      "title": "Lokale vindbaarheid verbeteren: de complete MKB-gids",
+      "date": "2026-04-07",
+      "cluster": "vindbaarheid",
+      "image": "/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg"
+    },
+    {
       "slug": "ai-zoekgedrag-verandering",
       "title": "Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen",
       "date": "2026-04-06",
