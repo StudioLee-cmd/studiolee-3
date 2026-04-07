@@ -809,8 +809,21 @@
     document.querySelectorAll('#myTab .nav-item').forEach(li => {
       li.addEventListener('click', (e) => {
         if (e.target.closest('a')) return; // don't hijack "Meer info" links
+        if (e.target.closest('.nav-link')) return; // button handles itself
         const btn = li.querySelector('.nav-link');
         if (btn) btn.click();
+      });
+    });
+
+    // Tab toggle: click active tab to close it
+    document.querySelectorAll('#myTab .nav-link[data-bs-toggle="tab"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (btn.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        }
       });
     });
     </script>
