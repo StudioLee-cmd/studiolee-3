@@ -805,25 +805,38 @@
       </div>
     </section>
     <script>
-    // Make entire service tab row clickable, not just the button text
-    document.querySelectorAll('#myTab .nav-item').forEach(li => {
-      li.addEventListener('click', (e) => {
-        if (e.target.closest('a')) return; // don't hijack "Meer info" links
-        if (e.target.closest('.nav-link')) return; // button handles itself
-        const btn = li.querySelector('.nav-link');
-        if (btn) btn.click();
+    // Custom tab handler — bypasses Bootstrap Tab JS entirely
+    // (target panes #one, #two etc. don't exist; show/hide is CSS-only via :has(.nav-link.active))
+    document.querySelectorAll('#myTab .nav-link[data-bs-toggle="tab"]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        const wasActive = btn.classList.contains('active');
+
+        // Deactivate all tabs
+        document.querySelectorAll('#myTab .nav-link').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+
+        // If was inactive, activate it + retrigger image animation
+        if (!wasActive) {
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          const img = btn.closest('.nav-item')?.querySelector('.service-inline-img');
+          if (img) { img.style.animation = 'none'; img.offsetHeight; img.style.animation = ''; }
+        }
       });
     });
 
-    // Tab toggle: click active tab to close it
-    document.querySelectorAll('#myTab .nav-link[data-bs-toggle="tab"]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        if (btn.classList.contains('active')) {
-          e.preventDefault();
-          e.stopPropagation();
-          btn.classList.remove('active');
-          btn.setAttribute('aria-selected', 'false');
-        }
+    // Make entire service tab row clickable, not just the button text
+    document.querySelectorAll('#myTab .nav-item').forEach(li => {
+      li.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        if (e.target.closest('.nav-link')) return;
+        const btn = li.querySelector('.nav-link');
+        if (btn) btn.click();
       });
     });
     </script>
