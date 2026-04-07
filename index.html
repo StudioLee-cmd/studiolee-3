@@ -805,13 +805,12 @@
       </div>
     </section>
     <script>
-    // Custom tab handler — bypasses Bootstrap Tab JS entirely
-    // (target panes #one, #two etc. don't exist; show/hide is CSS-only via :has(.nav-link.active))
+    // Strip data-bs-toggle so Bootstrap Tab JS never touches these buttons.
+    // Show/hide is CSS-only via :has(.nav-link.active) — no tab-panes exist.
     document.querySelectorAll('#myTab .nav-link[data-bs-toggle="tab"]').forEach(btn => {
+      btn.removeAttribute('data-bs-toggle');
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        e.stopImmediatePropagation();
-
         const wasActive = btn.classList.contains('active');
 
         // Deactivate all tabs
@@ -820,7 +819,7 @@
           b.setAttribute('aria-selected', 'false');
         });
 
-        // If was inactive, activate it + retrigger image animation
+        // Toggle: activate if was inactive
         if (!wasActive) {
           btn.classList.add('active');
           btn.setAttribute('aria-selected', 'true');
