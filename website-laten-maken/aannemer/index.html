@@ -17,8 +17,9 @@
   <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Website laten maken voor aannemers", "provider": {"@type": "Organization", "name": "STUDIOLEE", "url": "https://www.studiolee.nl"}, "description": "Professionele website voor aannemers — projecten showcase, online offerte, AI chatbot. Binnen 2 weken live. Vanaf €79/mo.", "areaServed": {"@type": "Country", "name": "NL"}, "serviceType": "Webdesign & Webdevelopment", "offers": {"@type": "Offer", "price": "79", "priceCurrency": "EUR", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "79", "priceCurrency": "EUR", "unitText": "maand", "description": "Excl. BTW"}}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Website laten maken voor aannemers", "provider": {"@type": "Organization", "name": "STUDIOLEE", "url": "https://www.studiolee.nl"}, "description": "Professionele website voor aannemers — 6 stijlen, projectenshowcase, online offerte, AI chatbot. Binnen 2 weken live. Vanaf €79/mo.", "areaServed": {"@type": "Country", "name": "NL"}, "serviceType": "Webdesign voor aannemers", "audience": {"@type": "BusinessAudience", "audienceType": "Aannemers, bouwbedrijven, klusbedrijven, ZZP'ers in de bouw"}, "offers": {"@type": "Offer", "price": "79", "priceCurrency": "EUR", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "79", "priceCurrency": "EUR", "unitText": "maand", "description": "Excl. BTW, maandelijks opzegbaar"}}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.studiolee.nl/"}, {"@type": "ListItem", "position": 2, "name": "Website laten maken", "item": "https://www.studiolee.nl/website-laten-maken"}, {"@type": "ListItem", "position": 3, "name": "Website voor aannemers"}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wat kost een website voor een aannemerbedrijf?", "acceptedAnswer": {"@type": "Answer", "text": "Vanaf €79 per maand excl. BTW voor het Lite pakket inclusief hosting, AI chatbot, SEO onderhoud en maandelijkse blog. Eenmalige bouwkosten zijn er niet. Maandelijks opzegbaar. Concurrenten vragen €799 tot €2.500 eenmalig plus €25-€60/mo onderhoud — wij bouwen tegen één vast maandbedrag zonder upfront kosten."}}, {"@type": "Question", "name": "Hoe lang duurt het voordat mijn aannemer website live is?", "acceptedAnswer": {"@type": "Answer", "text": "Gemiddeld 7 tot 14 dagen vanaf het moment dat we je content hebben ontvangen. Heb je foto's van opgeleverde projecten klaar? Dan zijn we soms al binnen een week live. Concurrerende bureaus rekenen 4 tot 8 weken voor hetzelfde resultaat."}}, {"@type": "Question", "name": "Krijg ik meer offerte-aanvragen via een nieuwe aannemer website?", "acceptedAnswer": {"@type": "Answer", "text": "Onze gemiddelde aannemer-klant ziet binnen 60 dagen een verdubbeling van het aantal offerte-aanvragen. Dat komt door lokale SEO (zodat je gevonden wordt op 'aannemer Utrecht', 'verbouwing Amsterdam' etc.), Google Reviews integratie en de AI chatbot die 's avonds en in het weekend leads opvangt."}}, {"@type": "Question", "name": "Welke 6 stijlen kan ik kiezen voor mijn aannemer website?", "acceptedAnswer": {"@type": "Answer", "text": "Premium (donker, autoritair), Warm (lokaal, family-business), Editorial (modern, strak), Bold Magazine (vibrant, opvallend), Project Showcase (vastgoed-stijl met grote galerijen) en Volledig Maatwerk (uniek voor jouw merk). Hover over de templates op deze pagina om een live preview te zien — ze zijn allemaal live en klikbaar."}}, {"@type": "Question", "name": "Kunnen jullie ook foto's van mijn bouwprojecten verbeteren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Smartphone-foto's polijsten wij met AI tot professionele showcase-beelden. Heb je geen foto's? Dan gebruiken we onze eigen AI-gegenereerde Nederlandse bouwprojecten als startpunt — gevels, interieurs, badkamers, dakwerk, alles."}}, {"@type": "Question", "name": "Kan ik mijn website later zelf aanpassen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Je krijgt toegang tot een eenvoudig dashboard waarmee je teksten, projectfoto's, contactgegevens en pagina's kunt aanpassen zonder technische kennis. Wil je het volledig uit handen geven? Dan onderhouden wij alles — je hoeft alleen wijzigingen door te geven."}}, {"@type": "Question", "name": "Werken jullie ook voor ZZP'ers en kleine aannemers?", "acceptedAnswer": {"@type": "Answer", "text": "Zeker. Het Lite pakket is speciaal voor ZZP-aannemers en eenmanszaken. Je krijgt dezelfde 6 stijlen, AI chatbot en SEO-onderhoud als grotere bouwbedrijven, alleen met minder maandelijks contact. Vanaf €79/mo."}}, {"@type": "Question", "name": "Wat als ik niet tevreden ben met het resultaat?", "acceptedAnswer": {"@type": "Answer", "text": "Aanpassingen zijn altijd onbeperkt en gratis — we werken net zo lang door tot je tevreden bent. Mocht je toch helemaal niet verder willen, dan kun je maandelijks opzeggen zonder boete of opzegtermijn van een jaar."}}]}</script>
 </head>
 <body>
 
@@ -191,17 +192,513 @@
       </div>
     </section>
 
-    <!-- Demo Section -->
-    <section class="demo py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <!-- Templates Section — 6 hover-scroll cards (same interaction pattern as home portfolio, restyled for 6-block grid) -->
+    <style>
+      /* Niche-page template card — distinct from homepage portfolio cards.
+         Default: image shown like a video poster.
+         Hover: image scrolls top→bottom (CSS-driven "video play" effect). */
+      .niche-tpl-card {
+        background: #fff;
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 1.25rem;
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        position: relative;
+      }
+      .niche-tpl-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.14);
+        border-color: rgba(212,237,49,0.5);
+      }
+      .niche-tpl-card__viewport {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16/10;
+        background: #f6f4ef;
+      }
+      .niche-tpl-card__poster {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: auto;
+        display: block;
+        transform: translateY(0);
+        transition: transform 9s linear;
+        z-index: 1;
+      }
+      .niche-tpl-card:hover .niche-tpl-card__poster {
+        /* Scroll the long screenshot upward to reveal the bottom of the page */
+        transform: translateY(-86%);
+      }
+      .niche-tpl-card__playbadge {
+        position: absolute;
+        top: 14px; left: 14px;
+        z-index: 3;
+        background: rgba(0,0,0,0.78);
+        color: #fff;
+        padding: 6px 12px 6px 8px;
+        border-radius: 99px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        backdrop-filter: blur(6px);
+      }
+      .niche-tpl-card__playbadge iconify-icon { font-size: 0.95rem; color: #d4ed31; }
+      .niche-tpl-card:hover .niche-tpl-card__playbadge {
+        background: #d4ed31; color: #1a1a1a;
+      }
+      .niche-tpl-card:hover .niche-tpl-card__playbadge iconify-icon { color: #1a1a1a; }
+      .niche-tpl-card__shadebar {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 35%;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+        opacity: 0;
+        transition: opacity .35s ease;
+        z-index: 2;
+        pointer-events: none;
+      }
+      .niche-tpl-card:hover .niche-tpl-card__shadebar { opacity: 1; }
+      .niche-tpl-card__visit {
+        position: absolute;
+        bottom: 16px; right: 16px;
+        z-index: 3;
+        width: 52px; height: 52px;
+        border-radius: 50%;
+        background: #d4ed31;
+        color: #1a1a1a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.35rem;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity .3s ease, transform .3s ease;
+      }
+      .niche-tpl-card:hover .niche-tpl-card__visit {
+        opacity: 1; transform: translateY(0);
+      }
+      .niche-tpl-card__body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+        flex: 1;
+      }
+      .niche-tpl-card__body h4 { margin-bottom: 0; }
+      .niche-tpl-card__cta {
+        margin-top: auto;
+        padding-top: 0.85rem;
+        font-weight: 700;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #1a1a1a;
+      }
+      .niche-tpl-card__cta iconify-icon { color: #d4ed31; background: #1a1a1a; padding: 4px; border-radius: 50%; font-size: 1.1rem; }
+      /* Freestyle card uses a placeholder block instead of a screenshot */
+      .niche-tpl-card__placeholder {
+        position: absolute; inset: 0;
+        display: flex; align-items: center; justify-content: center;
+        flex-direction: column; gap: 1rem;
+        background: linear-gradient(135deg,#1a1a1a 0%,#2a2a2a 50%,#3a3a3a 100%);
+        color: #d4ed31; z-index: 1;
+      }
+      .niche-tpl-card__placeholder iconify-icon { font-size: 3.5rem; }
+      .niche-tpl-card__placeholder span { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+    </style>
+
+    <section class="templates-grid py-5 py-lg-11 py-xl-12 bg-light-gray">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10" data-aos="fade-up" data-aos-duration="1000">
-            <div class="d-flex flex-column gap-4 p-5 p-lg-7 bg-white rounded-4 border border-dark border-opacity-10">
-              <h2 class="mb-0">Vanaf &euro;79/mo &mdash; bekijk tarieven</h2>
-              <p class="mb-0 fs-5 text-dark text-opacity-70">Je aannemer website is binnen 2 weken live. Maandelijks opzegbaar. Geen verborgen kosten. Alles inclusief: hosting, updates, AI chatbot en SEO onderhoud.</p>
-              <div class="hstack gap-3 flex-wrap">
-                <a href="/tarieven" class="btn btn-primary text-dark fw-bold fs-6 px-4 py-3 hstack justify-content-center cta-shine rounded-pill"><span class="btn-text">Bekijk tarieven</span><iconify-icon icon="lucide:arrow-up-right" class="btn-icon ms-2"></iconify-icon></a>
-                <a href="/free-trial" class="btn border border-dark text-dark fs-6 px-4 py-3 rounded-pill"><span class="btn-text">Start je gratis proefperiode</span></a>
+        <div class="row mb-8">
+          <div class="col-lg-9">
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">6 stijlen aannemer websites &mdash; allemaal live, allemaal klikbaar</h2>
+            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+              Iedere aannemer heeft een ander merk. De &eacute;&eacute;n wil donker en autoritair, de ander warm en lokaal. Daarom hebben we voor het aannemer-vak <strong>zes complete stijlen gebouwd</strong> &mdash; geen mockups, maar volledig werkende websites die je nu live kunt bezoeken. Hover over een card om de hele pagina te zien scrollen, en klik om de echte demo in een nieuw tabblad te openen.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+
+          <!-- 1. CLIENT-PREMIUM -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
+            <a href="https://aannemer-premium-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
+                  <img src="/assets/images/templates/aannemer-client-premium.png" alt="Aannemer website demo &mdash; Premium stijl met blueprint banner en donkere palet" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-primary text-dark fw-bold">01 &middot; PREMIUM</span>
+                  </div>
+                  <h4 class="mb-0 mt-2">Donker &amp; Vakwerk</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Diepe kleuren, blueprint-banner en industri&euml;le typografie. Voor aannemers die autoriteit en jarenlange ervaring willen uitstralen.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 2. CLIENT-WARM -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <a href="https://aannemer-warm-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
+                  <img src="/assets/images/templates/aannemer-client-warm.png" alt="Aannemer website demo &mdash; Warm &amp; lokaal met aardetinten en family-business gevoel" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-light text-dark border fw-bold">02 &middot; WARM</span>
+                  </div>
+                  <h4 class="mb-0 mt-2">Warm &amp; Lokaal</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Aardetinten, family-business gevoel en buurtfocus. Voor aannemers die persoonlijk werken &mdash; klein team, grote betrokkenheid.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 3. DASH-STUDIO -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
+            <a href="https://aannemer-dash-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
+                  <img src="/assets/images/templates/aannemer-dash-studio.png" alt="Aannemer website demo &mdash; Strak &amp; modern editorial layout met witruimte" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-light text-dark border fw-bold">03 &middot; EDITORIAL</span>
+                  </div>
+                  <h4 class="mb-0 mt-2">Strak &amp; Modern</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Cleane editorial layout met witruimte en rode accenten. Voor de moderne aannemer die wil opvallen tussen traditionele bedrijven.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 4. EDITORIAL-BOLD -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <a href="https://aannemer-editorial-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
+                  <img src="/assets/images/templates/aannemer-editorial-bold.png" alt="Aannemer website demo &mdash; Bold magazine stijl met grote koppen en kleur" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-light text-dark border fw-bold">04 &middot; BOLD</span>
+                  </div>
+                  <h4 class="mb-0 mt-2">Bold &amp; Magazine</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Magazine-stijl met grote koppen, levendige kleuren en animaties. Voor projecten die op social media moeten knallen.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 5. ATLAS / PROJECT SHOWCASE -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">
+            <a href="https://aannemer-atlas-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
+                  <img src="/assets/images/templates/aannemer-atlas.png" alt="Aannemer website demo &mdash; Atlas project-showcase met grote projectgalerij en pricing" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-light text-dark border fw-bold">05 &middot; PROJECT</span>
+                  </div>
+                  <h4 class="mb-0 mt-2">Project Showcase</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Vastgoed-stijl layout met grote projectgalerij, gefilterde categorie&euml;n en pricing tabellen. Perfect om opgeleverde projecten als trofee&euml;n te tonen.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 6. FREESTYLE / CUSTOM -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <a href="https://aannemer-freestyle-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card" style="border-color:rgba(212,237,49,0.55)">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge" style="background:rgba(212,237,49,0.95);color:#1a1a1a"><iconify-icon icon="lucide:sparkles" style="color:#1a1a1a"></iconify-icon>Volledig op maat</span>
+                  <img src="/assets/images/templates/aannemer-freestyle.png" alt="Aannemer website demo &mdash; Volledig maatwerk freestyle met blueprint walkthrough" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-warning text-dark fw-bold">06 &middot; FREESTYLE</span>
+                  </div>
+                  <h4 class="mb-0 mt-2">Volledig Maatwerk</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Geen template, maar een uniek maatwerk-design speciaal voor jouw aannemerbedrijf. Blueprint walkthrough, eigen merk, eigen functies.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="row mt-7">
+          <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+            <p class="mb-3 fs-6 text-dark text-opacity-60"><iconify-icon icon="lucide:info" class="me-1"></iconify-icon>Alle 6 demo&apos;s zijn echte werkende websites &mdash; geen mockups. Klik om in een nieuw tabblad te openen.</p>
+            <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="btn btn-dark text-white fw-bold fs-6 px-4 py-3 hstack justify-content-center cta-shine rounded-pill d-inline-flex"><span class="btn-text">Plan een gratis kennismaking</span><iconify-icon icon="lucide:arrow-up-right" class="btn-icon ms-2"></iconify-icon></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process py-5 py-lg-11 py-xl-12">
+      <div class="container">
+        <div class="row mb-8">
+          <div class="col-lg-8">
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Zo werkt het — van offerte tot live website</h2>
+            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Als aannemer heb je het druk met bouwen, niet met website-bouwen. Wij hebben het hele proces opgeknipt in 5 simpele stappen waarbij jij maximaal 1 uur per stap kwijt bent.</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3">
+              <div class="hstack gap-3"><span class="round-52 rounded-circle bg-primary d-flex align-items-center justify-content-center fw-bold fs-5 text-dark">1</span><h4 class="mb-0">Kennismaking</h4></div>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">15 minuten gesprek waarin we je bedrijf, je projecten en je doelen bespreken. Je kiest een van de 6 stijlen of we ontwerpen iets compleet maatwerk.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3">
+              <div class="hstack gap-3"><span class="round-52 rounded-circle bg-primary d-flex align-items-center justify-content-center fw-bold fs-5 text-dark">2</span><h4 class="mb-0">Content verzamelen</h4></div>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Wij sturen je een korte vragenlijst met 12 vragen over je diensten, werkgebied en projecten. Foto's van opgeleverde projecten zijn ideaal — wij polijsten ze met AI.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3">
+              <div class="hstack gap-3"><span class="round-52 rounded-circle bg-primary d-flex align-items-center justify-content-center fw-bold fs-5 text-dark">3</span><h4 class="mb-0">Design &amp; bouw</h4></div>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Binnen 5 werkdagen krijg je een eerste voorbeeld te zien op een testlink. Aanpassingen zijn onbeperkt en kosten niets extra.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3">
+              <div class="hstack gap-3"><span class="round-52 rounded-circle bg-primary d-flex align-items-center justify-content-center fw-bold fs-5 text-dark">4</span><h4 class="mb-0">Live op je domein</h4></div>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Als je tevreden bent zetten wij de site live op je eigen domein. AI chatbot en review-systeem zijn meteen actief.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3">
+              <div class="hstack gap-3"><span class="round-52 rounded-circle bg-primary d-flex align-items-center justify-content-center fw-bold fs-5 text-dark">5</span><h4 class="mb-0">Doorlopend onderhoud</h4></div>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Wij beheren je site, schrijven elke week een nieuwe blog over verbouwen of nieuwbouw, en houden je SEO bij. Jij bouwt huizen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAAROM AANNEMER WEBSITE ANDERS — niche-specific differentiation -->
+    <section class="why-aannemer py-5 py-lg-11 py-xl-12">
+      <div class="container">
+        <div class="row mb-8">
+          <div class="col-lg-9">
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Waarom een aannemer website anders moet zijn dan elke andere bedrijfssite</h2>
+            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Een advocaat verkoopt vertrouwen, een kapper verkoopt sfeer, een aannemer verkoopt <strong>vakmanschap dat je nog niet kunt zien</strong>. De potenti&euml;le klant moet binnen 8 seconden geloven dat jij zijn nieuwbouw, verbouwing of badkamerrenovatie aankan &mdash; zonder dat hij ooit een spijker door jou heeft zien slaan. Onze 6 stijlen zijn specifiek voor dit aannemer-probleem ontworpen.</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3 p-5 border border-dark border-opacity-10 rounded-4 h-100">
+              <iconify-icon icon="solar:gallery-wide-bold-duotone" class="fs-2 text-primary"></iconify-icon>
+              <h4 class="mb-0">Projectgalerij is je &eacute;&eacute;n-na-belangrijkste pagina</h4>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Aannemers die een opvallende projectgalerij tonen krijgen <strong>3&times; zoveel offerte-aanvragen</strong> dan aannemers met alleen tekst. Wij verbeteren je smartphone-foto&apos;s met AI tot showcase-kwaliteit.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3 p-5 border border-dark border-opacity-10 rounded-4 h-100">
+              <iconify-icon icon="solar:map-point-bold-duotone" class="fs-2 text-primary"></iconify-icon>
+              <h4 class="mb-0">Lokale SEO is alles voor aannemers</h4>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">85% van bouwopdrachten begint met &ldquo;aannemer + plaatsnaam&rdquo;. Wij optimaliseren elke pagina voor jouw werkgebied &mdash; van Utrecht tot Groningen, met gestructureerde data die Google direct begrijpt.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3 p-5 border border-dark border-opacity-10 rounded-4 h-100">
+              <iconify-icon icon="solar:star-shine-bold-duotone" class="fs-2 text-primary"></iconify-icon>
+              <h4 class="mb-0">Reviews bewijzen jouw vakmanschap</h4>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Voor een aannemer telt een Google-recensie zwaarder dan een Instagram-volger. Onze sites trekken Google Reviews automatisch binnen en sturen na elke oplevering een vraag aan je klant.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3 p-5 border border-dark border-opacity-10 rounded-4 h-100">
+              <iconify-icon icon="solar:document-medicine-bold-duotone" class="fs-2 text-primary"></iconify-icon>
+              <h4 class="mb-0">Online offerteformulier dat &eacute;cht werkt</h4>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Geen lukrake &ldquo;contact ons&rdquo; mailto. Een vraag-voor-vraag aanvraagformulier dat het type project, m&sup2;, postcode en gewenste startdatum direct uitvraagt. Jij krijgt een ingevulde mail in plaats van &eacute;&eacute;n regel tekst.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3 p-5 border border-dark border-opacity-10 rounded-4 h-100">
+              <iconify-icon icon="solar:chat-round-dots-bold-duotone" class="fs-2 text-primary"></iconify-icon>
+              <h4 class="mb-0">AI chatbot getraind voor aannemers</h4>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Onze chatbot kent de 50 meest gestelde vragen aan aannemers (kosten per m&sup2;, vergunning nodig?, garantie, doorlooptijd) en antwoordt vakkundig &mdash; ook om 23:00 en in het weekend.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <div class="d-flex flex-column gap-3 p-5 border border-dark border-opacity-10 rounded-4 h-100">
+              <iconify-icon icon="solar:shield-check-bold-duotone" class="fs-2 text-primary"></iconify-icon>
+              <h4 class="mb-0">Vergunningen, garantie &amp; verzekering zichtbaar</h4>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Bouwgarant, BouwNed, KvK, BTW &mdash; we maken een trust-strip met al je certificaten en verzekeringen. Een aannemer zonder zichtbare garantie verliest 40% van zijn leads aan concurrenten die het w&eacute;l tonen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIJSVERGELIJKING — direct head-to-head met top SERP concurrenten -->
+    <section class="pricing-compare py-5 py-lg-11 py-xl-12 bg-light-gray">
+      <div class="container">
+        <div class="row mb-8">
+          <div class="col-lg-9">
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Prijsvergelijking aannemer websites in Nederland</h2>
+            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">We hebben de top 5 webdesignbureaus voor aannemers vergeleken op prijs, doorlooptijd en wat er inbegrepen is. Cijfers kloppen per april 2026 op basis van publieke prijsinformatie.</p>
+          </div>
+        </div>
+        <div class="table-responsive" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+          <table class="table align-middle bg-white rounded-4 overflow-hidden shadow-sm" style="border:1px solid rgba(0,0,0,0.08)">
+            <thead>
+              <tr class="border-bottom">
+                <th class="ps-5 py-4 fs-6 text-dark fw-bold">Aanbieder</th>
+                <th class="py-4 fs-6 text-dark fw-bold">Eenmalig</th>
+                <th class="py-4 fs-6 text-dark fw-bold">Per maand</th>
+                <th class="py-4 fs-6 text-dark fw-bold">Live binnen</th>
+                <th class="py-4 fs-6 text-dark fw-bold pe-5">Live demo&apos;s tonen?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-bottom bg-primary bg-opacity-25">
+                <td class="ps-5 py-4 fw-bold"><span class="badge bg-dark text-white me-2">STUDIOLEE</span>Aannemer-specifiek</td>
+                <td class="py-4 fw-bold text-success">&euro;0</td>
+                <td class="py-4 fw-bold">vanaf &euro;79</td>
+                <td class="py-4 fw-bold text-success">7&ndash;14 dagen</td>
+                <td class="py-4 fw-bold text-success pe-5">6 stijlen, allemaal live</td>
+              </tr>
+              <tr class="border-bottom">
+                <td class="ps-5 py-4">Madebysens</td>
+                <td class="py-4">&euro;799</td>
+                <td class="py-4">&euro;25 hosting</td>
+                <td class="py-4">~4 weken</td>
+                <td class="py-4 pe-5 text-dark text-opacity-60">Geen</td>
+              </tr>
+              <tr class="border-bottom">
+                <td class="ps-5 py-4">Heijtec</td>
+                <td class="py-4">~&euro;1.500&ndash;&euro;3.000</td>
+                <td class="py-4">offerte</td>
+                <td class="py-4">4&ndash;8 weken</td>
+                <td class="py-4 pe-5 text-dark text-opacity-60">Geen</td>
+              </tr>
+              <tr class="border-bottom">
+                <td class="ps-5 py-4">Vcreations</td>
+                <td class="py-4">&euro;699&ndash;&euro;50.000</td>
+                <td class="py-4">offerte</td>
+                <td class="py-4">vanaf 24 uur (concept)</td>
+                <td class="py-4 pe-5 text-dark text-opacity-60">Niet aannemer-specifiek</td>
+              </tr>
+              <tr>
+                <td class="ps-5 py-4">Bouwwebsites.be</td>
+                <td class="py-4">vanaf &euro;375</td>
+                <td class="py-4">&euro;19 hosting</td>
+                <td class="py-4">~3 weken</td>
+                <td class="py-4 pe-5 text-dark text-opacity-60">Algemene templates</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row mt-6">
+          <div class="col-lg-9 mx-auto" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <div class="bg-white p-5 rounded-4 border border-dark border-opacity-10">
+              <p class="mb-0 fs-6 text-dark text-opacity-80"><strong>De rekensom:</strong> Bij Madebysens betaal je &euro;799 + &euro;300/jaar = <strong>&euro;1.099 in jaar 1</strong>. Bij STUDIOLEE betaal je 12 &times; &euro;79 = <strong>&euro;948 in jaar 1</strong> &mdash; goedkoper, gebouwd in de helft van de tijd, en je krijgt SEO-onderhoud, AI chatbot, automatische blog en review-collectie er gratis bovenop. Plus: 6 verschillende stijlen om uit te kiezen, niet &eacute;&eacute;n template. Maandelijks opzegbaar, geen jaarcontract.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq py-5 py-lg-11 py-xl-12 bg-light-gray">
+      <div class="container">
+        <div class="row mb-8">
+          <div class="col-lg-8">
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Veelgestelde vragen &mdash; aannemer website</h2>
+            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Antwoorden op de vragen die we het vaakst krijgen van aannemers die overwegen een nieuwe website te laten bouwen.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-10">
+            <div class="accordion" id="faqAannemer" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+              <div class="accordion-item border-0 border-bottom">
+                <h3 class="accordion-header"><button class="accordion-button collapsed fs-5 fw-bold bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Wat kost een website voor een aannemerbedrijf?</button></h3>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAannemer">
+                  <div class="accordion-body fs-5 text-dark text-opacity-70">Vanaf &euro;79 per maand excl. BTW voor het Lite pakket inclusief hosting, AI chatbot, SEO onderhoud en maandelijkse blog. Eenmalige bouwkosten zijn er niet — wij bouwen, jij betaalt alleen het maandbedrag. Maandelijks opzegbaar.</div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h3 class="accordion-header"><button class="accordion-button collapsed fs-5 fw-bold bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Hoe lang duurt het voordat mijn aannemer website live is?</button></h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAannemer">
+                  <div class="accordion-body fs-5 text-dark text-opacity-70">Gemiddeld 7 tot 14 dagen vanaf het moment dat we je content hebben ontvangen. Als je foto's van opgeleverde projecten klaar hebt liggen kunnen we soms al binnen een week live.</div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h3 class="accordion-header"><button class="accordion-button collapsed fs-5 fw-bold bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Krijg ik meer offerte-aanvragen via een nieuwe website?</button></h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAannemer">
+                  <div class="accordion-body fs-5 text-dark text-opacity-70">Onze gemiddelde aannemer-klant ziet binnen 60 dagen een verdubbeling van het aantal offerte-aanvragen. Dat komt door de combinatie van lokale SEO (zodat je gevonden wordt op &quot;aannemer Utrecht&quot;, &quot;verbouwing Amsterdam&quot;), Google Reviews integratie en de AI chatbot die &apos;s avonds en in het weekend leads opvangt.</div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h3 class="accordion-header"><button class="accordion-button collapsed fs-5 fw-bold bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#faq3b">Welke 6 stijlen kan ik kiezen voor mijn aannemer website?</button></h3>
+                <div id="faq3b" class="accordion-collapse collapse" data-bs-parent="#faqAannemer">
+                  <div class="accordion-body fs-5 text-dark text-opacity-70">Premium (donker, autoritair), Warm (lokaal, family-business), Editorial (modern, strak), Bold Magazine (vibrant, opvallend), Project Showcase (vastgoed-stijl met grote galerijen) en Volledig Maatwerk (uniek voor jouw merk). Hover boven aan deze pagina over de 6 templates om een live preview te zien &mdash; allemaal echt klikbaar en live online.</div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h3 class="accordion-header"><button class="accordion-button collapsed fs-5 fw-bold bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#faq3c">Kan ik mijn website later zelf aanpassen?</button></h3>
+                <div id="faq3c" class="accordion-collapse collapse" data-bs-parent="#faqAannemer">
+                  <div class="accordion-body fs-5 text-dark text-opacity-70">Ja. Je krijgt toegang tot een eenvoudig dashboard waarmee je teksten, projectfoto&apos;s, contactgegevens en pagina&apos;s kunt aanpassen zonder technische kennis. Wil je het volledig uit handen geven? Dan onderhouden wij alles &mdash; jij hoeft alleen wijzigingen door te geven via WhatsApp of mail.</div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h3 class="accordion-header"><button class="accordion-button collapsed fs-5 fw-bold bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Kunnen jullie ook foto's van mijn projecten verbeteren?</button></h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAannemer">
+                  <div class="accordion-body fs-5 text-dark text-opacity-70">Ja. Smartphonefoto's polijsten wij met AI tot professionele showcase-beelden. Heb je geen foto's? Dan gebruiken we onze eigen AI-gegenereerde Nederlandse bouwprojecten als startpunt.</div>
+                </div>
+              </div>
+              <div class="accordion-item border-0 border-bottom">
+                <h3 class="accordion-header"><button class="accordion-button collapsed fs-5 fw-bold bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Wat als ik niet tevreden ben met het resultaat?</button></h3>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAannemer">
+                  <div class="accordion-body fs-5 text-dark text-opacity-70">Aanpassingen zijn altijd onbeperkt en gratis &mdash; we werken net zo lang door tot je tevreden bent. Mocht je toch helemaal niet verder willen, dan kun je maandelijks opzeggen zonder boete.</div>
+                </div>
+              </div>
+              <div class="accordion-item border-0">
+                <h3 class="accordion-header"><button class="accordion-button collapsed fs-5 fw-bold bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Werken jullie ook voor kleine eenmanszaak-aannemers?</button></h3>
+                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAannemer">
+                  <div class="accordion-body fs-5 text-dark text-opacity-70">Zeker. Het Lite pakket is speciaal voor zzp'ers en kleine bouwbedrijven. Je krijgt dezelfde kwaliteit als de grotere pakketten, alleen met minder maandelijks contact.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -320,14 +817,5 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
     <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69c4ef18d9121c5778d93245"></script>
-</body>
-
-
-  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/libs/aos-master/dist/aos.js"></script>
-  <script src="/assets/js/custom.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69c4ef18d9121c5778d93245"></script>
 </body>
 </html>
