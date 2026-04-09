@@ -86,11 +86,6 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.studiolee.nl/review-pakket</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://www.studiolee.nl/privacy</loc>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
