@@ -71,11 +71,6 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.studiolee.nl/free-website</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
     <loc>https://www.studiolee.nl/marketing-uitbesteden</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
