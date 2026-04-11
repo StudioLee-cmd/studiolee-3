@@ -273,6 +273,18 @@ section.py-5.py-lg-7:not(.bg-light-gray):not(.bg-dark):not(.bg-primary) {
   background-color: #dce3d7 !important;
 }
 </style>
+<style>
+.blog-card-dark{background:#141419;border-radius:16px;overflow:hidden;height:100%;transition:transform .2s,box-shadow .2s;border:1px solid rgba(255,255,255,.06)}
+.blog-card-dark:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.blog-card-img{overflow:hidden;aspect-ratio:16/9}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.blog-card-dark:hover .blog-card-img img{transform:scale(1.03)}
+.blog-card-body{padding:20px 24px 24px}
+.blog-card-badge{display:inline-block;background:rgba(193,255,114,.12);color:#C1FF72;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.blog-card-title{color:#fff;font-size:18px;font-weight:600;line-height:1.4;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.blog-card-date{color:rgba(255,255,255,.4);font-size:13px}
+.blog-card-link:hover{text-decoration:none!important}
+</style>
 </head>
 
 <body>
@@ -1232,92 +1244,57 @@ section.py-5.py-lg-7:not(.bg-light-gray):not(.bg-dark):not(.bg-primary) {
     </section>
 
     <!--  Recent news Section -->
-    <section class="Recent-news bg-light-gray pb-5 pb-lg-11 pb-xl-12">
+    <section class="Recent-news py-5 py-lg-11 py-xl-12 bg-light-gray">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
-          <div class="row gap-7 gap-xl-0">
-            <div class="col-xl-4 col-xxl-4">
-              <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
-                data-aos-duration="1000">
-                <span
-                  class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">07</span>
-                <hr class="border-line bg-white">
-                <span class="badge text-bg-dark">Blog</span>
-              </div>
-            </div>
-            <div class="col-xl-8 col-xxl-7">
-              <div class="row">
-                <div class="col-xxl-8">
-                  <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
-                    data-aos-duration="1000">
-                    <h2 class="mb-0">Laatste artikelen</h2>
-                    <p class="fs-5 mb-0 text-opacity-70">Praktische inzichten over AI, SEO en online groei voor het MKB — elke week nieuwe content.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mb-0">Laatste artikelen</h2>
+          </div>
+          <div class="row g-4" id="homepage-latest-blogs">
+            <div class="col-md-4">
+              <a href="/blog/website-bezoekers-omzetten-naar-klanten" class="blog-card-link text-decoration-none">
+                <div class="blog-card-dark">
+                  <div class="blog-card-img"><img src="/assets/images/blog/website-bezoekers-omzetten-naar-klanten.jpg" alt="Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken" loading="lazy"></div>
+                  <div class="blog-card-body">
+                    <span class="blog-card-badge">Conversie</span>
+                    <h3 class="blog-card-title">Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken</h3>
+                    <span class="blog-card-date">11 april 2026</span>
                   </div>
                 </div>
-              </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="/blog/roi-google-reviews-mkb-opbrengst" class="blog-card-link text-decoration-none">
+                <div class="blog-card-dark">
+                  <div class="blog-card-img"><img src="/assets/images/blog/roi-google-reviews-mkb-opbrengst.jpg" alt="ROI van reviews voor het MKB: hoeveel levert elke Google review je op?" loading="lazy"></div>
+                  <div class="blog-card-body">
+                    <span class="blog-card-badge">ROI</span>
+                    <h3 class="blog-card-title">ROI van reviews voor het MKB: hoeveel levert elke Google review je op?</h3>
+                    <span class="blog-card-date">10 april 2026</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="/blog/goedkope-website-laten-maken-kosten-2026" class="blog-card-link text-decoration-none">
+                <div class="blog-card-dark">
+                  <div class="blog-card-img"><img src="/assets/images/blog/goedkope-website-laten-maken-kosten-2026.jpg" alt="Goedkope website laten maken in 2026: wat kost het echt?" loading="lazy"></div>
+                  <div class="blog-card-body">
+                    <span class="blog-card-badge">Prijzen</span>
+                    <h3 class="blog-card-title">Goedkope website laten maken in 2026: wat kost het echt?</h3>
+                    <span class="blog-card-date">9 april 2026</span>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
-          <div class="row gap-7 gap-lg-0" id="homepage-latest-blogs">
-            <div class="col-lg-7 mb-7 mb-lg-0"><div class="resources d-flex flex-column gap-6">
-              <a href="/blog/roi-google-reviews-mkb-opbrengst" class="resources-img resources-img-first position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/roi-google-reviews-mkb-opbrengst.jpg" alt="ROI van reviews voor het MKB: hoeveel levert elke Google review je op?" class="img-fluid"></a>
-              <div class="resources-details"><p class="mb-0">10 april 2026</p>
-              <h4 class="mb-0"><a href="/blog/roi-google-reviews-mkb-opbrengst" class="text-dark">ROI van reviews voor het MKB: hoeveel levert elke Google review je op?</a></h4></div></div></div>
-            <div class="col-lg-5"><div class="d-flex flex-column gap-7">
-              <div class="resources d-flex flex-column gap-6">
-                <a href="/blog/goedkope-website-laten-maken-kosten-2026" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                  <img src="/assets/images/blog/goedkope-website-laten-maken-kosten-2026.jpg" alt="Goedkope website laten maken in 2026: wat kost het echt?" class="img-fluid"></a>
-                <div class="resources-details"><p class="mb-0">9 april 2026</p>
-                <h4 class="mb-0"><a href="/blog/goedkope-website-laten-maken-kosten-2026" class="text-dark">Goedkope website laten maken in 2026: wat kost het echt?</a></h4></div></div>
-              <div class="resources d-flex flex-column gap-6">
-                <a href="/blog/lokale-marketing-mkb-2026-kanalen" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                  <img src="/assets/images/blog/lokale-marketing-mkb-2026-kanalen.jpg" alt="Lokale marketing voor MKB in 2026: 7 kanalen die echt werken" class="img-fluid"></a>
-                <div class="resources-details"><p class="mb-0">8 april 2026</p>
-                <h4 class="mb-0"><a href="/blog/lokale-marketing-mkb-2026-kanalen" class="text-dark">Lokale marketing voor MKB in 2026: 7 kanalen die echt werken</a></h4></div></div>
-            </div></div>
-          </div>
-          <div class="text-center mt-5">
-            <a href="/blog" class="btn">
-              <span class="btn-text">Alle artikelen</span>
-              <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-            </a>
+          <div class="text-center mt-4">
+            <a href="/blog" class="btn btn-dark px-5 py-3 rounded-pill fw-semibold">Bekijk alle blogs</a>
           </div>
         </div>
       </div>
     </section>
-    <script>
-    // Load 3 most recent blog posts from clusters.json
-    fetch('/blog/clusters.json')
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        var posts = data.posts.slice(0, 3);
-        var container = document.getElementById('homepage-latest-blogs');
-        if (!container || !posts.length) return;
-        
-        var first = posts[0];
-        var html = '<div class="col-lg-7 mb-7 mb-lg-0"><div class="resources d-flex flex-column gap-6">' +
-          '<a href="/blog/' + first.slug + '" class="resources-img resources-img-first position-relative overflow-hidden d-block">' +
-          '<img src="' + first.image + '" alt="' + first.title + '" class="img-fluid"></a>' +
-          '<div class="resources-details"><p class="mb-0">' + first.date + '</p>' +
-          '<h4 class="mb-0"><a href="/blog/' + first.slug + '" class="text-dark">' + first.title + '</a></h4></div></div></div>';
-        
-        html += '<div class="col-lg-5"><div class="d-flex flex-column gap-7">';
-        for (var i = 1; i < posts.length; i++) {
-          var p = posts[i];
-          html += '<div class="resources d-flex flex-column gap-6">' +
-            '<a href="/blog/' + p.slug + '" class="resources-img resources-img-blog position-relative overflow-hidden d-block">' +
-            '<img src="' + p.image + '" alt="' + p.title + '" class="img-fluid"></a>' +
-            '<div class="resources-details"><p class="mb-0">' + p.date + '</p>' +
-            '<h4 class="mb-0"><a href="/blog/' + p.slug + '" class="text-dark">' + p.title + '</a></h4></div></div>';
-        }
-        html += '</div></div>';
-        
-        container.innerHTML = html;
-      })
-      .catch(function() {});
-    </script>
 
-    <!--  FAQ Section -->
     <section class="faq py-5 py-lg-11 py-xl-12">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
