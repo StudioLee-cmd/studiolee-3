@@ -16550,6 +16550,9 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 
+/* Fix: banner content must be above the ::before overlay (z-index:1) for clickable breadcrumbs */
+.banner-section > .container { position: relative; z-index: 2; }
+
 .banner-inner-section {
   min-height: 650px;
   background-repeat: no-repeat;
