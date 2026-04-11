@@ -28,6 +28,28 @@
   {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Kennisbank — AI & Online Marketing Tips", "description": "Praktische inzichten over AI chatbots, lokale SEO, automatisering en online groei voor MKB-ondernemers.", "url": "https://www.studiolee.nl/blog", "isPartOf": {"@type": "WebSite", "name": "STUDIOLEE", "url": "https://www.studiolee.nl"}}
   </script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.studiolee.nl/"}, {"@type": "ListItem", "position": 2, "name": "Kennisbank", "item": "https://www.studiolee.nl/blog"}]}</script>
+<style>
+.blog-filter-bar{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.1)}
+.blog-filter-btn{background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:8px 18px;border-radius:100px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.blog-filter-btn:hover{border-color:#C1FF72;color:#C1FF72}
+.blog-filter-btn.active{background:#C1FF72;border-color:#C1FF72;color:#0a0a0f;font-weight:600}
+.filter-count{opacity:.6;font-size:12px;margin-left:2px}
+.blog-filter-btn.active .filter-count{opacity:.8}
+.blog-card-dark{background:#141419;border-radius:16px;overflow:hidden;height:100%;transition:transform .2s,box-shadow .2s;border:1px solid rgba(255,255,255,.06)}
+.blog-card-dark:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.blog-card-img{overflow:hidden;aspect-ratio:16/9}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.blog-card-dark:hover .blog-card-img img{transform:scale(1.03)}
+.blog-card-body{padding:20px 24px 24px}
+.blog-card-badge{display:inline-block;background:rgba(193,255,114,.12);color:#C1FF72;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.blog-card-title{color:#fff;font-size:18px;font-weight:600;line-height:1.4;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.col-lg-8 .blog-card-title{font-size:22px}
+.blog-card-date{color:rgba(255,255,255,.4);font-size:13px}
+.blog-card-link:hover{text-decoration:none!important}
+.blog-card-item.hidden{display:none!important}
+.blog-section{background:#0a0a0f!important}
+@media(max-width:768px){.blog-filter-bar{gap:6px}.blog-filter-btn{padding:6px 14px;font-size:13px}.blog-card-body{padding:16px 18px 20px}.blog-card-title{font-size:16px}}
+</style>
 </head>
 
 <body>
@@ -157,561 +179,639 @@
     <!--  Blog Section -->
     <section class="blog-section py-5 py-lg-11 py-xl-12">
       <div class="container">
-
-          <div id="blog-grid" class="row">
-          <div class="col-lg-8 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/website-bezoekers-omzetten-naar-klanten" class="resources-img resources-img-first position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/website-bezoekers-omzetten-naar-klanten.jpg" alt="Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">11 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/website-bezoekers-omzetten-naar-klanten" class="text-dark">Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken</a></h4>
+        <div class="blog-filter-bar mb-5" id="blog-filters">
+          <button class="blog-filter-btn active" data-filter="all">Alle</button>
+          <button class="blog-filter-btn" data-filter="marketing">Marketing <span class="filter-count">17</span></button>
+          <button class="blog-filter-btn" data-filter="ai-automation">AI & Automatisering <span class="filter-count">9</span></button>
+          <button class="blog-filter-btn" data-filter="seo">SEO <span class="filter-count">7</span></button>
+          <button class="blog-filter-btn" data-filter="website">Website <span class="filter-count">4</span></button>
+          <button class="blog-filter-btn" data-filter="chatbot">Chatbot <span class="filter-count">3</span></button>
+          <button class="blog-filter-btn" data-filter="roi-automatisering">ROI <span class="filter-count">2</span></button>
+          <button class="blog-filter-btn" data-filter="managed-service">Managed Service <span class="filter-count">2</span></button>
+          <button class="blog-filter-btn" data-filter="website-conversie">Conversie <span class="filter-count">1</span></button>
+          <button class="blog-filter-btn" data-filter="prijzen">Prijzen <span class="filter-count">1</span></button>
+          <button class="blog-filter-btn" data-filter="vindbaarheid">Vindbaarheid <span class="filter-count">1</span></button>
+          <button class="blog-filter-btn" data-filter="ai-zoekgedrag">AI Zoekgedrag <span class="filter-count">1</span></button>
+          <button class="blog-filter-btn" data-filter="mkb-groei">MKB Groei <span class="filter-count">1</span></button>
+          <button class="blog-filter-btn" data-filter="branding">Branding <span class="filter-count">1</span></button>
+          <button class="blog-filter-btn" data-filter="reviews">Reviews <span class="filter-count">1</span></button>
+        </div>
+        <div id="blog-grid" class="row g-4">
+          <div class="col-lg-8 blog-card-item" data-cluster="website-conversie">
+            <a href="/blog/website-bezoekers-omzetten-naar-klanten" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/website-bezoekers-omzetten-naar-klanten.jpg" alt="Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken" loading="eager"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Conversie</span>
+                  <h3 class="blog-card-title">Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken</h3>
+                  <span class="blog-card-date">11 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/roi-google-reviews-mkb-opbrengst" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/roi-google-reviews-mkb-opbrengst.jpg" alt="ROI van reviews voor het MKB: hoeveel levert elke Google review je op?" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">10 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/roi-google-reviews-mkb-opbrengst" class="text-dark">ROI van reviews voor het MKB: hoeveel levert elke Google review je op?</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="roi-automatisering">
+            <a href="/blog/roi-google-reviews-mkb-opbrengst" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/roi-google-reviews-mkb-opbrengst.jpg" alt="ROI van reviews voor het MKB: hoeveel levert elke Google review je op?" loading="eager"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">ROI</span>
+                  <h3 class="blog-card-title">ROI van reviews voor het MKB: hoeveel levert elke Google review je op?</h3>
+                  <span class="blog-card-date">10 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/goedkope-website-laten-maken-kosten-2026" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/goedkope-website-laten-maken-kosten-2026.jpg" alt="Goedkope website laten maken in 2026: wat kost het echt?" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">9 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/goedkope-website-laten-maken-kosten-2026" class="text-dark">Goedkope website laten maken in 2026: wat kost het echt?</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="prijzen">
+            <a href="/blog/goedkope-website-laten-maken-kosten-2026" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/goedkope-website-laten-maken-kosten-2026.jpg" alt="Goedkope website laten maken in 2026: wat kost het echt?" loading="eager"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Prijzen</span>
+                  <h3 class="blog-card-title">Goedkope website laten maken in 2026: wat kost het echt?</h3>
+                  <span class="blog-card-date">9 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/lokale-marketing-mkb-2026-kanalen" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/lokale-marketing-mkb-2026-kanalen.jpg" alt="Lokale marketing voor MKB in 2026: 7 kanalen die echt werken" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">8 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/lokale-marketing-mkb-2026-kanalen" class="text-dark">Lokale marketing voor MKB in 2026: 7 kanalen die echt werken</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/lokale-marketing-mkb-2026-kanalen" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/lokale-marketing-mkb-2026-kanalen.jpg" alt="Lokale marketing voor MKB in 2026: 7 kanalen die echt werken" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Lokale marketing voor MKB in 2026: 7 kanalen die echt werken</h3>
+                  <span class="blog-card-date">8 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/lokale-vindbaarheid-verbeteren-mkb-gids" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg" alt="Lokale vindbaarheid verbeteren: de complete MKB-gids" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">7 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/lokale-vindbaarheid-verbeteren-mkb-gids" class="text-dark">Lokale vindbaarheid verbeteren: de complete MKB-gids</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="vindbaarheid">
+            <a href="/blog/lokale-vindbaarheid-verbeteren-mkb-gids" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg" alt="Lokale vindbaarheid verbeteren: de complete MKB-gids" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Vindbaarheid</span>
+                  <h3 class="blog-card-title">Lokale vindbaarheid verbeteren: de complete MKB-gids</h3>
+                  <span class="blog-card-date">7 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/ai-zoekgedrag-verandering" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/ai-zoekgedrag-verandering.jpg" alt="Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">6 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/ai-zoekgedrag-verandering" class="text-dark">Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-zoekgedrag">
+            <a href="/blog/ai-zoekgedrag-verandering" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-zoekgedrag-verandering.jpg" alt="Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI Zoekgedrag</span>
+                  <h3 class="blog-card-title">Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen</h3>
+                  <span class="blog-card-date">6 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/roi-ai-automatisering-mkb" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/roi-ai-automatisering-mkb.jpg" alt="ROI van AI-automatisering: wat levert het je MKB écht op?" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">6 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/roi-ai-automatisering-mkb" class="text-dark">ROI van AI-automatisering: wat levert het je MKB écht op?</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="roi-automatisering">
+            <a href="/blog/roi-ai-automatisering-mkb" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/roi-ai-automatisering-mkb.jpg" alt="ROI van AI-automatisering: wat levert het je MKB écht op?" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">ROI</span>
+                  <h3 class="blog-card-title">ROI van AI-automatisering: wat levert het je MKB écht op?</h3>
+                  <span class="blog-card-date">6 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/mkb-groei-ai-systemen" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/mkb-groei-ai-systemen.jpg" alt="MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">5 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/mkb-groei-ai-systemen" class="text-dark">MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="mkb-groei">
+            <a href="/blog/mkb-groei-ai-systemen" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/mkb-groei-ai-systemen.jpg" alt="MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">MKB Groei</span>
+                  <h3 class="blog-card-title">MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren</h3>
+                  <span class="blog-card-date">5 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/branding-mkb-belang" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/branding-mkb-belang.jpg" alt="Branding voor het MKB: waarom je merk belangrijker is dan je product" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">5 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/branding-mkb-belang" class="text-dark">Branding voor het MKB: waarom je merk belangrijker is dan je product</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="branding">
+            <a href="/blog/branding-mkb-belang" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/branding-mkb-belang.jpg" alt="Branding voor het MKB: waarom je merk belangrijker is dan je product" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Branding</span>
+                  <h3 class="blog-card-title">Branding voor het MKB: waarom je merk belangrijker is dan je product</h3>
+                  <span class="blog-card-date">5 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/managed-service-mkb-uitbesteden" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/managed-service-mkb-uitbesteden.jpg" alt="Managed service voor het MKB: waarom uitbesteden slimmer is" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">4 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/managed-service-mkb-uitbesteden" class="text-dark">Managed service voor het MKB: waarom uitbesteden slimmer is</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="managed-service">
+            <a href="/blog/managed-service-mkb-uitbesteden" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/managed-service-mkb-uitbesteden.jpg" alt="Managed service voor het MKB: waarom uitbesteden slimmer is" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Managed Service</span>
+                  <h3 class="blog-card-title">Managed service voor het MKB: waarom uitbesteden slimmer is</h3>
+                  <span class="blog-card-date">4 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/ai-automatisering-mkb-vijf-processen" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/ai-automatisering-mkb-vijf-processen.jpg" alt="AI-automatisering voor het MKB: 5 processen om te starten" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">3 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/ai-automatisering-mkb-vijf-processen" class="text-dark">AI-automatisering voor het MKB: 5 processen om te starten</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
+            <a href="/blog/ai-automatisering-mkb-vijf-processen" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-automatisering-mkb-vijf-processen.jpg" alt="AI-automatisering voor het MKB: 5 processen om te starten" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI & Automatisering</span>
+                  <h3 class="blog-card-title">AI-automatisering voor het MKB: 5 processen om te starten</h3>
+                  <span class="blog-card-date">3 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/lokale-vindbaarheid-mkb-complete-gids" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/lokale-vindbaarheid-mkb-complete-gids.jpg" alt="Lokale vindbaarheid voor het MKB: complete gids" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">3 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/lokale-vindbaarheid-mkb-complete-gids" class="text-dark">Lokale vindbaarheid voor het MKB: complete gids</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
+            <a href="/blog/lokale-vindbaarheid-mkb-complete-gids" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/lokale-vindbaarheid-mkb-complete-gids.jpg" alt="Lokale vindbaarheid voor het MKB: complete gids" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">SEO</span>
+                  <h3 class="blog-card-title">Lokale vindbaarheid voor het MKB: complete gids</h3>
+                  <span class="blog-card-date">3 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/marketing-uitbesteden-mkb-kosten" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/marketing-uitbesteden-mkb-kosten.jpg" alt="Marketing uitbesteden als MKB: wat kost het?" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">2 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/marketing-uitbesteden-mkb-kosten" class="text-dark">Marketing uitbesteden als MKB: wat kost het?</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/marketing-uitbesteden-mkb-kosten" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/marketing-uitbesteden-mkb-kosten.jpg" alt="Marketing uitbesteden als MKB: wat kost het?" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Marketing uitbesteden als MKB: wat kost het?</h3>
+                  <span class="blog-card-date">2 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/ai-vervangt-marketingbureaus" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/ai-vervangt-marketingbureaus.jpg" alt="AI Vervangt Alle Marketingbureaus" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">1 April 2026</p>
-                <h4 class="mb-0"><a href="/blog/ai-vervangt-marketingbureaus" class="text-dark">AI Vervangt Alle Marketingbureaus</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/ai-vervangt-marketingbureaus" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-vervangt-marketingbureaus.jpg" alt="AI Vervangt Alle Marketingbureaus" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">AI Vervangt Alle Marketingbureaus</h3>
+                  <span class="blog-card-date">1 april 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/ai-zoekgedrag-klanten-vinden-2026" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/ai-zoekgedrag-klanten-vinden-2026.jpg" alt="AI en zoekgedrag: hoe klanten je vinden in 2026" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">31 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/ai-zoekgedrag-klanten-vinden-2026" class="text-dark">AI en zoekgedrag: hoe klanten je vinden in 2026</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/ai-zoekgedrag-klanten-vinden-2026" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-zoekgedrag-klanten-vinden-2026.jpg" alt="AI en zoekgedrag: hoe klanten je vinden in 2026" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">AI en zoekgedrag: hoe klanten je vinden in 2026</h3>
+                  <span class="blog-card-date">31 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/ai-bureau-vs-traditioneel-marketingbureau" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/ai-bureau-vs-traditioneel-marketingbureau.jpg" alt="AI bureau vs traditioneel marketingbureau" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">30 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/ai-bureau-vs-traditioneel-marketingbureau" class="text-dark">AI bureau vs traditioneel marketingbureau</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/ai-bureau-vs-traditioneel-marketingbureau" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-bureau-vs-traditioneel-marketingbureau.jpg" alt="AI bureau vs traditioneel marketingbureau" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">AI bureau vs traditioneel marketingbureau</h3>
+                  <span class="blog-card-date">30 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/managed-service-ai-mkb-ontzorging" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/managed-service-ai-mkb-ontzorging.jpg" alt="Managed AI service voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">30 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/managed-service-ai-mkb-ontzorging" class="text-dark">Managed AI service voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="managed-service">
+            <a href="/blog/managed-service-ai-mkb-ontzorging" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/managed-service-ai-mkb-ontzorging.jpg" alt="Managed AI service voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Managed Service</span>
+                  <h3 class="blog-card-title">Managed AI service voor het MKB</h3>
+                  <span class="blog-card-date">30 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/nazorg-mkb-klantrelatie-na-de-sale" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/nazorg-mkb-klantrelatie-na-de-sale.jpg" alt="Nazorg voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">29 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/nazorg-mkb-klantrelatie-na-de-sale" class="text-dark">Nazorg voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/nazorg-mkb-klantrelatie-na-de-sale" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/nazorg-mkb-klantrelatie-na-de-sale.jpg" alt="Nazorg voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Nazorg voor het MKB</h3>
+                  <span class="blog-card-date">29 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/online-reputatie-mkb" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/online-reputatie-mkb.png" alt="Online reputatie voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">28 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/online-reputatie-mkb" class="text-dark">Online reputatie voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="reviews">
+            <a href="/blog/online-reputatie-mkb" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/online-reputatie-mkb.png" alt="Online reputatie voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Reviews</span>
+                  <h3 class="blog-card-title">Online reputatie voor het MKB</h3>
+                  <span class="blog-card-date">28 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/strategische-samenwerkingen-mkb" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/strategische-samenwerkingen-mkb.png" alt="Strategische samenwerkingen voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">28 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/strategische-samenwerkingen-mkb" class="text-dark">Strategische samenwerkingen voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/strategische-samenwerkingen-mkb" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/strategische-samenwerkingen-mkb.png" alt="Strategische samenwerkingen voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Strategische samenwerkingen voor het MKB</h3>
+                  <span class="blog-card-date">28 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/google-bedrijfsprofiel-mkb" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/google-bedrijfsprofiel-mkb.png" alt="Google Bedrijfsprofiel voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">27 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/google-bedrijfsprofiel-mkb" class="text-dark">Google Bedrijfsprofiel voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
+            <a href="/blog/google-bedrijfsprofiel-mkb" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/google-bedrijfsprofiel-mkb.png" alt="Google Bedrijfsprofiel voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">SEO</span>
+                  <h3 class="blog-card-title">Google Bedrijfsprofiel voor het MKB</h3>
+                  <span class="blog-card-date">27 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/klantbehoud-mkb-waarde-bestaande-klanten" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/klantbehoud-mkb-waarde-bestaande-klanten.png" alt="Klantbehoud in het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">26 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/klantbehoud-mkb-waarde-bestaande-klanten" class="text-dark">Klantbehoud in het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="website">
+            <a href="/blog/klantbehoud-mkb-waarde-bestaande-klanten" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/klantbehoud-mkb-waarde-bestaande-klanten.png" alt="Klantbehoud in het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Website</span>
+                  <h3 class="blog-card-title">Klantbehoud in het MKB</h3>
+                  <span class="blog-card-date">26 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/crm-mkb-klantbeheer" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/crm-mkb-klantbeheer.png" alt="Een CRM voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">24 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/crm-mkb-klantbeheer" class="text-dark">Een CRM voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="website">
+            <a href="/blog/crm-mkb-klantbeheer" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/crm-mkb-klantbeheer.png" alt="Een CRM voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Website</span>
+                  <h3 class="blog-card-title">Een CRM voor het MKB</h3>
+                  <span class="blog-card-date">24 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/workflows-automatiseren-mkb" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/workflows-automatiseren-mkb.png" alt="Workflows automatiseren in het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">24 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/workflows-automatiseren-mkb" class="text-dark">Workflows automatiseren in het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
+            <a href="/blog/workflows-automatiseren-mkb" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/workflows-automatiseren-mkb.png" alt="Workflows automatiseren in het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI & Automatisering</span>
+                  <h3 class="blog-card-title">Workflows automatiseren in het MKB</h3>
+                  <span class="blog-card-date">24 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/branding-mkb-herkenbaar-merk" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/branding-mkb-herkenbaar-merk.png" alt="Branding voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">23 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/branding-mkb-herkenbaar-merk" class="text-dark">Branding voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/branding-mkb-herkenbaar-merk" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/branding-mkb-herkenbaar-merk.png" alt="Branding voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Branding voor het MKB</h3>
+                  <span class="blog-card-date">23 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/online-vindbaarheid-mkb-google" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/online-vindbaarheid-mkb-google.png" alt="Online vindbaarheid voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">22 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/online-vindbaarheid-mkb-google" class="text-dark">Online vindbaarheid voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
+            <a href="/blog/online-vindbaarheid-mkb-google" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/online-vindbaarheid-mkb-google.png" alt="Online vindbaarheid voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">SEO</span>
+                  <h3 class="blog-card-title">Online vindbaarheid voor het MKB</h3>
+                  <span class="blog-card-date">22 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/leadgeneratie-mkb-website-bezoekers" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/leadgeneratie-mkb-website-bezoekers.png" alt="Leadgeneratie voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">21 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/leadgeneratie-mkb-website-bezoekers" class="text-dark">Leadgeneratie voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="website">
+            <a href="/blog/leadgeneratie-mkb-website-bezoekers" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/leadgeneratie-mkb-website-bezoekers.png" alt="Leadgeneratie voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Website</span>
+                  <h3 class="blog-card-title">Leadgeneratie voor het MKB</h3>
+                  <span class="blog-card-date">21 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/chatbot-website-mkb-wanneer-werkt-het" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/chatbot-website-mkb-wanneer-werkt-het.png" alt="Een chatbot op je website" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">20 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/chatbot-website-mkb-wanneer-werkt-het" class="text-dark">Een chatbot op je website</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="chatbot">
+            <a href="/blog/chatbot-website-mkb-wanneer-werkt-het" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/chatbot-website-mkb-wanneer-werkt-het.png" alt="Een chatbot op je website" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Chatbot</span>
+                  <h3 class="blog-card-title">Een chatbot op je website</h3>
+                  <span class="blog-card-date">20 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/klantcases-marketingtool-mkb" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/klantcases-marketingtool-mkb.png" alt="Klantcases als marketingtool" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">20 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/klantcases-marketingtool-mkb" class="text-dark">Klantcases als marketingtool</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/klantcases-marketingtool-mkb" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/klantcases-marketingtool-mkb.png" alt="Klantcases als marketingtool" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Klantcases als marketingtool</h3>
+                  <span class="blog-card-date">20 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/email-marketing-mkb-hoogste-rendement" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/email-marketing-mkb-hoogste-rendement.png" alt="E-mailmarketing voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">13 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/email-marketing-mkb-hoogste-rendement" class="text-dark">E-mailmarketing voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
+            <a href="/blog/roi-ai-automatisering-mkb" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/roi-ai-automatisering-mkb.png" alt="De ROI van AI-automatisering" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI & Automatisering</span>
+                  <h3 class="blog-card-title">De ROI van AI-automatisering</h3>
+                  <span class="blog-card-date">14 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/mkb-website-bezoekers-omzetten-klanten" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/mkb-website-bezoekers-omzetten-klanten.png" alt="Waarom je MKB-website geen bezoekers omzet" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">12 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/mkb-website-bezoekers-omzetten-klanten" class="text-dark">Waarom je MKB-website geen bezoekers omzet</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/email-marketing-mkb-hoogste-rendement" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/email-marketing-mkb-hoogste-rendement.png" alt="E-mailmarketing voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">E-mailmarketing voor het MKB</h3>
+                  <span class="blog-card-date">13 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/gevonden-worden-in-chatgpt-mkb" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/gevonden-worden-in-chatgpt-mkb.png" alt="Gevonden worden in ChatGPT" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">11 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/gevonden-worden-in-chatgpt-mkb" class="text-dark">Gevonden worden in ChatGPT</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="website">
+            <a href="/blog/mkb-website-bezoekers-omzetten-klanten" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/mkb-website-bezoekers-omzetten-klanten.png" alt="Waarom je MKB-website geen bezoekers omzet" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Website</span>
+                  <h3 class="blog-card-title">Waarom je MKB-website geen bezoekers omzet</h3>
+                  <span class="blog-card-date">12 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/ai-agents-mkb-groeien-zonder-personeel" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/ai-agents-mkb-groeien-zonder-personeel.png" alt="Hoe AI-agents het MKB laten groeien" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">10 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/ai-agents-mkb-groeien-zonder-personeel" class="text-dark">Hoe AI-agents het MKB laten groeien</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/gevonden-worden-in-chatgpt-mkb" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/gevonden-worden-in-chatgpt-mkb.png" alt="Gevonden worden in ChatGPT" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Gevonden worden in ChatGPT</h3>
+                  <span class="blog-card-date">11 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/social-media-mkb-strategie-2026" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/social-media-mkb-strategie-2026.png" alt="Social media strategie voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">9 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/social-media-mkb-strategie-2026" class="text-dark">Social media strategie voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
+            <a href="/blog/ai-agents-mkb-groeien-zonder-personeel" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-agents-mkb-groeien-zonder-personeel.png" alt="Hoe AI-agents het MKB laten groeien" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI & Automatisering</span>
+                  <h3 class="blog-card-title">Hoe AI-agents het MKB laten groeien</h3>
+                  <span class="blog-card-date">10 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/hoe-mkb-meer-google-reviews-verzamelt" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/hoe-mkb-meer-google-reviews-verzamelt.png" alt="Meer Google reviews verzamelen" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">8 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/hoe-mkb-meer-google-reviews-verzamelt" class="text-dark">Meer Google reviews verzamelen</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/social-media-mkb-strategie-2026" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/social-media-mkb-strategie-2026.png" alt="Social media strategie voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Social media strategie voor het MKB</h3>
+                  <span class="blog-card-date">9 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/beste-ai-tools-voor-mkb-2026" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/beste-ai-tools-voor-mkb-2026.png" alt="Beste AI-tools voor MKB 2026" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">7 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/beste-ai-tools-voor-mkb-2026" class="text-dark">Beste AI-tools voor MKB 2026</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
+            <a href="/blog/hoe-mkb-meer-google-reviews-verzamelt" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/hoe-mkb-meer-google-reviews-verzamelt.png" alt="Meer Google reviews verzamelen" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">SEO</span>
+                  <h3 class="blog-card-title">Meer Google reviews verzamelen</h3>
+                  <span class="blog-card-date">8 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai.png" alt="Wat is het Model Context Protocol?" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">7 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai" class="text-dark">Wat is het Model Context Protocol?</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
+            <a href="/blog/beste-ai-tools-voor-mkb-2026" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/beste-ai-tools-voor-mkb-2026.png" alt="Beste AI-tools voor MKB 2026" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI & Automatisering</span>
+                  <h3 class="blog-card-title">Beste AI-tools voor MKB 2026</h3>
+                  <span class="blog-card-date">7 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026.png" alt="Wat AI-automatisering betekent voor het MKB" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">6 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026" class="text-dark">Wat AI-automatisering betekent voor het MKB</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai.png" alt="Wat is het Model Context Protocol?" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Wat is het Model Context Protocol?</h3>
+                  <span class="blog-card-date">7 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien.png" alt="Wat is een AI-agent?" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">3 Maart 2026</p>
-                <h4 class="mb-0"><a href="/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien" class="text-dark">Wat is een AI-agent?</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
+            <a href="/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026.png" alt="Wat AI-automatisering betekent voor het MKB" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI & Automatisering</span>
+                  <h3 class="blog-card-title">Wat AI-automatisering betekent voor het MKB</h3>
+                  <span class="blog-card-date">6 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/content-publiceren-google-ai-vindbaarheid" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/content-publiceren-google-ai-vindbaarheid.png" alt="Waarom Regelmatig Content Publiceren Essentieel Is" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">24 Februari 2026</p>
-                <h4 class="mb-0"><a href="/blog/content-publiceren-google-ai-vindbaarheid" class="text-dark">Waarom Regelmatig Content Publiceren Essentieel Is</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
+            <a href="/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien.png" alt="Wat is een AI-agent?" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI & Automatisering</span>
+                  <h3 class="blog-card-title">Wat is een AI-agent?</h3>
+                  <span class="blog-card-date">3 maart 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/whatsapp-automatisering-voor-bedrijven" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/whatsapp-automatisering-voor-bedrijven.png" alt="WhatsApp Automatisering" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">23 Februari 2026</p>
-                <h4 class="mb-0"><a href="/blog/whatsapp-automatisering-voor-bedrijven" class="text-dark">WhatsApp Automatisering</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
+            <a href="/blog/content-publiceren-google-ai-vindbaarheid" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/content-publiceren-google-ai-vindbaarheid.png" alt="Waarom Regelmatig Content Publiceren Essentieel Is" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">SEO</span>
+                  <h3 class="blog-card-title">Waarom Regelmatig Content Publiceren Essentieel Is</h3>
+                  <span class="blog-card-date">24 februari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/website-chatbots-leads-genereren" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/website-chatbots-leads-genereren.png" alt="Website Chatbots: 24/7 Leads Genereren" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">20 Februari 2026</p>
-                <h4 class="mb-0"><a href="/blog/website-chatbots-leads-genereren" class="text-dark">Website Chatbots: 24/7 Leads Genereren</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
+            <a href="/blog/whatsapp-automatisering-voor-bedrijven" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/whatsapp-automatisering-voor-bedrijven.png" alt="WhatsApp Automatisering" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI & Automatisering</span>
+                  <h3 class="blog-card-title">WhatsApp Automatisering</h3>
+                  <span class="blog-card-date">23 februari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/starten-met-studiolee" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/starten-met-studiolee.png" alt="Hoe Start Je Met STUDIOLEE?" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">6 Februari 2026</p>
-                <h4 class="mb-0"><a href="/blog/starten-met-studiolee" class="text-dark">Hoe Start Je Met STUDIOLEE?</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="chatbot">
+            <a href="/blog/website-chatbots-leads-genereren" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/website-chatbots-leads-genereren.png" alt="Website Chatbots: 24/7 Leads Genereren" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Chatbot</span>
+                  <h3 class="blog-card-title">Website Chatbots: 24/7 Leads Genereren</h3>
+                  <span class="blog-card-date">20 februari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/ai-seo-vindbaarheid" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/ai-seo-vindbaarheid.png" alt="De Nieuwe SEO: ChatGPT en Google" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">5 Februari 2026</p>
-                <h4 class="mb-0"><a href="/blog/ai-seo-vindbaarheid" class="text-dark">De Nieuwe SEO: ChatGPT en Google</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/starten-met-studiolee" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/starten-met-studiolee.png" alt="Hoe Start Je Met STUDIOLEE?" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Hoe Start Je Met STUDIOLEE?</h3>
+                  <span class="blog-card-date">6 februari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/automations-workflow-optimalisatie" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/automations-workflow-optimalisatie.png" alt="Slimme Automations" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">3 Februari 2026</p>
-                <h4 class="mb-0"><a href="/blog/automations-workflow-optimalisatie" class="text-dark">Slimme Automations</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
+            <a href="/blog/ai-seo-vindbaarheid" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-seo-vindbaarheid.png" alt="De Nieuwe SEO: ChatGPT en Google" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">SEO</span>
+                  <h3 class="blog-card-title">De Nieuwe SEO: ChatGPT en Google</h3>
+                  <span class="blog-card-date">5 februari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/managed-service-vs-marketing-bureau" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/managed-service-vs-marketing-bureau.png" alt="Managed Service vs. Marketing Bureau" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">1 Februari 2026</p>
-                <h4 class="mb-0"><a href="/blog/managed-service-vs-marketing-bureau" class="text-dark">Managed Service vs. Marketing Bureau</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
+            <a href="/blog/automations-workflow-optimalisatie" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/automations-workflow-optimalisatie.png" alt="Slimme Automations" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">AI & Automatisering</span>
+                  <h3 class="blog-card-title">Slimme Automations</h3>
+                  <span class="blog-card-date">3 februari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/social-media-zonder-gedoe" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/social-media-zonder-gedoe.png" alt="Social Media Zonder Gedoe" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">28 Januari 2026</p>
-                <h4 class="mb-0"><a href="/blog/social-media-zonder-gedoe" class="text-dark">Social Media Zonder Gedoe</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/managed-service-vs-marketing-bureau" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/managed-service-vs-marketing-bureau.png" alt="Managed Service vs. Marketing Bureau" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Managed Service vs. Marketing Bureau</h3>
+                  <span class="blog-card-date">1 februari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/voice-ai-24-7-bereikbaar" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/voice-ai-24-7-bereikbaar.png" alt="24/7 Bereikbaar: De Kracht van Voice AI" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">25 Januari 2026</p>
-                <h4 class="mb-0"><a href="/blog/voice-ai-24-7-bereikbaar" class="text-dark">24/7 Bereikbaar: De Kracht van Voice AI</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/social-media-zonder-gedoe" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/social-media-zonder-gedoe.png" alt="Social Media Zonder Gedoe" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Social Media Zonder Gedoe</h3>
+                  <span class="blog-card-date">28 januari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-              <a href="/blog/google-reviews-automatiseren" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/google-reviews-automatiseren.png" alt="Automatisch Meer Google Reviews" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">20 Januari 2026</p>
-                <h4 class="mb-0"><a href="/blog/google-reviews-automatiseren" class="text-dark">Automatisch Meer Google Reviews</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="chatbot">
+            <a href="/blog/voice-ai-24-7-bereikbaar" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/voice-ai-24-7-bereikbaar.png" alt="24/7 Bereikbaar: De Kracht van Voice AI" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Chatbot</span>
+                  <h3 class="blog-card-title">24/7 Bereikbaar: De Kracht van Voice AI</h3>
+                  <span class="blog-card-date">25 januari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-lg-6 mb-7">
-            <div class="resources d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <a href="/blog/waarom-ai-onmisbaar-is-voor-ondernemers" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png" alt="Waarom AI Onmisbaar Is" class="img-fluid">
-              </a>
-              <div class="resources-details">
-                <p class="mb-0">15 Januari 2026</p>
-                <h4 class="mb-0"><a href="/blog/waarom-ai-onmisbaar-is-voor-ondernemers" class="text-dark">Waarom AI Onmisbaar Is</a></h4>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
+            <a href="/blog/google-reviews-automatiseren" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/google-reviews-automatiseren.png" alt="Automatisch Meer Google Reviews" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">SEO</span>
+                  <h3 class="blog-card-title">Automatisch Meer Google Reviews</h3>
+                  <span class="blog-card-date">20 januari 2026</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
+          <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
+            <a href="/blog/waarom-ai-onmisbaar-is-voor-ondernemers" class="blog-card-link text-decoration-none">
+              <div class="blog-card-dark">
+                <div class="blog-card-img"><img src="/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png" alt="Waarom AI Onmisbaar Is" loading="lazy"></div>
+                <div class="blog-card-body">
+                  <span class="blog-card-badge">Marketing</span>
+                  <h3 class="blog-card-title">Waarom AI Onmisbaar Is</h3>
+                  <span class="blog-card-date">15 januari 2026</span>
+                </div>
+              </div>
+            </a>
           </div>
-
-  </div>
+        </div>
+      </div>
+    </section>
 
   <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
     <div class="container">
@@ -782,6 +882,9 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
     <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69c4ef18d9121c5778d93245"></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){var bs=document.querySelectorAll('.blog-filter-btn'),cs=document.querySelectorAll('.blog-card-item');bs.forEach(function(b){b.addEventListener('click',function(){var f=this.getAttribute('data-filter');bs.forEach(function(x){x.classList.remove('active')});this.classList.add('active');cs.forEach(function(c){if(f==='all'||c.getAttribute('data-cluster')===f){c.classList.remove('hidden')}else{c.classList.add('hidden')}})})});});
+</script>
 </body>
 
 </html>
