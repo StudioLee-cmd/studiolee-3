@@ -317,98 +317,186 @@
               </div>
             </div>
             <div class="col-xl-8 col-xxl-7">
-              <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <h2 class="mb-0 text-white">Waarom je huidige website niet werkt</h2>
-                <p class="text-white text-opacity-60 fs-5 mb-0">Hover over een kaart om te zien hoe STUDIOLEE het oplost.</p>
+              <div class="d-flex flex-column gap-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <h2 class="mb-0 text-white">Zonder vs met STUDIOLEE</h2>
+                <p class="text-white text-opacity-50 fs-6 mb-0">Hover over een kaart om meer te lezen.</p>
               </div>
             </div>
           </div>
 
-          <div class="row g-4 justify-content-center">
+          <div class="d-flex flex-column gap-4">
 
-            <!-- Card 1: Te traag -->
-            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="ds-card rounded-4 h-100 p-4 p-lg-5 d-flex flex-column justify-content-end" style="background: #1a2226; min-height: 380px; position: relative; overflow: hidden; cursor: pointer;">
-                <div style="position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.1);"></div>
-                <div class="ds-top">
-                  <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center mb-4" style="width:42px;height:42px">
-                    <iconify-icon icon="lucide:gauge" class="fs-7 text-dark"></iconify-icon>
-                  </span>
-                  <h4 class="text-white mb-3">Te traag</h4>
-                  <p class="text-white text-opacity-60 mb-0" style="font-size: 0.93rem;">Je website laadt in 4+ seconden. Bezoekers zijn weg voordat ze je aanbod zien. Google straft trage sites af.</p>
+            <!-- Row 1: Snelheid -->
+            <div class="row g-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-md-6">
+                <div class="ds-card rounded-4 p-4 p-lg-5 d-flex flex-column" style="background:#1a2226; min-height:200px; cursor:pointer; overflow:hidden;">
+                  <div class="ds-top">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                      <span class="round-42 flex-shrink-0 rounded-circle hstack justify-content-center" style="width:36px;height:36px;background:rgba(255,80,80,0.15)">
+                        <iconify-icon icon="lucide:gauge" style="font-size:1.1rem;color:#ff6b6b"></iconify-icon>
+                      </span>
+                      <h4 class="text-white mb-0" style="font-size:1.1rem">Zonder: Te traag</h4>
+                    </div>
+                    <p class="text-white text-opacity-50 mb-0" style="font-size:0.9rem">4+ seconden laadtijd. Bezoekers weg, Google straft af.</p>
+                  </div>
+                  <div class="ds-details" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.4s ease 0.05s;">
+                    <div style="padding-top:12px;margin-top:12px;border-top:1px solid rgba(255,107,107,0.2);">
+                      <p class="text-white text-opacity-40 mb-1" style="font-size:0.82rem">&times; Bezoekers verlaten de site</p>
+                      <p class="text-white text-opacity-40 mb-1" style="font-size:0.82rem">&times; Lagere Google ranking</p>
+                      <p class="text-white text-opacity-40 mb-0" style="font-size:0.82rem">&times; Minder conversies</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="ds-details" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease 0.05s;">
-                  <div style="padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(212,237,49,0.3);">
-                    <p class="mb-2" style="font-size: 0.8rem; font-weight: 700; color: #C1FF72; letter-spacing: 0.08em; text-transform: uppercase;">Met STUDIOLEE</p>
-                    <p class="text-white text-opacity-70 mb-1" style="font-size: 0.85rem;">&check; 95+ Google PageSpeed score</p>
-                    <p class="text-white text-opacity-70 mb-1" style="font-size: 0.85rem;">&check; Statische code, geen plugins</p>
-                    <p class="text-white text-opacity-70 mb-0" style="font-size: 0.85rem;">&check; Laadtijd onder 1 seconde</p>
+              </div>
+              <div class="col-md-6">
+                <div class="ds-card rounded-4 p-4 p-lg-5 d-flex flex-column" style="background:#1a2a1e; min-height:200px; cursor:pointer; overflow:hidden;">
+                  <div class="ds-top">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                      <span class="round-42 flex-shrink-0 rounded-circle hstack justify-content-center" style="width:36px;height:36px;background:rgba(193,255,114,0.15)">
+                        <iconify-icon icon="lucide:zap" style="font-size:1.1rem;color:#C1FF72"></iconify-icon>
+                      </span>
+                      <h4 class="text-white mb-0" style="font-size:1.1rem">Met STUDIOLEE: Razend snel</h4>
+                    </div>
+                    <p class="text-white text-opacity-50 mb-0" style="font-size:0.9rem">95+ PageSpeed, onder 1 seconde. Statische code, geen plugins.</p>
+                  </div>
+                  <div class="ds-details" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.4s ease 0.05s;">
+                    <div style="padding-top:12px;margin-top:12px;border-top:1px solid rgba(193,255,114,0.2);">
+                      <p class="mb-1" style="font-size:0.82rem;color:#C1FF72">&check; 95+ Google PageSpeed score</p>
+                      <p class="mb-1" style="font-size:0.82rem;color:#C1FF72">&check; Statische code, nul plugins</p>
+                      <p class="mb-0" style="font-size:0.82rem;color:#C1FF72">&check; Laadtijd onder 1 seconde</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Card 2: Geen mobile-first -->
-            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="ds-card rounded-4 h-100 p-4 p-lg-5 d-flex flex-column justify-content-end" style="background: #222a2e; min-height: 380px; position: relative; overflow: hidden; cursor: pointer;">
-                <div style="position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.1);"></div>
-                <div class="ds-top">
-                  <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center mb-4" style="width:42px;height:42px">
-                    <iconify-icon icon="lucide:smartphone" class="fs-7 text-dark"></iconify-icon>
-                  </span>
-                  <h4 class="text-white mb-3">Geen mobile-first</h4>
-                  <p class="text-white text-opacity-60 mb-0" style="font-size: 0.93rem;">60%+ zit op telefoon. Knoppen te klein, formulieren onbruikbaar. Een mobile-first site converteert 3x beter.</p>
+            <!-- Row 2: Mobiel -->
+            <div class="row g-3" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-md-6">
+                <div class="ds-card rounded-4 p-4 p-lg-5 d-flex flex-column" style="background:#22272a; min-height:200px; cursor:pointer; overflow:hidden;">
+                  <div class="ds-top">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                      <span class="round-42 flex-shrink-0 rounded-circle hstack justify-content-center" style="width:36px;height:36px;background:rgba(255,80,80,0.15)">
+                        <iconify-icon icon="lucide:smartphone" style="font-size:1.1rem;color:#ff6b6b"></iconify-icon>
+                      </span>
+                      <h4 class="text-white mb-0" style="font-size:1.1rem">Zonder: Niet mobiel-vriendelijk</h4>
+                    </div>
+                    <p class="text-white text-opacity-50 mb-0" style="font-size:0.9rem">60%+ zit op telefoon. Knoppen te klein, formulieren onbruikbaar.</p>
+                  </div>
+                  <div class="ds-details" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.4s ease 0.05s;">
+                    <div style="padding-top:12px;margin-top:12px;border-top:1px solid rgba(255,107,107,0.2);">
+                      <p class="text-white text-opacity-40 mb-1" style="font-size:0.82rem">&times; Tekst te breed voor scherm</p>
+                      <p class="text-white text-opacity-40 mb-1" style="font-size:0.82rem">&times; 3x minder conversies</p>
+                      <p class="text-white text-opacity-40 mb-0" style="font-size:0.82rem">&times; Hoge bounce rate</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="ds-details" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease 0.05s;">
-                  <div style="padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(212,237,49,0.3);">
-                    <p class="mb-2" style="font-size: 0.8rem; font-weight: 700; color: #C1FF72; letter-spacing: 0.08em; text-transform: uppercase;">Met STUDIOLEE</p>
-                    <p class="text-white text-opacity-70 mb-1" style="font-size: 0.85rem;">&check; Mobile-first ontworpen</p>
-                    <p class="text-white text-opacity-70 mb-1" style="font-size: 0.85rem;">&check; Touch-vriendelijke knoppen</p>
-                    <p class="text-white text-opacity-70 mb-0" style="font-size: 0.85rem;">&check; Perfect op elk schermformaat</p>
+              </div>
+              <div class="col-md-6">
+                <div class="ds-card rounded-4 p-4 p-lg-5 d-flex flex-column" style="background:#1a2a1e; min-height:200px; cursor:pointer; overflow:hidden;">
+                  <div class="ds-top">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                      <span class="round-42 flex-shrink-0 rounded-circle hstack justify-content-center" style="width:36px;height:36px;background:rgba(193,255,114,0.15)">
+                        <iconify-icon icon="lucide:tablet-smartphone" style="font-size:1.1rem;color:#C1FF72"></iconify-icon>
+                      </span>
+                      <h4 class="text-white mb-0" style="font-size:1.1rem">Met STUDIOLEE: Mobile-first</h4>
+                    </div>
+                    <p class="text-white text-opacity-50 mb-0" style="font-size:0.9rem">Ontworpen voor mobiel, perfect op elk schermformaat.</p>
+                  </div>
+                  <div class="ds-details" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.4s ease 0.05s;">
+                    <div style="padding-top:12px;margin-top:12px;border-top:1px solid rgba(193,255,114,0.2);">
+                      <p class="mb-1" style="font-size:0.82rem;color:#C1FF72">&check; Mobile-first design</p>
+                      <p class="mb-1" style="font-size:0.82rem;color:#C1FF72">&check; Touch-vriendelijke knoppen</p>
+                      <p class="mb-0" style="font-size:0.82rem;color:#C1FF72">&check; Responsive op elk apparaat</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Card 3: Geen SEO -->
-            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="ds-card rounded-4 h-100 p-4 p-lg-5 d-flex flex-column justify-content-end" style="background: #1e2830; min-height: 380px; position: relative; overflow: hidden; cursor: pointer;">
-                <div style="position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.1);"></div>
-                <div class="ds-top">
-                  <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center mb-4" style="width:42px;height:42px">
-                    <iconify-icon icon="lucide:search-x" class="fs-7 text-dark"></iconify-icon>
-                  </span>
-                  <h4 class="text-white mb-3">Geen SEO</h4>
-                  <p class="text-white text-opacity-60 mb-0" style="font-size: 0.93rem;">Een mooie website zonder SEO is als een winkel zonder adres. Google vindt je simpelweg niet.</p>
+            <!-- Row 3: SEO -->
+            <div class="row g-3" data-aos="fade-up" data-aos-delay="300">
+              <div class="col-md-6">
+                <div class="ds-card rounded-4 p-4 p-lg-5 d-flex flex-column" style="background:#1a2226; min-height:200px; cursor:pointer; overflow:hidden;">
+                  <div class="ds-top">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                      <span class="round-42 flex-shrink-0 rounded-circle hstack justify-content-center" style="width:36px;height:36px;background:rgba(255,80,80,0.15)">
+                        <iconify-icon icon="lucide:search-x" style="font-size:1.1rem;color:#ff6b6b"></iconify-icon>
+                      </span>
+                      <h4 class="text-white mb-0" style="font-size:1.1rem">Zonder: Onvindbaar</h4>
+                    </div>
+                    <p class="text-white text-opacity-50 mb-0" style="font-size:0.9rem">Geen SEO, geen structured data. Google vindt je niet.</p>
+                  </div>
+                  <div class="ds-details" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.4s ease 0.05s;">
+                    <div style="padding-top:12px;margin-top:12px;border-top:1px solid rgba(255,107,107,0.2);">
+                      <p class="text-white text-opacity-40 mb-1" style="font-size:0.82rem">&times; Niet in Google top 10</p>
+                      <p class="text-white text-opacity-40 mb-1" style="font-size:0.82rem">&times; Geen organisch verkeer</p>
+                      <p class="text-white text-opacity-40 mb-0" style="font-size:0.82rem">&times; Onzichtbaar voor AI-zoekmachines</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="ds-details" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease 0.05s;">
-                  <div style="padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(212,237,49,0.3);">
-                    <p class="mb-2" style="font-size: 0.8rem; font-weight: 700; color: #C1FF72; letter-spacing: 0.08em; text-transform: uppercase;">Met STUDIOLEE</p>
-                    <p class="text-white text-opacity-70 mb-1" style="font-size: 0.85rem;">&check; Structured data &amp; schema markup</p>
-                    <p class="text-white text-opacity-70 mb-1" style="font-size: 0.85rem;">&check; Wekelijks SEO-blogartikel</p>
-                    <p class="text-white text-opacity-70 mb-0" style="font-size: 0.85rem;">&check; Vindbaar in Google &amp; AI-zoekmachines</p>
+              </div>
+              <div class="col-md-6">
+                <div class="ds-card rounded-4 p-4 p-lg-5 d-flex flex-column" style="background:#1a2a1e; min-height:200px; cursor:pointer; overflow:hidden;">
+                  <div class="ds-top">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                      <span class="round-42 flex-shrink-0 rounded-circle hstack justify-content-center" style="width:36px;height:36px;background:rgba(193,255,114,0.15)">
+                        <iconify-icon icon="lucide:search-check" style="font-size:1.1rem;color:#C1FF72"></iconify-icon>
+                      </span>
+                      <h4 class="text-white mb-0" style="font-size:1.1rem">Met STUDIOLEE: Vindbaar</h4>
+                    </div>
+                    <p class="text-white text-opacity-50 mb-0" style="font-size:0.9rem">SEO-geoptimaliseerd, wekelijks blog, vindbaar in Google &amp; AI.</p>
+                  </div>
+                  <div class="ds-details" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.4s ease 0.05s;">
+                    <div style="padding-top:12px;margin-top:12px;border-top:1px solid rgba(193,255,114,0.2);">
+                      <p class="mb-1" style="font-size:0.82rem;color:#C1FF72">&check; Structured data &amp; schema</p>
+                      <p class="mb-1" style="font-size:0.82rem;color:#C1FF72">&check; Wekelijks SEO-blogartikel</p>
+                      <p class="mb-0" style="font-size:0.82rem;color:#C1FF72">&check; Vindbaar in Google &amp; ChatGPT</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Card 4: Geen conversies -->
-            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-              <div class="ds-card rounded-4 h-100 p-4 p-lg-5 d-flex flex-column justify-content-end" style="background: #1a2226; min-height: 380px; position: relative; overflow: hidden; cursor: pointer;">
-                <div style="position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.1);"></div>
-                <div class="ds-top">
-                  <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center mb-4" style="width:42px;height:42px">
-                    <iconify-icon icon="lucide:mouse-pointer-click" class="fs-7 text-dark"></iconify-icon>
-                  </span>
-                  <h4 class="text-white mb-3">Geen conversies</h4>
-                  <p class="text-white text-opacity-60 mb-0" style="font-size: 0.93rem;">Bezoekers komen wel, maar doen niks. Geen aanvragen, geen telefoontjes. Je website informeert maar overtuigt niet.</p>
+            <!-- Row 4: Conversies -->
+            <div class="row g-3" data-aos="fade-up" data-aos-delay="400">
+              <div class="col-md-6">
+                <div class="ds-card rounded-4 p-4 p-lg-5 d-flex flex-column" style="background:#22272a; min-height:200px; cursor:pointer; overflow:hidden;">
+                  <div class="ds-top">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                      <span class="round-42 flex-shrink-0 rounded-circle hstack justify-content-center" style="width:36px;height:36px;background:rgba(255,80,80,0.15)">
+                        <iconify-icon icon="lucide:mouse-pointer-click" style="font-size:1.1rem;color:#ff6b6b"></iconify-icon>
+                      </span>
+                      <h4 class="text-white mb-0" style="font-size:1.1rem">Zonder: Geen conversies</h4>
+                    </div>
+                    <p class="text-white text-opacity-50 mb-0" style="font-size:0.9rem">Bezoekers komen maar doen niks. Website informeert, overtuigt niet.</p>
+                  </div>
+                  <div class="ds-details" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.4s ease 0.05s;">
+                    <div style="padding-top:12px;margin-top:12px;border-top:1px solid rgba(255,107,107,0.2);">
+                      <p class="text-white text-opacity-40 mb-1" style="font-size:0.82rem">&times; Geen leads of aanvragen</p>
+                      <p class="text-white text-opacity-40 mb-1" style="font-size:0.82rem">&times; Geen follow-up systeem</p>
+                      <p class="text-white text-opacity-40 mb-0" style="font-size:0.82rem">&times; Gemiste kansen na sluitingstijd</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="ds-details" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease 0.05s;">
-                  <div style="padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(212,237,49,0.3);">
-                    <p class="mb-2" style="font-size: 0.8rem; font-weight: 700; color: #C1FF72; letter-spacing: 0.08em; text-transform: uppercase;">Met STUDIOLEE</p>
-                    <p class="text-white text-opacity-70 mb-1" style="font-size: 0.85rem;">&check; AI Chatbot vangt leads 24/7 op</p>
-                    <p class="text-white text-opacity-70 mb-1" style="font-size: 0.85rem;">&check; Slimme CTA&apos;s en formulieren</p>
-                    <p class="text-white text-opacity-70 mb-0" style="font-size: 0.85rem;">&check; Conversie-geoptimaliseerd ontwerp</p>
+              </div>
+              <div class="col-md-6">
+                <div class="ds-card rounded-4 p-4 p-lg-5 d-flex flex-column" style="background:#1a2a1e; min-height:200px; cursor:pointer; overflow:hidden;">
+                  <div class="ds-top">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                      <span class="round-42 flex-shrink-0 rounded-circle hstack justify-content-center" style="width:36px;height:36px;background:rgba(193,255,114,0.15)">
+                        <iconify-icon icon="lucide:trending-up" style="font-size:1.1rem;color:#C1FF72"></iconify-icon>
+                      </span>
+                      <h4 class="text-white mb-0" style="font-size:1.1rem">Met STUDIOLEE: Leads 24/7</h4>
+                    </div>
+                    <p class="text-white text-opacity-50 mb-0" style="font-size:0.9rem">AI Chatbot, slimme formulieren en conversie-geoptimaliseerd design.</p>
+                  </div>
+                  <div class="ds-details" style="max-height:0;opacity:0;overflow:hidden;transition:max-height 0.5s ease,opacity 0.4s ease 0.05s;">
+                    <div style="padding-top:12px;margin-top:12px;border-top:1px solid rgba(193,255,114,0.2);">
+                      <p class="mb-1" style="font-size:0.82rem;color:#C1FF72">&check; AI Chatbot vangt leads 24/7</p>
+                      <p class="mb-1" style="font-size:0.82rem;color:#C1FF72">&check; Slimme CTA&apos;s en formulieren</p>
+                      <p class="mb-0" style="font-size:0.82rem;color:#C1FF72">&check; Conversie-geoptimaliseerd ontwerp</p>
+                    </div>
                   </div>
                 </div>
               </div>
