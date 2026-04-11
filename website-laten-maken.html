@@ -130,6 +130,9 @@
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.studiolee.nl/"}, {"@type": "ListItem", "position": 2, "name": "Website laten maken", "item": "https://www.studiolee.nl/website-laten-maken"}]}</script>
+<style>
+    .banner-section::before { pointer-events: none; }
+    </style>
 </head>
 
 <body>
@@ -1189,6 +1192,20 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
     <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69c4ef18d9121c5778d93245"></script>
+
+    <script>
+    // Fold-out cards: details expand on hover
+    document.querySelectorAll('.ds-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const d = card.querySelector('.ds-details');
+        if (d) { d.style.maxHeight = '300px'; d.style.opacity = '1'; }
+      });
+      card.addEventListener('mouseleave', () => {
+        const d = card.querySelector('.ds-details');
+        if (d) { d.style.maxHeight = '0'; d.style.opacity = '0'; }
+      });
+    });
+    </script>
 </body>
 
 </html>
