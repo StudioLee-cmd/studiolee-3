@@ -262,8 +262,15 @@
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 <style>
-section:not(.bg-dark):not([class*="banner"]):not([class*="footer"]):not([class*="nav"]) {
+/* White sections → soft green-grey */
+.stats-facts,
+.faq,
+section.py-5.py-lg-7:not(.bg-light-gray):not(.bg-dark):not(.bg-primary) {
   background-color: #e8ede4 !important;
+}
+/* Light gray sections → darker green-grey (keep contrast with white sections) */
+.bg-light-gray {
+  background-color: #dce3d7 !important;
 }
 </style>
 </head>
