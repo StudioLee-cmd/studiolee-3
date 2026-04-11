@@ -17295,10 +17295,10 @@ section::after {
 .menu-dropdown.is-open {
   pointer-events: auto;
 }
-.menu-dropdown .header-menu,
-.menu-dropdown .header-link,
-.menu-dropdown a,
-.menu-dropdown button {
+.menu-dropdown.is-open .header-menu,
+.menu-dropdown.is-open .header-link,
+.menu-dropdown.is-open a,
+.menu-dropdown.is-open button {
   pointer-events: auto;
 }
 
