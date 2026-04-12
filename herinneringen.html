@@ -695,11 +695,10 @@
       var el = document.createElement('div');
       el.id = 'pageSticker';
       var size = isMobile ? 100 : 260;
-      el.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;z-index:9999;cursor:grab;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.3));transform:rotate(-6deg);transition:filter 0.3s,transform 0.3s;touch-action:none;';
+      el.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;z-index:9999;cursor:grab;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.3));transform:rotate(-6deg);transition:filter 0.3s,transform 0.3s;';
       el.innerHTML = '<img src="' + stickerUrl + '" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">';
       document.body.appendChild(el);
       
-      // Position on the hero area — absolute so it scrolls with the page
       if (isMobile) {
         el.style.left = '12px';
         el.style.top = '100px';
@@ -709,69 +708,106 @@
       }
       
       var dragging = false, offX, offY;
-      var longPressTimer = null;
-      var longPressReady = false;
-      var LONG_PRESS_MS = 400;
       
-      el.addEventListener('pointerdown', function(e) {
-        if (isMobile) {
-          longPressReady = false;
-          longPressTimer = setTimeout(function() {
-            longPressReady = true;
-            startDrag(e);
+      if (isMobile) {
+        // MOBILE: Use touch events directly for reliable long-press drag
+        var longTimer = null;
+        var startX = 0, startY = 0;
+        var THRESHOLD = 10; // pixels of movement allowed before canceling long-press
+        
+        el.addEventListener('touchstart', function(e) {
+          var t = e.touches[0];
+          startX = t.clientX;
+          startY = t.clientY;
+          
+          longTimer = setTimeout(function() {
+            // Long-press activated — start dragging
+            dragging = true;
             if (navigator.vibrate) navigator.vibrate(30);
-          }, LONG_PRESS_MS);
-        } else {
-          startDrag(e);
-        }
-        e.preventDefault();
-      });
-      
-      function startDrag(e) {
-        dragging = true;
-        el.style.cursor = 'grabbing';
-        el.style.transition = 'none';
-        var rect = el.getBoundingClientRect();
-        offX = e.clientX - rect.left;
-        offY = e.clientY - rect.top;
-        // Switch to fixed during drag for smooth movement
-        el.style.position = 'fixed';
-        el.style.left = rect.left + 'px';
-        el.style.top = rect.top + 'px';
-        el.style.filter = 'drop-shadow(0 14px 40px rgba(0,0,0,0.5))';
-        el.style.transform = 'rotate(-2deg) scale(' + (isMobile ? '1.15' : '1.08') + ')';
-      }
-      
-      window.addEventListener('pointermove', function(e) {
-        if (isMobile && !longPressReady) {
-          clearTimeout(longPressTimer);
-          return;
-        }
-        if (!dragging) return;
-        el.style.left = (e.clientX - offX) + 'px';
-        el.style.top = (e.clientY - offY) + 'px';
-        el.style.transform = 'rotate(' + ((e.clientX - offX) * 0.02 - 4) + 'deg) scale(' + (isMobile ? '1.15' : '1.08') + ')';
-        e.preventDefault();
-      });
-      
-      window.addEventListener('pointerup', function() {
-        clearTimeout(longPressTimer);
-        longPressReady = false;
-        if (!dragging) return;
-        dragging = false;
-        // Convert back to absolute — sticker stays on the PAGE where you dropped it
-        var fixedLeft = parseFloat(el.style.left);
-        var fixedTop = parseFloat(el.style.top);
-        el.style.position = 'absolute';
-        el.style.left = (fixedLeft + window.scrollX) + 'px';
-        el.style.top = (fixedTop + window.scrollY) + 'px';
-        el.style.cursor = 'grab';
-        el.style.filter = 'drop-shadow(0 ' + (isMobile ? '6' : '8') + 'px ' + (isMobile ? '18' : '24') + 'px rgba(0,0,0,0.35))';
-        el.style.transform = 'rotate(-6deg) scale(1)';
-        el.style.transition = 'filter 0.3s, transform 0.3s';
-      });
-      
-      if (!isMobile) {
+            var rect = el.getBoundingClientRect();
+            offX = startX - rect.left;
+            offY = startY - rect.top;
+            el.style.position = 'fixed';
+            el.style.left = rect.left + 'px';
+            el.style.top = rect.top + 'px';
+            el.style.transition = 'none';
+            el.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
+            el.style.transform = 'rotate(-2deg) scale(1.15)';
+          }, 400);
+        }, {passive: false});
+        
+        el.addEventListener('touchmove', function(e) {
+          var t = e.touches[0];
+          if (!dragging) {
+            // Check if finger moved too far — cancel long-press (it's a scroll)
+            var dx = t.clientX - startX;
+            var dy = t.clientY - startY;
+            if (Math.abs(dx) > THRESHOLD || Math.abs(dy) > THRESHOLD) {
+              clearTimeout(longTimer);
+            }
+            return; // Let the browser scroll normally
+          }
+          // Dragging active — move the sticker
+          e.preventDefault();
+          el.style.left = (t.clientX - offX) + 'px';
+          el.style.top = (t.clientY - offY) + 'px';
+          el.style.transform = 'rotate(' + ((t.clientX - offX) * 0.02 - 4) + 'deg) scale(1.15)';
+        }, {passive: false});
+        
+        el.addEventListener('touchend', function() {
+          clearTimeout(longTimer);
+          if (!dragging) return;
+          dragging = false;
+          // Drop: convert to absolute so it stays on the page
+          var fixedLeft = parseFloat(el.style.left);
+          var fixedTop = parseFloat(el.style.top);
+          el.style.position = 'absolute';
+          el.style.left = (fixedLeft + window.scrollX) + 'px';
+          el.style.top = (fixedTop + window.scrollY) + 'px';
+          el.style.cursor = 'grab';
+          el.style.filter = 'drop-shadow(0 6px 18px rgba(0,0,0,0.3))';
+          el.style.transform = 'rotate(-6deg) scale(1)';
+          el.style.transition = 'filter 0.3s, transform 0.3s';
+        });
+        
+      } else {
+        // DESKTOP: Pointer events, instant drag
+        el.addEventListener('pointerdown', function(e) {
+          dragging = true;
+          el.style.cursor = 'grabbing';
+          el.style.transition = 'none';
+          var rect = el.getBoundingClientRect();
+          offX = e.clientX - rect.left;
+          offY = e.clientY - rect.top;
+          el.style.position = 'fixed';
+          el.style.left = rect.left + 'px';
+          el.style.top = rect.top + 'px';
+          el.style.filter = 'drop-shadow(0 14px 40px rgba(0,0,0,0.5))';
+          el.style.transform = 'rotate(-2deg) scale(1.08)';
+          e.preventDefault();
+        });
+        
+        window.addEventListener('pointermove', function(e) {
+          if (!dragging) return;
+          el.style.left = (e.clientX - offX) + 'px';
+          el.style.top = (e.clientY - offY) + 'px';
+          el.style.transform = 'rotate(' + ((e.clientX - offX) * 0.02 - 4) + 'deg) scale(1.08)';
+        });
+        
+        window.addEventListener('pointerup', function() {
+          if (!dragging) return;
+          dragging = false;
+          var fixedLeft = parseFloat(el.style.left);
+          var fixedTop = parseFloat(el.style.top);
+          el.style.position = 'absolute';
+          el.style.left = (fixedLeft + window.scrollX) + 'px';
+          el.style.top = (fixedTop + window.scrollY) + 'px';
+          el.style.cursor = 'grab';
+          el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
+          el.style.transform = 'rotate(-6deg) scale(1)';
+          el.style.transition = 'filter 0.3s, transform 0.3s';
+        });
+        
         el.addEventListener('mouseenter', function() {
           if (!dragging) {
             el.style.transform = 'rotate(-3deg) scale(1.06)';
