@@ -259,6 +259,7 @@
             transform: rotate(-6deg);
             transition: filter 0.3s;
           ">
+          <style>@media(max-width:767px){#pageSticker{display:none!important}}</style>
             <img src="https://sl-stickers.vercel.app/stickers/world.png" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">
           </div>
 </section>
@@ -986,6 +987,8 @@
 
     <script>
     (function() {
+      // Skip drag behavior on mobile — sticker is hidden via CSS
+      if (window.innerWidth < 768) return;
       const el = document.getElementById('pageSticker');
       if (!el) return;
       // Move sticker to body so absolute positioning is page-relative
