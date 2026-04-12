@@ -1214,7 +1214,7 @@
       
       var el = document.createElement('div');
       el.id = 'pageSticker';
-      var size = isMobile ? 100 : 260;
+      var size = isMobile ? 180 : 260;
       el.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;z-index:9999;cursor:grab;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.3));transform:rotate(-6deg);transition:filter 0.3s,transform 0.3s;';
       el.innerHTML = '<img src="' + stickerUrl + '" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">';
       document.body.appendChild(el);
