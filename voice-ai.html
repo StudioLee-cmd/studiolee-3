@@ -991,26 +991,20 @@
       var isMobile = window.innerWidth < 768;
       var stickerUrl = "https://sl-stickers.vercel.app/stickers/draaitafel.png";
       
-      // Create sticker
       var el = document.createElement('div');
       el.id = 'pageSticker';
       var size = isMobile ? 100 : 260;
-      el.style.cssText = 'position:fixed;width:' + size + 'px;height:' + size + 'px;z-index:9999;cursor:grab;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.3));transform:rotate(-6deg);transition:filter 0.3s,transform 0.3s;touch-action:none;';
+      el.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;z-index:9999;cursor:grab;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.3));transform:rotate(-6deg);transition:filter 0.3s,transform 0.3s;touch-action:none;';
       el.innerHTML = '<img src="' + stickerUrl + '" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">';
       document.body.appendChild(el);
       
-      // Position: mobile=top-left, desktop=top-right
+      // Position on the hero area — absolute so it scrolls with the page
       if (isMobile) {
         el.style.left = '12px';
-        el.style.top = '80px';
+        el.style.top = '100px';
       } else {
         el.style.left = (window.innerWidth - 320) + 'px';
-        el.style.top = '200px';
-        // Desktop: convert to absolute after position set
-        var r = el.getBoundingClientRect();
-        el.style.position = 'absolute';
-        el.style.left = (r.left + window.scrollX) + 'px';
-        el.style.top = (r.top + window.scrollY) + 'px';
+        el.style.top = (window.scrollY + 200) + 'px';
       }
       
       var dragging = false, offX, offY;
@@ -1020,16 +1014,13 @@
       
       el.addEventListener('pointerdown', function(e) {
         if (isMobile) {
-          // Mobile: require long-press before drag
           longPressReady = false;
           longPressTimer = setTimeout(function() {
             longPressReady = true;
             startDrag(e);
-            // Vibrate feedback if available
             if (navigator.vibrate) navigator.vibrate(30);
           }, LONG_PRESS_MS);
         } else {
-          // Desktop: instant drag
           startDrag(e);
         }
         e.preventDefault();
@@ -1042,6 +1033,7 @@
         var rect = el.getBoundingClientRect();
         offX = e.clientX - rect.left;
         offY = e.clientY - rect.top;
+        // Switch to fixed during drag for smooth movement
         el.style.position = 'fixed';
         el.style.left = rect.left + 'px';
         el.style.top = rect.top + 'px';
@@ -1051,7 +1043,6 @@
       
       window.addEventListener('pointermove', function(e) {
         if (isMobile && !longPressReady) {
-          // Finger moved before long-press completed = cancel (it's a scroll)
           clearTimeout(longPressTimer);
           return;
         }
@@ -1067,27 +1058,18 @@
         longPressReady = false;
         if (!dragging) return;
         dragging = false;
-        if (isMobile) {
-          // Mobile: stay fixed so it doesn't get lost on scroll
-          el.style.cursor = 'grab';
-          el.style.filter = 'drop-shadow(0 6px 18px rgba(0,0,0,0.3))';
-          el.style.transform = 'rotate(-6deg) scale(1)';
-          el.style.transition = 'filter 0.3s, transform 0.3s';
-        } else {
-          // Desktop: convert back to absolute
-          var fixedLeft = parseFloat(el.style.left);
-          var fixedTop = parseFloat(el.style.top);
-          el.style.position = 'absolute';
-          el.style.left = (fixedLeft + window.scrollX) + 'px';
-          el.style.top = (fixedTop + window.scrollY) + 'px';
-          el.style.cursor = 'grab';
-          el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
-          el.style.transform = 'rotate(-6deg) scale(1)';
-          el.style.transition = 'filter 0.3s, transform 0.3s';
-        }
+        // Convert back to absolute — sticker stays on the PAGE where you dropped it
+        var fixedLeft = parseFloat(el.style.left);
+        var fixedTop = parseFloat(el.style.top);
+        el.style.position = 'absolute';
+        el.style.left = (fixedLeft + window.scrollX) + 'px';
+        el.style.top = (fixedTop + window.scrollY) + 'px';
+        el.style.cursor = 'grab';
+        el.style.filter = 'drop-shadow(0 ' + (isMobile ? '6' : '8') + 'px ' + (isMobile ? '18' : '24') + 'px rgba(0,0,0,0.35))';
+        el.style.transform = 'rotate(-6deg) scale(1)';
+        el.style.transition = 'filter 0.3s, transform 0.3s';
       });
       
-      // Desktop hover effects
       if (!isMobile) {
         el.addEventListener('mouseenter', function() {
           if (!dragging) {
