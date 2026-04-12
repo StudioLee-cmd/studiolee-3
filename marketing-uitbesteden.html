@@ -278,7 +278,23 @@
           </div>
         </div>
       </div>
-    </section>
+    
+          <!-- Page Sticker Character -->
+          <div class="page-sticker" id="pageSticker" style="
+            position: absolute;
+            right: 60px;
+            bottom: 40px;
+            width: 260px;
+            height: 260px;
+            z-index: 5;
+            cursor: grab;
+            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.35));
+            transform: rotate(-6deg);
+            transition: filter 0.3s;
+          ">
+            <img src="https://sl-stickers.vercel.app/stickers/helikopter.png" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">
+          </div>
+</section>
     <!-- Breadcrumb — under hero -->
     <div class="container py-3">
       <nav aria-label="Breadcrumb" class="breadcrumb-nav" style="opacity:0.6;font-size:0.78rem">
@@ -970,6 +986,76 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
     <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69c4ef18d9121c5778d93245"></script>
+
+    <script>
+    (function() {
+      const el = document.getElementById('pageSticker');
+      if (!el) return;
+      // Move sticker to body so absolute positioning is page-relative
+      var rect = el.getBoundingClientRect();
+      document.body.appendChild(el);
+      el.style.position = 'absolute';
+      el.style.left = (rect.left + window.scrollX) + 'px';
+      el.style.top = (rect.top + window.scrollY) + 'px';
+      el.style.right = 'auto';
+      el.style.bottom = 'auto';
+      let dragging = false, offX, offY;
+      
+      el.addEventListener('pointerdown', function(e) {
+        dragging = true;
+        el.style.cursor = 'grabbing';
+        el.style.transition = 'none';
+        const rect = el.getBoundingClientRect();
+        offX = e.clientX - rect.left;
+        offY = e.clientY - rect.top;
+        // Switch to fixed so it can move freely
+        el.style.position = 'fixed';
+        el.style.left = rect.left + 'px';
+        el.style.top = rect.top + 'px';
+        el.style.right = 'auto';
+        el.style.bottom = 'auto';
+        el.style.filter = 'drop-shadow(0 14px 40px rgba(0,0,0,0.5))';
+        el.style.transform = 'rotate(-2deg) scale(1.08)';
+        e.preventDefault();
+      });
+      
+      window.addEventListener('pointermove', function(e) {
+        if (!dragging) return;
+        el.style.left = (e.clientX - offX) + 'px';
+        el.style.top = (e.clientY - offY) + 'px';
+        // Subtle tilt based on movement
+        el.style.transform = 'rotate(' + ((e.clientX - offX) * 0.02 - 4) + 'deg) scale(1.08)';
+      });
+      
+      window.addEventListener('pointerup', function() {
+        if (!dragging) return;
+        dragging = false;
+        // Convert fixed position to absolute (page-relative) so it stays put when scrolling
+        var fixedLeft = parseFloat(el.style.left);
+        var fixedTop = parseFloat(el.style.top);
+        el.style.position = 'absolute';
+        el.style.left = (fixedLeft + window.scrollX) + 'px';
+        el.style.top = (fixedTop + window.scrollY) + 'px';
+        el.style.cursor = 'grab';
+        el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
+        el.style.transform = 'rotate(-6deg) scale(1)';
+        el.style.transition = 'filter 0.3s, transform 0.3s';
+      });
+      
+      el.addEventListener('mouseenter', function() {
+        if (!dragging) {
+          el.style.transform = 'rotate(-3deg) scale(1.06)';
+          el.style.filter = 'drop-shadow(0 12px 32px rgba(0,0,0,0.4))';
+        }
+      });
+      el.addEventListener('mouseleave', function() {
+        if (!dragging) {
+          el.style.transform = 'rotate(-6deg) scale(1)';
+          el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
+        }
+      });
+    })();
+    </script>
 </body>
 
 </html>
