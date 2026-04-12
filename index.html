@@ -1340,11 +1340,9 @@ document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => 
     <style>
     .services-sticker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
     .svc-card{position:relative;padding:32px;border:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:all 0.4s;min-height:220px;overflow:visible;text-decoration:none;color:#fff;display:flex;flex-direction:column}
-    .svc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.5s;z-index:0}
-    .svc-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,42,46,0.92) 0%,rgba(31,42,46,0.75) 100%);opacity:0;transition:opacity 0.4s;z-index:1}
-    .svc-card:hover .svc-bg{opacity:1}
-    .svc-card:hover .svc-overlay{opacity:1}
-    .svc-card:hover{z-index:10}
+    .svc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:1;z-index:0}
+    .svc-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,42,46,0.92) 0%,rgba(31,42,46,0.75) 100%);opacity:1;transition:opacity 0.4s;z-index:1}
+            .svc-card:hover{z-index:10}
     .svc-content{position:relative;z-index:2}
     .svc-num{font-size:0.6rem;font-weight:700;color:rgba(255,255,255,0.15);letter-spacing:0.15em;margin-bottom:10px;display:block;transition:color 0.3s}
     .svc-card:hover .svc-num{color:#C1FF72}
@@ -1427,11 +1425,9 @@ document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => 
     <style>
     .services-sticker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
     .svc-card{position:relative;padding:32px;border:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:all 0.4s;min-height:220px;overflow:visible;text-decoration:none;color:#fff;display:flex;flex-direction:column}
-    .svc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 0.5s;z-index:0}
-    .svc-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,42,46,0.92) 0%,rgba(31,42,46,0.75) 100%);opacity:0;transition:opacity 0.4s;z-index:1}
-    .svc-card:hover .svc-bg{opacity:1}
-    .svc-card:hover .svc-overlay{opacity:1}
-    .svc-card:hover{z-index:10}
+    .svc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:1;z-index:0}
+    .svc-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,42,46,0.92) 0%,rgba(31,42,46,0.75) 100%);opacity:1;transition:opacity 0.4s;z-index:1}
+            .svc-card:hover{z-index:10}
     .svc-content{position:relative;z-index:2}
     .svc-num{font-size:0.6rem;font-weight:700;color:rgba(255,255,255,0.15);letter-spacing:0.15em;margin-bottom:10px;display:block;transition:color 0.3s}
     .svc-card:hover .svc-num{color:#C1FF72}
