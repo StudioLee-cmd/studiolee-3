@@ -180,126 +180,143 @@
       </div>
     </section>
 
-    <!-- Templates locked CSS -->
+        <!-- Template cards CSS -->
     <style>
-      .niche-tpl-card--locked { background:#f4f1ec; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; position:relative; cursor:not-allowed; opacity:0.78; filter:grayscale(0.4); }
-      .niche-tpl-card--locked .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.85rem; }
-      .niche-tpl-card--locked .niche-tpl-card__lockicon { font-size:3rem; color:rgba(0,0,0,0.35); }
-      .niche-tpl-card--locked .niche-tpl-card__lockbadge { position:absolute; top:14px; left:14px; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; }
-      .niche-tpl-card--locked .niche-tpl-card__lockbadge iconify-icon { font-size:0.9rem; color:#d4ed31; }
-      .niche-tpl-card--locked .niche-tpl-card__lockcaption { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(0,0,0,0.45); }
-      .niche-tpl-card--locked .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
-      .niche-tpl-card--locked .niche-tpl-card__body h4 { margin-bottom:0; color:#555; }
-      .niche-tpl-card--locked .niche-tpl-card__body p { color:rgba(0,0,0,0.55); }
-      .niche-tpl-card--locked .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.9rem; display:inline-flex; align-items:center; gap:0.5rem; color:rgba(0,0,0,0.5); }
-      .niche-tpl-card--locked.tpl-premium .niche-tpl-card__viewport { background:linear-gradient(135deg,#1a1612 0%,#3a2a20 100%); }
-      .niche-tpl-card--locked.tpl-warm .niche-tpl-card__viewport { background:linear-gradient(135deg,#f5e8d4 0%,#e0c8a0 100%); }
-      .niche-tpl-card--locked.tpl-editorial .niche-tpl-card__viewport { background:linear-gradient(135deg,#f0ede8 0%,#d4cfc4 100%); }
-      .niche-tpl-card--locked.tpl-bold .niche-tpl-card__viewport { background:linear-gradient(135deg,#1c1616 0%,#4f2a62 100%); }
-      .niche-tpl-card--locked.tpl-project .niche-tpl-card__viewport { background:linear-gradient(135deg,#3d2817 0%,#8b3a1f 100%); }
-      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__viewport { background:linear-gradient(135deg,#0a0a0a 0%,#444 100%); }
-      .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockicon, .niche-tpl-card--locked.tpl-bold .niche-tpl-card__lockicon, .niche-tpl-card--locked.tpl-project .niche-tpl-card__lockicon, .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockicon { color:rgba(255,255,255,0.5); }
-      .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockcaption, .niche-tpl-card--locked.tpl-bold .niche-tpl-card__lockcaption, .niche-tpl-card--locked.tpl-project .niche-tpl-card__lockcaption, .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockcaption { color:rgba(255,255,255,0.55); }
+      .niche-tpl-card { background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; position:relative; }
+      .niche-tpl-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.14); border-color:rgba(212,237,49,0.5); }
+      .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; background:#f6f4ef; }
+      .niche-tpl-card__poster { position:absolute; top:0; left:0; width:100%; height:auto; display:block; transform:translateY(0); transition:transform 9s linear; z-index:1; }
+      .niche-tpl-card:hover .niche-tpl-card__poster { transform:translateY(-86%); }
+      .niche-tpl-card__playbadge { position:absolute; top:14px; left:14px; z-index:3; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; backdrop-filter:blur(6px); }
+      .niche-tpl-card__playbadge iconify-icon { font-size:0.95rem; color:#d4ed31; }
+      .niche-tpl-card:hover .niche-tpl-card__playbadge { background:#d4ed31; color:#1a1a1a; }
+      .niche-tpl-card:hover .niche-tpl-card__playbadge iconify-icon { color:#1a1a1a; }
+      .niche-tpl-card__shadebar { position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); opacity:0; transition:opacity .35s ease; z:2; pointer-events:none; }
+      .niche-tpl-card:hover .niche-tpl-card__shadebar { opacity:1; }
+      .niche-tpl-card__visit { position:absolute; bottom:16px; right:16px; z-index:3; width:52px; height:52px; border-radius:50%; background:#d4ed31; color:#1a1a1a; display:flex; align-items:center; justify-content:center; font-size:1.35rem; opacity:0; transform:translateY(8px); transition:opacity .3s ease, transform .3s ease; }
+      .niche-tpl-card:hover .niche-tpl-card__visit { opacity:1; transform:translateY(0); }
+      .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
+      .niche-tpl-card__body h4 { margin-bottom:0; }
+      .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.95rem; display:inline-flex; align-items:center; gap:0.5rem; color:#1a1a1a; }
+      .niche-tpl-card__cta iconify-icon { color:#d4ed31; background:#1a1a1a; padding:4px; border-radius:50%; font-size:1.1rem; }
     </style>
 
     <section id="templates" class="templates-grid py-5 py-lg-7 py-xl-8 bg-light-gray" style="scroll-margin-top:90px">
       <div class="container">
         <div class="row mb-8">
           <div class="col-lg-9">
-            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Meerdere stijlen fietsenmaker websites &mdash; van ouderwets naar e-bike</h2>
-            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Een traditionele fietsenmaker met een werkplaats vol vintage fietsen vraagt om een andere uitstraling dan een moderne e-bike specialist. Daarom hebben we voor de fietsenmaker-niche meerdere design-richtingen ontworpen. <strong>De live demo&apos;s zijn nog in productie</strong>.</p>
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">6 fietsenmaker websites &mdash; allemaal live, allemaal klikbaar</h2>
+            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Van traditionele fietsenmaker tot moderne e-bike specialist. Bekijk elke demo live en kies de stijl die bij jouw zaak past.</p>
           </div>
         </div>
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
-            <div class="niche-tpl-card niche-tpl-card--locked tpl-premium">
-              <div class="niche-tpl-card__viewport">
-                <span class="niche-tpl-card__lockbadge"><iconify-icon icon="lucide:lock"></iconify-icon>Binnenkort</span>
-                <iconify-icon icon="lucide:lock" class="niche-tpl-card__lockicon"></iconify-icon>
-                <span class="niche-tpl-card__lockcaption">Demo in productie</span>
+            <a href="https://fietsenmaker-premium-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
+                  <img src="/assets/images/templates/fietsenmaker-premium.webp" alt="Fietsenmaker Premium website template" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">01 &middot; PREMIUM</span></div>
+                  <h4 class="mb-0 mt-2">Donker &amp; Vakkundig</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Donkere kleuren en ambachtelijke uitstraling. Voor traditionele fietsenmakers met decennia ervaring.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
               </div>
-              <div class="niche-tpl-card__body">
-                <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">PREMIUM</span></div>
-                <h4 class="mb-0 mt-2">Klassiek &amp; Vakkundig</h4>
-                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Voor traditionele fietsenmakers met decennia ervaring. Vintage uitstraling, foto's van werkplaats, classic typography.</p>
-                <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:lock"></iconify-icon>Demo binnenkort beschikbaar</span>
-              </div>
-            </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <div class="niche-tpl-card niche-tpl-card--locked tpl-warm">
-              <div class="niche-tpl-card__viewport">
-                <span class="niche-tpl-card__lockbadge"><iconify-icon icon="lucide:lock"></iconify-icon>Binnenkort</span>
-                <iconify-icon icon="lucide:lock" class="niche-tpl-card__lockicon"></iconify-icon>
-                <span class="niche-tpl-card__lockcaption">Demo in productie</span>
+            <a href="https://fietsenmaker-warm-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
+                  <img src="/assets/images/templates/fietsenmaker-warm.webp" alt="Fietsenmaker Warm website template" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">02 &middot; WARM</span></div>
+                  <h4 class="mb-0 mt-2">Buurt Fietsenmaker</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Warme aardetinten en een persoonlijke uitstraling. Perfect voor de zelfstandige fietsenmaker.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
               </div>
-              <div class="niche-tpl-card__body">
-                <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">WARM</span></div>
-                <h4 class="mb-0 mt-2">Buurtfietsenmaker</h4>
-                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Voor de zelfstandige fietsenmaker waar je sinds je 10e komt. Warme aardetinten, foto van de baas met sleutel in de hand, persoonlijke service.</p>
-                <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:lock"></iconify-icon>Demo binnenkort beschikbaar</span>
-              </div>
-            </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
-            <div class="niche-tpl-card niche-tpl-card--locked tpl-editorial">
-              <div class="niche-tpl-card__viewport">
-                <span class="niche-tpl-card__lockbadge"><iconify-icon icon="lucide:lock"></iconify-icon>Binnenkort</span>
-                <iconify-icon icon="lucide:lock" class="niche-tpl-card__lockicon"></iconify-icon>
-                <span class="niche-tpl-card__lockcaption">Demo in productie</span>
+            <a href="https://fietsenmaker-editorial-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
+                  <img src="/assets/images/templates/fietsenmaker-bold.webp" alt="Fietsenmaker Editorial website template" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">03 &middot; EDITORIAL</span></div>
+                  <h4 class="mb-0 mt-2">Modern &amp; Strak</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Cleane editorial layout voor moderne e-bike specialisten en fietsenwinkels. Witruimte en futuristische accenten.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
               </div>
-              <div class="niche-tpl-card__body">
-                <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">EDITORIAL</span></div>
-                <h4 class="mb-0 mt-2">Modern &amp; E-bike</h4>
-                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Strak modern voor e-bike specialisten en moderne fietsenwinkels. Veel witruimte, scherpe typografie, futuristische accenten.</p>
-                <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:lock"></iconify-icon>Demo binnenkort beschikbaar</span>
-              </div>
-            </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <div class="niche-tpl-card niche-tpl-card--locked tpl-bold">
-              <div class="niche-tpl-card__viewport">
-                <span class="niche-tpl-card__lockbadge"><iconify-icon icon="lucide:lock"></iconify-icon>Binnenkort</span>
-                <iconify-icon icon="lucide:lock" class="niche-tpl-card__lockicon"></iconify-icon>
-                <span class="niche-tpl-card__lockcaption">Demo in productie</span>
+            <a href="https://fietsenmaker-freestyle-1-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:sparkles"></iconify-icon>Op maat ontwerp</span>
+                  <img src="/assets/images/templates/fietsenmaker-freestyle-1.webp" alt="Fietsenmaker Freestyle 1 — FietsVakwerk Amsterdam" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">04 &middot; FREESTYLE</span></div>
+                  <h4 class="mb-0 mt-2">FietsVakwerk &mdash; Amsterdam</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Vakkundige fietsenmaker met focus op reparatie, onderhoud en e-bike service. Warm werkplaats-design.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
               </div>
-              <div class="niche-tpl-card__body">
-                <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">BOLD</span></div>
-                <h4 class="mb-0 mt-2">Bold Cycling</h4>
-                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Knal-stijl voor fietsenwinkels met focus op sport en performance. Grote koppen, levendige kleuren, energieke uitstraling.</p>
-                <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:lock"></iconify-icon>Demo binnenkort beschikbaar</span>
-              </div>
-            </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">
-            <div class="niche-tpl-card niche-tpl-card--locked tpl-project">
-              <div class="niche-tpl-card__viewport">
-                <span class="niche-tpl-card__lockbadge"><iconify-icon icon="lucide:lock"></iconify-icon>Binnenkort</span>
-                <iconify-icon icon="lucide:lock" class="niche-tpl-card__lockicon"></iconify-icon>
-                <span class="niche-tpl-card__lockcaption">Demo in productie</span>
+            <a href="https://fietsenmaker-freestyle-2-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:sparkles"></iconify-icon>Op maat ontwerp</span>
+                  <img src="/assets/images/templates/fietsenmaker-freestyle-2.webp" alt="Fietsenmaker Freestyle 2 — TweeFiets Rotterdam" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">05 &middot; FREESTYLE</span></div>
+                  <h4 class="mb-0 mt-2">TweeFiets &mdash; Rotterdam</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Groene fietsenmaker met focus op duurzaamheid. Fris ontwerp met milieubewuste uitstraling.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
               </div>
-              <div class="niche-tpl-card__body">
-                <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">PROJECT</span></div>
-                <h4 class="mb-0 mt-2">Fietsen Showcase</h4>
-                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Layout opgebouwd rondom een grote galerij van occasion fietsen, custom builds en fiets-restauraties. Voor visueel-overtuigend werk.</p>
-                <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:lock"></iconify-icon>Demo binnenkort beschikbaar</span>
-              </div>
-            </div>
+            </a>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-            <div class="niche-tpl-card niche-tpl-card--locked tpl-freestyle">
-              <div class="niche-tpl-card__viewport">
-                <span class="niche-tpl-card__lockbadge"><iconify-icon icon="lucide:lock"></iconify-icon>Binnenkort</span>
-                <iconify-icon icon="lucide:lock" class="niche-tpl-card__lockicon"></iconify-icon>
-                <span class="niche-tpl-card__lockcaption">Demo in productie</span>
+            <a href="https://fietsenmaker-freestyle-3-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card">
+                <div class="niche-tpl-card__viewport">
+                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:sparkles"></iconify-icon>Op maat ontwerp</span>
+                  <img src="/assets/images/templates/fietsenmaker-freestyle-3.webp" alt="Fietsenmaker Freestyle 3 — PedalTech Utrecht" class="niche-tpl-card__poster" loading="lazy">
+                  <div class="niche-tpl-card__shadebar"></div>
+                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
+                </div>
+                <div class="niche-tpl-card__body">
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">06 &middot; FREESTYLE</span></div>
+                  <h4 class="mb-0 mt-2">PedalTech &mdash; Utrecht</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Hightech fietsenmaker met precision reparatie en e-bike diagnostiek. Dark-mode technologisch design.</p>
+                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
+                </div>
               </div>
-              <div class="niche-tpl-card__body">
-                <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">FREESTYLE</span></div>
-                <h4 class="mb-0 mt-2">Volledig Maatwerk</h4>
-                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Geen template, maar een uniek maatwerk-design voor jouw fietsenwinkel. Eigen merk, eigen functies, eigen specialiteiten.</p>
-                <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:lock"></iconify-icon>Demo binnenkort beschikbaar</span>
-              </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="row mt-7">
@@ -665,3 +682,4 @@
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69c4ef18d9121c5778d93245"></script>
 </body>
 </html>
+
