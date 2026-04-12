@@ -1181,8 +1181,8 @@
       document.body.appendChild(el);
       
       if (isMobile) {
-        el.style.left = '12px';
-        el.style.top = '100px';
+        el.style.left = (window.innerWidth - size - 16) + 'px';
+        el.style.top = '140px';
       } else {
         el.style.left = (window.innerWidth - 320) + 'px';
         el.style.top = (window.scrollY + 200) + 'px';
