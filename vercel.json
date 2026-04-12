@@ -15,6 +15,13 @@
   ],
   "routes": [
     {
+      "src": "/website-laten-maken/barbershop",
+      "headers": {
+        "Location": "/website-laten-maken/kapper"
+      },
+      "status": 308
+    },
+    {
       "handle": "filesystem"
     },
     {
