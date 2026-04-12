@@ -249,23 +249,6 @@
           <p class="text-white text-opacity-70 fs-5 mb-0 col-xl-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Kies uit meerdere professionele templates of laat een maatwerk website bouwen. Volledig beheerd, SEO-geoptimaliseerd en binnen 2 weken live. Vanaf &euro;79 per maand, excl. BTW.</p>
         </div>
       </div>
-    
-          <!-- Page Sticker Character -->
-          <div class="page-sticker" id="pageSticker" style="
-            position: absolute;
-            right: 60px;
-            bottom: 40px;
-            width: 260px;
-            height: 260px;
-            z-index: 5;
-            cursor: grab;
-            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.35));
-            transform: rotate(-6deg);
-            transition: filter 0.3s;
-          ">
-          <style>@media(max-width:767px){#pageSticker{display:none!important}}</style>
-            <img src="https://sl-stickers.vercel.app/stickers/windmill.png" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">
-          </div>
 </section>
     <!-- Breadcrumb — under hero -->
     <div class="container py-3">
@@ -1228,16 +1211,14 @@
     (function() {
       // Skip drag behavior on mobile — sticker is hidden via CSS
       if (window.innerWidth < 768) return;
-      const el = document.getElementById('pageSticker');
-      if (!el) return;
-      // Move sticker to body so absolute positioning is page-relative
-      var rect = el.getBoundingClientRect();
+      // Create sticker dynamically — zero mobile footprint
+      const el = document.createElement('div');
+      el.id = 'pageSticker';
+      el.style.cssText = 'position:absolute;width:260px;height:260px;z-index:9999;cursor:grab;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.35));transform:rotate(-6deg);transition:filter 0.3s;';
+      el.innerHTML = '<img src="https://sl-stickers.vercel.app/stickers/windmill.png" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">';
       document.body.appendChild(el);
-      el.style.position = 'absolute';
-      el.style.left = (rect.left + window.scrollX) + 'px';
-      el.style.top = (rect.top + window.scrollY) + 'px';
-      el.style.right = 'auto';
-      el.style.bottom = 'auto';
+      el.style.left = (window.innerWidth - 320) + 'px';
+      el.style.top = (window.scrollY + 200) + 'px';
       let dragging = false, offX, offY;
       
       el.addEventListener('pointerdown', function(e) {
