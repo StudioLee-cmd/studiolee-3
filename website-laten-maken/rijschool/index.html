@@ -89,12 +89,19 @@
     <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end" style="background-image: url(/assets/images/services/website-laten-maken-hero.jpg);">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-3">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><a href="/website-laten-maken">Website laten maken</a></li>
+              <li class="active" aria-current="page">Rijscholen</li>
+            </ol>
+          </nav>
 
           <div class="row align-items-center">
             <div class="col-xl-8">
               <div class="d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <p class="mb-0 text-white fs-5 text-opacity-70"><a href="/website-laten-maken" class="text-primary">Website laten maken</a> &rsaquo; voor rijscholen</p>
-          <h1 class="mb-0 fs-16 text-white lh-1">Website laten maken voor rijscholen</h1>
+                <h1 class="mb-0 fs-16 text-white lh-1">Website laten maken voor rijscholen</h1>
                 <p class="mb-0 text-white fs-5 text-opacity-80">Rijschool of zelfstandig rij-instructeur? Leerlingen kiezen niet de goedkoopste rijschool &mdash; ze kiezen die met het hoogste slagingspercentage en de beste reviews. Wij bouwen rijschool websites die direct laten zien hoeveel procent van jouw leerlingen in &eacute;&eacute;n keer slaagt, met online inschrijven en instructeur-profielen.</p>
                 <div class="hstack gap-3 flex-wrap pt-3">
                   <a href="#templates" class="btn">
@@ -112,17 +119,6 @@
         </div>
       </div>
     </section>
-    <!-- Breadcrumb — under hero -->
-    <div class="container py-3">
-      <nav aria-label="Breadcrumb" class="breadcrumb-nav" style="opacity:0.6;font-size:0.78rem">
-        <ol>
-          <li><a href="/" style="color:var(--bs-body-color)">Home</a></li>
-          <li><a href="/website-laten-maken" style="color:var(--bs-body-color)">Website laten maken</a></li>
-          <li class="active" aria-current="page" style="color:var(--bs-secondary-color)">Rijscholen</li>
-        </ol>
-      </nav>
-    </div>
-
 
     <!-- Wat zit erin Section -->
     <section class="features py-5 py-lg-7 py-xl-8">
@@ -180,252 +176,168 @@
       </div>
     </section>
 
-    <!-- Template card styles — live version with hover-scroll -->
+    <!-- Templates CSS — live cards + locked placeholders -->
     <style>
-      /* Template card – "video poster" hover scroll effect.
-         Default: image shown like a video poster.
-         Hover: image scrolls top-bottom (CSS-driven "video play" effect). */
-      .niche-tpl-card {
-        background: #fff;
-        border: 1px solid rgba(0,0,0,0.08);
-        border-radius: 1.25rem;
-        overflow: hidden;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-        position: relative;
-      }
-      .niche-tpl-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.14);
-        border-color: rgba(212,237,49,0.5);
-      }
-      .niche-tpl-card__viewport {
-        position: relative;
-        overflow: hidden;
-        aspect-ratio: 16/10;
-        background: #f6f4ef;
-      }
-      .niche-tpl-card__poster {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: auto;
-        display: block;
-        transform: translateY(0);
-        transition: transform 9s linear;
-        z-index: 1;
-      }
-      .niche-tpl-card:hover .niche-tpl-card__poster {
-        transform: translateY(-86%);
-      }
-      .niche-tpl-card__playbadge {
-        position: absolute;
-        top: 14px; left: 14px;
-        z-index: 3;
-        background: rgba(0,0,0,0.78);
-        color: #fff;
-        padding: 6px 12px 6px 8px;
-        border-radius: 99px;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        backdrop-filter: blur(6px);
-      }
-      .niche-tpl-card__playbadge iconify-icon { font-size: 0.95rem; color: #d4ed31; }
-      .niche-tpl-card:hover .niche-tpl-card__playbadge {
-        background: #d4ed31; color: #1a1a1a;
-      }
-      .niche-tpl-card:hover .niche-tpl-card__playbadge iconify-icon { color: #1a1a1a; }
-      .niche-tpl-card__shadebar {
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        height: 35%;
-        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
-        opacity: 0;
-        transition: opacity .35s ease;
-        z-index: 2;
-        pointer-events: none;
-      }
-      .niche-tpl-card:hover .niche-tpl-card__shadebar { opacity: 1; }
-      .niche-tpl-card__visit {
-        position: absolute;
-        bottom: 16px; right: 16px;
-        z-index: 3;
-        width: 52px; height: 52px;
-        border-radius: 50%;
-        background: #d4ed31;
-        color: #1a1a1a;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.35rem;
-        opacity: 0;
-        transform: translateY(8px);
-        transition: opacity .3s ease, transform .3s ease;
-      }
-      .niche-tpl-card:hover .niche-tpl-card__visit {
-        opacity: 1; transform: translateY(0);
-      }
-      .niche-tpl-card__body {
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.55rem;
-        flex: 1;
-      }
-      .niche-tpl-card__body h4 { margin-bottom: 0; }
-      .niche-tpl-card__cta {
-        margin-top: auto;
-        padding-top: 0.85rem;
-        font-weight: 700;
-        font-size: 0.95rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: #1a1a1a;
-      }
-      .niche-tpl-card__cta iconify-icon { color: #d4ed31; background: #1a1a1a; padding: 4px; border-radius: 50%; font-size: 1.1rem; }
+      .niche-tpl-card { background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; position:relative; }
+      .niche-tpl-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.14); border-color:rgba(212,237,49,0.5); }
+      .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; background:#f6f4ef; }
+      .niche-tpl-card__poster { position:absolute; top:0; left:0; width:100%; height:auto; display:block; transform:translateY(0); transition:transform 9s linear; z-index:1; }
+      .niche-tpl-card:hover .niche-tpl-card__poster { transform:translateY(-86%); }
+      .niche-tpl-card__playbadge { position:absolute; top:14px; left:14px; z-index:3; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; backdrop-filter:blur(6px); }
+      .niche-tpl-card__playbadge iconify-icon { font-size:0.95rem; color:#d4ed31; }
+      .niche-tpl-card:hover .niche-tpl-card__playbadge { background:#d4ed31; color:#1a1a1a; }
+      .niche-tpl-card:hover .niche-tpl-card__playbadge iconify-icon { color:#1a1a1a; }
+      .niche-tpl-card__shadebar { position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); opacity:0; transition:opacity .35s ease; z-index:2; pointer-events:none; }
+      .niche-tpl-card:hover .niche-tpl-card__shadebar { opacity:1; }
+      .niche-tpl-card__visit { position:absolute; bottom:16px; right:16px; z-index:3; width:52px; height:52px; border-radius:50%; background:#d4ed31; color:#1a1a1a; display:flex; align-items:center; justify-content:center; font-size:1.35rem; opacity:0; transform:translateY(8px); transition:opacity .3s ease,transform .3s ease; }
+      .niche-tpl-card:hover .niche-tpl-card__visit { opacity:1; transform:translateY(0); }
+      .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
+      .niche-tpl-card__body h4 { margin-bottom:0; }
+      .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.95rem; display:inline-flex; align-items:center; gap:0.5rem; color:#1a1a1a; }
+      .niche-tpl-card__cta iconify-icon { color:#d4ed31; background:#1a1a1a; padding:4px; border-radius:50%; font-size:1.1rem; }
+      /* Locked placeholder cards */
+      .niche-tpl-card--locked { background:#f4f1ec; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; position:relative; cursor:not-allowed; opacity:0.78; filter:grayscale(0.4); }
+      .niche-tpl-card--locked .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.85rem; }
+      .niche-tpl-card--locked .niche-tpl-card__lockicon { font-size:3rem; color:rgba(0,0,0,0.35); }
+      .niche-tpl-card--locked .niche-tpl-card__lockbadge { position:absolute; top:14px; left:14px; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; }
+      .niche-tpl-card--locked .niche-tpl-card__lockbadge iconify-icon { font-size:0.9rem; color:#d4ed31; }
+      .niche-tpl-card--locked .niche-tpl-card__lockcaption { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(0,0,0,0.45); }
+      .niche-tpl-card--locked .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
+      .niche-tpl-card--locked .niche-tpl-card__body h4 { margin-bottom:0; color:#555; }
+      .niche-tpl-card--locked .niche-tpl-card__body p { color:rgba(0,0,0,0.55); }
+      .niche-tpl-card--locked .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.9rem; display:inline-flex; align-items:center; gap:0.5rem; color:rgba(0,0,0,0.5); }
+      .niche-tpl-card--locked.tpl-editorial .niche-tpl-card__viewport { background:linear-gradient(135deg,#f0ede8 0%,#d4cfc4 100%); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__viewport { background:linear-gradient(135deg,#0a0a0a 0%,#444 100%); }
+      .niche-tpl-card--locked.tpl-premium .niche-tpl-card__viewport { background:linear-gradient(135deg,#1a1612 0%,#3a2a20 100%); }
+      .niche-tpl-card--locked.tpl-warm .niche-tpl-card__viewport { background:linear-gradient(135deg,#f5e8d4 0%,#e0c8a0 100%); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockicon, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockicon { color:rgba(255,255,255,0.5); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockcaption, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockcaption { color:rgba(255,255,255,0.55); }
     </style>
 
     <section id="templates" class="templates-grid py-5 py-lg-7 py-xl-8 bg-light-gray" style="scroll-margin-top:90px">
       <div class="container">
         <div class="row mb-8">
           <div class="col-lg-9">
-            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Zes rijschool templates &mdash; allemaal live, allemaal klikbaar</h2>
-            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              Iedere rijschool heeft een ander merk. De &eacute;&eacute;n wil donker en resultaatgericht, de ander warm en persoonlijk. Daarom hebben we voor de rijschool-niche <strong>zes complete stijlen gebouwd</strong> &mdash; geen mockups, maar volledig werkende websites die je nu live kunt bezoeken. Hover over een card om de hele pagina te zien scrollen, en klik om de echte demo te openen.
-            </p>
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Meerdere stijlen rijschool websites &mdash; van traditioneel naar modern</h2>
+            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Een traditionele dorpsrijschool vraagt om een andere uitstraling dan een moderne stedelijke rijschool met automaat-only. Daarom hebben we voor de rijschool-niche meerdere design-richtingen ontworpen. <strong>6 stijlen zijn al live te bekijken</strong> &mdash; hover over een card om de pagina te zien scrollen, en klik om de demo te openen. De overige stijlen volgen binnenkort.</p>
           </div>
         </div>
-
         <div class="row g-4">
 
-          <!-- 1. PREMIUM -->
+          <!-- 1. PREMIUM — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
             <a href="https://rijschool-premium-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card">
                 <div class="niche-tpl-card__viewport">
                   <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/rijschool-premium.webp" alt="Donker &amp; Professioneel &mdash; website template demo" class="niche-tpl-card__poster" loading="lazy">
+                  <img src="/assets/images/templates/rijschool-premium.png" alt="Rijschool website demo &mdash; Premium &amp; Resultaten" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-primary text-dark fw-bold">01 &middot; PREMIUM</span>
-                  </div>
-                  <h4 class="mb-0 mt-2">Donker &amp; Professioneel</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Diepe kleuren, professionele typografie en prominente slagingspercentages. Voor gevestigde rijscholen die autoriteit en ervaring uitstralen.</p>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">01 &middot; PREMIUM</span></div>
+                  <h4 class="mb-0 mt-2">Premium &amp; Resultaten</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Voor gevestigde rijscholen met hoge slagingspercentages. Zakelijke uitstraling, prominente cijfers, professionele typografie.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
-          <!-- 2. WARM -->
+
+          <!-- 2. WARM — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <a href="https://rijschool-warm-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card">
                 <div class="niche-tpl-card__viewport">
                   <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/rijschool-warm.webp" alt="Persoonlijk &amp; Toegankelijk &mdash; website template demo" class="niche-tpl-card__poster" loading="lazy">
+                  <img src="/assets/images/templates/rijschool-warm.png" alt="Rijschool website demo &mdash; Buurtrijschool" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-dark text-white fw-bold">02 &middot; WARM</span>
-                  </div>
-                  <h4 class="mb-0 mt-2">Persoonlijk &amp; Toegankelijk</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Warme aardetinten, persoonlijke verhalen en buurtgevoel. Voor de lokale rijschool waar leerlingen zich thuis voelen.</p>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">02 &middot; WARM</span></div>
+                  <h4 class="mb-0 mt-2">Buurtrijschool</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Voor de lokale rijschool waar generaties leerlingen komen. Warme aardetinten, foto van het team, persoonlijke verhalen.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
-          <!-- 3. EDITORIAL -->
+
+          <!-- 3. EDITORIAL — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
             <a href="https://rijschool-editorial-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card">
                 <div class="niche-tpl-card__viewport">
                   <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/rijschool-bold.webp" alt="Modern &amp; Strak &mdash; website template demo" class="niche-tpl-card__poster" loading="lazy">
+                  <img src="/assets/images/templates/rijschool-editorial.png" alt="Rijschool website demo &mdash; Modern &amp; Stedelijk" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-dark text-white fw-bold">03 &middot; EDITORIAL</span>
-                  </div>
-                  <h4 class="mb-0 mt-2">Modern &amp; Strak</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Cleane editorial layout met witruimte en scherpe typografie. Voor moderne stedelijke rijscholen die opvallen.</p>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">03 &middot; EDITORIAL</span></div>
+                  <h4 class="mb-0 mt-2">Modern &amp; Stedelijk</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Cleane editorial layout voor moderne stedelijke rijscholen. Veel witruimte, scherpe typografie, perfect voor jong-stedelijke leerlingen.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
-          <!-- 4. FREESTYLE -->
+
+          <!-- 4. FREESTYLE 1 — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <a href="https://rijschool-freestyle-1-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+            <a href="https://rijschool-freestyle-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card" style="border-color:rgba(212,237,49,0.55)">
                 <div class="niche-tpl-card__viewport">
-                  <span class="niche-tpl-card__playbadge" style="background:rgba(212,237,49,0.95);color:#1a1a1a"><iconify-icon icon="lucide:play" style="color:#1a1a1a"></iconify-icon>Volledig op maat</span>
-                  <img src="/assets/images/templates/rijschool-freestyle-1.webp" alt="RijStart &mdash; Dark Amber &mdash; website template demo" class="niche-tpl-card__poster" loading="lazy">
+                  <span class="niche-tpl-card__playbadge" style="background:rgba(212,237,49,0.95);color:#1a1a1a"><iconify-icon icon="lucide:sparkles" style="color:#1a1a1a"></iconify-icon>Volledig op maat</span>
+                  <img src="/assets/images/templates/rijschool-freestyle.png" alt="Rijschool website demo &mdash; Bold &amp; Hip" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-warning text-dark fw-bold">04 &middot; FREESTYLE</span>
-                  </div>
-                  <h4 class="mb-0 mt-2">RijStart &mdash; Dark Amber</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Volledig maatwerk met donkere achtergrond en amber accenten. Stoer, modern en herkenbaar.</p>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">04 &middot; FREESTYLE</span></div>
+                  <h4 class="mb-0 mt-2">Bold &amp; Hip</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Knal-stijl voor moderne rijscholen die zich onderscheiden van traditionele zaken. Levendige kleuren, energieke uitstraling.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
-          <!-- 5. FREESTYLE -->
+
+          <!-- 5. FREESTYLE 2 — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">
             <a href="https://rijschool-freestyle-2-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
-              <div class="niche-tpl-card">
+              <div class="niche-tpl-card" style="border-color:rgba(212,237,49,0.55)">
                 <div class="niche-tpl-card__viewport">
-                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/rijschool-freestyle-2.webp" alt="RijGemak &mdash; Clean Blue &mdash; website template demo" class="niche-tpl-card__poster" loading="lazy">
+                  <span class="niche-tpl-card__playbadge" style="background:rgba(212,237,49,0.95);color:#1a1a1a"><iconify-icon icon="lucide:sparkles" style="color:#1a1a1a"></iconify-icon>Volledig op maat</span>
+                  <img src="/assets/images/templates/rijschool-freestyle-2.png" alt="Rijschool website demo &mdash; Slagers Showcase" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-dark text-white fw-bold">05 &middot; FREESTYLE</span>
-                  </div>
-                  <h4 class="mb-0 mt-2">RijGemak &mdash; Clean Blue</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Licht en fris design met blauwe accenten. Overzichtelijk, toegankelijk en professioneel.</p>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">05 &middot; FREESTYLE</span></div>
+                  <h4 class="mb-0 mt-2">Slagers Showcase</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Layout opgebouwd rondom verhalen van geslaagde leerlingen met foto en het aantal lessen. Vertrouwen via bewijs.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
-          <!-- 6. FREESTYLE -->
+
+          <!-- 6. FREESTYLE 3 — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
             <a href="https://rijschool-freestyle-3-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
-              <div class="niche-tpl-card">
+              <div class="niche-tpl-card" style="border-color:rgba(212,237,49,0.55)">
                 <div class="niche-tpl-card__viewport">
-                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/rijschool-freestyle-3.webp" alt="SnelRij &mdash; Navy Lime &mdash; website template demo" class="niche-tpl-card__poster" loading="lazy">
+                  <span class="niche-tpl-card__playbadge" style="background:rgba(212,237,49,0.95);color:#1a1a1a"><iconify-icon icon="lucide:sparkles" style="color:#1a1a1a"></iconify-icon>Volledig op maat</span>
+                  <img src="/assets/images/templates/rijschool-freestyle-3.png" alt="Rijschool website demo &mdash; Volledig Maatwerk" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-dark text-white fw-bold">06 &middot; FREESTYLE</span>
-                  </div>
-                  <h4 class="mb-0 mt-2">SnelRij &mdash; Navy Lime</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Donkerblauw met lime accenten. Energiek, snel en to-the-point voor de moderne leerling.</p>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">06 &middot; FREESTYLE</span></div>
+                  <h4 class="mb-0 mt-2">Volledig Maatwerk</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Geen template, maar een uniek maatwerk-design voor jouw rijschool. Eigen merk, eigen specialisaties.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
@@ -433,7 +345,6 @@
           </div>
 
         </div>
-
         <div class="row mt-7">
           <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
             <p class="mb-4 fs-6 text-dark text-opacity-60"><iconify-icon icon="lucide:info" class="me-1"></iconify-icon>Alle demo&apos;s zijn echte werkende websites &mdash; geen mockups. Klik om in een nieuw tabblad te openen.</p>
@@ -691,7 +602,7 @@
               <a href="/website-laten-maken/garage" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor garages</a>
               <a href="/website-laten-maken/verhuizer" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor verhuizers</a>
               <a href="/website-laten-maken/fietsenmaker" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor fietsenmakers</a>
-              <a href="/website-laten-maken" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website laten maken — alle branches</a>
+              <a href="/website-laten-maken" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Alle 30 niches bekijken</a>
             </div>
           </div>
           <div class="col-lg-6">

@@ -89,12 +89,19 @@
     <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end" style="background-image: url(/assets/images/services/website-laten-maken-hero.jpg);">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-3">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><a href="/website-laten-maken">Website laten maken</a></li>
+              <li class="active" aria-current="page">Schoonheidssalons</li>
+            </ol>
+          </nav>
 
           <div class="row align-items-center">
             <div class="col-xl-8">
               <div class="d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <p class="mb-0 text-white fs-5 text-opacity-70"><a href="/website-laten-maken" class="text-primary">Website laten maken</a> &rsaquo; voor schoonheidssalons</p>
-          <h1 class="mb-0 fs-16 text-white lh-1">Website laten maken voor schoonheidssalons</h1>
+                <h1 class="mb-0 fs-16 text-white lh-1">Website laten maken voor schoonheidssalons</h1>
                 <p class="mb-0 text-white fs-5 text-opacity-80">Schoonheidssalon, beauty center of zelfstandige schoonheidsspecialiste? Klantes willen drie dingen voordat ze boeken: zien wat de behandelingen kosten, je sfeer voelen via foto's, en met &eacute;&eacute;n tik op de mobiel een tijdslot reserveren. Wij bouwen schoonheidssalon websites die de luxe ervaring online vertalen.</p>
                 <div class="hstack gap-3 flex-wrap pt-3">
                   <a href="#templates" class="btn">
@@ -112,17 +119,6 @@
         </div>
       </div>
     </section>
-    <!-- Breadcrumb — under hero -->
-    <div class="container py-3">
-      <nav aria-label="Breadcrumb" class="breadcrumb-nav" style="opacity:0.6;font-size:0.78rem">
-        <ol>
-          <li><a href="/" style="color:var(--bs-body-color)">Home</a></li>
-          <li><a href="/website-laten-maken" style="color:var(--bs-body-color)">Website laten maken</a></li>
-          <li class="active" aria-current="page" style="color:var(--bs-secondary-color)">Schoonheidssalons</li>
-        </ol>
-      </nav>
-    </div>
-
 
     <!-- Wat zit erin Section -->
     <section class="features py-5 py-lg-7 py-xl-8">
@@ -180,8 +176,9 @@
       </div>
     </section>
 
+    <!-- Templates CSS — live cards + locked placeholders -->
     <style>
-      .niche-tpl-card { background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; position:relative; }
+      .niche-tpl-card { background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; position:relative; }
       .niche-tpl-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.14); border-color:rgba(212,237,49,0.5); }
       .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; background:#f6f4ef; }
       .niche-tpl-card__poster { position:absolute; top:0; left:0; width:100%; height:auto; display:block; transform:translateY(0); transition:transform 9s linear; z-index:1; }
@@ -190,131 +187,167 @@
       .niche-tpl-card__playbadge iconify-icon { font-size:0.95rem; color:#d4ed31; }
       .niche-tpl-card:hover .niche-tpl-card__playbadge { background:#d4ed31; color:#1a1a1a; }
       .niche-tpl-card:hover .niche-tpl-card__playbadge iconify-icon { color:#1a1a1a; }
-      .niche-tpl-card__shadebar { position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); opacity:0; transition:opacity .35s ease; z-index:2; pointer-events:none; }
+      .niche-tpl-card__shadebar { position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); opacity:0; transition:opacity .35s ease; z-index:2; pointer-events:none; }
       .niche-tpl-card:hover .niche-tpl-card__shadebar { opacity:1; }
-      .niche-tpl-card__visit { position:absolute; bottom:16px; right:16px; z-index:3; width:52px; height:52px; border-radius:50%; background:#d4ed31; color:#1a1a1a; display:flex; align-items:center; justify-content:center; font-size:1.35rem; opacity:0; transform:translateY(8px); transition:opacity .3s ease, transform .3s ease; }
+      .niche-tpl-card__visit { position:absolute; bottom:16px; right:16px; z-index:3; width:52px; height:52px; border-radius:50%; background:#d4ed31; color:#1a1a1a; display:flex; align-items:center; justify-content:center; font-size:1.35rem; opacity:0; transform:translateY(8px); transition:opacity .3s ease,transform .3s ease; }
       .niche-tpl-card:hover .niche-tpl-card__visit { opacity:1; transform:translateY(0); }
       .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
       .niche-tpl-card__body h4 { margin-bottom:0; }
       .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.95rem; display:inline-flex; align-items:center; gap:0.5rem; color:#1a1a1a; }
       .niche-tpl-card__cta iconify-icon { color:#d4ed31; background:#1a1a1a; padding:4px; border-radius:50%; font-size:1.1rem; }
+      /* Locked placeholder cards */
+      .niche-tpl-card--locked { background:#f4f1ec; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; position:relative; cursor:not-allowed; opacity:0.78; filter:grayscale(0.4); }
+      .niche-tpl-card--locked .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.85rem; }
+      .niche-tpl-card--locked .niche-tpl-card__lockicon { font-size:3rem; color:rgba(0,0,0,0.35); }
+      .niche-tpl-card--locked .niche-tpl-card__lockbadge { position:absolute; top:14px; left:14px; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; }
+      .niche-tpl-card--locked .niche-tpl-card__lockbadge iconify-icon { font-size:0.9rem; color:#d4ed31; }
+      .niche-tpl-card--locked .niche-tpl-card__lockcaption { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(0,0,0,0.45); }
+      .niche-tpl-card--locked .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
+      .niche-tpl-card--locked .niche-tpl-card__body h4 { margin-bottom:0; color:#555; }
+      .niche-tpl-card--locked .niche-tpl-card__body p { color:rgba(0,0,0,0.55); }
+      .niche-tpl-card--locked .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.9rem; display:inline-flex; align-items:center; gap:0.5rem; color:rgba(0,0,0,0.5); }
+      .niche-tpl-card--locked.tpl-editorial .niche-tpl-card__viewport { background:linear-gradient(135deg,#f0ede8 0%,#d4cfc4 100%); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__viewport { background:linear-gradient(135deg,#0a0a0a 0%,#444 100%); }
+      .niche-tpl-card--locked.tpl-premium .niche-tpl-card__viewport { background:linear-gradient(135deg,#1a1612 0%,#3a2a20 100%); }
+      .niche-tpl-card--locked.tpl-warm .niche-tpl-card__viewport { background:linear-gradient(135deg,#f5e8d4 0%,#e0c8a0 100%); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockicon, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockicon { color:rgba(255,255,255,0.5); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockcaption, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockcaption { color:rgba(255,255,255,0.55); }
     </style>
 
     <section id="templates" class="templates-grid py-5 py-lg-7 py-xl-8 bg-light-gray" style="scroll-margin-top:90px">
       <div class="container">
         <div class="row mb-8">
           <div class="col-lg-9">
-            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">6 salon websites &mdash; allemaal live, allemaal klikbaar</h2>
-            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Van luxe spa tot moderne brow bar. Bekijk elke demo live en kies de stijl die bij jouw schoonheidssalon past.</p>
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Meerdere stijlen schoonheidssalon websites &mdash; van zen naar luxe</h2>
+            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Een wellness studio met massages vraagt om een andere uitstraling dan een moderne lash &amp; brow bar. Daarom hebben we voor de salon-niche meerdere design-richtingen ontworpen. <strong>5 stijlen zijn al live te bekijken</strong> &mdash; hover over een card om de pagina te zien scrollen, en klik om de demo te openen. De overige stijlen volgen binnenkort.</p>
           </div>
         </div>
         <div class="row g-4">
+
+          <!-- 1. PREMIUM — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
             <a href="https://salon-premium-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card">
                 <div class="niche-tpl-card__viewport">
                   <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/salon-premium.webp" alt="Salon Premium website template — donker luxe design met goud" class="niche-tpl-card__poster" loading="lazy">
+                  <img src="/assets/images/templates/salon-premium.png" alt="Salon website demo &mdash; Luxe &amp; Spa" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
                   <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">01 &middot; PREMIUM</span></div>
-                  <h4 class="mb-0 mt-2">Donker &amp; Luxe</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Donker kleurpalet met goud accenten en serif typography. Voor luxe schoonheidssalons en spa&apos;s die premium willen uitstralen.</p>
+                  <h4 class="mb-0 mt-2">Luxe &amp; Spa</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Voor luxe schoonheidssalons en spas. Donkere kleurpalet met goud, zachte serif typography, premium spa-uitstraling.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
+
+          <!-- 2. WARM — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <a href="https://salon-warm-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card">
                 <div class="niche-tpl-card__viewport">
                   <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/salon-warm.webp" alt="Salon Warm website template — persoonlijke warme uitstraling" class="niche-tpl-card__poster" loading="lazy">
+                  <img src="/assets/images/templates/salon-warm.png" alt="Salon website demo &mdash; Persoonlijk &amp; Knus" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">02 &middot; WARM</span></div>
-                  <h4 class="mb-0 mt-2">Persoonlijk &amp; Warm</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Warme aardetinten en een persoonlijke uitstraling. Perfect voor de buurtsalon met vaste klanten en persoonlijke aanpak.</p>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">02 &middot; WARM</span></div>
+                  <h4 class="mb-0 mt-2">Persoonlijk &amp; Knus</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Voor de buurtsalon met persoonlijke aanpak. Warme aardetinten, ronde vormen, foto van de eigenaresse.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
+
+          <!-- 3. EDITORIAL — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
             <a href="https://salon-editorial-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card">
                 <div class="niche-tpl-card__viewport">
                   <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/salon-editorial.webp" alt="Salon Editorial website template — modern strak design" class="niche-tpl-card__poster" loading="lazy">
+                  <img src="/assets/images/templates/salon-editorial.png" alt="Salon website demo &mdash; Modern &amp; Strak" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">03 &middot; EDITORIAL</span></div>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">03 &middot; EDITORIAL</span></div>
                   <h4 class="mb-0 mt-2">Modern &amp; Strak</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Cleane editorial layout met veel witruimte. Ideaal voor moderne beauty studios, lash bars en brow studio&apos;s.</p>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Cleane editorial layout voor moderne beauty studios. Veel witruimte, minimalistisch, perfect voor lash bars en brow studio's.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
+
+          <!-- 4. FREESTYLE 1 — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <a href="https://salon-freestyle-1-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
-              <div class="niche-tpl-card">
+            <a href="https://salon-freestyle-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card" style="border-color:rgba(212,237,49,0.55)">
                 <div class="niche-tpl-card__viewport">
-                  <span class="niche-tpl-card__playbadge" style="background:rgba(245,166,35,0.9);color:#0a0a0f"><iconify-icon icon="lucide:sparkles"></iconify-icon>Volledig op maat</span>
-                  <img src="/assets/images/templates/salon-freestyle-1.webp" alt="Salon Freestyle 1 — LuxeGlow Plum Rose Gold design" class="niche-tpl-card__poster" loading="lazy">
+                  <span class="niche-tpl-card__playbadge" style="background:rgba(212,237,49,0.95);color:#1a1a1a"><iconify-icon icon="lucide:sparkles" style="color:#1a1a1a"></iconify-icon>Volledig op maat</span>
+                  <img src="/assets/images/templates/salon-freestyle.png" alt="Salon website demo &mdash; Bold &amp; Glamour" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
                   <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">04 &middot; FREESTYLE</span></div>
-                  <h4 class="mb-0 mt-2">LuxeGlow &mdash; Plum Rose Gold</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Donker plum thema met ros&eacute; goud accenten. Luxueuze uitstraling voor exclusieve beauty salons en wellness centra.</p>
+                  <h4 class="mb-0 mt-2">Bold &amp; Glamour</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Knal-stijl met focus op opvallende behandelingen en glamour. Levendige kleuren, fashion-vibe.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
+
+          <!-- 5. FREESTYLE 2 — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">
             <a href="https://salon-freestyle-2-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
-              <div class="niche-tpl-card">
+              <div class="niche-tpl-card" style="border-color:rgba(212,237,49,0.55)">
                 <div class="niche-tpl-card__viewport">
-                  <span class="niche-tpl-card__playbadge" style="background:rgba(245,166,35,0.9);color:#0a0a0f"><iconify-icon icon="lucide:sparkles"></iconify-icon>Volledig op maat</span>
-                  <img src="/assets/images/templates/salon-freestyle-2.webp" alt="Salon Freestyle 2 — BloomBeauty Soft Pink design" class="niche-tpl-card__poster" loading="lazy">
+                  <span class="niche-tpl-card__playbadge" style="background:rgba(212,237,49,0.95);color:#1a1a1a"><iconify-icon icon="lucide:sparkles" style="color:#1a1a1a"></iconify-icon>Volledig op maat</span>
+                  <img src="/assets/images/templates/salon-freestyle-2.png" alt="Salon website demo &mdash; Behandeling Showcase" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
                   <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">05 &middot; FREESTYLE</span></div>
-                  <h4 class="mb-0 mt-2">BloomBeauty &mdash; Soft Pink</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Licht en zacht roze thema met natuurlijke uitstraling. Warm en uitnodigend voor schoonheidssalons met een vrouwelijke touch.</p>
+                  <h4 class="mb-0 mt-2">Behandeling Showcase</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Layout opgebouwd rondom voor/na shots van gezichten, lashes en wenkbrauwen. Visueel overtuigend.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
+
+          <!-- 6. FREESTYLE 3 — locked -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-            <a href="https://salon-freestyle-3-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
-              <div class="niche-tpl-card">
-                <div class="niche-tpl-card__viewport">
-                  <span class="niche-tpl-card__playbadge" style="background:rgba(245,166,35,0.9);color:#0a0a0f"><iconify-icon icon="lucide:sparkles"></iconify-icon>Volledig op maat</span>
-                  <img src="/assets/images/templates/salon-freestyle-3.webp" alt="Salon Freestyle 3 — SkinLab Navy Mint design" class="niche-tpl-card__poster" loading="lazy">
-                  <div class="niche-tpl-card__shadebar"></div>
-                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
-                </div>
-                <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">06 &middot; FREESTYLE</span></div>
-                  <h4 class="mb-0 mt-2">SkinLab &mdash; Navy Mint</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Donker navy met mint accenten. Klinische, tech-gedreven uitstraling voor salons die innovatie en resultaat centraal stellen.</p>
-                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
-                </div>
+            <div class="niche-tpl-card niche-tpl-card--locked tpl-freestyle">
+              <div class="niche-tpl-card__viewport">
+                <span class="niche-tpl-card__lockbadge"><iconify-icon icon="lucide:lock"></iconify-icon>Binnenkort</span>
+                <iconify-icon icon="lucide:lock" class="niche-tpl-card__lockicon"></iconify-icon>
+                <span class="niche-tpl-card__lockcaption">Demo in productie</span>
               </div>
+              <div class="niche-tpl-card__body">
+                <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">FREESTYLE 3</span></div>
+                <h4 class="mb-0 mt-2">Volledig Maatwerk</h4>
+                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Geen template, maar een uniek maatwerk-design voor jouw schoonheidssalon. Eigen merk, eigen functies.</p>
+                <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:lock"></iconify-icon>Demo binnenkort beschikbaar</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row mt-7">
+          <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+            <p class="mb-4 fs-6 text-dark text-opacity-60"><iconify-icon icon="lucide:info" class="me-1"></iconify-icon>De live demo&apos;s zijn echte werkende websites &mdash; geen mockups. Klik om in een nieuw tabblad te openen. Meer stijlen volgen binnenkort.</p>
+            <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="btn mx-auto">
+              <span class="btn-text">Plan een gratis kennismaking</span>
+              <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
             </a>
           </div>
         </div>
@@ -565,8 +598,8 @@
             <div class="d-flex flex-column gap-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
               <a href="/website-laten-maken/kapper" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor kappers</a>
               <a href="/website-laten-maken/nagelstudio" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor nagelstudio's</a>
-              <a href="/website-laten-maken/kapper" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor barbershops</a>
-              <a href="/website-laten-maken" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website laten maken — alle branches</a>
+              <a href="/website-laten-maken/barbershop" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor barbershops</a>
+              <a href="/website-laten-maken" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Alle 30 niches bekijken</a>
             </div>
           </div>
           <div class="col-lg-6">

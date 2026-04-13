@@ -89,12 +89,19 @@
     <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end" style="background-image: url(/assets/images/services/website-laten-maken-hero.jpg);">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-3">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><a href="/website-laten-maken">Website laten maken</a></li>
+              <li class="active" aria-current="page">Schilders</li>
+            </ol>
+          </nav>
 
           <div class="row align-items-center">
             <div class="col-xl-8">
               <div class="d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <p class="mb-0 text-white fs-5 text-opacity-70"><a href="/website-laten-maken" class="text-primary">Website laten maken</a> &rsaquo; voor schilders</p>
-          <h1 class="mb-0 fs-16 text-white lh-1">Website laten maken voor schilders</h1>
+                <h1 class="mb-0 fs-16 text-white lh-1">Website laten maken voor schilders</h1>
                 <p class="mb-0 text-white fs-5 text-opacity-80">Schildersbedrijf, gevelschilder of zelfstandig schilder? Klanten met een verveloze gevel of versleten kozijnen willen drie dingen zien: jouw eerdere werk (voor &amp; na), wat het kost, en of je gecertificeerd bent. Wij bouwen schilder websites met een grote voor/na galerij, online offerte aanvraag en VCA trust strip.</p>
                 <div class="hstack gap-3 flex-wrap pt-3">
                   <a href="#templates" class="btn">
@@ -112,17 +119,6 @@
         </div>
       </div>
     </section>
-    <!-- Breadcrumb — under hero -->
-    <div class="container py-3">
-      <nav aria-label="Breadcrumb" class="breadcrumb-nav" style="opacity:0.6;font-size:0.78rem">
-        <ol>
-          <li><a href="/" style="color:var(--bs-body-color)">Home</a></li>
-          <li><a href="/website-laten-maken" style="color:var(--bs-body-color)">Website laten maken</a></li>
-          <li class="active" aria-current="page" style="color:var(--bs-secondary-color)">Schilders</li>
-        </ol>
-      </nav>
-    </div>
-
 
     <!-- Wat zit erin Section -->
     <section class="features py-5 py-lg-7 py-xl-8">
@@ -180,9 +176,9 @@
       </div>
     </section>
 
-        <!-- Templates live CSS -->
+    <!-- Templates CSS — live cards + locked placeholders -->
     <style>
-      .niche-tpl-card { background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; position:relative; }
+      .niche-tpl-card { background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; position:relative; }
       .niche-tpl-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.14); border-color:rgba(212,237,49,0.5); }
       .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; background:#f6f4ef; }
       .niche-tpl-card__poster { position:absolute; top:0; left:0; width:100%; height:auto; display:block; transform:translateY(0); transition:transform 9s linear; z-index:1; }
@@ -191,131 +187,167 @@
       .niche-tpl-card__playbadge iconify-icon { font-size:0.95rem; color:#d4ed31; }
       .niche-tpl-card:hover .niche-tpl-card__playbadge { background:#d4ed31; color:#1a1a1a; }
       .niche-tpl-card:hover .niche-tpl-card__playbadge iconify-icon { color:#1a1a1a; }
-      .niche-tpl-card__shadebar { position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); opacity:0; transition:opacity .35s ease; z-index:2; pointer-events:none; }
+      .niche-tpl-card__shadebar { position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); opacity:0; transition:opacity .35s ease; z-index:2; pointer-events:none; }
       .niche-tpl-card:hover .niche-tpl-card__shadebar { opacity:1; }
-      .niche-tpl-card__visit { position:absolute; bottom:16px; right:16px; z-index:3; width:52px; height:52px; border-radius:50%; background:#d4ed31; color:#1a1a1a; display:flex; align-items:center; justify-content:center; font-size:1.35rem; opacity:0; transform:translateY(8px); transition:opacity .3s ease, transform .3s ease; }
+      .niche-tpl-card__visit { position:absolute; bottom:16px; right:16px; z-index:3; width:52px; height:52px; border-radius:50%; background:#d4ed31; color:#1a1a1a; display:flex; align-items:center; justify-content:center; font-size:1.35rem; opacity:0; transform:translateY(8px); transition:opacity .3s ease,transform .3s ease; }
       .niche-tpl-card:hover .niche-tpl-card__visit { opacity:1; transform:translateY(0); }
       .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
       .niche-tpl-card__body h4 { margin-bottom:0; }
       .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.95rem; display:inline-flex; align-items:center; gap:0.5rem; color:#1a1a1a; }
       .niche-tpl-card__cta iconify-icon { color:#d4ed31; background:#1a1a1a; padding:4px; border-radius:50%; font-size:1.1rem; }
+      /* Locked placeholder cards */
+      .niche-tpl-card--locked { background:#f4f1ec; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; position:relative; cursor:not-allowed; opacity:0.78; filter:grayscale(0.4); }
+      .niche-tpl-card--locked .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.85rem; }
+      .niche-tpl-card--locked .niche-tpl-card__lockicon { font-size:3rem; color:rgba(0,0,0,0.35); }
+      .niche-tpl-card--locked .niche-tpl-card__lockbadge { position:absolute; top:14px; left:14px; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; }
+      .niche-tpl-card--locked .niche-tpl-card__lockbadge iconify-icon { font-size:0.9rem; color:#d4ed31; }
+      .niche-tpl-card--locked .niche-tpl-card__lockcaption { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(0,0,0,0.45); }
+      .niche-tpl-card--locked .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
+      .niche-tpl-card--locked .niche-tpl-card__body h4 { margin-bottom:0; color:#555; }
+      .niche-tpl-card--locked .niche-tpl-card__body p { color:rgba(0,0,0,0.55); }
+      .niche-tpl-card--locked .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.9rem; display:inline-flex; align-items:center; gap:0.5rem; color:rgba(0,0,0,0.5); }
+      .niche-tpl-card--locked.tpl-editorial .niche-tpl-card__viewport { background:linear-gradient(135deg,#f0ede8 0%,#d4cfc4 100%); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__viewport { background:linear-gradient(135deg,#0a0a0a 0%,#444 100%); }
+      .niche-tpl-card--locked.tpl-premium .niche-tpl-card__viewport { background:linear-gradient(135deg,#1a1612 0%,#3a2a20 100%); }
+      .niche-tpl-card--locked.tpl-warm .niche-tpl-card__viewport { background:linear-gradient(135deg,#f5e8d4 0%,#e0c8a0 100%); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockicon, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockicon { color:rgba(255,255,255,0.5); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockcaption, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockcaption { color:rgba(255,255,255,0.55); }
     </style>
 
     <section id="templates" class="templates-grid py-5 py-lg-7 py-xl-8 bg-light-gray" style="scroll-margin-top:90px">
       <div class="container">
         <div class="row mb-8">
           <div class="col-lg-9">
-            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">6 schilder websites &mdash; allemaal live, allemaal klikbaar</h2>
-            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Van klassiek schildersbedrijf tot moderne kleuradviseur. Bekijk elke demo live en kies de stijl die bij jouw bedrijf past.</p>
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Meerdere stijlen schilder websites &mdash; van klassiek naar modern</h2>
+            <p class="mb-0 fs-5 text-dark text-opacity-70" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Een traditioneel familiebedrijf vraagt om een andere uitstraling dan een moderne schilder die zich onderscheidt met design-kleuradvies. Daarom hebben we voor de schilder-niche meerdere design-richtingen ontworpen. <strong>5 stijlen zijn al live te bekijken</strong> &mdash; hover over een card om de pagina te zien scrollen, en klik om de demo te openen. De overige stijlen volgen binnenkort.</p>
           </div>
         </div>
         <div class="row g-4">
+
+          <!-- 1. PREMIUM — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
             <a href="https://schilder-premium-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card">
                 <div class="niche-tpl-card__viewport">
                   <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/schilder-premium.webp" alt="Schilder Premium website template — donker vakkundig design" class="niche-tpl-card__poster" loading="lazy">
+                  <img src="/assets/images/templates/schilder-premium.png" alt="Schilder website demo &mdash; Donker &amp; Vakkundig" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
                   <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">01 &middot; PREMIUM</span></div>
                   <h4 class="mb-0 mt-2">Donker &amp; Vakkundig</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Industri&euml;le typografie, donkere kleuren en prominente VCA &amp; FOSAG certificeringen. Voor gevestigde schildersbedrijven met decennia ervaring.</p>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Voor gevestigde schildersbedrijven met decennia ervaring. Industri&euml;le typografie, donkere kleuren, prominente certificeringen.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
+
+          <!-- 2. WARM — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <a href="https://schilder-warm-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card">
                 <div class="niche-tpl-card__viewport">
                   <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/schilder-warm.webp" alt="Schilder Warm website template — warme buurtschilder uitstraling" class="niche-tpl-card__poster" loading="lazy">
+                  <img src="/assets/images/templates/schilder-warm.png" alt="Schilder website demo &mdash; Familieschilder" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">02 &middot; WARM</span></div>
-                  <h4 class="mb-0 mt-2">Buurtschilder</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Warme aardetinten en een persoonlijke uitstraling. Perfect voor de zelfstandige schilder met een vaste klantenkring in de buurt.</p>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">02 &middot; WARM</span></div>
+                  <h4 class="mb-0 mt-2">Familieschilder</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Voor de zelfstandige schilder met persoonlijke aanpak. Warme aardetinten, foto van het team aan het werk.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
+
+          <!-- 3. EDITORIAL — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1000">
             <a href="https://schilder-editorial-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
               <div class="niche-tpl-card">
                 <div class="niche-tpl-card__viewport">
                   <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/schilder-bold.webp" alt="Schilder Editorial website template — modern strak design" class="niche-tpl-card__poster" loading="lazy">
+                  <img src="/assets/images/templates/schilder-editorial.png" alt="Schilder website demo &mdash; Modern Kleuradviseur" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">03 &middot; EDITORIAL</span></div>
-                  <h4 class="mb-0 mt-2">Modern &amp; Strak</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Cleane editorial layout met veel witruimte. Ideaal voor schilders die zich onderscheiden met kleuradvies en design.</p>
+                  <div class="d-flex align-items-center gap-2"><span class="badge bg-dark text-white fw-bold">03 &middot; EDITORIAL</span></div>
+                  <h4 class="mb-0 mt-2">Modern Kleuradviseur</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Cleane editorial layout voor schilders die zich onderscheiden met kleuradvies en design. Veel witruimte.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
+
+          <!-- 4. FREESTYLE 1 — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <a href="https://schilder-freestyle-1-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
-              <div class="niche-tpl-card">
+            <a href="https://schilder-freestyle-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
+              <div class="niche-tpl-card" style="border-color:rgba(212,237,49,0.55)">
                 <div class="niche-tpl-card__viewport">
-                  <span class="niche-tpl-card__playbadge" style="background:rgba(245,166,35,0.9);color:#0a0a0f"><iconify-icon icon="lucide:sparkles"></iconify-icon>Scroll-animatie</span>
-                  <img src="/assets/images/templates/schilder-freestyle-1.webp" alt="Schilder Freestyle 1 — PenseelMeester Forest Gold met scroll-animatie" class="niche-tpl-card__poster" loading="lazy">
+                  <span class="niche-tpl-card__playbadge" style="background:rgba(212,237,49,0.95);color:#1a1a1a"><iconify-icon icon="lucide:sparkles" style="color:#1a1a1a"></iconify-icon>Volledig op maat</span>
+                  <img src="/assets/images/templates/schilder-freestyle.png" alt="Schilder website demo &mdash; Bold &amp; Color" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
                   <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">04 &middot; FREESTYLE</span></div>
-                  <h4 class="mb-0 mt-2">PenseelMeester &mdash; Forest Gold</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Donker thema met goud-groen accent en scroll-animaties. De hero opent zich terwijl je scrollt &mdash; een visuele ervaring.</p>
+                  <h4 class="mb-0 mt-2">Bold &amp; Color</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Knal-stijl met focus op kleur en inspiratie. Levendige kleuren, energieke uitstraling.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
             </a>
           </div>
+
+          <!-- 5. FREESTYLE 2 — locked -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">
-            <a href="https://schilder-freestyle-2-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
-              <div class="niche-tpl-card">
-                <div class="niche-tpl-card__viewport">
-                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/schilder-freestyle-2.webp" alt="Schilder Freestyle 2 — StrakGeVerfd Clean Sage design" class="niche-tpl-card__poster" loading="lazy">
-                  <div class="niche-tpl-card__shadebar"></div>
-                  <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
-                </div>
-                <div class="niche-tpl-card__body">
-                  <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">05 &middot; FREESTYLE</span></div>
-                  <h4 class="mb-0 mt-2">StrakGeVerfd &mdash; Clean Sage</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Licht thema met sage groen accent. Strakke lijnen en een clean uitstraling voor de moderne schilder.</p>
-                  <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
-                </div>
+            <div class="niche-tpl-card niche-tpl-card--locked tpl-freestyle">
+              <div class="niche-tpl-card__viewport">
+                <span class="niche-tpl-card__lockbadge"><iconify-icon icon="lucide:lock"></iconify-icon>Binnenkort</span>
+                <iconify-icon icon="lucide:lock" class="niche-tpl-card__lockicon"></iconify-icon>
+                <span class="niche-tpl-card__lockcaption">Demo in productie</span>
               </div>
-            </a>
+              <div class="niche-tpl-card__body">
+                <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">FREESTYLE 2</span></div>
+                <h4 class="mb-0 mt-2">Voor/Na Showcase</h4>
+                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Layout opgebouwd rondom een grote galerij van voor/na shots. Visueel overtuigend.</p>
+                <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:lock"></iconify-icon>Demo binnenkort beschikbaar</span>
+              </div>
+            </div>
           </div>
+
+          <!-- 6. FREESTYLE 3 — live -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
             <a href="https://schilder-freestyle-3-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
-              <div class="niche-tpl-card">
+              <div class="niche-tpl-card" style="border-color:rgba(212,237,49,0.55)">
                 <div class="niche-tpl-card__viewport">
-                  <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
-                  <img src="/assets/images/templates/schilder-freestyle-3.webp" alt="Schilder Freestyle 3 — HeritagePaint Navy Terracotta design" class="niche-tpl-card__poster" loading="lazy">
+                  <span class="niche-tpl-card__playbadge" style="background:rgba(212,237,49,0.95);color:#1a1a1a"><iconify-icon icon="lucide:sparkles" style="color:#1a1a1a"></iconify-icon>Volledig op maat</span>
+                  <img src="/assets/images/templates/schilder-freestyle-3.png" alt="Schilder website demo &mdash; Volledig Maatwerk" class="niche-tpl-card__poster" loading="lazy">
                   <div class="niche-tpl-card__shadebar"></div>
                   <span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
                 </div>
                 <div class="niche-tpl-card__body">
                   <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">06 &middot; FREESTYLE</span></div>
-                  <h4 class="mb-0 mt-2">HeritagePaint &mdash; Navy Terracotta</h4>
-                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Donker navy met terracotta accent. Klassieke uitstraling voor schilders met monumentaal en restauratie werk.</p>
+                  <h4 class="mb-0 mt-2">Volledig Maatwerk</h4>
+                  <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Geen template, maar een uniek maatwerk-design voor jouw schildersbedrijf. Eigen merk, eigen specialisaties.</p>
                   <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
                 </div>
               </div>
+            </a>
+          </div>
+
+        </div>
+        <div class="row mt-7">
+          <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+            <p class="mb-4 fs-6 text-dark text-opacity-60"><iconify-icon icon="lucide:info" class="me-1"></iconify-icon>De live demo&apos;s zijn echte werkende websites &mdash; geen mockups. Klik om in een nieuw tabblad te openen. Meer stijlen volgen binnenkort.</p>
+            <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="btn mx-auto">
+              <span class="btn-text">Plan een gratis kennismaking</span>
+              <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
             </a>
           </div>
         </div>
@@ -567,7 +599,7 @@
               <a href="/website-laten-maken/aannemer" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor aannemers</a>
               <a href="/website-laten-maken/stukadoor" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor stukadoors</a>
               <a href="/website-laten-maken/dakdekker" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website voor dakdekkers</a>
-              <a href="/website-laten-maken" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Website laten maken — alle branches</a>
+              <a href="/website-laten-maken" class="link-hover hstack gap-2 text-white fs-5"><iconify-icon icon="lucide:arrow-up-right" class="fs-7 text-primary"></iconify-icon>Alle 30 niches bekijken</a>
             </div>
           </div>
           <div class="col-lg-6">
