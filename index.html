@@ -261,41 +261,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logos/apple-touch-icon.png">
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
-<style>
-/* White sections → soft green-grey */
-.stats-facts,
-.faq,
-section.py-5.py-lg-7:not(.bg-light-gray):not(.bg-dark):not(.bg-primary) {
-  background-color: #e8ede4 !important;
-}
-/* Light gray sections → darker green-grey (keep contrast with white sections) */
-.bg-light-gray {
-  background-color: #dce3d7 !important;
-}
-</style>
-<style>
-.blog-card-dark{background:#141419;border-radius:16px;overflow:hidden;height:100%;transition:transform .2s,box-shadow .2s;border:1px solid rgba(255,255,255,.06)}
-.blog-card-dark:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.blog-card-img{overflow:hidden;aspect-ratio:16/9}
-.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.blog-card-dark:hover .blog-card-img img{transform:scale(1.03)}
-.blog-card-body{padding:20px 24px 24px}
-.blog-card-badge{display:inline-block;background:rgba(193,255,114,.12);color:#C1FF72;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
-.blog-card-title{color:#fff;font-size:18px;font-weight:600;line-height:1.4;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.blog-card-date{color:rgba(255,255,255,.4);font-size:13px}
-.blog-card-link:hover{text-decoration:none!important}
-</style>
-<style>
-/* Tighter section spacing across homepage */
-section.py-5.py-lg-11.py-xl-12 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
-section.py-5.py-lg-7 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
-section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
-/* Tighter gap inside sections */
-.d-flex.flex-column.gap-5.gap-xl-11 { gap: 2rem !important; }
-.d-flex.flex-column.gap-5.gap-xl-10 { gap: 2rem !important; }
-/* Blog button closer to cards */
-.Recent-news .mt-4 { margin-top: 1rem !important; }
-</style>
 </head>
 
 <body>
@@ -521,7 +486,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/kapperai.jpg" alt="KapperAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/kapperai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/kapperai.mp4"></video>
                   <div class="portfolio-overlay">
                     <a href="/portfolio"
                       class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
@@ -542,7 +507,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/loodgieterai.jpg" alt="LoodgieterAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/loodgieterai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/loodgieterai.mp4"></video>
                   <div class="portfolio-overlay">
                     <a href="/portfolio"
                       class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
@@ -563,7 +528,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/elektroai.jpg" alt="ElektroAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/elektroai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/elektroai.mp4"></video>
                   <div class="portfolio-overlay">
                     <a href="/portfolio"
                       class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
@@ -584,7 +549,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/hovenierai.jpg" alt="HovenierAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/hovenierai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/hovenierai.mp4"></video>
                   <div class="portfolio-overlay">
                     <a href="/portfolio"
                       class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
@@ -605,7 +570,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/dakdekkerai.jpg" alt="DakdekkerAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/dakdekkerai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/dakdekkerai.mp4"></video>
                   <div class="portfolio-overlay">
                     <a href="/portfolio"
                       class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
@@ -626,7 +591,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/schilderai.jpg" alt="SchilderAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/schilderai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/schilderai.mp4"></video>
                   <div class="portfolio-overlay">
                     <a href="/portfolio"
                       class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
@@ -647,7 +612,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/salonsmart.jpg" alt="SalonSmart" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/salonsmart.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/salonsmart.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.salonsmart.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">SalonSmart</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">Review Management</span></div></div>
@@ -657,7 +622,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/stukadoorai.jpg" alt="StukadoorAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/stukadoorai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/stukadoorai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.stukadoorai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">StukadoorAI</h3><div class="hstack gap-2"><span class="badge text-dark border">SEO</span><span class="badge text-dark border">AI Chatbot</span></div></div>
@@ -667,7 +632,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/reparatieai.jpg" alt="ReparatieAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/reparatieai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/reparatieai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.reparatieai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">ReparatieAI</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">Lead Generation</span></div></div>
@@ -677,7 +642,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/verhuizerai.jpg" alt="VerhuizerAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/verhuizerai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/verhuizerai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.verhuizerai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">VerhuizerAI</h3><div class="hstack gap-2"><span class="badge text-dark border">SEO</span><span class="badge text-dark border">Social Media</span></div></div>
@@ -687,7 +652,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/kliniekai.jpg" alt="KliniekAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/kliniekai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/kliniekai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.kliniekai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">KliniekAI</h3><div class="hstack gap-2"><span class="badge text-dark border">AI Chatbot</span><span class="badge text-dark border">Review Management</span></div></div>
@@ -697,7 +662,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/dierenartsai.jpg" alt="DierenartsAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/dierenartsai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/dierenartsai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.dierenartsai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">DierenartsAI</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">AI Telefonist</span></div></div>
@@ -707,7 +672,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/rijschoolai.jpg" alt="RijschoolAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/rijschoolai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/rijschoolai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.rijschoolai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">RijschoolAI</h3><div class="hstack gap-2"><span class="badge text-dark border">SEO</span><span class="badge text-dark border">Niche Website</span></div></div>
@@ -717,7 +682,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/tafelai.jpg" alt="TafelAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/tafelai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/tafelai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.tafelai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">TafelAI</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">Review Management</span></div></div>
@@ -727,7 +692,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/fietsenai.jpg" alt="FietsenAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/fietsenai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/fietsenai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.fietsenai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">FietsenAI</h3><div class="hstack gap-2"><span class="badge text-dark border">SEO</span><span class="badge text-dark border">AI Chatbot</span></div></div>
@@ -737,7 +702,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/woningai.jpg" alt="WoningAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/woningai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/woningai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.woningai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">WoningAI</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">Lead Generation</span></div></div>
@@ -747,7 +712,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/huisartsenai.jpg" alt="HuisartsenAI" class="img-fluid">
-                  <video muted loop preload="metadata" src="/assets/video/huisartsenai.mp4"></video>
+                  <video muted loop preload="none" src="/assets/video/huisartsenai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.huisartsenai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">HuisartsenAI</h3><div class="hstack gap-2"><span class="badge text-dark border">AI Chatbot</span><span class="badge text-dark border">SEO</span></div></div>
@@ -765,41 +730,184 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
         <div class="d-flex flex-column gap-5 gap-xl-10">
           <div class="row gap-7 gap-xl-0">
             <div class="col-xl-4 col-xxl-4">
-              <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-                <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">03</span>
-                <hr class="border-line">
-                <span class="badge text-bg-dark">Diensten</span>
+              <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
+                data-aos-duration="1000">
+                <span
+                  class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">03</span>
+                <hr class="border-line bg-white">
+                <span class="badge text-dark bg-white">Diensten</span>
               </div>
             </div>
             <div class="col-xl-8 col-xxl-7">
-              <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <h2 class="mb-0 text-white">Wat wij doen</h2>
-                <p class="mb-0 text-white text-opacity-50">Hover over een dienst om meer te ontdekken.</p>
+              <div class="row">
+                <div class="col-xxl-8">
+                  <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
+                    data-aos-duration="1000">
+                    <h2 class="mb-0 text-white">Wat wij doen</h2>
+                    <p class="fs-5 mb-0 text-white text-opacity-70">Geen standaard aanpak. Wij combineren AI-technologie met creatieve marketingstrategieën die écht werken voor jouw branche. Elke klant krijgt een uniek plan — gebouwd op data, aangescherpt door ervaring.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="services-sticker-grid">
-            <a href="/seo" class="svc-card"><div class="svc-bg" style="background-image:url(https://www.studiolee.nl/assets/images/services/seo-hero.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">01</span><div class="svc-title">AI &amp; Google Vindbaarheid</div><p class="svc-desc">Dominantie in ChatGPT en Google met dagelijkse SEO-content.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="https://sl-stickers.vercel.app/stickers/world.png" alt="Cuphead wereldbol — SEO dienst"></div></a>
-
-            <a href="/chatbot" class="svc-card"><div class="svc-bg" style="background-image:url(https://www.studiolee.nl/assets/images/services/services-chatbot.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">02</span><div class="svc-title">AI Chatbot</div><p class="svc-desc">24/7 leadopvang. Draait op jouw kennis.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="https://sl-stickers.vercel.app/stickers/hourglass.png" alt="Cuphead zandloper — Chatbot dienst"></div></a>
-
-            <a href="/voice-ai" class="svc-card"><div class="svc-bg" style="background-image:url(https://www.studiolee.nl/assets/images/services/voice-hero.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">03</span><div class="svc-title">AI Telefonist</div><p class="svc-desc">Gemiste oproepen? Nooit meer.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="https://sl-stickers.vercel.app/stickers/draaitafel.png" alt="Cuphead draaitafel — Voice AI dienst"></div></a>
-
-            <a href="/reviews" class="svc-card"><div class="svc-bg" style="background-image:url(https://www.studiolee.nl/assets/images/services/reviews-hero.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">04</span><div class="svc-title">Review Management</div><p class="svc-desc">5-sterren reviews op autopilot.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="https://sl-stickers.vercel.app/stickers/ferris.png" alt="Cuphead reuzenrad — Reviews dienst"></div></a>
-
-            <a href="/social-media" class="svc-card"><div class="svc-bg" style="background-image:url(https://www.studiolee.nl/assets/images/services/social-hero.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">05</span><div class="svc-title">Social Media</div><p class="svc-desc">Content, beheer en scheduling.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="https://sl-stickers.vercel.app/stickers/discoball.png" alt="Cuphead discobal — Social Media dienst"></div></a>
-
-            <a href="/marketing-uitbesteden" class="svc-card"><div class="svc-bg" style="background-image:url(https://www.studiolee.nl/assets/images/services/marketing-uitbesteden-hero.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">06</span><div class="svc-title">Marketing uitbesteden</div><p class="svc-desc">Alles-in-één, meetbaar resultaat.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="https://sl-stickers.vercel.app/stickers/helikopter.png" alt="Cuphead helikopter — Marketing dienst"></div></a>
-
-            <a href="/automations" class="svc-card"><div class="svc-bg" style="background-image:url(https://www.studiolee.nl/assets/images/services/automations-hero.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">07</span><div class="svc-title">Automatisering</div><p class="svc-desc">N8N workflows en AI-systemen.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="https://sl-stickers.vercel.app/stickers/gear.png" alt="Cuphead tandwiel — Automatisering dienst"></div></a>
-
-            <a href="/herinneringen" class="svc-card"><div class="svc-bg" style="background-image:url(https://www.studiolee.nl/assets/images/services/herinneringen-hero.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">08</span><div class="svc-title">Herinneringen</div><p class="svc-desc">50-70% minder no-shows.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="https://sl-stickers.vercel.app/stickers/washing.png" alt="Cuphead wasmachine — Herinneringen dienst"></div></a>
-
-            <a href="/website-laten-maken" class="svc-card"><div class="svc-bg" style="background-image:url(https://www.studiolee.nl/assets/images/services/website-laten-maken-section.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">09</span><div class="svc-title">Website laten maken</div><p class="svc-desc">Binnen 2 weken live, vanaf €79/mo.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="https://sl-stickers.vercel.app/stickers/windmill.png" alt="Cuphead windmolen — Website dienst"></div></a>
+          <div class="services-tab">
+            <div class="row">
+              <div class="col-12">
+                <div class="d-flex flex-column gap-5">
+                  <ul class="nav nav-tabs flex-column" id="myTab" role="tablist" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" style="cursor:pointer;" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0 active" id="one-tab" data-bs-toggle="tab" data-bs-target="#one" type="button" role="tab" aria-controls="one" aria-selected="true">AI &amp; Google Vindbaarheid</button>
+                      <div class="desc-text mt-3">
+                        <div class="row align-items-center g-4">
+                          <div class="col-md-4">
+                            <img src="/assets/images/services/services-img-1.jpg" alt="AI & Google Vindbaarheid" class="service-inline-img img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <p class="text-white text-opacity-70 mb-0 fs-6">Dominantie in ChatGPT en Google. Wij zorgen dat jouw bedrijf bovenaan staat — met dagelijkse SEO-content, technische optimalisatie en AI-zichtbaarheid. <a href="/seo" class="text-primary">Meer info →</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" style="cursor:pointer;" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0" id="two-tab" data-bs-toggle="tab" data-bs-target="#two" type="button" role="tab" aria-controls="two" aria-selected="false">AI Chatbot</button>
+                      <div class="desc-text mt-3">
+                        <div class="row align-items-center g-4">
+                          <div class="col-md-4">
+                            <img src="/assets/images/services/services-chatbot.jpg" alt="AI Chatbot" class="service-inline-img img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <p class="text-white text-opacity-70 mb-0 fs-6">24/7 leadopvang en klantvragen beantwoorden. Onze AI-chatbots draaien op jouw kennis en converteren bezoekers naar klanten. <a href="/chatbot" class="text-primary">Meer info →</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" style="cursor:pointer;" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0" id="three-tab" data-bs-toggle="tab" data-bs-target="#three" type="button" role="tab" aria-controls="three" aria-selected="false">Review Management</button>
+                      <div class="desc-text mt-3">
+                        <div class="row align-items-center g-4">
+                          <div class="col-md-4">
+                            <img src="/assets/images/services/services-img-3.jpg" alt="Review Management" class="service-inline-img img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <p class="text-white text-opacity-70 mb-0 fs-6">Verzamel en beheer 5-sterren reviews op autopilot. Automatisch verzamelen, professioneel reageren, reputatie opbouwen. <a href="/reviews" class="text-primary">Meer info →</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" style="cursor:pointer;" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0" id="four-tab" data-bs-toggle="tab" data-bs-target="#four" type="button" role="tab" aria-controls="four" aria-selected="false">Social Media</button>
+                      <div class="desc-text mt-3">
+                        <div class="row align-items-center g-4">
+                          <div class="col-md-4">
+                            <img src="/assets/images/services/services-img-4.jpg" alt="Social Media" class="service-inline-img img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <p class="text-white text-opacity-70 mb-0 fs-6">Van content creatie tot beheer en scheduling. Wij nemen je volledige social media over — consistent, on-brand en altijd actueel. <a href="/social-media" class="text-primary">Meer info →</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" style="cursor:pointer;" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0" id="five-tab" data-bs-toggle="tab" data-bs-target="#five" type="button" role="tab" aria-controls="five" aria-selected="false">Marketing uitbesteden</button>
+                      <div class="desc-text mt-3">
+                        <div class="row align-items-center g-4">
+                          <div class="col-md-4">
+                            <img src="/assets/images/services/marketing-uitbesteden-hero.jpg" alt="Marketing uitbesteden" class="service-inline-img img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <p class="text-white text-opacity-70 mb-0 fs-6">Alles-in-één marketing voor het MKB — SEO, social, reviews, AI. Volledig uitbesteed, meetbaar resultaat. <a href="/marketing-uitbesteden" class="text-primary">Meer info →</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" style="cursor:pointer;" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0" id="six-tab" data-bs-toggle="tab" data-bs-target="#six" type="button" role="tab" aria-controls="six" aria-selected="false">Automatisering</button>
+                      <div class="desc-text mt-3">
+                        <div class="row align-items-center g-4">
+                          <div class="col-md-4">
+                            <img src="/assets/images/services/automations-hero.jpg" alt="Automatisering" class="service-inline-img img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <p class="text-white text-opacity-70 mb-0 fs-6">Custom workflows, N8N-automatiseringen en AI-systemen die je bedrijfsprocessen stroomlijnen. Vanaf €600. <a href="/automations" class="text-primary">Meer info →</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" style="cursor:pointer;" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0" id="seven-tab" data-bs-toggle="tab" data-bs-target="#seven" type="button" role="tab" aria-controls="seven" aria-selected="false">Herinneringen &amp; Nieuwsbrieven</button>
+                      <div class="desc-text mt-3">
+                        <div class="row align-items-center g-4">
+                          <div class="col-md-4">
+                            <img src="/assets/images/services/herinneringen-hero.jpg" alt="Herinneringen & Nieuwsbrieven" class="service-inline-img img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <p class="text-white text-opacity-70 mb-0 fs-6">Automatische afspraakherinneringen via WhatsApp en AI-geschreven nieuwsbrieven. 50-70% minder no-shows. <a href="/herinneringen" class="text-primary">Meer info →</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="nav-item py-4 py-lg-6 border-top border-white border-opacity-10 w-100" style="cursor:pointer;" role="presentation">
+                      <button class="nav-link fw-bold py-1 px-0 border-0 rounded-0" id="eight-tab" data-bs-toggle="tab" data-bs-target="#eight" type="button" role="tab" aria-controls="eight" aria-selected="false">Website laten maken</button>
+                      <div class="desc-text mt-3">
+                        <div class="row align-items-center g-4">
+                          <div class="col-md-4">
+                            <img src="/assets/images/services/website-laten-maken-hero.jpg" alt="Website laten maken" class="service-inline-img img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <p class="text-white text-opacity-70 mb-0 fs-6">Professionele website op maat, SEO-geoptimaliseerd, binnen 2 weken live. Gratis ontwerp, vanaf €79/mo. <a href="/website-laten-maken" class="text-primary">Meer info →</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <a href="/website-laten-maken" class="btn border border-white border-opacity-25" data-aos="fade-up"
+                    data-aos-delay="300" data-aos-duration="1000">
+                    <span class="btn-text">Bekijk onze templates</span>
+                    <iconify-icon icon="lucide:arrow-up-right"
+                      class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <script>
+    // Strip data-bs-toggle so Bootstrap Tab JS never touches these buttons.
+    // Show/hide is CSS-only via :has(.nav-link.active) — no tab-panes exist.
+    document.querySelectorAll('#myTab .nav-link[data-bs-toggle="tab"]').forEach(btn => {
+      btn.removeAttribute('data-bs-toggle');
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const wasActive = btn.classList.contains('active');
+
+        // Deactivate all tabs
+        document.querySelectorAll('#myTab .nav-link').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+
+        // Toggle: activate if was inactive
+        if (!wasActive) {
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          const img = btn.closest('.nav-item')?.querySelector('.service-inline-img');
+          if (img) { img.style.animation = 'none'; img.offsetHeight; img.style.animation = ''; }
+        }
+      });
+    });
+
+    // Make entire service tab row clickable, not just the button text
+    document.querySelectorAll('#myTab .nav-item').forEach(li => {
+      li.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        if (e.target.closest('.nav-link')) return;
+        const btn = li.querySelector('.nav-link');
+        if (btn) btn.click();
+      });
+    });
+    </script>
 
     <!-- Zonder vs Met STUDIOLEE -->
     <section class="py-5 py-lg-7">
@@ -1112,57 +1220,92 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
     </section>
 
     <!--  Recent news Section -->
-    <section class="Recent-news py-5 py-lg-11 py-xl-12 bg-light-gray">
+    <section class="Recent-news bg-light-gray pb-5 pb-lg-11 pb-xl-12">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
-          <div class="d-flex justify-content-between align-items-center">
-            <h2 class="mb-0">Laatste artikelen</h2>
-          </div>
-          <div class="row g-4" id="homepage-latest-blogs">
-            <div class="col-md-4">
-              <a href="/blog/ai-chatbot-website-mkb-wanneer-wel-niet" class="blog-card-link text-decoration-none">
-                <div class="blog-card-dark">
-                  <div class="blog-card-img"><img src="/assets/images/blog/ai-chatbot-website-mkb-wanneer-wel-niet.jpg" alt="AI chatbot op je website: wanneer het wel en niet werkt" loading="lazy"></div>
-                  <div class="blog-card-body">
-                    <span class="blog-card-badge">Chatbot</span>
-                    <h3 class="blog-card-title">AI chatbot op je website: wanneer het wel en niet werkt</h3>
-                    <span class="blog-card-date">12 april 2026</span>
-                  </div>
-                </div>
-              </a>
+          <div class="row gap-7 gap-xl-0">
+            <div class="col-xl-4 col-xxl-4">
+              <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right" data-aos-delay="100"
+                data-aos-duration="1000">
+                <span
+                  class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">07</span>
+                <hr class="border-line bg-white">
+                <span class="badge text-bg-dark">Blog</span>
+              </div>
             </div>
-            <div class="col-md-4">
-              <a href="/blog/website-bezoekers-omzetten-naar-klanten" class="blog-card-link text-decoration-none">
-                <div class="blog-card-dark">
-                  <div class="blog-card-img"><img src="/assets/images/blog/website-bezoekers-omzetten-naar-klanten.jpg" alt="Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken" loading="lazy"></div>
-                  <div class="blog-card-body">
-                    <span class="blog-card-badge">Conversie</span>
-                    <h3 class="blog-card-title">Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken</h3>
-                    <span class="blog-card-date">11 april 2026</span>
+            <div class="col-xl-8 col-xxl-7">
+              <div class="row">
+                <div class="col-xxl-8">
+                  <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
+                    data-aos-duration="1000">
+                    <h2 class="mb-0">Laatste artikelen</h2>
+                    <p class="fs-5 mb-0 text-opacity-70">Praktische inzichten over AI, SEO en online groei voor het MKB — elke week nieuwe content.</p>
                   </div>
                 </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="/blog/roi-google-reviews-mkb-opbrengst" class="blog-card-link text-decoration-none">
-                <div class="blog-card-dark">
-                  <div class="blog-card-img"><img src="/assets/images/blog/roi-google-reviews-mkb-opbrengst.jpg" alt="ROI van reviews voor het MKB: hoeveel levert elke Google review je op?" loading="lazy"></div>
-                  <div class="blog-card-body">
-                    <span class="blog-card-badge">ROI</span>
-                    <h3 class="blog-card-title">ROI van reviews voor het MKB: hoeveel levert elke Google review je op?</h3>
-                    <span class="blog-card-date">10 april 2026</span>
-                  </div>
-                </div>
-              </a>
+              </div>
             </div>
           </div>
-          <div class="text-center mt-4">
-            <a href="/blog" class="btn btn-dark px-5 py-3 rounded-pill fw-semibold">Bekijk alle blogs</a>
+          <div class="row gap-7 gap-lg-0" id="homepage-latest-blogs">
+            <div class="col-lg-7 mb-7 mb-lg-0"><div class="resources d-flex flex-column gap-6">
+              <a href="/blog/lokale-marketing-mkb-2026-kanalen" class="resources-img resources-img-first position-relative overflow-hidden d-block">
+                <img src="/assets/images/blog/lokale-marketing-mkb-2026-kanalen.jpg" alt="Lokale marketing voor MKB in 2026: 7 kanalen die echt werken" class="img-fluid"></a>
+              <div class="resources-details"><p class="mb-0">2026-04-08</p>
+              <h4 class="mb-0"><a href="/blog/lokale-marketing-mkb-2026-kanalen" class="text-dark">Lokale marketing voor MKB in 2026: 7 kanalen die echt werken</a></h4></div></div></div>
+            <div class="col-lg-5"><div class="d-flex flex-column gap-7">
+              <div class="resources d-flex flex-column gap-6">
+                <a href="/blog/lokale-vindbaarheid-verbeteren-mkb-gids" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
+                  <img src="/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg" alt="Lokale vindbaarheid verbeteren: de complete MKB-gids" class="img-fluid"></a>
+                <div class="resources-details"><p class="mb-0">2026-04-07</p>
+                <h4 class="mb-0"><a href="/blog/lokale-vindbaarheid-verbeteren-mkb-gids" class="text-dark">Lokale vindbaarheid verbeteren: de complete MKB-gids</a></h4></div></div>
+              <div class="resources d-flex flex-column gap-6">
+                <a href="/blog/ai-zoekgedrag-verandering" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
+                  <img src="/assets/images/blog/ai-zoekgedrag-verandering.jpg" alt="Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen" class="img-fluid"></a>
+                <div class="resources-details"><p class="mb-0">2026-04-06</p>
+                <h4 class="mb-0"><a href="/blog/ai-zoekgedrag-verandering" class="text-dark">Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen</a></h4></div></div>
+            </div></div>
+          </div>
+          <div class="text-center mt-5">
+            <a href="/blog" class="btn">
+              <span class="btn-text">Alle artikelen</span>
+              <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+            </a>
           </div>
         </div>
       </div>
     </section>
+    <script>
+    // Load 3 most recent blog posts from clusters.json
+    fetch('/blog/clusters.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var posts = data.posts.slice(0, 3);
+        var container = document.getElementById('homepage-latest-blogs');
+        if (!container || !posts.length) return;
+        
+        var first = posts[0];
+        var html = '<div class="col-lg-7 mb-7 mb-lg-0"><div class="resources d-flex flex-column gap-6">' +
+          '<a href="/blog/' + first.slug + '" class="resources-img resources-img-first position-relative overflow-hidden d-block">' +
+          '<img src="' + first.image + '" alt="' + first.title + '" class="img-fluid"></a>' +
+          '<div class="resources-details"><p class="mb-0">' + first.date + '</p>' +
+          '<h4 class="mb-0"><a href="/blog/' + first.slug + '" class="text-dark">' + first.title + '</a></h4></div></div></div>';
+        
+        html += '<div class="col-lg-5"><div class="d-flex flex-column gap-7">';
+        for (var i = 1; i < posts.length; i++) {
+          var p = posts[i];
+          html += '<div class="resources d-flex flex-column gap-6">' +
+            '<a href="/blog/' + p.slug + '" class="resources-img resources-img-blog position-relative overflow-hidden d-block">' +
+            '<img src="' + p.image + '" alt="' + p.title + '" class="img-fluid"></a>' +
+            '<div class="resources-details"><p class="mb-0">' + p.date + '</p>' +
+            '<h4 class="mb-0"><a href="/blog/' + p.slug + '" class="text-dark">' + p.title + '</a></h4></div></div>';
+        }
+        html += '</div></div>';
+        
+        container.innerHTML = html;
+      })
+      .catch(function() {});
+    </script>
 
+    <!--  FAQ Section -->
     <section class="faq py-5 py-lg-11 py-xl-12">
       <div class="container">
         <div class="d-flex flex-column gap-5 gap-xl-11">
@@ -1285,6 +1428,7 @@ section.pb-5.pb-lg-11.pb-xl-12 { padding-bottom: 3rem !important; }
           <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
             <li><a class="link-hover fs-5 text-white" href="/">Home</a></li>
             <li><a class="link-hover fs-5 text-white" href="/tarieven">Tarieven</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/website-laten-maken">Website laten maken</a></li>
             <li><a class="link-hover fs-5 text-white" href="/free-trial">Gratis AI Scan</a></li>
             <li><a class="link-hover fs-5 text-white" href="/blog">Blog</a></li>
             <li><a class="link-hover fs-5 text-white" href="/portfolio">Portfolio</a></li>
@@ -1334,38 +1478,6 @@ document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => 
     
   
     <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69c4ef18d9121c5778d93245"></script>
-
-    
-    <!-- Services Sticker Grid CSS -->
-    <style>
-    .services-sticker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-    .svc-card{position:relative;padding:32px;border:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:all 0.4s;min-height:220px;overflow:visible;text-decoration:none;color:#fff;display:flex;flex-direction:column}
-    .svc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:1;z-index:0}
-    .svc-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,42,46,0.92) 0%,rgba(31,42,46,0.75) 100%);opacity:1;transition:opacity 0.4s;z-index:1}
-            .svc-card:hover{z-index:10}
-    .svc-content{position:relative;z-index:2}
-    .svc-num{font-size:0.6rem;font-weight:700;color:rgba(255,255,255,0.15);letter-spacing:0.15em;margin-bottom:10px;display:block;transition:color 0.3s}
-    .svc-card:hover .svc-num{color:#C1FF72}
-    .svc-title{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:600;margin-bottom:6px;transition:color 0.3s}
-    .svc-card:hover .svc-title{color:#C1FF72}
-    .svc-desc{font-size:0.78rem;color:rgba(255,255,255,0.35);line-height:1.5;transition:color 0.3s}
-    .svc-card:hover .svc-desc{color:rgba(255,255,255,0.6)}
-    .svc-link{display:inline-flex;align-items:center;gap:4px;font-size:0.68rem;font-weight:600;color:#C1FF72;margin-top:auto;padding-top:10px;letter-spacing:0.05em;text-transform:uppercase;opacity:0;transform:translateY(6px);transition:all 0.3s}
-    .svc-card:hover .svc-link{opacity:1;transform:translateY(0)}
-    .svc-sticker{position:absolute;width:130px;height:130px;opacity:0;pointer-events:none;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);z-index:20;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.6))}
-    .svc-sticker img{width:100%;height:100%;object-fit:contain}
-    .svc-card:hover .svc-sticker{opacity:1;transform:rotate(var(--rot,5deg)) scale(1) translate(var(--tx,0),var(--ty,0))}
-    .svc-card:nth-child(1) .svc-sticker{--rot:-8deg;--tx:-20px;--ty:-30px;top:-15px;right:-15px}
-    .svc-card:nth-child(2) .svc-sticker{--rot:6deg;--tx:10px;--ty:-25px;top:-10px;right:20px}
-    .svc-card:nth-child(3) .svc-sticker{--rot:-5deg;--tx:15px;--ty:-25px;top:-15px;left:-10px}
-    .svc-card:nth-child(4) .svc-sticker{--rot:10deg;--tx:-15px;--ty:10px;bottom:-10px;right:-15px}
-    .svc-card:nth-child(5) .svc-sticker{--rot:-7deg;--tx:0;--ty:-20px;top:5px;right:-25px}
-    .svc-card:nth-child(6) .svc-sticker{--rot:4deg;--tx:10px;--ty:15px;bottom:-5px;left:-10px}
-    .svc-card:nth-child(7) .svc-sticker{--rot:-6deg;--tx:-10px;--ty:-25px;top:-15px;right:15px}
-    .svc-card:nth-child(8) .svc-sticker{--rot:8deg;--tx:15px;--ty:10px;bottom:5px;left:-15px}
-    .svc-card:nth-child(9) .svc-sticker{--rot:-4deg;--tx:-15px;--ty:-20px;top:-10px;right:-20px}
-    @media(max-width:768px){.services-sticker-grid{grid-template-columns:1fr 1fr}.svc-sticker{display:none!important}}
-    </style>
 </body>
 
 </html
@@ -1419,38 +1531,6 @@ document.querySelectorAll('#myTab button[data-bs-toggle="tab"]').forEach(btn => 
     
   
     <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69c4ef18d9121c5778d93245"></script>
-
-    
-    <!-- Services Sticker Grid CSS -->
-    <style>
-    .services-sticker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-    .svc-card{position:relative;padding:32px;border:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:all 0.4s;min-height:220px;overflow:visible;text-decoration:none;color:#fff;display:flex;flex-direction:column}
-    .svc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:1;z-index:0}
-    .svc-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,42,46,0.92) 0%,rgba(31,42,46,0.75) 100%);opacity:1;transition:opacity 0.4s;z-index:1}
-            .svc-card:hover{z-index:10}
-    .svc-content{position:relative;z-index:2}
-    .svc-num{font-size:0.6rem;font-weight:700;color:rgba(255,255,255,0.15);letter-spacing:0.15em;margin-bottom:10px;display:block;transition:color 0.3s}
-    .svc-card:hover .svc-num{color:#C1FF72}
-    .svc-title{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:600;margin-bottom:6px;transition:color 0.3s}
-    .svc-card:hover .svc-title{color:#C1FF72}
-    .svc-desc{font-size:0.78rem;color:rgba(255,255,255,0.35);line-height:1.5;transition:color 0.3s}
-    .svc-card:hover .svc-desc{color:rgba(255,255,255,0.6)}
-    .svc-link{display:inline-flex;align-items:center;gap:4px;font-size:0.68rem;font-weight:600;color:#C1FF72;margin-top:auto;padding-top:10px;letter-spacing:0.05em;text-transform:uppercase;opacity:0;transform:translateY(6px);transition:all 0.3s}
-    .svc-card:hover .svc-link{opacity:1;transform:translateY(0)}
-    .svc-sticker{position:absolute;width:130px;height:130px;opacity:0;pointer-events:none;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);z-index:20;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.6))}
-    .svc-sticker img{width:100%;height:100%;object-fit:contain}
-    .svc-card:hover .svc-sticker{opacity:1;transform:rotate(var(--rot,5deg)) scale(1) translate(var(--tx,0),var(--ty,0))}
-    .svc-card:nth-child(1) .svc-sticker{--rot:-8deg;--tx:-20px;--ty:-30px;top:-15px;right:-15px}
-    .svc-card:nth-child(2) .svc-sticker{--rot:6deg;--tx:10px;--ty:-25px;top:-10px;right:20px}
-    .svc-card:nth-child(3) .svc-sticker{--rot:-5deg;--tx:15px;--ty:-25px;top:-15px;left:-10px}
-    .svc-card:nth-child(4) .svc-sticker{--rot:10deg;--tx:-15px;--ty:10px;bottom:-10px;right:-15px}
-    .svc-card:nth-child(5) .svc-sticker{--rot:-7deg;--tx:0;--ty:-20px;top:5px;right:-25px}
-    .svc-card:nth-child(6) .svc-sticker{--rot:4deg;--tx:10px;--ty:15px;bottom:-5px;left:-10px}
-    .svc-card:nth-child(7) .svc-sticker{--rot:-6deg;--tx:-10px;--ty:-25px;top:-15px;right:15px}
-    .svc-card:nth-child(8) .svc-sticker{--rot:8deg;--tx:15px;--ty:10px;bottom:5px;left:-15px}
-    .svc-card:nth-child(9) .svc-sticker{--rot:-4deg;--tx:-15px;--ty:-20px;top:-10px;right:-20px}
-    @media(max-width:768px){.services-sticker-grid{grid-template-columns:1fr 1fr}.svc-sticker{display:none!important}}
-    </style>
 </body>
 
 </html>
