@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "ai-trends-mkb-2026",
+      "title": "3 AI-trends die MKB-bedrijven in 2026 niet mogen missen",
+      "date": "2026-04-14",
+      "cluster": "ai-trends",
+      "image": "/assets/images/blog/ai-trends-mkb-2026.jpg"
+    },
+    {
       "slug": "mkb-groeiblokkades-ai-oplossingen",
       "title": "3 groeiblokkades voor MKB die AI direct oplost",
       "date": "2026-04-14",
