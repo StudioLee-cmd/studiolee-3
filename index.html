@@ -1395,13 +1395,13 @@
 <p style="flex:1;color:rgba(255,255,255,0.8);font-size:14px;line-height:1.5;margin:0">We gebruiken cookies voor onze chatfunctie. Lees ons <a href="/privacy" style="color:#C1FF72;text-decoration:underline">privacybeleid</a>.</p>
 <div style="display:flex;gap:8px;flex-shrink:0">
 <button onclick="localStorage.setItem('cookie_consent','declined');document.getElementById('ck-banner').style.display='none'" style="background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15);padding:8px 16px;border-radius:100px;font-size:13px;cursor:pointer">Weigeren</button>
-<button onclick="localStorage.setItem('cookie_consent','accepted');document.getElementById('ck-banner').style.display='none';var s=document.createElement('script');s.src='https://widgets.leadconnectorhq.com/loader.js';s.setAttribute('data-resources-url','https://widgets.leadconnectorhq.com/chat-widget/loader.js');document.body.appendChild(s)" style="background:#C1FF72;color:#0a0a0f;border:none;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer">Accepteren</button>
+<button onclick="localStorage.setItem('cookie_consent','accepted');document.getElementById('ck-banner').style.display='none';var s=document.createElement('script');s.src='https://widgets.leadconnectorhq.com/loader.js';s.setAttribute('data-resources-url','https://widgets.leadconnectorhq.com/chat-widget/loader.js');s.setAttribute('data-widget-id','69c4ef18d9121c5778d93245');document.body.appendChild(s)" style="background:#C1FF72;color:#0a0a0f;border:none;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer">Accepteren</button>
 </div></div></div>
 <style>@keyframes ck-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}</style>
 <script>
 (function(){
 var c=localStorage.getItem('cookie_consent');
-if(c==='accepted'){var s=document.createElement('script');s.src='https://widgets.leadconnectorhq.com/loader.js';s.setAttribute('data-resources-url','https://widgets.leadconnectorhq.com/chat-widget/loader.js');document.body.appendChild(s);return;}
+if(c==='accepted'){var s=document.createElement('script');s.src='https://widgets.leadconnectorhq.com/loader.js';s.setAttribute('data-resources-url','https://widgets.leadconnectorhq.com/chat-widget/loader.js');s.setAttribute('data-widget-id','69c4ef18d9121c5778d93245');document.body.appendChild(s);return;}
 if(c==='declined')return;
 document.getElementById('ck-banner').style.display='flex';
 })();
