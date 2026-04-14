@@ -937,6 +937,7 @@
 <script>
 document.addEventListener('DOMContentLoaded',function(){var bs=document.querySelectorAll('.blog-filter-btn'),cs=document.querySelectorAll('.blog-card-item');bs.forEach(function(b){b.addEventListener('click',function(){var f=this.getAttribute('data-filter');bs.forEach(function(x){x.classList.remove('active')});this.classList.add('active');cs.forEach(function(c){if(f==='all'||c.getAttribute('data-cluster')===f){c.classList.remove('hidden')}else{c.classList.add('hidden')}})})});});
 </script>
+<script src="/assets/js/cookie-banner.js" defer></script>
 </body>
 
 </html>
