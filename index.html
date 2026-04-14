@@ -1104,18 +1104,18 @@
           </div>
           
 <style>
-  .blog-hover-card{display:block;border-radius:16px;overflow:hidden;background:#141419;transition:transform .3s ease,box-shadow .3s ease;border:1px solid rgba(255,255,255,.06)}
+  .blog-hover-card{display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:#141419;transition:transform .3s ease,box-shadow .3s ease;border:1px solid rgba(255,255,255,.06);height:100%}
   .blog-hover-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.5)}
-  .blog-hover-card-img{position:relative;aspect-ratio:16/9;overflow:hidden}
+  .blog-hover-card-img{position:relative;aspect-ratio:16/9;overflow:hidden;flex-shrink:0}
   .blog-hover-card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
   .blog-hover-img-primary{opacity:1;z-index:2}
   .blog-hover-img-secondary{opacity:0;z-index:1}
   .blog-hover-card:hover .blog-hover-img-primary{opacity:0}
   .blog-hover-card:hover .blog-hover-img-secondary{opacity:1}
-  .blog-hover-card-body{padding:1.5rem}
-  .blog-hover-badge{display:inline-block;background:#C1FF72;color:#0a0a0f;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:4px 10px;border-radius:4px;margin-bottom:.75rem}
-  .blog-hover-title{color:#fff;font-size:1.1rem;line-height:1.4;margin-bottom:.5rem;font-weight:600}
-  .blog-hover-date{color:rgba(255,255,255,.5);font-size:.85rem}
+  .blog-hover-card-body{padding:1.5rem;display:flex;flex-direction:column;flex-grow:1}
+  .blog-hover-badge{display:inline-block;background:#C1FF72;color:#0a0a0f;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:4px 10px;border-radius:4px;margin-bottom:.75rem;align-self:flex-start}
+  .blog-hover-title{color:#fff;font-size:1.1rem;line-height:1.4;margin-bottom:auto;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(1.1rem * 1.4 * 2)}
+  .blog-hover-date{color:rgba(255,255,255,.5);font-size:.85rem;margin-top:.75rem}
   @media(prefers-reduced-motion:reduce){.blog-hover-card,.blog-hover-card-img img{transition:none}}
 </style>
           <div class="row" id="homepage-latest-blogs">
