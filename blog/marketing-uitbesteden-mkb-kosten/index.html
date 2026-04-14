@@ -41,13 +41,21 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.studiolee.nl/"}, {"@type": "ListItem", "position": 2, "name": "Kennisbank", "item": "https://www.studiolee.nl/blog"}, {"@type": "ListItem", "position": 3, "name": "Marketing uitbesteden als MKB: wat kost het?", "item": "https://www.studiolee.nl/blog/marketing-uitbesteden-mkb-kosten"}]}</script>
 </head>
 <body>
-  <header class="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
+  <header class="header border-4 border-dark border-top position-fixed start-0 top-0 w-100">
     <div class="container">
       <div class="header-wrapper d-flex align-items-center justify-content-between">
-        <div class="logo"><a href="/" class="logo-white"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE" class="img-fluid"></a><a href="/" class="logo-dark"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE" class="img-fluid"></a></div>
+        <div class="logo">
+          <a href="/" class="logo-white">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
+          </a>
+          <a href="/" class="logo-dark">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
+          </a>
+        </div>
         <div class="d-flex align-items-center gap-4">
+
           <div class="menu-toggle-wrap">
-            <button class="hamburger-btn" aria-label="Menu" onclick="this.classList.toggle('is-open');document.getElementById('slideMenu').classList.toggle('is-open');document.getElementById('menuBackdrop').classList.toggle('is-open');">
+            <button class="hamburger-btn" aria-label="Menu" onclick="this.classList.toggle('is-open');document.getElementById('slideMenu').classList.toggle('is-open');" >
               <div class="bar-wrap"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
             </button>
             <nav class="menu-dropdown" id="slideMenu">
@@ -83,6 +91,9 @@
                       <a href="/herinneringen" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:bell-bing-bold-duotone"></iconify-icon></span>Herinneringen</a>
                     </li>
                     <li class="header-item">
+                      <a href="/dashboard" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:monitor-bold-duotone"></iconify-icon></span>Dashboard</a>
+                    </li>
+                    <li class="header-item">
                       <a href="/tarieven" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:wallet-money-bold-duotone"></iconify-icon></span>Tarieven</a>
                     </li>
                     <li class="header-item">
@@ -98,9 +109,15 @@
                       <a href="/portfolio" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:gallery-wide-bold-duotone"></iconify-icon></span>Portfolio</a>
                     </li>
                   </ul>
-                  <div class="hstack gap-3"><a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a></div>
+                  <div class="hstack gap-3">
+                    <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank"
+                      class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a>
+                  </div>
                 </div>
-                <div><a class="text-dark" href="tel:+3197010223669">+31 970 102 23669</a><br><a class="fs-8 text-dark fw-bold" href="mailto:tim@studiolee.nl">tim@studiolee.nl</a></div>
+                <div>
+                  <a class="text-dark" href="tel:+3197010223669">+31 970 102 23669</a>
+                  <a class="fs-8 text-dark fw-bold" href="mailto:tim@studiolee.nl">tim@studiolee.nl</a>
+                </div>
               </div>
             </ul>
           </div>

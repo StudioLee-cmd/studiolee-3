@@ -36,39 +36,72 @@
       <div class="header-wrapper d-flex align-items-center justify-content-between">
         <div class="logo">
           <a href="/" class="logo-white">
-            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
           </a>
           <a href="/" class="logo-dark">
-            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
           </a>
         </div>
         <div class="d-flex align-items-center gap-4">
+
           <div class="menu-toggle-wrap">
             <button class="hamburger-btn" aria-label="Menu" onclick="this.classList.toggle('is-open');document.getElementById('slideMenu').classList.toggle('is-open');" >
               <div class="bar-wrap"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
             </button>
             <nav class="menu-dropdown" id="slideMenu">
               <div class="d-flex flex-column gap-6">
+                <!-- menu header removed -->
                 <div class="d-flex flex-column gap-3">
                   <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
-                    <li class="header-item"><a href="/" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:home-angle-bold-duotone"></iconify-icon></span>Home</a></li>
-                    <li class="header-item"><a href="/chatbot" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></span>AI Chatbot</a></li>
-                    <li class="header-item"><a href="/voice-ai" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone"></iconify-icon></span>AI Telefonist</a></li>
-                    <li class="header-item"><a href="/seo" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:magnifer-zoom-in-bold-duotone"></iconify-icon></span>SEO &amp; Vindbaarheid</a></li>
-                    <li class="header-item"><a href="/social-media" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:share-circle-bold-duotone"></iconify-icon></span>Social Media</a></li>
-                    <li class="header-item"><a href="/reviews" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:star-shine-bold-duotone"></iconify-icon></span>Review Management</a></li>
-                    <li class="header-item"><a href="/marketing-uitbesteden" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chart-2-bold-duotone"></iconify-icon></span>Marketing uitbesteden</a></li>
-                    <li class="header-item"><a href="/automations" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:settings-minimalistic-bold-duotone"></iconify-icon></span>Automatisering</a></li>
-                    <li class="header-item"><a href="/herinneringen" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:bell-bing-bold-duotone"></iconify-icon></span>Herinneringen</a></li>
-                    <li class="header-item"><a href="/dashboard" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:monitor-bold-duotone"></iconify-icon></span>Dashboard</a></li>
-                    <li class="header-item"><a href="/tarieven" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:wallet-money-bold-duotone"></iconify-icon></span>Tarieven</a></li>
-                    <li class="header-item"><a href="/free-trial" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:document-medicine-bold-duotone"></iconify-icon></span>Start Gratis</a></li>
-                    <li class="header-item"><a href="/website-laten-maken" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:global-bold-duotone"></iconify-icon></span>Website laten maken</a></li>
-                    <li class="header-item"><a href="/blog" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:notebook-bold-duotone"></iconify-icon></span>Blog</a></li>
-                    <li class="header-item"><a href="/portfolio" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:gallery-wide-bold-duotone"></iconify-icon></span>Portfolio</a></li>
+                    <li class="header-item">
+                      <a href="/" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:home-angle-bold-duotone"></iconify-icon></span>Home</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/chatbot" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></span>AI Chatbot</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/voice-ai" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone"></iconify-icon></span>AI Telefonist</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/seo" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:magnifer-zoom-in-bold-duotone"></iconify-icon></span>SEO &amp; Vindbaarheid</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/social-media" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:share-circle-bold-duotone"></iconify-icon></span>Social Media</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/reviews" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:star-shine-bold-duotone"></iconify-icon></span>Review Management</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/marketing-uitbesteden" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chart-2-bold-duotone"></iconify-icon></span>Marketing uitbesteden</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/automations" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:settings-minimalistic-bold-duotone"></iconify-icon></span>Automatisering</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/herinneringen" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:bell-bing-bold-duotone"></iconify-icon></span>Herinneringen</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/dashboard" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:monitor-bold-duotone"></iconify-icon></span>Dashboard</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/tarieven" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:wallet-money-bold-duotone"></iconify-icon></span>Tarieven</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/free-trial" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:document-medicine-bold-duotone"></iconify-icon></span>Start Gratis</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/website-laten-maken" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:global-bold-duotone"></iconify-icon></span>Website laten maken</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/blog" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:notebook-bold-duotone"></iconify-icon></span>Blog</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/portfolio" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:gallery-wide-bold-duotone"></iconify-icon></span>Portfolio</a>
+                    </li>
                   </ul>
                   <div class="hstack gap-3">
-                    <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a>
+                    <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank"
+                      class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a>
                   </div>
                 </div>
                 <div>
@@ -76,7 +109,7 @@
                   <a class="fs-8 text-dark fw-bold" href="mailto:tim@studiolee.nl">tim@studiolee.nl</a>
                 </div>
               </div>
-            </nav>
+            </ul>
           </div>
         </div>
       </div>
