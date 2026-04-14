@@ -22,6 +22,23 @@
   <meta name="twitter:description" content="Portfolio van STUDIOLEE — niche websites, AI-chatbots, SEO-campagnes en automatiseringen voor MKB-bedrijven.">
   <meta name="twitter:image" content="https://www.studiolee.nl/assets/images/og/studiolee-og.jpg">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logos/apple-touch-icon.png">
+  <style>
+    .portfolio-img > video {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      opacity: 0;
+      transition: opacity 0.4s;
+      z-index: 0;
+    }
+    .portfolio-img:hover > video { opacity: 1; }
+    .portfolio-img:hover > img { opacity: 0 !important; }
+    .portfolio-img > img { transition: opacity 0.4s; z-index: 1; }
+    .portfolio-overlay { z-index: 2 !important; }
+  </style>
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
   <script type="application/ld+json">
@@ -128,6 +145,12 @@
       style="background-image: url(/assets/images/backgrounds/projects-banner.jpg);">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+          <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-3">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li class="active" aria-current="page">Portfolio</li>
+            </ol>
+          </nav>
 
 <div class="row align-items-center">
             <div class="col-xl-4">
@@ -150,34 +173,203 @@
         </div>
       </div>
     </section>
-    <!-- Breadcrumb — under hero -->
-    <div class="container py-3">
-      <nav aria-label="Breadcrumb" class="breadcrumb-nav" style="opacity:0.6;font-size:0.78rem">
-        <ol>
-          <li><a href="/">Home</a></li>
-              <li class="active" aria-current="page">Portfolio</li>
-        </ol>
-      </nav>
-    </div>
 
-
-    <!--  Portfolio Section -->
-    <section class="project py-5 py-lg-11 py-xl-12">
+    <!--  Mijn Labels Section -->
+    <section class="py-5 py-lg-11 py-xl-12">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <div class="d-flex flex-column gap-6 align-items-center" data-aos="fade-up" data-aos-delay="100"
-              data-aos-duration="1000">
-              <h2 class="mb-0">Wordt aan gewerkt!</h2>
-              <p class="fs-5 mb-0">We zijn momenteel druk bezig met het samenstellen van onze portfolio pagina. Binnenkort
-                vind je hier een overzicht van onze beste projecten, case studies en resultaten voor onze klanten.</p>
-              <a href="https://calendly.com/tim-studiolee" rel="nofollow" target="_blank" class="btn">
-                <span class="btn-text">Bespreek jouw project</span>
-                <iconify-icon icon="lucide:arrow-up-right"
-                  class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-              </a>
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+          <h2 class="mb-3">Mijn Labels</h2>
+          <p class="fs-5 mb-0 text-muted">Elk label is een eigen niche-website, gebouwd en beheerd door STUDIOLEE.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/kapperai.jpg" alt="KapperAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/kapperai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.kapperai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">KapperAI</h6>
             </div>
           </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/loodgieterai.jpg" alt="LoodgieterAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/loodgieterai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.loodgieterai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">LoodgieterAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/elektroai.jpg" alt="ElektroAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/elektroai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.elektroai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">ElektroAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/hovenierai.jpg" alt="HovenierAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/hovenierai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.hovenierai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">HovenierAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/dakdekkerai.jpg" alt="DakdekkerAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/dakdekkerai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.dakdekkerai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">DakdekkerAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/schilderai.jpg" alt="SchilderAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/schilderai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.schilderai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">SchilderAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/salonsmart.jpg" alt="SalonSmart" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/salonsmart.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.salonsmart.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">SalonSmart</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/stukadoorai.jpg" alt="StukadoorAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/stukadoorai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.stukadoorai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">StukadoorAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/reparatieai.jpg" alt="ReparatieAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/reparatieai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.reparatieai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">ReparatieAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/verhuizerai.jpg" alt="VerhuizerAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/verhuizerai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.verhuizerai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">VerhuizerAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/kliniekai.jpg" alt="KliniekAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/kliniekai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.kliniekai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">KliniekAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/dierenartsai.jpg" alt="DierenartsAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/dierenartsai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.dierenartsai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">DierenartsAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/rijschoolai.jpg" alt="RijschoolAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/rijschoolai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.rijschoolai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">RijschoolAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/tafelai.jpg" alt="TafelAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/tafelai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.tafelai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">TafelAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/fietsenai.jpg" alt="FietsenAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/fietsenai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.fietsenai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">FietsenAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="250" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/woningai.jpg" alt="WoningAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/woningai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.woningai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">WoningAI</h6>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <div class="portfolio d-flex flex-column gap-4">
+              <div class="portfolio-img position-relative overflow-hidden rounded-4" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                <img src="/assets/images/labels/huisartsenai.jpg" alt="HuisartsenAI" class="img-fluid">
+                <video muted loop preload="metadata" src="/assets/video/huisartsenai.mp4"></video>
+                <div class="portfolio-overlay"><a href="https://www.huisartsenai.nl" target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+              </div>
+              <h6 class="mb-0 fw-bold">HuisartsenAI</h6>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -221,6 +413,7 @@
           <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
             <li><a class="link-hover fs-5 text-white" href="/">Home</a></li>
             <li><a class="link-hover fs-5 text-white" href="/tarieven">Tarieven</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/website-laten-maken">Website laten maken</a></li>
             <li><a class="link-hover fs-5 text-white" href="/blog">Blog</a></li>
             <li><a class="link-hover fs-5 text-white" href="/portfolio">Portfolio</a></li>
             <li><a class="link-hover fs-5 text-white" href="/over-ons">Over ons</a></li>
