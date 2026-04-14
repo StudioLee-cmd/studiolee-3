@@ -1102,24 +1102,62 @@
               </div>
             </div>
           </div>
-          <div class="row gap-7 gap-lg-0" id="homepage-latest-blogs">
-            <div class="col-lg-7 mb-7 mb-lg-0"><div class="resources d-flex flex-column gap-6">
-              <a href="/blog/lokale-marketing-mkb-2026-kanalen" class="resources-img resources-img-first position-relative overflow-hidden d-block">
-                <img src="/assets/images/blog/lokale-marketing-mkb-2026-kanalen.jpg" alt="Lokale marketing voor MKB in 2026: 7 kanalen die echt werken" class="img-fluid"></a>
-              <div class="resources-details"><p class="mb-0">2026-04-08</p>
-              <h4 class="mb-0"><a href="/blog/lokale-marketing-mkb-2026-kanalen" class="text-dark">Lokale marketing voor MKB in 2026: 7 kanalen die echt werken</a></h4></div></div></div>
-            <div class="col-lg-5"><div class="d-flex flex-column gap-7">
-              <div class="resources d-flex flex-column gap-6">
-                <a href="/blog/lokale-vindbaarheid-verbeteren-mkb-gids" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                  <img src="/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg" alt="Lokale vindbaarheid verbeteren: de complete MKB-gids" class="img-fluid"></a>
-                <div class="resources-details"><p class="mb-0">2026-04-07</p>
-                <h4 class="mb-0"><a href="/blog/lokale-vindbaarheid-verbeteren-mkb-gids" class="text-dark">Lokale vindbaarheid verbeteren: de complete MKB-gids</a></h4></div></div>
-              <div class="resources d-flex flex-column gap-6">
-                <a href="/blog/ai-zoekgedrag-verandering" class="resources-img resources-img-blog position-relative overflow-hidden d-block">
-                  <img src="/assets/images/blog/ai-zoekgedrag-verandering.jpg" alt="Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen" class="img-fluid"></a>
-                <div class="resources-details"><p class="mb-0">2026-04-06</p>
-                <h4 class="mb-0"><a href="/blog/ai-zoekgedrag-verandering" class="text-dark">Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen</a></h4></div></div>
-            </div></div>
+          
+<style>
+  .blog-hover-card{display:block;border-radius:16px;overflow:hidden;background:#141419;transition:transform .3s ease,box-shadow .3s ease;border:1px solid rgba(255,255,255,.06)}
+  .blog-hover-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.5)}
+  .blog-hover-card-img{position:relative;aspect-ratio:16/9;overflow:hidden}
+  .blog-hover-card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
+  .blog-hover-img-primary{opacity:1;z-index:2}
+  .blog-hover-img-secondary{opacity:0;z-index:1}
+  .blog-hover-card:hover .blog-hover-img-primary{opacity:0}
+  .blog-hover-card:hover .blog-hover-img-secondary{opacity:1}
+  .blog-hover-card-body{padding:1.5rem}
+  .blog-hover-badge{display:inline-block;background:#C1FF72;color:#0a0a0f;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:4px 10px;border-radius:4px;margin-bottom:.75rem}
+  .blog-hover-title{color:#fff;font-size:1.1rem;line-height:1.4;margin-bottom:.5rem;font-weight:600}
+  .blog-hover-date{color:rgba(255,255,255,.5);font-size:.85rem}
+  @media(prefers-reduced-motion:reduce){.blog-hover-card,.blog-hover-card-img img{transition:none}}
+</style>
+          <div class="row" id="homepage-latest-blogs">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <a href="/blog/mkb-groeiblokkades-ai-oplossingen" class="blog-hover-card d-block text-decoration-none">
+                <div class="blog-hover-card-img">
+                  <img src="/assets/images/blog/mkb-groeiblokkades-ai-oplossingen.jpg" alt="3 groeiblokkades voor MKB die AI direct oplost" class="blog-hover-img-primary">
+                  <img src="/assets/images/blog/mkb-groeiblokkades-ai-oplossingen-2.jpg" alt="3 groeiblokkades voor MKB die AI direct oplost" class="blog-hover-img-secondary">
+                </div>
+                <div class="blog-hover-card-body">
+                  <span class="blog-hover-badge">MKB Groei</span>
+                  <h4 class="blog-hover-title">3 groeiblokkades voor MKB die AI direct oplost</h4>
+                  <span class="blog-hover-date">14 april 2026</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <a href="/blog/email-marketing-mkb-nieuwsbrief-die-werkt" class="blog-hover-card d-block text-decoration-none">
+                <div class="blog-hover-card-img">
+                  <img src="/assets/images/blog/email-marketing-mkb-nieuwsbrief-die-werkt.jpg" alt="E-mail marketing voor MKB: de nieuwsbrief die wel gelezen wordt" class="blog-hover-img-primary">
+                  <img src="/assets/images/blog/email-marketing-mkb-nieuwsbrief-die-werkt-2.jpg" alt="E-mail marketing voor MKB: de nieuwsbrief die wel gelezen wordt" class="blog-hover-img-secondary">
+                </div>
+                <div class="blog-hover-card-body">
+                  <span class="blog-hover-badge">E-mail Marketing</span>
+                  <h4 class="blog-hover-title">E-mail marketing voor MKB: de nieuwsbrief die wel gelezen wordt</h4>
+                  <span class="blog-hover-date">12 april 2026</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <a href="/blog/ai-chatbot-website-mkb-wanneer-wel-niet" class="blog-hover-card d-block text-decoration-none">
+                <div class="blog-hover-card-img">
+                  <img src="/assets/images/blog/ai-chatbot-website-mkb-wanneer-wel-niet.jpg" alt="AI chatbot op je website: wanneer het wel en niet werkt" class="blog-hover-img-primary">
+                  <img src="/assets/images/blog/ai-chatbot-website-mkb-wanneer-wel-niet-2.jpg" alt="AI chatbot op je website: wanneer het wel en niet werkt" class="blog-hover-img-secondary">
+                </div>
+                <div class="blog-hover-card-body">
+                  <span class="blog-hover-badge">Chatbot</span>
+                  <h4 class="blog-hover-title">AI chatbot op je website: wanneer het wel en niet werkt</h4>
+                  <span class="blog-hover-date">12 april 2026</span>
+                </div>
+              </a>
+            </div>
           </div>
           <div class="text-center mt-5">
             <a href="/blog" class="btn">
