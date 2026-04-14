@@ -35,20 +35,24 @@
 .blog-filter-btn.active{background:#0a0a0f;border-color:#0a0a0f;color:#fff;font-weight:600}
 .filter-count{opacity:.6;font-size:12px;margin-left:2px}
 .blog-filter-btn.active .filter-count{opacity:.8}
-.blog-card-dark{background:#141419;border-radius:16px;overflow:hidden;height:100%;transition:transform .2s,box-shadow .2s;border:1px solid rgba(255,255,255,.06)}
-.blog-card-dark:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.blog-card-img{overflow:hidden;aspect-ratio:16/9}
-.blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.blog-card-dark:hover .blog-card-img img{transform:scale(1.03)}
-.blog-card-body{padding:20px 24px 24px}
-.blog-card-badge{display:inline-block;background:rgba(193,255,114,.12);color:#C1FF72;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
-.blog-card-title{color:#fff;font-size:18px;font-weight:600;line-height:1.4;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.col-lg-8 .blog-card-title{font-size:22px}
-.blog-card-date{color:rgba(255,255,255,.4);font-size:13px}
+.blog-card-dark{display:flex;flex-direction:column;background:#141419;border-radius:16px;overflow:hidden;height:100%;transition:transform .3s ease,box-shadow .3s ease;border:1px solid rgba(255,255,255,.06)}
+.blog-card-dark:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.blog-card-img{position:relative;overflow:hidden;aspect-ratio:16/9;flex-shrink:0}
+.blog-card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease}
+.blog-card-img-primary{opacity:1;z-index:2}
+.blog-card-img-secondary{opacity:0;z-index:1}
+.blog-card-dark:hover .blog-card-img-primary{opacity:0}
+.blog-card-dark:hover .blog-card-img-secondary{opacity:1}
+.blog-card-img.no-swap .blog-card-img-primary{opacity:1!important}
+.blog-card-body{padding:20px 24px 24px;display:flex;flex-direction:column;flex-grow:1}
+.blog-card-badge{display:inline-block;background:rgba(193,255,114,.12);color:#C1FF72;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;align-self:flex-start}
+.blog-card-title{color:#fff;font-size:18px;font-weight:600;line-height:1.4;margin-bottom:auto;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(18px * 1.4 * 2)}
+.blog-card-date{color:rgba(255,255,255,.4);font-size:13px;margin-top:12px}
 .blog-card-link:hover{text-decoration:none!important}
 .blog-card-item.hidden{display:none!important}
 .blog-section{background:#e8ede4!important}
-@media(max-width:768px){.blog-filter-bar{gap:6px}.blog-filter-btn{padding:6px 14px;font-size:13px}.blog-card-body{padding:16px 18px 20px}.blog-card-title{font-size:16px}}
+@media(max-width:768px){.blog-filter-bar{gap:6px}.blog-filter-btn{padding:6px 14px;font-size:13px}.blog-card-body{padding:16px 18px 20px}.blog-card-title{font-size:16px;min-height:calc(16px * 1.4 * 2)}}
+@media(prefers-reduced-motion:reduce){.blog-card-dark,.blog-card-img img{transition:none}}
 </style>
 </head>
 
@@ -202,7 +206,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="mkb-groei">
             <a href="/blog/mkb-groeiblokkades-ai-oplossingen" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/mkb-groeiblokkades-ai-oplossingen.jpg" alt="3 groeiblokkades voor MKB die AI direct oplost" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/mkb-groeiblokkades-ai-oplossingen.jpg" alt="3 groeiblokkades voor MKB die AI direct oplost" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/mkb-groeiblokkades-ai-oplossingen-2.jpg" alt="3 groeiblokkades voor MKB die AI direct oplost" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">MKB Groei</span>
                   <h3 class="blog-card-title">3 groeiblokkades voor MKB die AI direct oplost</h3>
@@ -214,7 +218,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="email-marketing">
             <a href="/blog/email-marketing-mkb-nieuwsbrief-die-werkt" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/email-marketing-mkb-nieuwsbrief-die-werkt.jpg" alt="E-mail marketing voor MKB: de nieuwsbrief die wel gelezen wordt" loading="eager"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/email-marketing-mkb-nieuwsbrief-die-werkt.jpg" alt="E-mail marketing voor MKB: de nieuwsbrief die wel gelezen wordt" loading="eager" class="blog-card-img-primary"><img src="/assets/images/blog/email-marketing-mkb-nieuwsbrief-die-werkt-2.jpg" alt="E-mail marketing voor MKB: de nieuwsbrief die wel gelezen wordt" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">E-mail Marketing</span>
                   <h3 class="blog-card-title">E-mail marketing voor MKB: de nieuwsbrief die wel gelezen wordt</h3>
@@ -226,7 +230,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="chatbot">
             <a href="/blog/ai-chatbot-website-mkb-wanneer-wel-niet" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/ai-chatbot-website-mkb-wanneer-wel-niet.jpg" alt="AI chatbot op je website: wanneer het wel en niet werkt" loading="eager"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-chatbot-website-mkb-wanneer-wel-niet.jpg" alt="AI chatbot op je website: wanneer het wel en niet werkt" loading="eager" class="blog-card-img-primary"><img src="/assets/images/blog/ai-chatbot-website-mkb-wanneer-wel-niet-2.jpg" alt="AI chatbot op je website: wanneer het wel en niet werkt" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Chatbot</span>
                   <h3 class="blog-card-title">AI chatbot op je website: wanneer het wel en niet werkt</h3>
@@ -238,7 +242,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="website-conversie">
             <a href="/blog/website-bezoekers-omzetten-naar-klanten" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/website-bezoekers-omzetten-naar-klanten.jpg" alt="Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken" loading="eager"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/website-bezoekers-omzetten-naar-klanten.jpg" alt="Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken" loading="eager" class="blog-card-img-primary"><img src="/assets/images/blog/website-bezoekers-omzetten-naar-klanten-2.jpg" alt="Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Conversie</span>
                   <h3 class="blog-card-title">Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken</h3>
@@ -250,7 +254,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="roi-automatisering">
             <a href="/blog/roi-google-reviews-mkb-opbrengst" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/roi-google-reviews-mkb-opbrengst.jpg" alt="ROI van reviews voor het MKB: hoeveel levert elke Google review je op?" loading="eager"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/roi-google-reviews-mkb-opbrengst.jpg" alt="ROI van reviews voor het MKB: hoeveel levert elke Google review je op?" loading="eager" class="blog-card-img-primary"><img src="/assets/images/blog/roi-google-reviews-mkb-opbrengst-2.jpg" alt="ROI van reviews voor het MKB: hoeveel levert elke Google review je op?" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">ROI</span>
                   <h3 class="blog-card-title">ROI van reviews voor het MKB: hoeveel levert elke Google review je op?</h3>
@@ -262,7 +266,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="prijzen">
             <a href="/blog/goedkope-website-laten-maken-kosten-2026" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/goedkope-website-laten-maken-kosten-2026.jpg" alt="Goedkope website laten maken in 2026: wat kost het echt?" loading="eager"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/goedkope-website-laten-maken-kosten-2026.jpg" alt="Goedkope website laten maken in 2026: wat kost het echt?" loading="eager" class="blog-card-img-primary"><img src="/assets/images/blog/goedkope-website-laten-maken-kosten-2026-2.jpg" alt="Goedkope website laten maken in 2026: wat kost het echt?" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Prijzen</span>
                   <h3 class="blog-card-title">Goedkope website laten maken in 2026: wat kost het echt?</h3>
@@ -274,7 +278,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/lokale-marketing-mkb-2026-kanalen" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/lokale-marketing-mkb-2026-kanalen.jpg" alt="Lokale marketing voor MKB in 2026: 7 kanalen die echt werken" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/lokale-marketing-mkb-2026-kanalen.jpg" alt="Lokale marketing voor MKB in 2026: 7 kanalen die echt werken" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/lokale-marketing-mkb-2026-kanalen-2.jpg" alt="Lokale marketing voor MKB in 2026: 7 kanalen die echt werken" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Lokale marketing voor MKB in 2026: 7 kanalen die echt werken</h3>
@@ -286,7 +290,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="vindbaarheid">
             <a href="/blog/lokale-vindbaarheid-verbeteren-mkb-gids" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg" alt="Lokale vindbaarheid verbeteren: de complete MKB-gids" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg" alt="Lokale vindbaarheid verbeteren: de complete MKB-gids" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids-2.jpg" alt="Lokale vindbaarheid verbeteren: de complete MKB-gids" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Vindbaarheid</span>
                   <h3 class="blog-card-title">Lokale vindbaarheid verbeteren: de complete MKB-gids</h3>
@@ -298,7 +302,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-zoekgedrag">
             <a href="/blog/ai-zoekgedrag-verandering" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/ai-zoekgedrag-verandering.jpg" alt="Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-zoekgedrag-verandering.jpg" alt="Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/ai-zoekgedrag-verandering-2.jpg" alt="Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI Zoekgedrag</span>
                   <h3 class="blog-card-title">Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen</h3>
@@ -310,7 +314,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="roi-automatisering">
             <a href="/blog/roi-ai-automatisering-mkb" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/roi-ai-automatisering-mkb.jpg" alt="ROI van AI-automatisering: wat levert het je MKB écht op?" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/roi-ai-automatisering-mkb.jpg" alt="ROI van AI-automatisering: wat levert het je MKB écht op?" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/roi-ai-automatisering-mkb-2.jpg" alt="ROI van AI-automatisering: wat levert het je MKB écht op?" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">ROI</span>
                   <h3 class="blog-card-title">ROI van AI-automatisering: wat levert het je MKB écht op?</h3>
@@ -322,7 +326,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="mkb-groei">
             <a href="/blog/mkb-groei-ai-systemen" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/mkb-groei-ai-systemen.jpg" alt="MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/mkb-groei-ai-systemen.jpg" alt="MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/mkb-groei-ai-systemen-2.jpg" alt="MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">MKB Groei</span>
                   <h3 class="blog-card-title">MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren</h3>
@@ -334,7 +338,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="branding">
             <a href="/blog/branding-mkb-belang" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/branding-mkb-belang.jpg" alt="Branding voor het MKB: waarom je merk belangrijker is dan je product" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/branding-mkb-belang.jpg" alt="Branding voor het MKB: waarom je merk belangrijker is dan je product" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/branding-mkb-belang-2.jpg" alt="Branding voor het MKB: waarom je merk belangrijker is dan je product" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Branding</span>
                   <h3 class="blog-card-title">Branding voor het MKB: waarom je merk belangrijker is dan je product</h3>
@@ -346,7 +350,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="managed-service">
             <a href="/blog/managed-service-mkb-uitbesteden" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/managed-service-mkb-uitbesteden.jpg" alt="Managed service voor het MKB: waarom uitbesteden slimmer is" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/managed-service-mkb-uitbesteden.jpg" alt="Managed service voor het MKB: waarom uitbesteden slimmer is" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/managed-service-mkb-uitbesteden-2.jpg" alt="Managed service voor het MKB: waarom uitbesteden slimmer is" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Managed Service</span>
                   <h3 class="blog-card-title">Managed service voor het MKB: waarom uitbesteden slimmer is</h3>
@@ -358,7 +362,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
             <a href="/blog/ai-automatisering-mkb-vijf-processen" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/ai-automatisering-mkb-vijf-processen.jpg" alt="AI-automatisering voor het MKB: 5 processen om te starten" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-automatisering-mkb-vijf-processen.jpg" alt="AI-automatisering voor het MKB: 5 processen om te starten" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/ai-automatisering-mkb-vijf-processen-2.jpg" alt="AI-automatisering voor het MKB: 5 processen om te starten" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI & Automatisering</span>
                   <h3 class="blog-card-title">AI-automatisering voor het MKB: 5 processen om te starten</h3>
@@ -370,7 +374,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
             <a href="/blog/lokale-vindbaarheid-mkb-complete-gids" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/lokale-vindbaarheid-mkb-complete-gids.jpg" alt="Lokale vindbaarheid voor het MKB: complete gids" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/lokale-vindbaarheid-mkb-complete-gids.jpg" alt="Lokale vindbaarheid voor het MKB: complete gids" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/lokale-vindbaarheid-mkb-complete-gids-2.jpg" alt="Lokale vindbaarheid voor het MKB: complete gids" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">SEO</span>
                   <h3 class="blog-card-title">Lokale vindbaarheid voor het MKB: complete gids</h3>
@@ -382,7 +386,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/marketing-uitbesteden-mkb-kosten" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/marketing-uitbesteden-mkb-kosten.jpg" alt="Marketing uitbesteden als MKB: wat kost het?" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/marketing-uitbesteden-mkb-kosten.jpg" alt="Marketing uitbesteden als MKB: wat kost het?" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/marketing-uitbesteden-mkb-kosten-2.jpg" alt="Marketing uitbesteden als MKB: wat kost het?" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Marketing uitbesteden als MKB: wat kost het?</h3>
@@ -394,7 +398,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/ai-vervangt-marketingbureaus" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/ai-vervangt-marketingbureaus.jpg" alt="AI Vervangt Alle Marketingbureaus" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-vervangt-marketingbureaus.jpg" alt="AI Vervangt Alle Marketingbureaus" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/ai-vervangt-marketingbureaus-2.jpg" alt="AI Vervangt Alle Marketingbureaus" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">AI Vervangt Alle Marketingbureaus</h3>
@@ -406,7 +410,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/ai-zoekgedrag-klanten-vinden-2026" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/ai-zoekgedrag-klanten-vinden-2026.jpg" alt="AI en zoekgedrag: hoe klanten je vinden in 2026" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-zoekgedrag-klanten-vinden-2026.jpg" alt="AI en zoekgedrag: hoe klanten je vinden in 2026" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/ai-zoekgedrag-klanten-vinden-2026-2.jpg" alt="AI en zoekgedrag: hoe klanten je vinden in 2026" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">AI en zoekgedrag: hoe klanten je vinden in 2026</h3>
@@ -418,7 +422,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/ai-bureau-vs-traditioneel-marketingbureau" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/ai-bureau-vs-traditioneel-marketingbureau.jpg" alt="AI bureau vs traditioneel marketingbureau" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-bureau-vs-traditioneel-marketingbureau.jpg" alt="AI bureau vs traditioneel marketingbureau" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/ai-bureau-vs-traditioneel-marketingbureau-2.jpg" alt="AI bureau vs traditioneel marketingbureau" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">AI bureau vs traditioneel marketingbureau</h3>
@@ -430,7 +434,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="managed-service">
             <a href="/blog/managed-service-ai-mkb-ontzorging" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/managed-service-ai-mkb-ontzorging.jpg" alt="Managed AI service voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/managed-service-ai-mkb-ontzorging.jpg" alt="Managed AI service voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/managed-service-ai-mkb-ontzorging-2.jpg" alt="Managed AI service voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Managed Service</span>
                   <h3 class="blog-card-title">Managed AI service voor het MKB</h3>
@@ -442,7 +446,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/nazorg-mkb-klantrelatie-na-de-sale" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/nazorg-mkb-klantrelatie-na-de-sale.jpg" alt="Nazorg voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/nazorg-mkb-klantrelatie-na-de-sale.jpg" alt="Nazorg voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/nazorg-mkb-klantrelatie-na-de-sale-2.jpg" alt="Nazorg voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Nazorg voor het MKB</h3>
@@ -454,7 +458,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="reviews">
             <a href="/blog/online-reputatie-mkb" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/online-reputatie-mkb.png" alt="Online reputatie voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/online-reputatie-mkb.png" alt="Online reputatie voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/online-reputatie-mkb-2.png" alt="Online reputatie voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Reviews</span>
                   <h3 class="blog-card-title">Online reputatie voor het MKB</h3>
@@ -466,7 +470,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/strategische-samenwerkingen-mkb" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/strategische-samenwerkingen-mkb.png" alt="Strategische samenwerkingen voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/strategische-samenwerkingen-mkb.png" alt="Strategische samenwerkingen voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/strategische-samenwerkingen-mkb-2.png" alt="Strategische samenwerkingen voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Strategische samenwerkingen voor het MKB</h3>
@@ -478,7 +482,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
             <a href="/blog/google-bedrijfsprofiel-mkb" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/google-bedrijfsprofiel-mkb.png" alt="Google Bedrijfsprofiel voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/google-bedrijfsprofiel-mkb.png" alt="Google Bedrijfsprofiel voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/google-bedrijfsprofiel-mkb-2.png" alt="Google Bedrijfsprofiel voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">SEO</span>
                   <h3 class="blog-card-title">Google Bedrijfsprofiel voor het MKB</h3>
@@ -490,7 +494,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="website">
             <a href="/blog/klantbehoud-mkb-waarde-bestaande-klanten" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/klantbehoud-mkb-waarde-bestaande-klanten.png" alt="Klantbehoud in het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/klantbehoud-mkb-waarde-bestaande-klanten.png" alt="Klantbehoud in het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/klantbehoud-mkb-waarde-bestaande-klanten-2.png" alt="Klantbehoud in het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Website</span>
                   <h3 class="blog-card-title">Klantbehoud in het MKB</h3>
@@ -502,7 +506,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="website">
             <a href="/blog/crm-mkb-klantbeheer" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/crm-mkb-klantbeheer.png" alt="Een CRM voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/crm-mkb-klantbeheer.png" alt="Een CRM voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/crm-mkb-klantbeheer-2.png" alt="Een CRM voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Website</span>
                   <h3 class="blog-card-title">Een CRM voor het MKB</h3>
@@ -514,7 +518,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
             <a href="/blog/workflows-automatiseren-mkb" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/workflows-automatiseren-mkb.png" alt="Workflows automatiseren in het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/workflows-automatiseren-mkb.png" alt="Workflows automatiseren in het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/workflows-automatiseren-mkb-2.png" alt="Workflows automatiseren in het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI & Automatisering</span>
                   <h3 class="blog-card-title">Workflows automatiseren in het MKB</h3>
@@ -526,7 +530,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/branding-mkb-herkenbaar-merk" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/branding-mkb-herkenbaar-merk.png" alt="Branding voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/branding-mkb-herkenbaar-merk.png" alt="Branding voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/branding-mkb-herkenbaar-merk-2.png" alt="Branding voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Branding voor het MKB</h3>
@@ -538,7 +542,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
             <a href="/blog/online-vindbaarheid-mkb-google" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/online-vindbaarheid-mkb-google.png" alt="Online vindbaarheid voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/online-vindbaarheid-mkb-google.png" alt="Online vindbaarheid voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/online-vindbaarheid-mkb-google-2.png" alt="Online vindbaarheid voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">SEO</span>
                   <h3 class="blog-card-title">Online vindbaarheid voor het MKB</h3>
@@ -550,7 +554,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="website">
             <a href="/blog/leadgeneratie-mkb-website-bezoekers" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/leadgeneratie-mkb-website-bezoekers.png" alt="Leadgeneratie voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/leadgeneratie-mkb-website-bezoekers.png" alt="Leadgeneratie voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/leadgeneratie-mkb-website-bezoekers-2.png" alt="Leadgeneratie voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Website</span>
                   <h3 class="blog-card-title">Leadgeneratie voor het MKB</h3>
@@ -562,7 +566,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="chatbot">
             <a href="/blog/chatbot-website-mkb-wanneer-werkt-het" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/chatbot-website-mkb-wanneer-werkt-het.png" alt="Een chatbot op je website" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/chatbot-website-mkb-wanneer-werkt-het.png" alt="Een chatbot op je website" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/chatbot-website-mkb-wanneer-werkt-het-2.png" alt="Een chatbot op je website" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Chatbot</span>
                   <h3 class="blog-card-title">Een chatbot op je website</h3>
@@ -574,7 +578,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/klantcases-marketingtool-mkb" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/klantcases-marketingtool-mkb.png" alt="Klantcases als marketingtool" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/klantcases-marketingtool-mkb.png" alt="Klantcases als marketingtool" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/klantcases-marketingtool-mkb-2.png" alt="Klantcases als marketingtool" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Klantcases als marketingtool</h3>
@@ -586,7 +590,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
             <a href="/blog/roi-ai-automatisering-mkb" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/roi-ai-automatisering-mkb.png" alt="De ROI van AI-automatisering" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/roi-ai-automatisering-mkb.png" alt="De ROI van AI-automatisering" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/roi-ai-automatisering-mkb-2.png" alt="De ROI van AI-automatisering" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI & Automatisering</span>
                   <h3 class="blog-card-title">De ROI van AI-automatisering</h3>
@@ -598,7 +602,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/email-marketing-mkb-hoogste-rendement" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/email-marketing-mkb-hoogste-rendement.png" alt="E-mailmarketing voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/email-marketing-mkb-hoogste-rendement.png" alt="E-mailmarketing voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/email-marketing-mkb-hoogste-rendement-2.png" alt="E-mailmarketing voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">E-mailmarketing voor het MKB</h3>
@@ -610,7 +614,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="website">
             <a href="/blog/mkb-website-bezoekers-omzetten-klanten" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/mkb-website-bezoekers-omzetten-klanten.png" alt="Waarom je MKB-website geen bezoekers omzet" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/mkb-website-bezoekers-omzetten-klanten.png" alt="Waarom je MKB-website geen bezoekers omzet" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/mkb-website-bezoekers-omzetten-klanten-2.png" alt="Waarom je MKB-website geen bezoekers omzet" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Website</span>
                   <h3 class="blog-card-title">Waarom je MKB-website geen bezoekers omzet</h3>
@@ -622,7 +626,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/gevonden-worden-in-chatgpt-mkb" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/gevonden-worden-in-chatgpt-mkb.png" alt="Gevonden worden in ChatGPT" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/gevonden-worden-in-chatgpt-mkb.png" alt="Gevonden worden in ChatGPT" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/gevonden-worden-in-chatgpt-mkb-2.png" alt="Gevonden worden in ChatGPT" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Gevonden worden in ChatGPT</h3>
@@ -634,7 +638,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
             <a href="/blog/ai-agents-mkb-groeien-zonder-personeel" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/ai-agents-mkb-groeien-zonder-personeel.png" alt="Hoe AI-agents het MKB laten groeien" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-agents-mkb-groeien-zonder-personeel.png" alt="Hoe AI-agents het MKB laten groeien" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/ai-agents-mkb-groeien-zonder-personeel-2.png" alt="Hoe AI-agents het MKB laten groeien" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI & Automatisering</span>
                   <h3 class="blog-card-title">Hoe AI-agents het MKB laten groeien</h3>
@@ -646,7 +650,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/social-media-mkb-strategie-2026" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/social-media-mkb-strategie-2026.png" alt="Social media strategie voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/social-media-mkb-strategie-2026.png" alt="Social media strategie voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/social-media-mkb-strategie-2026-2.png" alt="Social media strategie voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Social media strategie voor het MKB</h3>
@@ -658,7 +662,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
             <a href="/blog/hoe-mkb-meer-google-reviews-verzamelt" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/hoe-mkb-meer-google-reviews-verzamelt.png" alt="Meer Google reviews verzamelen" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/hoe-mkb-meer-google-reviews-verzamelt.png" alt="Meer Google reviews verzamelen" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/hoe-mkb-meer-google-reviews-verzamelt-2.png" alt="Meer Google reviews verzamelen" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">SEO</span>
                   <h3 class="blog-card-title">Meer Google reviews verzamelen</h3>
@@ -670,7 +674,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
             <a href="/blog/beste-ai-tools-voor-mkb-2026" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/beste-ai-tools-voor-mkb-2026.png" alt="Beste AI-tools voor MKB 2026" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/beste-ai-tools-voor-mkb-2026.png" alt="Beste AI-tools voor MKB 2026" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/beste-ai-tools-voor-mkb-2026-2.png" alt="Beste AI-tools voor MKB 2026" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI & Automatisering</span>
                   <h3 class="blog-card-title">Beste AI-tools voor MKB 2026</h3>
@@ -682,7 +686,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai.png" alt="Wat is het Model Context Protocol?" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai.png" alt="Wat is het Model Context Protocol?" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai-2.png" alt="Wat is het Model Context Protocol?" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Wat is het Model Context Protocol?</h3>
@@ -694,7 +698,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
             <a href="/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026.png" alt="Wat AI-automatisering betekent voor het MKB" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026.png" alt="Wat AI-automatisering betekent voor het MKB" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026-2.png" alt="Wat AI-automatisering betekent voor het MKB" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI & Automatisering</span>
                   <h3 class="blog-card-title">Wat AI-automatisering betekent voor het MKB</h3>
@@ -706,7 +710,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
             <a href="/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien.png" alt="Wat is een AI-agent?" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien.png" alt="Wat is een AI-agent?" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien-2.png" alt="Wat is een AI-agent?" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI & Automatisering</span>
                   <h3 class="blog-card-title">Wat is een AI-agent?</h3>
@@ -718,7 +722,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
             <a href="/blog/content-publiceren-google-ai-vindbaarheid" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/content-publiceren-google-ai-vindbaarheid.png" alt="Waarom Regelmatig Content Publiceren Essentieel Is" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/content-publiceren-google-ai-vindbaarheid.png" alt="Waarom Regelmatig Content Publiceren Essentieel Is" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/content-publiceren-google-ai-vindbaarheid-2.png" alt="Waarom Regelmatig Content Publiceren Essentieel Is" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">SEO</span>
                   <h3 class="blog-card-title">Waarom Regelmatig Content Publiceren Essentieel Is</h3>
@@ -730,7 +734,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
             <a href="/blog/whatsapp-automatisering-voor-bedrijven" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/whatsapp-automatisering-voor-bedrijven.png" alt="WhatsApp Automatisering" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/whatsapp-automatisering-voor-bedrijven.png" alt="WhatsApp Automatisering" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/whatsapp-automatisering-voor-bedrijven-2.png" alt="WhatsApp Automatisering" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI & Automatisering</span>
                   <h3 class="blog-card-title">WhatsApp Automatisering</h3>
@@ -742,7 +746,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="chatbot">
             <a href="/blog/website-chatbots-leads-genereren" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/website-chatbots-leads-genereren.png" alt="Website Chatbots: 24/7 Leads Genereren" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/website-chatbots-leads-genereren.png" alt="Website Chatbots: 24/7 Leads Genereren" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/website-chatbots-leads-genereren-2.png" alt="Website Chatbots: 24/7 Leads Genereren" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Chatbot</span>
                   <h3 class="blog-card-title">Website Chatbots: 24/7 Leads Genereren</h3>
@@ -754,7 +758,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/starten-met-studiolee" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/starten-met-studiolee.png" alt="Hoe Start Je Met STUDIOLEE?" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/starten-met-studiolee.png" alt="Hoe Start Je Met STUDIOLEE?" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/starten-met-studiolee-2.png" alt="Hoe Start Je Met STUDIOLEE?" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Hoe Start Je Met STUDIOLEE?</h3>
@@ -766,7 +770,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
             <a href="/blog/ai-seo-vindbaarheid" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/ai-seo-vindbaarheid.png" alt="De Nieuwe SEO: ChatGPT en Google" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/ai-seo-vindbaarheid.png" alt="De Nieuwe SEO: ChatGPT en Google" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/ai-seo-vindbaarheid-2.png" alt="De Nieuwe SEO: ChatGPT en Google" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">SEO</span>
                   <h3 class="blog-card-title">De Nieuwe SEO: ChatGPT en Google</h3>
@@ -778,7 +782,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="ai-automation">
             <a href="/blog/automations-workflow-optimalisatie" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/automations-workflow-optimalisatie.png" alt="Slimme Automations" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/automations-workflow-optimalisatie.png" alt="Slimme Automations" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/automations-workflow-optimalisatie-2.png" alt="Slimme Automations" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">AI & Automatisering</span>
                   <h3 class="blog-card-title">Slimme Automations</h3>
@@ -790,7 +794,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/managed-service-vs-marketing-bureau" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/managed-service-vs-marketing-bureau.png" alt="Managed Service vs. Marketing Bureau" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/managed-service-vs-marketing-bureau.png" alt="Managed Service vs. Marketing Bureau" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/managed-service-vs-marketing-bureau-2.png" alt="Managed Service vs. Marketing Bureau" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Managed Service vs. Marketing Bureau</h3>
@@ -802,7 +806,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/social-media-zonder-gedoe" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/social-media-zonder-gedoe.png" alt="Social Media Zonder Gedoe" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/social-media-zonder-gedoe.png" alt="Social Media Zonder Gedoe" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/social-media-zonder-gedoe-2.png" alt="Social Media Zonder Gedoe" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Social Media Zonder Gedoe</h3>
@@ -814,7 +818,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="chatbot">
             <a href="/blog/voice-ai-24-7-bereikbaar" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/voice-ai-24-7-bereikbaar.png" alt="24/7 Bereikbaar: De Kracht van Voice AI" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/voice-ai-24-7-bereikbaar.png" alt="24/7 Bereikbaar: De Kracht van Voice AI" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/voice-ai-24-7-bereikbaar-2.png" alt="24/7 Bereikbaar: De Kracht van Voice AI" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Chatbot</span>
                   <h3 class="blog-card-title">24/7 Bereikbaar: De Kracht van Voice AI</h3>
@@ -826,7 +830,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="seo">
             <a href="/blog/google-reviews-automatiseren" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/google-reviews-automatiseren.png" alt="Automatisch Meer Google Reviews" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/google-reviews-automatiseren.png" alt="Automatisch Meer Google Reviews" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/google-reviews-automatiseren-2.png" alt="Automatisch Meer Google Reviews" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">SEO</span>
                   <h3 class="blog-card-title">Automatisch Meer Google Reviews</h3>
@@ -838,7 +842,7 @@
           <div class="col-md-6 col-lg-4 blog-card-item" data-cluster="marketing">
             <a href="/blog/waarom-ai-onmisbaar-is-voor-ondernemers" class="blog-card-link text-decoration-none">
               <div class="blog-card-dark">
-                <div class="blog-card-img"><img src="/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png" alt="Waarom AI Onmisbaar Is" loading="lazy"></div>
+                <div class="blog-card-img"><img src="/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png" alt="Waarom AI Onmisbaar Is" loading="lazy" class="blog-card-img-primary"><img src="/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers-2.png" alt="Waarom AI Onmisbaar Is" loading="lazy" class="blog-card-img-secondary" onerror="this.parentElement.classList.add('no-swap')"></div>
                 <div class="blog-card-body">
                   <span class="blog-card-badge">Marketing</span>
                   <h3 class="blog-card-title">Waarom AI Onmisbaar Is</h3>
