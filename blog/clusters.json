@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "automatisering-kosten-mkb-2026",
+      "title": "Wat kost automatisering voor een MKB-bedrijf?",
+      "date": "2026-04-15",
+      "cluster": "roi-automatisering",
+      "image": "/assets/images/blog/automatisering-kosten-mkb-2026.jpg"
+    },
+    {
       "slug": "ai-trends-mkb-2026",
       "title": "3 AI-trends die MKB-bedrijven in 2026 niet mogen missen",
       "date": "2026-04-14",
