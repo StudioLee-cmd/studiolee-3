@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "aeo-answer-engine-optimization-mkb",
+      "title": "AEO voor MKB: zo kom je in ChatGPT en AI-zoekmachines",
+      "date": "2026-04-16",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/aeo-answer-engine-optimization-mkb.jpg"
+    },
+    {
       "slug": "automatisering-kosten-mkb-2026",
       "title": "Wat kost automatisering voor een MKB-bedrijf?",
       "date": "2026-04-15",
