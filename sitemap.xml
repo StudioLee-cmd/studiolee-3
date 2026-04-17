@@ -610,4 +610,16 @@
     <changefreq>monthly</changefreq>
     <lastmod>2026-04-16</lastmod>
   </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/seo-fouten-mkb-websites</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-17</lastmod>
+  </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/bedrijfsprocessen-automatiseren-mkb</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-17</lastmod>
+  </url>
 </urlset>

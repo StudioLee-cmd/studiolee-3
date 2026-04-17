@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "slug": "bedrijfsprocessen-automatiseren-mkb",
+      "title": "Bedrijfsprocessen automatiseren als MKB: waar begin je?",
+      "date": "2026-04-17",
+      "cluster": "roi-automatisering",
+      "image": "/assets/images/blog/bedrijfsprocessen-automatiseren-mkb.jpg"
+    },
+    {
+      "slug": "seo-fouten-mkb-websites",
+      "title": "SEO-fouten die MKB-websites onzichtbaar maken",
+      "date": "2026-04-17",
+      "cluster": "vindbaarheid",
+      "image": "/assets/images/blog/seo-fouten-mkb-websites.jpg"
+    },
+    {
       "slug": "aeo-answer-engine-optimization-mkb",
       "title": "AEO voor MKB: zo kom je in ChatGPT en AI-zoekmachines",
       "date": "2026-04-16",
