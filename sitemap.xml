@@ -628,4 +628,10 @@
     <changefreq>monthly</changefreq>
     <lastmod>2026-04-18</lastmod>
   </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/google-ai-overviews-mkb-vindbaarheid</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-18</lastmod>
+  </url>
 </urlset>
