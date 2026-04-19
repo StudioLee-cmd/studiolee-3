@@ -572,9 +572,12 @@
         function doCall(){
           try{
             var instance=window.vapiSDK.run({apiKey:'5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',assistant:'752f8e59-08dd-4f11-9bf1-71f86bd865a4',config:{position:'bottom-right'}});
+            if(instance&&typeof instance.start==='function')instance.start();
+            window._vapiInstance=instance;
             btnCall.textContent='Ophangen';btnCall.className='call-btn-inline hangup';
             btnCall.onclick=function(e){e.stopPropagation();endVapiCall();};
             setTimeout(function(){document.querySelectorAll('[id^="vapi"],.vapi-btn,#vapi-support-btn').forEach(function(el){el.style.display='none';});},500);
+            if(instance&&typeof instance.on==='function')instance.on('call-end',function(){endVapiCall();});
           }catch(err){console.error('VAPI error:',err);btnCall.textContent='Fout — probeer opnieuw';}
         }
         if(window.vapiSDK){doCall();}
@@ -582,6 +585,7 @@
       };
 
       window.endVapiCall=function(){
+        if(window._vapiInstance&&typeof window._vapiInstance.stop==='function')window._vapiInstance.stop();
         calling=false;
         document.getElementById('phoneBody').classList.remove('ringing');
         document.querySelector('.game-overlay').classList.remove('visible');
