@@ -69,13 +69,6 @@
     .call-btn-inline:hover { transform:scale(1.05); }
     .call-btn-inline.hangup { background:rgba(220,50,50,0.9); color:#fff; }
 
-    /* 404 heading on the desk */
-    .desk-heading { position:absolute; top:6%; left:50%; transform:translateX(-50%); z-index:8; text-align:center; pointer-events:none; }
-    .desk-heading h1 { font-family:'Enligas','Outfit',sans-serif; font-size:clamp(14px, 1.8vw, 24px); font-weight:700; color:var(--lime); letter-spacing:2px; margin:0; white-space:nowrap; }
-    .desk-heading p { font-family:'Outfit',sans-serif; font-size:clamp(11px, 1vw, 14px); color:rgba(255,255,255,0.4); margin-top:4px; }
-    .desk-heading a { color:var(--lime); text-decoration:none; }
-    .desk-heading a:hover { text-decoration:underline; }
-
     /* Clickable phone body overlay (transparent, for click events) */
     .phone-click-zone { position:absolute; top:5%; left:55%; width:30%; height:90%; z-index:1; cursor:pointer; }
     .phone-click-zone.ringing { animation:shake .08s linear infinite; }
@@ -93,20 +86,11 @@
       .l-finger { width:32vw; height:32vw; }
       .desk-sticker { width:60px; height:60px; }
       .game-overlay { left:50%; top:5%; transform-origin:center; }
-      .desk-heading { top:2%; }
-      .desk-heading h1 { white-space:normal; font-size:14px; }
     }
   </style>
 </head>
 <body>
   <div class="phone-wrapper"><div class="phone-container" id="wrap">
-    <div class="desk-heading">
-      <h1>// 404 — VERKEERD GEDRAAID</h1>
-      <p>Deze pagina bestaat niet meer. Draai het wiel of ga naar de <a href="/">homepage</a>.</p>
-    </div>
-      <h1>// 404 — VERKEERD GEDRAAID</h1>
-      <p>Deze pagina bestaat niet meer. Draai het wiel of ga naar de <a href="/">homepage</a>.</p>
-    </div>
     <!-- Phone click zone (transparent overlay for click events) -->
     <div class="phone-click-zone" id="phoneBody"></div>
 
@@ -137,10 +121,10 @@
     <a class="rz" href="/herinneringen" data-t="herinner" style="left:64.5%;top:57%"></a>
 
     <!-- Speech bubble -->
-    <div class="game-overlay visible">
+    <div class="game-overlay">
       <div class="game-box">
-        <div class="game-title" id="gT">OOPS! VERKEERD GEDRAAID<span class="cur"></span></div>
-        <div class="game-desc" id="gD">Deze pagina bestaat niet meer. Draai het wiel of bel met Lee.</div>
+        <div class="game-title" id="gT">KIES EEN DIENST<span class="cur"></span></div>
+        <div class="game-desc" id="gD">Draai de schijf of klik op de telefoon</div>
         <button class="call-btn-inline" id="btnCall" style="display:none" onclick="event.stopPropagation();startVapiCall()">Bel Met Lee</button>
       </div>
     </div>
@@ -338,8 +322,9 @@
             assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
             config: { position: 'bottom-right' }
           });
+          // Programmatically start the call
           if (instance && typeof instance.start === 'function') {
-            instance.start('752f8e59-08dd-4f11-9bf1-71f86bd865a4');
+            instance.start();
           }
           window._vapiInstance = instance;
           btnCall.textContent = 'Ophangen';
