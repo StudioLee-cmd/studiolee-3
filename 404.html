@@ -27,6 +27,7 @@
 
     .l-numplate { position:absolute; width:252px; height:252px; top:50%; left:49%; transform:translate(-50%,-50%); z-index:2; }
     .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #ddd5c0 100%); border-radius:50%; border:2px solid #c0b898; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
+    .l-numplate { overflow:hidden; border-radius:50%; }
     .sticker { position:absolute; width:54px; height:54px; transform:translate(-50%,-50%); pointer-events:none; }
     .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
 
@@ -125,7 +126,21 @@
   </div>
 
   <!-- VAPI SDK -->
-  <script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js" defer></script>
+  <script>
+  // Load VAPI Web SDK for direct calling (no widget button)
+  window._vapiReady = false;
+  var vs = document.createElement('script');
+  vs.src = 'https://cdn.jsdelivr.net/gh/VapiAI/web@latest/packages/web/dist/index.js';
+  vs.onload = function() { window._vapiReady = true; };
+  vs.onerror = function() {
+    // Fallback to widget SDK
+    var vs2 = document.createElement('script');
+    vs2.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
+    vs2.onload = function() { window._vapiReady = true; };
+    document.body.appendChild(vs2);
+  };
+  document.body.appendChild(vs);
+  </script>
 
   <script>
   (function(){
