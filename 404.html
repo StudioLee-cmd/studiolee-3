@@ -8,29 +8,28 @@
   <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon-sl.png" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <style>
-    
     :root { --lime: #C1FF72; --dark: #1F2A2E; }
     * { margin:0; padding:0; box-sizing:border-box; }
     body { background:var(--dark); font-family:'Segoe UI',system-ui,sans-serif; color:#fff; margin:0; padding:0; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column; }
 
-    .phone-container { position:relative; flex:1; width:100vw; min-height:0; }
-    .l-body { position:absolute; inset:0; z-index:1; cursor:pointer; }
-    .l-body img { width:100%; height:100%; object-fit:contain; object-position:center center; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); transition:filter .3s; }
-    .l-body:hover img { filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)) brightness(1.08); }
-    .l-body.ringing img { animation:shake .08s linear infinite; }
-    @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
+    .phone-container {
+      position:relative; flex:1; width:100%;
+      background:url('/assets/images/ai-marketing-bureau/phone-body-wide.jpg') center center / contain no-repeat;
+    }
 
-    .l-numplate { position:absolute; width:220px; height:220px; top:48%; left:50%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
-    .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; border:none; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
-    
+    /* Dial overlay — positioned as % of container, matching phone dial in image */
+    /* Image 1752x1024, dial center at x=1240 y=470 → 70.8% x, 45.9% y */
+    .l-numplate { position:absolute; width:13vw; height:13vw; max-width:220px; max-height:220px; top:45.9%; left:70.8%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
+    .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
+
     .sticker { position:absolute; width:48px; height:48px; transform:translate(-50%,-50%); pointer-events:none; }
     .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
 
-    .l-finger { position:absolute; width:255px; height:255px; top:48%; left:50%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
+    .l-finger { position:absolute; width:15vw; height:15vw; max-width:255px; max-height:255px; top:45.9%; left:70.8%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
 
-    .l-hub { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:4;
+    .l-hub { position:absolute; top:47.5%; left:70.8%; transform:translate(-50%,-50%); z-index:4;
       width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
       box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
@@ -38,62 +37,69 @@
     .l-hub:hover { transform:translate(-50%,-50%) scale(1.1); box-shadow:0 0 30px rgba(193,255,114,0.4),0 0 0 2px rgba(139,115,85,0.3),inset 0 2px 8px rgba(0,0,0,0.4),0 4px 20px rgba(0,0,0,0.4); }
     .l-hub img { width:36px; height:36px; object-fit:contain; }
 
+    /* Invisible click zones for dial holes */
     a.rz { position:absolute; width:48px; height:48px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
-      transition:box-shadow .2s, background .2s; text-decoration:none; display:block; }
-    a.rz { pointer-events:auto; }
+      transition:box-shadow .2s, background .2s; text-decoration:none; display:block; pointer-events:auto; }
     a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.15); }
 
-    /* Desk stickers */
-    .desk-sticker { position:absolute; z-index:6; width:100px; height:100px; cursor:grab; user-select:none; transition:transform .3s, opacity .5s, filter .3s; filter:drop-shadow(0 3px 6px rgba(0,0,0,0.5)); }
+    /* Desk stickers — big, on the left */
+    .desk-sticker { position:absolute; z-index:6; width:100px; height:100px; cursor:grab; user-select:none; transition:transform .3s, opacity .5s, filter .3s; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.6)); }
     .desk-sticker img { width:100%; height:100%; object-fit:contain; pointer-events:none; }
-    .desk-sticker:hover { transform:scale(1.1) rotate(-3deg); filter:drop-shadow(0 6px 12px rgba(0,0,0,0.6)); }
+    .desk-sticker:hover { filter:drop-shadow(0 8px 16px rgba(0,0,0,0.7)); }
     .desk-sticker.peeling { animation:peel-wobble .4s ease-in-out infinite; }
     .desk-sticker.peeled { opacity:0; transform:scale(0.3) rotate(180deg); pointer-events:none; }
     @keyframes peel-wobble { 0%,100%{transform:rotate(-2deg) scale(1.05)} 50%{transform:rotate(2deg) scale(1.08)} }
     .desk-sticker .peel-ring { position:absolute; inset:-6px; border:3px solid var(--lime); border-radius:50%; opacity:0; transition:opacity .2s; }
     .desk-sticker.peeling .peel-ring { opacity:1; animation:peel-pulse 1s linear infinite; }
     @keyframes peel-pulse { 0%{transform:scale(1);opacity:1} 100%{transform:scale(1.4);opacity:0} }
-    .peel-progress { position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); width:48px; height:4px; background:rgba(255,255,255,0.15); border-radius:2px; overflow:hidden; opacity:0; }
+    .peel-progress { position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); width:60px; height:4px; background:rgba(255,255,255,0.15); border-radius:2px; overflow:hidden; opacity:0; }
     .desk-sticker.peeling .peel-progress { opacity:1; }
     .peel-fill { width:0%; height:100%; background:var(--lime); border-radius:2px; transition:width .1s linear; }
 
-    /* Game info — overlaid on the phone */
-    .game-overlay { position:absolute; top:-20px; right:-180px; z-index:10; pointer-events:none; opacity:0; transform:scale(0.8) translateY(10px); transition:all .3s cubic-bezier(0.34,1.56,0.64,1); }
+    /* Speech bubble */
+    .game-overlay { position:absolute; top:20%; left:85%; z-index:10; pointer-events:none; opacity:0; transform:scale(0.8) translateY(10px); transition:all .3s cubic-bezier(0.34,1.56,0.64,1); }
     .game-overlay.visible { opacity:1; transform:scale(1) translateY(0); pointer-events:auto; }
     .game-box { display:inline-block; background:#0a0a0f; border:3px solid var(--lime); border-radius:4px; padding:16px 22px; min-width:260px; position:relative; box-shadow:0 0 20px rgba(193,255,114,0.15), 0 8px 32px rgba(0,0,0,0.6); }
     .game-box::before { content:''; position:absolute; left:-12px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:12px solid var(--lime); }
     .game-box::after { content:''; position:absolute; left:-8px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:8px solid transparent; border-bottom:8px solid transparent; border-right:10px solid #0a0a0f; }
     .game-title { font-family:'Enligas','Outfit',sans-serif; font-size:18px; font-weight:700; color:var(--lime); margin-bottom:4px; min-height:14px; white-space:nowrap; }
     .game-desc { color:rgba(255,255,255,0.7); font-size:15px; min-height:16px; }
-    .game-title .cur { display:inline-block; width:12px; height:3px; background:var(--lime); vertical-align:baseline; animation:blink .5s step-end infinite; vertical-align:middle; margin-left:1px; }
+    .game-title .cur { display:inline-block; width:12px; height:3px; background:var(--lime); animation:blink .5s step-end infinite; vertical-align:middle; margin-left:1px; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .call-btn-inline { font-family:'Enligas','Outfit',sans-serif; font-size:14px; font-weight:700; color:var(--dark); background:var(--lime); border:none; padding:8px 20px; border-radius:99px; cursor:pointer; margin-top:10px; pointer-events:auto; transition:transform .2s; }
+    .call-btn-inline:hover { transform:scale(1.05); }
+    .call-btn-inline.hangup { background:rgba(220,50,50,0.9); color:#fff; }
+
+    /* Clickable phone body overlay (transparent, for click events) */
+    .phone-click-zone { position:absolute; top:10%; left:55%; width:30%; height:80%; z-index:1; cursor:pointer; }
+    .phone-click-zone.ringing { animation:shake .08s linear infinite; }
+    @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
 
     .bottom-nav { padding:16px 0; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
     .bottom-nav a { color:rgba(255,255,255,0.35); font-size:13px; text-decoration:none; transition:color .2s; }
     .bottom-nav a:hover { color:var(--lime); }
 
-    @media(max-width:520px) { .phone-container{width:340px;height:380px;} .l-numplate{width:190px;height:190px;} .l-finger{width:200px;height:200px;} .sticker{width:38px;height:38px;} }
-  
-    .call-btn-inline { font-family:'Enligas','Outfit',sans-serif; font-size:14px; font-weight:700; color:var(--dark); background:var(--lime); border:none; padding:8px 20px; border-radius:99px; cursor:pointer; margin-top:10px; pointer-events:auto; transition:transform .2s; }
-    .call-btn-inline:hover { transform:scale(1.05); }
-    .call-btn-inline.hangup { background:rgba(220,50,50,0.9); color:#fff; }
-    
-    
-    
-    
-    
-    
-  
     /* Hide VAPI default widget button */
     #vapi-support-btn, .vapi-btn, [id^="vapi"] { display:none !important; }
+
+    @media(max-width:768px) {
+      .l-numplate { width:28vw; height:28vw; }
+      .l-finger { width:32vw; height:32vw; }
+      .desk-sticker { width:60px; height:60px; }
+      .game-overlay { left:50%; top:5%; transform-origin:center; }
+    }
   </style>
 </head>
 <body>
   <div class="phone-container" id="wrap">
-    <div class="l-body" id="phoneBody">
-      <img src="/assets/images/ai-marketing-bureau/phone-body-wide.jpg" alt="1930s rotary telephone" id="phoneImg">
-      <video id="phoneVideo" loop muted playsinline style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6))"><source src="/assets/video/phone-ring.mp4" type="video/mp4"></video>
-    </div>
+    <!-- Phone click zone (transparent overlay for click events) -->
+    <div class="phone-click-zone" id="phoneBody"></div>
+
+    <!-- Video (hidden until phone clicked) -->
+    <video id="phoneVideo" loop muted playsinline style="display:none;position:absolute;top:10%;left:55%;width:30%;height:80%;object-fit:contain;z-index:1"><source src="/assets/video/phone-ring.mp4" type="video/mp4"></video>
+
+    <!-- Dial components -->
     <div class="l-numplate">
       <div class="numplate-bg"></div>
       <div class="sticker" style="left:15%;top:50%"><img src="/assets/images/stickers/world.webp" alt="SEO"></div>
@@ -105,18 +111,18 @@
       <div class="sticker" style="left:24%;top:76%"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"></div>
     </div>
     <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
-    <a href="/ai-marketing-bureau" class="l-hub" onclick="event.stopPropagation()" style="pointer-events:auto;text-decoration:none" title="AI Marketing Bureau"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
+    <a href="/ai-marketing-bureau" class="l-hub" onclick="event.stopPropagation()" title="AI Marketing Bureau"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
 
-        <a class="rz" href="/seo" data-t="seo" style="left:55%;top:50%"></a>
-    <a class="rz" href="/chatbot" data-t="chatbot" style="left:59%;top:40%"></a>
-    <a class="rz" href="/voice-ai" data-t="voice" style="left:70%;top:36%"></a>
-    <a class="rz" href="/reviews" data-t="reviews" style="left:81%;top:40%"></a>
-    <a class="rz" href="/automations" data-t="auto" style="left:85%;top:50%"></a>
-    <a class="rz" href="/website-laten-maken" data-t="website" style="left:70%;top:64%"></a>
-    <a class="rz" href="/herinneringen" data-t="herinner" style="left:59%;top:60%"></a>
+    <!-- Invisible hotspots for 7 dial holes -->
+    <a class="rz" href="/seo" data-t="seo" style="left:63%;top:45.9%"></a>
+    <a class="rz" href="/chatbot" data-t="chatbot" style="left:65%;top:38%"></a>
+    <a class="rz" href="/voice-ai" data-t="voice" style="left:70.8%;top:34%"></a>
+    <a class="rz" href="/reviews" data-t="reviews" style="left:76.5%;top:38%"></a>
+    <a class="rz" href="/automations" data-t="auto" style="left:78.5%;top:45.9%"></a>
+    <a class="rz" href="/website-laten-maken" data-t="website" style="left:70.8%;top:58%"></a>
+    <a class="rz" href="/herinneringen" data-t="herinner" style="left:65%;top:54%"></a>
 
-    
-    
+    <!-- Speech bubble -->
     <div class="game-overlay">
       <div class="game-box">
         <div class="game-title" id="gT">KIES EEN DIENST<span class="cur"></span></div>
@@ -124,14 +130,15 @@
         <button class="call-btn-inline" id="btnCall" style="display:none" onclick="event.stopPropagation();startVapiCall()">Bel Met Lee</button>
       </div>
     </div>
-    <!-- Desk stickers on the left — hold 5s to peel -->
-    <div class="desk-sticker" style="left:5%;top:18%;transform:rotate(-12deg)" data-service="seo"><img src="/assets/images/stickers/world.webp" alt="SEO"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:16%;top:12%;transform:rotate(8deg)" data-service="chatbot"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:10%;top:45%;transform:rotate(-5deg)" data-service="voice"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:20%;top:38%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:4%;top:70%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:17%;top:72%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:28%;top:25%;transform:rotate(3deg)" data-service="herinner"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+
+    <!-- Desk stickers — scattered on the left side of the desk -->
+    <div class="desk-sticker" style="left:4%;top:15%;transform:rotate(-12deg)" data-service="seo"><img src="/assets/images/stickers/world.webp" alt="SEO"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:18%;top:10%;transform:rotate(8deg)" data-service="chatbot"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:30%;top:18%;transform:rotate(3deg)" data-service="herinner"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:8%;top:42%;transform:rotate(-5deg)" data-service="voice"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:22%;top:50%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:5%;top:72%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:20%;top:78%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
   </div>
 
   <div class="bottom-nav">
@@ -139,12 +146,8 @@
     <a href="/portfolio">Portfolio</a><a href="/free-trial">Gratis Scan</a><a href="/ai-marketing-bureau">AI Marketing Bureau</a>
   </div>
 
-  <!-- VAPI SDK -->
-  
-
   <script>
   (function(){
-    // ── Tool data ──
     var d={
       seo:      {t:'SEO & VINDBAARHEID',   d:'Gevonden worden op Google en in ChatGPT'},
       chatbot:  {t:'AI CHATBOT',           d:'24/7 leadopvang op je website'},
@@ -155,7 +158,6 @@
       herinner: {t:'HERINNERINGEN',        d:'50-70% minder no-shows'}
     };
 
-    // ── Human typewriter with mistakes ──
     function humanType(el, text, onDone) {
       if (window._typeTimer) { clearTimeout(window._typeTimer); window._typeTimer = null; }
       var out = '', pos = 0, mistakes = 0;
@@ -187,12 +189,11 @@
         if (Math.random() < 0.04) delay += 250;
         window._typeTimer = setTimeout(step, delay);
       }
-      out = ''; pos = 0;
       el.innerHTML = '<span class="cur"></span>';
       window._typeTimer = setTimeout(step, 100);
     }
 
-    // ── Dial spin ──
+    // Dial spin
     var plate = document.getElementById('plate');
     var wrap = document.getElementById('wrap');
     var a = 0, drag = false, sA = 0, sM = 0, v = 0, lA = 0, raf;
@@ -200,14 +201,13 @@
 
     function ma(e) {
       var r = wrap.getBoundingClientRect();
-      var dc = window._dialCenter || {x:r.width*0.71, y:r.height*0.48};
-      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - dc.x;
-      var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - dc.y;
+      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - r.width*0.708;
+      var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - r.height*0.459;
       return Math.atan2(y, x) * 180 / Math.PI;
     }
 
     function dn(e) {
-      if (e.target.closest('.rz') || e.target.closest('.l-hub')) return;
+      if (e.target.closest('.rz') || e.target.closest('.l-hub') || e.target.closest('.desk-sticker')) return;
       e.stopPropagation();
       drag = true; plate.classList.add('grabbing');
       sM = ma(e); sA = a; v = 0;
@@ -244,7 +244,7 @@
     function startA() { if (ai) return; ai = setInterval(function() { if (drag) return; a += 0.15; plate.style.transform = 'translate(-50%,-50%) rotate(' + a + 'deg)'; }, 16); }
     function stopA() { clearInterval(ai); ai = null; }
 
-    // ── Hover with typewriter ──
+    // Hover typewriter
     document.querySelectorAll('.rz').forEach(function(z) {
       z.addEventListener('click', function(e) { e.stopPropagation(); });
       z.addEventListener('mouseenter', function() {
@@ -266,27 +266,18 @@
       });
     });
 
-    // ── Click phone = start ringing. Click again = stop. ──
+    // Click phone = ring
     document.getElementById('phoneBody').addEventListener('click', function(e) {
-      // Toggle off
-      if (calling) {
-        endVapiCall();
-        return;
-      }
+      if (calling) { endVapiCall(); return; }
       calling = true;
-
-      // Start video + ringing
-      var img = document.getElementById('phoneImg');
       var video = document.getElementById('phoneVideo');
-      if (video) { img.style.display = 'none'; video.style.display = 'block'; video.play(); }
+      if (video) { video.style.display = 'block'; video.play(); }
       this.classList.add('ringing');
 
-      // Show speech bubble, type both lines, then show button
       var overlay = document.querySelector('.game-overlay');
       var titleEl = document.getElementById('gT');
       var descEl = document.getElementById('gD');
       var btnCall = document.getElementById('btnCall');
-
       overlay.classList.add('visible');
       btnCall.style.display = 'none';
       descEl.textContent = '';
@@ -304,13 +295,11 @@
       });
     });
 
-    // ── VAPI functions ──
+    // VAPI
     var _vapiInstance = null;
-
     window.startVapiCall = function() {
       var btnCall = document.getElementById('btnCall');
       btnCall.textContent = 'Verbinden...';
-
       function doCall() {
         try {
           _vapiInstance = window.vapiSDK.run({
@@ -318,122 +307,43 @@
             assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
             config: { position: 'bottom-right' }
           });
-          if (_vapiInstance && typeof _vapiInstance.start === 'function') {
-            _vapiInstance.start();
-          }
+          if (_vapiInstance && typeof _vapiInstance.start === 'function') _vapiInstance.start();
           btnCall.textContent = 'Ophangen';
           btnCall.className = 'call-btn-inline hangup';
           btnCall.onclick = function(e) { e.stopPropagation(); endVapiCall(); };
-          setTimeout(function() {
-            document.querySelectorAll('[id^="vapi"]').forEach(function(el) { el.style.display = 'none'; });
-          }, 500);
-          if (_vapiInstance) {
-            _vapiInstance.on('call-end', function() { endVapiCall(); });
-          }
-        } catch(err) {
-          console.error('VAPI error:', err);
-          window.location.href = '/voice-ai';
-        }
+          setTimeout(function() { document.querySelectorAll('[id^="vapi"]').forEach(function(el) { el.style.display = 'none'; }); }, 500);
+          if (_vapiInstance) _vapiInstance.on('call-end', function() { endVapiCall(); });
+        } catch(err) { window.location.href = '/voice-ai'; }
       }
-
-      if (window.vapiSDK) {
-        doCall();
-      } else {
+      if (window.vapiSDK) { doCall(); }
+      else {
         var s = document.createElement('script');
         s.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
-        s.onload = function() {
-          var poll = setInterval(function() {
-            if (window.vapiSDK) { clearInterval(poll); doCall(); }
-          }, 100);
-        };
+        s.onload = function() { var poll = setInterval(function() { if (window.vapiSDK) { clearInterval(poll); doCall(); } }, 100); };
         document.body.appendChild(s);
       }
     };
 
     window.endVapiCall = function() {
       if (_vapiInstance && typeof _vapiInstance.stop === 'function') _vapiInstance.stop();
-      _vapiInstance = null;
-      calling = false;
+      _vapiInstance = null; calling = false;
       document.getElementById('phoneBody').classList.remove('ringing');
       document.querySelector('.game-overlay').classList.remove('visible');
       document.getElementById('btnCall').style.display = 'none';
       document.getElementById('gT').innerHTML = '';
       document.getElementById('gD').textContent = '';
-      var img = document.getElementById('phoneImg');
       var video = document.getElementById('phoneVideo');
-      if (video) { video.pause(); video.style.display = 'none'; img.style.display = 'block'; }
+      if (video) { video.pause(); video.style.display = 'none'; }
       document.querySelectorAll('[id^="vapi"]').forEach(function(el) { el.style.display = 'none'; });
     };
 
-    // ── Dynamic positioning based on rendered image ──
-    // Image is 1752x1024. Phone dial center at ~x=1240 y=490 in image coords.
-    // With object-fit:contain, we need to find where the image actually renders.
-    var phoneImg = document.getElementById('phoneImg');
-    function reposition() {
-      var container = document.getElementById('wrap');
-      var cw = container.offsetWidth, ch = container.offsetHeight;
-      // object-fit:contain — image scales to fit
-      var imgRatio = 1752/1024, cRatio = cw/ch;
-      var renderedW, renderedH, offX, offY;
-      if (cRatio > imgRatio) {
-        // container wider than image — image fits height, centered horizontally
-        renderedH = ch; renderedW = ch * imgRatio;
-        offX = (cw - renderedW) / 2; offY = 0;
-      } else {
-        // container taller — image fits width
-        renderedW = cw; renderedH = cw / imgRatio;
-        offX = 0; offY = (ch - renderedH) / 2;
-      }
-      // Phone dial center in image: x=1240/1752=0.708, y=490/1024=0.479
-      var dialCX = offX + renderedW * 0.708;
-      var dialCY = offY + renderedH * 0.479;
-      // Scale factor for overlay sizes
-      var scale = renderedH / 1024;
-
-      // Position numplate, finger, hub
-      var np = document.querySelector('.l-numplate');
-      np.style.left = dialCX + 'px'; np.style.top = dialCY + 'px';
-      np.style.width = (220*scale) + 'px'; np.style.height = (220*scale) + 'px';
-
-      var fp = document.getElementById('plate');
-      fp.style.left = dialCX + 'px'; fp.style.top = dialCY + 'px';
-      fp.style.width = (255*scale) + 'px'; fp.style.height = (255*scale) + 'px';
-
-      var hub = document.querySelector('.l-hub');
-      hub.style.left = dialCX + 'px'; hub.style.top = (offY + renderedH * 0.5) + 'px';
-
-      // Position rz hotspots (relative to dial center)
-      var rzData = [
-        {sel:'[data-t="seo"]',     dx:-0.16, dy:0},
-        {sel:'[data-t="chatbot"]', dx:-0.12, dy:-0.10},
-        {sel:'[data-t="voice"]',   dx:0,     dy:-0.14},
-        {sel:'[data-t="reviews"]', dx:0.12,  dy:-0.10},
-        {sel:'[data-t="auto"]',    dx:0.16,  dy:0},
-        {sel:'[data-t="website"]', dx:0,     dy:0.14},
-        {sel:'[data-t="herinner"]',dx:-0.12, dy:0.10}
-      ];
-      rzData.forEach(function(rz) {
-        var el = container.querySelector(rz.sel);
-        if (el) {
-          el.style.left = (dialCX + rz.dx * renderedW) + 'px';
-          el.style.top = (dialCY + rz.dy * renderedH) + 'px';
-        }
-      });
-
-      // Store for dial spin
-      window._dialCenter = {x: dialCX, y: dialCY};
-    }
-    reposition();
-    window.addEventListener('resize', reposition);
-
     startA();
 
-    // ── Desk stickers: hold 5s to peel ──
+    // Desk stickers: hold 5s to peel
     var HOLD_MS = 5000;
     document.querySelectorAll('.desk-sticker').forEach(function(s) {
       var timer = null, startTime = 0, progInterval = null;
       var fill = s.querySelector('.peel-fill');
-
       function beginPeel(e) {
         e.preventDefault();
         if (s.classList.contains('peeled')) return;
@@ -448,20 +358,17 @@
           s.classList.remove('peeling');
           s.classList.add('peeled');
           clearInterval(progInterval);
-          // Navigate to service after peel animation
           var svc = s.dataset.service;
           var urls = {seo:'/seo',chatbot:'/chatbot',voice:'/voice-ai',reviews:'/reviews',auto:'/automations',website:'/website-laten-maken',herinner:'/herinneringen'};
           if (urls[svc]) setTimeout(function(){ window.location.href = urls[svc]; }, 600);
         }, HOLD_MS);
       }
-
       function cancelPeel() {
         if (timer) { clearTimeout(timer); timer = null; }
         if (progInterval) { clearInterval(progInterval); progInterval = null; }
         s.classList.remove('peeling');
         fill.style.width = '0%';
       }
-
       s.addEventListener('mousedown', beginPeel);
       s.addEventListener('touchstart', beginPeel, {passive:false});
       s.addEventListener('mouseup', cancelPeel);
