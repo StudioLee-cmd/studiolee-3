@@ -322,9 +322,8 @@
             assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
             config: { position: 'bottom-right' }
           });
-          // Programmatically start the call
           if (instance && typeof instance.start === 'function') {
-            instance.start();
+            instance.start('752f8e59-08dd-4f11-9bf1-71f86bd865a4');
           }
           window._vapiInstance = instance;
           btnCall.textContent = 'Ophangen';
