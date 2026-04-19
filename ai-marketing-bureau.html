@@ -330,7 +330,7 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6" data-aos="fade-right">
             <div class="position-relative overflow-hidden rounded-4" style="cursor:pointer" onmouseenter="this.querySelector('.img-hover').style.opacity='1'" onmouseleave="this.querySelector('.img-hover').style.opacity='0'">
-              <img src="/assets/images/ai-marketing-bureau/strategy.jpg" alt="AI marketing strategie notebook" class="img-fluid rounded-4">
+              <div class="img-crossfade rounded-4"><img src="/assets/images/ai-marketing-bureau/strategy.jpg" alt="AI marketing strategie notebook" class="img-fluid rounded-4"><img src="/assets/images/ai-marketing-bureau/strategy-hover.jpg" alt="" class="img-fluid rounded-4 img-hover"></div>
               <img src="/assets/images/ai-marketing-bureau/strategy-hover.jpg" alt="AI marketing bureau werkplek" class="img-fluid rounded-4 img-hover" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease">
             </div>
           </div>
@@ -775,6 +775,13 @@
     .mob-flip-back{background:#C1FF72;color:#1a1a1a;transform:rotateY(180deg);padding:16px;text-align:center}
     .mob-flip-back strong{font-size:15px;display:block;margin-bottom:4px}
     .mob-flip-back p{font-size:12px;margin:0;color:rgba(0,0,0,0.7)}
+
+    /* Image crossfade hover */
+    .img-crossfade { position:relative; overflow:hidden; }
+    .img-crossfade img { transition:opacity .5s ease; }
+    .img-crossfade .img-hover { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; }
+    .img-crossfade:hover .img-hover { opacity:1; }
+    .img-crossfade:hover img:first-child { opacity:0; }
     </style>
 
     <!-- ═══ SECTION 8: WERKWIJZE (5 stappen) ═══ -->
@@ -849,7 +856,7 @@
                   <li class="hstack gap-2"><iconify-icon icon="lucide:check" class="text-primary"></iconify-icon>Basis website-support</li>
                   <li class="hstack gap-2"><iconify-icon icon="lucide:check" class="text-primary"></iconify-icon>Maandelijks opzegbaar</li>
                 </ul>
-                <a href="/free-trial" class="btn btn-outline-dark fw-bold rounded-pill">14 dagen gratis proberen</a>
+                <a href="/free-trial" class="btn btn-outline-dark fw-bold rounded-pill cta-shine">14 dagen gratis proberen</a>
               </div>
             </div>
           </div>
@@ -886,7 +893,7 @@
                   <li class="hstack gap-2"><iconify-icon icon="lucide:check" class="text-primary"></iconify-icon>Dedicated accountmanager</li>
                   <li class="hstack gap-2"><iconify-icon icon="lucide:check" class="text-primary"></iconify-icon>Volledig op maat</li>
                 </ul>
-                <a href="https://calendly.com/tim-studiolee" target="_blank" rel="nofollow" class="btn btn-outline-dark fw-bold rounded-pill">Plan een strategiegesprek</a>
+                <a href="https://calendly.com/tim-studiolee" target="_blank" rel="nofollow" class="btn btn-outline-dark fw-bold rounded-pill cta-shine">Plan een strategiegesprek</a>
               </div>
             </div>
           </div>
@@ -940,7 +947,7 @@
           </div>
           <div class="col-lg-6" data-aos="fade-left">
             <div class="position-relative overflow-hidden rounded-4" style="cursor:pointer" onmouseenter="this.querySelector('.img-hover').style.opacity='1'" onmouseleave="this.querySelector('.img-hover').style.opacity='0'">
-              <img src="/assets/images/ai-marketing-bureau/selfserve.jpg" alt="Ondernemer werkt met AI platform" class="img-fluid rounded-4">
+              <div class="img-crossfade rounded-4"><img src="/assets/images/ai-marketing-bureau/selfserve.jpg" alt="Ondernemer werkt met AI platform" class="img-fluid rounded-4"><img src="/assets/images/ai-marketing-bureau/selfserve-hover.jpg" alt="" class="img-fluid rounded-4 img-hover"></div>
               <img src="/assets/images/ai-marketing-bureau/selfserve-hover.jpg" alt="AI platform close-up" class="img-fluid rounded-4 img-hover" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease">
             </div>
           </div>
@@ -979,7 +986,7 @@
           </div>
           <div class="col-lg-6" data-aos="fade-left">
             <div class="position-relative overflow-hidden rounded-4" style="cursor:pointer" onmouseenter="this.querySelector('.img-hover').style.opacity='1'" onmouseleave="this.querySelector('.img-hover').style.opacity='0'">
-              <img src="/assets/images/ai-marketing-bureau/enterprise.jpg" alt="Enterprise kantoorgebouw Nederland" class="img-fluid rounded-4">
+              <div class="img-crossfade rounded-4"><img src="/assets/images/ai-marketing-bureau/enterprise.jpg" alt="Enterprise kantoorgebouw Nederland" class="img-fluid rounded-4"><img src="/assets/images/ai-marketing-bureau/enterprise-hover.jpg" alt="" class="img-fluid rounded-4 img-hover"></div>
               <img src="/assets/images/ai-marketing-bureau/enterprise-hover.jpg" alt="Modern kantoor interieur" class="img-fluid rounded-4 img-hover" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease">
             </div>
           </div>
@@ -1109,7 +1116,7 @@
           <p class="mb-5 text-dark fs-5 text-opacity-70">Laat het draaien. Jouw marketing op autopilot, jij focust op je werk.</p>
           <div class="hstack gap-3 justify-content-center flex-wrap">
             <a href="/free-trial" class="btn btn-dark fw-bold fs-6 px-5 py-3 rounded-pill cta-shine">Start gratis <iconify-icon icon="lucide:arrow-right" class="ms-2"></iconify-icon></a>
-            <a href="https://calendly.com/tim-studiolee" target="_blank" rel="nofollow" class="btn btn-outline-dark fw-bold fs-6 px-5 py-3 rounded-pill">Plan een gesprek</a>
+            <a href="https://calendly.com/tim-studiolee" target="_blank" rel="nofollow" class="btn btn-outline-dark fw-bold fs-6 px-5 py-3 rounded-pill cta-shine">Plan een gesprek</a>
           </div>
         </div>
       </div>
