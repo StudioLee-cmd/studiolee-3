@@ -84,6 +84,9 @@
     @keyframes btn-pulse { 0%,100%{box-shadow:0 4px 16px rgba(0,0,0,0.3)} 50%{box-shadow:0 4px 16px rgba(0,0,0,0.3),0 0 20px rgba(193,255,114,0.3)} }
     .call-btn-hangup { font-family:'Outfit',sans-serif; font-size:13px; font-weight:600; color:#fff; background:rgba(220,50,50,0.8); border:none; padding:8px 20px; border-radius:99px; cursor:pointer; backdrop-filter:blur(8px); transition:transform .2s; }
     .call-btn-hangup:hover { transform:scale(1.05); background:rgba(220,50,50,1); }
+  
+    /* Hide VAPI default widget button */
+    #vapi-support-btn, .vapi-btn, [id^="vapi"] { display:none !important; }
   </style>
 </head>
 <body>
@@ -140,7 +143,7 @@
   </div>
 
   <!-- VAPI SDK -->
-  <script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js" defer></script>
+  <!-- VAPI loaded on demand when user clicks Bel Met Lee -->
 
   <script>
   (function(){
@@ -306,29 +309,53 @@
     // VAPI call functions — using widget SDK (html-script-tag)
     var _vapiInstance = null;
     function startVapiCall() {
-      if (!window.vapiSDK) {
-        console.error('VAPI SDK not loaded');
-        alert('Voice AI laden... Probeer het nogmaals.');
-        return;
+      document.getElementById('btnConnect').textContent = 'Verbinden...';
+      
+      function doCall() {
+        try {
+          _vapiInstance = window.vapiSDK.run({
+            apiKey: '5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',
+            assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
+            config: { position: 'bottom-right' }
+          });
+          if (_vapiInstance && typeof _vapiInstance.start === 'function') {
+            _vapiInstance.start();
+          }
+          document.getElementById('btnConnect').style.display = 'none';
+          document.getElementById('btnHangup').style.display = 'block';
+          // Hide any VAPI default UI that appears
+          setTimeout(function() {
+            var vapiBtn = document.getElementById('vapi-support-btn');
+            if (vapiBtn) vapiBtn.style.display = 'none';
+            document.querySelectorAll('[id^="vapi"]').forEach(function(el) {
+              if (el.id !== 'callBtns') el.style.display = 'none';
+            });
+          }, 500);
+          if (_vapiInstance) {
+            _vapiInstance.on('call-end', function() { endVapiCall(); });
+          }
+        } catch(err) {
+          console.error('VAPI error:', err);
+          window.location.href = '/voice-ai';
+        }
       }
-      try {
-        _vapiInstance = window.vapiSDK.run({
-          apiKey: '5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',
-          assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
-          config: { position: 'bottom-right' }
-        });
-        // Force start the call
-        if (_vapiInstance && typeof _vapiInstance.start === 'function') {
-          _vapiInstance.start();
-        }
-        document.getElementById('btnConnect').style.display = 'none';
-        document.getElementById('btnHangup').style.display = 'block';
-        if (_vapiInstance) {
-          _vapiInstance.on('call-end', function() { endVapiCall(); });
-        }
-      } catch(err) {
-        console.error('VAPI error:', err);
-        window.location.href = '/voice-ai';
+
+      // Load SDK on demand if not already loaded
+      if (window.vapiSDK) {
+        doCall();
+      } else {
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
+        s.onload = function() {
+          // Wait for SDK to initialize
+          var poll = setInterval(function() {
+            if (window.vapiSDK) {
+              clearInterval(poll);
+              doCall();
+            }
+          }, 100);
+        };
+        document.body.appendChild(s);
       }
     }
     function endVapiCall() {
