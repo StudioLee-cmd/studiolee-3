@@ -44,7 +44,7 @@
     a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.15); }
 
     /* Desk stickers — big, on the left */
-    .desk-sticker { position:absolute; z-index:6; width:100px; height:100px; cursor:grab; user-select:none; transition:transform .3s, opacity .5s, filter .3s; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.6)); }
+    .desk-sticker { position:absolute; z-index:6; width:140px; height:140px; cursor:grab; user-select:none; transition:transform .3s, opacity .5s, filter .3s; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.6)); }
     .desk-sticker img { width:100%; height:100%; object-fit:contain; pointer-events:none; }
     .desk-sticker:hover { filter:drop-shadow(0 8px 16px rgba(0,0,0,0.7)); }
     .desk-sticker.peeling { animation:peel-wobble .4s ease-in-out infinite; }
@@ -340,14 +340,16 @@
 
     startA();
 
-    // Desk stickers: hold 5s to peel
+    // Desk stickers: hold 5s to unlock, then drag freely
     var HOLD_MS = 5000;
     document.querySelectorAll('.desk-sticker').forEach(function(s) {
       var timer = null, startTime = 0, progInterval = null;
       var fill = s.querySelector('.peel-fill');
-      function beginPeel(e) {
-        e.preventDefault();
-        if (s.classList.contains('peeled')) return;
+      var unlocked = false, dragging = false, offsetX = 0, offsetY = 0;
+
+      function beginHold(e) {
+        e.preventDefault(); e.stopPropagation();
+        if (unlocked) { startDrag(e); return; }
         s.classList.add('peeling');
         startTime = Date.now();
         fill.style.width = '0%';
@@ -357,25 +359,53 @@
         }, 50);
         timer = setTimeout(function() {
           s.classList.remove('peeling');
-          s.classList.add('peeled');
           clearInterval(progInterval);
-          var svc = s.dataset.service;
-          var urls = {seo:'/seo',chatbot:'/chatbot',voice:'/voice-ai',reviews:'/reviews',auto:'/automations',website:'/website-laten-maken',herinner:'/herinneringen'};
-          if (urls[svc]) setTimeout(function(){ window.location.href = urls[svc]; }, 600);
+          fill.style.width = '0%';
+          unlocked = true;
+          s.style.cursor = 'move';
+          s.style.filter = 'drop-shadow(0 8px 20px rgba(193,255,114,0.4))';
         }, HOLD_MS);
       }
-      function cancelPeel() {
+
+      function cancelHold() {
         if (timer) { clearTimeout(timer); timer = null; }
         if (progInterval) { clearInterval(progInterval); progInterval = null; }
-        s.classList.remove('peeling');
-        fill.style.width = '0%';
+        if (!unlocked) { s.classList.remove('peeling'); fill.style.width = '0%'; }
+        if (dragging) { dragging = false; }
       }
-      s.addEventListener('mousedown', beginPeel);
-      s.addEventListener('touchstart', beginPeel, {passive:false});
-      s.addEventListener('mouseup', cancelPeel);
-      s.addEventListener('mouseleave', cancelPeel);
-      s.addEventListener('touchend', cancelPeel);
-      s.addEventListener('touchcancel', cancelPeel);
+
+      function startDrag(e) {
+        dragging = true;
+        var rect = s.getBoundingClientRect();
+        var cx = e.touches ? e.touches[0].clientX : e.clientX;
+        var cy = e.touches ? e.touches[0].clientY : e.clientY;
+        offsetX = cx - rect.left; offsetY = cy - rect.top;
+        s.style.zIndex = 20;
+      }
+
+      function onMove(e) {
+        if (!dragging) return;
+        e.preventDefault();
+        var cx = e.touches ? e.touches[0].clientX : e.clientX;
+        var cy = e.touches ? e.touches[0].clientY : e.clientY;
+        var parent = s.parentElement.getBoundingClientRect();
+        s.style.left = (cx - parent.left - offsetX) + 'px';
+        s.style.top = (cy - parent.top - offsetY) + 'px';
+        s.style.transform = 'none';
+      }
+
+      function onUp() { if (dragging) { dragging = false; s.style.zIndex = 6; } }
+
+      s.addEventListener('mousedown', beginHold);
+      s.addEventListener('touchstart', beginHold, {passive:false});
+      s.addEventListener('mouseup', cancelHold);
+      s.addEventListener('mouseleave', function() { if (!dragging) cancelHold(); });
+      s.addEventListener('touchend', cancelHold);
+      s.addEventListener('touchcancel', cancelHold);
+      window.addEventListener('mousemove', onMove);
+      window.addEventListener('touchmove', onMove, {passive:false});
+      window.addEventListener('mouseup', onUp);
+      window.addEventListener('touchend', onUp);
     });
   })();
   </script>
