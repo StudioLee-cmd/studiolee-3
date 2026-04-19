@@ -435,102 +435,156 @@
       </div>
     </section>
 
-    <!-- ═══ SECTION 7: AI TOOLS — Orbit + Hover Cards ═══ -->
-    <section class="py-5 py-lg-7 py-xl-8 bg-light-gray">
+    <!-- ═══ SECTION 7: AI TOOLS — Spinning Orbit with Flip Cards ═══ -->
+    <section class="py-5 py-lg-7 py-xl-8 bg-dark">
       <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
-          <span class="badge text-bg-dark mb-3">Technologie</span>
-          <h2 class="mb-3">De AI-tools die wij inzetten</h2>
-          <p class="fs-5 text-muted">Spin het wiel. Hover voor details.</p>
+          <span class="badge mb-3" style="background:rgba(255,255,255,0.1);color:#fff">Onze technologie</span>
+          <h2 class="text-white mb-3">De AI-tools achter jouw groei</h2>
+          <p class="text-white text-opacity-50">Hover over een tool om te ontdekken hoe wij het inzetten. Sleep om te draaien.</p>
         </div>
 
-        <div class="orbit-container" data-aos="fade-up">
-          <!-- Center logo -->
-          <div class="orbit-center">
-            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE" style="width:70px;height:70px;object-fit:contain">
-          </div>
-          <!-- Orbiting items -->
-          <div class="orbit-ring" id="orbitRing">
-            <div class="orbit-item" data-tool="chatgpt" style="--angle:0deg">
-              <iconify-icon icon="simple-icons:openai" style="color:#10a37f;font-size:36px"></iconify-icon>
+        <!-- Desktop: orbit -->
+        <div class="orbit-wrap d-none d-lg-block" data-aos="fade-up">
+          <div class="orbit-scene" id="orbitScene">
+            <div class="orbit-hub">
+              <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE" class="orbit-logo">
+              <div class="orbit-hub-ring"></div>
             </div>
-            <div class="orbit-item" data-tool="claude" style="--angle:60deg">
-              <iconify-icon icon="simple-icons:anthropic" style="color:#d4a27f;font-size:36px"></iconify-icon>
+            <div class="orbit-track" id="orbitTrack">
+              <div class="orbit-node" style="--i:0" data-tool="chatgpt">
+                <div class="orbit-flip">
+                  <div class="orbit-flip-front">
+                    <iconify-icon icon="simple-icons:openai" style="font-size:44px;color:#10a37f"></iconify-icon>
+                    <span class="orbit-label">ChatGPT</span>
+                  </div>
+                  <div class="orbit-flip-back">
+                    <strong>ChatGPT</strong>
+                    <p>Strategie, content en klantcommunicatie op schaal.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="orbit-node" style="--i:1" data-tool="claude">
+                <div class="orbit-flip">
+                  <div class="orbit-flip-front">
+                    <iconify-icon icon="simple-icons:anthropic" style="font-size:44px;color:#d4a27f"></iconify-icon>
+                    <span class="orbit-label">Claude</span>
+                  </div>
+                  <div class="orbit-flip-back">
+                    <strong>Claude</strong>
+                    <p>Code, automatisering en complete AI-systemen bouwen.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="orbit-node" style="--i:2" data-tool="n8n">
+                <div class="orbit-flip">
+                  <div class="orbit-flip-front">
+                    <iconify-icon icon="simple-icons:n8n" style="font-size:44px;color:#ea4b71"></iconify-icon>
+                    <span class="orbit-label">N8N</span>
+                  </div>
+                  <div class="orbit-flip-back">
+                    <strong>N8N</strong>
+                    <p>Workflow automatisering en bedrijfsproces integraties.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="orbit-node" style="--i:3" data-tool="ahrefs">
+                <div class="orbit-flip">
+                  <div class="orbit-flip-front">
+                    <iconify-icon icon="simple-icons:ahrefs" style="font-size:44px;color:#ff8c00"></iconify-icon>
+                    <span class="orbit-label">Ahrefs</span>
+                  </div>
+                  <div class="orbit-flip-back">
+                    <strong>Ahrefs</strong>
+                    <p>SEO-onderzoek, keyword research en concurrentieanalyse.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="orbit-node" style="--i:4" data-tool="vapi">
+                <div class="orbit-flip">
+                  <div class="orbit-flip-front">
+                    <iconify-icon icon="solar:phone-calling-rounded-bold-duotone" style="font-size:44px;color:#C1FF72"></iconify-icon>
+                    <span class="orbit-label">VAPI</span>
+                  </div>
+                  <div class="orbit-flip-back">
+                    <strong>Voice AI</strong>
+                    <p>AI telefonist die 24/7 opneemt en afspraken plant.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="orbit-node" style="--i:5" data-tool="highlevel">
+                <div class="orbit-flip">
+                  <div class="orbit-flip-front">
+                    <iconify-icon icon="solar:monitor-bold-duotone" style="font-size:44px;color:#4285f4"></iconify-icon>
+                    <span class="orbit-label">HighLevel</span>
+                  </div>
+                  <div class="orbit-flip-back">
+                    <strong>HighLevel</strong>
+                    <p>CRM, e-mail, social planner en facturatie in één.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="orbit-item" data-tool="n8n" style="--angle:120deg">
-              <iconify-icon icon="simple-icons:n8n" style="color:#ea4b71;font-size:36px"></iconify-icon>
-            </div>
-            <div class="orbit-item" data-tool="ahrefs" style="--angle:180deg">
-              <iconify-icon icon="simple-icons:ahrefs" style="color:#ff8c00;font-size:36px"></iconify-icon>
-            </div>
-            <div class="orbit-item" data-tool="vapi" style="--angle:240deg">
-              <iconify-icon icon="solar:phone-calling-rounded-bold-duotone" style="color:#C1FF72;font-size:36px"></iconify-icon>
-            </div>
-            <div class="orbit-item" data-tool="highlevel" style="--angle:300deg">
-              <iconify-icon icon="solar:monitor-bold-duotone" style="color:#4285f4;font-size:36px"></iconify-icon>
-            </div>
-          </div>
-          <!-- Hover info card -->
-          <div class="orbit-info" id="orbitInfo">
-            <h4 id="orbitTitle">Hover over een tool</h4>
-            <p id="orbitDesc">Ontdek hoe wij elke tool inzetten voor jouw groei.</p>
           </div>
         </div>
 
-        <!-- Mobile fallback: simple cards grid -->
+        <!-- Mobile: simple flip card grid -->
         <div class="d-lg-none">
-          <div class="row g-3 mt-4">
-            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="simple-icons:openai" style="color:#10a37f;font-size:40px" class="d-block mb-2"></iconify-icon><strong>ChatGPT</strong><p class="small text-muted mb-0 mt-1">Strategie & content</p></div></div>
-            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="simple-icons:anthropic" style="color:#d4a27f;font-size:40px" class="d-block mb-2"></iconify-icon><strong>Claude</strong><p class="small text-muted mb-0 mt-1">Code & systemen</p></div></div>
-            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="simple-icons:n8n" style="color:#ea4b71;font-size:40px" class="d-block mb-2"></iconify-icon><strong>N8N</strong><p class="small text-muted mb-0 mt-1">Automatisering</p></div></div>
-            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="simple-icons:ahrefs" style="color:#ff8c00;font-size:40px" class="d-block mb-2"></iconify-icon><strong>Ahrefs</strong><p class="small text-muted mb-0 mt-1">SEO-data</p></div></div>
-            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone" style="color:#C1FF72;font-size:40px" class="d-block mb-2"></iconify-icon><strong>VAPI</strong><p class="small text-muted mb-0 mt-1">Voice AI</p></div></div>
-            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="solar:monitor-bold-duotone" style="color:#4285f4;font-size:40px" class="d-block mb-2"></iconify-icon><strong>HighLevel</strong><p class="small text-muted mb-0 mt-1">CRM Platform</p></div></div>
+          <div class="row g-3">
+            <div class="col-6"><div class="mob-flip-wrap"><div class="mob-flip-inner"><div class="mob-flip-front"><iconify-icon icon="simple-icons:openai" style="color:#10a37f;font-size:40px"></iconify-icon><strong>ChatGPT</strong></div><div class="mob-flip-back"><strong>ChatGPT</strong><p>Strategie & content op schaal.</p></div></div></div></div>
+            <div class="col-6"><div class="mob-flip-wrap"><div class="mob-flip-inner"><div class="mob-flip-front"><iconify-icon icon="simple-icons:anthropic" style="color:#d4a27f;font-size:40px"></iconify-icon><strong>Claude</strong></div><div class="mob-flip-back"><strong>Claude</strong><p>Code & AI-systemen.</p></div></div></div></div>
+            <div class="col-6"><div class="mob-flip-wrap"><div class="mob-flip-inner"><div class="mob-flip-front"><iconify-icon icon="simple-icons:n8n" style="color:#ea4b71;font-size:40px"></iconify-icon><strong>N8N</strong></div><div class="mob-flip-back"><strong>N8N</strong><p>Workflow automatisering.</p></div></div></div></div>
+            <div class="col-6"><div class="mob-flip-wrap"><div class="mob-flip-inner"><div class="mob-flip-front"><iconify-icon icon="simple-icons:ahrefs" style="color:#ff8c00;font-size:40px"></iconify-icon><strong>Ahrefs</strong></div><div class="mob-flip-back"><strong>Ahrefs</strong><p>SEO data & analyse.</p></div></div></div></div>
+            <div class="col-6"><div class="mob-flip-wrap"><div class="mob-flip-inner"><div class="mob-flip-front"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone" style="color:#C1FF72;font-size:40px"></iconify-icon><strong>VAPI</strong></div><div class="mob-flip-back"><strong>VAPI</strong><p>Voice AI telefonist.</p></div></div></div></div>
+            <div class="col-6"><div class="mob-flip-wrap"><div class="mob-flip-inner"><div class="mob-flip-front"><iconify-icon icon="solar:monitor-bold-duotone" style="color:#4285f4;font-size:40px"></iconify-icon><strong>HighLevel</strong></div><div class="mob-flip-back"><strong>HighLevel</strong><p>CRM & marketing.</p></div></div></div></div>
           </div>
         </div>
       </div>
     </section>
 
     <style>
-    .orbit-container{position:relative;width:500px;height:500px;margin:0 auto}
-    .orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:130px;height:130px;background:#1F2A2E;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:3;box-shadow:0 8px 40px rgba(0,0,0,0.15)}
-    .orbit-ring{position:absolute;inset:0;animation:orbit-spin 30s linear infinite}
-    .orbit-item{position:absolute;width:80px;height:80px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.08);cursor:pointer;transition:transform .3s,box-shadow .3s,background .3s;z-index:2;top:50%;left:50%;margin:-40px 0 0 -40px;transform:rotate(var(--angle)) translateX(200px) rotate(calc(-1 * var(--angle)))}
-    .orbit-item:hover{transform:rotate(var(--angle)) translateX(200px) rotate(calc(-1 * var(--angle))) scale(1.4);box-shadow:0 12px 40px rgba(0,0,0,0.2);background:#1F2A2E;z-index:10}
-    .orbit-item:hover iconify-icon{color:#C1FF72 !important}
-    .orbit-info{position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);text-align:center;width:400px;transition:opacity .3s}
-    .orbit-info h4{margin:0 0 4px;font-size:20px}
-    .orbit-info p{margin:0;color:#666;font-size:15px}
-    @keyframes orbit-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-    .orbit-ring:hover{animation-play-state:paused}
-    @media(max-width:991px){.orbit-container{display:none}}
-    </style>
+    /* ── Orbit scene ── */
+    .orbit-scene{position:relative;width:550px;height:550px;margin:0 auto 40px}
+    .orbit-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140px;height:140px;background:linear-gradient(135deg,#1F2A2E 0%,#2a3a40 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:5;box-shadow:0 0 60px rgba(193,255,114,0.15)}
+    .orbit-hub-ring{position:absolute;inset:-8px;border:2px solid rgba(193,255,114,0.2);border-radius:50%;animation:hub-pulse 3s ease-in-out infinite}
+    .orbit-logo{width:70px;height:70px;object-fit:contain;position:relative;z-index:1}
+    @keyframes hub-pulse{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.8;transform:scale(1.06)}}
 
-    <script>
-    (function(){
-      var data = {
-        chatgpt: {title:'ChatGPT', desc:'Strategie, contentcreatie en klantcommunicatie op schaal. Van SEO-artikelen tot campagne-ideeën.'},
-        claude: {title:'Claude', desc:'Code, automatisering en AI-systemen bouwen. Complete workflows en integraties vanaf scratch.'},
-        n8n: {title:'N8N Workflows', desc:'Custom workflows die marketing, administratie en klantopvolging volledig automatiseren.'},
-        ahrefs: {title:'Ahrefs', desc:'Keyword research, backlink-analyse, content gaps en technische SEO-audits op professioneel niveau.'},
-        vapi: {title:'VAPI Voice AI', desc:'Beantwoordt elke oproep 24/7, plant afspraken en stuurt samenvattingen via WhatsApp.'},
-        highlevel: {title:'HighLevel CRM', desc:'Alles-in-één: klantbeheer, e-mail, social planner, facturatie en rapportage in één platform.'}
-      };
-      document.querySelectorAll('.orbit-item').forEach(function(el){
-        el.addEventListener('mouseenter', function(){
-          var tool = el.getAttribute('data-tool');
-          if(data[tool]){
-            document.getElementById('orbitTitle').textContent = data[tool].title;
-            document.getElementById('orbitDesc').textContent = data[tool].desc;
-          }
-        });
-        el.addEventListener('mouseleave', function(){
-          document.getElementById('orbitTitle').textContent = 'Hover over een tool';
-          document.getElementById('orbitDesc').textContent = 'Ontdek hoe wij elke tool inzetten voor jouw groei.';
-        });
-      });
-    })();
-    </script>
+    /* ── Orbit track ── */
+    .orbit-track{position:absolute;inset:0;animation:orbit-rotate 40s linear infinite}
+    .orbit-track:hover{animation-play-state:paused}
+    @keyframes orbit-rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+    /* ── Orbit nodes (positioned in circle) ── */
+    .orbit-node{position:absolute;width:100px;height:100px;top:50%;left:50%;margin:-50px 0 0 -50px;transform:rotate(calc(var(--i) * 60deg)) translateX(225px) rotate(calc(var(--i) * -60deg));perspective:600px}
+    /* Counter-rotate so cards stay upright */
+    .orbit-node{animation:counter-rotate 40s linear infinite}
+    @keyframes counter-rotate{from{transform:rotate(calc(var(--i) * 60deg)) translateX(225px) rotate(calc(var(--i) * -60deg + 0deg))}to{transform:rotate(calc(var(--i) * 60deg)) translateX(225px) rotate(calc(var(--i) * -60deg - 360deg))}}
+    .orbit-track:hover .orbit-node{animation-play-state:paused}
+
+    /* ── Flip card inside orbit ── */
+    .orbit-flip{width:100px;height:100px;position:relative;transform-style:preserve-3d;transition:transform .6s}
+    .orbit-node:hover .orbit-flip{transform:rotateY(180deg)}
+    .orbit-flip-front,.orbit-flip-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+    .orbit-flip-front{background:#fff;box-shadow:0 4px 24px rgba(0,0,0,0.12)}
+    .orbit-flip-front:hover{box-shadow:0 8px 40px rgba(193,255,114,0.3)}
+    .orbit-label{font-size:11px;font-weight:700;color:#333;letter-spacing:0.03em}
+    .orbit-flip-back{background:linear-gradient(135deg,#C1FF72 0%,#a8e660 100%);color:#1a1a1a;transform:rotateY(180deg);padding:12px;text-align:center}
+    .orbit-flip-back strong{font-size:13px;display:block;margin-bottom:4px}
+    .orbit-flip-back p{font-size:11px;margin:0;line-height:1.4;color:rgba(0,0,0,0.7)}
+    .orbit-node:hover{z-index:10;transform:rotate(calc(var(--i) * 60deg)) translateX(225px) rotate(calc(var(--i) * -60deg)) scale(1.15) !important}
+
+    /* ── Mobile flip cards ── */
+    .mob-flip-wrap{perspective:600px;height:140px;cursor:pointer}
+    .mob-flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+    .mob-flip-wrap:hover .mob-flip-inner,.mob-flip-wrap:active .mob-flip-inner{transform:rotateY(180deg)}
+    .mob-flip-front,.mob-flip-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+    .mob-flip-front{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1)}
+    .mob-flip-front strong{color:#fff;font-size:14px}
+    .mob-flip-back{background:#C1FF72;color:#1a1a1a;transform:rotateY(180deg);padding:16px;text-align:center}
+    .mob-flip-back strong{font-size:15px;display:block;margin-bottom:4px}
+    .mob-flip-back p{font-size:12px;margin:0;color:rgba(0,0,0,0.7)}
+    </style>
 
     <!-- ═══ SECTION 8: WERKWIJZE (5 stappen) ═══ -->
     <section class="py-5 py-lg-7 py-xl-8">
