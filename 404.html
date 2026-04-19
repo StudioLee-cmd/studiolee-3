@@ -269,11 +269,15 @@
           // Start VAPI call
           if (window.vapiSDK) {
             try {
-              window.vapiSDK.run({
+              var vapi = window.vapiSDK.run({
                 apiKey: '5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',
                 assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
                 config: { position: 'bottom-right' }
               });
+              // Force-start the call immediately — no extra click needed
+              if (vapi && typeof vapi.start === 'function') {
+                vapi.start();
+              }
             } catch(err) { console.error('VAPI error:', err); }
           }
           return;
