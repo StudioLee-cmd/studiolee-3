@@ -1,62 +1,281 @@
 <!doctype html>
 <html lang="nl">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pagina niet gevonden — STUDIOLEE</title>
-  <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon.svg" />
-  <link rel="stylesheet" href="/assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
+  <title>404 — Pagina niet gevonden | STUDIOLEE</title>
+  <meta name="robots" content="noindex">
+  <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon-sl.png" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pagina niet gevonden — STUDIOLEE">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="https://www.studiolee.nl/assets/images/og/studiolee-og.jpg">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logos/apple-touch-icon.png">
-  <script defer src="/_vercel/insights/script.js"></script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
-</head>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+    body { background:#1F2A2E; margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px 20px; font-family:'Segoe UI',system-ui,sans-serif; overflow-x:hidden; }
+
+    .err-title { font-family:'Press Start 2P',monospace; font-size:14px; color:#C1FF72; letter-spacing:2px; margin-bottom:8px; text-transform:uppercase; }
+    .err-sub { color:rgba(255,255,255,0.5); font-size:16px; margin-bottom:40px; text-align:center; }
+    .err-sub a { color:#C1FF72; text-decoration:none; }
+    .err-sub a:hover { text-decoration:underline; }
+
+    /* Phone container */
+    .phone-container { position:relative; width:480px; height:520px; }
+    .phone-body { position:absolute; inset:0; z-index:1; cursor:pointer; }
+    .phone-body img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); transition:filter .3s; }
+    .phone-body:hover img { filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)) brightness(1.1); }
+    .phone-body.ringing img { animation:phone-shake .1s linear infinite; }
+    @keyframes phone-shake {
+      0%,100%{transform:rotate(0deg)} 25%{transform:rotate(-2deg)} 75%{transform:rotate(2deg)}
+    }
+
+    .rotary { position:absolute; width:280px; height:280px; top:50%; left:49%; transform:translate(-50%,-50%); z-index:2; user-select:none; }
+    .rotary-disc { position:absolute; inset:0; z-index:2; cursor:grab; }
+    .rotary-disc.grabbing { cursor:grabbing; }
+    .rotary-disc img { width:100%; height:100%; object-fit:contain; }
+
+    .rotary-hub { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; z-index:4; pointer-events:none;
+      background:radial-gradient(circle, #2a3a3e 0%, #1F2A2E 70%);
+      border-radius:50%; border:3px solid #8B7355;
+      box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .rotary-hub img { width:44px; height:44px; object-fit:contain; }
+
+    /* Hover zones */
+    a.rz { position:absolute; width:50px; height:50px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
+      transition:box-shadow .2s, background .2s; text-decoration:none; display:block; }
+    a.rz:hover { box-shadow:0 0 25px rgba(193,255,114,0.5); background:rgba(193,255,114,0.12); }
+
+    /* Typewriter info panel — retro arcade style */
+    .game-info { text-align:center; margin-top:24px; min-height:80px; position:relative; z-index:10; }
+    .game-info-box { display:inline-block; background:rgba(0,0,0,0.6); border:2px solid rgba(193,255,114,0.3); border-radius:12px; padding:16px 28px; min-width:320px; backdrop-filter:blur(8px); }
+    .game-title { font-family:'Press Start 2P',monospace; font-size:12px; color:#C1FF72; margin-bottom:8px; min-height:18px; }
+    .game-desc { color:rgba(255,255,255,0.6); font-size:14px; min-height:20px; }
+    .game-title .cursor { display:inline-block; width:8px; height:14px; background:#C1FF72; animation:blink .6s step-end infinite; vertical-align:middle; margin-left:2px; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* Click prompt */
+    .click-hint { color:rgba(255,255,255,0.25); font-size:13px; margin-top:16px; font-family:'Press Start 2P',monospace; font-size:9px; animation:pulse-hint 2s ease-in-out infinite; }
+    @keyframes pulse-hint { 0%,100%{opacity:0.25} 50%{opacity:0.6} }
+
+    /* Call animation overlay */
+    .call-overlay { display:none; position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.85); align-items:center; justify-content:center; flex-direction:column; }
+    .call-overlay.active { display:flex; }
+    .call-text { font-family:'Press Start 2P',monospace; font-size:16px; color:#C1FF72; animation:call-blink 1s step-end infinite; }
+    @keyframes call-blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .call-cancel { margin-top:24px; font-family:'Press Start 2P',monospace; font-size:10px; color:rgba(255,255,255,0.4); cursor:pointer; border:1px solid rgba(255,255,255,0.2); padding:8px 16px; border-radius:8px; background:none; }
+    .call-cancel:hover { color:#fff; border-color:rgba(255,255,255,0.5); }
+
+    /* Bottom nav */
+    .bottom-nav { margin-top:40px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
+    .bottom-nav a { color:rgba(255,255,255,0.4); font-size:13px; text-decoration:none; transition:color .2s; }
+    .bottom-nav a:hover { color:#C1FF72; }
+
+    @media(max-width:520px) {
+      .phone-container { width:340px; height:380px; }
+      .rotary { width:200px; height:200px; }
+      .err-title { font-size:11px; }
+    }
+  </style>
+</head>
 <body>
 
-  <!--  Page Wrapper -->
-  <div class="page-wrapper overflow-hidden">
+  <p class="err-title">// 404 — PAGINA NIET GEVONDEN</p>
+  <p class="err-sub">De pagina die je zoekt bestaat niet. Gebruik het wiel om terug te navigeren,<br>of ga naar de <a href="/">homepage</a>.</p>
 
-    <!--  404 Section -->
-    <section
-      class="bg-light-gray border-top border-primary border-4 d-flex align-items-center justify-content-center min-vh-100">
-      <div class="container py-3">
-        <div class="d-flex flex-column justify-content-center gap-8">
-          <img src="/assets/images/backgrounds/404.svg" alt="404" width="550" class="img-fluid mx-auto"
-            data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
-          <h2 class="mb-0 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Oeps! Pagina
-            niet gevonden</h2>
-          <p class="mb-0 text-center fs-5" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">De pagina
-            die je zoekt bestaat niet of is verplaatst.</p>
-          <a href="/" class="btn mx-auto" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-            <span class="btn-text">Terug naar Home</span>
-            <iconify-icon icon="lucide:arrow-up-right"
-              class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-          </a>
-        </div>
+  <div class="phone-container">
+    <div class="phone-body" id="phoneBody" title="Klik om te bellen">
+      <img src="/assets/images/ai-marketing-bureau/phone-body.png" alt="1930s rotary telephone">
+    </div>
+    <div class="rotary" id="rotary">
+      <div class="rotary-disc" id="disc">
+        <img src="/assets/images/ai-marketing-bureau/disc-clean.png" alt="AI tools dial" draggable="false">
       </div>
-    </section>
-
+      <div class="rotary-hub">
+        <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE">
+      </div>
+      <a class="rz" id="rz0" href="/seo" data-tool="seo"></a>
+      <a class="rz" id="rz1" href="/chatbot" data-tool="chatbot"></a>
+      <a class="rz" id="rz2" href="/automations" data-tool="automations"></a>
+      <a class="rz" id="rz3" href="/reviews" data-tool="reviews"></a>
+      <a class="rz" id="rz4" href="/voice-ai" data-tool="voiceai"></a>
+      <a class="rz" id="rz5" href="/social-media" data-tool="social"></a>
+    </div>
   </div>
 
+  <div class="game-info" id="info">
+    <div class="game-info-box">
+      <div class="game-title" id="gameTitle">KIES EEN DIENST<span class="cursor"></span></div>
+      <div class="game-desc" id="gameDesc">Draai het wiel en klik op een karakter</div>
+    </div>
+  </div>
 
+  <p class="click-hint">[ KLIK OP DE TELEFOON OM TE BELLEN ]</p>
 
+  <!-- Call animation overlay -->
+  <div class="call-overlay" id="callOverlay">
+    <div class="call-text" id="callText">VERBINDEN...</div>
+    <button class="call-cancel" onclick="document.getElementById('callOverlay').classList.remove('active');document.getElementById('phoneBody').classList.remove('ringing')">OPHANGEN</button>
+  </div>
 
-  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
-  <script src="/assets/libs/aos-master/dist/aos.js"></script>
-  <script src="/assets/js/custom.js"></script>
-  <!-- solar icons -->
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <div class="bottom-nav">
+    <a href="/">Home</a>
+    <a href="/blog">Blog</a>
+    <a href="/tarieven">Tarieven</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/free-trial">Gratis Scan</a>
+    <a href="/ai-marketing-bureau">AI Marketing Bureau</a>
+  </div>
 
-    <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69c4ef18d9121c5778d93245"></script>
+  <script>
+  (function(){
+    var tools = {
+      seo:         {t:'SEO & VINDBAARHEID',    d:'Gevonden worden op Google en in ChatGPT'},
+      chatbot:     {t:'AI CHATBOT',            d:'24/7 leadopvang op je website'},
+      automations: {t:'AUTOMATISERING',        d:'N8N workflows en AI-systemen'},
+      reviews:     {t:'REVIEW MANAGEMENT',     d:'5-sterren reviews op autopilot'},
+      voiceai:     {t:'VOICE AI',              d:'AI telefonist die elk gesprek opneemt'},
+      social:      {t:'SOCIAL MEDIA',          d:'Content, beheer en scheduling'}
+    };
+
+    var disc = document.getElementById('disc');
+    var wrap = document.getElementById('rotary');
+    var angle = 0, dragging = false, startA = 0, startM = 0, vel = 0, lastA = 0, raf;
+    var hasDragged = false;
+    var size = 280, center = size/2, radius = 93;
+
+    var holes = [
+      {a:-90, tool:'seo'},
+      {a:-30, tool:'chatbot'},
+      {a:30,  tool:'automations'},
+      {a:90,  tool:'reviews'},
+      {a:150, tool:'voiceai'},
+      {a:210, tool:'social'}
+    ];
+
+    function updateZones() {
+      holes.forEach(function(h, i) {
+        var hz = document.getElementById('rz'+i);
+        var rad = (h.a + angle) * Math.PI / 180;
+        hz.style.left = (center + radius * Math.cos(rad)) + 'px';
+        hz.style.top = (center + radius * Math.sin(rad)) + 'px';
+      });
+    }
+
+    function mouseAngle(e) {
+      var r = wrap.getBoundingClientRect();
+      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - center;
+      var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - center;
+      return Math.atan2(y, x) * 180 / Math.PI;
+    }
+
+    function down(e) {
+      if (e.target.closest('.rz')) return;
+      dragging=true; hasDragged=false;
+      disc.classList.add('grabbing');
+      startM=mouseAngle(e); startA=angle; vel=0;
+      if(raf)cancelAnimationFrame(raf); stopAuto();
+      e.preventDefault();
+    }
+    function move(e) {
+      if(!dragging)return;
+      var m=mouseAngle(e);
+      if(Math.abs(m-startM)>2) hasDragged=true;
+      angle=startA+(m-startM);
+      vel=angle-lastA; lastA=angle;
+      disc.style.transform='rotate('+angle+'deg)';
+      updateZones(); e.preventDefault();
+    }
+    function up() {
+      if(!dragging)return; dragging=false;
+      disc.classList.remove('grabbing');
+      function coast(){if(Math.abs(vel)<0.05){startAuto();return;} vel*=0.97; angle+=vel; disc.style.transform='rotate('+angle+'deg)'; updateZones(); raf=requestAnimationFrame(coast);}
+      coast();
+    }
+
+    document.querySelectorAll('.rz').forEach(function(z){
+      z.addEventListener('click', function(e){ if(hasDragged){e.preventDefault();hasDragged=false;} });
+    });
+
+    disc.addEventListener('mousedown',down);
+    disc.addEventListener('touchstart',down,{passive:false});
+    window.addEventListener('mousemove',move);
+    window.addEventListener('touchmove',move,{passive:false});
+    window.addEventListener('mouseup',up);
+    window.addEventListener('touchend',up);
+
+    var autoId;
+    function startAuto(){if(autoId)return; autoId=setInterval(function(){if(dragging)return; angle+=0.15; disc.style.transform='rotate('+angle+'deg)'; updateZones();},16);}
+    function stopAuto(){clearInterval(autoId);autoId=null;}
+
+    // Typewriter effect
+    var typeTimer = null;
+    function typewrite(el, text, speed, callback) {
+      if (typeTimer) clearInterval(typeTimer);
+      el.innerHTML = '';
+      var i = 0;
+      typeTimer = setInterval(function(){
+        if (i < text.length) {
+          el.innerHTML = text.substring(0, i+1) + '<span class="cursor"></span>';
+          i++;
+        } else {
+          clearInterval(typeTimer);
+          typeTimer = null;
+          if (callback) callback();
+        }
+      }, speed);
+    }
+
+    // Hover with typewriter
+    document.querySelectorAll('.rz').forEach(function(z){
+      z.addEventListener('mouseenter',function(){
+        stopAuto();
+        var d = tools[z.dataset.tool];
+        if(d){
+          typewrite(document.getElementById('gameTitle'), d.t, 40);
+          document.getElementById('gameDesc').textContent = d.d;
+        }
+      });
+      z.addEventListener('mouseleave',function(){
+        typewrite(document.getElementById('gameTitle'), 'KIES EEN DIENST', 30);
+        document.getElementById('gameDesc').textContent = 'Draai het wiel en klik op een karakter';
+        startAuto();
+      });
+    });
+
+    // Click phone body to "call"
+    document.getElementById('phoneBody').addEventListener('click', function(e){
+      // Don't trigger if clicking on the dial area
+      var rect = wrap.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var dist = Math.sqrt(Math.pow(x - size/2, 2) + Math.pow(y - size/2, 2));
+      if (dist < size/2 + 20) return; // clicked on dial area
+
+      // Start ringing animation
+      this.classList.add('ringing');
+      document.getElementById('callOverlay').classList.add('active');
+
+      // Typewriter the call text
+      var callEl = document.getElementById('callText');
+      var messages = ['BELLEN...', 'TUUT... TUUT...', 'VERBINDEN MET STUDIOLEE...', 'CONNECTED!'];
+      var mi = 0;
+      function nextMsg() {
+        if (mi < messages.length) {
+          callEl.textContent = messages[mi];
+          mi++;
+          setTimeout(nextMsg, 1500);
+        } else {
+          // Redirect to voice-ai after animation
+          setTimeout(function(){ window.location.href = '/voice-ai'; }, 1000);
+        }
+      }
+      nextMsg();
+    });
+
+    updateZones();
+    startAuto();
+  })();
+  </script>
 </body>
-
 </html>
