@@ -45,6 +45,7 @@
 
     a.rz { position:absolute; width:48px; height:48px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
       transition:box-shadow .2s, background .2s; text-decoration:none; display:block; }
+    a.rz { pointer-events:auto; }
     a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.15); }
 
     /* Game info — overlaid on the phone */
@@ -105,7 +106,7 @@
       <div class="sticker" style="left:24%;top:76%"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"></div>
     </div>
     <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
-    <a href="/ai-marketing-bureau" class="l-hub" style="pointer-events:auto;text-decoration:none" title="AI Marketing Bureau"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
+    <a href="/ai-marketing-bureau" class="l-hub" onclick="event.stopPropagation()" style="pointer-events:auto;text-decoration:none" title="AI Marketing Bureau"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
 
         <a class="rz" href="/seo" data-t="seo" style="left:34%;top:50%"></a>
     <a class="rz" href="/chatbot" data-t="chatbot" style="left:38%;top:40%"></a>
@@ -216,7 +217,7 @@
     var a=0,drag=false,sA=0,sM=0,v=0,lA=0,raf;
 
     function ma(e){var r=wrap.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left-480*.49;var y=(e.touches?e.touches[0].clientY:e.clientY)-r.top-520*.50;return Math.atan2(y,x)*180/Math.PI;}
-    function dn(e){if(e.target.closest('.rz'))return;drag=true;plate.classList.add('grabbing');sM=ma(e);sA=a;v=0;if(raf)cancelAnimationFrame(raf);stopA();e.preventDefault();}
+    function dn(e){if(e.target.closest('.rz'))return;e.stopPropagation();drag=true;plate.classList.add('grabbing');sM=ma(e);sA=a;v=0;if(raf)cancelAnimationFrame(raf);stopA();e.preventDefault();}
     function mv(e){if(!drag)return;var m=ma(e);a=sA+(m-sM);v=a-lA;lA=a;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';e.preventDefault();}
     function up(){if(!drag)return;drag=false;plate.classList.remove('grabbing');function c(){if(Math.abs(v)<.05){startA();return;}v*=.97;a+=v;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';raf=requestAnimationFrame(c);}c();}
 
@@ -229,6 +230,7 @@
 
     // ── Hover with human typewriter ──
     document.querySelectorAll('.rz').forEach(function(z){
+      z.addEventListener('click', function(e){ e.stopPropagation(); });
       z.addEventListener('mouseenter',function(){
         stopA();
         var t=d[z.dataset.t];
@@ -248,11 +250,6 @@
     // ── Click phone to call — video plays INLINE replacing the image ──
     var calling = false;
     document.getElementById('phoneBody').addEventListener('click', function(e){
-      var rect = document.getElementById('plate').getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      var dist = Math.sqrt(Math.pow(x - rect.width/2, 2) + Math.pow(y - rect.height/2, 2));
-      if (dist < rect.width/2 + 10) return;
       if (calling) return;
       calling = true;
 
