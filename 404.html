@@ -32,10 +32,6 @@
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
 
-    /* CALIBRATION: red crosshair showing where we think dial center is */
-    .calibration { position:absolute; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:99; pointer-events:none; }
-    .calibration::before { content:''; position:absolute; width:200px; height:4px; background:red; left:-100px; top:-2px; }
-    .calibration::after { content:''; position:absolute; width:4px; height:200px; background:red; left:-2px; top:-100px; }
     .l-hub { position:absolute; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:4;
       width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
@@ -115,7 +111,6 @@
     <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
     <a href="/ai-marketing-bureau" class="l-hub" onclick="event.stopPropagation()" title="AI Marketing Bureau"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
 
-    <div class="calibration"></div>
     <!-- Invisible hotspots for 7 dial holes -->
     <a class="rz" href="/seo" data-t="seo" style="left:63%;top:50%"></a>
     <a class="rz" href="/chatbot" data-t="chatbot" style="left:64.5%;top:43%"></a>
@@ -267,6 +262,23 @@
         document.getElementById('gD').textContent = '';
         startA();
       });
+    });
+
+    // Hub hover — same typewriter overlay
+    var hub = document.querySelector('.l-hub');
+    hub.addEventListener('mouseenter', function() {
+      stopA();
+      document.querySelector('.game-overlay').classList.add('visible');
+      humanType(document.getElementById('gT'), 'AI MARKETING BUREAU');
+      document.getElementById('gD').textContent = 'Full-service AI bureau voor het MKB';
+      document.getElementById('btnCall').style.display = 'none';
+    });
+    hub.addEventListener('mouseleave', function() {
+      if (window._typeTimer) { clearTimeout(window._typeTimer); window._typeTimer = null; }
+      document.querySelector('.game-overlay').classList.remove('visible');
+      document.getElementById('gT').innerHTML = '';
+      document.getElementById('gD').textContent = '';
+      startA();
     });
 
     // Click phone = ring
