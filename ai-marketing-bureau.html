@@ -455,10 +455,12 @@
     </section>
 
     <style>
-    .phone-container { position:relative; width:100%; max-width:900px; margin:0 auto; aspect-ratio:1752/1024; background:url('/assets/images/ai-marketing-bureau/phone-body-wide.jpg') 0 0 / 100% 100% no-repeat; }
-    .phone-click-zone { position:absolute; top:5%; left:55%; width:30%; height:90%; z-index:1; cursor:pointer; }
-    .phone-click-zone.ringing { animation:phone-shake .08s linear infinite; }
-    @keyframes phone-shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
+    .phone-container {
+      position:relative;
+      width:100%; max-width:900px; margin:0 auto;
+      aspect-ratio:1752/1024;
+      background:url('/assets/images/ai-marketing-bureau/phone-body-wide.jpg') 0 0 / 100% 100% no-repeat;
+    }
     .l-numplate { position:absolute; width:15vw; height:15vw; max-width:260px; max-height:260px; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
     .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
     .sticker { position:absolute; width:48px; height:48px; transform:translate(-50%,-50%); pointer-events:none; }
@@ -470,7 +472,7 @@
       width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
       box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
-      display:flex; align-items:center; justify-content:center; transition:transform .2s,box-shadow .2s; cursor:pointer; text-decoration:none; }
+      display:flex; align-items:center; justify-content:center; transition:transform .2s,box-shadow .2s; cursor:pointer; }
     .l-hub:hover { transform:translate(-50%,-50%) scale(1.1); box-shadow:0 0 30px rgba(193,255,114,0.4),0 0 0 2px rgba(139,115,85,0.3),inset 0 2px 8px rgba(0,0,0,0.4),0 4px 20px rgba(0,0,0,0.4); }
     .l-hub img { width:36px; height:36px; object-fit:contain; }
     a.rz { position:absolute; width:48px; height:48px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
@@ -482,14 +484,21 @@
     .game-box::before { content:''; position:absolute; left:-12px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:12px solid var(--lime); }
     .game-box::after { content:''; position:absolute; left:-8px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:8px solid transparent; border-bottom:8px solid transparent; border-right:10px solid #0a0a0f; }
     .game-title { font-family:'Enligas','Outfit',sans-serif; font-size:18px; font-weight:700; color:var(--lime); margin-bottom:4px; min-height:14px; white-space:nowrap; }
-    .game-title .cur { display:inline-block; width:12px; height:3px; background:var(--lime); animation:phone-blink .5s step-end infinite; vertical-align:middle; margin-left:1px; }
     .game-desc { color:rgba(255,255,255,0.7); font-size:15px; min-height:16px; }
-    @keyframes phone-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .game-title .cur { display:inline-block; width:12px; height:3px; background:var(--lime); animation:blink .5s step-end infinite; vertical-align:middle; margin-left:1px; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
     .call-btn-inline { font-family:'Enligas','Outfit',sans-serif; font-size:14px; font-weight:700; color:var(--dark); background:var(--lime); border:none; padding:8px 20px; border-radius:99px; cursor:pointer; margin-top:10px; pointer-events:auto; transition:transform .2s; }
     .call-btn-inline:hover { transform:scale(1.05); }
     .call-btn-inline.hangup { background:rgba(220,50,50,0.9); color:#fff; }
+    .phone-click-zone { position:absolute; top:5%; left:55%; width:30%; height:90%; z-index:1; cursor:pointer; }
+    .phone-click-zone.ringing { animation:shake .08s linear infinite; }
+    @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
     #vapi-support-btn, .vapi-btn, [id^="vapi"] { display:none !important; }
-    @media(max-width:768px) { .l-numplate{width:28vw;height:28vw;} .l-finger{width:32vw;height:32vw;} .game-overlay{left:50%;top:5%;} }
+    @media(max-width:768px) {
+      .l-numplate { width:28vw; height:28vw; }
+      .l-finger { width:32vw; height:32vw; }
+      .game-overlay { left:50%; top:5%; transform-origin:center; }
+    }
     </style>
 
     <script>
