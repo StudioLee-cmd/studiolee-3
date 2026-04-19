@@ -8,64 +8,72 @@
   <style>
     :root { --lime: #C1FF72; --dark: #1F2A2E; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--dark); font-family:'Segoe UI',system-ui,sans-serif; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; }
+    body { background:var(--dark); font-family:'Segoe UI',system-ui,sans-serif; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:40px 20px; }
     h2 { font-size:28px; margin-bottom:6px; }
     .sub { color:rgba(255,255,255,0.4); margin-bottom:40px; }
 
-    .rotary { position:relative; width:420px; height:420px; user-select:none; }
+    /* Phone container — body image as background */
+    .phone-container { position:relative; width:500px; height:500px; }
+    .phone-body { position:absolute; inset:-40px; z-index:1; }
+    .phone-body img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); }
 
-    .rotary-frame { position:absolute; inset:-15px; z-index:3; pointer-events:none; }
-    .rotary-frame img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 8px 30px rgba(0,0,0,0.5)); }
+    /* Rotary area sits on top of the phone body, centered on the dial hole */
+    .rotary { position:absolute; width:320px; height:320px; top:50%; left:50%; transform:translate(-50%,-46%); z-index:2; user-select:none; }
+
+    .rotary-frame { position:absolute; inset:-12px; z-index:3; pointer-events:none; }
+    .rotary-frame img { width:100%; height:100%; object-fit:contain; }
 
     .rotary-disc { position:absolute; inset:0; z-index:2; cursor:grab; }
     .rotary-disc.grabbing { cursor:grabbing; }
-    .rotary-disc img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 4px 20px rgba(0,0,0,0.3)); }
+    .rotary-disc img { width:100%; height:100%; object-fit:contain; }
 
-    /* Center hub — dark green like header/footer with brass ring */
-    .rotary-hub { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:100px; height:100px; z-index:4; pointer-events:none;
+    .rotary-hub { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:78px; height:78px; z-index:4; pointer-events:none;
       background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%;
       border:3px solid #8B7355;
       box-shadow: 0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
       display:flex; align-items:center; justify-content:center;
     }
-    .rotary-hub img { width:60px; height:60px; object-fit:contain; }
+    .rotary-hub img { width:48px; height:48px; object-fit:contain; }
 
-    .rotary-info { text-align:center; margin-top:40px; min-height:70px; }
-    .rotary-info h3 { color:var(--lime); font-size:22px; margin-bottom:6px; transition:all .2s; }
-    .rotary-info p { color:rgba(255,255,255,0.5); font-size:15px; max-width:380px; margin:0 auto; transition:all .2s; }
+    .rotary-info { text-align:center; margin-top:40px; min-height:70px; position:relative; z-index:10; }
+    .rotary-info h3 { color:var(--lime); font-size:22px; margin-bottom:6px; }
+    .rotary-info p { color:rgba(255,255,255,0.5); font-size:15px; max-width:380px; margin:0 auto; }
 
-    /* Clickable hover zones */
-    a.rz { position:absolute; width:65px; height:65px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
-      transition:box-shadow .2s, background .2s;
-      text-decoration:none; display:block;
-    }
-    a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.12); }
-    a.rz:active { background:rgba(193,255,114,0.25); }
+    a.rz { position:absolute; width:55px; height:55px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
+      transition:box-shadow .2s, background .2s; text-decoration:none; display:block; }
+    a.rz:hover { box-shadow:0 0 25px rgba(193,255,114,0.5); background:rgba(193,255,114,0.12); }
   </style>
 </head>
 <body>
   <h2>De AI-tools achter jouw groei</h2>
   <p class="sub">Draai het wiel. Hover voor details. Klik om meer te lezen.</p>
 
-  <div class="rotary" id="rotary">
-    <div class="rotary-frame">
-      <img src="/assets/images/ai-marketing-bureau/frame-clean.png" alt="">
-    </div>
-    <div class="rotary-disc" id="disc">
-      <img src="/assets/images/ai-marketing-bureau/disc-clean.png" alt="AI tools dial" draggable="false">
-    </div>
-    <div class="rotary-hub">
-      <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE">
+  <div class="phone-container">
+    <!-- Phone body background -->
+    <div class="phone-body">
+      <img src="/assets/images/ai-marketing-bureau/phone-body.png" alt="1930s rotary telephone">
     </div>
 
-    <!-- Clickable zones — each links to the actual service page -->
-    <a class="rz" id="rz0" href="/seo" data-tool="chatgpt"></a>
-    <a class="rz" id="rz1" href="/automations" data-tool="claude"></a>
-    <a class="rz" id="rz2" href="/automations" data-tool="n8n"></a>
-    <a class="rz" id="rz3" href="/seo" data-tool="ahrefs"></a>
-    <a class="rz" id="rz4" href="/voice-ai" data-tool="vapi"></a>
-    <a class="rz" id="rz5" href="/dashboard" data-tool="highlevel"></a>
+    <!-- Spinning dial on top -->
+    <div class="rotary" id="rotary">
+      <div class="rotary-frame">
+        <img src="/assets/images/ai-marketing-bureau/frame-clean.png" alt="">
+      </div>
+      <div class="rotary-disc" id="disc">
+        <img src="/assets/images/ai-marketing-bureau/disc-clean.png" alt="AI tools dial" draggable="false">
+      </div>
+      <div class="rotary-hub">
+        <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE">
+      </div>
+
+      <a class="rz" id="rz0" href="/seo" data-tool="chatgpt"></a>
+      <a class="rz" id="rz1" href="/automations" data-tool="claude"></a>
+      <a class="rz" id="rz2" href="/automations" data-tool="n8n"></a>
+      <a class="rz" id="rz3" href="/seo" data-tool="ahrefs"></a>
+      <a class="rz" id="rz4" href="/voice-ai" data-tool="vapi"></a>
+      <a class="rz" id="rz5" href="/dashboard" data-tool="highlevel"></a>
+    </div>
   </div>
 
   <div class="rotary-info" id="info">
@@ -76,19 +84,19 @@
   <script>
   (function(){
     var tools = {
-      chatgpt: {t:'ChatGPT', d:'Strategie, contentcreatie en klantcommunicatie. Van SEO-artikelen tot campagne-ideeën op schaal.', url:'/seo'},
-      claude: {t:'Claude', d:'Code, automatisering en complete AI-systemen bouwen. Workflows en integraties vanaf scratch.', url:'/automations'},
-      n8n: {t:'N8N Workflows', d:'Custom automatiseringen voor marketing, administratie en klantopvolging. Draait 24/7.', url:'/automations'},
-      ahrefs: {t:'Ahrefs', d:'Keyword research, backlink-analyse, content gaps en technische SEO-audits op professioneel niveau.', url:'/seo'},
-      vapi: {t:'Voice AI', d:'AI telefonist die 24/7 opneemt, afspraken plant en WhatsApp-samenvattingen stuurt.', url:'/voice-ai'},
-      highlevel: {t:'HighLevel CRM', d:'Alles-in-één: klantbeheer, e-mail, social planner, facturatie en rapportage.', url:'/dashboard'}
+      chatgpt: {t:'ChatGPT', d:'Strategie, contentcreatie en klantcommunicatie. Van SEO-artikelen tot campagne-ideeën op schaal.'},
+      claude: {t:'Claude', d:'Code, automatisering en complete AI-systemen bouwen. Workflows en integraties vanaf scratch.'},
+      n8n: {t:'N8N Workflows', d:'Custom automatiseringen voor marketing, administratie en klantopvolging. Draait 24/7.'},
+      ahrefs: {t:'Ahrefs', d:'Keyword research, backlink-analyse, content gaps en technische SEO-audits op professioneel niveau.'},
+      vapi: {t:'Voice AI', d:'AI telefonist die 24/7 opneemt, afspraken plant en WhatsApp-samenvattingen stuurt.'},
+      highlevel: {t:'HighLevel CRM', d:'Alles-in-één: klantbeheer, e-mail, social planner, facturatie en rapportage.'}
     };
 
     var disc = document.getElementById('disc');
     var wrap = document.getElementById('rotary');
     var angle = 0, dragging = false, startA = 0, startM = 0, vel = 0, lastA = 0, raf;
     var hasDragged = false;
-    var size = 420, center = size/2, radius = 150;
+    var size = 320, center = size/2, radius = 113;
 
     var holes = [
       {a:-90, tool:'chatgpt'},
@@ -116,7 +124,6 @@
     }
 
     function down(e) {
-      // Only start drag on the disc, not on hover zones
       if (e.target.closest('.rz')) return;
       dragging=true; hasDragged=false;
       disc.classList.add('grabbing');
@@ -127,32 +134,21 @@
     function move(e) {
       if(!dragging)return;
       var m=mouseAngle(e);
-      var delta = m - startM;
-      if (Math.abs(delta) > 2) hasDragged = true;
-      angle=startA+delta;
+      if(Math.abs(m-startM)>2) hasDragged=true;
+      angle=startA+(m-startM);
       vel=angle-lastA; lastA=angle;
       disc.style.transform='rotate('+angle+'deg)';
-      updateZones();
-      e.preventDefault();
+      updateZones(); e.preventDefault();
     }
     function up() {
       if(!dragging)return; dragging=false;
       disc.classList.remove('grabbing');
-      function coast(){
-        if(Math.abs(vel)<0.05){startAuto();return;}
-        vel*=0.97; angle+=vel;
-        disc.style.transform='rotate('+angle+'deg)';
-        updateZones();
-        raf=requestAnimationFrame(coast);
-      }
+      function coast(){if(Math.abs(vel)<0.05){startAuto();return;} vel*=0.97; angle+=vel; disc.style.transform='rotate('+angle+'deg)'; updateZones(); raf=requestAnimationFrame(coast);}
       coast();
     }
 
-    // Prevent click-through on zones when user was dragging
     document.querySelectorAll('.rz').forEach(function(z){
-      z.addEventListener('click', function(e){
-        if (hasDragged) { e.preventDefault(); hasDragged = false; }
-      });
+      z.addEventListener('click', function(e){ if(hasDragged){e.preventDefault();hasDragged=false;} });
     });
 
     disc.addEventListener('mousedown',down);
@@ -167,19 +163,8 @@
     function stopAuto(){clearInterval(autoId);autoId=null;}
 
     document.querySelectorAll('.rz').forEach(function(z){
-      z.addEventListener('mouseenter',function(){
-        stopAuto();
-        var d=tools[z.dataset.tool];
-        if(d){
-          document.querySelector('#info h3').textContent=d.t;
-          document.querySelector('#info p').textContent=d.d;
-        }
-      });
-      z.addEventListener('mouseleave',function(){
-        document.querySelector('#info h3').textContent='Draai het wiel';
-        document.querySelector('#info p').textContent='Hover over een karakter voor meer informatie';
-        startAuto();
-      });
+      z.addEventListener('mouseenter',function(){ stopAuto(); var d=tools[z.dataset.tool]; if(d){document.querySelector('#info h3').textContent=d.t; document.querySelector('#info p').textContent=d.d;} });
+      z.addEventListener('mouseleave',function(){ document.querySelector('#info h3').textContent='Draai het wiel'; document.querySelector('#info p').textContent='Hover over een karakter voor meer informatie'; startAuto(); });
     });
 
     updateZones();
