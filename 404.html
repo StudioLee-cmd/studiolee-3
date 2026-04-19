@@ -95,7 +95,7 @@
     <div class="phone-click-zone" id="phoneBody"></div>
 
     <!-- Video (hidden until phone clicked) -->
-    <video id="phoneVideo" loop muted playsinline style="display:none;position:absolute;top:0;left:42.5%;width:57.5%;height:100%;object-fit:contain;z-index:1"><source src="/assets/video/phone-ring.mp4" type="video/mp4"></video>
+    <video id="phoneVideo" loop muted playsinline style="display:none;position:absolute;top:0;left:42%;width:58%;height:100%;object-fit:contain;z-index:1"><source src="/assets/video/phone-ring.mp4" type="video/mp4"></video>
 
     <!-- Dial components -->
     <div class="l-numplate">
@@ -310,42 +310,46 @@
       });
     });
 
-    // VAPI — use Web SDK for programmatic calls
-    var _vapi = null;
+    // VAPI — widget SDK loaded on demand
     window.startVapiCall = function() {
       var btnCall = document.getElementById('btnCall');
       btnCall.textContent = 'Verbinden...';
 
       function doCall() {
         try {
-          if (!_vapi) {
-            _vapi = new window.Vapi('5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5');
-            _vapi.on('call-start', function() {
-              btnCall.textContent = 'Ophangen';
-              btnCall.className = 'call-btn-inline hangup';
-              btnCall.onclick = function(e) { e.stopPropagation(); endVapiCall(); };
-            });
-            _vapi.on('call-end', function() { endVapiCall(); });
-          }
-          _vapi.start('752f8e59-08dd-4f11-9bf1-71f86bd865a4');
+          var instance = window.vapiSDK.run({
+            apiKey: '5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',
+            assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
+            config: { position: 'bottom-right' }
+          });
+          btnCall.textContent = 'Ophangen';
+          btnCall.className = 'call-btn-inline hangup';
+          btnCall.onclick = function(e) { e.stopPropagation(); endVapiCall(); };
+          // Hide VAPI default UI elements
+          setTimeout(function() {
+            document.querySelectorAll('[id^="vapi"], .vapi-btn, #vapi-support-btn').forEach(function(el) { el.style.display = 'none'; });
+          }, 500);
         } catch(err) {
           console.error('VAPI error:', err);
           btnCall.textContent = 'Fout — probeer opnieuw';
         }
       }
 
-      if (window.Vapi) { doCall(); }
+      if (window.vapiSDK) { doCall(); }
       else {
         var s = document.createElement('script');
-        s.src = 'https://cdn.jsdelivr.net/npm/@vapi-ai/web/dist/vapi.umd.js';
-        s.onload = function() { doCall(); };
+        s.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
+        s.onload = function() {
+          var poll = setInterval(function() {
+            if (window.vapiSDK) { clearInterval(poll); doCall(); }
+          }, 200);
+        };
         s.onerror = function() { btnCall.textContent = 'Laden mislukt'; };
         document.body.appendChild(s);
       }
     };
 
     window.endVapiCall = function() {
-      if (_vapi && typeof _vapi.stop === 'function') _vapi.stop();
       calling = false;
       document.getElementById('phoneBody').classList.remove('ringing');
       document.querySelector('.game-overlay').classList.remove('visible');
