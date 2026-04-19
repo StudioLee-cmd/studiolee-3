@@ -46,10 +46,10 @@
     a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.15); }
 
     /* Game info — overlaid on the phone */
-    .game-overlay { position:absolute; bottom:-60px; left:50%; transform:translateX(-50%); z-index:10; pointer-events:none; }
-    .game-box { display:inline-block; background:rgba(0,0,0,0.7); border:2px solid rgba(193,255,114,0.3); border-radius:12px; padding:12px 20px; min-width:280px; backdrop-filter:blur(8px); }
-    .game-title { font-family:'Press Start 2P',monospace; font-size:10px; color:var(--lime); margin-bottom:4px; min-height:14px; white-space:nowrap; }
-    .game-desc { color:rgba(255,255,255,0.5); font-size:13px; min-height:16px; }
+    .game-overlay { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); z-index:10; pointer-events:none; }
+    .game-box { display:inline-block; background:rgba(0,0,0,0.85); border:2px solid rgba(193,255,114,0.4); border-radius:14px; padding:16px 28px; min-width:320px; backdrop-filter:blur(12px); box-shadow:0 8px 32px rgba(0,0,0,0.5); }
+    .game-title { font-family:'Press Start 2P',monospace; font-size:14px; color:var(--lime); margin-bottom:4px; min-height:14px; white-space:nowrap; }
+    .game-desc { color:rgba(255,255,255,0.7); font-size:15px; min-height:16px; }
     .game-title .cur { display:inline-block; width:7px; height:12px; background:var(--lime); animation:blink .5s step-end infinite; vertical-align:middle; margin-left:1px; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
@@ -137,65 +137,72 @@
     function humanType(el, text, onDone) {
       var current = '';
       var i = 0;
-      var mistakeChance = 0.12;
+      var mistakeChance = 0.18;
       var inMistake = false;
-      var mistakeCount = 0;
+      var toDelete = 0;
+
+      function render() {
+        el.innerHTML = current + '<span class="cur"></span>';
+      }
 
       function tick() {
+        // All done
         if (i >= text.length && !inMistake) {
-          el.innerHTML = current + '<span class="cur"></span>';
+          render();
           if (onDone) onDone();
           return;
         }
 
-        // Randomly make a mistake
-        if (!inMistake && i < text.length && Math.random() < mistakeChance && i > 2) {
-          // Type 1-3 wrong characters
-          inMistake = true;
-          mistakeCount = Math.floor(Math.random() * 2) + 1;
-          var wrongChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-          for (var m = 0; m < mistakeCount; m++) {
-            current += wrongChars[Math.floor(Math.random() * wrongChars.length)];
+        // Currently backspacing a mistake
+        if (inMistake) {
+          if (toDelete > 0) {
+            current = current.slice(0, -1);
+            toDelete--;
+            render();
+            setTimeout(tick, 50 + Math.random() * 30);
+          } else {
+            inMistake = false;
+            setTimeout(tick, 150 + Math.random() * 100);
           }
-          el.innerHTML = current + '<span class="cur"></span>';
-          // Pause, then backspace
-          setTimeout(function backspace() {
-            if (mistakeCount > 0) {
-              current = current.slice(0, -1);
-              mistakeCount--;
-              el.innerHTML = current + '<span class="cur"></span>';
-              setTimeout(backspace, 60 + Math.random() * 40);
-            } else {
-              inMistake = false;
-              setTimeout(tick, 80 + Math.random() * 60);
-            }
-          }, 300 + Math.random() * 200);
           return;
         }
 
-        // Normal typing — variable speed like a real person
+        // Maybe make a mistake (type 1-3 wrong chars, then backspace)
+        if (i < text.length && i > 1 && Math.random() < mistakeChance) {
+          inMistake = true;
+          var wrongLen = 1 + Math.floor(Math.random() * 2);
+          var nearby = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+          for (var m = 0; m < wrongLen; m++) {
+            current += nearby[Math.floor(Math.random() * nearby.length)];
+          }
+          toDelete = wrongLen;
+          render();
+          // Pause before realizing the mistake
+          setTimeout(tick, 250 + Math.random() * 250);
+          return;
+        }
+
+        // Normal character
         current += text[i];
         i++;
-        el.innerHTML = current + '<span class="cur"></span>';
+        render();
 
-        // Speed varies: fast for common letters, slower for spaces and punctuation
         var ch = text[i - 1];
         var delay;
-        if (ch === ' ') delay = 80 + Math.random() * 80;
-        else if (ch === '.' || ch === '!' || ch === '?') delay = 200 + Math.random() * 300;
-        else if (ch === ',') delay = 120 + Math.random() * 100;
-        else delay = 35 + Math.random() * 55; // fast bursts
+        if (ch === ' ') delay = 60 + Math.random() * 100;
+        else if ('.!?'.indexOf(ch) >= 0) delay = 200 + Math.random() * 400;
+        else delay = 30 + Math.random() * 50;
 
-        // Occasionally pause mid-word (thinking)
-        if (Math.random() < 0.05) delay += 200 + Math.random() * 300;
+        // Random thinking pause
+        if (Math.random() < 0.06) delay += 200 + Math.random() * 400;
 
         setTimeout(tick, delay);
       }
 
       current = '';
       i = 0;
-      el.innerHTML = '<span class="cur"></span>';
-      setTimeout(tick, 200);
+      render();
+      setTimeout(tick, 150);
     }
 
     // ── Dial spin ──
