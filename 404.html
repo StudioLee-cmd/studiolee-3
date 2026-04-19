@@ -25,13 +25,13 @@
     .l-body.ringing img { animation:shake .08s linear infinite; }
     @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
 
-    .l-numplate { position:absolute; width:220px; height:220px; top:48%; left:50.0%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
+    .l-numplate { position:absolute; width:220px; height:220px; top:48%; left:50%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
     .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; border:none; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
     
     .sticker { position:absolute; width:48px; height:48px; transform:translate(-50%,-50%); pointer-events:none; }
     .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
 
-    .l-finger { position:absolute; width:255px; height:255px; top:48%; left:50.0%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
+    .l-finger { position:absolute; width:255px; height:255px; top:48%; left:50%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
 
@@ -202,7 +202,7 @@
 
     function ma(e) {
       var r = wrap.getBoundingClientRect();
-      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - r.width*0.500;
+      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - r.width*0.50;
       var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - r.height*0.48;
       return Math.atan2(y, x) * 180 / Math.PI;
     }
