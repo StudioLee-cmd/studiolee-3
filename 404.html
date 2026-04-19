@@ -8,12 +8,12 @@
   <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon-sl.png" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
     :root { --lime: #C1FF72; --dark: #1F2A2E; }
     * { margin:0; padding:0; box-sizing:border-box; }
     body { background:var(--dark); font-family:'Segoe UI',system-ui,sans-serif; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:40px 20px; overflow-x:hidden; }
 
-    .err-title { font-family:'Press Start 2P',monospace; font-size:13px; color:var(--lime); letter-spacing:2px; margin-bottom:8px; }
+    .err-title { font-family:'Enligas','Outfit',sans-serif; font-size:28px; font-weight:800; color:var(--lime); letter-spacing:2px; margin-bottom:8px; }
     .err-sub { color:rgba(255,255,255,0.5); font-size:15px; margin-bottom:36px; text-align:center; line-height:1.6; }
     .err-sub a { color:var(--lime); text-decoration:none; }
     .err-sub a:hover { text-decoration:underline; }
@@ -53,12 +53,12 @@
     .game-box { display:inline-block; background:#0a0a0f; border:3px solid var(--lime); border-radius:4px; padding:16px 22px; min-width:260px; position:relative; box-shadow:0 0 20px rgba(193,255,114,0.15), 0 8px 32px rgba(0,0,0,0.6); }
     .game-box::before { content:''; position:absolute; left:-12px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:12px solid var(--lime); }
     .game-box::after { content:''; position:absolute; left:-8px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:8px solid transparent; border-bottom:8px solid transparent; border-right:10px solid #0a0a0f; }
-    .game-title { font-family:'Press Start 2P',monospace; font-size:13px; color:var(--lime); margin-bottom:4px; min-height:14px; white-space:nowrap; }
+    .game-title { font-family:'Enligas','Outfit',sans-serif; font-size:18px; font-weight:700; color:var(--lime); margin-bottom:4px; min-height:14px; white-space:nowrap; }
     .game-desc { color:rgba(255,255,255,0.7); font-size:15px; min-height:16px; }
-    .game-title .cur { display:inline-block; width:7px; height:12px; background:var(--lime); animation:blink .5s step-end infinite; vertical-align:middle; margin-left:1px; }
+    .game-title .cur { display:inline-block; width:12px; height:3px; background:var(--lime); vertical-align:baseline; animation:blink .5s step-end infinite; vertical-align:middle; margin-left:1px; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-    .click-hint { color:rgba(255,255,255,0.2); font-family:'Press Start 2P',monospace; font-size:8px; margin-top:70px; animation:pulse-hint 2.5s ease-in-out infinite; }
+    .click-hint { color:rgba(255,255,255,0.2); font-family:'Outfit',sans-serif; font-size:12px; letter-spacing:2px; margin-top:70px; animation:pulse-hint 2.5s ease-in-out infinite; }
     @keyframes pulse-hint { 0%,100%{opacity:0.2} 50%{opacity:0.5} }
 
     /* Call overlay */
