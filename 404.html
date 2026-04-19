@@ -126,21 +126,7 @@
   </div>
 
   <!-- VAPI SDK -->
-  <script>
-  // Load VAPI Web SDK for direct calling (no widget button)
-  window._vapiReady = false;
-  var vs = document.createElement('script');
-  vs.src = 'https://cdn.jsdelivr.net/gh/VapiAI/web@latest/packages/web/dist/index.js';
-  vs.onload = function() { window._vapiReady = true; };
-  vs.onerror = function() {
-    // Fallback to widget SDK
-    var vs2 = document.createElement('script');
-    vs2.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
-    vs2.onload = function() { window._vapiReady = true; };
-    document.body.appendChild(vs2);
-  };
-  document.body.appendChild(vs);
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@vapi-ai/web@latest/dist/vapi.js"></script>
 
   <script>
   (function(){
