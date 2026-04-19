@@ -34,11 +34,12 @@
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
 
-    .l-hub { position:absolute; top:50%; left:49%; transform:translate(-50%,-50%); z-index:4; pointer-events:none;
+    .l-hub { position:absolute; top:50%; left:49%; transform:translate(-50%,-50%); z-index:4;
       width:68px; height:68px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
       box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
-      display:flex; align-items:center; justify-content:center; }
+      display:flex; align-items:center; justify-content:center; transition:transform .2s,box-shadow .2s; cursor:pointer; }
+    .l-hub:hover { transform:translate(-50%,-50%) scale(1.1); box-shadow:0 0 30px rgba(193,255,114,0.4),0 0 0 2px rgba(139,115,85,0.3),inset 0 2px 8px rgba(0,0,0,0.4),0 4px 20px rgba(0,0,0,0.4); }
     .l-hub img { width:42px; height:42px; object-fit:contain; }
 
     a.rz { position:absolute; width:56px; height:56px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
@@ -96,7 +97,7 @@
       <div class="sticker" style="left:29%;top:71%"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"></div>
     </div>
     <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
-    <div class="l-hub"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></div>
+    <a href="/ai-marketing-bureau" class="l-hub" style="pointer-events:auto;text-decoration:none" title="AI Marketing Bureau"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
 
         <a class="rz" href="/seo" data-t="seo" style="left:34%;top:50%"></a>
     <a class="rz" href="/chatbot" data-t="chatbot" style="left:38%;top:40%"></a>
