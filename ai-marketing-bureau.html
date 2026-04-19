@@ -571,8 +571,8 @@
         var btnCall=document.getElementById('btnCall');btnCall.textContent='Verbinden...';
         function doCall(){
           try{
-            var instance=window.vapiSDK.run({apiKey:'5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',assistant:'752f8e59-08dd-4f11-9bf1-71f86bd865a4',config:{position:'bottom-right'}});
-            if(instance&&typeof instance.start==='function')instance.start();
+            var instance=window.vapiSDK.run({apiKey:'5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',config:{position:'bottom-right'}});
+            if(instance&&typeof instance.start==='function')instance.start('752f8e59-08dd-4f11-9bf1-71f86bd865a4');
             window._vapiInstance=instance;
             btnCall.textContent='Ophangen';btnCall.className='call-btn-inline hangup';
             btnCall.onclick=function(e){e.stopPropagation();endVapiCall();};
