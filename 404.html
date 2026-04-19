@@ -256,6 +256,7 @@
     document.querySelectorAll('.rz').forEach(function(z) {
       z.addEventListener('click', function(e) { e.stopPropagation(); });
       z.addEventListener('mouseenter', function() {
+        if (calling) return;
         stopA();
         var t = d[z.dataset.t];
         if (t) {
@@ -266,6 +267,7 @@
         }
       });
       z.addEventListener('mouseleave', function() {
+        if (calling) return;
         if (window._typeTimer) { clearTimeout(window._typeTimer); window._typeTimer = null; }
         restoreDefault();
         startA();
@@ -275,6 +277,7 @@
     // Hub hover — same typewriter overlay
     var hub = document.querySelector('.l-hub');
     hub.addEventListener('mouseenter', function() {
+      if (calling) return;
       stopA();
       document.querySelector('.game-overlay').classList.add('visible');
       humanType(document.getElementById('gT'), 'AI MARKETING BUREAU');
@@ -282,6 +285,7 @@
       document.getElementById('btnCall').style.display = 'none';
     });
     hub.addEventListener('mouseleave', function() {
+      if (calling) return;
       if (window._typeTimer) { clearTimeout(window._typeTimer); window._typeTimer = null; }
       restoreDefault();
       startA();
