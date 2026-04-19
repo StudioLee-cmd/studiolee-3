@@ -267,9 +267,7 @@
       });
       z.addEventListener('mouseleave', function() {
         if (window._typeTimer) { clearTimeout(window._typeTimer); window._typeTimer = null; }
-        document.querySelector('.game-overlay').classList.remove('visible');
-        document.getElementById('gT').innerHTML = '';
-        document.getElementById('gD').textContent = '';
+        restoreDefault();
         startA();
       });
     });
@@ -285,11 +283,17 @@
     });
     hub.addEventListener('mouseleave', function() {
       if (window._typeTimer) { clearTimeout(window._typeTimer); window._typeTimer = null; }
-      document.querySelector('.game-overlay').classList.remove('visible');
-      document.getElementById('gT').innerHTML = '';
-      document.getElementById('gD').textContent = '';
+      restoreDefault();
       startA();
     });
+
+    // Restore default 404 message
+    function restoreDefault() {
+      document.querySelector('.game-overlay').classList.add('visible');
+      document.getElementById('gT').innerHTML = 'OOPS! VERKEERD GEDRAAID<span class="cur"></span>';
+      document.getElementById('gD').textContent = 'Deze pagina bestaat niet meer. Draai het wiel of bel met Lee.';
+      document.getElementById('btnCall').style.display = 'none';
+    }
 
     // Click phone = ring
     document.getElementById('phoneBody').addEventListener('click', function(e) {
@@ -371,12 +375,9 @@
       if (window._vapiInstance && typeof window._vapiInstance.stop === 'function') window._vapiInstance.stop();
       calling = false;
       document.getElementById('phoneBody').classList.remove('ringing');
-      document.querySelector('.game-overlay').classList.remove('visible');
-      document.getElementById('btnCall').style.display = 'none';
-      document.getElementById('gT').innerHTML = '';
-      document.getElementById('gD').textContent = '';
       var video = document.getElementById('phoneVideo');
       if (video) { video.pause(); video.style.display = 'none'; }
+      restoreDefault();
     };
 
     startA();
