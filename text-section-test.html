@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Marketing 2026 Section — 10 Design Options</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <style>
+    :root { --lime: #C1FF72; --dark: #1F2A2E; }
+    body { background: #f5f3ee; font-family: 'Segoe UI', system-ui, sans-serif; }
+    .option-label { display:inline-block; background:var(--dark); color:#fff; padding:6px 16px; border-radius:99px; font-size:13px; font-weight:700; letter-spacing:0.05em; margin-bottom:20px; }
+    .section-wrap { margin-bottom:60px; padding-bottom:60px; border-bottom:2px solid #ddd; }
+
+    /* ═══ 1: Spinning gear watermark behind text ═══ */
+    .opt1-bg { position:relative; background:var(--dark); border-radius:24px; padding:80px 60px; overflow:hidden; }
+    .opt1-gear { position:absolute; right:-80px; top:-80px; width:400px; height:400px; opacity:0.04; animation:gear-spin 60s linear infinite; }
+    @keyframes gear-spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    .opt1-bg h2,.opt1-bg p,.opt1-bg a { position:relative; z-index:1; }
+
+    /* ═══ 2: Split layout — text left, animated graphic right ═══ */
+    .opt2-graphic { position:relative; width:100%; height:300px; }
+    .opt2-ring { position:absolute; border:2px solid rgba(193,255,114,0.2); border-radius:50%; animation:ring-pulse 4s ease-in-out infinite; }
+    .opt2-ring:nth-child(1) { width:200px; height:200px; top:50px; left:50px; animation-delay:0s; }
+    .opt2-ring:nth-child(2) { width:280px; height:280px; top:10px; left:10px; animation-delay:1s; }
+    .opt2-ring:nth-child(3) { width:160px; height:160px; top:70px; left:120px; animation-delay:2s; }
+    @keyframes ring-pulse { 0%,100%{opacity:0.2;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.08)} }
+
+    /* ═══ 3: Gradient border card with floating particles ═══ */
+    .opt3-card { position:relative; background:var(--dark); border-radius:24px; padding:60px; overflow:hidden; }
+    .opt3-card::before { content:''; position:absolute; inset:-2px; background:linear-gradient(135deg,#C1FF72,#1F2A2E,#C1FF72,#1F2A2E); border-radius:26px; z-index:0; animation:border-rotate 6s linear infinite; background-size:300% 300%; }
+    @keyframes border-rotate { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .opt3-inner { position:relative; background:var(--dark); border-radius:22px; padding:60px; z-index:1; }
+    .opt3-particle { position:absolute; width:4px; height:4px; background:#C1FF72; border-radius:50%; opacity:0.3; animation:float-up 8s linear infinite; }
+    @keyframes float-up { 0%{transform:translateY(0) scale(1);opacity:0} 10%{opacity:0.4} 90%{opacity:0.4} 100%{transform:translateY(-300px) scale(0);opacity:0} }
+
+    /* ═══ 4: Typewriter reveal on scroll ═══ */
+    .opt4-wrap { background:#fff; border-radius:24px; padding:80px 60px; border:1px solid rgba(0,0,0,0.06); }
+    .opt4-highlight { display:inline; background:linear-gradient(to right,#C1FF72 0%,#C1FF72 100%); background-size:0% 100%; background-repeat:no-repeat; background-position:left; transition:background-size 1s ease; padding:2px 4px; }
+    .opt4-wrap:hover .opt4-highlight { background-size:100% 100%; }
+
+    /* ═══ 5: Magazine-style with large pull quote ═══ */
+    .opt5-wrap { position:relative; }
+    .opt5-quote { font-size:120px; line-height:1; color:var(--lime); opacity:0.15; position:absolute; top:-20px; left:-10px; font-family:Georgia,serif; }
+    .opt5-pullquote { font-size:28px; font-weight:700; line-height:1.3; border-left:4px solid var(--lime); padding-left:24px; margin:32px 0; color:var(--dark); }
+
+    /* ═══ 6: Glassmorphism card ═══ */
+    .opt6-bg { background:linear-gradient(135deg,#1F2A2E 0%,#2d4a3e 50%,#1F2A2E 100%); border-radius:24px; padding:80px; position:relative; overflow:hidden; }
+    .opt6-glass { background:rgba(255,255,255,0.06); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:48px; }
+    .opt6-blob { position:absolute; width:300px; height:300px; border-radius:50%; filter:blur(80px); opacity:0.3; animation:blob-float 10s ease-in-out infinite; }
+    .opt6-blob:nth-child(1) { background:#C1FF72; top:-100px; right:-50px; }
+    .opt6-blob:nth-child(2) { background:#4285f4; bottom:-100px; left:-50px; animation-delay:3s; }
+    @keyframes blob-float { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-30px)} }
+
+    /* ═══ 7: Timeline / roadmap style ═══ */
+    .opt7-line { position:relative; padding-left:40px; border-left:3px solid var(--lime); }
+    .opt7-dot { position:absolute; left:-9px; width:15px; height:15px; background:var(--lime); border-radius:50%; box-shadow:0 0 12px rgba(193,255,114,0.5); }
+    .opt7-step { margin-bottom:32px; position:relative; }
+    .opt7-step h3 { font-size:18px; margin-bottom:4px; }
+    .opt7-step p { color:#666; margin:0; }
+
+    /* ═══ 8: Parallax layers with depth ═══ */
+    .opt8-wrap { position:relative; background:var(--dark); border-radius:24px; padding:80px 60px; overflow:hidden; }
+    .opt8-layer { position:absolute; border:1px solid rgba(193,255,114,0.08); border-radius:20px; }
+    .opt8-layer:nth-child(1) { inset:20px; }
+    .opt8-layer:nth-child(2) { inset:40px; }
+    .opt8-layer:nth-child(3) { inset:60px; }
+
+    /* ═══ 9: Stats callout cards embedded in text ═══ */
+    .opt9-stat { display:inline-flex; align-items:center; gap:8px; background:var(--dark); color:var(--lime); padding:6px 16px; border-radius:99px; font-weight:700; font-size:14px; white-space:nowrap; vertical-align:middle; }
+
+    /* ═══ 10: Dark section with animated connection lines ═══ */
+    .opt10-wrap { background:var(--dark); border-radius:24px; padding:80px 60px; position:relative; overflow:hidden; }
+    .opt10-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:40px; }
+    .opt10-node { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:20px; text-align:center; transition:all .3s; cursor:pointer; }
+    .opt10-node:hover { background:rgba(193,255,114,0.1); border-color:rgba(193,255,114,0.3); transform:translateY(-4px); }
+    .opt10-node iconify-icon { font-size:32px; color:var(--lime); margin-bottom:8px; display:block; }
+    .opt10-node span { color:#fff; font-size:13px; font-weight:600; }
+    .opt10-line { position:absolute; height:1px; background:linear-gradient(90deg,transparent,rgba(193,255,114,0.2),transparent); animation:line-scan 4s linear infinite; }
+    @keyframes line-scan { 0%{opacity:0;transform:translateX(-100%)} 50%{opacity:1} 100%{opacity:0;transform:translateX(100%)} }
+  </style>
+</head>
+<body>
+<div class="container py-5">
+  <h1 class="text-center mb-2">AI Marketing 2026 Section — 10 Design Options</h1>
+  <p class="text-center text-muted mb-5">Same text content, 10 different visual treatments. Pick your favorite.</p>
+
+  <!-- ═══ OPTION 1: Spinning gear watermark ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">OPTION 1 — Spinning Gear Watermark</span>
+    <div class="opt1-bg">
+      <svg class="opt1-gear" viewBox="0 0 100 100" fill="white"><path d="M50 30a20 20 0 100 40 20 20 0 000-40zm0 5a15 15 0 110 30 15 15 0 010-30z"/><rect x="47" y="5" width="6" height="15" rx="2"/><rect x="47" y="80" width="6" height="15" rx="2"/><rect x="5" y="47" width="15" height="6" rx="2"/><rect x="80" y="47" width="15" height="6" rx="2"/><rect x="17" y="14" width="6" height="15" rx="2" transform="rotate(45 20 21.5)"/><rect x="77" y="71" width="6" height="15" rx="2" transform="rotate(45 80 78.5)"/><rect x="14" y="77" width="15" height="6" rx="2" transform="rotate(45 21.5 80)"/><rect x="71" y="17" width="15" height="6" rx="2" transform="rotate(45 78.5 20)"/></svg>
+      <h2 class="text-white mb-4" style="font-size:32px">AI marketing bureau in 2026: van hype naar systeem</h2>
+      <p class="text-white text-opacity-70 mb-4 fs-5">Het landschap van online marketing verandert sneller dan ooit. AI is geen toekomstmuziek meer. Bedrijven die nu investeren in een AI marketing bureau bouwen een voorsprong op die moeilijk in te halen is.</p>
+      <p class="text-white text-opacity-70 mb-4 fs-5">Een goed AI marketing bureau doet meer dan tools inzetten. Het bouwt systemen die met elkaar communiceren: je website voedt je CRM, je CRM triggert je e-mail automatisering, je reviews versterken je SEO-positie.</p>
+      <p class="text-white text-opacity-70 mb-0 fs-5">De vraag is niet meer of je AI moet inzetten. De vraag is hoe snel je kunt beginnen.</p>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 2: Split layout with animated rings ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">OPTION 2 — Split Layout + Animated Rings</span>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <h2 style="font-size:32px" class="mb-4">AI marketing bureau in 2026: van hype naar systeem</h2>
+        <p class="fs-5 text-muted mb-4">Het landschap van online marketing verandert sneller dan ooit. Bedrijven die nu investeren bouwen een voorsprong die moeilijk in te halen is.</p>
+        <p class="fs-5 text-muted mb-4">Een goed AI marketing bureau bouwt systemen die met elkaar communiceren: website → CRM → e-mail → reviews → SEO. Alles hangt samen.</p>
+        <p class="fs-5 mb-0">Bij STUDIOLEE hebben we dit systeem gebouwd en getest op <strong>17 actieve domeinen</strong>.</p>
+      </div>
+      <div class="col-lg-5">
+        <div class="opt2-graphic">
+          <div class="opt2-ring"></div>
+          <div class="opt2-ring"></div>
+          <div class="opt2-ring"></div>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center">
+            <div style="font-size:48px;font-weight:800;color:var(--lime)">17</div>
+            <div style="font-size:14px;color:#999">actieve domeinen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 3: Gradient border + floating particles ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">OPTION 3 — Animated Gradient Border + Particles</span>
+    <div class="opt3-card">
+      <div class="opt3-card" style="padding:0;background:transparent">
+      </div>
+      <div class="opt3-inner">
+        <div class="opt3-particle" style="left:10%;bottom:0;animation-delay:0s"></div>
+        <div class="opt3-particle" style="left:30%;bottom:0;animation-delay:2s"></div>
+        <div class="opt3-particle" style="left:50%;bottom:0;animation-delay:4s"></div>
+        <div class="opt3-particle" style="left:70%;bottom:0;animation-delay:1s"></div>
+        <div class="opt3-particle" style="left:90%;bottom:0;animation-delay:3s"></div>
+        <h2 class="text-white mb-4" style="font-size:32px;position:relative;z-index:1">AI marketing bureau in 2026: van hype naar systeem</h2>
+        <p class="text-white text-opacity-70 mb-4 fs-5" style="position:relative;z-index:1">Het landschap verandert sneller dan ooit. Bedrijven die nu investeren bouwen een voorsprong die moeilijk in te halen is. Niet door meer budget, maar door slimmer te werken.</p>
+        <p class="text-white text-opacity-70 mb-0 fs-5" style="position:relative;z-index:1">Bij STUDIOLEE draaien 17 actieve AI-systemen die dagelijks content publiceren, reviews automatiseren en campagnes optimaliseren. Geen experiment, maar bewezen werkwijze.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 4: Highlight reveal on hover ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">OPTION 4 — Highlight Reveal on Hover</span>
+    <div class="opt4-wrap">
+      <h2 class="mb-4" style="font-size:32px">AI marketing bureau in 2026: van hype naar systeem</h2>
+      <p class="fs-5 text-muted mb-4">Het landschap van online marketing verandert sneller dan ooit. <span class="opt4-highlight">AI is geen toekomstmuziek meer.</span> Bedrijven die nu investeren in een AI marketing bureau bouwen een <span class="opt4-highlight">voorsprong die moeilijk in te halen is.</span></p>
+      <p class="fs-5 text-muted mb-4">Een goed AI marketing bureau doet meer dan tools inzetten. Het bouwt <span class="opt4-highlight">systemen die met elkaar communiceren</span>: je website voedt je CRM, je CRM triggert je e-mail automatisering, je reviews versterken je SEO-positie.</p>
+      <p class="fs-5 mb-0">Bij STUDIOLEE hebben we dit systeem gebouwd op <span class="opt4-highlight">17 actieve domeinen</span>. Dagelijks. Bewezen. Structureel resultaat.</p>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 5: Magazine pull quote ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">OPTION 5 — Magazine Pull Quote</span>
+    <div class="p-5" style="background:#fff;border-radius:24px;border:1px solid rgba(0,0,0,0.06)">
+      <div class="opt5-wrap">
+        <span class="opt5-quote">"</span>
+        <h2 class="mb-4" style="font-size:32px">AI marketing bureau in 2026</h2>
+        <p class="fs-5 text-muted mb-4">Het landschap van online marketing verandert sneller dan ooit. AI is geen toekomstmuziek meer.</p>
+        <div class="opt5-pullquote">De vraag is niet meer of je AI moet inzetten voor je marketing. De vraag is hoe snel je kunt beginnen.</div>
+        <p class="fs-5 text-muted mb-0">Bij STUDIOLEE hebben we dit systeem gebouwd en getest op 17 actieve domeinen. Dagelijks publiceren we SEO-content, automatiseren we review-verzoeken en optimaliseren we campagnes op basis van realtime data.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 6: Glassmorphism with blobs ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">OPTION 6 — Glassmorphism + Floating Blobs</span>
+    <div class="opt6-bg">
+      <div class="opt6-blob"></div>
+      <div class="opt6-blob"></div>
+      <div class="opt6-glass">
+        <h2 class="text-white mb-4" style="font-size:32px">AI marketing bureau in 2026: van hype naar systeem</h2>
+        <p class="text-white text-opacity-70 mb-4 fs-5">Het landschap verandert sneller dan ooit. Bedrijven die nu investeren bouwen een voorsprong die moeilijk in te halen is.</p>
+        <p class="text-white text-opacity-70 mb-4 fs-5">Een goed AI marketing bureau bouwt systemen die met elkaar communiceren. Alles hangt samen. Alles versterkt elkaar.</p>
+        <p class="text-white text-opacity-70 mb-0 fs-5">Bij STUDIOLEE draaien 17 actieve AI-systemen. Niet als experiment, maar als bewezen werkwijze die structureel resultaat oplevert.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 7: Timeline / roadmap ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">OPTION 7 — Timeline Roadmap</span>
+    <div class="p-5" style="background:#fff;border-radius:24px;border:1px solid rgba(0,0,0,0.06)">
+      <h2 class="mb-5" style="font-size:32px">AI marketing bureau in 2026: van hype naar systeem</h2>
+      <div class="opt7-line">
+        <div class="opt7-step"><div class="opt7-dot" style="top:4px"></div><h3>Website voedt je CRM</h3><p>Elke bezoeker wordt automatisch gevolgd en gesegmenteerd.</p></div>
+        <div class="opt7-step"><div class="opt7-dot" style="top:4px"></div><h3>CRM triggert je e-mail</h3><p>Automatische opvolgingen op basis van klantgedrag.</p></div>
+        <div class="opt7-step"><div class="opt7-dot" style="top:4px"></div><h3>Reviews versterken je SEO</h3><p>Meer reviews = hogere Google-positie = meer verkeer.</p></div>
+        <div class="opt7-step"><div class="opt7-dot" style="top:4px"></div><h3>Chatbot vangt leads op</h3><p>24/7 bereikbaar, ook als jij slaapt.</p></div>
+        <div class="opt7-step" style="margin-bottom:0"><div class="opt7-dot" style="top:4px"></div><h3>Voice AI volgt op</h3><p>Gemiste oproepen worden automatisch teruggebeld.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 8: Layered depth borders ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">OPTION 8 — Layered Depth</span>
+    <div class="opt8-wrap">
+      <div class="opt8-layer"></div>
+      <div class="opt8-layer"></div>
+      <div class="opt8-layer"></div>
+      <div style="position:relative;z-index:1">
+        <h2 class="text-white mb-4" style="font-size:32px">AI marketing bureau in 2026</h2>
+        <p class="text-white text-opacity-70 mb-4 fs-5">Het landschap van online marketing verandert sneller dan ooit. AI is geen toekomstmuziek meer. Bedrijven die nu investeren bouwen een voorsprong die moeilijk in te halen is.</p>
+        <p class="text-white text-opacity-70 mb-0 fs-5">Bij STUDIOLEE draaien 17 actieve AI-systemen. Dagelijks publiceren we SEO-content, automatiseren we review-verzoeken en optimaliseren we campagnes. Bewezen werkwijze, structureel resultaat.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 9: Stats callouts embedded in text ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">OPTION 9 — Inline Stats Callouts</span>
+    <div class="p-5" style="background:#fff;border-radius:24px;border:1px solid rgba(0,0,0,0.06)">
+      <h2 class="mb-4" style="font-size:32px">AI marketing bureau in 2026: van hype naar systeem</h2>
+      <p class="fs-5 text-muted mb-4">Het landschap verandert sneller dan ooit. Bedrijven die nu investeren bouwen een voorsprong die moeilijk in te halen is. Wij draaien <span class="opt9-stat"><iconify-icon icon="lucide:globe" class="me-1"></iconify-icon> 17 domeinen</span> dagelijks en publiceren <span class="opt9-stat"><iconify-icon icon="lucide:file-text" class="me-1"></iconify-icon> 60+ artikelen/mo</span>.</p>
+      <p class="fs-5 text-muted mb-4">Een goed AI marketing bureau bouwt systemen die met elkaar communiceren. Je website voedt je CRM, je CRM triggert je e-mail, je reviews versterken je <span class="opt9-stat"><iconify-icon icon="lucide:search" class="me-1"></iconify-icon> SEO-positie</span>, je chatbot vangt <span class="opt9-stat"><iconify-icon icon="lucide:zap" class="me-1"></iconify-icon> leads 24/7</span> op.</p>
+      <p class="fs-5 mb-0">Het resultaat? <span class="opt9-stat"><iconify-icon icon="lucide:trending-up" class="me-1"></iconify-icon> 35% meer leads</span> en <span class="opt9-stat"><iconify-icon icon="lucide:star" class="me-1"></iconify-icon> 3x meer reviews</span> in zes maanden.</p>
+    </div>
+  </div>
+
+  <!-- ═══ OPTION 10: Connection grid with animated lines ═══ -->
+  <div class="section-wrap" style="border-bottom:none">
+    <span class="option-label">OPTION 10 — Connected System Grid</span>
+    <div class="opt10-wrap">
+      <div class="opt10-line" style="width:60%;top:45%;left:20%;animation-delay:0s"></div>
+      <div class="opt10-line" style="width:40%;top:55%;left:30%;animation-delay:2s"></div>
+      <h2 class="text-white mb-3" style="font-size:32px;position:relative;z-index:1">AI marketing bureau in 2026: van hype naar systeem</h2>
+      <p class="text-white text-opacity-60 mb-0 fs-5" style="position:relative;z-index:1">Alles hangt samen. Alles versterkt elkaar. Zo ziet het systeem eruit:</p>
+      <div class="opt10-grid" style="position:relative;z-index:1">
+        <div class="opt10-node"><iconify-icon icon="solar:global-bold-duotone"></iconify-icon><span>Website</span></div>
+        <div class="opt10-node"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon><span>Chatbot</span></div>
+        <div class="opt10-node"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone"></iconify-icon><span>Voice AI</span></div>
+        <div class="opt10-node"><iconify-icon icon="solar:star-shine-bold-duotone"></iconify-icon><span>Reviews</span></div>
+        <div class="opt10-node"><iconify-icon icon="solar:magnifer-zoom-in-bold-duotone"></iconify-icon><span>SEO</span></div>
+        <div class="opt10-node"><iconify-icon icon="solar:letter-bold-duotone"></iconify-icon><span>E-mail</span></div>
+        <div class="opt10-node"><iconify-icon icon="solar:share-circle-bold-duotone"></iconify-icon><span>Social</span></div>
+        <div class="opt10-node"><iconify-icon icon="solar:monitor-bold-duotone"></iconify-icon><span>CRM</span></div>
+      </div>
+      <p class="text-white text-opacity-50 text-center mt-4 fs-6" style="position:relative;z-index:1">Bij STUDIOLEE draaien al deze systemen dagelijks op 17 actieve domeinen. Bewezen werkwijze, structureel resultaat.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
