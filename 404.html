@@ -140,7 +140,7 @@
   </div>
 
   <!-- VAPI SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@vapi-ai/web@latest/dist/vapi.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js" defer></script>
 
   <script>
   (function(){
@@ -303,17 +303,29 @@
     });
 
     
-    // VAPI call functions
+    // VAPI call functions — using widget SDK (html-script-tag)
     var _vapiInstance = null;
     function startVapiCall() {
+      if (!window.vapiSDK) {
+        console.error('VAPI SDK not loaded');
+        alert('Voice AI laden... Probeer het nogmaals.');
+        return;
+      }
       try {
-        _vapiInstance = new window.Vapi('5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5');
-        _vapiInstance.start('752f8e59-08dd-4f11-9bf1-71f86bd865a4');
+        _vapiInstance = window.vapiSDK.run({
+          apiKey: '5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',
+          assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
+          config: { position: 'bottom-right' }
+        });
+        // Force start the call
+        if (_vapiInstance && typeof _vapiInstance.start === 'function') {
+          _vapiInstance.start();
+        }
         document.getElementById('btnConnect').style.display = 'none';
         document.getElementById('btnHangup').style.display = 'block';
-        _vapiInstance.on('call-end', function() {
-          endVapiCall();
-        });
+        if (_vapiInstance) {
+          _vapiInstance.on('call-end', function() { endVapiCall(); });
+        }
       } catch(err) {
         console.error('VAPI error:', err);
         window.location.href = '/voice-ai';
@@ -323,6 +335,7 @@
       if (_vapiInstance && typeof _vapiInstance.stop === 'function') {
         _vapiInstance.stop();
       }
+      // Reload to fully reset VAPI widget
       _vapiInstance = null;
       calling = false;
       document.getElementById('phoneBody').classList.remove('ringing');
