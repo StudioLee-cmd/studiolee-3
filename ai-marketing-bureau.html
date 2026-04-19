@@ -597,6 +597,13 @@
       });
 
       window.startVapiCall=function(){
+        var consent=localStorage.getItem('cookie_consent');
+        if(consent!=='accepted'){
+          var banner=document.getElementById('ck-banner');
+          if(banner){banner.style.display='flex';return;}
+          document.getElementById('btnCall').textContent='Accepteer eerst cookies';
+          return;
+        }
         var btnCall=document.getElementById('btnCall');btnCall.textContent='Verbinden...';
         function doCall(){
           try{

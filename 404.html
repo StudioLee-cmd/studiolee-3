@@ -328,8 +328,17 @@
       });
     });
 
-    // VAPI — widget SDK loaded on demand
+    // VAPI — widget SDK loaded on demand (requires cookie consent)
     window.startVapiCall = function() {
+      var consent = localStorage.getItem('cookie_consent');
+      if (consent !== 'accepted') {
+        // Show cookie banner if it exists, otherwise prompt
+        var banner = document.getElementById('ck-banner');
+        if (banner) { banner.style.display = 'flex'; return; }
+        // No banner on this page — redirect to accept cookies first
+        document.getElementById('btnCall').textContent = 'Accepteer eerst cookies';
+        return;
+      }
       var btnCall = document.getElementById('btnCall');
       btnCall.textContent = 'Verbinden...';
 
