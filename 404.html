@@ -142,7 +142,7 @@
   </div>
 
   <!-- VAPI SDK -->
-  <!-- VAPI loaded on demand when user clicks Bel Met Lee -->
+  
 
   <script>
   (function(){
@@ -157,159 +157,161 @@
       herinner: {t:'HERINNERINGEN',        d:'50-70% minder no-shows'}
     };
 
-    // ── Human-like typewriter with mistakes ──
+    // ── Human typewriter with mistakes ──
     function humanType(el, text, onDone) {
-      // Cancel any previous typing
       if (window._typeTimer) { clearTimeout(window._typeTimer); window._typeTimer = null; }
-      
-      var out = '';
-      var pos = 0;
-      var mistakes = 0;
-      
+      var out = '', pos = 0, mistakes = 0;
       function step() {
-        // Done
         if (pos >= text.length && mistakes <= 0) {
           el.innerHTML = out + '<span class="cur"></span>';
           if (onDone) onDone();
           return;
         }
-        
-        // Backspacing a mistake
         if (mistakes > 0) {
-          out = out.slice(0, -1);
-          mistakes--;
+          out = out.slice(0, -1); mistakes--;
           el.innerHTML = out + '<span class="cur"></span>';
           window._typeTimer = setTimeout(step, 55);
           return;
         }
-        
-        // Maybe typo (15% chance after 3rd char)
         if (pos > 2 && Math.random() < 0.15) {
           var wrong = 'QWRTYPSDFJKLZXCVBN';
           var typoLen = 1 + Math.floor(Math.random() * 2);
-          for (var t = 0; t < typoLen; t++) {
-            out += wrong[Math.floor(Math.random() * wrong.length)];
-          }
+          for (var t = 0; t < typoLen; t++) out += wrong[Math.floor(Math.random() * wrong.length)];
           mistakes = typoLen;
           el.innerHTML = out + '<span class="cur"></span>';
           window._typeTimer = setTimeout(step, 300);
           return;
         }
-        
-        // Normal char
-        out += text[pos];
-        pos++;
+        out += text[pos]; pos++;
         el.innerHTML = out + '<span class="cur"></span>';
-        
         var delay = 35 + Math.random() * 45;
         if (text[pos-1] === ' ') delay = 70 + Math.random() * 80;
         if (Math.random() < 0.04) delay += 250;
-        
         window._typeTimer = setTimeout(step, delay);
       }
-      
-      out = '';
-      pos = 0;
+      out = ''; pos = 0;
       el.innerHTML = '<span class="cur"></span>';
       window._typeTimer = setTimeout(step, 100);
     }
 
     // ── Dial spin ──
-    var plate=document.getElementById('plate'), wrap=document.getElementById('wrap');
-    var a=0,drag=false,sA=0,sM=0,v=0,lA=0,raf;
+    var plate = document.getElementById('plate');
+    var wrap = document.getElementById('wrap');
+    var a = 0, drag = false, sA = 0, sM = 0, v = 0, lA = 0, raf;
+    var calling = false;
 
-    function ma(e){var r=wrap.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left-480*.49;var y=(e.touches?e.touches[0].clientY:e.clientY)-r.top-520*.50;return Math.atan2(y,x)*180/Math.PI;}
-    function dn(e){if(e.target.closest('.rz'))return;e.stopPropagation();drag=true;plate.classList.add('grabbing');sM=ma(e);sA=a;v=0;if(raf)cancelAnimationFrame(raf);stopA();e.preventDefault();}
-    function mv(e){if(!drag)return;var m=ma(e);a=sA+(m-sM);v=a-lA;lA=a;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';e.preventDefault();}
-    function up(){if(!drag)return;drag=false;plate.classList.remove('grabbing');function c(){if(Math.abs(v)<.05){startA();return;}v*=.97;a+=v;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';raf=requestAnimationFrame(c);}c();}
+    function ma(e) {
+      var r = wrap.getBoundingClientRect();
+      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - 480*0.49;
+      var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - 520*0.50;
+      return Math.atan2(y, x) * 180 / Math.PI;
+    }
 
-    plate.addEventListener('mousedown',dn);plate.addEventListener('touchstart',dn,{passive:false});
-    window.addEventListener('mousemove',mv);window.addEventListener('touchmove',mv,{passive:false});
-    window.addEventListener('mouseup',up);window.addEventListener('touchend',up);
+    function dn(e) {
+      if (e.target.closest('.rz') || e.target.closest('.l-hub')) return;
+      e.stopPropagation();
+      drag = true; plate.classList.add('grabbing');
+      sM = ma(e); sA = a; v = 0;
+      if (raf) cancelAnimationFrame(raf);
+      stopA(); e.preventDefault();
+    }
+    function mv(e) {
+      if (!drag) return;
+      var m = ma(e); a = sA + (m - sM);
+      v = a - lA; lA = a;
+      plate.style.transform = 'translate(-50%,-50%) rotate(' + a + 'deg)';
+      e.preventDefault();
+    }
+    function up() {
+      if (!drag) return; drag = false;
+      plate.classList.remove('grabbing');
+      function c() {
+        if (Math.abs(v) < 0.05) { startA(); return; }
+        v *= 0.97; a += v;
+        plate.style.transform = 'translate(-50%,-50%) rotate(' + a + 'deg)';
+        raf = requestAnimationFrame(c);
+      }
+      c();
+    }
 
-    var ai;function startA(){if(ai)return;ai=setInterval(function(){if(drag)return;a+=.15;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';},16);}
-    function stopA(){clearInterval(ai);ai=null;}
+    plate.addEventListener('mousedown', dn);
+    plate.addEventListener('touchstart', dn, {passive:false});
+    window.addEventListener('mousemove', mv);
+    window.addEventListener('touchmove', mv, {passive:false});
+    window.addEventListener('mouseup', up);
+    window.addEventListener('touchend', up);
 
-    // ── Hover with human typewriter ──
-    document.querySelectorAll('.rz').forEach(function(z){
-      z.addEventListener('click', function(e){ e.stopPropagation(); });
-      z.addEventListener('mouseenter',function(){
+    var ai;
+    function startA() { if (ai) return; ai = setInterval(function() { if (drag) return; a += 0.15; plate.style.transform = 'translate(-50%,-50%) rotate(' + a + 'deg)'; }, 16); }
+    function stopA() { clearInterval(ai); ai = null; }
+
+    // ── Hover with typewriter ──
+    document.querySelectorAll('.rz').forEach(function(z) {
+      z.addEventListener('click', function(e) { e.stopPropagation(); });
+      z.addEventListener('mouseenter', function() {
         stopA();
-        var t=d[z.dataset.t];
-        if(t){
+        var t = d[z.dataset.t];
+        if (t) {
           document.querySelector('.game-overlay').classList.add('visible');
           humanType(document.getElementById('gT'), t.t);
-          document.getElementById('gD').textContent=t.d;
+          document.getElementById('gD').textContent = t.d;
+          document.getElementById('btnCall').style.display = 'none';
         }
       });
-      z.addEventListener('mouseleave',function(){
-        humanType(document.getElementById('gT'), 'KIES EEN DIENST');
-        document.getElementById('gD').textContent='Draai de schijf of klik op de telefoon';
+      z.addEventListener('mouseleave', function() {
+        if (window._typeTimer) { clearTimeout(window._typeTimer); window._typeTimer = null; }
+        document.querySelector('.game-overlay').classList.remove('visible');
+        document.getElementById('gT').innerHTML = '';
+        document.getElementById('gD').textContent = '';
         startA();
       });
     });
 
-    // ── Click phone to call — video plays INLINE replacing the image ──
-    var calling = false;
-    document.getElementById('phoneBody').addEventListener('click', function(e){
-      if (calling) return;
+    // ── Click phone = start ringing. Click again = stop. ──
+    document.getElementById('phoneBody').addEventListener('click', function(e) {
+      // Toggle off
+      if (calling) {
+        endVapiCall();
+        return;
+      }
       calling = true;
 
-      // Swap image for video — phone comes alive in place
+      // Start video + ringing
       var img = document.getElementById('phoneImg');
       var video = document.getElementById('phoneVideo');
-      img.style.display = 'none';
-      video.style.display = 'block';
-      video.play();
-
-      // Ringing shake
+      if (video) { img.style.display = 'none'; video.style.display = 'block'; video.play(); }
       this.classList.add('ringing');
 
-      // Type call sequence in the game info box
+      // Show speech bubble, type both lines, then show button
+      var overlay = document.querySelector('.game-overlay');
       var titleEl = document.getElementById('gT');
       var descEl = document.getElementById('gD');
-      var msgs = [
-        {t: 'BELLEN...', d: 'Verbinding maken met STUDIOLEE', wait: 2000},
-        {t: 'TUUT.. TUUT..', d: 'De telefoon gaat over', wait: 2500},
-        {t: 'VERBINDEN...', d: 'Even geduld alsjeblieft', wait: 2000},
-        {t: 'VERBONDEN!', d: 'Je spreekt nu met onze AI-assistent', wait: 1500}
-      ];
+      var btnCall = document.getElementById('btnCall');
 
-      var mi = 0;
-      function nextMsg() {
-        if (mi >= msgs.length) {
-          document.getElementById('phoneBody').classList.remove('ringing');
-          // Start VAPI call
-          if (window.vapiSDK) {
-            try {
-              var vapi = window.vapiSDK.run({
-                apiKey: '5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',
-                assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
-                config: { position: 'bottom-right' }
-              });
-              // Force-start the call immediately — no extra click needed
-              if (vapi && typeof vapi.start === 'function') {
-                vapi.start();
-              }
-            } catch(err) { console.error('VAPI error:', err); }
-          }
-          return;
-        }
-        descEl.textContent = msgs[mi].d;
-        humanType(titleEl, msgs[mi].t, function() {
-          mi++;
-          setTimeout(nextMsg, msgs[mi-1].wait);
-        });
-      }
-      nextMsg();
+      overlay.classList.add('visible');
+      btnCall.style.display = 'none';
+      descEl.textContent = '';
+
+      humanType(titleEl, 'TUUT.. TUUT..', function() {
+        setTimeout(function() {
+          humanType(descEl, 'De telefoon gaat over...', function() {
+            setTimeout(function() {
+              btnCall.style.display = 'inline-block';
+              btnCall.textContent = 'Bel Met Lee';
+              btnCall.className = 'call-btn-inline';
+            }, 400);
+          });
+        }, 600);
+      });
     });
 
-    
-    // VAPI call functions — using widget SDK (html-script-tag)
+    // ── VAPI functions ──
     var _vapiInstance = null;
-    function startVapiCall() {
-      document.getElementById('btnConnect').textContent = 'Verbinden...';
-      
+
+    window.startVapiCall = function() {
+      var btnCall = document.getElementById('btnCall');
+      btnCall.textContent = 'Verbinden...';
+
       function doCall() {
         try {
           _vapiInstance = window.vapiSDK.run({
@@ -320,17 +322,11 @@
           if (_vapiInstance && typeof _vapiInstance.start === 'function') {
             _vapiInstance.start();
           }
-          var bc = document.getElementById('btnCall');
-          bc.textContent = 'Ophangen';
-          bc.className = 'call-btn-inline hangup';
-          bc.onclick = function(e) { e.stopPropagation(); endVapiCall(); };
-          // Hide any VAPI default UI that appears
+          btnCall.textContent = 'Ophangen';
+          btnCall.className = 'call-btn-inline hangup';
+          btnCall.onclick = function(e) { e.stopPropagation(); endVapiCall(); };
           setTimeout(function() {
-            var vapiBtn = document.getElementById('vapi-support-btn');
-            if (vapiBtn) vapiBtn.style.display = 'none';
-            document.querySelectorAll('[id^="vapi"]').forEach(function(el) {
-              if (el.id !== 'callBtns') el.style.display = 'none';
-            });
+            document.querySelectorAll('[id^="vapi"]').forEach(function(el) { el.style.display = 'none'; });
           }, 500);
           if (_vapiInstance) {
             _vapiInstance.on('call-end', function() { endVapiCall(); });
@@ -341,28 +337,22 @@
         }
       }
 
-      // Load SDK on demand if not already loaded
       if (window.vapiSDK) {
         doCall();
       } else {
         var s = document.createElement('script');
         s.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
         s.onload = function() {
-          // Wait for SDK to initialize
           var poll = setInterval(function() {
-            if (window.vapiSDK) {
-              clearInterval(poll);
-              doCall();
-            }
+            if (window.vapiSDK) { clearInterval(poll); doCall(); }
           }, 100);
         };
         document.body.appendChild(s);
       }
-    }
-    function endVapiCall() {
-      if (_vapiInstance && typeof _vapiInstance.stop === 'function') {
-        _vapiInstance.stop();
-      }
+    };
+
+    window.endVapiCall = function() {
+      if (_vapiInstance && typeof _vapiInstance.stop === 'function') _vapiInstance.stop();
       _vapiInstance = null;
       calling = false;
       document.getElementById('phoneBody').classList.remove('ringing');
@@ -373,9 +363,8 @@
       var img = document.getElementById('phoneImg');
       var video = document.getElementById('phoneVideo');
       if (video) { video.pause(); video.style.display = 'none'; img.style.display = 'block'; }
-      // Hide any VAPI widget UI
       document.querySelectorAll('[id^="vapi"]').forEach(function(el) { el.style.display = 'none'; });
-    }
+    };
 
     startA();
   })();
