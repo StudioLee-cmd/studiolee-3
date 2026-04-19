@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rotary Phone AI Tools — Design Test</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <style>
+    :root { --lime: #C1FF72; --dark: #1F2A2E; }
+    body { background: var(--dark); font-family: 'Segoe UI', system-ui, sans-serif; color:#fff; min-height:100vh; }
+    .option-label { display:inline-block; background:var(--lime); color:var(--dark); padding:6px 16px; border-radius:99px; font-size:13px; font-weight:700; letter-spacing:0.05em; margin-bottom:20px; }
+    .section-wrap { margin-bottom:80px; padding-bottom:80px; border-bottom:1px solid rgba(255,255,255,0.08); }
+
+    /* ═══ SHARED: Rotary phone base ═══ */
+    .phone-scene { position:relative; width:460px; height:460px; margin:0 auto; }
+
+    /* ═══ VERSION 1: Pure CSS rotary dial ═══ */
+    .v1-body { position:absolute; inset:0; }
+    .v1-dial-bg { position:absolute; top:50%; left:50%; width:380px; height:380px; transform:translate(-50%,-50%); background:radial-gradient(circle,#2a2a2a 0%,#1a1a1a 60%,#111 100%); border-radius:50%; border:6px solid #333; box-shadow:0 0 0 4px #222,0 20px 60px rgba(0,0,0,0.5),inset 0 2px 4px rgba(255,255,255,0.05); }
+    .v1-dial-inner { position:absolute; top:50%; left:50%; width:120px; height:120px; transform:translate(-50%,-50%); background:radial-gradient(circle,#333 0%,#222 100%); border-radius:50%; border:3px solid #444; z-index:3; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 2px 8px rgba(0,0,0,0.5); }
+    .v1-dial-ring { position:absolute; top:50%; left:50%; width:320px; height:320px; transform-origin:center center; transform:translate(-50%,-50%); z-index:2; cursor:grab; transition:transform .1s linear; }
+    .v1-dial-ring.spinning { transition:none; cursor:grabbing; }
+    .v1-hole { position:absolute; width:65px; height:65px; background:radial-gradient(circle,#0a0a0a 0%,#151515 100%); border-radius:50%; border:2px solid #2a2a2a; display:flex; align-items:center; justify-content:center; top:50%; left:50%; margin:-32px 0 0 -32px; box-shadow:inset 0 3px 8px rgba(0,0,0,0.8); transition:transform .3s,box-shadow .3s; }
+    .v1-hole:hover { transform:rotate(calc(var(--a) * -1)) translateX(130px) rotate(calc(var(--a))) scale(1.15) !important; box-shadow:0 0 20px rgba(193,255,114,0.4),inset 0 2px 4px rgba(0,0,0,0.5); }
+    .v1-hole:hover iconify-icon { color:var(--lime) !important; }
+    .v1-finger-stop { position:absolute; bottom:65px; right:55px; width:20px; height:50px; background:linear-gradient(to bottom,#555,#333); border-radius:10px; z-index:4; box-shadow:0 4px 12px rgba(0,0,0,0.4); }
+    .v1-info { text-align:center; margin-top:30px; min-height:60px; }
+    .v1-info h3 { color:var(--lime); margin:0 0 4px; font-size:22px; }
+    .v1-info p { color:rgba(255,255,255,0.5); margin:0; font-size:15px; }
+
+    /* ═══ VERSION 2: Vintage brass with ornate details ═══ */
+    .v2-body { position:absolute; inset:0; }
+    .v2-base { position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:340px; height:60px; background:linear-gradient(to bottom,#8B7355,#6B5335); border-radius:0 0 30px 30px; box-shadow:0 8px 30px rgba(0,0,0,0.4); }
+    .v2-dial-bg { position:absolute; top:50%; left:50%; width:360px; height:360px; transform:translate(-50%,-50%); background:radial-gradient(circle,#d4a850 0%,#b8932e 30%,#8B7355 60%,#6B5335 100%); border-radius:50%; border:8px solid #a07830; box-shadow:0 0 0 3px #5a4020,0 20px 60px rgba(0,0,0,0.6),inset 0 4px 8px rgba(255,255,255,0.15); }
+    .v2-dial-ring { position:absolute; top:50%; left:50%; width:300px; height:300px; transform-origin:center center; transform:translate(-50%,-50%); z-index:2; cursor:grab; }
+    .v2-dial-inner { position:absolute; top:50%; left:50%; width:110px; height:110px; transform:translate(-50%,-50%); background:radial-gradient(circle,#d4a850,#a07830); border-radius:50%; border:4px solid #c49a38; z-index:3; display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(212,168,80,0.3); }
+    .v2-hole { position:absolute; width:60px; height:60px; background:radial-gradient(circle,#2a1a05 0%,#1a1005 100%); border-radius:50%; border:3px solid #a07830; display:flex; align-items:center; justify-content:center; top:50%; left:50%; margin:-30px 0 0 -30px; box-shadow:inset 0 3px 10px rgba(0,0,0,0.9); transition:transform .3s,box-shadow .3s; }
+    .v2-hole:hover { box-shadow:0 0 25px rgba(212,168,80,0.5),inset 0 2px 4px rgba(0,0,0,0.5); }
+
+    /* ═══ VERSION 3: Neon outline style ═══ */
+    .v3-dial-bg { position:absolute; top:50%; left:50%; width:380px; height:380px; transform:translate(-50%,-50%); background:transparent; border-radius:50%; border:2px solid rgba(193,255,114,0.3); box-shadow:0 0 30px rgba(193,255,114,0.1),inset 0 0 30px rgba(193,255,114,0.05); }
+    .v3-dial-ring { position:absolute; top:50%; left:50%; width:320px; height:320px; transform-origin:center center; transform:translate(-50%,-50%); z-index:2; cursor:grab; border:1px solid rgba(193,255,114,0.1); border-radius:50%; }
+    .v3-dial-inner { position:absolute; top:50%; left:50%; width:100px; height:100px; transform:translate(-50%,-50%); background:transparent; border:2px solid rgba(193,255,114,0.4); border-radius:50%; z-index:3; display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(193,255,114,0.2); }
+    .v3-hole { position:absolute; width:65px; height:65px; background:rgba(193,255,114,0.03); border-radius:50%; border:1px solid rgba(193,255,114,0.2); display:flex; align-items:center; justify-content:center; top:50%; left:50%; margin:-32px 0 0 -32px; transition:all .3s; }
+    .v3-hole:hover { background:rgba(193,255,114,0.15); border-color:var(--lime); box-shadow:0 0 30px rgba(193,255,114,0.3); }
+    .v3-line { position:absolute; top:50%; left:50%; width:1px; height:130px; background:linear-gradient(to bottom,rgba(193,255,114,0.2),transparent); transform-origin:top center; z-index:1; }
+  </style>
+</head>
+<body>
+<div class="container py-5">
+  <h1 class="text-center mb-2">Rotary Phone AI Tools — 3 Versions</h1>
+  <p class="text-center mb-5" style="color:rgba(255,255,255,0.5)">Grab the dial and spin it. Hover over a hole to see the tool info.</p>
+
+  <!-- ═══ VERSION 1: Dark industrial rotary ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">VERSION 1 — Dark Industrial Rotary</span>
+    <div class="phone-scene">
+      <div class="v1-body">
+        <div class="v1-dial-bg"></div>
+        <div class="v1-dial-ring" id="dial1">
+          <div class="v1-hole" style="--a:0deg;transform:rotate(0deg) translateX(130px) rotate(0deg)" data-tool="chatgpt"><iconify-icon icon="simple-icons:openai" style="font-size:28px;color:#10a37f"></iconify-icon></div>
+          <div class="v1-hole" style="--a:60deg;transform:rotate(60deg) translateX(130px) rotate(-60deg)" data-tool="claude"><iconify-icon icon="simple-icons:anthropic" style="font-size:28px;color:#d4a27f"></iconify-icon></div>
+          <div class="v1-hole" style="--a:120deg;transform:rotate(120deg) translateX(130px) rotate(-120deg)" data-tool="n8n"><iconify-icon icon="simple-icons:n8n" style="font-size:28px;color:#ea4b71"></iconify-icon></div>
+          <div class="v1-hole" style="--a:180deg;transform:rotate(180deg) translateX(130px) rotate(-180deg)" data-tool="ahrefs"><iconify-icon icon="simple-icons:ahrefs" style="font-size:28px;color:#ff8c00"></iconify-icon></div>
+          <div class="v1-hole" style="--a:240deg;transform:rotate(240deg) translateX(130px) rotate(-240deg)" data-tool="vapi"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone" style="font-size:28px;color:#C1FF72"></iconify-icon></div>
+          <div class="v1-hole" style="--a:300deg;transform:rotate(300deg) translateX(130px) rotate(-300deg)" data-tool="highlevel"><iconify-icon icon="solar:monitor-bold-duotone" style="font-size:28px;color:#4285f4"></iconify-icon></div>
+        </div>
+        <div class="v1-dial-inner">
+          <img src="https://www.studiolee.nl/assets/images/logos/logo-badge2.webp" alt="SL" style="width:60px;height:60px;object-fit:contain">
+        </div>
+        <div class="v1-finger-stop"></div>
+      </div>
+      <div class="v1-info" id="info1">
+        <h3>Draai het wiel</h3>
+        <p>Hover over een tool voor meer informatie</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ VERSION 2: Vintage brass ═══ -->
+  <div class="section-wrap">
+    <span class="option-label">VERSION 2 — Vintage Brass</span>
+    <div class="phone-scene">
+      <div class="v2-body">
+        <div class="v2-dial-bg"></div>
+        <div class="v2-dial-ring" id="dial2">
+          <div class="v2-hole" style="transform:rotate(0deg) translateX(120px) rotate(0deg)" data-tool="chatgpt"><iconify-icon icon="simple-icons:openai" style="font-size:26px;color:#10a37f"></iconify-icon></div>
+          <div class="v2-hole" style="transform:rotate(60deg) translateX(120px) rotate(-60deg)" data-tool="claude"><iconify-icon icon="simple-icons:anthropic" style="font-size:26px;color:#fff"></iconify-icon></div>
+          <div class="v2-hole" style="transform:rotate(120deg) translateX(120px) rotate(-120deg)" data-tool="n8n"><iconify-icon icon="simple-icons:n8n" style="font-size:26px;color:#ea4b71"></iconify-icon></div>
+          <div class="v2-hole" style="transform:rotate(180deg) translateX(120px) rotate(-180deg)" data-tool="ahrefs"><iconify-icon icon="simple-icons:ahrefs" style="font-size:26px;color:#ff8c00"></iconify-icon></div>
+          <div class="v2-hole" style="transform:rotate(240deg) translateX(120px) rotate(-240deg)" data-tool="vapi"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone" style="font-size:26px;color:#C1FF72"></iconify-icon></div>
+          <div class="v2-hole" style="transform:rotate(300deg) translateX(120px) rotate(-300deg)" data-tool="highlevel"><iconify-icon icon="solar:monitor-bold-duotone" style="font-size:26px;color:#4285f4"></iconify-icon></div>
+        </div>
+        <div class="v2-dial-inner">
+          <img src="https://www.studiolee.nl/assets/images/logos/logo-badge2.webp" alt="SL" style="width:55px;height:55px;object-fit:contain">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ VERSION 3: Neon outline ═══ -->
+  <div class="section-wrap" style="border:none">
+    <span class="option-label">VERSION 3 — Neon Outline (matches SL3 lime theme)</span>
+    <div class="phone-scene">
+      <div class="v3-dial-bg"></div>
+      <!-- Connection lines from center to each node -->
+      <div class="v3-line" style="transform:rotate(0deg)"></div>
+      <div class="v3-line" style="transform:rotate(60deg)"></div>
+      <div class="v3-line" style="transform:rotate(120deg)"></div>
+      <div class="v3-line" style="transform:rotate(180deg)"></div>
+      <div class="v3-line" style="transform:rotate(240deg)"></div>
+      <div class="v3-line" style="transform:rotate(300deg)"></div>
+      <div class="v3-dial-ring" id="dial3">
+        <div class="v3-hole" style="transform:rotate(0deg) translateX(130px) rotate(0deg)" data-tool="chatgpt"><iconify-icon icon="simple-icons:openai" style="font-size:30px;color:#10a37f"></iconify-icon></div>
+        <div class="v3-hole" style="transform:rotate(60deg) translateX(130px) rotate(-60deg)" data-tool="claude"><iconify-icon icon="simple-icons:anthropic" style="font-size:30px;color:#d4a27f"></iconify-icon></div>
+        <div class="v3-hole" style="transform:rotate(120deg) translateX(130px) rotate(-120deg)" data-tool="n8n"><iconify-icon icon="simple-icons:n8n" style="font-size:30px;color:#ea4b71"></iconify-icon></div>
+        <div class="v3-hole" style="transform:rotate(180deg) translateX(130px) rotate(-180deg)" data-tool="ahrefs"><iconify-icon icon="simple-icons:ahrefs" style="font-size:30px;color:#ff8c00"></iconify-icon></div>
+        <div class="v3-hole" style="transform:rotate(240deg) translateX(130px) rotate(-240deg)" data-tool="vapi"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone" style="font-size:30px;color:#C1FF72"></iconify-icon></div>
+        <div class="v3-hole" style="transform:rotate(300deg) translateX(130px) rotate(-300deg)" data-tool="highlevel"><iconify-icon icon="solar:monitor-bold-duotone" style="font-size:30px;color:#4285f4"></iconify-icon></div>
+      </div>
+      <div class="v3-dial-inner">
+        <img src="https://www.studiolee.nl/assets/images/logos/logo-badge2.webp" alt="SL" style="width:50px;height:50px;object-fit:contain">
+      </div>
+    </div>
+    <div class="v1-info" id="info3">
+      <h3>Spin & hover</h3>
+      <p>Ontdek hoe wij elke tool inzetten</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Tool data
+var toolData = {
+  chatgpt: {title:'ChatGPT', desc:'Strategie, contentcreatie en klantcommunicatie op schaal.'},
+  claude: {title:'Claude', desc:'Code, automatisering en complete AI-systemen bouwen.'},
+  n8n: {title:'N8N', desc:'Custom workflows voor marketing, admin en klantopvolging.'},
+  ahrefs: {title:'Ahrefs', desc:'Keyword research, backlinks en technische SEO-audits.'},
+  vapi: {title:'Voice AI', desc:'AI telefonist die 24/7 opneemt en afspraken plant.'},
+  highlevel: {title:'HighLevel', desc:'CRM, e-mail, social planner en facturatie in één.'}
+};
+
+// Drag-to-spin for all dials
+['dial1','dial2','dial3'].forEach(function(id) {
+  var dial = document.getElementById(id);
+  if (!dial) return;
+  var angle = 0, dragging = false, startAngle = 0, startMouseAngle = 0;
+  var velocity = 0, lastAngle = 0, animFrame = null;
+
+  function getAngle(e, rect) {
+    var cx = rect.left + rect.width/2;
+    var cy = rect.top + rect.height/2;
+    var x = (e.touches ? e.touches[0].clientX : e.clientX) - cx;
+    var y = (e.touches ? e.touches[0].clientY : e.clientY) - cy;
+    return Math.atan2(y, x) * 180 / Math.PI;
+  }
+
+  function onDown(e) {
+    dragging = true;
+    dial.classList.add('spinning');
+    var rect = dial.getBoundingClientRect();
+    startMouseAngle = getAngle(e, rect);
+    startAngle = angle;
+    velocity = 0;
+    if (animFrame) cancelAnimationFrame(animFrame);
+    e.preventDefault();
+  }
+
+  function onMove(e) {
+    if (!dragging) return;
+    var rect = dial.getBoundingClientRect();
+    var mouseAngle = getAngle(e, rect);
+    var delta = mouseAngle - startMouseAngle;
+    angle = startAngle + delta;
+    velocity = angle - lastAngle;
+    lastAngle = angle;
+    dial.style.transform = 'translate(-50%,-50%) rotate(' + angle + 'deg)';
+    e.preventDefault();
+  }
+
+  function onUp() {
+    if (!dragging) return;
+    dragging = false;
+    dial.classList.remove('spinning');
+    // Momentum
+    function coast() {
+      if (Math.abs(velocity) < 0.1) return;
+      velocity *= 0.96;
+      angle += velocity;
+      dial.style.transform = 'translate(-50%,-50%) rotate(' + angle + 'deg)';
+      animFrame = requestAnimationFrame(coast);
+    }
+    coast();
+  }
+
+  dial.addEventListener('mousedown', onDown);
+  dial.addEventListener('touchstart', onDown, {passive:false});
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('touchmove', onMove, {passive:false});
+  window.addEventListener('mouseup', onUp);
+  window.addEventListener('touchend', onUp);
+
+  // Auto-spin slowly
+  var autoSpin = setInterval(function() {
+    if (dragging) return;
+    angle += 0.15;
+    dial.style.transform = 'translate(-50%,-50%) rotate(' + angle + 'deg)';
+  }, 16);
+});
+
+// Hover info for all tool holes
+document.querySelectorAll('[data-tool]').forEach(function(el) {
+  el.addEventListener('mouseenter', function() {
+    var tool = el.getAttribute('data-tool');
+    var d = toolData[tool];
+    // Find closest info panel
+    var scene = el.closest('.section-wrap') || el.closest('.phone-scene');
+    var info = scene ? scene.querySelector('.v1-info') : null;
+    if (info && d) {
+      info.querySelector('h3').textContent = d.title;
+      info.querySelector('p').textContent = d.desc;
+    }
+  });
+  el.addEventListener('mouseleave', function() {
+    var scene = el.closest('.section-wrap') || el.closest('.phone-scene');
+    var info = scene ? scene.querySelector('.v1-info') : null;
+    if (info) {
+      info.querySelector('h3').textContent = 'Spin & hover';
+      info.querySelector('p').textContent = 'Ontdek hoe wij elke tool inzetten';
+    }
+  });
+});
+</script>
+</body>
+</html>
