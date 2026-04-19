@@ -18,24 +18,24 @@
     .err-sub a { color:var(--lime); text-decoration:none; }
     .err-sub a:hover { text-decoration:underline; }
 
-    .phone-container { position:relative; width:100vw; max-width:100vw; margin-left:calc(-50vw + 50%); aspect-ratio:2.4/1; }
+    .phone-container { position:relative; width:100vw; max-width:100vw; margin-left:calc(-50vw + 50%); aspect-ratio:1.71/1; }
     .l-body { position:absolute; inset:0; z-index:1; cursor:pointer; }
     .l-body img { width:100%; height:100%; object-fit:cover; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); transition:filter .3s; }
     .l-body:hover img { filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)) brightness(1.08); }
     .l-body.ringing img { animation:shake .08s linear infinite; }
     @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
 
-    .l-numplate { position:absolute; width:220px; height:220px; top:48%; left:50%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
+    .l-numplate { position:absolute; width:220px; height:220px; top:48%; left:71%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
     .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; border:none; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
     
     .sticker { position:absolute; width:48px; height:48px; transform:translate(-50%,-50%); pointer-events:none; }
     .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
 
-    .l-finger { position:absolute; width:255px; height:255px; top:48%; left:50%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
+    .l-finger { position:absolute; width:255px; height:255px; top:48%; left:71%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
 
-    .l-hub { position:absolute; top:50%; left:49%; transform:translate(-50%,-50%); z-index:4;
+    .l-hub { position:absolute; top:50%; left:70%; transform:translate(-50%,-50%); z-index:4;
       width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
       box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
@@ -49,7 +49,7 @@
     a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.15); }
 
     /* Desk stickers */
-    .desk-sticker { position:absolute; z-index:6; width:64px; height:64px; cursor:grab; user-select:none; transition:transform .3s, opacity .5s, filter .3s; filter:drop-shadow(0 3px 6px rgba(0,0,0,0.5)); }
+    .desk-sticker { position:absolute; z-index:6; width:100px; height:100px; cursor:grab; user-select:none; transition:transform .3s, opacity .5s, filter .3s; filter:drop-shadow(0 3px 6px rgba(0,0,0,0.5)); }
     .desk-sticker img { width:100%; height:100%; object-fit:contain; pointer-events:none; }
     .desk-sticker:hover { transform:scale(1.1) rotate(-3deg); filter:drop-shadow(0 6px 12px rgba(0,0,0,0.6)); }
     .desk-sticker.peeling { animation:peel-wobble .4s ease-in-out infinite; }
@@ -128,13 +128,13 @@
     <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
     <a href="/ai-marketing-bureau" class="l-hub" onclick="event.stopPropagation()" style="pointer-events:auto;text-decoration:none" title="AI Marketing Bureau"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
 
-        <a class="rz" href="/seo" data-t="seo" style="left:34%;top:50%"></a>
-    <a class="rz" href="/chatbot" data-t="chatbot" style="left:38%;top:40%"></a>
-    <a class="rz" href="/voice-ai" data-t="voice" style="left:49%;top:36%"></a>
-    <a class="rz" href="/reviews" data-t="reviews" style="left:60%;top:40%"></a>
-    <a class="rz" href="/automations" data-t="auto" style="left:64%;top:50%"></a>
-    <a class="rz" href="/website-laten-maken" data-t="website" style="left:49%;top:64%"></a>
-    <a class="rz" href="/herinneringen" data-t="herinner" style="left:38%;top:60%"></a>
+        <a class="rz" href="/seo" data-t="seo" style="left:55%;top:50%"></a>
+    <a class="rz" href="/chatbot" data-t="chatbot" style="left:59%;top:40%"></a>
+    <a class="rz" href="/voice-ai" data-t="voice" style="left:70%;top:36%"></a>
+    <a class="rz" href="/reviews" data-t="reviews" style="left:81%;top:40%"></a>
+    <a class="rz" href="/automations" data-t="auto" style="left:85%;top:50%"></a>
+    <a class="rz" href="/website-laten-maken" data-t="website" style="left:70%;top:64%"></a>
+    <a class="rz" href="/herinneringen" data-t="herinner" style="left:59%;top:60%"></a>
 
     
     
@@ -147,14 +147,14 @@
     </div>
   </div>
 
-  <!-- Desk stickers — hold 5s to peel -->
-  <div class="desk-sticker" style="left:6%;top:25%;transform:rotate(-12deg)" data-service="seo"><img src="/assets/images/stickers/world.webp" alt="SEO"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="left:12%;top:65%;transform:rotate(8deg)" data-service="chatbot"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="left:3%;top:78%;transform:rotate(-5deg)" data-service="voice"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="right:8%;top:20%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="right:4%;top:55%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="right:14%;top:75%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="left:8%;top:45%;transform:rotate(3deg)" data-service="herinner"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <!-- Desk stickers on the left — hold 5s to peel -->
+  <div class="desk-sticker" style="left:3%;top:20%;transform:rotate(-12deg)" data-service="seo"><img src="/assets/images/stickers/world.webp" alt="SEO"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="left:14%;top:15%;transform:rotate(8deg)" data-service="chatbot"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="left:8%;top:45%;transform:rotate(-5deg)" data-service="voice"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="left:18%;top:40%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="left:2%;top:70%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="left:15%;top:72%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="left:25%;top:25%;transform:rotate(3deg)" data-service="herinner"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
 
   <p class="click-hint">[ KLIK OP DE TELEFOON OM TE BELLEN ]</p>
 
@@ -226,7 +226,7 @@
 
     function ma(e) {
       var r = wrap.getBoundingClientRect();
-      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - r.width*0.50;
+      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - r.width*0.71;
       var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - r.height*0.48;
       return Math.atan2(y, x) * 180 / Math.PI;
     }
