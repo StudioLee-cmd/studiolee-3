@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rotary Phone — Clean Layers Test</title>
+  <title>Rotary Phone — 3 Real Layers</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     :root { --lime: #C1FF72; --dark: #1F2A2E; }
@@ -14,30 +14,31 @@
 
     .phone-container { position:relative; width:480px; height:520px; }
 
-    .layer-body { position:absolute; inset:0; z-index:1; }
-    .layer-body img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); }
+    /* L1: Phone body — static background */
+    .l-body { position:absolute; inset:0; z-index:1; }
+    .l-body img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); }
 
-    /* Characters — STATIC, sit behind the spinning plate */
-    .layer-chars { position:absolute; width:300px; height:300px; top:49%; left:49%; transform:translate(-50%,-50%); z-index:2; pointer-events:none; }
-    .layer-chars img { width:100%; height:100%; object-fit:contain; }
+    /* L2: Cream number plate with characters — STATIC */
+    .l-numplate { position:absolute; width:270px; height:270px; top:50%; left:49%; transform:translate(-50%,-50%); z-index:2; pointer-events:none; }
+    .l-numplate img { width:100%; height:100%; object-fit:contain; }
 
-    /* Brass plate — SPINS on top, holes reveal characters underneath */
-    .layer-plate { position:absolute; width:290px; height:290px; top:49%; left:49%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
-    .layer-plate.grabbing { cursor:grabbing; }
-    .layer-plate img { width:100%; height:100%; object-fit:contain; }
+    /* L3: Brass finger plate with holes — SPINS */
+    .l-finger { position:absolute; width:285px; height:285px; top:50%; left:49%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
+    .l-finger.grabbing { cursor:grabbing; }
+    .l-finger img { width:100%; height:100%; object-fit:contain; }
 
-    /* Center hub */
-    .layer-hub { position:absolute; top:49%; left:49%; transform:translate(-50%,-50%); z-index:4; pointer-events:none;
-      width:72px; height:72px;
+    /* L4: Center hub — static on top */
+    .l-hub { position:absolute; top:50%; left:49%; transform:translate(-50%,-50%); z-index:4; pointer-events:none;
+      width:68px; height:68px;
       background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
       box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
       display:flex; align-items:center; justify-content:center;
     }
-    .layer-hub img { width:44px; height:44px; object-fit:contain; }
+    .l-hub img { width:42px; height:42px; object-fit:contain; }
 
-    /* Static hover zones — positioned over characters */
-    a.rz { position:absolute; width:55px; height:55px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
+    /* Hover zones — static, on the character positions */
+    a.rz { position:absolute; width:48px; height:48px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
       transition:box-shadow .2s, background .2s; text-decoration:none; display:block; }
     a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.15); }
 
@@ -50,29 +51,21 @@
   </style>
 </head>
 <body>
-  <h2>Rotary Phone — Clean Separate Layers</h2>
-  <p class="sub">Brass plate spins. Characters stay fixed. Holes reveal what's underneath.</p>
+  <h2>Rotary Phone — 3 Real Layers</h2>
+  <p class="sub">Phone body → cream number plate → brass finger plate (spins)</p>
 
   <div class="phone-container" id="wrap">
-    <div class="layer-body">
-      <img src="/assets/images/ai-marketing-bureau/phone-body.png" alt="">
-    </div>
-    <div class="layer-chars">
-      <img src="/assets/images/ai-marketing-bureau/chars-v2.png" alt="">
-    </div>
-    <div class="layer-plate" id="plate">
-      <img src="/assets/images/ai-marketing-bureau/plate-v2.png" alt="" draggable="false">
-    </div>
-    <div class="layer-hub">
-      <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE">
-    </div>
+    <div class="l-body"><img src="/assets/images/ai-marketing-bureau/phone-body.png" alt=""></div>
+    <div class="l-numplate"><img src="/assets/images/ai-marketing-bureau/numberplate.png" alt=""></div>
+    <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
+    <div class="l-hub"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></div>
 
-    <a class="rz" id="rz0" href="/seo" data-t="seo" style="left:39%;top:24%"></a>
-    <a class="rz" id="rz1" href="/chatbot" data-t="chatbot" style="left:62%;top:26%"></a>
-    <a class="rz" id="rz2" href="/automations" data-t="auto" style="left:68%;top:53%"></a>
-    <a class="rz" id="rz3" href="/reviews" data-t="reviews" style="left:46%;top:67%"></a>
-    <a class="rz" id="rz4" href="/voice-ai" data-t="voice" style="left:25%;top:57%"></a>
-    <a class="rz" id="rz5" href="/social-media" data-t="social" style="left:26%;top:33%"></a>
+    <a class="rz" id="rz0" href="/seo" data-t="seo" style="left:47%;top:26%"></a>
+    <a class="rz" id="rz1" href="/chatbot" data-t="chatbot" style="left:63%;top:31%"></a>
+    <a class="rz" id="rz2" href="/automations" data-t="auto" style="left:64%;top:54%"></a>
+    <a class="rz" id="rz3" href="/reviews" data-t="reviews" style="left:46%;top:63%"></a>
+    <a class="rz" id="rz4" href="/voice-ai" data-t="voice" style="left:29%;top:54%"></a>
+    <a class="rz" id="rz5" href="/social-media" data-t="social" style="left:30%;top:31%"></a>
   </div>
 
   <div class="game-info">
@@ -84,21 +77,12 @@
 
   <script>
   (function(){
-    var d = {
-      seo:     {t:'SEO & VINDBAARHEID', d:'Gevonden worden op Google en in ChatGPT'},
-      chatbot: {t:'AI CHATBOT',         d:'24/7 leadopvang op je website'},
-      auto:    {t:'AUTOMATISERING',     d:'N8N workflows en AI-systemen'},
-      reviews: {t:'REVIEW MANAGEMENT',  d:'5-sterren reviews op autopilot'},
-      voice:   {t:'VOICE AI',          d:'AI telefonist die elk gesprek opneemt'},
-      social:  {t:'SOCIAL MEDIA',      d:'Content, beheer en scheduling'}
-    };
-
-    var plate=document.getElementById('plate'), wrap=document.getElementById('wrap');
+    var d={seo:{t:'SEO & VINDBAARHEID',d:'Gevonden worden op Google en in ChatGPT'},chatbot:{t:'AI CHATBOT',d:'24/7 leadopvang op je website'},auto:{t:'AUTOMATISERING',d:'N8N workflows en AI-systemen'},reviews:{t:'REVIEW MANAGEMENT',d:'5-sterren reviews op autopilot'},voice:{t:'VOICE AI',d:'AI telefonist die elk gesprek opneemt'},social:{t:'SOCIAL MEDIA',d:'Content, beheer en scheduling'}};
+    var plate=document.getElementById('plate'),wrap=document.getElementById('wrap');
     var a=0,drag=false,sA=0,sM=0,v=0,lA=0,raf;
-    var pcx=480*.49, pcy=520*.49;
+    var pcx=480*.49,pcy=520*.50;
 
     function ma(e){var r=wrap.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left-pcx;var y=(e.touches?e.touches[0].clientY:e.clientY)-r.top-pcy;return Math.atan2(y,x)*180/Math.PI;}
-
     function dn(e){if(e.target.closest('.rz'))return;drag=true;plate.classList.add('grabbing');sM=ma(e);sA=a;v=0;if(raf)cancelAnimationFrame(raf);stopA();e.preventDefault();}
     function mv(e){if(!drag)return;var m=ma(e);a=sA+(m-sM);v=a-lA;lA=a;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';e.preventDefault();}
     function up(){if(!drag)return;drag=false;plate.classList.remove('grabbing');function c(){if(Math.abs(v)<.05){startA();return;}v*=.97;a+=v;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';raf=requestAnimationFrame(c);}c();}
@@ -107,18 +91,15 @@
     window.addEventListener('mousemove',mv);window.addEventListener('touchmove',mv,{passive:false});
     window.addEventListener('mouseup',up);window.addEventListener('touchend',up);
 
-    var ai;
-    function startA(){if(ai)return;ai=setInterval(function(){if(drag)return;a+=.15;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';},16);}
+    var ai;function startA(){if(ai)return;ai=setInterval(function(){if(drag)return;a+=.15;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';},16);}
     function stopA(){clearInterval(ai);ai=null;}
 
-    var tt;
-    function tw(el,txt){if(tt)clearInterval(tt);el.innerHTML='';var i=0;tt=setInterval(function(){if(i<txt.length){el.innerHTML=txt.substring(0,i+1)+'<span class="cur"></span>';i++;}else{clearInterval(tt);tt=null;}},40);}
+    var tt;function tw(el,txt){if(tt)clearInterval(tt);el.innerHTML='';var i=0;tt=setInterval(function(){if(i<txt.length){el.innerHTML=txt.substring(0,i+1)+'<span class="cur"></span>';i++;}else{clearInterval(tt);tt=null;}},40);}
 
     document.querySelectorAll('.rz').forEach(function(z){
       z.addEventListener('mouseenter',function(){stopA();var t=d[z.dataset.t];if(t){tw(document.getElementById('gT'),t.t);document.getElementById('gD').textContent=t.d;}});
       z.addEventListener('mouseleave',function(){tw(document.getElementById('gT'),'KIES EEN DIENST');document.getElementById('gD').textContent='Draai de schijf en klik op een karakter';startA();});
     });
-
     startA();
   })();
   </script>
