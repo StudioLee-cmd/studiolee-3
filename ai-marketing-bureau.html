@@ -77,6 +77,25 @@
       color: #3d6228 !important;
     }
   </style>
+
+  <style>
+    .services-sticker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+    .svc-card{position:relative;padding:32px;border:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:all 0.4s;min-height:220px;overflow:visible;text-decoration:none;color:#fff;display:flex;flex-direction:column;background:var(--dark,#1F2A2E)}
+    .svc-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:1;z-index:0}
+    .svc-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,42,46,0.92) 0%,rgba(31,42,46,0.75) 100%);opacity:1;transition:opacity 0.4s;z-index:1}
+    .svc-card:hover{z-index:10}
+    .svc-card:hover .svc-overlay{opacity:0.5}
+    .svc-content{position:relative;z-index:2}
+    .svc-num{font-size:0.6rem;font-weight:700;color:rgba(255,255,255,0.15);letter-spacing:0.15em;margin-bottom:10px;display:block;transition:color 0.3s}
+    .svc-card:hover .svc-num{color:#C1FF72}
+    .svc-title{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:600;margin-bottom:6px;transition:color 0.3s}
+    .svc-card:hover .svc-title{color:#C1FF72}
+    .svc-desc{font-size:0.78rem;color:rgba(255,255,255,0.35);line-height:1.5;transition:color 0.3s}
+    .svc-card:hover .svc-desc{color:rgba(255,255,255,0.6)}
+    .svc-link{display:inline-flex;align-items:center;gap:4px;font-size:0.68rem;font-weight:600;color:#C1FF72;margin-top:auto;padding-top:10px;letter-spacing:0.05em;text-transform:uppercase;opacity:0;transform:translateY(6px);transition:all 0.3s}
+    .svc-card:hover .svc-link{opacity:1;transform:translateY(0)}
+    @media(max-width:768px){.services-sticker-grid{grid-template-columns:1fr 1fr}}
+  </style>
 </head>
 
 <body>
@@ -416,78 +435,102 @@
       </div>
     </section>
 
-    <!-- ═══ SECTION 7: AI TOOLS ═══ -->
+    <!-- ═══ SECTION 7: AI TOOLS — Orbit + Hover Cards ═══ -->
     <section class="py-5 py-lg-7 py-xl-8 bg-light-gray">
       <div class="container">
-        <div class="text-center mb-7" data-aos="fade-up">
+        <div class="text-center mb-5" data-aos="fade-up">
           <span class="badge text-bg-dark mb-3">Technologie</span>
           <h2 class="mb-3">De AI-tools die wij inzetten</h2>
-          <p class="fs-5 text-muted">Niet welke tools we gebruiken maakt het verschil, maar hoe we ze inzetten voor jouw groei.</p>
+          <p class="fs-5 text-muted">Spin het wiel. Hover voor details.</p>
         </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="p-5 bg-white rounded-4 h-100 position-relative overflow-hidden" style="transition:transform .3s,box-shadow .3s;cursor:pointer" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px rgba(0,0,0,0.1)';this.querySelector('.tool-desc').style.opacity='1';this.querySelector('.tool-desc').style.transform='translateY(0)'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.tool-desc').style.opacity='0';this.querySelector('.tool-desc').style.transform='translateY(10px)'">
-              <iconify-icon icon="simple-icons:openai" class="fs-1 mb-3 d-block" style="color:#10a37f"></iconify-icon>
-              <h4 class="mb-2">ChatGPT & Claude</h4>
-              <p class="text-muted mb-0">Strategie, contentcreatie en klantvragen</p>
-              <div class="tool-desc" style="opacity:0;transform:translateY(10px);transition:all .3s;margin-top:12px;padding-top:12px;border-top:1px solid #eee">
-                <p class="mb-0 small text-dark">Van SEO-artikelen tot klantcommunicatie. Wij bouwen complete AI-systemen met Claude Code en gebruiken ChatGPT voor strategisch inzicht en contentcreatie op schaal.</p>
-              </div>
+
+        <div class="orbit-container" data-aos="fade-up">
+          <!-- Center logo -->
+          <div class="orbit-center">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE" style="width:70px;height:70px;object-fit:contain">
+          </div>
+          <!-- Orbiting items -->
+          <div class="orbit-ring" id="orbitRing">
+            <div class="orbit-item" data-tool="chatgpt" style="--angle:0deg">
+              <iconify-icon icon="simple-icons:openai" style="color:#10a37f;font-size:36px"></iconify-icon>
+            </div>
+            <div class="orbit-item" data-tool="claude" style="--angle:60deg">
+              <iconify-icon icon="simple-icons:anthropic" style="color:#d4a27f;font-size:36px"></iconify-icon>
+            </div>
+            <div class="orbit-item" data-tool="n8n" style="--angle:120deg">
+              <iconify-icon icon="simple-icons:n8n" style="color:#ea4b71;font-size:36px"></iconify-icon>
+            </div>
+            <div class="orbit-item" data-tool="ahrefs" style="--angle:180deg">
+              <iconify-icon icon="simple-icons:ahrefs" style="color:#ff8c00;font-size:36px"></iconify-icon>
+            </div>
+            <div class="orbit-item" data-tool="vapi" style="--angle:240deg">
+              <iconify-icon icon="solar:phone-calling-rounded-bold-duotone" style="color:#C1FF72;font-size:36px"></iconify-icon>
+            </div>
+            <div class="orbit-item" data-tool="highlevel" style="--angle:300deg">
+              <iconify-icon icon="solar:monitor-bold-duotone" style="color:#4285f4;font-size:36px"></iconify-icon>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="p-5 bg-white rounded-4 h-100 position-relative overflow-hidden" style="transition:transform .3s,box-shadow .3s;cursor:pointer" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px rgba(0,0,0,0.1)';this.querySelector('.tool-desc').style.opacity='1';this.querySelector('.tool-desc').style.transform='translateY(0)'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.tool-desc').style.opacity='0';this.querySelector('.tool-desc').style.transform='translateY(10px)'">
-              <iconify-icon icon="simple-icons:n8n" class="fs-1 mb-3 d-block" style="color:#ea4b71"></iconify-icon>
-              <h4 class="mb-2">N8N Workflows</h4>
-              <p class="text-muted mb-0">Automatisering van bedrijfsprocessen</p>
-              <div class="tool-desc" style="opacity:0;transform:translateY(10px);transition:all .3s;margin-top:12px;padding-top:12px;border-top:1px solid #eee">
-                <p class="mb-0 small text-dark">Custom workflows die je marketing, administratie en klantopvolging automatiseren. Van review-verzoeken tot lead-scoring, alles draait zonder dat jij iets hoeft te doen.</p>
-              </div>
-            </div>
+          <!-- Hover info card -->
+          <div class="orbit-info" id="orbitInfo">
+            <h4 id="orbitTitle">Hover over een tool</h4>
+            <p id="orbitDesc">Ontdek hoe wij elke tool inzetten voor jouw groei.</p>
           </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="p-5 bg-white rounded-4 h-100 position-relative overflow-hidden" style="transition:transform .3s,box-shadow .3s;cursor:pointer" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px rgba(0,0,0,0.1)';this.querySelector('.tool-desc').style.opacity='1';this.querySelector('.tool-desc').style.transform='translateY(0)'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.tool-desc').style.opacity='0';this.querySelector('.tool-desc').style.transform='translateY(10px)'">
-              <iconify-icon icon="simple-icons:ahrefs" class="fs-1 mb-3 d-block" style="color:#ff8c00"></iconify-icon>
-              <h4 class="mb-2">Ahrefs</h4>
-              <p class="text-muted mb-0">SEO-onderzoek en concurrentieanalyse</p>
-              <div class="tool-desc" style="opacity:0;transform:translateY(10px);transition:all .3s;margin-top:12px;padding-top:12px;border-top:1px solid #eee">
-                <p class="mb-0 small text-dark">Keyword research, backlink-analyse, content gaps en technische SEO-audits. Data-gedreven beslissingen in plaats van onderbuikgevoel.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="p-5 bg-white rounded-4 h-100 position-relative overflow-hidden" style="transition:transform .3s,box-shadow .3s;cursor:pointer" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px rgba(0,0,0,0.1)';this.querySelector('.tool-desc').style.opacity='1';this.querySelector('.tool-desc').style.transform='translateY(0)'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.tool-desc').style.opacity='0';this.querySelector('.tool-desc').style.transform='translateY(10px)'">
-              <iconify-icon icon="solar:phone-calling-rounded-bold-duotone" class="fs-1 mb-3 d-block text-primary"></iconify-icon>
-              <h4 class="mb-2">VAPI Voice AI</h4>
-              <p class="text-muted mb-0">AI telefonist voor je bedrijf</p>
-              <div class="tool-desc" style="opacity:0;transform:translateY(10px);transition:all .3s;margin-top:12px;padding-top:12px;border-top:1px solid #eee">
-                <p class="mb-0 small text-dark">Beantwoordt elke oproep 24/7, plant afspraken, stuurt samenvattingen via WhatsApp. Getraind op jouw bedrijf, klinkt als een echte medewerker.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="p-5 bg-white rounded-4 h-100 position-relative overflow-hidden" style="transition:transform .3s,box-shadow .3s;cursor:pointer" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px rgba(0,0,0,0.1)';this.querySelector('.tool-desc').style.opacity='1';this.querySelector('.tool-desc').style.transform='translateY(0)'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.tool-desc').style.opacity='0';this.querySelector('.tool-desc').style.transform='translateY(10px)'">
-              <iconify-icon icon="solar:monitor-bold-duotone" class="fs-1 mb-3 d-block text-primary"></iconify-icon>
-              <h4 class="mb-2">HighLevel CRM</h4>
-              <p class="text-muted mb-0">CRM, e-mail en social planner</p>
-              <div class="tool-desc" style="opacity:0;transform:translateY(10px);transition:all .3s;margin-top:12px;padding-top:12px;border-top:1px solid #eee">
-                <p class="mb-0 small text-dark">Alles-in-&eacute;&eacute;n platform: klantbeheer, e-mail automatisering, social media scheduling, facturatie en rapportage. Jouw complete marketing-cockpit.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="p-5 bg-white rounded-4 h-100 position-relative overflow-hidden" style="transition:transform .3s,box-shadow .3s;cursor:pointer" onmouseenter="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 50px rgba(0,0,0,0.1)';this.querySelector('.tool-desc').style.opacity='1';this.querySelector('.tool-desc').style.transform='translateY(0)'" onmouseleave="this.style.transform='';this.style.boxShadow='';this.querySelector('.tool-desc').style.opacity='0';this.querySelector('.tool-desc').style.transform='translateY(10px)'">
-              <iconify-icon icon="solar:magnifer-zoom-in-bold-duotone" class="fs-1 mb-3 d-block text-primary"></iconify-icon>
-              <h4 class="mb-2">Perplexity & Gemini</h4>
-              <p class="text-muted mb-0">AI-onderzoek en AEO-analyse</p>
-              <div class="tool-desc" style="opacity:0;transform:translateY(10px);transition:all .3s;margin-top:12px;padding-top:12px;border-top:1px solid #eee">
-                <p class="mb-0 small text-dark">We monitoren hoe jouw merk verschijnt in AI-zoekmachines en optimaliseren je content zodat AI-systemen jou aanbevelen aan hun gebruikers.</p>
-              </div>
-            </div>
+        </div>
+
+        <!-- Mobile fallback: simple cards grid -->
+        <div class="d-lg-none">
+          <div class="row g-3 mt-4">
+            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="simple-icons:openai" style="color:#10a37f;font-size:40px" class="d-block mb-2"></iconify-icon><strong>ChatGPT</strong><p class="small text-muted mb-0 mt-1">Strategie & content</p></div></div>
+            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="simple-icons:anthropic" style="color:#d4a27f;font-size:40px" class="d-block mb-2"></iconify-icon><strong>Claude</strong><p class="small text-muted mb-0 mt-1">Code & systemen</p></div></div>
+            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="simple-icons:n8n" style="color:#ea4b71;font-size:40px" class="d-block mb-2"></iconify-icon><strong>N8N</strong><p class="small text-muted mb-0 mt-1">Automatisering</p></div></div>
+            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="simple-icons:ahrefs" style="color:#ff8c00;font-size:40px" class="d-block mb-2"></iconify-icon><strong>Ahrefs</strong><p class="small text-muted mb-0 mt-1">SEO-data</p></div></div>
+            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone" style="color:#C1FF72;font-size:40px" class="d-block mb-2"></iconify-icon><strong>VAPI</strong><p class="small text-muted mb-0 mt-1">Voice AI</p></div></div>
+            <div class="col-6"><div class="p-4 bg-white rounded-4 text-center"><iconify-icon icon="solar:monitor-bold-duotone" style="color:#4285f4;font-size:40px" class="d-block mb-2"></iconify-icon><strong>HighLevel</strong><p class="small text-muted mb-0 mt-1">CRM Platform</p></div></div>
           </div>
         </div>
       </div>
     </section>
+
+    <style>
+    .orbit-container{position:relative;width:500px;height:500px;margin:0 auto}
+    .orbit-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:130px;height:130px;background:#1F2A2E;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:3;box-shadow:0 8px 40px rgba(0,0,0,0.15)}
+    .orbit-ring{position:absolute;inset:0;animation:orbit-spin 30s linear infinite}
+    .orbit-item{position:absolute;width:80px;height:80px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.08);cursor:pointer;transition:transform .3s,box-shadow .3s,background .3s;z-index:2;top:50%;left:50%;margin:-40px 0 0 -40px;transform:rotate(var(--angle)) translateX(200px) rotate(calc(-1 * var(--angle)))}
+    .orbit-item:hover{transform:rotate(var(--angle)) translateX(200px) rotate(calc(-1 * var(--angle))) scale(1.4);box-shadow:0 12px 40px rgba(0,0,0,0.2);background:#1F2A2E;z-index:10}
+    .orbit-item:hover iconify-icon{color:#C1FF72 !important}
+    .orbit-info{position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);text-align:center;width:400px;transition:opacity .3s}
+    .orbit-info h4{margin:0 0 4px;font-size:20px}
+    .orbit-info p{margin:0;color:#666;font-size:15px}
+    @keyframes orbit-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit-ring:hover{animation-play-state:paused}
+    @media(max-width:991px){.orbit-container{display:none}}
+    </style>
+
+    <script>
+    (function(){
+      var data = {
+        chatgpt: {title:'ChatGPT', desc:'Strategie, contentcreatie en klantcommunicatie op schaal. Van SEO-artikelen tot campagne-ideeën.'},
+        claude: {title:'Claude', desc:'Code, automatisering en AI-systemen bouwen. Complete workflows en integraties vanaf scratch.'},
+        n8n: {title:'N8N Workflows', desc:'Custom workflows die marketing, administratie en klantopvolging volledig automatiseren.'},
+        ahrefs: {title:'Ahrefs', desc:'Keyword research, backlink-analyse, content gaps en technische SEO-audits op professioneel niveau.'},
+        vapi: {title:'VAPI Voice AI', desc:'Beantwoordt elke oproep 24/7, plant afspraken en stuurt samenvattingen via WhatsApp.'},
+        highlevel: {title:'HighLevel CRM', desc:'Alles-in-één: klantbeheer, e-mail, social planner, facturatie en rapportage in één platform.'}
+      };
+      document.querySelectorAll('.orbit-item').forEach(function(el){
+        el.addEventListener('mouseenter', function(){
+          var tool = el.getAttribute('data-tool');
+          if(data[tool]){
+            document.getElementById('orbitTitle').textContent = data[tool].title;
+            document.getElementById('orbitDesc').textContent = data[tool].desc;
+          }
+        });
+        el.addEventListener('mouseleave', function(){
+          document.getElementById('orbitTitle').textContent = 'Hover over een tool';
+          document.getElementById('orbitDesc').textContent = 'Ontdek hoe wij elke tool inzetten voor jouw groei.';
+        });
+      });
+    })();
+    </script>
 
     <!-- ═══ SECTION 8: WERKWIJZE (5 stappen) ═══ -->
     <section class="py-5 py-lg-7 py-xl-8">
