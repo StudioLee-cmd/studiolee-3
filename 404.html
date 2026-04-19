@@ -69,6 +69,13 @@
     .call-btn-inline:hover { transform:scale(1.05); }
     .call-btn-inline.hangup { background:rgba(220,50,50,0.9); color:#fff; }
 
+    /* 404 heading on the desk */
+    .desk-heading { position:absolute; top:6%; left:50%; transform:translateX(-50%); z-index:8; text-align:center; pointer-events:none; }
+    .desk-heading h1 { font-family:'Enligas','Outfit',sans-serif; font-size:clamp(28px, 4vw, 56px); font-weight:900; color:var(--lime); letter-spacing:3px; text-shadow:0 4px 20px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.6); margin:0; line-height:1.1; }
+    .desk-heading p { font-family:'Outfit',sans-serif; font-size:clamp(13px, 1.5vw, 18px); color:rgba(255,255,255,0.5); margin-top:8px; text-shadow:0 2px 10px rgba(0,0,0,0.8); }
+    .desk-heading a { color:var(--lime); text-decoration:none; pointer-events:auto; }
+    .desk-heading a:hover { text-decoration:underline; }
+
     /* Clickable phone body overlay (transparent, for click events) */
     .phone-click-zone { position:absolute; top:5%; left:55%; width:30%; height:90%; z-index:1; cursor:pointer; }
     .phone-click-zone.ringing { animation:shake .08s linear infinite; }
@@ -91,6 +98,10 @@
 </head>
 <body>
   <div class="phone-wrapper"><div class="phone-container" id="wrap">
+    <div class="desk-heading">
+      <h1>// 404 — VERKEERD GEDRAAID</h1>
+      <p>Deze pagina bestaat niet meer. Draai het wiel of ga naar de <a href="/">homepage</a>.</p>
+    </div>
     <!-- Phone click zone (transparent overlay for click events) -->
     <div class="phone-click-zone" id="phoneBody"></div>
 
