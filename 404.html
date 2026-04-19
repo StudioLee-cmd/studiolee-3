@@ -22,21 +22,21 @@
 
     /* Dial overlay — positioned as % of container, matching phone dial in image */
     /* Image 1752x1024, dial center at x=1149 y=484 → 65.6% x, 47.3% y */
-    .l-numplate { position:absolute; width:18.3vw; height:18.3vw; max-width:320px; max-height:320px; top:44.92%; left:71.12%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
+    .l-numplate { position:absolute; width:15vw; height:15vw; max-width:260px; max-height:260px; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
     .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
 
     .sticker { position:absolute; width:48px; height:48px; transform:translate(-50%,-50%); pointer-events:none; }
     .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
 
-    .l-finger { position:absolute; width:21vw; height:21vw; max-width:370px; max-height:370px; top:44.92%; left:71.12%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
+    .l-finger { position:absolute; width:17vw; height:17vw; max-width:300px; max-height:300px; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
 
     /* CALIBRATION: red crosshair showing where we think dial center is */
-    .calibration { position:absolute; top:48.5%; left:69.5%; transform:translate(-50%,-50%); z-index:99; pointer-events:none; }
+    .calibration { position:absolute; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:99; pointer-events:none; }
     .calibration::before { content:''; position:absolute; width:200px; height:4px; background:red; left:-100px; top:-2px; }
     .calibration::after { content:''; position:absolute; width:4px; height:200px; background:red; left:-2px; top:-100px; }
-    .l-hub { position:absolute; top:44.92%; left:71.12%; transform:translate(-50%,-50%); z-index:4;
+    .l-hub { position:absolute; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:4;
       width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
       box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
@@ -117,13 +117,13 @@
 
     <div class="calibration"></div>
     <!-- Invisible hotspots for 7 dial holes -->
-    <a class="rz" href="/seo" data-t="seo" style="left:64.3%;top:44.9%"></a>
-    <a class="rz" href="/chatbot" data-t="chatbot" style="left:66.3%;top:36.7%"></a>
-    <a class="rz" href="/voice-ai" data-t="voice" style="left:71.1%;top:33.2%"></a>
-    <a class="rz" href="/reviews" data-t="reviews" style="left:75.9%;top:36.7%"></a>
-    <a class="rz" href="/automations" data-t="auto" style="left:78.0%;top:44.9%"></a>
-    <a class="rz" href="/website-laten-maken" data-t="website" style="left:71.1%;top:56.6%"></a>
-    <a class="rz" href="/herinneringen" data-t="herinner" style="left:66.3%;top:53.1%"></a>
+    <a class="rz" href="/seo" data-t="seo" style="left:63%;top:50%"></a>
+    <a class="rz" href="/chatbot" data-t="chatbot" style="left:64.5%;top:43%"></a>
+    <a class="rz" href="/voice-ai" data-t="voice" style="left:69.5%;top:40%"></a>
+    <a class="rz" href="/reviews" data-t="reviews" style="left:74.5%;top:43%"></a>
+    <a class="rz" href="/automations" data-t="auto" style="left:76%;top:50%"></a>
+    <a class="rz" href="/website-laten-maken" data-t="website" style="left:69.5%;top:60%"></a>
+    <a class="rz" href="/herinneringen" data-t="herinner" style="left:64.5%;top:57%"></a>
 
     <!-- Speech bubble -->
     <div class="game-overlay">
@@ -204,8 +204,8 @@
 
     function ma(e) {
       var r = wrap.getBoundingClientRect();
-      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - r.width*0.7112;
-      var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - r.height*0.4492;
+      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - r.width*0.695;
+      var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - r.height*0.50;
       return Math.atan2(y, x) * 180 / Math.PI;
     }
 
