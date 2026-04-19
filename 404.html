@@ -48,6 +48,20 @@
     a.rz { pointer-events:auto; }
     a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.15); }
 
+    /* Desk stickers */
+    .desk-sticker { position:absolute; z-index:6; width:64px; height:64px; cursor:grab; user-select:none; transition:transform .3s, opacity .5s, filter .3s; filter:drop-shadow(0 3px 6px rgba(0,0,0,0.5)); }
+    .desk-sticker img { width:100%; height:100%; object-fit:contain; pointer-events:none; }
+    .desk-sticker:hover { transform:scale(1.1) rotate(-3deg); filter:drop-shadow(0 6px 12px rgba(0,0,0,0.6)); }
+    .desk-sticker.peeling { animation:peel-wobble .4s ease-in-out infinite; }
+    .desk-sticker.peeled { opacity:0; transform:scale(0.3) rotate(180deg); pointer-events:none; }
+    @keyframes peel-wobble { 0%,100%{transform:rotate(-2deg) scale(1.05)} 50%{transform:rotate(2deg) scale(1.08)} }
+    .desk-sticker .peel-ring { position:absolute; inset:-6px; border:3px solid var(--lime); border-radius:50%; opacity:0; transition:opacity .2s; }
+    .desk-sticker.peeling .peel-ring { opacity:1; animation:peel-pulse 1s linear infinite; }
+    @keyframes peel-pulse { 0%{transform:scale(1);opacity:1} 100%{transform:scale(1.4);opacity:0} }
+    .peel-progress { position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); width:48px; height:4px; background:rgba(255,255,255,0.15); border-radius:2px; overflow:hidden; opacity:0; }
+    .desk-sticker.peeling .peel-progress { opacity:1; }
+    .peel-fill { width:0%; height:100%; background:var(--lime); border-radius:2px; transition:width .1s linear; }
+
     /* Game info — overlaid on the phone */
     .game-overlay { position:absolute; top:-20px; right:-180px; z-index:10; pointer-events:none; opacity:0; transform:scale(0.8) translateY(10px); transition:all .3s cubic-bezier(0.34,1.56,0.64,1); }
     .game-overlay.visible { opacity:1; transform:scale(1) translateY(0); pointer-events:auto; }
@@ -128,9 +142,19 @@
       <div class="game-box">
         <div class="game-title" id="gT">KIES EEN DIENST<span class="cur"></span></div>
         <div class="game-desc" id="gD">Draai de schijf of klik op de telefoon</div>
+        <button class="call-btn-inline" id="btnCall" style="display:none" onclick="event.stopPropagation();startVapiCall()">Bel Met Lee</button>
       </div>
     </div>
   </div>
+
+  <!-- Desk stickers — hold 5s to peel -->
+  <div class="desk-sticker" style="left:6%;top:25%;transform:rotate(-12deg)" data-service="seo"><img src="/assets/images/stickers/world.webp" alt="SEO"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="left:12%;top:65%;transform:rotate(8deg)" data-service="chatbot"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="left:3%;top:78%;transform:rotate(-5deg)" data-service="voice"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="right:8%;top:20%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="right:4%;top:55%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="right:14%;top:75%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+  <div class="desk-sticker" style="left:8%;top:45%;transform:rotate(3deg)" data-service="herinner"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
 
   <p class="click-hint">[ KLIK OP DE TELEFOON OM TE BELLEN ]</p>
 
@@ -367,6 +391,48 @@
     };
 
     startA();
+
+    // ── Desk stickers: hold 5s to peel ──
+    var HOLD_MS = 5000;
+    document.querySelectorAll('.desk-sticker').forEach(function(s) {
+      var timer = null, startTime = 0, progInterval = null;
+      var fill = s.querySelector('.peel-fill');
+
+      function beginPeel(e) {
+        e.preventDefault();
+        if (s.classList.contains('peeled')) return;
+        s.classList.add('peeling');
+        startTime = Date.now();
+        fill.style.width = '0%';
+        progInterval = setInterval(function() {
+          var pct = Math.min(100, ((Date.now() - startTime) / HOLD_MS) * 100);
+          fill.style.width = pct + '%';
+        }, 50);
+        timer = setTimeout(function() {
+          s.classList.remove('peeling');
+          s.classList.add('peeled');
+          clearInterval(progInterval);
+          // Navigate to service after peel animation
+          var svc = s.dataset.service;
+          var urls = {seo:'/seo',chatbot:'/chatbot',voice:'/voice-ai',reviews:'/reviews',auto:'/automations',website:'/website-laten-maken',herinner:'/herinneringen'};
+          if (urls[svc]) setTimeout(function(){ window.location.href = urls[svc]; }, 600);
+        }, HOLD_MS);
+      }
+
+      function cancelPeel() {
+        if (timer) { clearTimeout(timer); timer = null; }
+        if (progInterval) { clearInterval(progInterval); progInterval = null; }
+        s.classList.remove('peeling');
+        fill.style.width = '0%';
+      }
+
+      s.addEventListener('mousedown', beginPeel);
+      s.addEventListener('touchstart', beginPeel, {passive:false});
+      s.addEventListener('mouseup', cancelPeel);
+      s.addEventListener('mouseleave', cancelPeel);
+      s.addEventListener('touchend', cancelPeel);
+      s.addEventListener('touchcancel', cancelPeel);
+    });
   })();
   </script>
 </body>
