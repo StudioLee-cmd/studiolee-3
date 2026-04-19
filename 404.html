@@ -12,9 +12,10 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     body { background:var(--dark); font-family:'Segoe UI',system-ui,sans-serif; color:#fff; margin:0; padding:0; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column; }
 
+    .phone-wrapper { flex:1; display:flex; align-items:center; justify-content:center; }
     .phone-container {
-      position:relative; flex:1; width:100%;
-      background:url('/assets/images/ai-marketing-bureau/phone-body-wide.jpg') center center / contain no-repeat;
+      position:relative; width:100vw; aspect-ratio:1752/1024; max-height:calc(100vh - 50px);
+      background:url('/assets/images/ai-marketing-bureau/phone-body-wide.jpg') 0 0 / 100% 100% no-repeat;
     }
 
     /* Dial overlay — positioned as % of container, matching phone dial in image */
@@ -92,7 +93,7 @@
   </style>
 </head>
 <body>
-  <div class="phone-container" id="wrap">
+  <div class="phone-wrapper"><div class="phone-container" id="wrap">
     <!-- Phone click zone (transparent overlay for click events) -->
     <div class="phone-click-zone" id="phoneBody"></div>
 
@@ -139,7 +140,7 @@
     <div class="desk-sticker" style="left:22%;top:50%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
     <div class="desk-sticker" style="left:5%;top:72%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
     <div class="desk-sticker" style="left:20%;top:78%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  </div>
+  </div></div>
 
   <div class="bottom-nav">
     <a href="/">Home</a><a href="/blog">Blog</a><a href="/tarieven">Tarieven</a>
