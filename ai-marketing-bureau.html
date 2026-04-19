@@ -421,37 +421,33 @@
           <p class="text-white text-opacity-50">Draai het wiel. Klik op een dienst. Of bel direct met Lee.</p>
         </div>
 
-        <div style="display:flex;justify-content:center">
-          <div class="phone-container" id="wrap">
-            <div class="l-body" id="phoneBody">
-              <img src="/assets/images/ai-marketing-bureau/phone-body.png" alt="1930s rotary telephone" id="phoneImg">
-              <video id="phoneVideo" loop muted playsinline style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:contain"><source src="/assets/video/phone-ring.mp4" type="video/mp4"></video>
-            </div>
-            <div class="l-numplate">
-              <div class="numplate-bg"></div>
-              <div class="sticker" style="left:15%;top:50%"><img src="/assets/images/stickers/world.webp" alt="SEO"></div>
-              <div class="sticker" style="left:24%;top:24%"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"></div>
-              <div class="sticker" style="left:50%;top:15%"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"></div>
-              <div class="sticker" style="left:76%;top:24%"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"></div>
-              <div class="sticker" style="left:85%;top:50%"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"></div>
-              <div class="sticker" style="left:50%;top:85%"><img src="/assets/images/stickers/washing.webp" alt="Website"></div>
-              <div class="sticker" style="left:24%;top:76%"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"></div>
-            </div>
-            <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
-            <a href="/" class="l-hub" onclick="event.stopPropagation()" title="Home"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
-            <a class="rz" href="/seo" data-t="seo" style="left:35%;top:45%"></a>
-            <a class="rz" href="/chatbot" data-t="chatbot" style="left:38%;top:36%"></a>
-            <a class="rz" href="/voice-ai" data-t="voice" style="left:50.5%;top:31%"></a>
-            <a class="rz" href="/reviews" data-t="reviews" style="left:63%;top:36%"></a>
-            <a class="rz" href="/automations" data-t="auto" style="left:66%;top:45%"></a>
-            <a class="rz" href="/website-laten-maken" data-t="website" style="left:50.5%;top:59%"></a>
-            <a class="rz" href="/herinneringen" data-t="herinner" style="left:38%;top:54%"></a>
-            <div class="game-overlay">
-              <div class="game-box">
-                <div class="game-title" id="gT">KIES EEN DIENST<span class="cur"></span></div>
-                <div class="game-desc" id="gD">Draai de schijf of klik op de telefoon</div>
-                <button class="call-btn-inline" id="btnCall" style="display:none" onclick="event.stopPropagation();startVapiCall()">Bel Met Lee</button>
-              </div>
+        <div class="phone-container" id="wrap">
+          <div class="phone-click-zone" id="phoneBody"></div>
+          <video id="phoneVideo" loop muted playsinline style="display:none;position:absolute;top:0;left:39%;width:61%;height:100%;object-fit:contain;z-index:0"><source src="/assets/video/phone-ring.mp4" type="video/mp4"></video>
+          <div class="l-numplate">
+            <div class="numplate-bg"></div>
+            <div class="sticker" style="left:15%;top:50%"><img src="/assets/images/stickers/world.webp" alt="SEO"></div>
+            <div class="sticker" style="left:24%;top:24%"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"></div>
+            <div class="sticker" style="left:50%;top:15%"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"></div>
+            <div class="sticker" style="left:76%;top:24%"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"></div>
+            <div class="sticker" style="left:85%;top:50%"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"></div>
+            <div class="sticker" style="left:50%;top:85%"><img src="/assets/images/stickers/washing.webp" alt="Website"></div>
+            <div class="sticker" style="left:24%;top:76%"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"></div>
+          </div>
+          <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
+          <a href="/" class="l-hub" onclick="event.stopPropagation()" title="Home"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
+          <a class="rz" href="/seo" data-t="seo" style="left:63%;top:50%"></a>
+          <a class="rz" href="/chatbot" data-t="chatbot" style="left:64.5%;top:43%"></a>
+          <a class="rz" href="/voice-ai" data-t="voice" style="left:69.5%;top:40%"></a>
+          <a class="rz" href="/reviews" data-t="reviews" style="left:74.5%;top:43%"></a>
+          <a class="rz" href="/automations" data-t="auto" style="left:76%;top:50%"></a>
+          <a class="rz" href="/website-laten-maken" data-t="website" style="left:69.5%;top:60%"></a>
+          <a class="rz" href="/herinneringen" data-t="herinner" style="left:64.5%;top:57%"></a>
+          <div class="game-overlay visible">
+            <div class="game-box">
+              <div class="game-title" id="gT">KIES EEN DIENST<span class="cur"></span></div>
+              <div class="game-desc" id="gD">Draai de schijf of klik op de telefoon</div>
+              <button class="call-btn-inline" id="btnCall" style="display:none" onclick="event.stopPropagation();startVapiCall()">Bel Met Lee</button>
             </div>
           </div>
         </div>
@@ -459,20 +455,18 @@
     </section>
 
     <style>
-    .phone-container { position:relative; width:480px; height:520px; margin:0 auto; }
-    .l-body { position:absolute; inset:0; z-index:1; cursor:pointer; }
-    .l-body img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); transition:filter .3s; }
-    .l-body:hover img { filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)) brightness(1.08); }
-    .l-body.ringing img { animation:phone-shake .08s linear infinite; }
+    .phone-container { position:relative; width:100%; max-width:900px; margin:0 auto; aspect-ratio:1752/1024; background:url('/assets/images/ai-marketing-bureau/phone-body-wide.jpg') 0 0 / 100% 100% no-repeat; }
+    .phone-click-zone { position:absolute; top:5%; left:55%; width:30%; height:90%; z-index:1; cursor:pointer; }
+    .phone-click-zone.ringing { animation:phone-shake .08s linear infinite; }
     @keyframes phone-shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
-    .l-numplate { position:absolute; width:220px; height:220px; top:45%; left:50.5%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
+    .l-numplate { position:absolute; width:15vw; height:15vw; max-width:260px; max-height:260px; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
     .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
     .sticker { position:absolute; width:48px; height:48px; transform:translate(-50%,-50%); pointer-events:none; }
     .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-    .l-finger { position:absolute; width:255px; height:255px; top:45%; left:50.5%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
+    .l-finger { position:absolute; width:17vw; height:17vw; max-width:300px; max-height:300px; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
-    .l-hub { position:absolute; top:45%; left:50.5%; transform:translate(-50%,-50%); z-index:4;
+    .l-hub { position:absolute; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:4;
       width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
       box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
@@ -482,7 +476,7 @@
     a.rz { position:absolute; width:48px; height:48px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
       transition:box-shadow .2s, background .2s; text-decoration:none; display:block; pointer-events:auto; }
     a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.15); }
-    .game-overlay { position:absolute; top:-20px; right:-180px; z-index:10; pointer-events:none; opacity:0; transform:scale(0.8) translateY(10px); transition:all .3s cubic-bezier(0.34,1.56,0.64,1); }
+    .game-overlay { position:absolute; top:30%; left:82%; z-index:10; pointer-events:none; opacity:0; transform:scale(0.8) translateY(10px); transition:all .3s cubic-bezier(0.34,1.56,0.64,1); }
     .game-overlay.visible { opacity:1; transform:scale(1) translateY(0); pointer-events:auto; }
     .game-box { display:inline-block; background:#0a0a0f; border:3px solid var(--lime); border-radius:4px; padding:16px 22px; min-width:260px; position:relative; box-shadow:0 0 20px rgba(193,255,114,0.15), 0 8px 32px rgba(0,0,0,0.6); }
     .game-box::before { content:''; position:absolute; left:-12px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:12px solid var(--lime); }
@@ -495,7 +489,7 @@
     .call-btn-inline:hover { transform:scale(1.05); }
     .call-btn-inline.hangup { background:rgba(220,50,50,0.9); color:#fff; }
     #vapi-support-btn, .vapi-btn, [id^="vapi"] { display:none !important; }
-    @media(max-width:520px) { .phone-container{width:340px;height:380px;} .l-numplate{width:190px;height:190px;} .l-finger{width:200px;height:200px;} .sticker{width:38px;height:38px;} }
+    @media(max-width:768px) { .l-numplate{width:28vw;height:28vw;} .l-finger{width:32vw;height:32vw;} .game-overlay{left:50%;top:5%;} }
     </style>
 
     <script>
@@ -527,7 +521,7 @@
       var plate=document.getElementById('plate'),wrap=document.getElementById('wrap');
       var a=0,drag=false,sA=0,sM=0,v=0,lA=0,raf,calling=false;
 
-      function ma(e){var r=wrap.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left-r.width*0.505;var y=(e.touches?e.touches[0].clientY:e.clientY)-r.top-r.height*0.45;return Math.atan2(y,x)*180/Math.PI;}
+      function ma(e){var r=wrap.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left-r.width*0.695;var y=(e.touches?e.touches[0].clientY:e.clientY)-r.top-r.height*0.50;return Math.atan2(y,x)*180/Math.PI;}
       function dn(e){if(e.target.closest('.rz')||e.target.closest('.l-hub'))return;e.stopPropagation();drag=true;plate.classList.add('grabbing');sM=ma(e);sA=a;v=0;if(raf)cancelAnimationFrame(raf);stopA();e.preventDefault();}
       function mv(e){if(!drag)return;var m=ma(e);a=sA+(m-sM);v=a-lA;lA=a;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';e.preventDefault();}
       function up(){if(!drag)return;drag=false;plate.classList.remove('grabbing');function c(){if(Math.abs(v)<0.05){startA();return;}v*=0.97;a+=v;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';raf=requestAnimationFrame(c);}c();}
@@ -540,23 +534,48 @@
       function startA(){if(ai)return;ai=setInterval(function(){if(drag)return;a+=0.15;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';},16);}
       function stopA(){clearInterval(ai);ai=null;}
 
+      function restoreDefault(){
+        document.querySelector('.game-overlay').classList.add('visible');
+        document.getElementById('gT').innerHTML='KIES EEN DIENST<span class="cur"></span>';
+        document.getElementById('gD').textContent='Draai de schijf of klik op de telefoon';
+        document.getElementById('btnCall').style.display='none';
+      }
+
       document.querySelectorAll('.rz').forEach(function(z){
         z.addEventListener('click',function(e){e.stopPropagation();});
         z.addEventListener('mouseenter',function(){
+          if(calling)return;
           stopA();var t=d[z.dataset.t];
           if(t){document.querySelector('.game-overlay').classList.add('visible');humanType(document.getElementById('gT'),t.t);document.getElementById('gD').textContent=t.d;document.getElementById('btnCall').style.display='none';}
         });
         z.addEventListener('mouseleave',function(){
+          if(calling)return;
           if(window._typeTimer){clearTimeout(window._typeTimer);window._typeTimer=null;}
-          document.querySelector('.game-overlay').classList.remove('visible');document.getElementById('gT').innerHTML='';document.getElementById('gD').textContent='';startA();
+          restoreDefault();startA();
         });
+      });
+
+      // Hub hover — links to homepage
+      var hub=document.querySelector('.l-hub');
+      hub.addEventListener('mouseenter',function(){
+        if(calling)return;
+        stopA();
+        document.querySelector('.game-overlay').classList.add('visible');
+        humanType(document.getElementById('gT'),'STUDIOLEE HOME');
+        document.getElementById('gD').textContent='Terug naar de homepage';
+        document.getElementById('btnCall').style.display='none';
+      });
+      hub.addEventListener('mouseleave',function(){
+        if(calling)return;
+        if(window._typeTimer){clearTimeout(window._typeTimer);window._typeTimer=null;}
+        restoreDefault();startA();
       });
 
       document.getElementById('phoneBody').addEventListener('click',function(e){
         if(calling){endVapiCall();return;}
         calling=true;
-        var img=document.getElementById('phoneImg'),video=document.getElementById('phoneVideo');
-        if(video){img.style.display='none';video.style.display='block';video.play();}
+        var video=document.getElementById('phoneVideo');
+        if(video){video.style.display='block';video.play();}
         this.classList.add('ringing');
         var overlay=document.querySelector('.game-overlay'),titleEl=document.getElementById('gT'),descEl=document.getElementById('gD'),btnCall=document.getElementById('btnCall');
         overlay.classList.add('visible');btnCall.style.display='none';descEl.textContent='';
@@ -588,11 +607,9 @@
         if(window._vapiInstance&&typeof window._vapiInstance.stop==='function')window._vapiInstance.stop();
         calling=false;
         document.getElementById('phoneBody').classList.remove('ringing');
-        document.querySelector('.game-overlay').classList.remove('visible');
-        document.getElementById('btnCall').style.display='none';
-        document.getElementById('gT').innerHTML='';document.getElementById('gD').textContent='';
-        var img=document.getElementById('phoneImg'),video=document.getElementById('phoneVideo');
-        if(video){video.pause();video.style.display='none';img.style.display='block';}
+        var video=document.getElementById('phoneVideo');
+        if(video){video.pause();video.style.display='none';}
+        restoreDefault();
       };
 
       startA();
