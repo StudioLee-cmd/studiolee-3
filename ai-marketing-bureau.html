@@ -439,13 +439,13 @@
             </div>
             <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
             <a href="/" class="l-hub" onclick="event.stopPropagation()" title="Home"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
-            <a class="rz" href="/seo" data-t="seo" style="left:34%;top:50%"></a>
-            <a class="rz" href="/chatbot" data-t="chatbot" style="left:38%;top:38%"></a>
-            <a class="rz" href="/voice-ai" data-t="voice" style="left:50%;top:33%"></a>
-            <a class="rz" href="/reviews" data-t="reviews" style="left:62%;top:38%"></a>
-            <a class="rz" href="/automations" data-t="auto" style="left:66%;top:50%"></a>
-            <a class="rz" href="/website-laten-maken" data-t="website" style="left:50%;top:67%"></a>
-            <a class="rz" href="/herinneringen" data-t="herinner" style="left:38%;top:62%"></a>
+            <a class="rz" href="/seo" data-t="seo" style="left:35%;top:45%"></a>
+            <a class="rz" href="/chatbot" data-t="chatbot" style="left:38%;top:36%"></a>
+            <a class="rz" href="/voice-ai" data-t="voice" style="left:50.5%;top:31%"></a>
+            <a class="rz" href="/reviews" data-t="reviews" style="left:63%;top:36%"></a>
+            <a class="rz" href="/automations" data-t="auto" style="left:66%;top:45%"></a>
+            <a class="rz" href="/website-laten-maken" data-t="website" style="left:50.5%;top:59%"></a>
+            <a class="rz" href="/herinneringen" data-t="herinner" style="left:38%;top:54%"></a>
             <div class="game-overlay">
               <div class="game-box">
                 <div class="game-title" id="gT">KIES EEN DIENST<span class="cur"></span></div>
@@ -465,14 +465,14 @@
     .l-body:hover img { filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)) brightness(1.08); }
     .l-body.ringing img { animation:phone-shake .08s linear infinite; }
     @keyframes phone-shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
-    .l-numplate { position:absolute; width:220px; height:220px; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
+    .l-numplate { position:absolute; width:220px; height:220px; top:45%; left:50.5%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
     .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
     .sticker { position:absolute; width:48px; height:48px; transform:translate(-50%,-50%); pointer-events:none; }
     .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-    .l-finger { position:absolute; width:255px; height:255px; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
+    .l-finger { position:absolute; width:255px; height:255px; top:45%; left:50.5%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
-    .l-hub { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:4;
+    .l-hub { position:absolute; top:45%; left:50.5%; transform:translate(-50%,-50%); z-index:4;
       width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
       box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
@@ -527,7 +527,7 @@
       var plate=document.getElementById('plate'),wrap=document.getElementById('wrap');
       var a=0,drag=false,sA=0,sM=0,v=0,lA=0,raf,calling=false;
 
-      function ma(e){var r=wrap.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left-r.width*0.50;var y=(e.touches?e.touches[0].clientY:e.clientY)-r.top-r.height*0.50;return Math.atan2(y,x)*180/Math.PI;}
+      function ma(e){var r=wrap.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left-r.width*0.505;var y=(e.touches?e.touches[0].clientY:e.clientY)-r.top-r.height*0.45;return Math.atan2(y,x)*180/Math.PI;}
       function dn(e){if(e.target.closest('.rz')||e.target.closest('.l-hub'))return;e.stopPropagation();drag=true;plate.classList.add('grabbing');sM=ma(e);sA=a;v=0;if(raf)cancelAnimationFrame(raf);stopA();e.preventDefault();}
       function mv(e){if(!drag)return;var m=ma(e);a=sA+(m-sM);v=a-lA;lA=a;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';e.preventDefault();}
       function up(){if(!drag)return;drag=false;plate.classList.remove('grabbing');function c(){if(Math.abs(v)<0.05){startA();return;}v*=0.97;a+=v;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';raf=requestAnimationFrame(c);}c();}
