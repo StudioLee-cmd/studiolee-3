@@ -25,9 +25,9 @@
     .l-body.ringing img { animation:shake .08s linear infinite; }
     @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
 
-    .l-numplate { position:absolute; width:240px; height:240px; top:50%; left:49%; transform:translate(-50%,-50%); z-index:2; }
+    .l-numplate { position:absolute; width:252px; height:252px; top:50%; left:49%; transform:translate(-50%,-50%); z-index:2; }
     .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #ddd5c0 100%); border-radius:50%; border:2px solid #c0b898; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
-    .sticker { position:absolute; width:52px; height:52px; transform:translate(-50%,-50%); pointer-events:none; }
+    .sticker { position:absolute; width:54px; height:54px; transform:translate(-50%,-50%); pointer-events:none; }
     .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
 
     .l-finger { position:absolute; width:275px; height:275px; top:50%; left:49%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
@@ -88,13 +88,13 @@
     </div>
     <div class="l-numplate">
       <div class="numplate-bg"></div>
-      <div class="sticker" style="left:20%;top:50%"><img src="/assets/images/stickers/world.webp" alt="SEO"></div>
-      <div class="sticker" style="left:29%;top:29%"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"></div>
-      <div class="sticker" style="left:50%;top:20%"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"></div>
-      <div class="sticker" style="left:71%;top:29%"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"></div>
-      <div class="sticker" style="left:80%;top:50%"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"></div>
-      <div class="sticker" style="left:50%;top:80%"><img src="/assets/images/stickers/washing.webp" alt="Website"></div>
-      <div class="sticker" style="left:29%;top:71%"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"></div>
+      <div class="sticker" style="left:17%;top:50%"><img src="/assets/images/stickers/world.webp" alt="SEO"></div>
+      <div class="sticker" style="left:26%;top:26%"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"></div>
+      <div class="sticker" style="left:50%;top:17%"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"></div>
+      <div class="sticker" style="left:74%;top:26%"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"></div>
+      <div class="sticker" style="left:83%;top:50%"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"></div>
+      <div class="sticker" style="left:50%;top:83%"><img src="/assets/images/stickers/washing.webp" alt="Website"></div>
+      <div class="sticker" style="left:26%;top:74%"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"></div>
     </div>
     <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
     <a href="/ai-marketing-bureau" class="l-hub" style="pointer-events:auto;text-decoration:none" title="AI Marketing Bureau"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
@@ -142,74 +142,59 @@
 
     // ── Human-like typewriter with mistakes ──
     function humanType(el, text, onDone) {
-      var current = '';
-      var i = 0;
-      var mistakeChance = 0.18;
-      var inMistake = false;
-      var toDelete = 0;
-
-      function render() {
-        el.innerHTML = current + '<span class="cur"></span>';
-      }
-
-      function tick() {
-        // All done
-        if (i >= text.length && !inMistake) {
-          render();
+      // Cancel any previous typing
+      if (window._typeTimer) { clearTimeout(window._typeTimer); window._typeTimer = null; }
+      
+      var out = '';
+      var pos = 0;
+      var mistakes = 0;
+      
+      function step() {
+        // Done
+        if (pos >= text.length && mistakes <= 0) {
+          el.innerHTML = out + '<span class="cur"></span>';
           if (onDone) onDone();
           return;
         }
-
-        // Currently backspacing a mistake
-        if (inMistake) {
-          if (toDelete > 0) {
-            current = current.slice(0, -1);
-            toDelete--;
-            render();
-            setTimeout(tick, 50 + Math.random() * 30);
-          } else {
-            inMistake = false;
-            setTimeout(tick, 150 + Math.random() * 100);
-          }
+        
+        // Backspacing a mistake
+        if (mistakes > 0) {
+          out = out.slice(0, -1);
+          mistakes--;
+          el.innerHTML = out + '<span class="cur"></span>';
+          window._typeTimer = setTimeout(step, 55);
           return;
         }
-
-        // Maybe make a mistake (type 1-3 wrong chars, then backspace)
-        if (i < text.length && i > 1 && Math.random() < mistakeChance) {
-          inMistake = true;
-          var wrongLen = 1 + Math.floor(Math.random() * 2);
-          var nearby = 'QWERTYUIOPASDFGHJKLZXCVBNM';
-          for (var m = 0; m < wrongLen; m++) {
-            current += nearby[Math.floor(Math.random() * nearby.length)];
+        
+        // Maybe typo (15% chance after 3rd char)
+        if (pos > 2 && Math.random() < 0.15) {
+          var wrong = 'QWRTYPSDFJKLZXCVBN';
+          var typoLen = 1 + Math.floor(Math.random() * 2);
+          for (var t = 0; t < typoLen; t++) {
+            out += wrong[Math.floor(Math.random() * wrong.length)];
           }
-          toDelete = wrongLen;
-          render();
-          // Pause before realizing the mistake
-          setTimeout(tick, 250 + Math.random() * 250);
+          mistakes = typoLen;
+          el.innerHTML = out + '<span class="cur"></span>';
+          window._typeTimer = setTimeout(step, 300);
           return;
         }
-
-        // Normal character
-        current += text[i];
-        i++;
-        render();
-
-        var ch = text[i - 1];
-        var delay;
-        if (ch === ' ') delay = 60 + Math.random() * 100;
-        else if ('.!?'.indexOf(ch) >= 0) delay = 200 + Math.random() * 400;
-        else delay = 30 + Math.random() * 50;
-
-        // Random thinking pause
-        if (Math.random() < 0.06) delay += 200 + Math.random() * 400;
-
-        setTimeout(tick, delay);
+        
+        // Normal char
+        out += text[pos];
+        pos++;
+        el.innerHTML = out + '<span class="cur"></span>';
+        
+        var delay = 35 + Math.random() * 45;
+        if (text[pos-1] === ' ') delay = 70 + Math.random() * 80;
+        if (Math.random() < 0.04) delay += 250;
+        
+        window._typeTimer = setTimeout(step, delay);
       }
-
-      current = '';
-      i = 0;
-      render();
-      setTimeout(tick, 150);
+      
+      out = '';
+      pos = 0;
+      el.innerHTML = '<span class="cur"></span>';
+      window._typeTimer = setTimeout(step, 100);
     }
 
     // ── Dial spin ──
