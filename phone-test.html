@@ -12,35 +12,32 @@
     h2 { font-size:28px; margin-bottom:6px; }
     .sub { color:rgba(255,255,255,0.4); margin-bottom:40px; }
 
-    /* Phone container — body image as background */
-    .phone-container { position:relative; width:500px; height:500px; }
-    .phone-body { position:absolute; inset:-40px; z-index:1; }
+    .phone-container { position:relative; width:480px; height:520px; }
+
+    .phone-body { position:absolute; inset:0; z-index:1; }
     .phone-body img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); }
 
-    /* Rotary area sits on top of the phone body, centered on the dial hole */
-    .rotary { position:absolute; width:320px; height:320px; top:50%; left:50%; transform:translate(-50%,-46%); z-index:2; user-select:none; }
-
-    .rotary-frame { position:absolute; inset:-12px; z-index:3; pointer-events:none; }
-    .rotary-frame img { width:100%; height:100%; object-fit:contain; }
+    /* Dial positioned on the phone's dial hole — slightly above center */
+    .rotary { position:absolute; width:280px; height:280px; top:46%; left:50%; transform:translate(-50%,-50%); z-index:2; user-select:none; }
 
     .rotary-disc { position:absolute; inset:0; z-index:2; cursor:grab; }
     .rotary-disc.grabbing { cursor:grabbing; }
     .rotary-disc img { width:100%; height:100%; object-fit:contain; }
 
-    .rotary-hub { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:78px; height:78px; z-index:4; pointer-events:none;
+    .rotary-hub { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; z-index:4; pointer-events:none;
       background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%;
       border:3px solid #8B7355;
       box-shadow: 0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
       display:flex; align-items:center; justify-content:center;
     }
-    .rotary-hub img { width:48px; height:48px; object-fit:contain; }
+    .rotary-hub img { width:44px; height:44px; object-fit:contain; }
 
-    .rotary-info { text-align:center; margin-top:40px; min-height:70px; position:relative; z-index:10; }
+    .rotary-info { text-align:center; margin-top:20px; min-height:70px; position:relative; z-index:10; }
     .rotary-info h3 { color:var(--lime); font-size:22px; margin-bottom:6px; }
     .rotary-info p { color:rgba(255,255,255,0.5); font-size:15px; max-width:380px; margin:0 auto; }
 
-    a.rz { position:absolute; width:55px; height:55px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
+    a.rz { position:absolute; width:50px; height:50px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
       transition:box-shadow .2s, background .2s; text-decoration:none; display:block; }
     a.rz:hover { box-shadow:0 0 25px rgba(193,255,114,0.5); background:rgba(193,255,114,0.12); }
   </style>
@@ -50,16 +47,11 @@
   <p class="sub">Draai het wiel. Hover voor details. Klik om meer te lezen.</p>
 
   <div class="phone-container">
-    <!-- Phone body background -->
     <div class="phone-body">
       <img src="/assets/images/ai-marketing-bureau/phone-body.png" alt="1930s rotary telephone">
     </div>
 
-    <!-- Spinning dial on top -->
     <div class="rotary" id="rotary">
-      <div class="rotary-frame">
-        <img src="/assets/images/ai-marketing-bureau/frame-clean.png" alt="">
-      </div>
       <div class="rotary-disc" id="disc">
         <img src="/assets/images/ai-marketing-bureau/disc-clean.png" alt="AI tools dial" draggable="false">
       </div>
@@ -96,7 +88,7 @@
     var wrap = document.getElementById('rotary');
     var angle = 0, dragging = false, startA = 0, startM = 0, vel = 0, lastA = 0, raf;
     var hasDragged = false;
-    var size = 320, center = size/2, radius = 113;
+    var size = 280, center = size/2, radius = 98;
 
     var holes = [
       {a:-90, tool:'chatgpt'},
