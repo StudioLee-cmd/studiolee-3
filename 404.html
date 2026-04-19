@@ -335,30 +335,46 @@
 
     startA();
 
-    // Desk stickers: hold 5s to unlock, then drag freely
+    // Desk stickers: hold 5s → sticks to finger, drag freely
     (function() {
       var HOLD_MS = 5000;
+      // Prevent long-press context menu on stickers
+      document.addEventListener('contextmenu', function(e) {
+        if (e.target.closest('.desk-sticker')) e.preventDefault();
+      });
+
       document.querySelectorAll('.desk-sticker').forEach(function(s) {
         var holdTimer = null, progTimer = null, startTime = 0;
         var fill = s.querySelector('.peel-fill');
         var unlocked = false, dragging = false, ox = 0, oy = 0;
+        var lastTouch = null;
 
         s.addEventListener('mousedown', onDown);
         s.addEventListener('touchstart', onDown, {passive:false});
 
+        function getXY(e) {
+          if (e.touches && e.touches.length) return {x:e.touches[0].clientX, y:e.touches[0].clientY};
+          if (lastTouch) return lastTouch;
+          return {x:e.clientX, y:e.clientY};
+        }
+
+        function startDrag(e) {
+          dragging = true;
+          var rect = s.getBoundingClientRect();
+          var pt = getXY(e);
+          ox = pt.x - rect.left;
+          oy = pt.y - rect.top;
+          s.style.zIndex = '20';
+          s.style.transition = 'none';
+        }
+
         function onDown(e) {
           e.preventDefault();
           e.stopPropagation();
+          if (e.touches) lastTouch = {x:e.touches[0].clientX, y:e.touches[0].clientY};
 
           if (unlocked) {
-            // Already unlocked — start dragging
-            dragging = true;
-            var rect = s.getBoundingClientRect();
-            var cx = e.touches ? e.touches[0].clientX : e.clientX;
-            var cy = e.touches ? e.touches[0].clientY : e.clientY;
-            ox = cx - rect.left;
-            oy = cy - rect.top;
-            s.style.zIndex = '20';
+            startDrag(e);
             return;
           }
 
@@ -373,18 +389,23 @@
           }, 50);
 
           holdTimer = setTimeout(function() {
-            // Unlocked!
             unlocked = true;
             s.classList.remove('holding');
             s.classList.add('unlocked');
-            clearInterval(progTimer);
-            fill.style.width = '100%';
-            setTimeout(function() { fill.style.width = '0%'; }, 300);
+            clearInterval(progTimer); progTimer = null;
+            fill.style.width = '0%';
+            // Immediately start dragging — finger is still down
+            startDrag(e);
           }, HOLD_MS);
         }
 
         function onUp() {
-          if (dragging) { dragging = false; s.style.zIndex = '6'; return; }
+          if (dragging) {
+            dragging = false;
+            s.style.zIndex = '6';
+            s.style.transition = '';
+            return;
+          }
           if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
           if (progTimer) { clearInterval(progTimer); progTimer = null; }
           s.classList.remove('holding');
@@ -392,18 +413,19 @@
         }
 
         function onMove(e) {
+          if (e.touches && e.touches.length) lastTouch = {x:e.touches[0].clientX, y:e.touches[0].clientY};
           if (!dragging) return;
           e.preventDefault();
-          var cx = e.touches ? e.touches[0].clientX : e.clientX;
-          var cy = e.touches ? e.touches[0].clientY : e.clientY;
+          var pt = getXY(e);
           var pr = s.parentElement.getBoundingClientRect();
-          s.style.left = (cx - pr.left - ox) + 'px';
-          s.style.top = (cy - pr.top - oy) + 'px';
+          s.style.left = (pt.x - pr.left - ox) + 'px';
+          s.style.top = (pt.y - pr.top - oy) + 'px';
           s.style.transform = 'none';
         }
 
         window.addEventListener('mouseup', onUp);
         window.addEventListener('touchend', onUp);
+        window.addEventListener('touchcancel', onUp);
         window.addEventListener('mousemove', onMove);
         window.addEventListener('touchmove', onMove, {passive:false});
       });
