@@ -11,31 +11,26 @@
     
     :root { --lime: #C1FF72; --dark: #1F2A2E; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--dark); font-family:'Segoe UI',system-ui,sans-serif; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:40px 20px; overflow-x:hidden; }
+    body { background:var(--dark); font-family:'Segoe UI',system-ui,sans-serif; color:#fff; margin:0; padding:0; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column; }
 
-    .err-title { font-family:'Enligas','Outfit',sans-serif; font-size:28px; font-weight:800; color:var(--lime); letter-spacing:2px; margin-bottom:8px; }
-    .err-sub { color:rgba(255,255,255,0.5); font-size:15px; margin-bottom:36px; text-align:center; line-height:1.6; }
-    .err-sub a { color:var(--lime); text-decoration:none; }
-    .err-sub a:hover { text-decoration:underline; }
-
-    .phone-container { position:relative; width:100vw; max-width:100vw; margin-left:calc(-50vw + 50%); aspect-ratio:1.71/1; }
+    .phone-container { position:relative; flex:1; width:100vw; min-height:0; }
     .l-body { position:absolute; inset:0; z-index:1; cursor:pointer; }
-    .l-body img { width:100%; height:100%; object-fit:cover; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); transition:filter .3s; }
+    .l-body img { width:100%; height:100%; object-fit:contain; object-position:center center; filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)); transition:filter .3s; }
     .l-body:hover img { filter:drop-shadow(0 12px 40px rgba(0,0,0,0.6)) brightness(1.08); }
     .l-body.ringing img { animation:shake .08s linear infinite; }
     @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
 
-    .l-numplate { position:absolute; width:220px; height:220px; top:48%; left:71%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
+    .l-numplate { position:absolute; width:220px; height:220px; top:48%; left:50%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
     .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; border:none; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
     
     .sticker { position:absolute; width:48px; height:48px; transform:translate(-50%,-50%); pointer-events:none; }
     .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
 
-    .l-finger { position:absolute; width:255px; height:255px; top:48%; left:71%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
+    .l-finger { position:absolute; width:255px; height:255px; top:48%; left:50%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
 
-    .l-hub { position:absolute; top:50%; left:70%; transform:translate(-50%,-50%); z-index:4;
+    .l-hub { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:4;
       width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
       box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
@@ -73,20 +68,7 @@
     .game-title .cur { display:inline-block; width:12px; height:3px; background:var(--lime); vertical-align:baseline; animation:blink .5s step-end infinite; vertical-align:middle; margin-left:1px; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-    .click-hint { color:rgba(255,255,255,0.2); font-family:'Outfit',sans-serif; font-size:12px; letter-spacing:2px; margin-top:70px; animation:pulse-hint 2.5s ease-in-out infinite; }
-    @keyframes pulse-hint { 0%,100%{opacity:0.2} 50%{opacity:0.5} }
-
-    /* Call overlay */
-    
-    
-    
-    
-    
-    
-    
-    
-
-    .bottom-nav { margin-top:80px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
+    .bottom-nav { padding:16px 0; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
     .bottom-nav a { color:rgba(255,255,255,0.35); font-size:13px; text-decoration:none; transition:color .2s; }
     .bottom-nav a:hover { color:var(--lime); }
 
@@ -107,9 +89,6 @@
   </style>
 </head>
 <body>
-  <p class="err-title">// 404 — PAGINA NIET GEVONDEN</p>
-  <p class="err-sub">De pagina die je zoekt bestaat niet.<br>Draai het wiel om terug te navigeren, of ga naar de <a href="/">homepage</a>.</p>
-
   <div class="phone-container" id="wrap">
     <div class="l-body" id="phoneBody">
       <img src="/assets/images/ai-marketing-bureau/phone-body-wide.jpg" alt="1930s rotary telephone" id="phoneImg">
@@ -145,20 +124,15 @@
         <button class="call-btn-inline" id="btnCall" style="display:none" onclick="event.stopPropagation();startVapiCall()">Bel Met Lee</button>
       </div>
     </div>
+    <!-- Desk stickers on the left — hold 5s to peel -->
+    <div class="desk-sticker" style="left:5%;top:18%;transform:rotate(-12deg)" data-service="seo"><img src="/assets/images/stickers/world.webp" alt="SEO"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:16%;top:12%;transform:rotate(8deg)" data-service="chatbot"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:10%;top:45%;transform:rotate(-5deg)" data-service="voice"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:20%;top:38%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:4%;top:70%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:17%;top:72%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:28%;top:25%;transform:rotate(3deg)" data-service="herinner"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
   </div>
-
-  <!-- Desk stickers on the left — hold 5s to peel -->
-  <div class="desk-sticker" style="left:3%;top:20%;transform:rotate(-12deg)" data-service="seo"><img src="/assets/images/stickers/world.webp" alt="SEO"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="left:14%;top:15%;transform:rotate(8deg)" data-service="chatbot"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="left:8%;top:45%;transform:rotate(-5deg)" data-service="voice"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="left:18%;top:40%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="left:2%;top:70%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="left:15%;top:72%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-  <div class="desk-sticker" style="left:25%;top:25%;transform:rotate(3deg)" data-service="herinner"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-
-  <p class="click-hint">[ KLIK OP DE TELEFOON OM TE BELLEN ]</p>
-
-  <!-- Call happens inline on the phone -->
 
   <div class="bottom-nav">
     <a href="/">Home</a><a href="/blog">Blog</a><a href="/tarieven">Tarieven</a>
@@ -226,8 +200,9 @@
 
     function ma(e) {
       var r = wrap.getBoundingClientRect();
-      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - r.width*0.71;
-      var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - r.height*0.48;
+      var dc = window._dialCenter || {x:r.width*0.71, y:r.height*0.48};
+      var x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left - dc.x;
+      var y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top - dc.y;
       return Math.atan2(y, x) * 180 / Math.PI;
     }
 
@@ -389,6 +364,67 @@
       if (video) { video.pause(); video.style.display = 'none'; img.style.display = 'block'; }
       document.querySelectorAll('[id^="vapi"]').forEach(function(el) { el.style.display = 'none'; });
     };
+
+    // ── Dynamic positioning based on rendered image ──
+    // Image is 1752x1024. Phone dial center at ~x=1240 y=490 in image coords.
+    // With object-fit:contain, we need to find where the image actually renders.
+    var phoneImg = document.getElementById('phoneImg');
+    function reposition() {
+      var container = document.getElementById('wrap');
+      var cw = container.offsetWidth, ch = container.offsetHeight;
+      // object-fit:contain — image scales to fit
+      var imgRatio = 1752/1024, cRatio = cw/ch;
+      var renderedW, renderedH, offX, offY;
+      if (cRatio > imgRatio) {
+        // container wider than image — image fits height, centered horizontally
+        renderedH = ch; renderedW = ch * imgRatio;
+        offX = (cw - renderedW) / 2; offY = 0;
+      } else {
+        // container taller — image fits width
+        renderedW = cw; renderedH = cw / imgRatio;
+        offX = 0; offY = (ch - renderedH) / 2;
+      }
+      // Phone dial center in image: x=1240/1752=0.708, y=490/1024=0.479
+      var dialCX = offX + renderedW * 0.708;
+      var dialCY = offY + renderedH * 0.479;
+      // Scale factor for overlay sizes
+      var scale = renderedH / 1024;
+
+      // Position numplate, finger, hub
+      var np = document.querySelector('.l-numplate');
+      np.style.left = dialCX + 'px'; np.style.top = dialCY + 'px';
+      np.style.width = (220*scale) + 'px'; np.style.height = (220*scale) + 'px';
+
+      var fp = document.getElementById('plate');
+      fp.style.left = dialCX + 'px'; fp.style.top = dialCY + 'px';
+      fp.style.width = (255*scale) + 'px'; fp.style.height = (255*scale) + 'px';
+
+      var hub = document.querySelector('.l-hub');
+      hub.style.left = dialCX + 'px'; hub.style.top = (offY + renderedH * 0.5) + 'px';
+
+      // Position rz hotspots (relative to dial center)
+      var rzData = [
+        {sel:'[data-t="seo"]',     dx:-0.16, dy:0},
+        {sel:'[data-t="chatbot"]', dx:-0.12, dy:-0.10},
+        {sel:'[data-t="voice"]',   dx:0,     dy:-0.14},
+        {sel:'[data-t="reviews"]', dx:0.12,  dy:-0.10},
+        {sel:'[data-t="auto"]',    dx:0.16,  dy:0},
+        {sel:'[data-t="website"]', dx:0,     dy:0.14},
+        {sel:'[data-t="herinner"]',dx:-0.12, dy:0.10}
+      ];
+      rzData.forEach(function(rz) {
+        var el = container.querySelector(rz.sel);
+        if (el) {
+          el.style.left = (dialCX + rz.dx * renderedW) + 'px';
+          el.style.top = (dialCY + rz.dy * renderedH) + 'px';
+        }
+      });
+
+      // Store for dial spin
+      window._dialCenter = {x: dialCX, y: dialCY};
+    }
+    reposition();
+    window.addEventListener('resize', reposition);
 
     startA();
 
