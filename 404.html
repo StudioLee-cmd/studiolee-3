@@ -310,38 +310,43 @@
       });
     });
 
-    // VAPI
-    var _vapiInstance = null;
+    // VAPI — use Web SDK for programmatic calls
+    var _vapi = null;
     window.startVapiCall = function() {
       var btnCall = document.getElementById('btnCall');
       btnCall.textContent = 'Verbinden...';
+
       function doCall() {
         try {
-          _vapiInstance = window.vapiSDK.run({
-            apiKey: '5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',
-            assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
-            config: { position: 'bottom-right' }
-          });
-          if (_vapiInstance && typeof _vapiInstance.start === 'function') _vapiInstance.start();
-          btnCall.textContent = 'Ophangen';
-          btnCall.className = 'call-btn-inline hangup';
-          btnCall.onclick = function(e) { e.stopPropagation(); endVapiCall(); };
-          setTimeout(function() { document.querySelectorAll('[id^="vapi"]').forEach(function(el) { el.style.display = 'none'; }); }, 500);
-          if (_vapiInstance) _vapiInstance.on('call-end', function() { endVapiCall(); });
-        } catch(err) { window.location.href = '/voice-ai'; }
+          if (!_vapi) {
+            _vapi = new window.Vapi('5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5');
+            _vapi.on('call-start', function() {
+              btnCall.textContent = 'Ophangen';
+              btnCall.className = 'call-btn-inline hangup';
+              btnCall.onclick = function(e) { e.stopPropagation(); endVapiCall(); };
+            });
+            _vapi.on('call-end', function() { endVapiCall(); });
+          }
+          _vapi.start('752f8e59-08dd-4f11-9bf1-71f86bd865a4');
+        } catch(err) {
+          console.error('VAPI error:', err);
+          btnCall.textContent = 'Fout — probeer opnieuw';
+        }
       }
-      if (window.vapiSDK) { doCall(); }
+
+      if (window.Vapi) { doCall(); }
       else {
         var s = document.createElement('script');
-        s.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
-        s.onload = function() { var poll = setInterval(function() { if (window.vapiSDK) { clearInterval(poll); doCall(); } }, 100); };
+        s.src = 'https://cdn.jsdelivr.net/npm/@vapi-ai/web/dist/vapi.umd.js';
+        s.onload = function() { doCall(); };
+        s.onerror = function() { btnCall.textContent = 'Laden mislukt'; };
         document.body.appendChild(s);
       }
     };
 
     window.endVapiCall = function() {
-      if (_vapiInstance && typeof _vapiInstance.stop === 'function') _vapiInstance.stop();
-      _vapiInstance = null; calling = false;
+      if (_vapi && typeof _vapi.stop === 'function') _vapi.stop();
+      calling = false;
       document.getElementById('phoneBody').classList.remove('ringing');
       document.querySelector('.game-overlay').classList.remove('visible');
       document.getElementById('btnCall').style.display = 'none';
@@ -349,7 +354,6 @@
       document.getElementById('gD').textContent = '';
       var video = document.getElementById('phoneVideo');
       if (video) { video.pause(); video.style.display = 'none'; }
-      document.querySelectorAll('[id^="vapi"]').forEach(function(el) { el.style.display = 'none'; });
     };
 
     startA();
