@@ -319,9 +319,9 @@
         try {
           var instance = window.vapiSDK.run({
             apiKey: '5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',
+            assistant: '752f8e59-08dd-4f11-9bf1-71f86bd865a4',
             config: { position: 'bottom-right' }
           });
-          // Start call with assistant ID
           if (instance && typeof instance.start === 'function') {
             instance.start('752f8e59-08dd-4f11-9bf1-71f86bd865a4');
           }
