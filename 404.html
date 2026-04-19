@@ -32,6 +32,10 @@
     .l-finger.grabbing { cursor:grabbing; }
     .l-finger img { width:100%; height:100%; object-fit:contain; }
 
+    /* CALIBRATION: red crosshair showing where we think dial center is */
+    .calibration { position:absolute; top:44.92%; left:71.12%; transform:translate(-50%,-50%); z-index:99; pointer-events:none; }
+    .calibration::before { content:''; position:absolute; width:200px; height:4px; background:red; left:-100px; top:-2px; }
+    .calibration::after { content:''; position:absolute; width:4px; height:200px; background:red; left:-2px; top:-100px; }
     .l-hub { position:absolute; top:44.92%; left:71.12%; transform:translate(-50%,-50%); z-index:4;
       width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
       border-radius:50%; border:3px solid #8B7355;
@@ -111,6 +115,7 @@
     <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="" draggable="false"></div>
     <a href="/ai-marketing-bureau" class="l-hub" onclick="event.stopPropagation()" title="AI Marketing Bureau"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
 
+    <div class="calibration"></div>
     <!-- Invisible hotspots for 7 dial holes -->
     <a class="rz" href="/seo" data-t="seo" style="left:64.3%;top:44.9%"></a>
     <a class="rz" href="/chatbot" data-t="chatbot" style="left:66.3%;top:36.7%"></a>
