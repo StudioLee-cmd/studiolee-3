@@ -47,14 +47,9 @@
     .desk-sticker { position:absolute; z-index:6; width:140px; height:140px; cursor:grab; user-select:none; transition:transform .3s, opacity .5s, filter .3s; filter:drop-shadow(0 4px 8px rgba(0,0,0,0.6)); }
     .desk-sticker img { width:100%; height:100%; object-fit:contain; pointer-events:none; }
     .desk-sticker:hover { filter:drop-shadow(0 8px 16px rgba(0,0,0,0.7)); }
-    .desk-sticker.peeling { animation:peel-wobble .4s ease-in-out infinite; }
-    .desk-sticker.peeled { opacity:0; transform:scale(0.3) rotate(180deg); pointer-events:none; }
-    @keyframes peel-wobble { 0%,100%{transform:rotate(-2deg) scale(1.05)} 50%{transform:rotate(2deg) scale(1.08)} }
-    .desk-sticker .peel-ring { position:absolute; inset:-6px; border:3px solid var(--lime); border-radius:50%; opacity:0; transition:opacity .2s; }
-    .desk-sticker.peeling .peel-ring { opacity:1; animation:peel-pulse 1s linear infinite; }
-    @keyframes peel-pulse { 0%{transform:scale(1);opacity:1} 100%{transform:scale(1.4);opacity:0} }
+    .desk-sticker.holding .peel-progress { opacity:1; }
+    .desk-sticker.unlocked { cursor:move; }
     .peel-progress { position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); width:60px; height:4px; background:rgba(255,255,255,0.15); border-radius:2px; overflow:hidden; opacity:0; }
-    .desk-sticker.peeling .peel-progress { opacity:1; }
     .peel-fill { width:0%; height:100%; background:var(--lime); border-radius:2px; transition:width .1s linear; }
 
     /* Speech bubble */
@@ -133,13 +128,13 @@
     </div>
 
     <!-- Desk stickers — scattered on the left side of the desk -->
-    <div class="desk-sticker" style="left:4%;top:15%;transform:rotate(-12deg)" data-service="seo"><img src="/assets/images/stickers/world.webp" alt="SEO"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:18%;top:10%;transform:rotate(8deg)" data-service="chatbot"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:30%;top:18%;transform:rotate(3deg)" data-service="herinner"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:8%;top:42%;transform:rotate(-5deg)" data-service="voice"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:22%;top:50%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:5%;top:72%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
-    <div class="desk-sticker" style="left:20%;top:78%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-ring"></div><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:4%;top:15%;transform:rotate(-12deg)" data-service="seo"><img src="/assets/images/stickers/world.webp" alt="SEO"><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:18%;top:10%;transform:rotate(8deg)" data-service="chatbot"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot"><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:30%;top:18%;transform:rotate(3deg)" data-service="herinner"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen"><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:8%;top:42%;transform:rotate(-5deg)" data-service="voice"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI"><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:22%;top:50%;transform:rotate(15deg)" data-service="reviews"><img src="/assets/images/stickers/ferris.webp" alt="Reviews"><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:5%;top:72%;transform:rotate(-8deg)" data-service="auto"><img src="/assets/images/stickers/gear.webp" alt="Automatisering"><div class="peel-progress"><div class="peel-fill"></div></div></div>
+    <div class="desk-sticker" style="left:20%;top:78%;transform:rotate(6deg)" data-service="website"><img src="/assets/images/stickers/washing.webp" alt="Website"><div class="peel-progress"><div class="peel-fill"></div></div></div>
   </div></div>
 
   <div class="bottom-nav">
@@ -341,72 +336,78 @@
     startA();
 
     // Desk stickers: hold 5s to unlock, then drag freely
-    var HOLD_MS = 5000;
-    document.querySelectorAll('.desk-sticker').forEach(function(s) {
-      var timer = null, startTime = 0, progInterval = null;
-      var fill = s.querySelector('.peel-fill');
-      var unlocked = false, dragging = false, offsetX = 0, offsetY = 0;
+    (function() {
+      var HOLD_MS = 5000;
+      document.querySelectorAll('.desk-sticker').forEach(function(s) {
+        var holdTimer = null, progTimer = null, startTime = 0;
+        var fill = s.querySelector('.peel-fill');
+        var unlocked = false, dragging = false, ox = 0, oy = 0;
 
-      function beginHold(e) {
-        e.preventDefault(); e.stopPropagation();
-        if (unlocked) { startDrag(e); return; }
-        s.classList.add('peeling');
-        startTime = Date.now();
-        fill.style.width = '0%';
-        progInterval = setInterval(function() {
-          var pct = Math.min(100, ((Date.now() - startTime) / HOLD_MS) * 100);
-          fill.style.width = pct + '%';
-        }, 50);
-        timer = setTimeout(function() {
-          s.classList.remove('peeling');
-          clearInterval(progInterval);
+        s.addEventListener('mousedown', onDown);
+        s.addEventListener('touchstart', onDown, {passive:false});
+
+        function onDown(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (unlocked) {
+            // Already unlocked — start dragging
+            dragging = true;
+            var rect = s.getBoundingClientRect();
+            var cx = e.touches ? e.touches[0].clientX : e.clientX;
+            var cy = e.touches ? e.touches[0].clientY : e.clientY;
+            ox = cx - rect.left;
+            oy = cy - rect.top;
+            s.style.zIndex = '20';
+            return;
+          }
+
+          // Start hold timer
+          s.classList.add('holding');
+          startTime = Date.now();
           fill.style.width = '0%';
-          unlocked = true;
-          s.style.cursor = 'move';
-          s.style.filter = 'drop-shadow(0 8px 20px rgba(193,255,114,0.4))';
-        }, HOLD_MS);
-      }
 
-      function cancelHold() {
-        if (timer) { clearTimeout(timer); timer = null; }
-        if (progInterval) { clearInterval(progInterval); progInterval = null; }
-        if (!unlocked) { s.classList.remove('peeling'); fill.style.width = '0%'; }
-        if (dragging) { dragging = false; }
-      }
+          progTimer = setInterval(function() {
+            var pct = Math.min(100, ((Date.now() - startTime) / HOLD_MS) * 100);
+            fill.style.width = pct + '%';
+          }, 50);
 
-      function startDrag(e) {
-        dragging = true;
-        var rect = s.getBoundingClientRect();
-        var cx = e.touches ? e.touches[0].clientX : e.clientX;
-        var cy = e.touches ? e.touches[0].clientY : e.clientY;
-        offsetX = cx - rect.left; offsetY = cy - rect.top;
-        s.style.zIndex = 20;
-      }
+          holdTimer = setTimeout(function() {
+            // Unlocked!
+            unlocked = true;
+            s.classList.remove('holding');
+            s.classList.add('unlocked');
+            clearInterval(progTimer);
+            fill.style.width = '100%';
+            setTimeout(function() { fill.style.width = '0%'; }, 300);
+          }, HOLD_MS);
+        }
 
-      function onMove(e) {
-        if (!dragging) return;
-        e.preventDefault();
-        var cx = e.touches ? e.touches[0].clientX : e.clientX;
-        var cy = e.touches ? e.touches[0].clientY : e.clientY;
-        var parent = s.parentElement.getBoundingClientRect();
-        s.style.left = (cx - parent.left - offsetX) + 'px';
-        s.style.top = (cy - parent.top - offsetY) + 'px';
-        s.style.transform = 'none';
-      }
+        function onUp() {
+          if (dragging) { dragging = false; s.style.zIndex = '6'; return; }
+          if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+          if (progTimer) { clearInterval(progTimer); progTimer = null; }
+          s.classList.remove('holding');
+          fill.style.width = '0%';
+        }
 
-      function onUp() { if (dragging) { dragging = false; s.style.zIndex = 6; } }
+        function onMove(e) {
+          if (!dragging) return;
+          e.preventDefault();
+          var cx = e.touches ? e.touches[0].clientX : e.clientX;
+          var cy = e.touches ? e.touches[0].clientY : e.clientY;
+          var pr = s.parentElement.getBoundingClientRect();
+          s.style.left = (cx - pr.left - ox) + 'px';
+          s.style.top = (cy - pr.top - oy) + 'px';
+          s.style.transform = 'none';
+        }
 
-      s.addEventListener('mousedown', beginHold);
-      s.addEventListener('touchstart', beginHold, {passive:false});
-      s.addEventListener('mouseup', cancelHold);
-      s.addEventListener('mouseleave', function() { if (!dragging) cancelHold(); });
-      s.addEventListener('touchend', cancelHold);
-      s.addEventListener('touchcancel', cancelHold);
-      window.addEventListener('mousemove', onMove);
-      window.addEventListener('touchmove', onMove, {passive:false});
-      window.addEventListener('mouseup', onUp);
-      window.addEventListener('touchend', onUp);
-    });
+        window.addEventListener('mouseup', onUp);
+        window.addEventListener('touchend', onUp);
+        window.addEventListener('mousemove', onMove);
+        window.addEventListener('touchmove', onMove, {passive:false});
+      });
+    })();
   })();
   </script>
 </body>
