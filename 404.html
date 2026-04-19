@@ -81,15 +81,25 @@
     /* Hide VAPI default widget button */
     #vapi-support-btn, .vapi-btn, [id^="vapi"] { display:none !important; }
 
+    .mobile-heading { display:none; }
+
     @media(max-width:768px) {
       .l-numplate { width:28vw; height:28vw; }
       .l-finger { width:32vw; height:32vw; }
       .desk-sticker { width:60px; height:60px; }
       .game-overlay { left:50%; top:5%; transform-origin:center; }
+      .mobile-heading { display:block; text-align:center; padding:16px 16px 8px; }
+      .mobile-heading h1 { font-family:'Enligas','Outfit',sans-serif; font-size:20px; font-weight:700; color:var(--lime); letter-spacing:2px; margin:0; }
+      .mobile-heading p { font-family:'Outfit',sans-serif; font-size:13px; color:rgba(255,255,255,0.4); margin-top:4px; }
+      .mobile-heading a { color:var(--lime); text-decoration:none; }
     }
   </style>
 </head>
 <body>
+  <div class="mobile-heading">
+    <h1>// 404 — VERKEERD GEDRAAID</h1>
+    <p>Deze pagina bestaat niet meer. Draai het wiel of ga naar de <a href="/">homepage</a>.</p>
+  </div>
   <div class="phone-wrapper"><div class="phone-container" id="wrap">
     <!-- Phone click zone (transparent overlay for click events) -->
     <div class="phone-click-zone" id="phoneBody"></div>
