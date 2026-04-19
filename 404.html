@@ -70,9 +70,9 @@
     .call-btn-inline.hangup { background:rgba(220,50,50,0.9); color:#fff; }
 
     /* 404 heading on the desk */
-    .desk-heading { text-align:center; padding:8px 16px 4px; }
-    .desk-heading h1 { font-family:'Enligas','Outfit',sans-serif; font-size:16px; font-weight:700; color:var(--lime); letter-spacing:2px; margin:0; }
-    .desk-heading p { font-family:'Outfit',sans-serif; font-size:13px; color:rgba(255,255,255,0.4); margin-top:4px; }
+    .desk-heading { position:absolute; top:6%; left:50%; transform:translateX(-50%); z-index:8; text-align:center; pointer-events:none; }
+    .desk-heading h1 { font-family:'Enligas','Outfit',sans-serif; font-size:clamp(14px, 1.8vw, 24px); font-weight:700; color:var(--lime); letter-spacing:2px; margin:0; white-space:nowrap; }
+    .desk-heading p { font-family:'Outfit',sans-serif; font-size:clamp(11px, 1vw, 14px); color:rgba(255,255,255,0.4); margin-top:4px; }
     .desk-heading a { color:var(--lime); text-decoration:none; }
     .desk-heading a:hover { text-decoration:underline; }
 
@@ -93,16 +93,17 @@
       .l-finger { width:32vw; height:32vw; }
       .desk-sticker { width:60px; height:60px; }
       .game-overlay { left:50%; top:5%; transform-origin:center; }
-      .desk-heading h1 { white-space:normal; }
+      .desk-heading { top:2%; }
+      .desk-heading h1 { white-space:normal; font-size:14px; }
     }
   </style>
 </head>
 <body>
-  <div class="desk-heading">
-    <h1>// 404 — VERKEERD GEDRAAID</h1>
-    <p>Deze pagina bestaat niet meer. Draai het wiel of ga naar de <a href="/">homepage</a>.</p>
-  </div>
   <div class="phone-wrapper"><div class="phone-container" id="wrap">
+    <div class="desk-heading">
+      <h1>// 404 — VERKEERD GEDRAAID</h1>
+      <p>Deze pagina bestaat niet meer. Draai het wiel of ga naar de <a href="/">homepage</a>.</p>
+    </div>
       <h1>// 404 — VERKEERD GEDRAAID</h1>
       <p>Deze pagina bestaat niet meer. Draai het wiel of ga naar de <a href="/">homepage</a>.</p>
     </div>
