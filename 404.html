@@ -87,7 +87,15 @@
       .l-numplate { width:28vw; height:28vw; }
       .l-finger { width:32vw; height:32vw; }
       .desk-sticker { width:60px; height:60px; }
-      .game-overlay { left:50%; top:5%; transform-origin:center; }
+      /* Speech bubble: compact, centered above the dial with a downward arrow */
+      .game-overlay { left:50%; top:2%; transform-origin:top center; transform:translateX(-50%) scale(0.8) translateY(-10px); }
+      .game-overlay.visible { transform:translateX(-50%) scale(1) translateY(0); }
+      .game-box { min-width:0; max-width:88vw; padding:8px 14px; }
+      .game-title { font-size:12px; margin-bottom:2px; min-height:0; }
+      .game-desc { font-size:11px; min-height:0; }
+      .call-btn-inline { font-size:11px; padding:5px 14px; margin-top:6px; }
+      .game-box::before { left:50%; top:auto; bottom:-12px; transform:translateX(-50%); border:10px solid transparent; border-top:12px solid var(--lime); border-bottom:0; }
+      .game-box::after { left:50%; top:auto; bottom:-8px; transform:translateX(-50%); border:8px solid transparent; border-top:10px solid #0a0a0f; border-bottom:0; }
       .mobile-heading { display:block; text-align:center; padding:16px 16px 8px; }
       .mobile-heading h1 { font-family:'Enligas','Outfit',sans-serif; font-size:20px; font-weight:700; color:var(--lime); letter-spacing:2px; margin:0; }
       .mobile-heading p { font-family:'Outfit',sans-serif; font-size:13px; color:rgba(255,255,255,0.4); margin-top:4px; }
