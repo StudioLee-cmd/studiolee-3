@@ -646,4 +646,10 @@
     <changefreq>monthly</changefreq>
     <lastmod>2026-04-19</lastmod>
   </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/schema-markup-mkb-vindbaar-in-chatgpt</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-20</lastmod>
+  </url>
 </urlset>

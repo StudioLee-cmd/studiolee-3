@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "schema-markup-mkb-vindbaar-in-chatgpt",
+      "title": "Schema markup voor MKB: vindbaar in Google en ChatGPT",
+      "date": "2026-04-20",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/schema-markup-mkb-vindbaar-in-chatgpt.jpg"
+    },
+    {
       "slug": "hoger-in-google-komen-mkb",
       "title": "Hoger in Google komen als MKB: het eerlijke stappenplan",
       "date": "2026-04-19",
