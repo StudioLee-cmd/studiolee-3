@@ -222,8 +222,8 @@
                   <form id="freeScanForm" class="d-flex flex-column gap-3"
                     action="https://n8n.aireclamestudio.nl/webhook/free-scan" method="POST">
                     <input type="hidden" name="source" value="studiolee-3-free-scan">
-                    <input type="email" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="email" placeholder="Je e-mailadres" required>
-                    <input type="url" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="website" placeholder="Je website URL" required>
+                    <input type="email" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="email" placeholder="voornaam@bedrijf.nl" required>
+                    <input type="url" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="website" placeholder="https://jouwbedrijf.nl" required>
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="scanAkkoord" required>
                       <label class="form-check-label text-dark" for="scanAkkoord">
@@ -282,8 +282,8 @@
                       }
                       #freeTrialForm select.trial-input-dark option:disabled { color: rgba(255,255,255,0.4) !important; }
                     </style>
-                    <input type="email" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="email" placeholder="Je e-mailadres" required>
-                    <input type="text" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="bedrijfsnaam" placeholder="Bedrijfsnaam" required>
+                    <input type="email" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="email" placeholder="voornaam@bedrijf.nl" required>
+                    <input type="text" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="bedrijfsnaam" placeholder="Kapsalon De Spiegel" required>
                     <select class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="niche" required>
                       <option value="" disabled selected>Selecteer je niche</option>
                       <option value="kapper">Kapper</option>
