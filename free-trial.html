@@ -268,9 +268,23 @@
                   <form id="freeTrialForm" class="d-flex flex-column gap-3"
                     action="https://n8n.aireclamestudio.nl/webhook/Client-sign-up" method="POST">
                     <input type="hidden" name="source" value="studiolee-3-free-trial">
-                    <input type="email" class="form-control border border-light rounded-3 px-3 py-3 text-white" name="email" style="background:rgba(255,255,255,0.1) !important;color:#fff !important;" placeholder="Je e-mailadres" required style="color:#fff !important;">
-                    <input type="text" class="form-control border border-light rounded-3 px-3 py-3 text-white" name="bedrijfsnaam" style="background:rgba(255,255,255,0.1) !important;color:#fff !important;" placeholder="Bedrijfsnaam" required style="color:#fff !important;">
-                    <select class="form-control border border-light rounded-3 px-3 py-3 text-white" name="niche" style="background:rgba(255,255,255,0.1) !important;color:#fff !important;" required style="color:#fff !important;">
+                    <style>
+                      /* Scoped: dark-card form controls inside Option 2 */
+                      #freeTrialForm .form-control.trial-input-dark,
+                      #freeTrialForm select.trial-input-dark {
+                        background: rgba(255,255,255,0.08) !important;
+                        color: #fff !important;
+                      }
+                      #freeTrialForm .trial-input-dark::placeholder { color: rgba(255,255,255,0.6) !important; }
+                      #freeTrialForm select.trial-input-dark option {
+                        background: #1a1a1a !important;
+                        color: #fff !important;
+                      }
+                      #freeTrialForm select.trial-input-dark option:disabled { color: rgba(255,255,255,0.4) !important; }
+                    </style>
+                    <input type="email" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="email" placeholder="Je e-mailadres" required>
+                    <input type="text" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="bedrijfsnaam" placeholder="Bedrijfsnaam" required>
+                    <select class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="niche" required>
                       <option value="" disabled selected>Selecteer je niche</option>
                       <option value="kapper">Kapper</option>
                       <option value="loodgieter">Loodgieter</option>
