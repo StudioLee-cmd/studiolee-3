@@ -206,18 +206,18 @@
           <div class="row gap-5 gap-lg-0 justify-content-center gx-4">
             <!-- Option 1: Free AI Scan -->
             <div class="col-lg-6 mb-7 mb-lg-0" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-              <div class="card bg-primary h-100 border border-2 border-dark rounded-4">
+              <div class="card bg-primary text-dark h-100 border border-2 border-dark rounded-4">
                 <div class="card-body d-flex flex-column gap-4 p-4">
                   <div>
                     <span class="badge text-bg-dark mb-3">Optie 1 — Gratis</span>
-                    <h3 class="mb-2">Gratis AI Scan</h3>
-                    <p class="mb-0 fs-5">Ontvang binnen 2 minuten een volledig AI-rapport van jouw online aanwezigheid per e-mail. Geen gesprek nodig.</p>
+                    <h3 class="mb-2 text-dark">Gratis AI Scan</h3>
+                    <p class="mb-0 fs-5 text-dark">Ontvang binnen 2 minuten een volledig AI-rapport van jouw online aanwezigheid per e-mail. Geen gesprek nodig.</p>
                   </div>
                   <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                    <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> SEO & vindbaarheid analyse</li>
-                    <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Social media check</li>
-                    <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Google Reviews score</li>
-                    <li class="hstack gap-2 fs-5"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Binnen 2 min in je inbox</li>
+                    <li class="hstack gap-2 fs-5 text-dark"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> SEO & vindbaarheid analyse</li>
+                    <li class="hstack gap-2 fs-5 text-dark"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Social media check</li>
+                    <li class="hstack gap-2 fs-5 text-dark"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Google Reviews score</li>
+                    <li class="hstack gap-2 fs-5 text-dark"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Binnen 2 min in je inbox</li>
                   </ul>
                   <form id="freeScanForm" class="d-flex flex-column gap-3"
                     action="https://n8n.aireclamestudio.nl/webhook/free-scan" method="POST">
@@ -226,22 +226,22 @@
                     <input type="url" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="website" placeholder="Je website URL" required>
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="scanAkkoord" required>
-                      <label class="form-check-label" for="scanAkkoord">
-                        Ik ga akkoord met de <a href="/privacy" class="fw-bold">Privacy Policy</a>
+                      <label class="form-check-label text-dark" for="scanAkkoord">
+                        Ik ga akkoord met de <a href="/privacy" class="fw-bold text-dark">Privacy Policy</a>
                       </label>
                     </div>
                     <button type="submit" class="btn btn-dark w-100 justify-content-center rounded-pill py-3" style="background:#1F2A2E !important;color:#fff !important;">
                       <span class="btn-text text-white">Ontvang Gratis Scan</span>
                       <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-primary text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
                     </button>
-                    <p class="mb-0 text-center" style="font-size:0.85rem;opacity:0.7;">Check ook je spam als je het rapport niet ziet.</p>
+                    <p class="mb-0 text-center text-dark" style="font-size:0.85rem;opacity:0.7;">Check ook je spam als je het rapport niet ziet.</p>
                   </form>
-                  <div id="scanSuccess" class="d-none text-center py-4">
+                  <div id="scanSuccess" class="d-none text-center py-4 text-dark">
                     <span class="round-64 rounded-circle bg-dark hstack justify-content-center d-inline-flex mb-3">
                       <iconify-icon icon="lucide:check" class="fs-6 text-primary"></iconify-icon>
                     </span>
-                    <h4 class="mb-2">Scan verstuurd!</h4>
-                    <p class="mb-0">Check je inbox (en spam) — je ontvangt het rapport binnen 2 minuten.</p>
+                    <h4 class="mb-2 text-dark">Scan verstuurd!</h4>
+                    <p class="mb-0 text-dark">Check je inbox (en spam) — je ontvangt het rapport binnen 2 minuten.</p>
                   </div>
                 </div>
               </div>
