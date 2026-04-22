@@ -358,6 +358,46 @@ document.addEventListener('DOMContentLoaded',function(){var bs=document.querySel
 
 <div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
 <script src="/assets/js/cookie-banner.js" defer></script>
+
+<script>
+// Auto-compute filter counts from live data-cluster on cards (resilient to stale blog.html)
+(function(){
+  function sync(){
+    var cards = document.querySelectorAll('#blog-grid [data-cluster]');
+    var counts = {};
+    cards.forEach(function(c){
+      var k = c.getAttribute('data-cluster');
+      counts[k] = (counts[k]||0) + 1;
+    });
+    document.querySelectorAll('#blog-filters .blog-filter-btn[data-filter]').forEach(function(btn){
+      var f = btn.getAttribute('data-filter');
+      if (f === 'all'){
+        var existing = btn.querySelector('.filter-count');
+        var total = cards.length;
+        if (!existing){
+          btn.innerHTML = btn.innerHTML.trim() + ' <span class="filter-count">' + total + '</span>';
+        } else {
+          existing.textContent = total;
+        }
+        return;
+      }
+      var span = btn.querySelector('.filter-count');
+      var n = counts[f] || 0;
+      if (n === 0){
+        btn.style.display = 'none';
+      } else {
+        btn.style.display = '';
+        if (span) span.textContent = n; else btn.innerHTML = btn.innerHTML.trim() + ' <span class="filter-count">' + n + '</span>';
+      }
+    });
+  }
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', sync);
+  } else {
+    sync();
+  }
+})();
+</script>
 </body>
 
 </html>
