@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "google-reviews-verzoeken-mkb-4-stappen-systeem",
+      "title": "Google reviews verzoeken als MKB: het 4-stappen systeem",
+      "date": "2026-04-22",
+      "cluster": "reviews",
+      "image": "/assets/images/blog/google-reviews-verzoeken-mkb-4-stappen-systeem.jpg"
+    },
+    {
       "slug": "ai-marketing-bureau-kiezen-checklist-mkb",
       "title": "AI marketing bureau kiezen: checklist MKB",
       "date": "2026-04-21",
@@ -449,5 +456,5 @@
       "image": "/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png"
     }
   ],
-  "updated": "2026-04-05"
+  "updated": "2026-04-22"
 }
