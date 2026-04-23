@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "ai-act-2026-mkb-ondernemer",
+      "title": "AI Act 2026: wat elke MKB-ondernemer nu moet weten",
+      "date": "2026-04-23",
+      "cluster": "ai-trends",
+      "image": "/assets/images/blog/ai-act-2026-mkb-ondernemer.jpg"
+    },
+    {
       "slug": "google-reviews-verzoeken-mkb-4-stappen-systeem",
       "title": "Google reviews verzoeken als MKB: het 4-stappen systeem",
       "date": "2026-04-22",

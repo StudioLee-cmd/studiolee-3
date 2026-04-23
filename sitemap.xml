@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.studiolee.nl/</loc>
-    <lastmod>2026-04-22T19:56:17+00:00</lastmod>
+    <lastmod>2026-04-23T18:06:57+00:00</lastmod>
     <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
@@ -62,13 +62,13 @@
   </url>
   <url>
     <loc>https://www.studiolee.nl/blog/author/tim-van-der-lee</loc>
-    <lastmod>2026-04-22T19:56:17+00:00</lastmod>
+    <lastmod>2026-04-23T18:06:57+00:00</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.studiolee.nl/blog</loc>
-    <lastmod>2026-04-22T19:56:17+00:00</lastmod>
+    <lastmod>2026-04-23T18:06:57+00:00</lastmod>
     <priority>0.9</priority>
     <changefreq>daily</changefreq>
   </url>
@@ -683,5 +683,11 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
     <lastmod>2026-04-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/ai-act-2026-mkb-ondernemer</loc>
+    <lastmod>2026-04-23T18:06:57+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>
