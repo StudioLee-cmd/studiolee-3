@@ -17299,7 +17299,6 @@ section.related-articles,
   fill: none;
   stroke-linecap: round;
   opacity: 0.95;
-  transition: stroke-dashoffset 0.05s linear;
 }
 
 /* Compact slide menu — fits 15 items on screen */

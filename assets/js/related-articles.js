@@ -37,7 +37,7 @@
     svg.style.cssText = 'display:block;width:100%;height:24px;margin:0.25rem 0 0.5rem 0;overflow:visible;position:relative';
     var path = document.createElementNS(SVG_NS, 'path');
     path.setAttribute('d', 'M0 14 Q 30 2 60 14 T 120 14 T 180 14 T 240 14 T 300 14 T 360 14 T 420 14 T 480 14 T 540 14 T 600 14 T 660 14 T 720 14 T 780 14 T 840 14 T 900 14 T 960 14 T 1020 14 T 1080 14 T 1140 14 T 1200 14');
-    path.style.cssText = 'stroke:#C1FF72;stroke-width:2.5;fill:none;stroke-linecap:round;opacity:0.95;transition:stroke-dashoffset 0.05s linear;vector-effect:non-scaling-stroke';
+    path.style.cssText = 'stroke:#C1FF72;stroke-width:2.5;fill:none;stroke-linecap:round;opacity:0.95;vector-effect:non-scaling-stroke';
     svg.appendChild(path);
     section.insertBefore(svg, section.firstChild);
 
@@ -47,7 +47,7 @@
     function update() {
       var rect = svg.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
-      var progress = 2 * (1 - rect.top / vh);
+      var progress = 4 * (1 - rect.top / vh);
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
       path.style.strokeDashoffset = pathLength * (1 - progress);
