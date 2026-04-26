@@ -125,19 +125,6 @@
     path.style.cssText = 'stroke:#C1FF72;stroke-width:2.5;fill:none;stroke-linecap:round;opacity:0.95;vector-effect:non-scaling-stroke';
     svg.appendChild(path);
 
-    // Static vertical end caps — always visible, anchor where the squiggle ends visually
-    var capStyle = 'stroke:#C1FF72;stroke-width:3;stroke-linecap:round;opacity:0.95;vector-effect:non-scaling-stroke';
-    var leftCap = document.createElementNS(SVG_NS, 'line');
-    leftCap.setAttribute('x1', '0'); leftCap.setAttribute('y1', '12');
-    leftCap.setAttribute('x2', '0'); leftCap.setAttribute('y2', '48');
-    leftCap.style.cssText = capStyle;
-    svg.appendChild(leftCap);
-    var rightCap = document.createElementNS(SVG_NS, 'line');
-    rightCap.setAttribute('x1', '1200'); rightCap.setAttribute('y1', '12');
-    rightCap.setAttribute('x2', '1200'); rightCap.setAttribute('y2', '48');
-    rightCap.style.cssText = capStyle;
-    svg.appendChild(rightCap);
-
     // Insert as a direct child of <body>, BEFORE the related-articles section.
     document.body.insertBefore(svg, section);
 
