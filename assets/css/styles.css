@@ -17288,10 +17288,17 @@ section.related-articles,
 /* STUDIOLEE squiggle — compact height + margins */
 .related-squiggle {
   display: block !important;
-  width: 100% !important;
+  width: 100vw !important;
+  max-width: none !important;
   height: 60px !important;
-  margin: 1rem 0 1rem 0 !important;
+  margin: 1rem 0 !important;
+  padding: 0 !important;
   overflow: visible !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  transform: translateX(-50%) !important;
+  box-sizing: border-box !important;
 }
 .related-squiggle path {
   stroke: #C1FF72;

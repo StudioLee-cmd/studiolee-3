@@ -111,15 +111,30 @@
     var h2 = section.querySelector('h2');
     if (h2) { h2.style.marginTop = '1rem'; h2.style.marginBottom = '1rem'; }
 
-    // ---------- INJECT FULL-WIDTH SQUIGGLE SVG (forced 100vw) ----------
+    // ---------- INJECT FULL-WIDTH SQUIGGLE SVG (true viewport width) ----------
     var SVG_NS = 'http://www.w3.org/2000/svg';
     var svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('class', 'related-squiggle');
+    // Wider viewBox so the path extends past 1200 — guarantees the rightmost rendered stroke reaches the screen edge even on ultra-wide displays
     svg.setAttribute('viewBox', '0 0 1200 60');
     svg.setAttribute('preserveAspectRatio', 'none');
-    // 100vw + negative margin trick to escape any container constraints
-    svg.style.cssText = 'display:block;width:100vw;max-width:100vw;height:60px;margin:1rem 0 1rem calc(50% - 50vw);overflow:visible;position:relative;left:0';
+    // Force exact viewport-width: position:relative + left:50% + transform:translateX(-50%) is the most reliable full-bleed pattern
+    svg.style.cssText = [
+      'display:block',
+      'width:100vw',
+      'max-width:none',
+      'height:60px',
+      'margin:1rem 0',
+      'padding:0',
+      'overflow:visible',
+      'position:relative',
+      'left:50%',
+      'right:50%',
+      'transform:translateX(-50%)',
+      'box-sizing:border-box'
+    ].join(';');
     var path = document.createElementNS(SVG_NS, 'path');
+    // Path ends at x=1200 (matches viewBox right edge). preserveAspectRatio=none stretches viewBox to fill 100vw width.
     path.setAttribute('d', 'M 0 30 Q 24 0 48 30 T 96 30 T 144 30 T 192 30 T 240 30 T 288 30 T 336 30 T 384 30 T 432 30 T 480 30 T 528 30 T 576 30 T 624 30 T 672 30 T 720 30 T 768 30 T 816 30 T 864 30 T 912 30 T 960 30 T 1008 30 T 1056 30 T 1104 30 T 1152 30 T 1200 30');
     path.style.cssText = 'stroke:#C1FF72;stroke-width:2.5;fill:none;stroke-linecap:round;opacity:0.95;vector-effect:non-scaling-stroke';
     svg.appendChild(path);
@@ -128,17 +143,30 @@
     var pathLength = path.getTotalLength();
     path.style.strokeDasharray = pathLength;
     path.style.strokeDashoffset = pathLength;
-    function update() {
+
+    // rAF-throttled scroll handler for reliability across all scroll inputs
+    var ticking = false;
+    function compute() {
       var rect = svg.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
       var progress = 4 * (1 - rect.top / vh);
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
       path.style.strokeDashoffset = pathLength * (1 - progress);
+      ticking = false;
+    }
+    function update() {
+      if (!ticking) {
+        window.requestAnimationFrame(compute);
+        ticking = true;
+      }
     }
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update, { passive: true });
+    window.addEventListener('load', update); // recompute after fonts/images load
     update();
+    // Extra safety: recompute after 100ms in case layout shifts post-paint
+    setTimeout(compute, 150);
 
     // ---------- LOAD RELATED ARTICLES ----------
     var el = document.getElementById('related-articles-grid');
