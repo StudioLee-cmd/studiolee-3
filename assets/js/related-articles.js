@@ -119,26 +119,15 @@
     svg.setAttribute('viewBox', '0 0 1200 60');
     svg.setAttribute('preserveAspectRatio', 'none');
     // Force exact viewport-width: position:relative + left:50% + transform:translateX(-50%) is the most reliable full-bleed pattern
-    svg.style.cssText = [
-      'display:block',
-      'width:100vw',
-      'max-width:none',
-      'height:60px',
-      'margin:1rem 0',
-      'padding:0',
-      'overflow:visible',
-      'position:relative',
-      'left:50%',
-      'right:50%',
-      'transform:translateX(-50%)',
-      'box-sizing:border-box'
-    ].join(';');
+    svg.style.cssText = 'display:block;width:100%;height:60px;margin:1rem 0;padding:0;overflow:visible';
     var path = document.createElementNS(SVG_NS, 'path');
     // Path ends at x=1200 (matches viewBox right edge). preserveAspectRatio=none stretches viewBox to fill 100vw width.
     path.setAttribute('d', 'M 0 30 Q 24 0 48 30 T 96 30 T 144 30 T 192 30 T 240 30 T 288 30 T 336 30 T 384 30 T 432 30 T 480 30 T 528 30 T 576 30 T 624 30 T 672 30 T 720 30 T 768 30 T 816 30 T 864 30 T 912 30 T 960 30 T 1008 30 T 1056 30 T 1104 30 T 1152 30 T 1200 30');
     path.style.cssText = 'stroke:#C1FF72;stroke-width:2.5;fill:none;stroke-linecap:round;opacity:0.95;vector-effect:non-scaling-stroke';
     svg.appendChild(path);
-    section.insertBefore(svg, section.firstChild);
+    // Insert as a direct child of <body>, BEFORE the related-articles section.
+    // This bypasses any container/section width quirks — body is always true viewport width.
+    document.body.insertBefore(svg, section);
 
     var pathLength = path.getTotalLength();
     path.style.strokeDasharray = pathLength;
