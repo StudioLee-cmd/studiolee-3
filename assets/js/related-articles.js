@@ -1,4 +1,4 @@
-// Dynamic related articles + STUDIOLEE squiggle divider with scroll-linked draw + leading arrow
+// Dynamic related articles + simple STUDIOLEE squiggle divider with scroll-linked draw
 (function() {
   function init() {
     var section = document.querySelector('.related-articles');
@@ -28,7 +28,7 @@
     var h2 = section.querySelector('h2');
     if (h2) { h2.style.marginTop = '0'; h2.style.marginBottom = '1.25rem'; }
 
-    // ===== INJECT FULL-WIDTH SQUIGGLE SVG =====
+    // ===== INJECT FULL-WIDTH SQUIGGLE SVG (no arrow) =====
     var SVG_NS = 'http://www.w3.org/2000/svg';
     var svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('class', 'related-squiggle');
@@ -41,36 +41,23 @@
     svg.appendChild(path);
     section.insertBefore(svg, section.firstChild);
 
-    // ===== LEADING-EDGE ARROW =====
-    var arrow = document.createElement('div');
-    arrow.style.cssText = 'position:absolute;width:22px;height:22px;pointer-events:none;opacity:0;transition:opacity 0.18s linear;z-index:2;will-change:transform,opacity';
-    arrow.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C1FF72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 4px rgba(193,255,114,0.45))"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
-    section.insertBefore(arrow, svg);
-
-    // ===== SCROLL-LINKED DRAW =====
+    // ===== SCROLL-LINKED DRAW (fully drawn at viewport midpoint) =====
     var pathLength = path.getTotalLength();
     path.style.strokeDasharray = pathLength;
     path.style.strokeDashoffset = pathLength;
     function update() {
       var rect = svg.getBoundingClientRect();
-      var sectionRect = section.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
       var progress = 2 * (1 - rect.top / vh);
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
       path.style.strokeDashoffset = pathLength * (1 - progress);
-      var leadXpx = rect.width * progress;
-      var point = path.getPointAtLength(pathLength * progress);
-      var leadYpx = (point.y / 28) * rect.height;
-      var topOffset = (rect.top - sectionRect.top) + leadYpx;
-      arrow.style.transform = 'translate(' + (leadXpx - 11) + 'px, ' + (topOffset - 11) + 'px)';
-      arrow.style.opacity = (progress > 0.01 && progress < 0.99) ? '1' : '0';
     }
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update, { passive: true });
     update();
 
-    // ===== LOAD RELATED ARTICLES (FIXED: use p.image + <img> tag) =====
+    // ===== LOAD RELATED ARTICLES =====
     var el = document.getElementById('related-articles-grid');
     if (!el) return;
     var currentSlug = el.getAttribute('data-slug');
