@@ -17266,7 +17266,7 @@ section.blog-detail .d-flex.flex-column.gap-4 {
 section.blog-detail,
 .blog-detail {
   padding-top: 1.5rem !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 0.5rem !important;
 }
 
 /* Kill related-articles top spacing entirely */
@@ -17278,7 +17278,7 @@ section.related-articles,
   position: relative;
 }
 .related-articles h2 {
-  margin-top: 0.5rem !important;
+  margin-top: 1rem !important;
   margin-bottom: 1rem !important;
 }
 .related-articles > .container {
@@ -17289,8 +17289,8 @@ section.related-articles,
 .related-squiggle {
   display: block !important;
   width: 100% !important;
-  height: 24px !important;
-  margin: 0.25rem 0 0.5rem 0 !important;
+  height: 60px !important;
+  margin: 1rem 0 1rem 0 !important;
   overflow: visible !important;
 }
 .related-squiggle path {

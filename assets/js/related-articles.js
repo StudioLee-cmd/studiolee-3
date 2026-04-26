@@ -8,7 +8,7 @@
     var blogDetail = document.querySelector('section.blog-detail, .blog-detail');
     if (blogDetail) {
       blogDetail.style.paddingTop = '1.5rem';
-      blogDetail.style.paddingBottom = '0';
+      blogDetail.style.paddingBottom = '0.5rem';
       // Hide ALL closing CTA rows in blog body
       blogDetail.querySelectorAll('.row.mt-5, .row.justify-content-center.mt-5').forEach(function(row) {
         row.style.display = 'none';
@@ -26,17 +26,17 @@
     var container = section.querySelector('.container');
     if (container) container.style.paddingTop = '0';
     var h2 = section.querySelector('h2');
-    if (h2) { h2.style.marginTop = '0.5rem'; h2.style.marginBottom = '1rem'; }
+    if (h2) { h2.style.marginTop = '1rem'; h2.style.marginBottom = '1rem'; }
 
     // ===== INJECT SQUIGGLE SVG =====
     var SVG_NS = 'http://www.w3.org/2000/svg';
     var svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('class', 'related-squiggle');
-    svg.setAttribute('viewBox', '0 0 1200 28');
+    svg.setAttribute('viewBox', '0 0 1200 60');
     svg.setAttribute('preserveAspectRatio', 'none');
-    svg.style.cssText = 'display:block;width:100%;height:24px;margin:0.25rem 0 0.5rem 0;overflow:visible;position:relative';
+    svg.style.cssText = 'display:block;width:100%;height:60px;margin:1rem 0 1rem 0;overflow:visible;position:relative';
     var path = document.createElementNS(SVG_NS, 'path');
-    path.setAttribute('d', 'M0 14 Q 30 2 60 14 T 120 14 T 180 14 T 240 14 T 300 14 T 360 14 T 420 14 T 480 14 T 540 14 T 600 14 T 660 14 T 720 14 T 780 14 T 840 14 T 900 14 T 960 14 T 1020 14 T 1080 14 T 1140 14 T 1200 14');
+    path.setAttribute('d', 'M 0 30 Q 24 0 48 30 T 96 30 T 144 30 T 192 30 T 240 30 T 288 30 T 336 30 T 384 30 T 432 30 T 480 30 T 528 30 T 576 30 T 624 30 T 672 30 T 720 30 T 768 30 T 816 30 T 864 30 T 912 30 T 960 30 T 1008 30 T 1056 30 T 1104 30 T 1152 30 T 1200 30');
     path.style.cssText = 'stroke:#C1FF72;stroke-width:2.5;fill:none;stroke-linecap:round;opacity:0.95;vector-effect:non-scaling-stroke';
     svg.appendChild(path);
     section.insertBefore(svg, section.firstChild);
