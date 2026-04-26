@@ -24,4 +24,35 @@
       el.innerHTML = html;
     })
     .catch(function() {});
+
+  // STUDIOLEE squiggle divider with scroll-linked drawing animation
+  var section = document.querySelector('.related-articles');
+  if (!section) return;
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('class', 'related-squiggle');
+  svg.setAttribute('viewBox', '0 0 1200 28');
+  svg.setAttribute('preserveAspectRatio', 'none');
+  var path = document.createElementNS(SVG_NS, 'path');
+  path.setAttribute('d', 'M0 14 Q 30 2 60 14 T 120 14 T 180 14 T 240 14 T 300 14 T 360 14 T 420 14 T 480 14 T 540 14 T 600 14 T 660 14 T 720 14 T 780 14 T 840 14 T 900 14 T 960 14 T 1020 14 T 1080 14 T 1140 14 T 1200 14');
+  svg.appendChild(path);
+  section.insertBefore(svg, section.firstChild);
+
+  var pathLength = path.getTotalLength();
+  path.style.strokeDasharray = pathLength;
+  path.style.strokeDashoffset = pathLength;
+
+  function updateProgress() {
+    var rect = svg.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    // 0 when squiggle bottom enters from below viewport, 1 when squiggle top reaches top of viewport
+    var progress = 1 - (rect.top / vh);
+    if (progress < 0) progress = 0;
+    if (progress > 1) progress = 1;
+    path.style.strokeDashoffset = pathLength * (1 - progress);
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress, { passive: true });
+  updateProgress();
 })();

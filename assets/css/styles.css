@@ -17279,18 +17279,21 @@ section.related-articles,
   position: relative;
   z-index: 1;
 }
-/* STUDIOLEE squiggle divider — FULL WIDTH edge-to-edge */
-.related-articles::before {
-  content: '';
+/* STUDIOLEE squiggle divider — injected by related-articles.js for scroll-linked drawing animation */
+.related-squiggle {
   display: block;
   width: 100%;
-  height: 28px;
+  height: 32px;
   margin: 0 0 1.5rem 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 28' preserveAspectRatio='none' fill='none' stroke='%23C1FF72' stroke-width='2.2' stroke-linecap='round'><path d='M0 14 Q 30 2 60 14 T 120 14 T 180 14 T 240 14 T 300 14 T 360 14 T 420 14 T 480 14 T 540 14 T 600 14 T 660 14 T 720 14 T 780 14 T 840 14 T 900 14 T 960 14 T 1020 14 T 1080 14 T 1140 14 T 1200 14'/></svg>");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-  opacity: 0.85;
+  overflow: visible;
+}
+.related-squiggle path {
+  stroke: #C1FF72;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  opacity: 0.9;
+  transition: stroke-dashoffset 0.05s linear;
 }
 
 /* Compact slide menu — fits 15 items on screen */
