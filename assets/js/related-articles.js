@@ -7,7 +7,6 @@
     // ===== ANNIHILATE THE WHITESPACE GAP =====
     var blogDetail = document.querySelector('section.blog-detail, .blog-detail');
     if (blogDetail) {
-      blogDetail.style.paddingTop = '1.5rem';
       blogDetail.style.paddingBottom = '0.5rem';
       // Hide ALL closing CTA rows in blog body
       blogDetail.querySelectorAll('.row.mt-5, .row.justify-content-center.mt-5').forEach(function(row) {

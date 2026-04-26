@@ -17265,8 +17265,8 @@ section.blog-detail .d-flex.flex-column.gap-4 {
 /* Tighten blog-detail's own padding */
 section.blog-detail,
 .blog-detail {
-  padding-top: 1.5rem !important;
   padding-bottom: 0.5rem !important;
+  /* padding-top: original py-4 py-lg-5 (1.5rem mobile / 3rem desktop) */
 }
 
 /* Kill related-articles top spacing entirely */
