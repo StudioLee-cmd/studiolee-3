@@ -17265,11 +17265,25 @@ ul {
   .blog-detail .bg-dark.p-5 { padding: 2.25rem 2rem !important; }
 }
 .related-articles {
-  padding-top: 1rem !important;
+  padding-top: 0 !important;
   padding-bottom: 2.5rem !important;
+  position: relative;
 }
 .related-articles h2 {
   margin-bottom: 1.25rem !important;
+}
+/* STUDIOLEE-branded squiggle divider between blog body and related-articles */
+.related-articles::before {
+  content: '';
+  display: block;
+  width: 140px;
+  height: 28px;
+  margin: 1.5rem auto 2rem auto;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 28' fill='none' stroke='%23C1FF72' stroke-width='3' stroke-linecap='round'><path d='M4 14 Q 14 2 24 14 T 44 14 T 64 14 T 84 14 T 104 14 T 124 14 T 136 14'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.9;
 }
 
 /* Compact slide menu — fits 15 items on screen */
