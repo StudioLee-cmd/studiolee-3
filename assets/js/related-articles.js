@@ -1,18 +1,102 @@
-// Dynamic related articles + simple STUDIOLEE squiggle divider with scroll-linked draw
+// Dynamic related articles + FAQ auto-converter + STUDIOLEE squiggle divider
 (function() {
+  // ---------- AUTO-CONVERT FAQ (h2 "Veelgestelde vragen" + h3/p pairs → accordion + JSON-LD) ----------
+  function autoConvertFAQ() {
+    var blogDetail = document.querySelector('section.blog-detail, .blog-detail');
+    if (!blogDetail) return;
+    if (blogDetail.querySelector('.faq-timeline')) return; // already has styled FAQ
+    if (document.querySelector('script[type="application/ld+json"][data-auto-faq]')) return; // already injected
+
+    var faqHeading = null;
+    var h2s = blogDetail.querySelectorAll('h2');
+    for (var i = 0; i < h2s.length; i++) {
+      var t = h2s[i].textContent.trim().toLowerCase();
+      if (t === 'veelgestelde vragen' || t.indexOf('veelgestelde vragen') !== -1 || t.indexOf('frequently asked') !== -1) {
+        faqHeading = h2s[i]; break;
+      }
+    }
+    if (!faqHeading) return;
+
+    // Walk siblings: collect h3+p pairs until next h2 or end of parent
+    var items = [];
+    var node = faqHeading.nextElementSibling;
+    while (node && node.tagName !== 'H2') {
+      if (node.tagName === 'H3') {
+        var question = node.textContent.trim();
+        // Collect all <p> nodes immediately following until next h3 or h2
+        var ans = node.nextElementSibling;
+        var answerParts = [];
+        var answerNodes = [];
+        while (ans && ans.tagName !== 'H3' && ans.tagName !== 'H2') {
+          if (ans.tagName === 'P') {
+            answerParts.push(ans.textContent.trim());
+            answerNodes.push(ans);
+          }
+          ans = ans.nextElementSibling;
+        }
+        if (answerParts.length > 0) {
+          items.push({ q: question, a: answerParts.join(' '), qNode: node, aNodes: answerNodes });
+        }
+        node = ans; // jump past collected nodes
+      } else {
+        node = node.nextElementSibling;
+      }
+    }
+    if (items.length < 2) return; // not really an FAQ if only 0-1 questions
+
+    // Build accordion DOM
+    var wrapper = document.createElement('div');
+    wrapper.className = 'faq-timeline auto-faq';
+    items.forEach(function(it) {
+      var item = document.createElement('div');
+      item.className = 'faq-tl-item';
+      item.addEventListener('click', function() { this.classList.toggle('open'); });
+      var q = document.createElement('div'); q.className = 'faq-tl-q'; q.textContent = it.q;
+      var a = document.createElement('div'); a.className = 'faq-tl-a'; a.textContent = it.a;
+      item.appendChild(q); item.appendChild(a);
+      wrapper.appendChild(item);
+    });
+
+    // Insert wrapper before the first question, then remove original q+a nodes
+    var firstQNode = items[0].qNode;
+    firstQNode.parentNode.insertBefore(wrapper, firstQNode);
+    items.forEach(function(it) {
+      it.qNode.remove();
+      it.aNodes.forEach(function(n) { n.remove(); });
+    });
+
+    // Inject FAQPage JSON-LD schema
+    var schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": items.map(function(it) {
+        return {
+          "@type": "Question",
+          "name": it.q,
+          "acceptedAnswer": { "@type": "Answer", "text": it.a }
+        };
+      })
+    };
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-auto-faq', '1');
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }
+
   function init() {
+    autoConvertFAQ();
+
     var section = document.querySelector('.related-articles');
     if (!section) return;
 
-    // ===== ANNIHILATE THE WHITESPACE GAP =====
+    // ---------- ANNIHILATE THE WHITESPACE GAP ----------
     var blogDetail = document.querySelector('section.blog-detail, .blog-detail');
     if (blogDetail) {
       blogDetail.style.paddingBottom = '0.5rem';
-      // Hide ALL closing CTA rows in blog body
       blogDetail.querySelectorAll('.row.mt-5, .row.justify-content-center.mt-5').forEach(function(row) {
         row.style.display = 'none';
       });
-      // Kill flex gap
       blogDetail.querySelectorAll('.d-flex.flex-column, .d-flex.flex-column.gap-4').forEach(function(fl) {
         fl.style.gap = '0';
       });
@@ -27,13 +111,14 @@
     var h2 = section.querySelector('h2');
     if (h2) { h2.style.marginTop = '1rem'; h2.style.marginBottom = '1rem'; }
 
-    // ===== INJECT SQUIGGLE SVG =====
+    // ---------- INJECT FULL-WIDTH SQUIGGLE SVG (forced 100vw) ----------
     var SVG_NS = 'http://www.w3.org/2000/svg';
     var svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('class', 'related-squiggle');
     svg.setAttribute('viewBox', '0 0 1200 60');
     svg.setAttribute('preserveAspectRatio', 'none');
-    svg.style.cssText = 'display:block;width:100%;height:60px;margin:1rem 0 1rem 0;overflow:visible;position:relative';
+    // 100vw + negative margin trick to escape any container constraints
+    svg.style.cssText = 'display:block;width:100vw;max-width:100vw;height:60px;margin:1rem 0 1rem calc(50% - 50vw);overflow:visible;position:relative;left:0';
     var path = document.createElementNS(SVG_NS, 'path');
     path.setAttribute('d', 'M 0 30 Q 24 0 48 30 T 96 30 T 144 30 T 192 30 T 240 30 T 288 30 T 336 30 T 384 30 T 432 30 T 480 30 T 528 30 T 576 30 T 624 30 T 672 30 T 720 30 T 768 30 T 816 30 T 864 30 T 912 30 T 960 30 T 1008 30 T 1056 30 T 1104 30 T 1152 30 T 1200 30');
     path.style.cssText = 'stroke:#C1FF72;stroke-width:2.5;fill:none;stroke-linecap:round;opacity:0.95;vector-effect:non-scaling-stroke';
@@ -55,7 +140,7 @@
     window.addEventListener('resize', update, { passive: true });
     update();
 
-    // ===== LOAD RELATED ARTICLES =====
+    // ---------- LOAD RELATED ARTICLES ----------
     var el = document.getElementById('related-articles-grid');
     if (!el) return;
     var currentSlug = el.getAttribute('data-slug');
