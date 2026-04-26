@@ -17248,51 +17248,58 @@ ul {
 
 
 
-/* Blog body → related-articles whitespace KILLED + STUDIOLEE squiggle divider (aggressive 2026-04-26) */
-.blog-detail {
-  padding-bottom: 0.5rem !important;
+/* Blog body → related-articles whitespace KILL + STUDIOLEE squiggle divider (final 2026-04-26) */
+
+/* Hide the legacy 'Klaar om te groeien' CTA on blog posts (the squiggle replaces it as the visual divider). Custom CTAs with rounded-4 are kept. */
+section.blog-detail .row.justify-content-center.mt-5:has(.bg-dark.p-5:not(.rounded-4)) {
+  display: none !important;
 }
-/* CTA row above the dark box: kill the mt-5 gap */
-section.blog-detail .row.justify-content-center.mt-5,
-section.blog-detail .row.mt-5 {
-  margin-top: 0 !important;
+
+/* For posts WITH a custom CTA (rounded-4), tighten the spacing */
+section.blog-detail .row.justify-content-center.mt-5:has(.bg-dark.p-5.rounded-4) {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
 }
-/* CTA dark box: tighter internal padding */
-section.blog-detail .bg-dark.p-5 {
-  padding: 1.5rem !important;
+section.blog-detail .bg-dark.p-5.rounded-4 {
+  padding: 1.75rem 1.5rem !important;
 }
 @media (min-width: 768px) {
-  section.blog-detail .bg-dark.p-5 { padding: 1.75rem !important; }
+  section.blog-detail .bg-dark.p-5.rounded-4 { padding: 2rem !important; }
 }
-/* Related-articles section: zero top padding, squiggle handles visual break */
+
+/* Kill blog-detail bottom padding entirely */
+section.blog-detail,
+.blog-detail {
+  padding-bottom: 0 !important;
+}
+
+/* Kill related-articles top padding (squiggle is the divider) */
 section.related-articles,
 .related-articles {
   padding-top: 0 !important;
   padding-bottom: 2.5rem !important;
+  margin-top: 0 !important;
   position: relative;
 }
 .related-articles h2 {
   margin-bottom: 1.25rem !important;
   margin-top: 0 !important;
 }
-.related-articles > .container {
-  position: relative;
-  z-index: 1;
-}
-/* STUDIOLEE squiggle divider — injected by related-articles.js for scroll-linked drawing animation */
+
+/* STUDIOLEE squiggle divider — injected by related-articles.js, full width edge-to-edge with scroll-linked draw animation */
 .related-squiggle {
   display: block;
   width: 100%;
-  height: 32px;
-  margin: 0 0 1.5rem 0;
+  height: 36px;
+  margin: 0 0 1.25rem 0;
   overflow: visible;
 }
 .related-squiggle path {
   stroke: #C1FF72;
-  stroke-width: 2.2;
+  stroke-width: 2.5;
   fill: none;
   stroke-linecap: round;
-  opacity: 0.9;
+  opacity: 0.95;
   transition: stroke-dashoffset 0.05s linear;
 }
 
