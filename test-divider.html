@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Divider Test — STUDIOLEE</title>
+  <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon-sl.png" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fff; margin: 0; padding: 0; }
+    .test-section { min-height: 100vh; padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+    .test-section h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+    .test-section p { color: #555; line-height: 1.6; max-width: 720px; }
+    .divider-area { position: relative; margin: 2.5rem 0 1rem 0; }
+    .label { display: inline-block; padding: 4px 12px; background: #1F2A2E; color: #C1FF72; font-size: 0.75rem; font-weight: 700; border-radius: 99px; margin-bottom: 1rem; letter-spacing: 0.5px; }
+    .test-svg { display: block; width: 100%; height: 64px; overflow: visible; position: relative; }
+    .test-svg path { stroke: #C1FF72; fill: none; stroke-linecap: round; stroke-width: 2.5; opacity: 0.95; transition: stroke-dashoffset 0.05s linear; vector-effect: non-scaling-stroke; }
+    .arrow-icon { position: absolute; width: 24px; height: 24px; pointer-events: none; opacity: 0; transition: opacity 0.18s linear; will-change: transform, opacity; }
+    .arrow-icon svg { filter: drop-shadow(0 0 4px rgba(193,255,114,0.45)); }
+    .nav-top { position: sticky; top: 0; background: #1F2A2E; color: #fff; padding: 1rem 2rem; z-index: 999; }
+    .nav-top a { color: #C1FF72; text-decoration: none; margin-right: 1rem; font-size: 0.85rem; }
+    .footer-note { padding: 4rem 2rem; background: #1F2A2E; color: #fff; text-align: center; }
+    .filler { height: 50vh; background: linear-gradient(180deg, #fff 0%, #f5f5f5 100%); }
+  </style>
+</head>
+<body>
+
+<div class="nav-top">
+  <strong>STUDIOLEE Divider Test —</strong>
+  <a href="#v1">Variant 1: Squiggle wave</a>
+  <a href="#v2">Variant 2: Loop-de-loop</a>
+  <a href="#v3">Variant 3: Coiled snake</a>
+  <a href="#v4">Variant 4: Overlapping circles</a>
+  <a href="#v5">Variant 5: Sine + loops</a>
+</div>
+
+<div class="filler"></div>
+
+<section class="test-section" id="v1">
+  <span class="label">VARIANT 1</span>
+  <h2>Squiggle wave (current production)</h2>
+  <p>A simple sine wave with 5 humps. Stroke draws in left-to-right as you scroll, fully drawn when the line hits viewport midpoint. Arrow rides the leading edge.</p>
+  <div class="divider-area" data-variant="1">
+    <svg class="test-svg" viewBox="0 0 1200 28" preserveAspectRatio="none">
+      <path d="M0 14 Q 30 2 60 14 T 120 14 T 180 14 T 240 14 T 300 14 T 360 14 T 420 14 T 480 14 T 540 14 T 600 14 T 660 14 T 720 14 T 780 14 T 840 14 T 900 14 T 960 14 T 1020 14 T 1080 14 T 1140 14 T 1200 14"/>
+    </svg>
+    <div class="arrow-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C1FF72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="filler"></div>
+
+<section class="test-section" id="v2">
+  <span class="label">VARIANT 2</span>
+  <h2>Loop-de-loop snake (crosses itself)</h2>
+  <p>Each loop is a closed curve where the line crosses over itself, like cursive "e" repeated. This is the snake-going-in-circles look.</p>
+  <div class="divider-area" data-variant="2">
+    <svg class="test-svg" viewBox="0 0 1200 60" preserveAspectRatio="none">
+      <!-- 12 loops crossing themselves, advancing 100px each -->
+      <path d="M 0 30 C 35 -15 95 -15 80 30 C 65 70 35 70 50 30 L 100 30 C 135 -15 195 -15 180 30 C 165 70 135 70 150 30 L 200 30 C 235 -15 295 -15 280 30 C 265 70 235 70 250 30 L 300 30 C 335 -15 395 -15 380 30 C 365 70 335 70 350 30 L 400 30 C 435 -15 495 -15 480 30 C 465 70 435 70 450 30 L 500 30 C 535 -15 595 -15 580 30 C 565 70 535 70 550 30 L 600 30 C 635 -15 695 -15 680 30 C 665 70 635 70 650 30 L 700 30 C 735 -15 795 -15 780 30 C 765 70 735 70 750 30 L 800 30 C 835 -15 895 -15 880 30 C 865 70 835 70 850 30 L 900 30 C 935 -15 995 -15 980 30 C 965 70 935 70 950 30 L 1000 30 C 1035 -15 1095 -15 1080 30 C 1065 70 1035 70 1050 30 L 1100 30 C 1135 -15 1195 -15 1180 30 C 1165 70 1135 70 1150 30 L 1200 30"/>
+    </svg>
+    <div class="arrow-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C1FF72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="filler"></div>
+
+<section class="test-section" id="v3">
+  <span class="label">VARIANT 3</span>
+  <h2>Coiled snake (slinky)</h2>
+  <p>A continuous slinky coil viewed from the side. Tight overlapping rings that form a band.</p>
+  <div class="divider-area" data-variant="3">
+    <svg class="test-svg" viewBox="0 0 1200 50" preserveAspectRatio="none">
+      <!-- Overlapping ellipses connected as a continuous coil -->
+      <path d="M 0 25 C 0 0 50 0 50 25 C 50 50 100 50 100 25 C 100 0 150 0 150 25 C 150 50 200 50 200 25 C 200 0 250 0 250 25 C 250 50 300 50 300 25 C 300 0 350 0 350 25 C 350 50 400 50 400 25 C 400 0 450 0 450 25 C 450 50 500 50 500 25 C 500 0 550 0 550 25 C 550 50 600 50 600 25 C 600 0 650 0 650 25 C 650 50 700 50 700 25 C 700 0 750 0 750 25 C 750 50 800 50 800 25 C 800 0 850 0 850 25 C 850 50 900 50 900 25 C 900 0 950 0 950 25 C 950 50 1000 50 1000 25 C 1000 0 1050 0 1050 25 C 1050 50 1100 50 1100 25 C 1100 0 1150 0 1150 25 C 1150 50 1200 50 1200 25"/>
+    </svg>
+    <div class="arrow-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C1FF72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="filler"></div>
+
+<section class="test-section" id="v4">
+  <span class="label">VARIANT 4</span>
+  <h2>Overlapping circles (chain)</h2>
+  <p>Discrete circles linked together, each overlapping the next by 50%. Creates a band of repeating O shapes.</p>
+  <div class="divider-area" data-variant="4">
+    <svg class="test-svg" viewBox="0 0 1200 60" preserveAspectRatio="none">
+      <!-- Series of circles drawn as one continuous path advancing 40px each -->
+      <path d="M 30 30 A 30 28 0 1 1 29.99 30 M 70 30 A 30 28 0 1 1 69.99 30 M 110 30 A 30 28 0 1 1 109.99 30 M 150 30 A 30 28 0 1 1 149.99 30 M 190 30 A 30 28 0 1 1 189.99 30 M 230 30 A 30 28 0 1 1 229.99 30 M 270 30 A 30 28 0 1 1 269.99 30 M 310 30 A 30 28 0 1 1 309.99 30 M 350 30 A 30 28 0 1 1 349.99 30 M 390 30 A 30 28 0 1 1 389.99 30 M 430 30 A 30 28 0 1 1 429.99 30 M 470 30 A 30 28 0 1 1 469.99 30 M 510 30 A 30 28 0 1 1 509.99 30 M 550 30 A 30 28 0 1 1 549.99 30 M 590 30 A 30 28 0 1 1 589.99 30 M 630 30 A 30 28 0 1 1 629.99 30 M 670 30 A 30 28 0 1 1 669.99 30 M 710 30 A 30 28 0 1 1 709.99 30 M 750 30 A 30 28 0 1 1 749.99 30 M 790 30 A 30 28 0 1 1 789.99 30 M 830 30 A 30 28 0 1 1 829.99 30 M 870 30 A 30 28 0 1 1 869.99 30 M 910 30 A 30 28 0 1 1 909.99 30 M 950 30 A 30 28 0 1 1 949.99 30 M 990 30 A 30 28 0 1 1 989.99 30 M 1030 30 A 30 28 0 1 1 1029.99 30 M 1070 30 A 30 28 0 1 1 1069.99 30 M 1110 30 A 30 28 0 1 1 1109.99 30 M 1150 30 A 30 28 0 1 1 1149.99 30 M 1190 30 A 30 28 0 1 1 1189.99 30"/>
+    </svg>
+    <div class="arrow-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C1FF72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="filler"></div>
+
+<section class="test-section" id="v5">
+  <span class="label">VARIANT 5</span>
+  <h2>Sine + interspersed loops</h2>
+  <p>Mostly a flowing wave with periodic small loops inserted — like ribbon flapping in wind with occasional twirls.</p>
+  <div class="divider-area" data-variant="5">
+    <svg class="test-svg" viewBox="0 0 1200 60" preserveAspectRatio="none">
+      <path d="M 0 30 Q 30 10 60 30 T 120 30 C 150 -10 200 -10 180 30 C 165 60 135 60 150 30 L 180 30 Q 210 10 240 30 T 300 30 T 360 30 C 390 -10 440 -10 420 30 C 405 60 375 60 390 30 L 420 30 Q 450 10 480 30 T 540 30 T 600 30 C 630 -10 680 -10 660 30 C 645 60 615 60 630 30 L 660 30 Q 690 10 720 30 T 780 30 T 840 30 C 870 -10 920 -10 900 30 C 885 60 855 60 870 30 L 900 30 Q 930 10 960 30 T 1020 30 T 1080 30 C 1110 -10 1160 -10 1140 30 C 1125 60 1095 60 1110 30 L 1140 30 Q 1170 10 1200 30"/>
+    </svg>
+    <div class="arrow-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C1FF72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="filler"></div>
+
+<div class="footer-note">
+  <p>Pick a variant. Reply with the number, I'll roll it out across all 68 blog posts.</p>
+</div>
+
+<script>
+(function() {
+  function setupVariant(area) {
+    var svg = area.querySelector('svg.test-svg');
+    var path = svg.querySelector('path');
+    var arrow = area.querySelector('.arrow-icon');
+    var pathLength = path.getTotalLength();
+    path.style.strokeDasharray = pathLength;
+    path.style.strokeDashoffset = pathLength;
+
+    function update() {
+      var rect = svg.getBoundingClientRect();
+      var areaRect = area.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      // Fully drawn when squiggle is at viewport midpoint (faster)
+      var progress = 2 * (1 - rect.top / vh);
+      if (progress < 0) progress = 0;
+      if (progress > 1) progress = 1;
+      path.style.strokeDashoffset = pathLength * (1 - progress);
+
+      var leadXpx = rect.width * progress;
+      var point = path.getPointAtLength(pathLength * progress);
+      var vbHeight = parseFloat(svg.getAttribute('viewBox').split(' ')[3]);
+      var leadYpx = (point.y / vbHeight) * rect.height;
+      var topOffset = (rect.top - areaRect.top) + leadYpx;
+      arrow.style.transform = 'translate(' + (leadXpx - 12) + 'px, ' + (topOffset - 12) + 'px)';
+      arrow.style.opacity = (progress > 0.01 && progress < 0.99) ? '1' : '0';
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  }
+
+  document.querySelectorAll('.divider-area').forEach(setupVariant);
+})();
+</script>
+
+</body>
+</html>

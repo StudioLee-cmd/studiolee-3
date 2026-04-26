@@ -41,41 +41,36 @@
     svg.appendChild(path);
     section.insertBefore(svg, section.firstChild);
 
-    // ===== LEADING-EDGE ARROW (rides the tip of the drawing line) =====
+    // ===== LEADING-EDGE ARROW =====
     var arrow = document.createElement('div');
     arrow.style.cssText = 'position:absolute;width:22px;height:22px;pointer-events:none;opacity:0;transition:opacity 0.18s linear;z-index:2;will-change:transform,opacity';
     arrow.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C1FF72" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 4px rgba(193,255,114,0.45))"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
     section.insertBefore(arrow, svg);
 
-    // ===== SCROLL-LINKED DRAW (faster: fully drawn when squiggle is halfway up viewport) =====
+    // ===== SCROLL-LINKED DRAW =====
     var pathLength = path.getTotalLength();
     path.style.strokeDasharray = pathLength;
     path.style.strokeDashoffset = pathLength;
-
     function update() {
       var rect = svg.getBoundingClientRect();
       var sectionRect = section.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
-      // 2x speed: progress=1 when squiggle.top reaches vh/2 (halfway up viewport)
       var progress = 2 * (1 - rect.top / vh);
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
       path.style.strokeDashoffset = pathLength * (1 - progress);
-
-      // Position the arrow at the leading edge of the drawn line
       var leadXpx = rect.width * progress;
       var point = path.getPointAtLength(pathLength * progress);
       var leadYpx = (point.y / 28) * rect.height;
       var topOffset = (rect.top - sectionRect.top) + leadYpx;
       arrow.style.transform = 'translate(' + (leadXpx - 11) + 'px, ' + (topOffset - 11) + 'px)';
-      // Visible while drawing, hidden once fully drawn or before it starts
       arrow.style.opacity = (progress > 0.01 && progress < 0.99) ? '1' : '0';
     }
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update, { passive: true });
     update();
 
-    // ===== LOAD RELATED ARTICLES =====
+    // ===== LOAD RELATED ARTICLES (FIXED: use p.image + <img> tag) =====
     var el = document.getElementById('related-articles-grid');
     if (!el) return;
     var currentSlug = el.getAttribute('data-slug');
@@ -85,14 +80,14 @@
       .then(function(data) {
         var related = data.posts
           .filter(function(p) { return p.cluster === currentCluster && p.slug !== currentSlug; })
-          .sort(function(a, b) { return new Date(b.date) - new Date(a.date); })
           .slice(0, 3);
-        if (related.length === 0) { el.innerHTML = '<p class="text-muted">Geen gerelateerde artikelen gevonden.</p>'; return; }
+        if (related.length === 0) {
+          related = data.posts.filter(function(p) { return p.slug !== currentSlug; }).slice(0, 3);
+        }
         var html = '';
         related.forEach(function(p) {
-          var imgUrl = '/images/blog/' + p.slug + '.png';
-          var imgHtml = '<div style="background:url(' + imgUrl + ') center/cover no-repeat;height:200px"></div>';
-          html += '<div class="col-md-6 col-lg-4"><a href="/blog/' + p.slug + '" class="text-decoration-none"><div class="card bg-dark border-0 rounded-3 h-100 overflow-hidden">' + imgHtml + '<div class="card-body p-4"><h3 class="text-white fs-5 mb-2">' + p.title + '</h3><p class="text-white text-opacity-50 mb-0 fs-6">Lees meer →</p></div></div></a></div>';
+          var imgHtml = p.image ? '<img src="' + p.image + '" alt="' + p.title + '" style="height:180px;object-fit:cover;width:100%;" loading="lazy">' : '';
+          html += '<div class="col-md-4"><a href="/blog/' + p.slug + '" class="text-decoration-none"><div class="card bg-dark border-0 rounded-3 h-100 overflow-hidden">' + imgHtml + '<div class="card-body p-4"><h3 class="text-white fs-5 mb-2">' + p.title + '</h3><p class="text-white text-opacity-50 mb-0 fs-6">Lees meer →</p></div></div></a></div>';
         });
         el.innerHTML = html;
       })
