@@ -135,10 +135,16 @@
 
     // rAF-throttled scroll handler for reliability across all scroll inputs
     var ticking = false;
+    function setSvgWidth() {
+      // Force exact viewport width in pixels — bypasses any CSS quirks
+      var vw = document.documentElement.clientWidth;
+      svg.style.width = vw + 'px';
+    }
+    setSvgWidth();
     function compute() {
       var rect = svg.getBoundingClientRect();
       var vh = window.innerHeight || document.documentElement.clientHeight;
-      var progress = 4 * (1 - rect.top / vh);
+      var progress = 2 * (1 - rect.top / vh);
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
       path.style.strokeDashoffset = pathLength * (1 - progress);
@@ -151,7 +157,7 @@
       }
     }
     window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update, { passive: true });
+    window.addEventListener('resize', function() { setSvgWidth(); update(); }, { passive: true });
     window.addEventListener('load', update); // recompute after fonts/images load
     update();
     // Extra safety: recompute after 100ms in case layout shifts post-paint
