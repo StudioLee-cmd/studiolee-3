@@ -17248,12 +17248,28 @@ ul {
 
 
 
-/* Remove blog whitespace gap */
+/* Remove blog whitespace gap (tightened 2026-04-26) */
 .blog-detail {
   padding-bottom: 0 !important;
 }
+/* Tighten gap from article body to closing CTA */
+.blog-detail > .container > .row.mt-5,
+.blog-detail .row.justify-content-center.mt-5 {
+  margin-top: 1.25rem !important;
+}
+/* Tighten CTA box internal padding so it doesn't look like dead space */
+.blog-detail .bg-dark.p-5 {
+  padding: 2rem 1.5rem !important;
+}
+@media (min-width: 768px) {
+  .blog-detail .bg-dark.p-5 { padding: 2.25rem 2rem !important; }
+}
 .related-articles {
   padding-top: 1rem !important;
+  padding-bottom: 2.5rem !important;
+}
+.related-articles h2 {
+  margin-bottom: 1.25rem !important;
 }
 
 /* Compact slide menu — fits 15 items on screen */
