@@ -17248,22 +17248,24 @@ ul {
 
 
 
-/* Remove blog whitespace gap (tightened 2026-04-26) */
+/* Blog body → related-articles whitespace KILLED + STUDIOLEE squiggle divider (aggressive 2026-04-26) */
 .blog-detail {
-  padding-bottom: 0 !important;
+  padding-bottom: 0.5rem !important;
 }
-/* Tighten gap from article body to closing CTA */
-.blog-detail > .container > .row.mt-5,
-.blog-detail .row.justify-content-center.mt-5 {
-  margin-top: 1.25rem !important;
+/* CTA row above the dark box: kill the mt-5 gap */
+section.blog-detail .row.justify-content-center.mt-5,
+section.blog-detail .row.mt-5 {
+  margin-top: 0 !important;
 }
-/* Tighten CTA box internal padding so it doesn't look like dead space */
-.blog-detail .bg-dark.p-5 {
-  padding: 2rem 1.5rem !important;
+/* CTA dark box: tighter internal padding */
+section.blog-detail .bg-dark.p-5 {
+  padding: 1.5rem !important;
 }
 @media (min-width: 768px) {
-  .blog-detail .bg-dark.p-5 { padding: 2.25rem 2rem !important; }
+  section.blog-detail .bg-dark.p-5 { padding: 1.75rem !important; }
 }
+/* Related-articles section: zero top padding, squiggle handles visual break */
+section.related-articles,
 .related-articles {
   padding-top: 0 !important;
   padding-bottom: 2.5rem !important;
@@ -17271,19 +17273,24 @@ ul {
 }
 .related-articles h2 {
   margin-bottom: 1.25rem !important;
+  margin-top: 0 !important;
 }
-/* STUDIOLEE-branded squiggle divider between blog body and related-articles */
+.related-articles > .container {
+  position: relative;
+  z-index: 1;
+}
+/* STUDIOLEE squiggle divider — FULL WIDTH edge-to-edge */
 .related-articles::before {
   content: '';
   display: block;
-  width: 140px;
+  width: 100%;
   height: 28px;
-  margin: 1.5rem auto 2rem auto;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 28' fill='none' stroke='%23C1FF72' stroke-width='3' stroke-linecap='round'><path d='M4 14 Q 14 2 24 14 T 44 14 T 64 14 T 84 14 T 104 14 T 124 14 T 136 14'/></svg>");
+  margin: 0 0 1.5rem 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 28' preserveAspectRatio='none' fill='none' stroke='%23C1FF72' stroke-width='2.2' stroke-linecap='round'><path d='M0 14 Q 30 2 60 14 T 120 14 T 180 14 T 240 14 T 300 14 T 360 14 T 420 14 T 480 14 T 540 14 T 600 14 T 660 14 T 720 14 T 780 14 T 840 14 T 900 14 T 960 14 T 1020 14 T 1080 14 T 1140 14 T 1200 14'/></svg>");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
-  opacity: 0.9;
+  background-size: 100% 100%;
+  opacity: 0.85;
 }
 
 /* Compact slide menu — fits 15 items on screen */
