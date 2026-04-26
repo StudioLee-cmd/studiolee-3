@@ -150,6 +150,26 @@
   <!-- Page Wrapper -->
   <div class="page-wrapper overflow-hidden">
 
+<!-- Inline link-color fix (match blog body styling) -->
+<style>
+.crm-content a.text-primary,
+.crm-content p a,
+.crm-content li a {
+  color: #5B8A3C !important;
+  text-decoration: underline;
+  text-decoration-color: rgba(193, 255, 114, 0.4);
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color .2s;
+}
+.crm-content a.text-primary:hover,
+.crm-content p a:hover,
+.crm-content li a:hover {
+  color: #4d662e !important;
+  text-decoration-color: #C1FF72;
+}
+</style>
+
 <!-- ═══ SECTION 1: HERO ═══ -->
 <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
   style="background-image: url(/assets/images/crm/crm-hero.jpg); background-size: cover; background-position: center;">
@@ -184,6 +204,8 @@
     </ol>
   </nav>
 </div>
+
+<div class="crm-content">
 
 <!-- ═══ SECTION 2: STATS ═══ -->
 <section class="stats-facts py-5 py-lg-7">
@@ -277,7 +299,7 @@
   </div>
 </section>
 
-<!-- ═══ SECTION 4: WAT IS EEN CRM ═══ -->
+<!-- ═══ SECTION 4: WAT IS EEN CRM (EXPANDED) ═══ -->
 <section class="py-5 py-lg-7 py-xl-8">
   <div class="container">
     <div class="row align-items-center g-5">
@@ -290,8 +312,9 @@
         <span class="badge text-bg-dark mb-3">Wat is een CRM</span>
         <h2 class="mb-4">Wat is een CRM voor het MKB?</h2>
         <p class="fs-5 mb-4">Een CRM (Customer Relationship Management) is software die alle informatie over je klanten op &eacute;&eacute;n plek bundelt: contactgegevens, afspraken, facturen, e-mails, telefoongesprekken en alle communicatie. Voor MKB-ondernemers betekent het concreet: nooit meer zoeken naar een telefoonnummer, nooit meer een offerte vergeten op te volgen.</p>
+        <p class="fs-5 mb-4">In de jaren negentig waren CRM-systemen iets voor grote bedrijven met IT-afdelingen. Salesforce kostte tienduizenden euro's per jaar en je had een implementatieteam nodig. Sinds 2010 zijn cloud-CRM's zoals HubSpot en Pipedrive opgekomen voor middelgrote bedrijven. En sinds 2024 verschuift het opnieuw: AI maakt het mogelijk om CRM's te bouwen die zichzelf onderhouden, klanten zelfstandig opvolgen en data automatisch ordenen. Het MKB heeft eindelijk toegang tot dezelfde tools als de grote jongens.</p>
         <p class="fs-5 mb-4">Het verschil tussen een CRM voor het MKB en een enterprise CRM (Salesforce, HubSpot Pro) zit in de complexiteit. Een MKB-ondernemer heeft geen 47 verkooppipelines nodig. Hij heeft &eacute;&eacute;n duidelijke klantkaart, automatische opvolging en de mogelijkheid om vanuit dat systeem te bellen, te mailen, een factuur te sturen en zijn social media te plannen.</p>
-        <p class="fs-5 mb-0">Bij STUDIOLEE bouwen we het CRM samen met onze <a href="/chatbot" class="text-primary">AI-chatbot</a>, <a href="/voice-ai" class="text-primary">voice AI</a>, <a href="/social-media" class="text-primary">social planner</a> en <a href="/automations" class="text-primary">workflow-automatisering</a>. Niet vier losse tools, maar &eacute;&eacute;n systeem voor &eacute;&eacute;n prijs.</p>
+        <p class="fs-5 mb-0">Bij STUDIOLEE bouwen we het CRM samen met onze <a href="/chatbot" class="text-primary">AI-chatbot</a>, <a href="/voice-ai" class="text-primary">voice AI</a>, <a href="/social-media" class="text-primary">social planner</a> en <a href="/automations" class="text-primary">workflow-automatisering</a>. Niet vier losse tools, maar &eacute;&eacute;n systeem voor &eacute;&eacute;n prijs. Onze klanten gebruiken het CRM via desktop, telefoon en tablet, met realtime synchronisatie zodat het maakt niet uit waar je werkt.</p>
       </div>
     </div>
   </div>
@@ -319,7 +342,7 @@
           <div class="card-body d-flex flex-column gap-4 p-4 p-lg-5">
             <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center"><iconify-icon icon="lucide:users" class="fs-7 text-dark"></iconify-icon></span>
             <h4 class="mb-0 text-white">CRM en klantbeheer</h4>
-            <p class="mb-0 text-white text-opacity-70">Klantkaart met alle contactmomenten, automatische tagging op herkomst en branche, KVK-koppeling voor zakelijke klanten.</p>
+            <p class="mb-0 text-white text-opacity-70">Klantkaart met alle contactmomenten, automatische tagging op herkomst en branche, KVK-koppeling voor zakelijke klanten, custom velden per branche.</p>
           </div>
         </div>
       </div>
@@ -366,6 +389,35 @@
             <h4 class="mb-0 text-white">Reviews-funnel</h4>
             <p class="mb-0 text-white text-opacity-70">Tevreden klanten krijgen automatisch een review-verzoek, negatieve feedback komt eerst bij jou. Inclusief NFC-kaart en QR-systeem.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5b: WAT ZIT ER NOG MEER IN (deep dive) ═══ -->
+<section class="py-5 py-lg-7 py-xl-8">
+  <div class="container">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-5" data-aos="fade-right">
+        <span class="badge text-bg-dark mb-3">Verder kijken</span>
+        <h2 class="mb-3">Wat zit er nog meer in?</h2>
+        <p class="fs-5 text-muted mb-0">Naast de zes hoofdfuncties zit er nog een hele rij kleinere modules in die het verschil maken in de dagelijkse praktijk. Geen losse pakketten, geen extra kosten, gewoon onderdeel van &euro;79 per maand.</p>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="row g-3">
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>NFC review-kaart</strong><p class="mb-0 text-muted small">Klant tikt zijn telefoon aan, review staat in 30 seconden online.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>QR-code review-bordjes</strong><p class="mb-0 text-muted small">Voor in de zaak, in de wachtkamer of op de factuur.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>Online afspraakplanner</strong><p class="mb-0 text-muted small">Klanten boeken zelf, jouw agenda blijft kloppend.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>Factuur-templates</strong><p class="mb-0 text-muted small">Met je eigen huisstijl, automatisch genummerd, BTW correct.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>Mollie en Stripe-koppeling</strong><p class="mb-0 text-muted small">iDEAL, creditcard, automatische incasso, BTW correct gerapporteerd.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>Lead scoring</strong><p class="mb-0 text-muted small">Hete leads bovenaan, koude leads in een nurture-flow.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>WhatsApp Business inbox</strong><p class="mb-0 text-muted small">Centraliseert alle WhatsApp-berichten in &eacute;&eacute;n inbox.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>Google Analytics 4 dashboard</strong><p class="mb-0 text-muted small">Snap je website-traffic zonder GA4 te leren.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>Mobiele app</strong><p class="mb-0 text-muted small">CRM op je telefoon, klantkaart bij de hand tijdens de klus.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>Custom velden per branche</strong><p class="mb-0 text-muted small">Een loodgieter heeft andere velden nodig dan een kapper.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>2-factor authenticatie</strong><p class="mb-0 text-muted small">Veilig inloggen voor jou en je medewerkers.</p></div></div></div>
+          <div class="col-md-6"><div class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><div><strong>Onbeperkt klanten</strong><p class="mb-0 text-muted small">Geen limiet op aantal contacten, geen limiet op storage.</p></div></div></div>
         </div>
       </div>
     </div>
@@ -438,7 +490,7 @@
   </div>
 </section>
 
-<!-- ═══ SECTION 7: VOOR WELKE MKB ═══ -->
+<!-- ═══ SECTION 7: VOOR WELKE MKB (EXPANDED) ═══ -->
 <section class="py-5 py-lg-7 py-xl-8">
   <div class="container">
     <div class="row align-items-center g-5 mb-7">
@@ -449,7 +501,7 @@
           <span class="badge text-bg-dark">Voor wie</span>
         </div>
         <h2 class="mb-3">Voor welke MKB-ondernemers werkt STUDIOLEE?</h2>
-        <p class="fs-5 text-muted mb-0">We werken met 15+ branches en hebben per branche een toegewijd platform met sector-specifieke automatiseringen. Van schilders tot klinieken: elk vak heeft eigen klantflows, en die flows hebben we ingebouwd.</p>
+        <p class="fs-5 text-muted mb-0">We werken met 15+ branches en hebben per branche een toegewijd platform met sector-specifieke automatiseringen. Van schilders tot klinieken: elk vak heeft eigen klantflows, en die flows hebben we ingebouwd. Wat al onze klanten gemeen hebben: ze runnen een MKB-bedrijf met klanten die je individueel kent en die je op het juiste moment moet kunnen bereiken.</p>
       </div>
       <div class="col-lg-6" data-aos="fade-left">
         <img src="/assets/images/crm/crm-trades.jpg" alt="Verschillende Nederlandse MKB-branches: kapper, loodgieter, schilder, kliniek, hovenier" class="img-fluid rounded-4">
@@ -460,47 +512,144 @@
         <div class="p-4 p-lg-5 border rounded-4 h-100" style="transition:transform .3s,border-color .3s" onmouseenter="this.style.transform='translateY(-6px)';this.style.borderColor='#C1FF72'" onmouseleave="this.style.transform='';this.style.borderColor=''">
           <iconify-icon icon="solar:paint-roller-bold-duotone" class="fs-2 text-primary mb-3 d-block"></iconify-icon>
           <h4 class="mb-2">Schilders en stukadoors</h4>
-          <p class="mb-0 text-muted">Offerte versturen, drie weken later opvolgen, na de klus garantie-termijn registreren. Geen offerte verdwijnt meer in de la.</p>
+          <p class="mb-0 text-muted">Offerte versturen, drie weken later opvolgen, na de klus garantie-termijn registreren. De CRM stuurt automatisch een opvolg-mail bij een uitstaande offerte en zet een herinnering in jouw agenda voor de garantie-controle een jaar later. Geen offerte verdwijnt meer in de la.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
         <div class="p-4 p-lg-5 border rounded-4 h-100" style="transition:transform .3s,border-color .3s" onmouseenter="this.style.transform='translateY(-6px)';this.style.borderColor='#C1FF72'" onmouseleave="this.style.transform='';this.style.borderColor=''">
           <iconify-icon icon="solar:wrench-bold-duotone" class="fs-2 text-primary mb-3 d-block"></iconify-icon>
           <h4 class="mb-2">Loodgieters en installateurs</h4>
-          <p class="mb-0 text-muted">Onderhoudscontract-herinneringen, ketel-jaarcontroles, garantietermijnen. Het systeem bewaakt de planning, jij voert uit.</p>
+          <p class="mb-0 text-muted">Onderhoudscontract-herinneringen, ketel-jaarcontroles, garantietermijnen. De CRM weet dat de ketel die jij vorig jaar bij meneer Jansen hebt gezet onderhoud nodig heeft, en stuurt namens jou een vriendelijke herinnering. Het systeem bewaakt de planning, jij voert uit.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
         <div class="p-4 p-lg-5 border rounded-4 h-100" style="transition:transform .3s,border-color .3s" onmouseenter="this.style.transform='translateY(-6px)';this.style.borderColor='#C1FF72'" onmouseleave="this.style.transform='';this.style.borderColor=''">
           <iconify-icon icon="solar:scissors-bold-duotone" class="fs-2 text-primary mb-3 d-block"></iconify-icon>
           <h4 class="mb-2">Kappers en salons</h4>
-          <p class="mb-0 text-muted">Online boekingen, automatische no-show herinneringen, klantkaart met kleurformule en behandelhistorie.</p>
+          <p class="mb-0 text-muted">Online boekingen via je website of Instagram, automatische no-show herinneringen 24 uur van tevoren, klantkaart met kleurformule en behandelhistorie. Een klant die zes weken geleden is geweest krijgt automatisch een vriendelijke uitnodiging voor de volgende afspraak.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
         <div class="p-4 p-lg-5 border rounded-4 h-100" style="transition:transform .3s,border-color .3s" onmouseenter="this.style.transform='translateY(-6px)';this.style.borderColor='#C1FF72'" onmouseleave="this.style.transform='';this.style.borderColor=''">
           <iconify-icon icon="solar:health-bold-duotone" class="fs-2 text-primary mb-3 d-block"></iconify-icon>
           <h4 class="mb-2">Klinieken en zorgverleners</h4>
-          <p class="mb-0 text-muted">AVG-conform patient-record, behandelafspraken via de chatbot, automatische nazorg-herinneringen.</p>
+          <p class="mb-0 text-muted">AVG-conform patient-record op Europese servers, behandelafspraken via de chatbot en telefonist, automatische nazorg-herinneringen en herhaalafspraken. Voor klinieken bouwen we extra strenge data-toegang in zodat alleen bevoegde medewerkers patientdata zien.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
         <div class="p-4 p-lg-5 border rounded-4 h-100" style="transition:transform .3s,border-color .3s" onmouseenter="this.style.transform='translateY(-6px)';this.style.borderColor='#C1FF72'" onmouseleave="this.style.transform='';this.style.borderColor=''">
           <iconify-icon icon="solar:wheel-angle-bold-duotone" class="fs-2 text-primary mb-3 d-block"></iconify-icon>
           <h4 class="mb-2">Rijscholen</h4>
-          <p class="mb-0 text-muted">Lessen plannen, theorie-examen herinneringen, leerling-voortgang per medewerker. Automatische factuur na elke les.</p>
+          <p class="mb-0 text-muted">Lessen plannen, theorie-examen herinneringen, leerling-voortgang per medewerker bijgehouden. Automatische factuur na elke les, automatische verlof-administratie en koppeling met het CBR-systeem voor examenstatus.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
         <div class="p-4 p-lg-5 border rounded-4 h-100" style="transition:transform .3s,border-color .3s" onmouseenter="this.style.transform='translateY(-6px)';this.style.borderColor='#C1FF72'" onmouseleave="this.style.transform='';this.style.borderColor=''">
           <iconify-icon icon="solar:bicycling-bold-duotone" class="fs-2 text-primary mb-3 d-block"></iconify-icon>
-          <h4 class="mb-2">Hoveniers, dakdekkers, fietsenmakers</h4>
-          <p class="mb-0 text-muted">Seizoenswerk, onderhoudscycli, garantie-opvolging. Automatisch contact met klanten op het juiste moment.</p>
+          <h4 class="mb-2">Fietsenmakers en winkels</h4>
+          <p class="mb-0 text-muted">Onderhoudsbeurten plannen, garantie-termijnen op nieuwe fietsen, verkoop-historie per klant. Een klant die drie jaar geleden een racefiets kocht krijgt automatisch tips over winterklaar-maken.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="p-4 p-lg-5 border rounded-4 h-100" style="transition:transform .3s,border-color .3s" onmouseenter="this.style.transform='translateY(-6px)';this.style.borderColor='#C1FF72'" onmouseleave="this.style.transform='';this.style.borderColor=''">
+          <iconify-icon icon="solar:home-2-bold-duotone" class="fs-2 text-primary mb-3 d-block"></iconify-icon>
+          <h4 class="mb-2">Dakdekkers en isolatie</h4>
+          <p class="mb-0 text-muted">Inspectie-rapporten met foto's per klant, garanties op werk en materiaal, periodieke nazorg-bezoeken. Jaarlijks volgens een schema dat de CRM bijhoudt en herinnert.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="450">
+        <div class="p-4 p-lg-5 border rounded-4 h-100" style="transition:transform .3s,border-color .3s" onmouseenter="this.style.transform='translateY(-6px)';this.style.borderColor='#C1FF72'" onmouseleave="this.style.transform='';this.style.borderColor=''">
+          <iconify-icon icon="solar:bolt-bold-duotone" class="fs-2 text-primary mb-3 d-block"></iconify-icon>
+          <h4 class="mb-2">Elektriciens</h4>
+          <p class="mb-0 text-muted">NEN 1010 inspecties bijhouden, garanties op installaties, werkbonnen direct in het systeem. Klanten ontvangen automatisch een digitaal opleveringsformulier dat ze in hun woningdossier kunnen bewaren.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="p-4 p-lg-5 border rounded-4 h-100" style="transition:transform .3s,border-color .3s" onmouseenter="this.style.transform='translateY(-6px)';this.style.borderColor='#C1FF72'" onmouseleave="this.style.transform='';this.style.borderColor=''">
+          <iconify-icon icon="solar:leaf-bold-duotone" class="fs-2 text-primary mb-3 d-block"></iconify-icon>
+          <h4 class="mb-2">Hoveniers en groenvoorziening</h4>
+          <p class="mb-0 text-muted">Seizoenswerk plannen (winter-snoei, voorjaar-aanleg, najaar-onderhoud), klantkaart met tuin-foto's en plantenlijst, automatische jaarlijkse onderhoudsofferte. Klanten krijgen op het juiste moment een aanbod, jij hoeft alleen te bouwen.</p>
         </div>
       </div>
     </div>
     <div class="text-center mt-7">
       <a href="/portfolio" class="btn btn-outline-dark rounded-pill px-4 py-3">Bekijk alle 15+ branches</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 7b: SIGNALEN ═══ -->
+<section class="py-5 py-lg-7 py-xl-8 bg-light-gray">
+  <div class="container">
+    <div class="row gap-7 gap-xl-0 mb-5">
+      <div class="col-xl-4">
+        <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right">
+          <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">05</span>
+          <hr class="border-line">
+          <span class="badge text-bg-dark">Signalen</span>
+        </div>
+      </div>
+      <div class="col-xl-8">
+        <h2 class="mb-3" data-aos="fade-up">Vijf signalen dat je een CRM nodig hebt</h2>
+        <p class="fs-5 text-muted mb-0" data-aos="fade-up">Je hoeft niet alle vijf te herkennen, &eacute;&eacute;n is genoeg. Als je hier eerlijk doorheen leest en jezelf in tenminste twee herkent, is het tijd voor een CRM.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6" data-aos="fade-up">
+        <div class="p-4 p-lg-5 bg-white rounded-4 h-100">
+          <div class="d-flex gap-4 align-items-start">
+            <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center fw-bold fs-4">1</span>
+            <div>
+              <h4 class="mb-2">Je zoekt vaker dan vijf minuten naar een klant-telefoonnummer</h4>
+              <p class="mb-0 text-muted">Als de informatie versnipperd is over WhatsApp, e-mail, je telefoon-contacten en een Excel, dan kost het je elke dag tijd. Een CRM bundelt het, en zoeken duurt een seconde.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="p-4 p-lg-5 bg-white rounded-4 h-100">
+          <div class="d-flex gap-4 align-items-start">
+            <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center fw-bold fs-4">2</span>
+            <div>
+              <h4 class="mb-2">Je vergeet wel eens een offerte op te volgen</h4>
+              <p class="mb-0 text-muted">Een gemiste opvolg-mail is een gemiste opdracht. Als je weet dat dit gebeurt, weet je ook dat het je geld kost. De CRM doet het automatisch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="p-4 p-lg-5 bg-white rounded-4 h-100">
+          <div class="d-flex gap-4 align-items-start">
+            <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center fw-bold fs-4">3</span>
+            <div>
+              <h4 class="mb-2">Je weet niet welke klanten al maanden niets van je hebben gehoord</h4>
+              <p class="mb-0 text-muted">Bestaande klanten zijn goedkoper te bereiken dan nieuwe. Maar je moet ze wel weten te vinden. Een CRM toont je in &eacute;&eacute;n klik wie er een nudge nodig heeft.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="p-4 p-lg-5 bg-white rounded-4 h-100">
+          <div class="d-flex gap-4 align-items-start">
+            <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center fw-bold fs-4">4</span>
+            <div>
+              <h4 class="mb-2">Een nieuwe medewerker kan niet zelfstandig met klantinformatie werken</h4>
+              <p class="mb-0 text-muted">Als alleen jij weet waar de info staat, dan is je bedrijf niet schaalbaar. Een CRM ontsluit klantkennis voor je hele team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
+        <div class="p-4 p-lg-5 bg-white rounded-4 h-100">
+          <div class="d-flex gap-4 align-items-start">
+            <span class="round-52 flex-shrink-0 rounded-circle bg-primary hstack justify-content-center fw-bold fs-4">5</span>
+            <div>
+              <h4 class="mb-2">Je hebt geen idee wat je conversie-percentage of omzet-per-klant is</h4>
+              <p class="mb-0 text-muted">Zonder CRM heb je geen cijfers. Zonder cijfers stuur je op gevoel, en gevoel klopt zelden. Een CRM levert je elke maand een dashboard met de echte getallen, en daarop kun je beslissingen nemen die ergens op slaan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -511,14 +660,14 @@
     <div class="row gap-7 gap-xl-0 mb-7">
       <div class="col-xl-4">
         <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right">
-          <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">05</span>
+          <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">06</span>
           <hr class="border-line border-white border-opacity-25">
           <span class="badge" style="background:rgba(255,255,255,0.1);color:#fff">In cijfers</span>
         </div>
       </div>
       <div class="col-xl-8">
         <h2 class="text-white mb-3" data-aos="fade-up">Wat levert dit op?</h2>
-        <p class="text-white text-opacity-60 mb-0" data-aos="fade-up" data-aos-delay="100">Cijfers gemiddeld over alle 15+ branches, gemeten tussen maand 1 en maand 6.</p>
+        <p class="text-white text-opacity-60 mb-0" data-aos="fade-up" data-aos-delay="100">Cijfers gemiddeld over alle 15+ branches, gemeten tussen maand 1 en maand 6 na implementatie. Dit zijn realistische cijfers, geen marketing-fantasie.</p>
       </div>
     </div>
     <div class="row g-4">
@@ -556,7 +705,7 @@
     <div class="row align-items-center g-5 mb-7">
       <div class="col-lg-6 order-lg-2" data-aos="fade-left">
         <div class="d-flex align-items-center gap-7 py-2 mb-4">
-          <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">06</span>
+          <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">07</span>
           <hr class="border-line">
           <span class="badge text-bg-dark">Werkwijze</span>
         </div>
@@ -572,21 +721,136 @@
         <div class="p-4 p-lg-5 border-start border-4 border-primary h-100">
           <span class="text-primary fw-bold fs-3 mb-2 d-block">Stap 01</span>
           <h4 class="mb-3">Intake en branche-keuze</h4>
-          <p class="mb-0 text-muted">30-minuten gesprek waarin we je bedrijf, klantsegment en huidige tools doornemen. Op basis daarvan kiezen we het juiste branche-platform en automatiseringen.</p>
+          <p class="mb-0 text-muted">30-minuten gesprek waarin we je bedrijf, klantsegment en huidige tools doornemen. Op basis daarvan kiezen we het juiste branche-platform en automatiseringen. Geen verplichtingen na het gesprek, jij beslist of het past.</p>
         </div>
       </div>
       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
         <div class="p-4 p-lg-5 border-start border-4 border-primary h-100">
           <span class="text-primary fw-bold fs-3 mb-2 d-block">Stap 02</span>
           <h4 class="mb-3">Inrichting en migratie</h4>
-          <p class="mb-0 text-muted">Wij richten het CRM, de chatbot, voice AI en social planner in. Bestaande klantenlijst (Excel, oude software, Outlook) migreren we netjes en ontdubbeld.</p>
+          <p class="mb-0 text-muted">Wij richten het CRM, de chatbot, voice AI en social planner in. Bestaande klantenlijst (Excel, oude software, Outlook) migreren we netjes en ontdubbeld. Custom velden per branche, integraties met je website, telefoonnummer en betaalsysteem.</p>
         </div>
       </div>
       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
         <div class="p-4 p-lg-5 border-start border-4 border-primary h-100">
           <span class="text-primary fw-bold fs-3 mb-2 d-block">Stap 03</span>
           <h4 class="mb-3">Live en doorlopende support</h4>
-          <p class="mb-0 text-muted">Binnen vijf werkdagen draait het. Korte teams-sessie waarin we je laten zien hoe je ermee werkt. E-mail en chat support &lt;4u reactietijd op werkdagen.</p>
+          <p class="mb-0 text-muted">Binnen vijf werkdagen draait het. Korte teams-sessie waarin we je laten zien hoe je ermee werkt, plus een opname zodat je later nog eens terug kan kijken. E-mail en chat support &lt;4u reactietijd op werkdagen, doorlopend onderhoud zit erbij.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 9b: WAT KOST EEN CRM ═══ -->
+<section class="py-5 py-lg-7 py-xl-8 bg-dark">
+  <div class="container">
+    <div class="row gap-7 gap-xl-0 mb-7">
+      <div class="col-xl-4">
+        <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right">
+          <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">08</span>
+          <hr class="border-line border-white border-opacity-25">
+          <span class="badge" style="background:rgba(255,255,255,0.1);color:#fff">Kosten</span>
+        </div>
+      </div>
+      <div class="col-xl-8">
+        <h2 class="text-white mb-3" data-aos="fade-up">Wat kost een CRM voor het MKB in 2026?</h2>
+        <p class="text-white text-opacity-60 mb-0" data-aos="fade-up" data-aos-delay="100">Eerlijke kostenvergelijking, want de prijs zegt niet alles. Wat je krijgt voor je geld telt veel zwaarder.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="p-4 p-lg-5 rounded-4 h-100" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1)">
+          <h4 class="text-white mb-4">Wat je elders betaalt</h4>
+          <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white text-opacity-70">HubSpot Starter (CRM + e-mail)</span>
+              <span class="text-white fw-bold">&euro;20-&euro;90/mo</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white text-opacity-70">Pipedrive (CRM, per gebruiker)</span>
+              <span class="text-white fw-bold">&euro;15-&euro;60/user/mo</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white text-opacity-70">Tidio chatbot</span>
+              <span class="text-white fw-bold">&euro;29-&euro;99/mo</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white text-opacity-70">Buffer of Hootsuite social planner</span>
+              <span class="text-white fw-bold">&euro;15-&euro;65/mo</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white text-opacity-70">Mailchimp e-mail automatisering</span>
+              <span class="text-white fw-bold">&euro;20-&euro;75/mo</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pt-2">
+              <span class="text-white fw-bold">Totaal lappendeken</span>
+              <span class="text-danger fw-bold fs-5">&euro;100-&euro;400+/mo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="p-4 p-lg-5 rounded-4 h-100" style="background:rgba(193,255,114,0.08);border:2px solid #C1FF72">
+          <h4 class="text-white mb-4">Wat je bij STUDIOLEE betaalt</h4>
+          <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white">CRM en klantbeheer</span>
+              <span class="text-primary fw-bold">Inbegrepen</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white">AI-chatbot voor je website</span>
+              <span class="text-primary fw-bold">Inbegrepen</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white">AI voice agent</span>
+              <span class="text-primary fw-bold">Inbegrepen</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white">Social media planner</span>
+              <span class="text-primary fw-bold">Inbegrepen</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pb-3 border-bottom border-white border-opacity-10">
+              <span class="text-white">E-mail en SMS automatisering</span>
+              <span class="text-primary fw-bold">Inbegrepen</span>
+            </li>
+            <li class="d-flex justify-content-between align-items-center pt-2">
+              <span class="text-white fw-bold fs-5">Vaste maandprijs</span>
+              <span class="fw-bold fs-3" style="color:#C1FF72">&euro;79/mo</span>
+            </li>
+          </ul>
+          <a href="/tarieven" class="btn w-100 justify-content-center mt-4">
+            <span class="btn-text">Bekijk volledige prijslijst</span>
+            <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 9c: AVG EN PRIVACY ═══ -->
+<section class="py-5 py-lg-7 py-xl-8">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="badge text-bg-dark mb-3">AVG en privacy</span>
+        <h2 class="mb-4">Data op Europese servers, AVG-conform</h2>
+        <p class="fs-5 mb-4">In Europa is privacy-wetgeving streng en dat hoort ook zo. Klantgegevens zijn gevoelig en mogen niet zomaar de oceaan over. Voor MKB-bedrijven die zonder eigen IT-juriste werken is het belangrijk dat je CRM-leverancier dit voor je regelt.</p>
+        <p class="fs-5 mb-4">STUDIOLEE draait volledig op Europese servers (Frankfurt en Amsterdam). We hebben verwerkersovereenkomsten met alle onderliggende leveranciers en je krijgt bij ondertekening een eigen DPA (Data Processing Agreement) zodat jij richting jouw klanten kunt aantonen dat je de wet volgt.</p>
+        <p class="fs-5 mb-0">Je klanten kunnen op elk moment hun data laten inzien of verwijderen. Een verzoek tot verwijdering wordt automatisch verwerkt binnen 30 dagen, zoals de AVG voorschrijft. Voor klinieken bouwen we extra strenge data-segmentatie, gekoppeld aan medewerker-rollen.</p>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="p-5 rounded-4" style="background:#f5f5f5">
+          <h4 class="mb-4">Wat we voor je regelen</h4>
+          <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+            <li class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:shield-check" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><span><strong>EU-only servers.</strong> Geen data over de oceaan, geen Schrems II problemen.</span></li>
+            <li class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:shield-check" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><span><strong>Verwerkersovereenkomsten.</strong> Met alle onderliggende leveranciers zoals Anthropic, OpenAI en Google.</span></li>
+            <li class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:shield-check" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><span><strong>Eigen DPA.</strong> Klaar om te ondertekenen op dag &eacute;&eacute;n.</span></li>
+            <li class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:shield-check" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><span><strong>2FA voor alle gebruikers.</strong> Geen zwakke wachtwoorden meer.</span></li>
+            <li class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:shield-check" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><span><strong>Audit-log.</strong> Wie zag welke klant en wanneer? Het systeem houdt het bij.</span></li>
+            <li class="d-flex gap-3 align-items-start"><iconify-icon icon="lucide:shield-check" class="fs-5 text-primary mt-1 flex-shrink-0"></iconify-icon><span><strong>Data-export op aanvraag.</strong> Bij opzegging krijg je je data in een open formaat mee.</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -640,6 +904,30 @@
               <div class="faq-tl-q">Is het echt alles inbegrepen voor 79 euro?</div>
               <div class="faq-tl-a">Ja. Geen verborgen kosten, geen per-user fees, geen add-ons die je later moet kopen. CRM, AI-chatbot, voice AI, social planner, e-mail en SMS automatisering, reviews-funnel, alles zit erin.</div>
             </div>
+            <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+              <div class="faq-tl-q">Hoeveel klanten kan ik in het systeem zetten?</div>
+              <div class="faq-tl-a">Onbeperkt. Geen limiet op aantal contacten, geen limiet op storage, geen limiet op aantal e-mails of berichten per maand. We houden bij wat realistisch is voor MKB-gebruik en daar zit niemand boven.</div>
+            </div>
+            <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+              <div class="faq-tl-q">Kan mijn boekhouder erbij?</div>
+              <div class="faq-tl-a">Ja. Je kunt rollen toekennen aan medewerkers en externen. Je boekhouder krijgt toegang tot facturen en betalingen, niet tot klantgegevens. Allemaal binnen het systeem, geen extra abonnement nodig.</div>
+            </div>
+            <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+              <div class="faq-tl-q">Werkt de voice AI ook met mijn huidige telefoonnummer?</div>
+              <div class="faq-tl-a">Ja. We koppelen jouw bestaande nummer (KPN, Vodafone, T-Mobile, VoIP) aan onze voice agent. Inkomende oproepen die jij niet kunt beantwoorden, worden automatisch opgepakt door de AI. Voor klanten merken ze geen verschil.</div>
+            </div>
+            <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+              <div class="faq-tl-q">Hoe trainen jullie de chatbot op mijn bedrijf?</div>
+              <div class="faq-tl-a">In de intake nemen we je website door, je veelgestelde vragen, je prijslijst, je openingstijden en je specialismen. We voeden de bot met deze informatie en testen hem voor de live-gang. Wijzigingen later kun je zelf doorvoeren of via support laten doen.</div>
+            </div>
+            <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+              <div class="faq-tl-q">Wat als mijn medewerkers niet handig zijn met software?</div>
+              <div class="faq-tl-a">Het systeem is ontworpen voor mensen die geen IT-achtergrond hebben. Eenvoudige menus, duidelijke kleuren, geen jargon. Daarnaast krijgt elke medewerker een korte training (30 minuten) en een opname die hij later nog eens kan terugkijken.</div>
+            </div>
+            <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+              <div class="faq-tl-q">Welke garantie geven jullie?</div>
+              <div class="faq-tl-a">Geld-terug-garantie als het systeem op dag 30 niet draait zoals afgesproken. We zijn ervan overtuigd dat het werkt, en als wij die overtuiging niet kunnen waarmaken, krijg je je geld terug zonder gedoe.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -667,7 +955,9 @@
   </div>
 </section>
 
-<!-- ═══ SCHEMA: FAQPage ═══ -->
+</div><!-- /.crm-content -->
+
+<!-- ═══ SCHEMA: FAQPage (14 Q&As) ═══ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -680,7 +970,13 @@
     {"@type":"Question","name":"Kan ik opzeggen?","acceptedAnswer":{"@type":"Answer","text":"Maandelijks, geen vragen, geen opzegtermijn van drie maanden. We werken niet met jaarcontracten omdat we geloven dat je blijft als het werkt, niet omdat je vastzit."}},
     {"@type":"Question","name":"Wat als ik hulp nodig heb?","acceptedAnswer":{"@type":"Answer","text":"E-mail en chat support, gemiddelde reactietijd onder de vier uur tijdens werkdagen. Voor klanten in Managed Pro staat er een vaste accountmanager die maandelijks meekijkt."}},
     {"@type":"Question","name":"Werkt het ook met mijn website?","acceptedAnswer":{"@type":"Answer","text":"Ja. De chatbot-integratie werkt met WordPress, Shopify, Wix, Webflow, custom Next.js sites en de meeste andere platforms. Een regel code op je site en hij draait."}},
-    {"@type":"Question","name":"Is het echt alles inbegrepen voor 79 euro?","acceptedAnswer":{"@type":"Answer","text":"Ja. Geen verborgen kosten, geen per-user fees, geen add-ons die je later moet kopen. CRM, AI-chatbot, voice AI, social planner, e-mail en SMS automatisering, reviews-funnel, alles zit erin."}}
+    {"@type":"Question","name":"Is het echt alles inbegrepen voor 79 euro?","acceptedAnswer":{"@type":"Answer","text":"Ja. Geen verborgen kosten, geen per-user fees, geen add-ons die je later moet kopen. CRM, AI-chatbot, voice AI, social planner, e-mail en SMS automatisering, reviews-funnel, alles zit erin."}},
+    {"@type":"Question","name":"Hoeveel klanten kan ik in het systeem zetten?","acceptedAnswer":{"@type":"Answer","text":"Onbeperkt. Geen limiet op aantal contacten, geen limiet op storage, geen limiet op aantal e-mails of berichten per maand. We houden bij wat realistisch is voor MKB-gebruik en daar zit niemand boven."}},
+    {"@type":"Question","name":"Kan mijn boekhouder erbij?","acceptedAnswer":{"@type":"Answer","text":"Ja. Je kunt rollen toekennen aan medewerkers en externen. Je boekhouder krijgt toegang tot facturen en betalingen, niet tot klantgegevens. Allemaal binnen het systeem, geen extra abonnement nodig."}},
+    {"@type":"Question","name":"Werkt de voice AI ook met mijn huidige telefoonnummer?","acceptedAnswer":{"@type":"Answer","text":"Ja. We koppelen jouw bestaande nummer aan onze voice agent. Inkomende oproepen die jij niet kunt beantwoorden, worden automatisch opgepakt door de AI. Voor klanten merken ze geen verschil."}},
+    {"@type":"Question","name":"Hoe trainen jullie de chatbot op mijn bedrijf?","acceptedAnswer":{"@type":"Answer","text":"In de intake nemen we je website door, je veelgestelde vragen, je prijslijst, je openingstijden en je specialismen. We voeden de bot met deze informatie en testen hem voor de live-gang."}},
+    {"@type":"Question","name":"Wat als mijn medewerkers niet handig zijn met software?","acceptedAnswer":{"@type":"Answer","text":"Het systeem is ontworpen voor mensen die geen IT-achtergrond hebben. Eenvoudige menus, duidelijke kleuren, geen jargon. Daarnaast krijgt elke medewerker een korte training en een opname die hij later nog eens kan terugkijken."}},
+    {"@type":"Question","name":"Welke garantie geven jullie?","acceptedAnswer":{"@type":"Answer","text":"Geld-terug-garantie als het systeem op dag 30 niet draait zoals afgesproken. We zijn ervan overtuigd dat het werkt, en als wij die overtuiging niet kunnen waarmaken, krijg je je geld terug zonder gedoe."}}
   ]
 }
 </script>
