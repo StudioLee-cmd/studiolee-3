@@ -287,21 +287,6 @@
                     </style>
                     <input type="email" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="email" placeholder="voornaam@bedrijf.nl" required>
                     <input type="text" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="bedrijfsnaam" placeholder="Van Der Lee BV" required>
-                    <select class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="niche" required>
-                      <option value="kapper">Kapper</option>
-                      <option value="loodgieter">Loodgieter</option>
-                      <option value="elektricien">Elektricien</option>
-                      <option value="hovenier">Hovenier</option>
-                      <option value="schilder">Schilder</option>
-                      <option value="dakdekker">Dakdekker</option>
-                      <option value="schoonmaak">Schoonmaak</option>
-                      <option value="auto">Auto</option>
-                      <option value="restaurant">Restaurant</option>
-                      <option value="tandarts">Tandarts</option>
-                      <option value="fysiotherapie">Fysiotherapie</option>
-                      <option value="vastgoed">Vastgoed</option>
-                      <option value="overig">Overig</option>
-                    </select>
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="trialAkkoord" required>
                       <label class="form-check-label text-white" for="trialAkkoord">
@@ -498,7 +483,6 @@
       var data = {
         email: document.getElementById('trialEmail').value,
         bedrijfsnaam: document.getElementById('trialBedrijfsnaam').value,
-        niche: document.getElementById('trialNiche').value,
         source: 'studiolee-3-free-trial'
       };
 
