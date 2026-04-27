@@ -510,23 +510,65 @@
   </script>
 
     <script>
-    // Handle both forms with fetch
+    // Handle both forms with fetch.
+    // freeTrialForm: webhook responds with a Stripe checkout URL — redirect there.
+    // freeScanForm: webhook fires-and-forgets, just show success.
+    function extractStripeUrl(text){
+      if(!text) return null;
+      var trimmed = String(text).trim();
+      // Plain URL response
+      if(/^https?:\/\//.test(trimmed)) return trimmed;
+      // JSON response — look for common keys at root or nested
+      try {
+        var p = JSON.parse(trimmed);
+        var candidates = [p, p.body, p.data, p.response, p.result];
+        for (var i=0; i<candidates.length; i++){
+          var c = candidates[i];
+          if (c && typeof c === 'object'){
+            var u = c.url || c.stripe_url || c.checkout_url || c.checkoutUrl || c.redirect_url || c.redirectUrl || c.location;
+            if (u && /^https?:\/\//.test(String(u))) return String(u);
+          }
+          if (typeof c === 'string' && /^https?:\/\//.test(c.trim())) return c.trim();
+        }
+      } catch (e) { /* not JSON */ }
+      return null;
+    }
+
     ['freeScanForm','freeTrialForm'].forEach(function(id){
       var form = document.getElementById(id);
       if(!form) return;
       form.addEventListener('submit', function(e){
         e.preventDefault();
         var data = new FormData(form);
+        var successId = (id === 'freeScanForm') ? 'scanSuccess' : 'trialSuccess';
         fetch(form.action, {method:'POST', body: data})
-          .then(function(){
+          .then(function(response){
+            if (id === 'freeTrialForm' && response && response.ok) {
+              return response.text().then(function(text){
+                var stripeUrl = extractStripeUrl(text);
+                if (stripeUrl) {
+                  window.location.href = stripeUrl;
+                  return;  // skip success-div fallback
+                }
+                form.classList.add('d-none');
+                var s = document.getElementById(successId);
+                if (s) s.classList.remove('d-none');
+              }).catch(function(){
+                // CORS or read error — fall back to success div
+                form.classList.add('d-none');
+                var s = document.getElementById(successId);
+                if (s) s.classList.remove('d-none');
+              });
+            }
+            // freeScanForm or non-ok response: success-div behavior
             form.classList.add('d-none');
-            var success = document.getElementById(id === 'freeScanForm' ? 'scanSuccess' : 'trialSuccess');
-            if(success) success.classList.remove('d-none');
+            var s = document.getElementById(successId);
+            if (s) s.classList.remove('d-none');
           })
           .catch(function(){
             form.classList.add('d-none');
-            var success = document.getElementById(id === 'freeScanForm' ? 'scanSuccess' : 'trialSuccess');
-            if(success) success.classList.remove('d-none');
+            var s = document.getElementById(successId);
+            if (s) s.classList.remove('d-none');
           });
       });
     });
