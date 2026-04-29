@@ -27,6 +27,20 @@
       "status": 308
     },
     {
+      "src": "/about",
+      "headers": {
+        "Location": "/over-ons"
+      },
+      "status": 308
+    },
+    {
+      "src": "/review-pakket",
+      "headers": {
+        "Location": "/reviews"
+      },
+      "status": 308
+    },
+    {
       "handle": "filesystem"
     },
     {
