@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "google-bedrijfsprofiel-aanmaken-mkb-startgids",
+      "title": "Google Bedrijfsprofiel aanmaken voor MKB",
+      "date": "2026-04-29",
+      "cluster": "google-bedrijfsprofiel",
+      "image": "/assets/images/blog/google-bedrijfsprofiel-aanmaken-mkb-startgids.jpg"
+    },
+    {
       "slug": "ai-implementeren-mkb-stappenplan-2026",
       "title": "AI implementeren als MKB: stappenplan 2026",
       "date": "2026-04-28",
@@ -177,7 +184,7 @@
     },
     {
       "slug": "roi-ai-automatisering-mkb",
-      "title": "ROI van AI-automatisering: wat levert het je MKB \u00e9cht op?",
+      "title": "ROI van AI-automatisering: wat levert het je MKB écht op?",
       "date": "2026-04-06",
       "cluster": "roi-automatisering",
       "image": "/assets/images/blog/roi-ai-automatisering-mkb.jpg"
