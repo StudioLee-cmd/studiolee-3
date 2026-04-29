@@ -74,7 +74,7 @@
       "slug": "linkbuilding-mkb-uitleg-strategie",
       "title": "Linkbuilding voor het MKB: wat het is en waarom je het niet zelf hoeft te doen",
       "date": "2026-04-18",
-      "cluster": "vindbaarheid",
+      "cluster": "seo",
       "image": "/assets/images/blog/linkbuilding-mkb-uitleg-strategie.jpg"
     },
     {
@@ -88,7 +88,7 @@
       "slug": "seo-fouten-mkb-websites",
       "title": "SEO-fouten die MKB-websites onzichtbaar maken",
       "date": "2026-04-17",
-      "cluster": "vindbaarheid",
+      "cluster": "seo",
       "image": "/assets/images/blog/seo-fouten-mkb-websites.jpg"
     },
     {
@@ -165,7 +165,7 @@
       "slug": "lokale-vindbaarheid-verbeteren-mkb-gids",
       "title": "Lokale vindbaarheid verbeteren: de complete MKB-gids",
       "date": "2026-04-07",
-      "cluster": "vindbaarheid",
+      "cluster": "seo",
       "image": "/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg"
     },
     {
@@ -177,7 +177,7 @@
     },
     {
       "slug": "roi-ai-automatisering-mkb",
-      "title": "ROI van AI-automatisering: wat levert het je MKB écht op?",
+      "title": "ROI van AI-automatisering: wat levert het je MKB \u00e9cht op?",
       "date": "2026-04-06",
       "cluster": "roi-automatisering",
       "image": "/assets/images/blog/roi-ai-automatisering-mkb.jpg"
@@ -473,7 +473,7 @@
       "slug": "voice-ai-24-7-bereikbaar",
       "title": "24/7 Bereikbaar: De Kracht van Voice AI",
       "date": "2026-01-25",
-      "cluster": "chatbot",
+      "cluster": "voice-ai",
       "image": "/assets/images/blog/voice-ai-24-7-bereikbaar.png"
     },
     {
