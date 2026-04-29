@@ -11,6 +11,11 @@
       "source": "/website-laten-maken/barbershop",
       "destination": "/website-laten-maken/kapper",
       "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/over-ons",
+      "permanent": true
     }
   ],
   "routes": [
