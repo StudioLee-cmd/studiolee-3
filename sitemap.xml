@@ -684,4 +684,10 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/gepersonaliseerde-marketing-ai-mkb</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

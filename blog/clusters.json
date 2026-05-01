@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "gepersonaliseerde-marketing-ai-mkb",
+      "title": "Gepersonaliseerde marketing met AI: segmentatie voor MKB",
+      "date": "2026-05-01",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/gepersonaliseerde-marketing-ai-mkb.jpg"
+    },
+    {
       "slug": "direct-mail-online-combineren-mkb",
       "title": "Direct mail + online combineren MKB",
       "date": "2026-04-30",
@@ -505,5 +512,5 @@
       "image": "/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png"
     }
   ],
-  "updated": "2026-04-22"
+  "updated": "2026-05-01"
 }
