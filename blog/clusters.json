@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "wat-kost-website-per-jaar-mkb-terugkerende-kosten",
+      "title": "Wat kost een website per jaar voor MKB? De terugkerende kosten die je vergeet",
+      "date": "2026-05-02",
+      "cluster": "website",
+      "image": "/assets/images/blog/wat-kost-website-per-jaar-mkb-terugkerende-kosten.jpg"
+    },
+    {
       "slug": "gepersonaliseerde-marketing-ai-mkb",
       "title": "Gepersonaliseerde marketing met AI: segmentatie voor MKB",
       "date": "2026-05-01",
@@ -512,5 +519,5 @@
       "image": "/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png"
     }
   ],
-  "updated": "2026-05-01"
+  "updated": "2026-05-02"
 }
