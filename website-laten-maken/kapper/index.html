@@ -309,6 +309,49 @@
       .niche-tpl-card--locked.tpl-bold .niche-tpl-card__lockcaption,
       .niche-tpl-card--locked.tpl-project .niche-tpl-card__lockcaption,
       .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockcaption { color: rgba(255,255,255,0.55); }
+
+      /* Featured/highlighted card variant — leads users to the showcase template */
+      .niche-tpl-featured-wrap {
+        position: relative;
+      }
+      .niche-tpl-featured-flag {
+        position: absolute;
+        top: -14px;
+        right: 18px;
+        z-index: 4;
+        background: var(--bs-primary, #c1ff72);
+        color: #1a1a1a;
+        padding: 6px 14px;
+        border-radius: 99px;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 4px 14px rgba(193, 255, 114, 0.45);
+        animation: featured-pulse 2.4s ease-in-out infinite;
+      }
+      .niche-tpl-featured-flag iconify-icon {
+        font-size: 0.95rem;
+      }
+      .niche-tpl-card--featured {
+        outline: 3px solid var(--bs-primary, #c1ff72);
+        outline-offset: 4px;
+        border-radius: 1.25rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 8px 32px rgba(193, 255, 114, 0.18);
+      }
+      .niche-tpl-card--featured:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(193, 255, 114, 0.32);
+      }
+      @keyframes featured-pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(193, 255, 114, 0.45); }
+        50% { transform: scale(1.06); box-shadow: 0 6px 22px rgba(193, 255, 114, 0.7); }
+      }
+
     </style>
 
         <style>
@@ -511,16 +554,17 @@
               </div></div>
             </a>
           </div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+          <div class="col-md-6 col-lg-4 niche-tpl-featured-wrap" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+            <span class="niche-tpl-featured-flag"><iconify-icon icon="lucide:sparkles"></iconify-icon>Aanbevolen</span>
             <a href="https://barbershop-freestyle-voorbeeld.vercel.app" target="_blank" rel="nofollow noopener" class="text-decoration-none text-dark d-block h-100">
-              <div class="niche-tpl-card"><div class="niche-tpl-card__viewport">
-                <span class="niche-tpl-card__playbadge">Volledig op maat</span>
-                <img src="/assets/images/templates/barbershop-freestyle.jpg" alt="Barbershop website — Volledig maatwerk" class="niche-tpl-card__poster" loading="lazy">
+              <div class="niche-tpl-card niche-tpl-card--featured"><div class="niche-tpl-card__viewport">
+                <span class="niche-tpl-card__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Met scroll-animatie</span>
+                <img src="/assets/images/templates/barbershop-freestyle.jpg" alt="Barbershop website — Volledig maatwerk met scroll-animatie" class="niche-tpl-card__poster" loading="lazy">
                 <div class="niche-tpl-card__shadebar"></div><span class="niche-tpl-card__visit"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span>
               </div><div class="niche-tpl-card__body">
-                <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">FREESTYLE</span></div>
+                <div class="d-flex align-items-center gap-2"><span class="badge bg-warning text-dark fw-bold">FREESTYLE</span><span class="badge bg-primary text-dark fw-bold">NIEUW</span></div>
                 <h4 class="mb-0 mt-2">Volledig Maatwerk</h4>
-                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Donker, moody en uniek. Op maat gebouwd voor jouw barbershop.</p>
+                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Donker, moody en uniek met een scroll-pinned video-animatie die de barbershop tot leven brengt. Op maat gebouwd voor jouw shop.</p>
                 <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:external-link"></iconify-icon>Bekijk live demo</span>
               </div></div>
             </a>
