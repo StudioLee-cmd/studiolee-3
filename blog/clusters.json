@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "google-analytics-4-instellen-mkb",
+      "title": "Google Analytics 4 instellen voor MKB",
+      "date": "2026-05-08",
+      "cluster": "website",
+      "image": "/assets/images/blog/google-analytics-4-instellen-mkb.jpg"
+    },
+    {
       "slug": "linkedin-marketing-uitbesteden-b2b-mkb",
       "title": "LinkedIn marketing uitbesteden voor B2B-MKB",
       "date": "2026-05-07",
