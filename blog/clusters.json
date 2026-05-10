@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "mobile-first-design-2026",
+      "title": "Mobile-first design 2026",
+      "date": "2026-05-10",
+      "cluster": "website",
+      "image": "/assets/images/blog/mobile-first-design-2026.jpg"
+    },
+    {
       "slug": "instagram-marketing-uitbesteden-mkb-kosten",
       "title": "Instagram marketing uitbesteden voor MKB",
       "date": "2026-05-09",
@@ -568,5 +575,5 @@
       "image": "/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png"
     }
   ],
-  "updated": "2026-05-02"
+  "updated": "2026-05-10T10:30:00+00:00"
 }

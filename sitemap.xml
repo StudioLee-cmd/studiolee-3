@@ -777,4 +777,10 @@
     <changefreq>monthly</changefreq>
     <lastmod>2026-05-08T18:00:00+00:00</lastmod>
   </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/mobile-first-design-2026</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-10T10:30:00+00:00</lastmod>
+  </url>
 </urlset>
