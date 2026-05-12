@@ -4,7 +4,7 @@
       "slug": "tiktok-voor-bedrijven-wanneer-werkt-het",
       "title": "TikTok voor bedrijven: wanneer werkt het",
       "date": "2026-05-11",
-      "cluster": "branding",
+      "cluster": "social-media",
       "image": "/assets/images/blog/tiktok-voor-bedrijven-wanneer-werkt-het.jpg"
     },
     {
@@ -18,7 +18,7 @@
       "slug": "instagram-marketing-uitbesteden-mkb-kosten",
       "title": "Instagram marketing uitbesteden voor MKB",
       "date": "2026-05-09",
-      "cluster": "managed-service",
+      "cluster": "social-media",
       "image": "/assets/images/blog/instagram-marketing-uitbesteden-mkb-kosten.jpg"
     },
     {
@@ -32,14 +32,14 @@
       "slug": "linkedin-marketing-uitbesteden-b2b-mkb",
       "title": "LinkedIn marketing uitbesteden voor B2B-MKB",
       "date": "2026-05-07",
-      "cluster": "managed-service",
+      "cluster": "social-media",
       "image": "/assets/images/blog/linkedin-marketing-uitbesteden-b2b-mkb.jpg"
     },
     {
       "slug": "pinterest-voor-bedrijven-visueel-seo-mkb",
       "title": "Pinterest voor bedrijven: visueel SEO-kanaal",
       "date": "2026-05-06",
-      "cluster": "seo",
+      "cluster": "social-media",
       "image": "/assets/images/blog/pinterest-voor-bedrijven-visueel-seo-mkb.jpg"
     },
     {
@@ -60,7 +60,7 @@
       "slug": "facebook-adverteren-uitbesteden-4-modellen",
       "title": "Facebook adverteren uitbesteden: 4 modellen",
       "date": "2026-05-03",
-      "cluster": "managed-service",
+      "cluster": "social-media",
       "image": "/assets/images/blog/facebook-adverteren-uitbesteden-4-modellen.jpg"
     },
     {
@@ -165,7 +165,7 @@
       "slug": "linkbuilding-mkb-uitleg-strategie",
       "title": "Linkbuilding voor het MKB: wat het is en waarom je het niet zelf hoeft te doen",
       "date": "2026-04-18",
-      "cluster": "seo",
+      "cluster": "linkbuilding",
       "image": "/assets/images/blog/linkbuilding-mkb-uitleg-strategie.jpg"
     },
     {
@@ -270,7 +270,7 @@
       "slug": "roi-ai-automatisering-mkb",
       "title": "ROI van AI-automatisering: wat levert het je MKB écht op?",
       "date": "2026-04-06",
-      "cluster": "roi-automatisering",
+      "cluster": "ai-automation",
       "image": "/assets/images/blog/roi-ai-automatisering-mkb.jpg"
     },
     {
@@ -382,7 +382,7 @@
       "slug": "crm-mkb-klantbeheer",
       "title": "Een CRM voor het MKB",
       "date": "2026-03-24",
-      "cluster": "website",
+      "cluster": "crm",
       "image": "/assets/images/blog/crm-mkb-klantbeheer.png"
     },
     {
@@ -428,13 +428,6 @@
       "image": "/assets/images/blog/klantcases-marketingtool-mkb.png"
     },
     {
-      "slug": "roi-ai-automatisering-mkb",
-      "title": "De ROI van AI-automatisering",
-      "date": "2026-03-14",
-      "cluster": "ai-automation",
-      "image": "/assets/images/blog/roi-ai-automatisering-mkb.png"
-    },
-    {
       "slug": "email-marketing-mkb-hoogste-rendement",
       "title": "E-mailmarketing voor het MKB",
       "date": "2026-03-13",
@@ -466,7 +459,7 @@
       "slug": "social-media-mkb-strategie-2026",
       "title": "Social media strategie voor het MKB",
       "date": "2026-03-09",
-      "cluster": "marketing",
+      "cluster": "social-media",
       "image": "/assets/images/blog/social-media-mkb-strategie-2026.png"
     },
     {
@@ -557,7 +550,7 @@
       "slug": "social-media-zonder-gedoe",
       "title": "Social Media Zonder Gedoe",
       "date": "2026-01-28",
-      "cluster": "marketing",
+      "cluster": "social-media",
       "image": "/assets/images/blog/social-media-zonder-gedoe.png"
     },
     {
