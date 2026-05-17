@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "micro-influencers-mkb-roi-2026",
+      "title": "Micro-influencers voor MKB: ROI in 2026",
+      "date": "2026-05-17",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/micro-influencers-mkb-roi-2026.jpg"
+    },
+    {
       "slug": "domein-autoriteit-verhogen-mkb-tactieken",
       "title": "Domein autoriteit verhogen: 5 MKB-tactieken",
       "date": "2026-05-16",
@@ -610,5 +617,5 @@
       "image": "/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png"
     }
   ],
-  "updated": "2026-05-16"
+  "updated": "2026-05-17"
 }

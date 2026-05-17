@@ -828,4 +828,10 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/micro-influencers-mkb-roi-2026</loc>
+    <lastmod>2026-05-17T10:00:00+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
