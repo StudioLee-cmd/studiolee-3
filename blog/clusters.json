@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "prijzen-op-website-tonen-mkb",
+      "title": "Prijzen op je website: tonen of weglaten?",
+      "date": "2026-05-16",
+      "cluster": "website",
+      "image": "/assets/images/blog/prijzen-op-website-tonen-mkb.jpg"
+    },
+    {
       "slug": "wordpress-voor-mkb-prijs-en-alternatieven",
       "title": "WordPress voor MKB in 2026: prijs, alternatieven en valkuilen",
       "date": "2026-05-14",
@@ -596,5 +603,5 @@
       "image": "/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png"
     }
   ],
-  "updated": "2026-05-10T10:30:00+00:00"
+  "updated": "2026-05-16"
 }

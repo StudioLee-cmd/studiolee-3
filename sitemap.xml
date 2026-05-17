@@ -816,4 +816,10 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/prijzen-op-website-tonen-mkb</loc>
+    <lastmod>2026-05-16T09:00:00+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
