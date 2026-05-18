@@ -16592,7 +16592,7 @@ textarea.form-control-lg {
 .portfolio-img::before {
   content: "";
   display: block;
-  padding-top: 72.245%; /* match label aspect 490x354 = 72.245% to eliminate 0.34% squish */
+  padding-top: 72%;
 }
 .portfolio-img > img {
   position: absolute;
