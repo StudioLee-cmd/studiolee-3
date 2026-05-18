@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "ab-testen-mkb-wanneer-rendabel",
+      "title": "A/B testen voor MKB: wanneer rendabel",
+      "date": "2026-05-18",
+      "cluster": "website",
+      "image": "/assets/images/blog/ab-testen-mkb-wanneer-rendabel.jpg"
+    },
+    {
       "slug": "micro-influencers-mkb-roi-2026",
       "title": "Micro-influencers voor MKB: ROI in 2026",
       "date": "2026-05-17",
