@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "voice-ai-niet-werkt-mkb",
+      "title": "Wanneer Voice AI juist niet werkt voor jouw MKB (en wat dan wel)",
+      "date": "2026-05-20",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/voice-ai-niet-werkt-mkb.jpg"
+    },
+    {
       "slug": "hubspot-mailchimp-activecampaign-mkb",
       "title": "HubSpot vs Mailchimp vs ActiveCampaign vergeleken voor MKB in 2026",
       "date": "2026-05-19",
@@ -630,6 +637,5 @@
       "cluster": "marketing",
       "image": "/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png"
     }
-  ],
-  "updated": "2026-05-17"
+  ]
 }
