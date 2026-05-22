@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "voice-ai-opzetten-4-stappen-mkb",
+      "title": "Geen oproepen meer missen: Voice AI opzetten in 4 stappen",
+      "date": "2026-05-21",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/voice-ai-opzetten-4-stappen-mkb.jpg"
+    },
+    {
       "slug": "voice-ai-niet-werkt-mkb",
       "title": "Wanneer Voice AI juist niet werkt voor jouw MKB (en wat dan wel)",
       "date": "2026-05-20",
