@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "beurs-eventmarketing-mkb",
+      "title": "Beurs- en eventmarketing voor MKB: wanneer het loont",
+      "date": "2026-05-22",
+      "cluster": "branding",
+      "image": "/assets/images/blog/beurs-eventmarketing-mkb.jpg"
+    },
+    {
       "slug": "voice-ai-opzetten-4-stappen-mkb",
       "title": "Geen oproepen meer missen: Voice AI opzetten in 4 stappen",
       "date": "2026-05-21",
