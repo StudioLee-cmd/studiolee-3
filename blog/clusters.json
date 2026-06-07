@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "crm-implementatie-in-5-dagen-mkb",
+      "title": "CRM implementatie in 5 dagen: roadmap voor MKB",
+      "date": "2026-06-07",
+      "cluster": "crm",
+      "image": "/assets/images/blog/crm-implementatie-in-5-dagen-mkb.jpg"
+    },
+    {
       "slug": "google-bedrijfsprofiel-optimaliseren-mkb",
       "title": "Google Bedrijfsprofiel optimaliseren: 9 stappen",
       "date": "2026-06-07",
