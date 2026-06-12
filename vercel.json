@@ -16,6 +16,16 @@
       "source": "/about",
       "destination": "/over-ons",
       "permanent": true
+    },
+    {
+      "source": "/automatisering",
+      "destination": "/automations",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/over-ons",
+      "permanent": true
     }
   ],
   "routes": [
@@ -37,6 +47,20 @@
       "src": "/review-pakket",
       "headers": {
         "Location": "/reviews"
+      },
+      "status": 308
+    },
+    {
+      "src": "/automatisering",
+      "headers": {
+        "Location": "/automations"
+      },
+      "status": 308
+    },
+    {
+      "src": "/contact",
+      "headers": {
+        "Location": "/over-ons"
       },
       "status": 308
     },
