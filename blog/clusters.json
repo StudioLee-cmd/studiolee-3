@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "wat-moet-mkb-chatbot-kunnen",
+      "title": "Wat moet een MKB-chatbot kunnen? Een eerlijke functielijst",
+      "date": "2026-06-21",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/wat-moet-mkb-chatbot-kunnen.jpg"
+    },
+    {
       "slug": "crm-systeem-voor-mkb-6-functies",
       "title": "CRM systeem voor MKB: de 6 functies die tellen",
       "date": "2026-06-12",
