@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "chatbot-trainen-op-eigen-data-4-manieren",
+      "title": "AI chatbot trainen op eigen bedrijfsdata: 4 manieren",
+      "date": "2026-06-29",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/chatbot-trainen-op-eigen-data-4-manieren.jpg"
+    },
+    {
       "slug": "lead-nurturing-mkb-eerste-contact-tot-offerte",
       "title": "Lead nurturing voor MKB: van eerste contact tot offerte",
       "date": "2026-06-28",
