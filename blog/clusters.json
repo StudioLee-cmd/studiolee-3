@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "ai-telefonist-wat-wel-en-niet-kan-2026",
+      "title": "Wat een AI telefonist WEL en NIET kan in 2026",
+      "date": "2026-06-30",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/ai-telefonist-wat-wel-en-niet-kan-2026.jpg"
+    },
+    {
       "slug": "chatbot-trainen-op-eigen-data-4-manieren",
       "title": "AI chatbot trainen op eigen bedrijfsdata: 4 manieren",
       "date": "2026-06-29",
