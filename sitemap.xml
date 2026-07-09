@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.studiolee.nl/</loc>
-    <lastmod>2026-07-08T17:20:49+00:00</lastmod>
+    <lastmod>2026-07-09T19:33:33+00:00</lastmod>
     <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
@@ -68,13 +68,13 @@
   </url>
   <url>
     <loc>https://www.studiolee.nl/blog/author/tim-van-der-lee</loc>
-    <lastmod>2026-07-08T17:20:49+00:00</lastmod>
+    <lastmod>2026-07-09T19:33:33+00:00</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.studiolee.nl/blog</loc>
-    <lastmod>2026-07-08T17:20:49+00:00</lastmod>
+    <lastmod>2026-07-09T19:33:33+00:00</lastmod>
     <priority>0.9</priority>
     <changefreq>daily</changefreq>
   </url>
@@ -1011,6 +1011,12 @@
   <url>
     <loc>https://www.studiolee.nl/blog/welkomstmail-mkb-4-mails</loc>
     <lastmod>2026-07-08T17:20:49+00:00</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.studiolee.nl/blog/mkb-rebranding-zonder-reputatie-verliezen</loc>
+    <lastmod>2026-07-09T19:33:33+00:00</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
