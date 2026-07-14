@@ -1,851 +1,858 @@
 {
- "posts": [
-  {
-   "slug": "brand-voice-document-mkb-in-4-uur",
-   "title": "Brand voice document voor MKB in 4 uur",
-   "date": "2026-07-13",
-   "cluster": "branding",
-   "image": "/assets/images/blog/brand-voice-document-mkb-in-4-uur.jpg"
-  },
-  {
-   "slug": "voice-ai-buiten-kantooruren-mkb",
-   "title": "Voice AI buiten kantooruren: 24/7 bereikbaar",
-   "date": "2026-07-11",
-   "cluster": "voice-ai",
-   "image": "/assets/images/blog/voice-ai-buiten-kantooruren-mkb.jpg"
-  },
-  {
-   "slug": "whatsapp-business-chatbot-opzetten-mkb",
-   "title": "WhatsApp business chatbot opzetten voor MKB",
-   "date": "2026-07-11",
-   "cluster": "chatbot",
-   "image": "/assets/images/blog/whatsapp-business-chatbot-opzetten-mkb.jpg"
-  },
-  {
-   "slug": "mkb-rebranding-zonder-reputatie-verliezen",
-   "title": "MKB rebranding zonder reputatie verliezen",
-   "date": "2026-07-09",
-   "cluster": "branding",
-   "image": "/assets/images/blog/mkb-rebranding-zonder-reputatie-verliezen.jpg"
-  },
-  {
-   "slug": "welkomstmail-mkb-4-mails",
-   "title": "Welkomstmail voor MKB: 4 mails die werken",
-   "date": "2026-07-08",
-   "cluster": "email-marketing",
-   "image": "/assets/images/blog/welkomstmail-mkb-4-mails.jpg"
-  },
-  {
-   "slug": "linkbuilding-bureau-kiezen-waar-op-letten",
-   "title": "Linkbuilding bureau kiezen: waar let je op?",
-   "date": "2026-07-07",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/linkbuilding-bureau-kiezen-waar-op-letten.jpg"
-  },
-  {
-   "slug": "live-chat-vs-ai-chatbot-mkb",
-   "title": "AI chatbot of live chat: wat past beter bij MKB?",
-   "date": "2026-07-06",
-   "cluster": "chatbot",
-   "image": "/assets/images/blog/live-chat-vs-ai-chatbot-mkb.jpg"
-  },
-  {
-   "slug": "ankerteksten-backlinks-mkb-veilig-kiezen",
-   "title": "Ankerteksten voor backlinks zonder penalty",
-   "date": "2026-07-05",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/ankerteksten-backlinks-mkb-veilig-kiezen.jpg"
-  },
-  {
-   "slug": "digitale-pr-mkb-gratis-backlinks-verdienen",
-   "title": "Digitale PR voor MKB: gratis backlinks verdienen",
-   "date": "2026-07-03",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/digitale-pr-mkb-gratis-backlinks-verdienen.jpg"
-  },
-  {
-   "slug": "leads-opvolgen-5-minutenregel-mkb",
-   "title": "Leads opvolgen: de 5-minutenregel voor MKB",
-   "date": "2026-07-01",
-   "cluster": "crm",
-   "image": "/assets/images/blog/leads-opvolgen-5-minutenregel-mkb.jpg"
-  },
-  {
-   "slug": "ai-telefonist-wat-wel-en-niet-kan-2026",
-   "title": "Wat een AI telefonist WEL en NIET kan in 2026",
-   "date": "2026-06-30",
-   "cluster": "voice-ai",
-   "image": "/assets/images/blog/ai-telefonist-wat-wel-en-niet-kan-2026.jpg"
-  },
-  {
-   "slug": "chatbot-trainen-op-eigen-data-4-manieren",
-   "title": "AI chatbot trainen op eigen bedrijfsdata: 4 manieren",
-   "date": "2026-06-29",
-   "cluster": "chatbot",
-   "image": "/assets/images/blog/chatbot-trainen-op-eigen-data-4-manieren.jpg"
-  },
-  {
-   "slug": "lead-nurturing-mkb-eerste-contact-tot-offerte",
-   "title": "Lead nurturing voor MKB: van eerste contact tot offerte",
-   "date": "2026-06-28",
-   "cluster": "crm",
-   "image": "/assets/images/blog/lead-nurturing-mkb-eerste-contact-tot-offerte.jpg"
-  },
-  {
-   "slug": "chatbot-vs-faq-pagina-waar-leads-vandaan-komen",
-   "title": "Chatbot vs FAQ-pagina: waar leads echt vandaan komen",
-   "date": "2026-06-23",
-   "cluster": "chatbot",
-   "image": "/assets/images/blog/chatbot-vs-faq-pagina-waar-leads-vandaan-komen.jpg"
-  },
-  {
-   "slug": "voice-ai-receptionist-vervangen-of-versterken",
-   "title": "Voice AI voor de receptionist: vervangen of versterken?",
-   "date": "2026-06-21",
-   "cluster": "voice-ai",
-   "image": "/assets/images/blog/voice-ai-receptionist-vervangen-of-versterken.jpg"
-  },
-  {
-   "slug": "wat-moet-mkb-chatbot-kunnen",
-   "title": "Wat moet een MKB-chatbot kunnen? Een eerlijke functielijst",
-   "date": "2026-06-21",
-   "cluster": "chatbot",
-   "image": "/assets/images/blog/wat-moet-mkb-chatbot-kunnen.jpg"
-  },
-  {
-   "slug": "crm-systeem-voor-mkb-6-functies",
-   "title": "CRM systeem voor MKB: de 6 functies die tellen",
-   "date": "2026-06-12",
-   "cluster": "crm",
-   "image": "/assets/images/blog/crm-systeem-voor-mkb-6-functies.jpg"
-  },
-  {
-   "slug": "backlinks-vermijden-5-seo-killers-mkb",
-   "title": "Welke domeinen mag je NIET als backlink: 5 SEO-killers",
-   "date": "2026-06-08",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/backlinks-vermijden-5-seo-killers-mkb.jpg"
-  },
-  {
-   "slug": "crm-implementatie-in-5-dagen-mkb",
-   "title": "CRM implementatie in 5 dagen: roadmap voor MKB",
-   "date": "2026-06-07",
-   "cluster": "crm",
-   "image": "/assets/images/blog/crm-implementatie-in-5-dagen-mkb.jpg"
-  },
-  {
-   "slug": "google-bedrijfsprofiel-optimaliseren-mkb",
-   "title": "Google Bedrijfsprofiel optimaliseren: 9 stappen",
-   "date": "2026-06-07",
-   "cluster": "seo",
-   "image": "/assets/images/blog/google-bedrijfsprofiel-optimaliseren-mkb.jpg"
-  },
-  {
-   "slug": "kwalitatieve-backlinks-7-metrics-mkb",
-   "title": "Kwalitatieve backlinks: 7 metrics voor MKB",
-   "date": "2026-05-31",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/kwalitatieve-backlinks-7-metrics-mkb.jpg"
-  },
-  {
-   "slug": "waarom-mkb-website-100-blogs-nodig",
-   "title": "Waarom elke MKB-website 100 blogs nodig heeft",
-   "date": "2026-05-29",
-   "cluster": "seo",
-   "image": "/assets/images/blog/waarom-mkb-website-100-blogs-nodig.jpg"
-  },
-  {
-   "slug": "antwoorddienst-of-voice-ai-mkb",
-   "title": "Antwoorddienst of Voice AI: ROI voor MKB",
-   "date": "2026-05-28",
-   "cluster": "voice-ai",
-   "image": "/assets/images/blog/antwoorddienst-of-voice-ai-mkb.jpg"
-  },
-  {
-   "slug": "backlinks-kopen-voor-mkb-wanneer-veilig",
-   "title": "Backlinks kopen: wanneer veilig wanneer risico",
-   "date": "2026-05-27",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/backlinks-kopen-voor-mkb-wanneer-veilig.jpg"
-  },
-  {
-   "slug": "welk-crm-voor-mkb-5-keuzes-vergeleken",
-   "title": "Welk CRM voor MKB: 5 keuzes vergeleken",
-   "date": "2026-05-26",
-   "cluster": "crm",
-   "image": "/assets/images/blog/welk-crm-voor-mkb-5-keuzes-vergeleken.jpg"
-  },
-  {
-   "slug": "app-laten-maken-voor-mkb-bouwen-of-niet",
-   "title": "App laten maken voor MKB: wanneer loont het en wanneer is een goede website slimmer?",
-   "date": "2026-05-25",
-   "cluster": "website",
-   "image": "/assets/images/blog/app-laten-maken-voor-mkb-bouwen-of-niet.jpg"
-  },
-  {
-   "slug": "gastblog-plaatsen-voor-mkb-hoe-en-waar",
-   "title": "Gastblog plaatsen voor MKB: hoe je waardevolle plekken vindt",
-   "date": "2026-05-24",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/gastblog-plaatsen-voor-mkb-hoe-en-waar.jpg"
-  },
-  {
-   "slug": "no-show-voorkomen-whatsapp-herinneringen-mkb",
-   "title": "No-shows voorkomen voor MKB: WhatsApp herinneringen die werken",
-   "date": "2026-05-23",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/no-show-voorkomen-whatsapp-herinneringen-mkb.jpg"
-  },
-  {
-   "slug": "beurs-eventmarketing-mkb",
-   "title": "Beurs- en eventmarketing voor MKB: wanneer het loont",
-   "date": "2026-05-22",
-   "cluster": "branding",
-   "image": "/assets/images/blog/beurs-eventmarketing-mkb.jpg"
-  },
-  {
-   "slug": "voice-ai-opzetten-4-stappen-mkb",
-   "title": "Geen oproepen meer missen: Voice AI opzetten in 4 stappen",
-   "date": "2026-05-21",
-   "cluster": "voice-ai",
-   "image": "/assets/images/blog/voice-ai-opzetten-4-stappen-mkb.jpg"
-  },
-  {
-   "slug": "voice-ai-niet-werkt-mkb",
-   "title": "Wanneer Voice AI juist niet werkt voor jouw MKB (en wat dan wel)",
-   "date": "2026-05-20",
-   "cluster": "voice-ai",
-   "image": "/assets/images/blog/voice-ai-niet-werkt-mkb.jpg"
-  },
-  {
-   "slug": "hubspot-mailchimp-activecampaign-mkb",
-   "title": "HubSpot vs Mailchimp vs ActiveCampaign vergeleken voor MKB in 2026",
-   "date": "2026-05-19",
-   "cluster": "email-marketing",
-   "image": "/assets/images/blog/hubspot-mailchimp-activecampaign-mkb.jpg"
-  },
-  {
-   "slug": "ab-testen-mkb-wanneer-rendabel",
-   "title": "A/B testen voor MKB: wanneer rendabel",
-   "date": "2026-05-18",
-   "cluster": "website",
-   "image": "/assets/images/blog/ab-testen-mkb-wanneer-rendabel.jpg"
-  },
-  {
-   "slug": "micro-influencers-mkb-roi-2026",
-   "title": "Micro-influencers voor MKB: ROI in 2026",
-   "date": "2026-05-17",
-   "cluster": "social-media",
-   "image": "/assets/images/blog/micro-influencers-mkb-roi-2026.jpg"
-  },
-  {
-   "slug": "domein-autoriteit-verhogen-mkb-tactieken",
-   "title": "Domein autoriteit verhogen: 5 MKB-tactieken",
-   "date": "2026-05-16",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/domein-autoriteit-verhogen-mkb-tactieken.jpg"
-  },
-  {
-   "slug": "prijzen-op-website-tonen-mkb",
-   "title": "Prijzen op je website: tonen of weglaten?",
-   "date": "2026-05-16",
-   "cluster": "website",
-   "image": "/assets/images/blog/prijzen-op-website-tonen-mkb.jpg"
-  },
-  {
-   "slug": "wordpress-voor-mkb-prijs-en-alternatieven",
-   "title": "WordPress voor MKB in 2026: prijs, alternatieven en valkuilen",
-   "date": "2026-05-14",
-   "cluster": "website",
-   "image": "/assets/images/blog/wordpress-voor-mkb-prijs-en-alternatieven.jpg"
-  },
-  {
-   "slug": "ai-telefonist-wanneer-rendabel-mkb",
-   "title": "AI telefonist voor MKB: wanneer rendeert het en wanneer niet?",
-   "date": "2026-05-13",
-   "cluster": "voice-ai",
-   "image": "/assets/images/blog/ai-telefonist-wanneer-rendabel-mkb.jpg"
-  },
-  {
-   "slug": "linkbuilding-kosten-voor-mkb-wat-is-eerlijk",
-   "title": "Linkbuilding kosten voor MKB: wat is eerlijk?",
-   "date": "2026-05-12",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/linkbuilding-kosten-voor-mkb-wat-is-eerlijk.jpg"
-  },
-  {
-   "slug": "tiktok-voor-bedrijven-wanneer-werkt-het",
-   "title": "TikTok voor bedrijven: wanneer werkt het",
-   "date": "2026-05-11",
-   "cluster": "social-media",
-   "image": "/assets/images/blog/tiktok-voor-bedrijven-wanneer-werkt-het.jpg"
-  },
-  {
-   "slug": "mobile-first-design-2026",
-   "title": "Mobile-first design 2026",
-   "date": "2026-05-10",
-   "cluster": "website",
-   "image": "/assets/images/blog/mobile-first-design-2026.jpg"
-  },
-  {
-   "slug": "instagram-marketing-uitbesteden-mkb-kosten",
-   "title": "Instagram marketing uitbesteden voor MKB",
-   "date": "2026-05-09",
-   "cluster": "social-media",
-   "image": "/assets/images/blog/instagram-marketing-uitbesteden-mkb-kosten.jpg"
-  },
-  {
-   "slug": "google-analytics-4-instellen-mkb",
-   "title": "Google Analytics 4 instellen voor MKB",
-   "date": "2026-05-08",
-   "cluster": "website",
-   "image": "/assets/images/blog/google-analytics-4-instellen-mkb.jpg"
-  },
-  {
-   "slug": "linkedin-marketing-uitbesteden-b2b-mkb",
-   "title": "LinkedIn marketing uitbesteden voor B2B-MKB",
-   "date": "2026-05-07",
-   "cluster": "social-media",
-   "image": "/assets/images/blog/linkedin-marketing-uitbesteden-b2b-mkb.jpg"
-  },
-  {
-   "slug": "pinterest-voor-bedrijven-visueel-seo-mkb",
-   "title": "Pinterest voor bedrijven: visueel SEO-kanaal",
-   "date": "2026-05-06",
-   "cluster": "social-media",
-   "image": "/assets/images/blog/pinterest-voor-bedrijven-visueel-seo-mkb.jpg"
-  },
-  {
-   "slug": "youtube-voor-bedrijven-mkb",
-   "title": "YouTube voor bedrijven: hoe MKB een evergreen-kanaal bouwt",
-   "date": "2026-05-05",
-   "cluster": "social-media",
-   "image": "/assets/images/blog/youtube-voor-bedrijven-mkb.jpg"
-  },
-  {
-   "slug": "podcast-marketing-mkb-wanneer-werkt",
-   "title": "Podcast marketing voor MKB: wanneer een eigen kanaal werkt",
-   "date": "2026-05-04",
-   "cluster": "branding",
-   "image": "/assets/images/blog/podcast-marketing-mkb-wanneer-werkt.jpg"
-  },
-  {
-   "slug": "facebook-adverteren-uitbesteden-4-modellen",
-   "title": "Facebook adverteren uitbesteden: 4 modellen",
-   "date": "2026-05-03",
-   "cluster": "social-media",
-   "image": "/assets/images/blog/facebook-adverteren-uitbesteden-4-modellen.jpg"
-  },
-  {
-   "slug": "wat-kost-website-per-jaar-mkb-terugkerende-kosten",
-   "title": "Wat kost een website per jaar voor MKB? De terugkerende kosten die je vergeet",
-   "date": "2026-05-02",
-   "cluster": "website",
-   "image": "/assets/images/blog/wat-kost-website-per-jaar-mkb-terugkerende-kosten.jpg"
-  },
-  {
-   "slug": "gepersonaliseerde-marketing-ai-mkb",
-   "title": "Gepersonaliseerde marketing met AI: segmentatie voor MKB",
-   "date": "2026-05-01",
-   "cluster": "marketing",
-   "image": "/assets/images/blog/gepersonaliseerde-marketing-ai-mkb.jpg"
-  },
-  {
-   "slug": "direct-mail-online-combineren-mkb",
-   "title": "Direct mail + online combineren MKB",
-   "date": "2026-04-30",
-   "cluster": "marketing",
-   "image": "/assets/images/blog/direct-mail-online-combineren-mkb.jpg"
-  },
-  {
-   "slug": "google-bedrijfsprofiel-aanmaken-mkb-startgids",
-   "title": "Google Bedrijfsprofiel aanmaken voor MKB",
-   "date": "2026-04-29",
-   "cluster": "seo",
-   "image": "/assets/images/blog/google-bedrijfsprofiel-aanmaken-mkb-startgids.jpg"
-  },
-  {
-   "slug": "ai-implementeren-mkb-stappenplan-2026",
-   "title": "AI implementeren als MKB: stappenplan 2026",
-   "date": "2026-04-28",
-   "cluster": "ai-trends",
-   "image": "/assets/images/blog/ai-implementeren-mkb-stappenplan-2026.jpg"
-  },
-  {
-   "slug": "negatieve-reviews-beantwoorden-mkb",
-   "title": "Negatieve reviews beantwoorden: zo herstel je als MKB je reputatie",
-   "date": "2026-04-27",
-   "cluster": "reviews",
-   "image": "/assets/images/blog/negatieve-reviews-beantwoorden-mkb.jpg"
-  },
-  {
-   "slug": "email-flows-mkb-vijf-must-haves",
-   "title": "5 e-mail flows die elk MKB moet hebben",
-   "date": "2026-04-26",
-   "cluster": "email-marketing",
-   "image": "/assets/images/blog/email-flows-mkb-vijf-must-haves.jpg"
-  },
-  {
-   "slug": "rebranding-of-refresh-wanneer-mkb",
-   "title": "Rebranding of refresh: wanneer kies je wat?",
-   "date": "2026-04-25",
-   "cluster": "branding",
-   "image": "/assets/images/blog/rebranding-of-refresh-wanneer-mkb.jpg"
-  },
-  {
-   "slug": "ai-act-2026-mkb-ondernemer",
-   "title": "AI Act 2026: wat elke MKB-ondernemer nu moet weten",
-   "date": "2026-04-23",
-   "cluster": "ai-trends",
-   "image": "/assets/images/blog/ai-act-2026-mkb-ondernemer.jpg"
-  },
-  {
-   "slug": "google-reviews-verzoeken-mkb-4-stappen-systeem",
-   "title": "Google reviews verzoeken als MKB: het 4-stappen systeem",
-   "date": "2026-04-22",
-   "cluster": "reviews",
-   "image": "/assets/images/blog/google-reviews-verzoeken-mkb-4-stappen-systeem.jpg"
-  },
-  {
-   "slug": "ai-marketing-bureau-kiezen-checklist-mkb",
-   "title": "AI marketing bureau kiezen: checklist MKB",
-   "date": "2026-04-21",
-   "cluster": "managed-service",
-   "image": "/assets/images/blog/ai-marketing-bureau-kiezen-checklist-mkb.jpg"
-  },
-  {
-   "slug": "schema-markup-mkb-vindbaar-in-chatgpt",
-   "title": "Schema markup voor MKB: vindbaar in Google en ChatGPT",
-   "date": "2026-04-20",
-   "cluster": "ai-zoekgedrag",
-   "image": "/assets/images/blog/schema-markup-mkb-vindbaar-in-chatgpt.jpg"
-  },
-  {
-   "slug": "hoger-in-google-komen-mkb",
-   "title": "Hoger in Google komen als MKB: het eerlijke stappenplan",
-   "date": "2026-04-19",
-   "cluster": "seo",
-   "image": "/assets/images/blog/hoger-in-google-komen-mkb.jpg"
-  },
-  {
-   "slug": "google-ai-overviews-mkb-vindbaarheid",
-   "title": "Google AI Overviews en jouw MKB: wat verandert er en wat doe je eraan",
-   "date": "2026-04-18",
-   "cluster": "ai-zoekgedrag",
-   "image": "/assets/images/blog/google-ai-overviews-mkb-vindbaarheid.jpg"
-  },
-  {
-   "slug": "linkbuilding-mkb-uitleg-strategie",
-   "title": "Linkbuilding voor het MKB: wat het is en waarom je het niet zelf hoeft te doen",
-   "date": "2026-04-18",
-   "cluster": "linkbuilding",
-   "image": "/assets/images/blog/linkbuilding-mkb-uitleg-strategie.jpg"
-  },
-  {
-   "slug": "bedrijfsprocessen-automatiseren-mkb",
-   "title": "Bedrijfsprocessen automatiseren als MKB: waar begin je?",
-   "date": "2026-04-17",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/bedrijfsprocessen-automatiseren-mkb.jpg"
-  },
-  {
-   "slug": "seo-fouten-mkb-websites",
-   "title": "SEO-fouten die MKB-websites onzichtbaar maken",
-   "date": "2026-04-17",
-   "cluster": "seo",
-   "image": "/assets/images/blog/seo-fouten-mkb-websites.jpg"
-  },
-  {
-   "slug": "aeo-answer-engine-optimization-mkb",
-   "title": "AEO voor MKB: zo kom je in ChatGPT en AI-zoekmachines",
-   "date": "2026-04-16",
-   "cluster": "ai-zoekgedrag",
-   "image": "/assets/images/blog/aeo-answer-engine-optimization-mkb.jpg"
-  },
-  {
-   "slug": "automatisering-kosten-mkb-2026",
-   "title": "Wat kost automatisering voor een MKB-bedrijf?",
-   "date": "2026-04-15",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/automatisering-kosten-mkb-2026.jpg"
-  },
-  {
-   "slug": "ai-trends-mkb-2026",
-   "title": "3 AI-trends die MKB-bedrijven in 2026 niet mogen missen",
-   "date": "2026-04-14",
-   "cluster": "ai-trends",
-   "image": "/assets/images/blog/ai-trends-mkb-2026.jpg"
-  },
-  {
-   "slug": "mkb-groeiblokkades-ai-oplossingen",
-   "title": "3 groeiblokkades voor MKB die AI direct oplost",
-   "date": "2026-04-14",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/mkb-groeiblokkades-ai-oplossingen.jpg"
-  },
-  {
-   "slug": "email-marketing-mkb-nieuwsbrief-die-werkt",
-   "title": "E-mail marketing voor MKB: de nieuwsbrief die wel gelezen wordt",
-   "date": "2026-04-12",
-   "cluster": "email-marketing",
-   "image": "/assets/images/blog/email-marketing-mkb-nieuwsbrief-die-werkt.jpg"
-  },
-  {
-   "slug": "ai-chatbot-website-mkb-wanneer-wel-niet",
-   "title": "AI chatbot op je website: wanneer het wel en niet werkt",
-   "date": "2026-04-12",
-   "cluster": "chatbot",
-   "image": "/assets/images/blog/ai-chatbot-website-mkb-wanneer-wel-niet.jpg"
-  },
-  {
-   "slug": "website-bezoekers-omzetten-naar-klanten",
-   "title": "Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken",
-   "date": "2026-04-11",
-   "cluster": "website",
-   "image": "/assets/images/blog/website-bezoekers-omzetten-naar-klanten.jpg"
-  },
-  {
-   "slug": "roi-google-reviews-mkb-opbrengst",
-   "title": "ROI van reviews voor het MKB: hoeveel levert elke Google review je op?",
-   "date": "2026-04-10",
-   "cluster": "reviews",
-   "image": "/assets/images/blog/roi-google-reviews-mkb-opbrengst.jpg"
-  },
-  {
-   "slug": "goedkope-website-laten-maken-kosten-2026",
-   "title": "Goedkope website laten maken in 2026: wat kost het echt?",
-   "date": "2026-04-09",
-   "cluster": "website",
-   "image": "/assets/images/blog/goedkope-website-laten-maken-kosten-2026.jpg"
-  },
-  {
-   "slug": "lokale-marketing-mkb-2026-kanalen",
-   "title": "Lokale marketing voor MKB in 2026: 7 kanalen die echt werken",
-   "date": "2026-04-08",
-   "cluster": "marketing",
-   "image": "/assets/images/blog/lokale-marketing-mkb-2026-kanalen.jpg"
-  },
-  {
-   "slug": "lokale-vindbaarheid-verbeteren-mkb-gids",
-   "title": "Lokale vindbaarheid verbeteren: de complete MKB-gids",
-   "date": "2026-04-07",
-   "cluster": "seo",
-   "image": "/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg"
-  },
-  {
-   "slug": "ai-zoekgedrag-verandering",
-   "title": "Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen",
-   "date": "2026-04-06",
-   "cluster": "ai-zoekgedrag",
-   "image": "/assets/images/blog/ai-zoekgedrag-verandering.jpg"
-  },
-  {
-   "slug": "roi-ai-automatisering-mkb",
-   "title": "ROI van AI-automatisering: wat levert het je MKB écht op?",
-   "date": "2026-04-06",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/roi-ai-automatisering-mkb.jpg"
-  },
-  {
-   "slug": "mkb-groei-ai-systemen",
-   "title": "MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren",
-   "date": "2026-04-05",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/mkb-groei-ai-systemen.jpg"
-  },
-  {
-   "slug": "branding-mkb-belang",
-   "title": "Branding voor het MKB: waarom je merk belangrijker is dan je product",
-   "date": "2026-04-05",
-   "cluster": "branding",
-   "image": "/assets/images/blog/branding-mkb-belang.jpg"
-  },
-  {
-   "slug": "managed-service-mkb-uitbesteden",
-   "title": "Managed service voor het MKB: waarom uitbesteden slimmer is",
-   "date": "2026-04-04",
-   "cluster": "managed-service",
-   "image": "/assets/images/blog/managed-service-mkb-uitbesteden.jpg"
-  },
-  {
-   "slug": "ai-automatisering-mkb-vijf-processen",
-   "title": "AI-automatisering voor het MKB: 5 processen om te starten",
-   "date": "2026-04-03",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/ai-automatisering-mkb-vijf-processen.jpg"
-  },
-  {
-   "slug": "lokale-vindbaarheid-mkb-complete-gids",
-   "title": "Lokale vindbaarheid voor het MKB: complete gids",
-   "date": "2026-04-03",
-   "cluster": "seo",
-   "image": "/assets/images/blog/lokale-vindbaarheid-mkb-complete-gids.jpg"
-  },
-  {
-   "slug": "marketing-uitbesteden-mkb-kosten",
-   "title": "Marketing uitbesteden als MKB: wat kost het?",
-   "date": "2026-04-02",
-   "cluster": "managed-service",
-   "image": "/assets/images/blog/marketing-uitbesteden-mkb-kosten.jpg"
-  },
-  {
-   "slug": "ai-vervangt-marketingbureaus",
-   "title": "AI Vervangt Alle Marketingbureaus",
-   "date": "2026-04-01",
-   "cluster": "ai-trends",
-   "image": "/assets/images/blog/ai-vervangt-marketingbureaus.jpg"
-  },
-  {
-   "slug": "ai-zoekgedrag-klanten-vinden-2026",
-   "title": "AI en zoekgedrag: hoe klanten je vinden in 2026",
-   "date": "2026-03-31",
-   "cluster": "ai-zoekgedrag",
-   "image": "/assets/images/blog/ai-zoekgedrag-klanten-vinden-2026.jpg"
-  },
-  {
-   "slug": "ai-bureau-vs-traditioneel-marketingbureau",
-   "title": "AI bureau vs traditioneel marketingbureau",
-   "date": "2026-03-30",
-   "cluster": "managed-service",
-   "image": "/assets/images/blog/ai-bureau-vs-traditioneel-marketingbureau.jpg"
-  },
-  {
-   "slug": "managed-service-ai-mkb-ontzorging",
-   "title": "Managed AI service voor het MKB",
-   "date": "2026-03-30",
-   "cluster": "managed-service",
-   "image": "/assets/images/blog/managed-service-ai-mkb-ontzorging.jpg"
-  },
-  {
-   "slug": "nazorg-mkb-klantrelatie-na-de-sale",
-   "title": "Nazorg voor het MKB",
-   "date": "2026-03-29",
-   "cluster": "crm",
-   "image": "/assets/images/blog/nazorg-mkb-klantrelatie-na-de-sale.jpg"
-  },
-  {
-   "slug": "online-reputatie-mkb",
-   "title": "Online reputatie voor het MKB",
-   "date": "2026-03-28",
-   "cluster": "reviews",
-   "image": "/assets/images/blog/online-reputatie-mkb.png"
-  },
-  {
-   "slug": "strategische-samenwerkingen-mkb",
-   "title": "Strategische samenwerkingen voor het MKB",
-   "date": "2026-03-28",
-   "cluster": "marketing",
-   "image": "/assets/images/blog/strategische-samenwerkingen-mkb.png"
-  },
-  {
-   "slug": "google-bedrijfsprofiel-mkb",
-   "title": "Google Bedrijfsprofiel voor het MKB",
-   "date": "2026-03-27",
-   "cluster": "seo",
-   "image": "/assets/images/blog/google-bedrijfsprofiel-mkb.png"
-  },
-  {
-   "slug": "klantbehoud-mkb-waarde-bestaande-klanten",
-   "title": "Klantbehoud in het MKB",
-   "date": "2026-03-26",
-   "cluster": "crm",
-   "image": "/assets/images/blog/klantbehoud-mkb-waarde-bestaande-klanten.png"
-  },
-  {
-   "slug": "crm-mkb-klantbeheer",
-   "title": "Een CRM voor het MKB",
-   "date": "2026-03-24",
-   "cluster": "crm",
-   "image": "/assets/images/blog/crm-mkb-klantbeheer.png"
-  },
-  {
-   "slug": "workflows-automatiseren-mkb",
-   "title": "Workflows automatiseren in het MKB",
-   "date": "2026-03-24",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/workflows-automatiseren-mkb.png"
-  },
-  {
-   "slug": "branding-mkb-herkenbaar-merk",
-   "title": "Branding voor het MKB",
-   "date": "2026-03-23",
-   "cluster": "branding",
-   "image": "/assets/images/blog/branding-mkb-herkenbaar-merk.png"
-  },
-  {
-   "slug": "online-vindbaarheid-mkb-google",
-   "title": "Online vindbaarheid voor het MKB",
-   "date": "2026-03-22",
-   "cluster": "seo",
-   "image": "/assets/images/blog/online-vindbaarheid-mkb-google.png"
-  },
-  {
-   "slug": "leadgeneratie-mkb-website-bezoekers",
-   "title": "Leadgeneratie voor het MKB",
-   "date": "2026-03-21",
-   "cluster": "website",
-   "image": "/assets/images/blog/leadgeneratie-mkb-website-bezoekers.png"
-  },
-  {
-   "slug": "chatbot-website-mkb-wanneer-werkt-het",
-   "title": "Een chatbot op je website",
-   "date": "2026-03-20",
-   "cluster": "chatbot",
-   "image": "/assets/images/blog/chatbot-website-mkb-wanneer-werkt-het.png"
-  },
-  {
-   "slug": "klantcases-marketingtool-mkb",
-   "title": "Klantcases als marketingtool",
-   "date": "2026-03-20",
-   "cluster": "marketing",
-   "image": "/assets/images/blog/klantcases-marketingtool-mkb.png"
-  },
-  {
-   "slug": "email-marketing-mkb-hoogste-rendement",
-   "title": "E-mailmarketing voor het MKB",
-   "date": "2026-03-13",
-   "cluster": "email-marketing",
-   "image": "/assets/images/blog/email-marketing-mkb-hoogste-rendement.png"
-  },
-  {
-   "slug": "mkb-website-bezoekers-omzetten-klanten",
-   "title": "Waarom je MKB-website geen bezoekers omzet",
-   "date": "2026-03-12",
-   "cluster": "website",
-   "image": "/assets/images/blog/mkb-website-bezoekers-omzetten-klanten.png"
-  },
-  {
-   "slug": "gevonden-worden-in-chatgpt-mkb",
-   "title": "Gevonden worden in ChatGPT",
-   "date": "2026-03-11",
-   "cluster": "ai-zoekgedrag",
-   "image": "/assets/images/blog/gevonden-worden-in-chatgpt-mkb.png"
-  },
-  {
-   "slug": "ai-agents-mkb-groeien-zonder-personeel",
-   "title": "Hoe AI-agents het MKB laten groeien",
-   "date": "2026-03-10",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/ai-agents-mkb-groeien-zonder-personeel.png"
-  },
-  {
-   "slug": "social-media-mkb-strategie-2026",
-   "title": "Social media strategie voor het MKB",
-   "date": "2026-03-09",
-   "cluster": "social-media",
-   "image": "/assets/images/blog/social-media-mkb-strategie-2026.png"
-  },
-  {
-   "slug": "hoe-mkb-meer-google-reviews-verzamelt",
-   "title": "Meer Google reviews verzamelen",
-   "date": "2026-03-08",
-   "cluster": "reviews",
-   "image": "/assets/images/blog/hoe-mkb-meer-google-reviews-verzamelt.png"
-  },
-  {
-   "slug": "beste-ai-tools-voor-mkb-2026",
-   "title": "Beste AI-tools voor MKB 2026",
-   "date": "2026-03-07",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/beste-ai-tools-voor-mkb-2026.png"
-  },
-  {
-   "slug": "wat-is-model-context-protocol-mcp-hoe-verandert-het-ai",
-   "title": "Wat is het Model Context Protocol?",
-   "date": "2026-03-07",
-   "cluster": "marketing",
-   "image": "/assets/images/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai.png"
-  },
-  {
-   "slug": "wat-ai-automatisering-betekent-voor-mkb-in-2026",
-   "title": "Wat AI-automatisering betekent voor het MKB",
-   "date": "2026-03-06",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026.png"
-  },
-  {
-   "slug": "wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien",
-   "title": "Wat is een AI-agent?",
-   "date": "2026-03-03",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien.png"
-  },
-  {
-   "slug": "content-publiceren-google-ai-vindbaarheid",
-   "title": "Waarom Regelmatig Content Publiceren Essentieel Is",
-   "date": "2026-02-24",
-   "cluster": "seo",
-   "image": "/assets/images/blog/content-publiceren-google-ai-vindbaarheid.png"
-  },
-  {
-   "slug": "whatsapp-automatisering-voor-bedrijven",
-   "title": "WhatsApp Automatisering",
-   "date": "2026-02-23",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/whatsapp-automatisering-voor-bedrijven.png"
-  },
-  {
-   "slug": "website-chatbots-leads-genereren",
-   "title": "Website Chatbots: 24/7 Leads Genereren",
-   "date": "2026-02-20",
-   "cluster": "chatbot",
-   "image": "/assets/images/blog/website-chatbots-leads-genereren.png"
-  },
-  {
-   "slug": "starten-met-studiolee",
-   "title": "Hoe Start Je Met STUDIOLEE?",
-   "date": "2026-02-06",
-   "cluster": "marketing",
-   "image": "/assets/images/blog/starten-met-studiolee.png"
-  },
-  {
-   "slug": "ai-seo-vindbaarheid",
-   "title": "De Nieuwe SEO: ChatGPT en Google",
-   "date": "2026-02-05",
-   "cluster": "seo",
-   "image": "/assets/images/blog/ai-seo-vindbaarheid.png"
-  },
-  {
-   "slug": "automations-workflow-optimalisatie",
-   "title": "Slimme Automations",
-   "date": "2026-02-03",
-   "cluster": "ai-automation",
-   "image": "/assets/images/blog/automations-workflow-optimalisatie.png"
-  },
-  {
-   "slug": "managed-service-vs-marketing-bureau",
-   "title": "Managed Service vs. Marketing Bureau",
-   "date": "2026-02-01",
-   "cluster": "managed-service",
-   "image": "/assets/images/blog/managed-service-vs-marketing-bureau.png"
-  },
-  {
-   "slug": "social-media-zonder-gedoe",
-   "title": "Social Media Zonder Gedoe",
-   "date": "2026-01-28",
-   "cluster": "social-media",
-   "image": "/assets/images/blog/social-media-zonder-gedoe.png"
-  },
-  {
-   "slug": "voice-ai-24-7-bereikbaar",
-   "title": "24/7 Bereikbaar: De Kracht van Voice AI",
-   "date": "2026-01-25",
-   "cluster": "voice-ai",
-   "image": "/assets/images/blog/voice-ai-24-7-bereikbaar.jpg"
-  },
-  {
-   "slug": "google-reviews-automatiseren",
-   "title": "Automatisch Meer Google Reviews",
-   "date": "2026-01-20",
-   "cluster": "reviews",
-   "image": "/assets/images/blog/google-reviews-automatiseren.png"
-  },
-  {
-   "slug": "waarom-ai-onmisbaar-is-voor-ondernemers",
-   "title": "Waarom AI Onmisbaar Is",
-   "date": "2026-01-15",
-   "cluster": "marketing",
-   "image": "/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png"
-  }
- ]
+  "posts": [
+    {
+      "slug": "fotos-google-bedrijfsprofiel-mkb",
+      "title": "Foto's op je Google Bedrijfsprofiel: hoe en hoe vaak",
+      "date": "2026-07-14",
+      "cluster": "seo",
+      "image": "/assets/images/blog/fotos-google-bedrijfsprofiel-mkb.jpg"
+    },
+    {
+      "slug": "brand-voice-document-mkb-in-4-uur",
+      "title": "Brand voice document voor MKB in 4 uur",
+      "date": "2026-07-13",
+      "cluster": "branding",
+      "image": "/assets/images/blog/brand-voice-document-mkb-in-4-uur.jpg"
+    },
+    {
+      "slug": "voice-ai-buiten-kantooruren-mkb",
+      "title": "Voice AI buiten kantooruren: 24/7 bereikbaar",
+      "date": "2026-07-11",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/voice-ai-buiten-kantooruren-mkb.jpg"
+    },
+    {
+      "slug": "whatsapp-business-chatbot-opzetten-mkb",
+      "title": "WhatsApp business chatbot opzetten voor MKB",
+      "date": "2026-07-11",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/whatsapp-business-chatbot-opzetten-mkb.jpg"
+    },
+    {
+      "slug": "mkb-rebranding-zonder-reputatie-verliezen",
+      "title": "MKB rebranding zonder reputatie verliezen",
+      "date": "2026-07-09",
+      "cluster": "branding",
+      "image": "/assets/images/blog/mkb-rebranding-zonder-reputatie-verliezen.jpg"
+    },
+    {
+      "slug": "welkomstmail-mkb-4-mails",
+      "title": "Welkomstmail voor MKB: 4 mails die werken",
+      "date": "2026-07-08",
+      "cluster": "email-marketing",
+      "image": "/assets/images/blog/welkomstmail-mkb-4-mails.jpg"
+    },
+    {
+      "slug": "linkbuilding-bureau-kiezen-waar-op-letten",
+      "title": "Linkbuilding bureau kiezen: waar let je op?",
+      "date": "2026-07-07",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/linkbuilding-bureau-kiezen-waar-op-letten.jpg"
+    },
+    {
+      "slug": "live-chat-vs-ai-chatbot-mkb",
+      "title": "AI chatbot of live chat: wat past beter bij MKB?",
+      "date": "2026-07-06",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/live-chat-vs-ai-chatbot-mkb.jpg"
+    },
+    {
+      "slug": "ankerteksten-backlinks-mkb-veilig-kiezen",
+      "title": "Ankerteksten voor backlinks zonder penalty",
+      "date": "2026-07-05",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/ankerteksten-backlinks-mkb-veilig-kiezen.jpg"
+    },
+    {
+      "slug": "digitale-pr-mkb-gratis-backlinks-verdienen",
+      "title": "Digitale PR voor MKB: gratis backlinks verdienen",
+      "date": "2026-07-03",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/digitale-pr-mkb-gratis-backlinks-verdienen.jpg"
+    },
+    {
+      "slug": "leads-opvolgen-5-minutenregel-mkb",
+      "title": "Leads opvolgen: de 5-minutenregel voor MKB",
+      "date": "2026-07-01",
+      "cluster": "crm",
+      "image": "/assets/images/blog/leads-opvolgen-5-minutenregel-mkb.jpg"
+    },
+    {
+      "slug": "ai-telefonist-wat-wel-en-niet-kan-2026",
+      "title": "Wat een AI telefonist WEL en NIET kan in 2026",
+      "date": "2026-06-30",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/ai-telefonist-wat-wel-en-niet-kan-2026.jpg"
+    },
+    {
+      "slug": "chatbot-trainen-op-eigen-data-4-manieren",
+      "title": "AI chatbot trainen op eigen bedrijfsdata: 4 manieren",
+      "date": "2026-06-29",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/chatbot-trainen-op-eigen-data-4-manieren.jpg"
+    },
+    {
+      "slug": "lead-nurturing-mkb-eerste-contact-tot-offerte",
+      "title": "Lead nurturing voor MKB: van eerste contact tot offerte",
+      "date": "2026-06-28",
+      "cluster": "crm",
+      "image": "/assets/images/blog/lead-nurturing-mkb-eerste-contact-tot-offerte.jpg"
+    },
+    {
+      "slug": "chatbot-vs-faq-pagina-waar-leads-vandaan-komen",
+      "title": "Chatbot vs FAQ-pagina: waar leads echt vandaan komen",
+      "date": "2026-06-23",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/chatbot-vs-faq-pagina-waar-leads-vandaan-komen.jpg"
+    },
+    {
+      "slug": "voice-ai-receptionist-vervangen-of-versterken",
+      "title": "Voice AI voor de receptionist: vervangen of versterken?",
+      "date": "2026-06-21",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/voice-ai-receptionist-vervangen-of-versterken.jpg"
+    },
+    {
+      "slug": "wat-moet-mkb-chatbot-kunnen",
+      "title": "Wat moet een MKB-chatbot kunnen? Een eerlijke functielijst",
+      "date": "2026-06-21",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/wat-moet-mkb-chatbot-kunnen.jpg"
+    },
+    {
+      "slug": "crm-systeem-voor-mkb-6-functies",
+      "title": "CRM systeem voor MKB: de 6 functies die tellen",
+      "date": "2026-06-12",
+      "cluster": "crm",
+      "image": "/assets/images/blog/crm-systeem-voor-mkb-6-functies.jpg"
+    },
+    {
+      "slug": "backlinks-vermijden-5-seo-killers-mkb",
+      "title": "Welke domeinen mag je NIET als backlink: 5 SEO-killers",
+      "date": "2026-06-08",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/backlinks-vermijden-5-seo-killers-mkb.jpg"
+    },
+    {
+      "slug": "crm-implementatie-in-5-dagen-mkb",
+      "title": "CRM implementatie in 5 dagen: roadmap voor MKB",
+      "date": "2026-06-07",
+      "cluster": "crm",
+      "image": "/assets/images/blog/crm-implementatie-in-5-dagen-mkb.jpg"
+    },
+    {
+      "slug": "google-bedrijfsprofiel-optimaliseren-mkb",
+      "title": "Google Bedrijfsprofiel optimaliseren: 9 stappen",
+      "date": "2026-06-07",
+      "cluster": "seo",
+      "image": "/assets/images/blog/google-bedrijfsprofiel-optimaliseren-mkb.jpg"
+    },
+    {
+      "slug": "kwalitatieve-backlinks-7-metrics-mkb",
+      "title": "Kwalitatieve backlinks: 7 metrics voor MKB",
+      "date": "2026-05-31",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/kwalitatieve-backlinks-7-metrics-mkb.jpg"
+    },
+    {
+      "slug": "waarom-mkb-website-100-blogs-nodig",
+      "title": "Waarom elke MKB-website 100 blogs nodig heeft",
+      "date": "2026-05-29",
+      "cluster": "seo",
+      "image": "/assets/images/blog/waarom-mkb-website-100-blogs-nodig.jpg"
+    },
+    {
+      "slug": "antwoorddienst-of-voice-ai-mkb",
+      "title": "Antwoorddienst of Voice AI: ROI voor MKB",
+      "date": "2026-05-28",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/antwoorddienst-of-voice-ai-mkb.jpg"
+    },
+    {
+      "slug": "backlinks-kopen-voor-mkb-wanneer-veilig",
+      "title": "Backlinks kopen: wanneer veilig wanneer risico",
+      "date": "2026-05-27",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/backlinks-kopen-voor-mkb-wanneer-veilig.jpg"
+    },
+    {
+      "slug": "welk-crm-voor-mkb-5-keuzes-vergeleken",
+      "title": "Welk CRM voor MKB: 5 keuzes vergeleken",
+      "date": "2026-05-26",
+      "cluster": "crm",
+      "image": "/assets/images/blog/welk-crm-voor-mkb-5-keuzes-vergeleken.jpg"
+    },
+    {
+      "slug": "app-laten-maken-voor-mkb-bouwen-of-niet",
+      "title": "App laten maken voor MKB: wanneer loont het en wanneer is een goede website slimmer?",
+      "date": "2026-05-25",
+      "cluster": "website",
+      "image": "/assets/images/blog/app-laten-maken-voor-mkb-bouwen-of-niet.jpg"
+    },
+    {
+      "slug": "gastblog-plaatsen-voor-mkb-hoe-en-waar",
+      "title": "Gastblog plaatsen voor MKB: hoe je waardevolle plekken vindt",
+      "date": "2026-05-24",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/gastblog-plaatsen-voor-mkb-hoe-en-waar.jpg"
+    },
+    {
+      "slug": "no-show-voorkomen-whatsapp-herinneringen-mkb",
+      "title": "No-shows voorkomen voor MKB: WhatsApp herinneringen die werken",
+      "date": "2026-05-23",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/no-show-voorkomen-whatsapp-herinneringen-mkb.jpg"
+    },
+    {
+      "slug": "beurs-eventmarketing-mkb",
+      "title": "Beurs- en eventmarketing voor MKB: wanneer het loont",
+      "date": "2026-05-22",
+      "cluster": "branding",
+      "image": "/assets/images/blog/beurs-eventmarketing-mkb.jpg"
+    },
+    {
+      "slug": "voice-ai-opzetten-4-stappen-mkb",
+      "title": "Geen oproepen meer missen: Voice AI opzetten in 4 stappen",
+      "date": "2026-05-21",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/voice-ai-opzetten-4-stappen-mkb.jpg"
+    },
+    {
+      "slug": "voice-ai-niet-werkt-mkb",
+      "title": "Wanneer Voice AI juist niet werkt voor jouw MKB (en wat dan wel)",
+      "date": "2026-05-20",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/voice-ai-niet-werkt-mkb.jpg"
+    },
+    {
+      "slug": "hubspot-mailchimp-activecampaign-mkb",
+      "title": "HubSpot vs Mailchimp vs ActiveCampaign vergeleken voor MKB in 2026",
+      "date": "2026-05-19",
+      "cluster": "email-marketing",
+      "image": "/assets/images/blog/hubspot-mailchimp-activecampaign-mkb.jpg"
+    },
+    {
+      "slug": "ab-testen-mkb-wanneer-rendabel",
+      "title": "A/B testen voor MKB: wanneer rendabel",
+      "date": "2026-05-18",
+      "cluster": "website",
+      "image": "/assets/images/blog/ab-testen-mkb-wanneer-rendabel.jpg"
+    },
+    {
+      "slug": "micro-influencers-mkb-roi-2026",
+      "title": "Micro-influencers voor MKB: ROI in 2026",
+      "date": "2026-05-17",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/micro-influencers-mkb-roi-2026.jpg"
+    },
+    {
+      "slug": "domein-autoriteit-verhogen-mkb-tactieken",
+      "title": "Domein autoriteit verhogen: 5 MKB-tactieken",
+      "date": "2026-05-16",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/domein-autoriteit-verhogen-mkb-tactieken.jpg"
+    },
+    {
+      "slug": "prijzen-op-website-tonen-mkb",
+      "title": "Prijzen op je website: tonen of weglaten?",
+      "date": "2026-05-16",
+      "cluster": "website",
+      "image": "/assets/images/blog/prijzen-op-website-tonen-mkb.jpg"
+    },
+    {
+      "slug": "wordpress-voor-mkb-prijs-en-alternatieven",
+      "title": "WordPress voor MKB in 2026: prijs, alternatieven en valkuilen",
+      "date": "2026-05-14",
+      "cluster": "website",
+      "image": "/assets/images/blog/wordpress-voor-mkb-prijs-en-alternatieven.jpg"
+    },
+    {
+      "slug": "ai-telefonist-wanneer-rendabel-mkb",
+      "title": "AI telefonist voor MKB: wanneer rendeert het en wanneer niet?",
+      "date": "2026-05-13",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/ai-telefonist-wanneer-rendabel-mkb.jpg"
+    },
+    {
+      "slug": "linkbuilding-kosten-voor-mkb-wat-is-eerlijk",
+      "title": "Linkbuilding kosten voor MKB: wat is eerlijk?",
+      "date": "2026-05-12",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/linkbuilding-kosten-voor-mkb-wat-is-eerlijk.jpg"
+    },
+    {
+      "slug": "tiktok-voor-bedrijven-wanneer-werkt-het",
+      "title": "TikTok voor bedrijven: wanneer werkt het",
+      "date": "2026-05-11",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/tiktok-voor-bedrijven-wanneer-werkt-het.jpg"
+    },
+    {
+      "slug": "mobile-first-design-2026",
+      "title": "Mobile-first design 2026",
+      "date": "2026-05-10",
+      "cluster": "website",
+      "image": "/assets/images/blog/mobile-first-design-2026.jpg"
+    },
+    {
+      "slug": "instagram-marketing-uitbesteden-mkb-kosten",
+      "title": "Instagram marketing uitbesteden voor MKB",
+      "date": "2026-05-09",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/instagram-marketing-uitbesteden-mkb-kosten.jpg"
+    },
+    {
+      "slug": "google-analytics-4-instellen-mkb",
+      "title": "Google Analytics 4 instellen voor MKB",
+      "date": "2026-05-08",
+      "cluster": "website",
+      "image": "/assets/images/blog/google-analytics-4-instellen-mkb.jpg"
+    },
+    {
+      "slug": "linkedin-marketing-uitbesteden-b2b-mkb",
+      "title": "LinkedIn marketing uitbesteden voor B2B-MKB",
+      "date": "2026-05-07",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/linkedin-marketing-uitbesteden-b2b-mkb.jpg"
+    },
+    {
+      "slug": "pinterest-voor-bedrijven-visueel-seo-mkb",
+      "title": "Pinterest voor bedrijven: visueel SEO-kanaal",
+      "date": "2026-05-06",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/pinterest-voor-bedrijven-visueel-seo-mkb.jpg"
+    },
+    {
+      "slug": "youtube-voor-bedrijven-mkb",
+      "title": "YouTube voor bedrijven: hoe MKB een evergreen-kanaal bouwt",
+      "date": "2026-05-05",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/youtube-voor-bedrijven-mkb.jpg"
+    },
+    {
+      "slug": "podcast-marketing-mkb-wanneer-werkt",
+      "title": "Podcast marketing voor MKB: wanneer een eigen kanaal werkt",
+      "date": "2026-05-04",
+      "cluster": "branding",
+      "image": "/assets/images/blog/podcast-marketing-mkb-wanneer-werkt.jpg"
+    },
+    {
+      "slug": "facebook-adverteren-uitbesteden-4-modellen",
+      "title": "Facebook adverteren uitbesteden: 4 modellen",
+      "date": "2026-05-03",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/facebook-adverteren-uitbesteden-4-modellen.jpg"
+    },
+    {
+      "slug": "wat-kost-website-per-jaar-mkb-terugkerende-kosten",
+      "title": "Wat kost een website per jaar voor MKB? De terugkerende kosten die je vergeet",
+      "date": "2026-05-02",
+      "cluster": "website",
+      "image": "/assets/images/blog/wat-kost-website-per-jaar-mkb-terugkerende-kosten.jpg"
+    },
+    {
+      "slug": "gepersonaliseerde-marketing-ai-mkb",
+      "title": "Gepersonaliseerde marketing met AI: segmentatie voor MKB",
+      "date": "2026-05-01",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/gepersonaliseerde-marketing-ai-mkb.jpg"
+    },
+    {
+      "slug": "direct-mail-online-combineren-mkb",
+      "title": "Direct mail + online combineren MKB",
+      "date": "2026-04-30",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/direct-mail-online-combineren-mkb.jpg"
+    },
+    {
+      "slug": "google-bedrijfsprofiel-aanmaken-mkb-startgids",
+      "title": "Google Bedrijfsprofiel aanmaken voor MKB",
+      "date": "2026-04-29",
+      "cluster": "seo",
+      "image": "/assets/images/blog/google-bedrijfsprofiel-aanmaken-mkb-startgids.jpg"
+    },
+    {
+      "slug": "ai-implementeren-mkb-stappenplan-2026",
+      "title": "AI implementeren als MKB: stappenplan 2026",
+      "date": "2026-04-28",
+      "cluster": "ai-trends",
+      "image": "/assets/images/blog/ai-implementeren-mkb-stappenplan-2026.jpg"
+    },
+    {
+      "slug": "negatieve-reviews-beantwoorden-mkb",
+      "title": "Negatieve reviews beantwoorden: zo herstel je als MKB je reputatie",
+      "date": "2026-04-27",
+      "cluster": "reviews",
+      "image": "/assets/images/blog/negatieve-reviews-beantwoorden-mkb.jpg"
+    },
+    {
+      "slug": "email-flows-mkb-vijf-must-haves",
+      "title": "5 e-mail flows die elk MKB moet hebben",
+      "date": "2026-04-26",
+      "cluster": "email-marketing",
+      "image": "/assets/images/blog/email-flows-mkb-vijf-must-haves.jpg"
+    },
+    {
+      "slug": "rebranding-of-refresh-wanneer-mkb",
+      "title": "Rebranding of refresh: wanneer kies je wat?",
+      "date": "2026-04-25",
+      "cluster": "branding",
+      "image": "/assets/images/blog/rebranding-of-refresh-wanneer-mkb.jpg"
+    },
+    {
+      "slug": "ai-act-2026-mkb-ondernemer",
+      "title": "AI Act 2026: wat elke MKB-ondernemer nu moet weten",
+      "date": "2026-04-23",
+      "cluster": "ai-trends",
+      "image": "/assets/images/blog/ai-act-2026-mkb-ondernemer.jpg"
+    },
+    {
+      "slug": "google-reviews-verzoeken-mkb-4-stappen-systeem",
+      "title": "Google reviews verzoeken als MKB: het 4-stappen systeem",
+      "date": "2026-04-22",
+      "cluster": "reviews",
+      "image": "/assets/images/blog/google-reviews-verzoeken-mkb-4-stappen-systeem.jpg"
+    },
+    {
+      "slug": "ai-marketing-bureau-kiezen-checklist-mkb",
+      "title": "AI marketing bureau kiezen: checklist MKB",
+      "date": "2026-04-21",
+      "cluster": "managed-service",
+      "image": "/assets/images/blog/ai-marketing-bureau-kiezen-checklist-mkb.jpg"
+    },
+    {
+      "slug": "schema-markup-mkb-vindbaar-in-chatgpt",
+      "title": "Schema markup voor MKB: vindbaar in Google en ChatGPT",
+      "date": "2026-04-20",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/schema-markup-mkb-vindbaar-in-chatgpt.jpg"
+    },
+    {
+      "slug": "hoger-in-google-komen-mkb",
+      "title": "Hoger in Google komen als MKB: het eerlijke stappenplan",
+      "date": "2026-04-19",
+      "cluster": "seo",
+      "image": "/assets/images/blog/hoger-in-google-komen-mkb.jpg"
+    },
+    {
+      "slug": "google-ai-overviews-mkb-vindbaarheid",
+      "title": "Google AI Overviews en jouw MKB: wat verandert er en wat doe je eraan",
+      "date": "2026-04-18",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/google-ai-overviews-mkb-vindbaarheid.jpg"
+    },
+    {
+      "slug": "linkbuilding-mkb-uitleg-strategie",
+      "title": "Linkbuilding voor het MKB: wat het is en waarom je het niet zelf hoeft te doen",
+      "date": "2026-04-18",
+      "cluster": "linkbuilding",
+      "image": "/assets/images/blog/linkbuilding-mkb-uitleg-strategie.jpg"
+    },
+    {
+      "slug": "bedrijfsprocessen-automatiseren-mkb",
+      "title": "Bedrijfsprocessen automatiseren als MKB: waar begin je?",
+      "date": "2026-04-17",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/bedrijfsprocessen-automatiseren-mkb.jpg"
+    },
+    {
+      "slug": "seo-fouten-mkb-websites",
+      "title": "SEO-fouten die MKB-websites onzichtbaar maken",
+      "date": "2026-04-17",
+      "cluster": "seo",
+      "image": "/assets/images/blog/seo-fouten-mkb-websites.jpg"
+    },
+    {
+      "slug": "aeo-answer-engine-optimization-mkb",
+      "title": "AEO voor MKB: zo kom je in ChatGPT en AI-zoekmachines",
+      "date": "2026-04-16",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/aeo-answer-engine-optimization-mkb.jpg"
+    },
+    {
+      "slug": "automatisering-kosten-mkb-2026",
+      "title": "Wat kost automatisering voor een MKB-bedrijf?",
+      "date": "2026-04-15",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/automatisering-kosten-mkb-2026.jpg"
+    },
+    {
+      "slug": "ai-trends-mkb-2026",
+      "title": "3 AI-trends die MKB-bedrijven in 2026 niet mogen missen",
+      "date": "2026-04-14",
+      "cluster": "ai-trends",
+      "image": "/assets/images/blog/ai-trends-mkb-2026.jpg"
+    },
+    {
+      "slug": "mkb-groeiblokkades-ai-oplossingen",
+      "title": "3 groeiblokkades voor MKB die AI direct oplost",
+      "date": "2026-04-14",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/mkb-groeiblokkades-ai-oplossingen.jpg"
+    },
+    {
+      "slug": "email-marketing-mkb-nieuwsbrief-die-werkt",
+      "title": "E-mail marketing voor MKB: de nieuwsbrief die wel gelezen wordt",
+      "date": "2026-04-12",
+      "cluster": "email-marketing",
+      "image": "/assets/images/blog/email-marketing-mkb-nieuwsbrief-die-werkt.jpg"
+    },
+    {
+      "slug": "ai-chatbot-website-mkb-wanneer-wel-niet",
+      "title": "AI chatbot op je website: wanneer het wel en niet werkt",
+      "date": "2026-04-12",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/ai-chatbot-website-mkb-wanneer-wel-niet.jpg"
+    },
+    {
+      "slug": "website-bezoekers-omzetten-naar-klanten",
+      "title": "Website bezoekers omzetten naar klanten: 5 verbeteringen die direct werken",
+      "date": "2026-04-11",
+      "cluster": "website",
+      "image": "/assets/images/blog/website-bezoekers-omzetten-naar-klanten.jpg"
+    },
+    {
+      "slug": "roi-google-reviews-mkb-opbrengst",
+      "title": "ROI van reviews voor het MKB: hoeveel levert elke Google review je op?",
+      "date": "2026-04-10",
+      "cluster": "reviews",
+      "image": "/assets/images/blog/roi-google-reviews-mkb-opbrengst.jpg"
+    },
+    {
+      "slug": "goedkope-website-laten-maken-kosten-2026",
+      "title": "Goedkope website laten maken in 2026: wat kost het echt?",
+      "date": "2026-04-09",
+      "cluster": "website",
+      "image": "/assets/images/blog/goedkope-website-laten-maken-kosten-2026.jpg"
+    },
+    {
+      "slug": "lokale-marketing-mkb-2026-kanalen",
+      "title": "Lokale marketing voor MKB in 2026: 7 kanalen die echt werken",
+      "date": "2026-04-08",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/lokale-marketing-mkb-2026-kanalen.jpg"
+    },
+    {
+      "slug": "lokale-vindbaarheid-verbeteren-mkb-gids",
+      "title": "Lokale vindbaarheid verbeteren: de complete MKB-gids",
+      "date": "2026-04-07",
+      "cluster": "seo",
+      "image": "/assets/images/blog/lokale-vindbaarheid-verbeteren-mkb-gids.jpg"
+    },
+    {
+      "slug": "ai-zoekgedrag-verandering",
+      "title": "Hoe AI het zoekgedrag verandert en wat jouw bedrijf moet doen",
+      "date": "2026-04-06",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/ai-zoekgedrag-verandering.jpg"
+    },
+    {
+      "slug": "roi-ai-automatisering-mkb",
+      "title": "ROI van AI-automatisering: wat levert het je MKB écht op?",
+      "date": "2026-04-06",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/roi-ai-automatisering-mkb.jpg"
+    },
+    {
+      "slug": "mkb-groei-ai-systemen",
+      "title": "MKB groei met AI-systemen: hoe kleine bedrijven groot kunnen concurreren",
+      "date": "2026-04-05",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/mkb-groei-ai-systemen.jpg"
+    },
+    {
+      "slug": "branding-mkb-belang",
+      "title": "Branding voor het MKB: waarom je merk belangrijker is dan je product",
+      "date": "2026-04-05",
+      "cluster": "branding",
+      "image": "/assets/images/blog/branding-mkb-belang.jpg"
+    },
+    {
+      "slug": "managed-service-mkb-uitbesteden",
+      "title": "Managed service voor het MKB: waarom uitbesteden slimmer is",
+      "date": "2026-04-04",
+      "cluster": "managed-service",
+      "image": "/assets/images/blog/managed-service-mkb-uitbesteden.jpg"
+    },
+    {
+      "slug": "ai-automatisering-mkb-vijf-processen",
+      "title": "AI-automatisering voor het MKB: 5 processen om te starten",
+      "date": "2026-04-03",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/ai-automatisering-mkb-vijf-processen.jpg"
+    },
+    {
+      "slug": "lokale-vindbaarheid-mkb-complete-gids",
+      "title": "Lokale vindbaarheid voor het MKB: complete gids",
+      "date": "2026-04-03",
+      "cluster": "seo",
+      "image": "/assets/images/blog/lokale-vindbaarheid-mkb-complete-gids.jpg"
+    },
+    {
+      "slug": "marketing-uitbesteden-mkb-kosten",
+      "title": "Marketing uitbesteden als MKB: wat kost het?",
+      "date": "2026-04-02",
+      "cluster": "managed-service",
+      "image": "/assets/images/blog/marketing-uitbesteden-mkb-kosten.jpg"
+    },
+    {
+      "slug": "ai-vervangt-marketingbureaus",
+      "title": "AI Vervangt Alle Marketingbureaus",
+      "date": "2026-04-01",
+      "cluster": "ai-trends",
+      "image": "/assets/images/blog/ai-vervangt-marketingbureaus.jpg"
+    },
+    {
+      "slug": "ai-zoekgedrag-klanten-vinden-2026",
+      "title": "AI en zoekgedrag: hoe klanten je vinden in 2026",
+      "date": "2026-03-31",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/ai-zoekgedrag-klanten-vinden-2026.jpg"
+    },
+    {
+      "slug": "ai-bureau-vs-traditioneel-marketingbureau",
+      "title": "AI bureau vs traditioneel marketingbureau",
+      "date": "2026-03-30",
+      "cluster": "managed-service",
+      "image": "/assets/images/blog/ai-bureau-vs-traditioneel-marketingbureau.jpg"
+    },
+    {
+      "slug": "managed-service-ai-mkb-ontzorging",
+      "title": "Managed AI service voor het MKB",
+      "date": "2026-03-30",
+      "cluster": "managed-service",
+      "image": "/assets/images/blog/managed-service-ai-mkb-ontzorging.jpg"
+    },
+    {
+      "slug": "nazorg-mkb-klantrelatie-na-de-sale",
+      "title": "Nazorg voor het MKB",
+      "date": "2026-03-29",
+      "cluster": "crm",
+      "image": "/assets/images/blog/nazorg-mkb-klantrelatie-na-de-sale.jpg"
+    },
+    {
+      "slug": "online-reputatie-mkb",
+      "title": "Online reputatie voor het MKB",
+      "date": "2026-03-28",
+      "cluster": "reviews",
+      "image": "/assets/images/blog/online-reputatie-mkb.png"
+    },
+    {
+      "slug": "strategische-samenwerkingen-mkb",
+      "title": "Strategische samenwerkingen voor het MKB",
+      "date": "2026-03-28",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/strategische-samenwerkingen-mkb.png"
+    },
+    {
+      "slug": "google-bedrijfsprofiel-mkb",
+      "title": "Google Bedrijfsprofiel voor het MKB",
+      "date": "2026-03-27",
+      "cluster": "seo",
+      "image": "/assets/images/blog/google-bedrijfsprofiel-mkb.png"
+    },
+    {
+      "slug": "klantbehoud-mkb-waarde-bestaande-klanten",
+      "title": "Klantbehoud in het MKB",
+      "date": "2026-03-26",
+      "cluster": "crm",
+      "image": "/assets/images/blog/klantbehoud-mkb-waarde-bestaande-klanten.png"
+    },
+    {
+      "slug": "crm-mkb-klantbeheer",
+      "title": "Een CRM voor het MKB",
+      "date": "2026-03-24",
+      "cluster": "crm",
+      "image": "/assets/images/blog/crm-mkb-klantbeheer.png"
+    },
+    {
+      "slug": "workflows-automatiseren-mkb",
+      "title": "Workflows automatiseren in het MKB",
+      "date": "2026-03-24",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/workflows-automatiseren-mkb.png"
+    },
+    {
+      "slug": "branding-mkb-herkenbaar-merk",
+      "title": "Branding voor het MKB",
+      "date": "2026-03-23",
+      "cluster": "branding",
+      "image": "/assets/images/blog/branding-mkb-herkenbaar-merk.png"
+    },
+    {
+      "slug": "online-vindbaarheid-mkb-google",
+      "title": "Online vindbaarheid voor het MKB",
+      "date": "2026-03-22",
+      "cluster": "seo",
+      "image": "/assets/images/blog/online-vindbaarheid-mkb-google.png"
+    },
+    {
+      "slug": "leadgeneratie-mkb-website-bezoekers",
+      "title": "Leadgeneratie voor het MKB",
+      "date": "2026-03-21",
+      "cluster": "website",
+      "image": "/assets/images/blog/leadgeneratie-mkb-website-bezoekers.png"
+    },
+    {
+      "slug": "chatbot-website-mkb-wanneer-werkt-het",
+      "title": "Een chatbot op je website",
+      "date": "2026-03-20",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/chatbot-website-mkb-wanneer-werkt-het.png"
+    },
+    {
+      "slug": "klantcases-marketingtool-mkb",
+      "title": "Klantcases als marketingtool",
+      "date": "2026-03-20",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/klantcases-marketingtool-mkb.png"
+    },
+    {
+      "slug": "email-marketing-mkb-hoogste-rendement",
+      "title": "E-mailmarketing voor het MKB",
+      "date": "2026-03-13",
+      "cluster": "email-marketing",
+      "image": "/assets/images/blog/email-marketing-mkb-hoogste-rendement.png"
+    },
+    {
+      "slug": "mkb-website-bezoekers-omzetten-klanten",
+      "title": "Waarom je MKB-website geen bezoekers omzet",
+      "date": "2026-03-12",
+      "cluster": "website",
+      "image": "/assets/images/blog/mkb-website-bezoekers-omzetten-klanten.png"
+    },
+    {
+      "slug": "gevonden-worden-in-chatgpt-mkb",
+      "title": "Gevonden worden in ChatGPT",
+      "date": "2026-03-11",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/gevonden-worden-in-chatgpt-mkb.png"
+    },
+    {
+      "slug": "ai-agents-mkb-groeien-zonder-personeel",
+      "title": "Hoe AI-agents het MKB laten groeien",
+      "date": "2026-03-10",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/ai-agents-mkb-groeien-zonder-personeel.png"
+    },
+    {
+      "slug": "social-media-mkb-strategie-2026",
+      "title": "Social media strategie voor het MKB",
+      "date": "2026-03-09",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/social-media-mkb-strategie-2026.png"
+    },
+    {
+      "slug": "hoe-mkb-meer-google-reviews-verzamelt",
+      "title": "Meer Google reviews verzamelen",
+      "date": "2026-03-08",
+      "cluster": "reviews",
+      "image": "/assets/images/blog/hoe-mkb-meer-google-reviews-verzamelt.png"
+    },
+    {
+      "slug": "beste-ai-tools-voor-mkb-2026",
+      "title": "Beste AI-tools voor MKB 2026",
+      "date": "2026-03-07",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/beste-ai-tools-voor-mkb-2026.png"
+    },
+    {
+      "slug": "wat-is-model-context-protocol-mcp-hoe-verandert-het-ai",
+      "title": "Wat is het Model Context Protocol?",
+      "date": "2026-03-07",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/wat-is-model-context-protocol-mcp-hoe-verandert-het-ai.png"
+    },
+    {
+      "slug": "wat-ai-automatisering-betekent-voor-mkb-in-2026",
+      "title": "Wat AI-automatisering betekent voor het MKB",
+      "date": "2026-03-06",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/wat-ai-automatisering-betekent-voor-mkb-in-2026.png"
+    },
+    {
+      "slug": "wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien",
+      "title": "Wat is een AI-agent?",
+      "date": "2026-03-03",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/wat-is-een-ai-agent-en-hoe-helpt-het-je-bedrijf-groeien.png"
+    },
+    {
+      "slug": "content-publiceren-google-ai-vindbaarheid",
+      "title": "Waarom Regelmatig Content Publiceren Essentieel Is",
+      "date": "2026-02-24",
+      "cluster": "seo",
+      "image": "/assets/images/blog/content-publiceren-google-ai-vindbaarheid.png"
+    },
+    {
+      "slug": "whatsapp-automatisering-voor-bedrijven",
+      "title": "WhatsApp Automatisering",
+      "date": "2026-02-23",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/whatsapp-automatisering-voor-bedrijven.png"
+    },
+    {
+      "slug": "website-chatbots-leads-genereren",
+      "title": "Website Chatbots: 24/7 Leads Genereren",
+      "date": "2026-02-20",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/website-chatbots-leads-genereren.png"
+    },
+    {
+      "slug": "starten-met-studiolee",
+      "title": "Hoe Start Je Met STUDIOLEE?",
+      "date": "2026-02-06",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/starten-met-studiolee.png"
+    },
+    {
+      "slug": "ai-seo-vindbaarheid",
+      "title": "De Nieuwe SEO: ChatGPT en Google",
+      "date": "2026-02-05",
+      "cluster": "seo",
+      "image": "/assets/images/blog/ai-seo-vindbaarheid.png"
+    },
+    {
+      "slug": "automations-workflow-optimalisatie",
+      "title": "Slimme Automations",
+      "date": "2026-02-03",
+      "cluster": "ai-automation",
+      "image": "/assets/images/blog/automations-workflow-optimalisatie.png"
+    },
+    {
+      "slug": "managed-service-vs-marketing-bureau",
+      "title": "Managed Service vs. Marketing Bureau",
+      "date": "2026-02-01",
+      "cluster": "managed-service",
+      "image": "/assets/images/blog/managed-service-vs-marketing-bureau.png"
+    },
+    {
+      "slug": "social-media-zonder-gedoe",
+      "title": "Social Media Zonder Gedoe",
+      "date": "2026-01-28",
+      "cluster": "social-media",
+      "image": "/assets/images/blog/social-media-zonder-gedoe.png"
+    },
+    {
+      "slug": "voice-ai-24-7-bereikbaar",
+      "title": "24/7 Bereikbaar: De Kracht van Voice AI",
+      "date": "2026-01-25",
+      "cluster": "voice-ai",
+      "image": "/assets/images/blog/voice-ai-24-7-bereikbaar.jpg"
+    },
+    {
+      "slug": "google-reviews-automatiseren",
+      "title": "Automatisch Meer Google Reviews",
+      "date": "2026-01-20",
+      "cluster": "reviews",
+      "image": "/assets/images/blog/google-reviews-automatiseren.png"
+    },
+    {
+      "slug": "waarom-ai-onmisbaar-is-voor-ondernemers",
+      "title": "Waarom AI Onmisbaar Is",
+      "date": "2026-01-15",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/waarom-ai-onmisbaar-is-voor-ondernemers.png"
+    }
+  ]
 }
