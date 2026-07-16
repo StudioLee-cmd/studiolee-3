@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "inactieve-klanten-reactiveren-email-automation",
+      "title": "Inactieve klanten reactiveren met e-mail",
+      "date": "2026-07-16",
+      "cluster": "email-marketing",
+      "image": "/assets/images/blog/inactieve-klanten-reactiveren-email-automation.jpg"
+    },
+    {
       "slug": "waardevolle-lokale-backlinks-mkb",
       "title": "Waardevolle lokale backlinks voor MKB",
       "date": "2026-07-15",
