@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "wat-een-crm-voor-mkb-moet-doen-en-wat-niet",
+      "title": "Wat een CRM voor MKB moet doen (en wat niet)",
+      "date": "2026-07-21",
+      "cluster": "crm",
+      "image": "/assets/images/blog/wat-een-crm-voor-mkb-moet-doen-en-wat-niet.jpg"
+    },
+    {
       "slug": "google-maps-ranking-werkgebied-mkb",
       "title": "Hoger in Google Maps in je hele werkgebied",
       "date": "2026-07-20",
