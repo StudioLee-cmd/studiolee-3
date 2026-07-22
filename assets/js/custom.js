@@ -50,10 +50,49 @@ $(function () {
 		});
 	});
 
-
-    // Aos
-	AOS.init({
-		once: true,
-	});
-
 });
+
+
+// Aos — bewust BUITEN het $(function () { ... }) hierboven.
+// Elk [data-aos]-element staat via aos.css op opacity:0 en wordt pas zichtbaar als AOS z'n class zet.
+// Stond AOS.init() als laatste regel BINNEN dat blok, dan haalde een fout erboven (owl.carousel die
+// niet laadt, een selector die verdwijnt) de init nooit en bleef de HELE pagina onzichtbaar. Dat is
+// hier al een keer live gebeurd (05-04, commit 84375f58 "scrollToTopBtn JS crashes, AOS never inits").
+// Los blok = een fout hierboven kan de reveal niet meer meenemen.
+(function () {
+	function toonAlles() {
+		// Vangnet: geen AOS = de content gewoon tonen, zonder animatie. Zonder data-aos matcht de
+		// opacity:0-regel uit aos.css niet meer. Dit is exact wat AOS' eigen disable() doet.
+		var els = document.querySelectorAll('[data-aos]');
+		for (var i = 0; i < els.length; i++) {
+			els[i].removeAttribute('data-aos');
+		}
+	}
+
+	function startAos() {
+		if (typeof AOS === 'undefined') {
+			toonAlles();
+			return;
+		}
+		try {
+			AOS.init({
+				once: true,
+			});
+		} catch (e) {
+			toonAlles();
+			return;
+		}
+		// AOS bevriest de element-offsets op DOMContentLoaded en hangt er geen load-listener naast.
+		// Beelden en webfonts landen daarna en verschuiven de layout eronder vandaan (gemeten: -48 tot
+		// -217px). Een refresh na load herijkt de trigger-punten.
+		window.addEventListener('load', function () {
+			AOS.refresh();
+		});
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', startAos);
+	} else {
+		startAos();
+	}
+})();
