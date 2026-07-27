@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "conversieratio-website-mkb",
+      "title": "Conversieratio website: wat is goed voor MKB?",
+      "date": "2026-07-27",
+      "cluster": "website",
+      "image": "/assets/images/blog/conversieratio-website-mkb.jpg"
+    },
+    {
       "slug": "linkbuilding-rapport-lezen-wat-telt-echt",
       "title": "Linkbuilding-rapport lezen: wat telt echt",
       "date": "2026-07-24",
