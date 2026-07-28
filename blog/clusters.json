@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "seo-teksten-uitbesteden-briefing-kwaliteit",
+      "title": "SEO-teksten uitbesteden: briefen en beoordelen",
+      "date": "2026-07-28",
+      "cluster": "marketing",
+      "image": "/assets/images/blog/seo-teksten-uitbesteden-briefing-kwaliteit.jpg"
+    },
+    {
       "slug": "email-belandt-in-spam-spf-dkim-dmarc",
       "title": "E-mails belanden in spam: SPF, DKIM en DMARC",
       "date": "2026-07-28",
