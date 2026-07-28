@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-mail belandt in spam: SPF, DKIM en DMARC — STUDIOLEE</title>
+  <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon-sl.png" />
+  <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+<meta name="cluster" content="email-marketing">
+    <meta name="description" content="Je offerte belandt in de spam en je hoort er nooit iets van. Zo ontdek je of het jou overkomt en zet je SPF, DKIM en DMARC in de juiste volgorde goed.">
+  <link rel="canonical" href="https://www.studiolee.nl/blog/email-belandt-in-spam-spf-dkim-dmarc" />
+  <meta property="og:title" content="E-mail belandt in spam: SPF, DKIM en DMARC — STUDIOLEE" />
+  <meta property="og:description" content="Je offerte belandt in de spam en je hoort er nooit iets van. Zo ontdek je of het jou overkomt en zet je SPF, DKIM en DMARC in de juiste volgorde goed." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:url" content="https://www.studiolee.nl/blog/email-belandt-in-spam-spf-dkim-dmarc" />
+  <meta property="og:image" content="https://www.studiolee.nl/assets/images/blog/email-belandt-in-spam-spf-dkim-dmarc.jpg" />
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="E-mail belandt in spam: SPF, DKIM en DMARC — STUDIOLEE">
+  <meta name="twitter:description" content="Je offerte belandt in de spam en je hoort er nooit iets van. Zo ontdek je of het jou overkomt en zet je SPF, DKIM en DMARC in de juiste volgorde goed.">
+  <meta name="twitter:image" content="https://www.studiolee.nl/assets/images/blog/email-belandt-in-spam-spf-dkim-dmarc.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logos/apple-touch-icon.png">
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "E-mails belanden in spam: SPF, DKIM en DMARC in gewone taal", "description": "Je offerte belandt in de spam en je hoort er nooit iets van. Zo ontdek je of het jou overkomt en zet je SPF, DKIM en DMARC in de juiste volgorde goed.", "url": "https://www.studiolee.nl/blog/email-belandt-in-spam-spf-dkim-dmarc", "datePublished": "2026-07-28", "dateModified": "2026-07-28", "image": "https://www.studiolee.nl/assets/images/blog/email-belandt-in-spam-spf-dkim-dmarc.jpg", "author": {"@type": "Person", "name": "Tim van der Lee", "url": "https://nl.linkedin.com/in/tim-van-der-lee-86118917b"}, "publisher": {"@type": "Organization", "name": "STUDIOLEE", "url": "https://www.studiolee.nl", "logo": {"@type": "ImageObject", "url": "https://www.studiolee.nl/assets/images/logos/studiolee-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.studiolee.nl/blog/email-belandt-in-spam-spf-dkim-dmarc"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.studiolee.nl/"}, {"@type": "ListItem", "position": 2, "name": "Kennisbank", "item": "https://www.studiolee.nl/blog"}, {"@type": "ListItem", "position": 3, "name": "E-mails belanden in spam: SPF, DKIM en DMARC in gewone taal", "item": "https://www.studiolee.nl/blog/email-belandt-in-spam-spf-dkim-dmarc"}]}</script>
+</head>
+<body>
+<header class="header border-4 border-dark border-top position-fixed start-0 top-0 w-100">
+    <div class="container">
+      <div class="header-wrapper d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <a href="/" class="logo-white">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
+          </a>
+          <a href="/" class="logo-dark">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
+          </a>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+
+          <div class="menu-toggle-wrap">
+            <button class="hamburger-btn" aria-label="Menu" onclick="this.classList.toggle('is-open');document.getElementById('slideMenu').classList.toggle('is-open');" >
+              <div class="bar-wrap"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </button>
+            <nav class="menu-dropdown" id="slideMenu">
+              <div class="d-flex flex-column gap-6">
+                <!-- menu header removed -->
+                <div class="d-flex flex-column gap-3">
+                  <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
+                    <li class="header-item">
+                      <a href="/" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:home-angle-bold-duotone"></iconify-icon></span>Home</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/ai-marketing-bureau" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:rocket-2-bold-duotone"></iconify-icon></span>AI Marketing Bureau</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/chatbot" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></span>AI Chatbot</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/voice-ai" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone"></iconify-icon></span>AI Telefonist</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/seo" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:magnifer-zoom-in-bold-duotone"></iconify-icon></span>SEO &amp; Vindbaarheid</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/linkbuilding" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:link-bold-duotone"></iconify-icon></span>Linkbuilding</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/social-media" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:share-circle-bold-duotone"></iconify-icon></span>Social Media</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/reviews" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:star-shine-bold-duotone"></iconify-icon></span>Review Management</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/marketing-uitbesteden" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chart-2-bold-duotone"></iconify-icon></span>Marketing uitbesteden</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/automations" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:settings-minimalistic-bold-duotone"></iconify-icon></span>Automatisering</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/crm" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:users-group-rounded-bold-duotone"></iconify-icon></span>CRM</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/herinneringen" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:bell-bing-bold-duotone"></iconify-icon></span>Herinneringen</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/dashboard" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:monitor-bold-duotone"></iconify-icon></span>Dashboard</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/tarieven" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:wallet-money-bold-duotone"></iconify-icon></span>Tarieven</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/free-trial" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:document-medicine-bold-duotone"></iconify-icon></span>Start Nu</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/website-laten-maken" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:global-bold-duotone"></iconify-icon></span>Website laten maken</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/blog" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:notebook-bold-duotone"></iconify-icon></span>Blog</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/portfolio" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:gallery-wide-bold-duotone"></iconify-icon></span>Portfolio</a>
+                    </li>
+                  </ul>
+                  <div class="hstack gap-3">
+                    <a href="https://cal.com/studiolee" rel="nofollow" target="_blank"
+                      class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a>
+                  </div>
+                </div>
+                <div>
+                  <a class="text-dark" href="tel:+3197010223669">+31 970 102 23669</a>
+                  <a class="fs-8 text-dark fw-bold" href="mailto:tim@studiolee.nl">tim@studiolee.nl</a>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-wrapper overflow-hidden">
+<section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
+  style="background-image: url(/assets/images/blog/email-belandt-in-spam-spf-dkim-dmarc.jpg); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-4">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li class="active" aria-current="page">E-mails belanden in spam: SPF, DKIM en DMARC in gewone taal</li>
+        </ol>
+      </nav>
+      <div class="blog-meta-bar">
+        <a href="/blog/author/tim-van-der-lee">Tim van der Lee</a>
+        <span class="separator"></span>
+        <span><span class="date-label">Geschreven:</span> 28 juli 2026</span>
+        <span class="separator"></span>
+        <span><span class="date-label">Bijgewerkt:</span> 28 juli 2026</span>
+      </div>
+      <div>
+        <h1 class="mb-0 fs-15 text-white lh-1">E-mails belanden in spam: SPF, DKIM en DMARC in gewone taal</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="blog-detail py-4 py-lg-5">
+  <div class="container">
+    <div class="d-flex flex-column gap-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8 mx-auto">
+          <div>
+<p class="fs-5 mb-4">Je hebt boodschappen gedaan, de vriezer volgeladen en de deur dichtgeduwd. Alleen klikte hij niet helemaal dicht. Er piepte niets, er knipperde geen lampje, en twee weken lang leek er niets aan de hand. Tot je op een avond die ene zak eruit haalt, merkt dat alles ontdooid en weer bevroren is, en doorhebt dat het al die tijd mis zat.</p>
+
+<p class="fs-5 mb-4">Zo werkt een e-mail die in de spamfolder belandt. Er komt geen foutmelding. Er bouncet niets terug. Je verzonden-items zegt gewoon netjes dat de mail weg is, met tijdstip en al. De offerte die je dinsdag stuurde staat er keurig tussen. Alleen heeft je klant hem nooit gezien, en jij trekt na een week stilte je eigen conclusie: hij vond het zeker te duur.</p>
+
+<p class="fs-5 mb-4">Dat is wat dit onderwerp zo vervelend maakt. Bijna elk probleem in je bedrijf geeft een signaal af. Een kapotte machine maakt herrie, een boze klant belt, een mislukte betaling krijgt een melding. Maar een mail die wordt weggefilterd geeft precies nul signalen, aan geen van beide kanten. De ontvanger weet niet dat je iets stuurde, jij weet niet dat hij het niet kreeg, en het enige wat overblijft is stilte die je verkeerd uitlegt.</p>
+
+<p class="fs-5 mb-4">Even een grens trekken, want dit worden vaak twee verschillende problemen door elkaar gehaald. Komt je mail wél netjes aan maar wordt hij niet geopend, dan gaat het over je afzendernaam, je onderwerpregel en je lijst, en daarover lees je beter <a href="/blog/email-open-rate-verhogen-mkb" class="text-primary">hoe je je open rate als MKB verhoogt</a>. Dit artikel gaat over de stap dáárvoor: of je mail überhaupt in de inbox terechtkomt. Alles wat je aan je onderwerpregel sleutelt is namelijk verspilde moeite zolang het antwoord op die eerste vraag nee is.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Waarom je het nooit vanzelf merkt</h2>
+
+<p class="fs-5 mb-4">Er is een belangrijk verschil tussen geweigerd en gefilterd. Wordt je mail geweigerd, dan krijg je een bounce: een automatisch bericht dat het adres niet bestaat of dat de server je niet accepteert. Vervelend, maar je weet het tenminste. Wordt je mail gefilterd, dan is hij wel degelijk aangekomen. Hij is alleen in een map beland waar je klant een keer per maand in kijkt, meestal om hem leeg te gooien zonder te lezen.</p>
+
+<p class="fs-5 mb-4">Neem Sander, die een installatiebedrijf heeft. Hij stuurt in een normale maand een stuk of dertig offertes. Als daarvan een op de zes in de spam belandt, verliest hij vijf kansen per maand zonder dat er ergens een cijfer verandert. Zijn conversie ziet er gewoon wat tegenvallend uit. Hij gaat sleutelen aan zijn prijzen, want dat is de verklaring die het meest voor de hand ligt. Ondertussen ligt het echte probleem in drie regels tekst bij zijn domeinnaam, die hij nog nooit heeft bekeken en die niemand hem ooit heeft uitgelegd.</p>
+
+<p class="fs-5 mb-4">En dit is precies waarom het de moeite waard is om de saaie kant een keer goed te zetten in plaats van te blijven sleutelen aan het zichtbare deel. Een betere onderwerpregel verzinnen is leuk werk en voelt productief. Zorgen dat je mail überhaupt aankomt is vervelend werk, je doet het eenmalig, en het levert meer op dan elke tekstverbetering die je daarna nog bedenkt. Het is hetzelfde soort onzichtbaar fundament als de rest van je <a href="/automations" class="text-primary">ai automatisering voor mkb</a>: je merkt het pas als het er niet is.</p>
+
+<div class="my-4"><img src="/assets/images/blog/email-belandt-in-spam-spf-dkim-dmarc-2.jpg" alt="Telefoon met een nieuwe berichtmelding rechtop tegen een schaal appels op een Nederlandse keukentafel" class="img-fluid rounded-3"></div>
+
+<h2 class="mt-5 mb-3 fs-8">Zo kom je erachter of het jou overkomt</h2>
+
+<p class="fs-5 mb-4">Hier slaan de meeste artikelen over dit onderwerp een stap over. Ze beginnen meteen bij het instellen, terwijl de eerste vraag natuurlijk is of je überhaupt een probleem hebt. Er zijn drie manieren om daar binnen een half uur achter te komen, en ze kosten je niets.</p>
+
+<p class="fs-5 mb-4"><strong>Test niet door jezelf een mail te sturen.</strong> Dit is de valkuil waar bijna iedereen in trapt. Stuur je vanaf je bedrijfsadres een mail naar je eigen bedrijfsadres, dan blijft dat verkeer vaak binnen dezelfde mailserver, die zichzelf uiteraard vertrouwt. Hij komt netjes aan, jij concludeert dat het goed zit, en je hebt in feite niets gemeten. Je moet weten hoe een vreemde server je beoordeelt, niet hoe je eigen server over zichzelf denkt.</p>
+
+<p class="fs-5 mb-4"><strong>Manier een: laat je mail scoren.</strong> Op <a href="https://www.mail-tester.com/" rel="nofollow noopener" target="_blank" class="text-primary">mail-tester.com</a> krijg je een tijdelijk adres. Stuur daar een échte mail naartoe, dus een offerte of nieuwsbrief zoals je die normaal verstuurt en niet een leeg testberichtje, en je krijgt een cijfer met een uitleg per onderdeel. Belangrijk: haal er eerst klantgegevens uit, want je zet die pagina in feite even online.</p>
+
+<p class="fs-5 mb-4"><strong>Manier twee: vraag het drie klanten.</strong> Kies er drie die bij verschillende partijen zitten, dus iemand met Gmail, iemand met Outlook of Hotmail, en iemand met een eigen zakelijk domein. Vraag of ze in hun spamfolder willen kijken naar jouw laatste mail. Dit voelt onhandig en het is de meest eerlijke test die er bestaat, want dit is exact de werkelijkheid die je wil meten.</p>
+
+<p class="fs-5 mb-4"><strong>Manier drie: kijk of je op een blacklist staat.</strong> Is je website ooit gehackt geweest, of deel je een server met anderen, dan kan je domein of IP op een zwarte lijst staan. Met de blacklist-check van <a href="https://mxtoolbox.com/blacklists.aspx" rel="nofollow noopener" target="_blank" class="text-primary">MxToolbox</a> zie je dat in een paar seconden. Staat er iets, dan is dat je eerste klus, want geen enkele instelling weegt op tegen een domein dat actief geblokkeerd wordt.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Wat SPF, DKIM en DMARC eigenlijk doen</h2>
+
+<p class="fs-5 mb-4">Deze drie afkortingen klinken als iets voor je IT-er, en het goede nieuws is dat je ze niet technisch hoeft te begrijpen om de juiste beslissing te nemen. Je moet weten wát ze doen, zodat je kunt controleren of ze er zijn. Ze horen bij je domeinnaam, niet bij je computer of je mailprogramma, en dat is meteen waarom ze zo vaak vergeten worden: ze zitten op een plek waar je nooit komt.</p>
+
+<p class="fs-5 mb-4"><strong>SPF is de gastenlijst.</strong> Daarin staat welke servers namens jouw domein mogen mailen. Staat de partij die de mail verstuurt niet op die lijst, dan gaat bij de ontvanger een vlaggetje omhoog. Vergelijk het met een pakketbezorger die zegt dat hij namens jouw bedrijf komt, terwijl hij niet op de lijst van jouw koeriers staat.</p>
+
+<p class="fs-5 mb-4"><strong>DKIM is het zegel.</strong> Aan elke mail die je verstuurt wordt een digitale handtekening toegevoegd. De ontvanger controleert die handtekening en weet daarmee twee dingen: de mail komt echt van jouw domein, en er is onderweg niets in veranderd. Een brief met een ongeschonden lakzegel, in feite.</p>
+
+<p class="fs-5 mb-4"><strong>DMARC is de instructie plus de rapportage.</strong> Hierin leg je vast wat de ontvangende partij moet doen als de gastenlijst of het zegel niet klopt: niets doen, in quarantaine zetten, of weigeren. En, minstens zo waardevol, je krijgt rapporten over wie er allemaal namens jouw domein mailt. Dat is vaak het moment waarop ondernemers ontdekken dat hun boekhoudpakket en hun offertetool al jaren meesturen zonder dat iemand dat wist.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Waarom dit sinds 2024 geen luxe meer is</h2>
+
+<p class="fs-5 mb-4">Deze drie standaarden bestaan al jaren, en jarenlang kon je ermee wegkomen als ze half of niet ingesteld waren. Dat is voorbij. Google en Yahoo begonnen begin 2024 met het actief afdwingen van authenticatie voor wie grotere hoeveelheden mail verstuurt, en Microsoft volgde in 2025 met vergelijkbare eisen voor outlook.com, hotmail.com en live.com. Dat zijn samen zo ongeveer alle adressen waar jouw klanten zitten.</p>
+
+<p class="fs-5 mb-4">De reden is simpel: phishing is zo goedkoop en zo goed geworden dat de grote partijen niet meer per bericht kunnen beoordelen of iets echt is. Dus verleggen ze de bewijslast naar de verzender. Kun je niet aantonen dat jij het bent, dan is het risico voor hen te groot en verdwijn je in de spam. Voor jou betekent dat een verschuiving die je makkelijk mist: iets wat vroeger netjes en verstandig was, is nu de voorwaarde om überhaupt aan te komen. Wie het laat liggen wordt niet gestraft met een waarschuwing, maar met stilte.</p>
+
+<h2 class="mt-5 mb-3 fs-8">De volgorde waarin je het aanpakt</h2>
+
+<p class="fs-5 mb-4">Vrijwel elk artikel geeft je een lijstje. Bijna geen enkel artikel geeft je de volgorde, en juist daar gaat het mis, want stap één is niet SPF instellen.</p>
+
+<p class="fs-5 mb-4"><strong>Stap 1: maak de lijst van wie er namens jou mailt.</strong> Dit is de stap die iedereen overslaat en die alles bepaalt. Vrijwel elk MKB-bedrijf verstuurt vanaf meer plekken dan het denkt: je gewone mailbox, het contactformulier op je site, je facturatiepakket, je nieuwsbriefsysteem, je offertetool, je afsprakenherinneringen. Elk daarvan verstuurt uit jouw naam. Vergeet je er een, dan zet je straks een slot op de deur waar je eigen facturen doorheen moesten.</p>
+
+<p class="fs-5 mb-4"><strong>Stap 2: zet SPF goed, in één record.</strong> Alle partijen van je lijst horen in dat ene record thuis. Een veelgemaakte fout is twee losse SPF-records naast elkaar zetten als er een tool bijkomt, waardoor beide ongeldig worden. Eén record, alles erin.</p>
+
+<p class="fs-5 mb-4"><strong>Stap 3: zet DKIM aan per systeem.</strong> Dit doe je per tool, in de instellingen van die tool zelf. De meeste serieuze pakketten hebben er tegenwoordig gewoon een knop of een wizard voor.</p>
+
+<p class="fs-5 mb-4"><strong>Stap 4: zet DMARC eerst op meekijken.</strong> Begin met de stand waarin je alleen rapporten ontvangt en er nog niets wordt tegengehouden. Laat dat een paar weken lopen en kijk wat er binnenkomt. Nu zie je precies wie er namens jou mailt, inclusief de tool die je in stap 1 vergeten was.</p>
+
+<p class="fs-5 mb-4"><strong>Stap 5: pas dán aanscherpen.</strong> Klopt het beeld en gaat alles wat van jou is netjes door de controle heen, dan zet je de instructie strenger. In deze volgorde loop je geen enkel risico, en zonder deze volgorde loop je het risico uit de volgende paragraaf.</p>
+
+<h2 class="mt-5 mb-3 fs-8">De fout die je het duurst komt te staan</h2>
+
+<p class="fs-5 mb-4">Iemand leest dat DMARC belangrijk is, zet hem meteen op de strengste stand, en gaat tevreden verder. Twee dagen later belt een klant met de vraag waar zijn factuur blijft. Wat er is gebeurd: het facturatiepakket stond niet op de gastenlijst uit stap 1, dus die facturen voldeden niet aan de controle, en jij had net zelf de instructie gegeven om alles wat niet klopt te weigeren. Ze zijn niet in de spam beland. Ze zijn helemaal nergens beland.</p>
+
+<p class="fs-5 mb-4">Dat is de reden dat stap 4 bestaat en dat je hem niet mag overslaan. Je zet de bewaking pas scherp als je weet wie er allemaal door de deur moet. Dit is ook precies het soort werk waar één keer goed nadenken meer waard is dan snelheid, en waar het handig is als je klantcontact en je verzendende systemen sowieso in één overzicht staan in plaats van verspreid over zes losse tools. Wie zijn klantcommunicatie in een <a href="/crm" class="text-primary">crm voor mkb</a> heeft staan, weet in één blik welke systemen namens hem mailen.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Veelgestelde vragen over e-mail in de spam</h2>
+
+<p class="fs-5 mb-4"><strong>Hoe weet ik of mijn e-mail in de spam belandt?</strong><br>Niet door jezelf een mail te sturen, want je eigen server vertrouwt zichzelf. Test met een dienst als mail-tester, en vraag daarnaast drie klanten bij verschillende providers om in hun spamfolder te kijken. Die twee samen geven je binnen een half uur een eerlijk beeld.</p>
+
+<p class="fs-5 mb-4"><strong>Kan ik SPF, DKIM en DMARC zelf instellen?</strong><br>Technisch gezien wel, het zijn drie stukjes tekst bij je domeinnaam. Het risico zit niet in het instellen maar in het overzicht: één vergeten systeem en je blokkeert je eigen facturen. Heb je meer dan twee of drie verzendende systemen, dan is dit werk uitbesteden vaak verstandiger dan een middag zelf puzzelen.</p>
+
+<p class="fs-5 mb-4"><strong>Hoelang duurt het voordat het werkt?</strong><br>De wijziging zelf is meestal binnen een paar uur actief. Je reputatie herstelt langzamer. Ben je een tijd als spam aangemerkt, reken dan op enkele weken van normaal, rustig mailen voordat je weer standaard in de inbox landt.</p>
+
+<p class="fs-5 mb-4"><strong>Helpt dit ook als ik gewoon via Gmail of Microsoft 365 mail?</strong><br>Ja, en het is een veelgemaakt misverstand dat het dan automatisch goed staat. Die partijen leveren de mailbox, maar jij bent eigenaar van je domeinnaam, en de gastenlijst en het zegel horen bij dat domein. Zeker zodra je naast je mailbox ook een nieuwsbrief of facturatiepakket gebruikt, moet je het zelf regelen.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Conclusie: even aan de deur voelen</h2>
+
+<p class="fs-5 mb-4">Het vervelendste aan een vriezer die niet dichtklikt is niet de schade. Het is dat je hem twee weken lang bent gepasseerd zonder iets te merken, terwijl het probleem al die tijd op te lossen was met twee seconden aandacht. Er was geen alarm, want een vriezer piept niet. De enige manier om het te weten is er zelf even aan voelen.</p>
+
+<p class="fs-5 mb-4">Je mailserver piept ook niet. Hij vertelt je niet dat de offerte van vorige week nooit gelezen is, en hij zal het volgende maand ook niet vertellen. Daarom is dit geen onderwerp dat je oppakt als er iets misgaat, maar een controle die je één keer doet en daarna jaren met rust laat. Loop de drie tests van hierboven langs, maak de lijst van wie er namens jou mailt, en zet het in de juiste volgorde goed.</p>
+
+<p class="fs-5 mb-4">Staat die basis eenmaal, dan wordt e-mail ineens het goedkoopste kanaal dat je hebt, want elk bericht dat je daarna automatiseert komt ook echt aan. Welke opvolgingen dat concreet zijn, van offerte-opvolging tot winback, staat in ons overzicht van <a href="/blog/email-flows-mkb-vijf-must-haves" class="text-primary">vijf e-mail flows die elk MKB zou moeten hebben</a>.</p>
+
+<p class="fs-5 mb-4">Wil je het niet zelf uitzoeken, dan is dit precies het soort onzichtbare basis dat wij als <a href="/ai-marketing-bureau" class="text-primary">ai marketing bureau</a> standaard inregelen, samen met de rest van de <a href="/automations" class="text-primary">workflow automatisering mkb</a> die eronder hangt. Jij schrijft de offerte, wij zorgen dat hij aankomt. En als je eerst wil weten of er bij jou überhaupt iets misgaat: begin dan gewoon met die drie klanten en hun spamfolder. Dat kost je een appje en het is de goedkoopste meting die je deze maand doet.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-10 col-xl-8 mx-auto">
+        <div class="bg-dark p-5 text-center" data-aos="fade-up">
+          <h2 class="text-white fs-8 mb-3">Klaar om te groeien?</h2>
+          <p class="text-white text-opacity-70 mb-4">Ontdek hoe STUDIOLEE jouw bedrijf kan transformeren.</p>
+          <a href="/free-trial" class="btn btn-primary text-dark fw-bold px-5 py-3">Start nu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container"><div class="row justify-content-center"><div class="col-lg-10 col-xl-8 mx-auto"><p class="lees-ook my-5 px-4 py-3 rounded-3 fs-6 text-dark" style="background-color: rgba(193, 255, 114, 0.18);"><strong class="text-dark">Lees ook:</strong> <a href="/blog/inactieve-klanten-reactiveren-email-automation" class="text-dark fw-semibold">Inactieve klanten reactiveren met e-mail</a> &rarr;</p></div></div></div>
+</div>
+<section class="related-articles py-5">
+      <div class="container">
+        <h2 class="mb-4">Gerelateerde artikelen</h2>
+        <div class="row g-4" id="related-articles-grid" data-slug="email-belandt-in-spam-spf-dkim-dmarc" data-cluster="email-marketing">
+          <p class="text-muted">Laden...</p>
+        </div>
+      </div>
+    </section>
+    <script src="/assets/js/related-articles.js"></script>
+    <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 mb-8 mb-xl-0">
+          <div class="d-flex flex-column gap-8 pe-xl-5">
+            <a href="/"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE" class="img-fluid mb-5" style="max-height: 100px;"></a>
+            <h2 class="mb-0 text-white">Laten we samenwerken</h2>
+            <div class="d-flex flex-column gap-2">
+              <a href="mailto:tim@studiolee.nl" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
+                tim@studiolee.nl
+              </a>
+              <a href="tel:+3197010223669" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:phone" class="fs-7 text-primary"></iconify-icon>
+                +31 970 102 23669
+              </a>
+            </div>
+          </div>
+        </div>
+                <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <p class="mb-3 text-white text-opacity-50 fs-7 fw-bold">Diensten</p>
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/ai-marketing-bureau">AI Marketing Bureau</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/seo">SEO</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/linkbuilding">Linkbuilding</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/chatbot">AI Chatbot</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/voice-ai">AI Telefonist</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/social-media">Social Media</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/reviews">Reviews</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/marketing-uitbesteden">Marketing uitbesteden</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/automations">Automatisering</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/crm">CRM</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/herinneringen">Herinneringen</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/website-laten-maken">Website laten maken</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/">Home</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/tarieven">Tarieven</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/free-trial">Gratis AI Scan</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/blog">Blog</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/portfolio">Portfolio</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/over-ons">Over ons</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/algemene-voorwaarden">Algemene Voorwaarden</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/privacy">Privacy Policy</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/legal">Bedrijfsgegevens</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-3 mb-8 mb-xl-0">
+          <p class="mb-0 text-white text-opacity-70 text-md-end">&copy; 2026 STUDIOLEE</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/libs/aos-master/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="/assets/js/custom.js"></script>
+<div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
+<script src="/assets/js/cookie-banner.js" defer></script>
+</body>
+</html>

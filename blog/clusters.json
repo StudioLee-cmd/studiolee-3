@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "email-belandt-in-spam-spf-dkim-dmarc",
+      "title": "E-mails belanden in spam: SPF, DKIM en DMARC",
+      "date": "2026-07-28",
+      "cluster": "email-marketing",
+      "image": "/assets/images/blog/email-belandt-in-spam-spf-dkim-dmarc.jpg"
+    },
+    {
       "slug": "conversieratio-website-mkb",
       "title": "Conversieratio website: wat is goed voor MKB?",
       "date": "2026-07-27",
