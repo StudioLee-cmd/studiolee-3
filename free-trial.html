@@ -575,6 +575,7 @@
 
         var data = new FormData(form);
         var successId = (id === 'freeScanForm') ? 'scanSuccess' : 'trialSuccess';
+        var errorId = (id === 'freeScanForm') ? 'scanError' : 'trialError';
 
         function showSuccess(){
           form.classList.add('d-none');
@@ -582,9 +583,43 @@
           if (s) s.classList.remove('d-none');
         }
 
+        // Een aanvraag die niet aankomt mag NOOIT als 'gelukt' tonen. Gemeten 30-07 vanaf
+        // Origin https://www.studiolee.nl: een geslaagde POST draagt wel een
+        // access-control-allow-origin-header, een foutrespons niet. De browser blokkeert die
+        // laatste, dus een echte fout landt of als !response.ok of als een afgewezen promise —
+        // beide takken tonen hieronder de fout. Let op: een 200 bewijst alleen dat de webhook de
+        // submit AANNAM (responseMode onReceived), niet dat het rapport geleverd is; dat deel
+        // wordt aan onze kant bewaakt (check_leads.py --levering).
+        function showError(){
+          var box = document.getElementById(errorId);
+          if (!box) {
+            box = document.createElement('div');
+            box.id = errorId;
+            box.className = 'mt-3 p-3 rounded-3 border border-dark text-dark';
+            box.setAttribute('role', 'alert');
+            box.style.background = '#fff1f1';
+            box.innerHTML = '<strong>Versturen is niet gelukt.</strong><br>' +
+              'Je aanvraag is niet bij ons aangekomen, dus er komt ook geen rapport. Probeer het ' +
+              'zo nog een keer, of mail ons direct op ' +
+              '<a href="mailto:tim@studiolee.nl" class="text-dark"><u>tim@studiolee.nl</u></a>.';
+            form.parentNode.insertBefore(box, form.nextSibling);
+          }
+          box.classList.remove('d-none');
+        }
+        function hideError(){
+          var box = document.getElementById(errorId);
+          if (box) box.classList.add('d-none');
+        }
+        function done(){
+          form.dataset.submitting = '';
+          clearFormLoading(form);
+        }
+
+        hideError();
         fetch(form.action, {method:'POST', body: data})
           .then(function(response){
-            if (id === 'freeTrialForm' && response && response.ok) {
+            if (!response || !response.ok) { done(); showError(); return; }
+            if (id === 'freeTrialForm') {
               return response.text().then(function(text){
                 var stripeUrl = extractStripeUrl(text);
                 if (stripeUrl) {
@@ -592,25 +627,21 @@
                   window.location.href = stripeUrl;
                   return;
                 }
-                form.dataset.submitting = '';
-                clearFormLoading(form);
+                done();
                 showSuccess();
               }).catch(function(){
-                // CORS or read error — fall back to success div
-                form.dataset.submitting = '';
-                clearFormLoading(form);
+                // De submit is met een ok-response aangekomen; alleen het uitlezen van de body
+                // mislukte. Dat is geen mislukte aanvraag, dus hier blijft succes de juiste uitkomst.
+                done();
                 showSuccess();
               });
             }
-            // freeScanForm or non-ok response: success-div behavior
-            form.dataset.submitting = '';
-            clearFormLoading(form);
+            done();
             showSuccess();
           })
           .catch(function(){
-            form.dataset.submitting = '';
-            clearFormLoading(form);
-            showSuccess();
+            done();
+            showError();
           });
       });
     });
