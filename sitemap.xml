@@ -115,6 +115,12 @@
     <changefreq>yearly</changefreq>
   </url>
   <url>
+    <loc>https://www.studiolee.nl/ai-en-privacy</loc>
+    <lastmod>2026-07-30T00:00:00+00:00</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.studiolee.nl/legal</loc>
     <lastmod>2026-04-30T17:31:10+00:00</lastmod>
     <priority>0.3</priority>
