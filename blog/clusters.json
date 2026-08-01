@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "slug": "ai-chatbot-vergelijken-5-soorten",
+      "title": "AI-chatbot vergelijken: 5 soorten op een rij",
+      "date": "2026-08-01",
+      "cluster": "chatbot",
+      "image": "/assets/images/blog/ai-chatbot-vergelijken-5-soorten.jpg"
+    },
+    {
+      "slug": "seo-uitbesteden-amsterdam-wat-is-anders",
+      "title": "SEO uitbesteden in Amsterdam: wat is anders?",
+      "date": "2026-08-01",
+      "cluster": "seo",
+      "image": "/assets/images/blog/seo-uitbesteden-amsterdam-wat-is-anders.jpg"
+    },
+    {
       "slug": "ai-vindbaarheid-meten-mkb-5-stappen",
       "title": "AI-vindbaarheid meten: 5 stappen voor MKB",
       "date": "2026-07-29",
