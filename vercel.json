@@ -26,9 +26,45 @@
       "source": "/contact",
       "destination": "/over-ons",
       "permanent": true
+    },
+    {
+      "source": "/blog/chatbot-website-mkb-wanneer-werkt-het",
+      "destination": "/blog/ai-chatbot-website-mkb-wanneer-wel-niet",
+      "permanent": true
+    },
+    {
+      "source": "/blog/google-bedrijfsprofiel-mkb",
+      "destination": "/blog/google-bedrijfsprofiel-aanmaken-mkb-startgids",
+      "permanent": true
+    },
+    {
+      "source": "/blog/lokale-vindbaarheid-verbeteren-mkb-gids",
+      "destination": "/blog/lokale-vindbaarheid-mkb-complete-gids",
+      "permanent": true
     }
   ],
   "routes": [
+    {
+      "src": "/blog/lokale-vindbaarheid-verbeteren-mkb-gids",
+      "headers": {
+        "Location": "/blog/lokale-vindbaarheid-mkb-complete-gids"
+      },
+      "status": 308
+    },
+    {
+      "src": "/blog/google-bedrijfsprofiel-mkb",
+      "headers": {
+        "Location": "/blog/google-bedrijfsprofiel-aanmaken-mkb-startgids"
+      },
+      "status": 308
+    },
+    {
+      "src": "/blog/chatbot-website-mkb-wanneer-werkt-het",
+      "headers": {
+        "Location": "/blog/ai-chatbot-website-mkb-wanneer-wel-niet"
+      },
+      "status": 308
+    },
     {
       "src": "/website-laten-maken/barbershop",
       "headers": {
