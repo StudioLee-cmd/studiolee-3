@@ -17521,3 +17521,32 @@ section::after {
     max-height: 450px;
   }
 }
+
+/* ⚡ LCP — zet op élk element BOVEN DE VOUW `.sl-reveal` (+ `.sl-reveal-1/2/3` voor de stagger) en
+   géén `data-aos`: deze reveal animeert alléén `transform`, dus de tekst staat er bij de EERSTE
+   paint en hoeft nergens op te wachten.
+   WAAROM (gemeten 2026-08-05, todo `studiolee-nl-homepage-lcp-is-render-delay-op-de-cookiebanner`):
+   aos.css draagt `[data-aos^=fade][data-aos^=fade]{opacity:0}`, dus elk hero-element met `data-aos`
+   staat op opacity 0 tot `AOS.init()` draait — en die init hangt achter jquery + bootstrap +
+   owl.carousel + aos + custom.js + de iconify-CDN onderaan de body. Een element op opacity 0 is
+   geen LCP-kandidaat. Gemeten gevolg op de homepage: over de HELE Lighthouse-trace was er precies
+   ÉÉN `largestContentfulPaint::Candidate`, de <p> van de cookie-banner (10.323 px²) — het enige
+   zichtbare tekstblok van de pagina. LCP 9.683 ms waarvan 9.015 ms (93%) render delay, bij TBT
+   1,5 ms en CLS 0: geen CPU- en geen layout-probleem, puur een paint die op JS wachtte.
+   ⚠️ BEWUST GEEN `opacity` in de animatie — dezelfde gemeten keuze als `.sl-reveal` op de
+   niche-vloot (`alpha1/scripts/fix_hero_lcp_fleet.py`): een reveal die op opacity 0 begint houdt de
+   LCP net zo hard tegen zodra de main thread vastzit. De inhoud schuift omhoog, 'ie verschijnt niet.
+   `backwards` (niet `both`): na afloop laat de animatie de waarde weer los. */
+@keyframes sl-reveal-up {
+  from { transform: translateY(20px); }
+  to   { transform: none; }
+}
+
+.sl-reveal   { animation: sl-reveal-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
+.sl-reveal-1 { animation-delay: 0.08s; }
+.sl-reveal-2 { animation-delay: 0.16s; }
+.sl-reveal-3 { animation-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sl-reveal { animation: none; }
+}
