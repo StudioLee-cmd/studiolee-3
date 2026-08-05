@@ -259,6 +259,77 @@
       .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockcaption, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockcaption { color:rgba(255,255,255,0.55); }
     </style>
 
+    <section id="showcase" class="niche-showcase py-5 py-lg-7 py-xl-8" style="scroll-margin-top:90px">
+    <style>
+      .niche-showcase { background:#141414; color:#fff; position:relative; overflow:hidden; }
+      .niche-showcase::before { content:""; position:absolute; top:-30%; right:-10%; width:55%; height:120%; background:radial-gradient(closest-side,rgba(212,237,49,0.16),rgba(212,237,49,0)); pointer-events:none; }
+      .niche-showcase__eyebrow { display:inline-flex; align-items:center; gap:0.5rem; background:#d4ed31; color:#141414; border-radius:99px; padding:6px 16px; font-size:0.72rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:1.25rem; }
+      .niche-showcase__eyebrow iconify-icon { font-size:0.95rem; }
+      .niche-showcase h2 { color:#fff; text-wrap:balance; }
+      .niche-showcase__lead { color:rgba(255,255,255,0.72); }
+      .niche-showcase__card { display:grid; grid-template-columns:1.35fr 1fr; background:#1c1c1c; border:1px solid rgba(255,255,255,0.12); border-radius:1.5rem; overflow:hidden; transition:border-color .3s ease,transform .3s ease,box-shadow .3s ease; }
+      .niche-showcase__card:hover { border-color:rgba(212,237,49,0.55); transform:translateY(-6px); box-shadow:0 30px 70px rgba(0,0,0,0.45); }
+      .niche-showcase__viewport { position:relative; overflow:hidden; min-height:100%; aspect-ratio:16/11; background:#0d0d0d; }
+      .niche-showcase__poster { position:absolute; top:0; left:0; width:100%; height:auto; display:block; transform:translateY(0); transition:transform 11s linear; }
+      .niche-showcase__card:hover .niche-showcase__poster { transform:translateY(-84%); }
+      .niche-showcase__playbadge { position:absolute; top:16px; left:16px; z-index:3; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; backdrop-filter:blur(6px); }
+      .niche-showcase__playbadge iconify-icon { font-size:0.95rem; color:#d4ed31; }
+      .niche-showcase__card:hover .niche-showcase__playbadge { background:#d4ed31; color:#141414; }
+      .niche-showcase__card:hover .niche-showcase__playbadge iconify-icon { color:#141414; }
+      .niche-showcase__body { padding:2.5rem; display:flex; flex-direction:column; gap:0.85rem; }
+      .niche-showcase__tier { font-size:0.7rem; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:#d4ed31; }
+      .niche-showcase__body h3 { color:#fff; font-size:2rem; margin:0; }
+      .niche-showcase__body p { color:rgba(255,255,255,0.7); margin:0; font-size:1rem; }
+      .niche-showcase__marks { list-style:none; padding:0; margin:0.35rem 0 0; display:flex; flex-direction:column; gap:0.6rem; }
+      .niche-showcase__marks li { display:flex; align-items:flex-start; gap:0.65rem; color:rgba(255,255,255,0.82); font-size:0.93rem; line-height:1.45; }
+      .niche-showcase__marks iconify-icon { color:#d4ed31; font-size:1.1rem; flex:0 0 auto; margin-top:2px; }
+      .niche-showcase__cta { margin-top:auto; padding-top:1.5rem; display:inline-flex; align-items:center; gap:0.6rem; font-weight:800; font-size:1rem; color:#d4ed31; }
+      .niche-showcase__cta iconify-icon { background:#d4ed31; color:#141414; border-radius:50%; padding:5px; font-size:1.2rem; }
+      .niche-showcase__ladder { margin:2.5rem 0 0; display:flex; align-items:flex-start; gap:0.7rem; color:rgba(255,255,255,0.6); font-size:0.95rem; }
+      .niche-showcase__ladder iconify-icon { color:#d4ed31; font-size:1.15rem; flex:0 0 auto; margin-top:2px; }
+      @media (max-width: 991.98px) {
+        .niche-showcase__card { grid-template-columns:1fr; }
+        .niche-showcase__viewport { aspect-ratio:16/10; }
+        .niche-showcase__body { padding:1.75rem; }
+        .niche-showcase__body h3 { font-size:1.6rem; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .niche-showcase__poster, .niche-showcase__card { transition:none; }
+        .niche-showcase__card:hover .niche-showcase__poster { transform:translateY(0); }
+      }
+    </style>
+      <div class="container position-relative">
+        <div class="row mb-6">
+          <div class="col-lg-9">
+            <span class="niche-showcase__eyebrow" data-aos="fade-up" data-aos-duration="1000"><iconify-icon icon="lucide:gem"></iconify-icon>Maatwerk</span>
+            <h2 class="mb-3" data-aos="fade-up" data-aos-duration="1000">Zo ziet een restaurant website eruit die volledig op maat gebouwd is</h2>
+            <p class="mb-0 fs-5 niche-showcase__lead" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">Bovenaan staat het maatwerk: een showcase die we van nul opbouwen rond het concept van &eacute;&eacute;n zaak, met eigen beelden, een eigen merkteken en een moment dat gasten onthouden. Hieronder staan de vier templates waar je vandaag mee kunt starten.</p>
+          </div>
+        </div>
+        <a href="https://studiolee-command-center.vercel.app/app/previews/templates/restaurants/showcase-avondrood.html" target="_blank" rel="nofollow noopener" class="text-decoration-none d-block" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+          <div class="niche-showcase__card">
+            <div class="niche-showcase__viewport">
+              <span class="niche-showcase__playbadge"><iconify-icon icon="lucide:play"></iconify-icon>Hover om te scrollen</span>
+              <img src="/assets/images/showcases/restaurant-avondrood.jpg" alt="Restaurant website showcase &mdash; Avondrood, volledig op maat gebouwd door STUDIOLEE" class="niche-showcase__poster" loading="lazy">
+            </div>
+            <div class="niche-showcase__body">
+              <span class="niche-showcase__tier">Showcase &middot; volledig op maat</span>
+              <h3>Avondrood</h3>
+              <p>Een fine dining aan het IJ waar de pagina met je meereist van gouden uur naar kaarslicht. Het concept wordt niet verteld, je scrollt er doorheen.</p>
+              <ul class="niche-showcase__marks">
+              <li><iconify-icon icon="lucide:check"></iconify-icon><span>De avond reist op scroll van gouden uur naar kaarslicht</span></li>
+              <li><iconify-icon icon="lucide:check"></iconify-icon><span>Gasten stellen hun eigen menu samen, de kaart schrijft zichzelf</span></li>
+              <li><iconify-icon icon="lucide:check"></iconify-icon><span>De zonsondergang van vandaag staat live in de statusband</span></li>
+              <li><iconify-icon icon="lucide:check"></iconify-icon><span>Volledige kaart met prijzen, reserveren, journaal en FAQ</span></li>
+              </ul>
+              <span class="niche-showcase__cta"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon>Bekijk de live showcase</span>
+            </div>
+          </div>
+        </a>
+        <p class="niche-showcase__ladder" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"><iconify-icon icon="lucide:info"></iconify-icon><span>Een template is het startpunt, vanaf &euro;79 per maand. Een showcase is maatwerk: prijs op aanvraag, na een gesprek over het concept.</span></p>
+      </div>
+    </section>
+
     <section id="templates" class="templates-grid py-5 py-lg-7 py-xl-8 bg-light-gray" style="scroll-margin-top:90px">
       <div class="container">
         <div class="row mb-8">
