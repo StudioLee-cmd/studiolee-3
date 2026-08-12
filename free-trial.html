@@ -228,6 +228,27 @@
                   <form id="freeScanForm" class="d-flex flex-column gap-3"
                     action="https://n8n.aireclamestudio.nl/webhook/free-scan" method="POST">
                     <input type="hidden" name="source" value="studiolee-3-free-scan">
+                    <!-- free-scan-onderwerp: GEGENEREERD door alpha1/scripts/patch_free_scan_voordeur.py
+                         uit free_scan_score.voordeur() — niet met de hand bijwerken. -->
+                    <div id="free-scan-onderwerp-veld">
+                      <label for="scanOnderwerp" class="form-label text-dark mb-1" style="font-size:0.95rem;">Waar wil je dat we naar kijken?</label>
+                      <select class="form-select border border-dark rounded-3 px-3 py-3 bg-white" id="scanOnderwerp" name="onderwerp" required>
+                        <option value="" disabled selected>Kies wat je wilt weten…</option>
+                        <option value="seo">Ik wil beter gevonden worden in Google</option>
+                        <option value="cro">Ik krijg wel bezoekers, maar te weinig aanvragen</option>
+                        <option value="ai">Ik wil dat AI-assistenten mij noemen</option>
+                        <option value="lokaal">Ik wil gevonden worden in mijn eigen regio</option>
+                        <option value="trends">Ik wil weten wat er in mijn markt speelt</option>
+                        <option value="praat">Ik weet het niet — ik wil er gewoon even over praten</option>
+                      </select>
+                    </div>
+                    <div id="free-scan-onderwerp-praat" class="d-none text-center">
+                      <p class="text-dark mb-3" style="font-size:0.95rem;">Prima — dan kijken we er samen naar. Kies zelf hoe lang je wilt praten; het is gratis en vrijblijvend.</p>
+                      <div class="d-flex gap-2">
+                        <a href="https://cal.com/studiolee/15min" class="btn btn-dark w-100 justify-content-center rounded-pill py-3" style="background:#1F2A2E !important;color:#fff !important;"><span class="text-white">15 minuten</span></a>
+                        <a href="https://cal.com/studiolee/30min" class="btn btn-dark w-100 justify-content-center rounded-pill py-3" style="background:#1F2A2E !important;color:#fff !important;"><span class="text-white">30 minuten</span></a>
+                      </div>
+                    </div>
                     <input type="email" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="email" placeholder="voornaam@bedrijf.nl" required>
                     <input type="url" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="website" placeholder="https://jouwbedrijf.nl" required>
                     <div class="form-check">
@@ -673,6 +694,38 @@
 
 <div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
 <script src="/assets/js/cookie-banner.js" defer></script>
+
+  <script>
+    // free-scan-onderwerp: GEGENEREERD — zie alpha1/scripts/patch_free_scan_voordeur.py
+    (function(){
+      var sel = document.getElementById("scanOnderwerp");
+      var praat = document.getElementById("free-scan-onderwerp-praat");
+      var form = document.getElementById("freeScanForm");
+      if(!sel || !praat || !form) return;
+      // routes die (nog) geen rapport kunnen leveren → het gesprek, nooit een lege scan
+      var GESPREK = ["trends", "praat"];
+      var verbergen = ["email","website"];
+      function toon(){
+        var isPraat = GESPREK.indexOf(sel.value) !== -1;
+        praat.classList.toggle("d-none", !isPraat);
+        verbergen.forEach(function(naam){
+          var el = form.querySelector('[name="' + naam + '"]');
+          if(!el) return;
+          el.classList.toggle("d-none", isPraat);
+          el.required = !isPraat;
+        });
+        var akkoord = document.getElementById("scanAkkoord");
+        if(akkoord && akkoord.parentElement) {
+          akkoord.parentElement.classList.toggle("d-none", isPraat);
+          akkoord.required = !isPraat;
+        }
+        var knop = form.querySelector('button[type="submit"]');
+        if(knop) knop.classList.toggle("d-none", isPraat);
+      }
+      sel.addEventListener("change", toon);
+      toon();
+    })();
+  </script>
 </body>
 
 </html>
