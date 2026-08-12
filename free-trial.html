@@ -290,6 +290,16 @@
                     </style>
                     <input type="email" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="email" placeholder="voornaam@bedrijf.nl" required>
                     <input type="text" class="form-control border border-light rounded-3 px-3 py-3 trial-input-dark" name="bedrijfsnaam" placeholder="Van Der Lee BV" required>
+                    <!-- AI-Act art. 50 (Tim 12-08-2026): informeren bij het AANMELDEN i.p.v. via een losse
+                         mailronde. Kop + link staan in .agent/skills/dpa_generator/
+                         toestemming-aanmelding.json §ai_melding; de ZIN komt uit
+                         alpha1/data/platform/ai-transparantie.json §kort — dezelfde bron als
+                         /ai-en-privacy, zodat pagina en mededeling nooit uit elkaar lopen.
+                         Nooit hier hertikken. -->
+                    <p class="text-white text-opacity-75 mb-3" data-ai-act-melding style="font-size:0.9rem;">
+                      <strong class="text-white">In deze dienst zit AI.</strong> Vanaf 2 augustus 2026 vraagt de AI-Act dat mensen kunnen weten dat ze met AI te maken hebben. Wij vertellen je wat dat voor jou betekent en geven je de formulering; de melding zelf zet jij, want het is jouw systeem.
+                      <a href="/ai-en-privacy" class="text-primary fw-bold">Wat dat precies betekent</a>.
+                    </p>
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="trialAkkoord"
                         name="consent_account" value="ja" required>
@@ -309,7 +319,7 @@
                         StudioLee mag me af en toe iets sturen over nieuwe mogelijkheden. Hoogstens 4 keer per jaar, en nooit verkooppraat. Daarbuiten mailen we je alleen over je eigen account. Afmelden kan altijd.
                       </label>
                     </div>
-                    <input type="hidden" name="consent_versie" value="v1.06547ae7">
+                    <input type="hidden" name="consent_versie" value="v1.bc63ba7c">
                     <button type="submit" class="btn w-100 justify-content-center">
                       <span class="btn-text">Aanmelden: 14 dagen voor €1</span>
                       <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
