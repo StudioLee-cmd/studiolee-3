@@ -228,6 +228,10 @@
                   <form id="freeScanForm" class="d-flex flex-column gap-3"
                     action="https://n8n.aireclamestudio.nl/webhook/free-scan" method="POST">
                     <input type="hidden" name="source" value="studiolee-3-free-scan">
+                    <!-- free-scan-samenstellen: GEGENEREERD door alpha1/scripts/patch_free_scan_voordeur.py
+                         — stap 1 van 2: de bezoeker stelt z'n eigen scan samen (principe 4,
+                         IKEA/endowment). Niet met de hand bijwerken. -->
+                    <div id="free-scan-samenstellen" style="display:flex;flex-direction:column;gap:1rem;">
                     <!-- free-scan-onderwerp: GEGENEREERD door alpha1/scripts/patch_free_scan_voordeur.py
                          uit free_scan_score.voordeur() — niet met de hand bijwerken. -->
                     <div id="free-scan-onderwerp-veld">
@@ -249,8 +253,22 @@
                         <a href="https://cal.com/studiolee/30min" class="btn btn-dark w-100 justify-content-center rounded-pill py-3" style="background:#1F2A2E !important;color:#fff !important;"><span class="text-white">30 minuten</span></a>
                       </div>
                     </div>
-                    <input type="email" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="email" placeholder="voornaam@bedrijf.nl" required>
                     <input type="url" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="website" placeholder="https://jouwbedrijf.nl" required>
+                      <div id="free-scan-samenstellen-kaart" class="d-none border border-dark rounded-3 p-3 bg-white">
+                        <span class="badge bg-primary text-dark rounded-pill mb-2" style="font-size:0.7rem;">Jouw scan</span>
+                        <p class="fw-bold text-dark mb-2" style="font-size:0.95rem;"><span id="free-scan-samenstellen-titel"></span><span id="free-scan-samenstellen-domein" class="fw-normal"></span></p>
+                        <p class="text-dark mb-2" style="font-size:0.85rem;"><span class="fw-bold">Hier kijken we voor je naar:</span> <span id="free-scan-samenstellen-wel"></span></p>
+                        <p class="text-dark mb-0" style="font-size:0.85rem;opacity:0.7;"><span class="fw-bold">Niet in deze gratis check:</span> <span id="free-scan-samenstellen-niet"></span></p>
+                      </div>
+                      <button type="button" id="free-scan-samenstellen-door" class="btn btn-dark w-100 justify-content-center rounded-pill py-3 mt-3" style="background:#1F2A2E !important;color:#fff !important;">
+                        <span class="btn-text text-white">Doorgaan</span>
+                        <iconify-icon icon="lucide:arrow-right" class="btn-icon bg-primary text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+                      </button>
+                      <p class="mb-0 mt-2 text-center" style="font-size:0.8rem;"><a href="#" id="free-scan-samenstellen-overslaan" class="text-dark" style="opacity:0.7;">Ik vul liever alles in één keer in</a></p>
+                    </div>
+                    <div id="free-scan-samenstellen-gate" class="d-none" style="display:flex;flex-direction:column;gap:1rem;">
+                      <p class="text-dark mb-2" style="font-size:0.9rem;">Je scan staat klaar. Waar mogen we 'm naartoe sturen?</p>
+                    <input type="email" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" name="email" placeholder="voornaam@bedrijf.nl" required>
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" id="scanAkkoord" required>
                       <label class="form-check-label text-dark" for="scanAkkoord">
@@ -262,6 +280,7 @@
                       <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-primary text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
                     </button>
                     <p class="mb-0 text-center text-dark" style="font-size:0.85rem;opacity:0.7;">Check ook je spam als je het rapport niet ziet.</p>
+                    </div>
                   </form>
                   <div id="scanSuccess" class="d-none text-center py-4 text-dark">
                     <span class="round-64 rounded-circle bg-dark hstack justify-content-center d-inline-flex mb-3">
@@ -696,7 +715,7 @@
 <script src="/assets/js/cookie-banner.js" defer></script>
 
   <script>
-    // free-scan-onderwerp: GEGENEREERD — zie alpha1/scripts/patch_free_scan_voordeur.py
+    // free-scan-onderwerp + free-scan-samenstellen: GEGENEREERD — zie alpha1/scripts/patch_free_scan_voordeur.py
     (function(){
       var sel = document.getElementById("scanOnderwerp");
       var praat = document.getElementById("free-scan-onderwerp-praat");
@@ -704,25 +723,72 @@
       if(!sel || !praat || !form) return;
       // routes die (nog) geen rapport kunnen leveren → het gesprek, nooit een lege scan
       var GESPREK = ["trends", "praat"];
-      var verbergen = ["email","website"];
+      // wat de scan per route WEL en NIET bekijkt — derived uit free_scan_score.REGISTER
+      var KAART = {"seo": {"titel": "SEO-scan", "wel": ["de pagina geeft een normale statuscode (200)", "er staat een paginatitel", "er staat een meta-description", "er staat precies een H1 op de pagina", "de site draait op https"], "wel_meer": 8, "wel_n": 13, "niet": ["hoeveel artikelen ONTBREKEN er per cluster t.o.v. de vraag", "robots.txt, sitemap.xml en noindex staan goed", "de site publiceert nog — er kwam het afgelopen jaar iets bij"], "niet_meer": 6, "niet_n": 9}, "cro": {"titel": "CRO-scan", "wel": ["meteen duidelijk WAT ze doen, VOOR WIE en WAAR", "er staat een duidelijke actie-knop of actie-link", "meerdere manieren om contact te leggen", "klantcitaten, beoordelingen of aantallen in de tekst", "cases, portfolio, ervaring, certificaten"], "wel_meer": 2, "wel_n": 7, "niet": ["waar bezoekers werkelijk afhaken (analytics)", "staat die actie ook BOVEN de vouw, op desktop en mobiel", "hoe de pagina er op een telefoon uitziet"], "niet_meer": 4, "niet_n": 7}, "ai": {"titel": "AI-readiness-scan", "wel": ["de tekst zegt expliciet wie het bedrijf is, wat het doet en waar", "er staan vraag-en-antwoord-koppen of een FAQ", "er is een eigen kennis- of artikelensectie", "diensten worden uitgelegd, niet alleen opgesomd", "de meta-description zegt echt iets"], "wel_meer": 0, "wel_n": 5, "niet": ["wordt het merk genoemd in ChatGPT/Perplexity (mentions/SOV)", "Organization/LocalBusiness/Product-schema", "AI-crawlers (GPTBot, ClaudeBot, PerplexityBot) mogen binnen"], "niet_meer": 3, "niet_n": 6}, "lokaal": {"titel": "Lokale scan", "wel": ["een adres of vestigingsplaats staat op de pagina", "er staat een telefoonnummer", "het werkgebied of de regio wordt genoemd", "openingstijden staan vermeld"], "wel_meer": 0, "wel_n": 4, "niet": ["Google-bedrijfsprofiel aanwezig en compleet", "aantal beoordelingen tegenover de nummer 1 in de stad", "positie in het lokale pakket van Google"], "niet_meer": 3, "niet_n": 6}};
+      var kaart = document.getElementById("free-scan-samenstellen-kaart");
+      var door = document.getElementById("free-scan-samenstellen-door");
+      var overslaan = document.getElementById("free-scan-samenstellen-overslaan");
+      var gate = document.getElementById("free-scan-samenstellen-gate");
+      var site = form.querySelector('[name="website"]');
+      var mail = form.querySelector('[name="email"]');
+      var akkoord = document.getElementById("scanAkkoord");
+      var knop = form.querySelector('button[type="submit"]');
+      var open = false;
+      function domein(){
+        var v = (site && site.value || "").trim();
+        if(!v) return "";
+        try { return " voor " + new URL(v.indexOf("://") === -1 ? "https://" + v : v)
+                 .hostname.replace(/^www\./, ""); } catch(e) { return ""; }
+      }
+      function vulKaart(){
+        var k = KAART[sel.value];
+        if(!kaart) return;
+        kaart.classList.toggle("d-none", !k);
+        if(!k) return;
+        document.getElementById("free-scan-samenstellen-titel").textContent = k.titel;
+        document.getElementById("free-scan-samenstellen-domein").textContent = domein();
+        document.getElementById("free-scan-samenstellen-wel").textContent =
+          k.wel.join(" · ") + (k.wel_meer ? " · en nog " + k.wel_meer + " punten" : "");
+        document.getElementById("free-scan-samenstellen-niet").textContent =
+          k.niet.join(" · ") + (k.niet_meer ? " · en nog " + k.niet_meer + " punten" : "");
+      }
+      function zetGate(aan){
+        open = aan;
+        if(gate) gate.classList.toggle("d-none", !aan);
+        if(mail) mail.required = aan;
+        if(akkoord) akkoord.required = aan;
+        if(knop) knop.classList.toggle("d-none", !aan);
+        if(door) door.classList.toggle("d-none", aan);
+        if(overslaan && overslaan.parentElement)
+          overslaan.parentElement.classList.toggle("d-none", aan);
+      }
       function toon(){
         var isPraat = GESPREK.indexOf(sel.value) !== -1;
         praat.classList.toggle("d-none", !isPraat);
-        verbergen.forEach(function(naam){
-          var el = form.querySelector('[name="' + naam + '"]');
-          if(!el) return;
-          el.classList.toggle("d-none", isPraat);
-          el.required = !isPraat;
-        });
-        var akkoord = document.getElementById("scanAkkoord");
-        if(akkoord && akkoord.parentElement) {
-          akkoord.parentElement.classList.toggle("d-none", isPraat);
-          akkoord.required = !isPraat;
-        }
-        var knop = form.querySelector('button[type="submit"]');
-        if(knop) knop.classList.toggle("d-none", isPraat);
+        if(site){ site.classList.toggle("d-none", isPraat); site.required = !isPraat; }
+        if(isPraat){ if(kaart) kaart.classList.add("d-none"); zetGate(false);
+                      if(door) door.classList.add("d-none");
+                      if(overslaan && overslaan.parentElement)
+                        overslaan.parentElement.classList.add("d-none");
+                      return; }
+        vulKaart();
+        zetGate(open);
       }
       sel.addEventListener("change", toon);
+      if(site) site.addEventListener("input", vulKaart);
+      // Doorgaan toetst alleen stap 1; de gate opent pas als die stap klopt
+      if(door) door.addEventListener("click", function(){
+        var stap1 = [sel, site];
+        for(var i=0;i<stap1.length;i++){
+          if(stap1[i] && !stap1[i].checkValidity()){ stap1[i].reportValidity(); return; }
+        }
+        zetGate(true);
+        if(mail) mail.focus();
+      });
+      // overslaan = de gate meteen open, zonder de samenstel-stap af te dwingen
+      if(overslaan) overslaan.addEventListener("click", function(e){
+        e.preventDefault(); zetGate(true); if(mail) mail.focus();
+      });
       toon();
     })();
   </script>
