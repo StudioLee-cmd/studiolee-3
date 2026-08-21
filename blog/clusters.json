@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "crm-kosten-klein-bedrijf-per-maand",
+      "title": "CRM-kosten voor een klein bedrijf per maand",
+      "date": "2026-08-20",
+      "cluster": "crm",
+      "image": "/assets/images/blog/crm-kosten-klein-bedrijf-per-maand.jpg"
+    },
+    {
       "slug": "ai-chatbot-vergelijken-5-soorten",
       "title": "AI-chatbot vergelijken: 5 soorten op een rij",
       "date": "2026-08-01",
