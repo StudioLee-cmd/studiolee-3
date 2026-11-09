@@ -17550,3 +17550,10 @@ section::after {
 @media (prefers-reduced-motion: reduce) {
   .sl-reveal { animation: none; }
 }
+
+/* Owner approval 131: the other services sit behind one fold-out in the menu. */
+.menu-dropdown .header-more summary { cursor: pointer; list-style: none; }
+.menu-dropdown .header-more summary::-webkit-details-marker { display: none; }
+.menu-dropdown .header-more summary::after { content: "▾"; margin-left: auto; transition: transform .2s; }
+.menu-dropdown .header-more details[open] summary::after { transform: rotate(180deg); }
+.menu-dropdown .header-more ul { margin-top: .5rem; padding-left: .75rem; }
