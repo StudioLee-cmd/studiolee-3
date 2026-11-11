@@ -61,29 +61,23 @@ $(function () {
     });
 
 
-    // Featured Owl Carousel
-    $('.featured-projects-slider .owl-carousel').owlCarousel({
-        center: true,
-        loop: true,
+    // Featured Owl Carousel: it shows what is worth showing, so it never repeats a project to fill the row
+    var $featured = $('.featured-projects-slider .owl-carousel');
+    var featuredCount = $featured.children().length;
+    $featured.owlCarousel({
+        center: featuredCount > 4,
+        loop: featuredCount > 4,
         margin: 30,
         nav: false,
         dots: false,
-        autoplay: true,
+        autoplay: featuredCount > 4,
         autoplayTimeout: 5000,
         autoplayHoverPause: false,
         responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            },
-            1200: {
-                items: 4
-            }
+            0: { items: 1, loop: featuredCount > 1, autoplay: featuredCount > 1 },
+            600: { items: 2, loop: featuredCount > 2, autoplay: featuredCount > 2 },
+            1000: { items: 3, loop: featuredCount > 3, autoplay: featuredCount > 3 },
+            1200: { items: 4 }
         }
     })
 
