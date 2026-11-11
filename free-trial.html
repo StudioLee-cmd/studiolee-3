@@ -525,59 +525,6 @@
   <!-- solar icons -->
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
-  <!-- Form submission handler -->
-  <script>
-  (function() {
-    var form = document.getElementById('freeTrialForm');
-    var submitBtn = document.getElementById('trialSubmitBtn');
-    var errorBox = document.getElementById('trialError');
-    var successBox = document.getElementById('trialSuccess');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Validate checkbox
-      var akkoord = document.getElementById('trialAkkoord');
-      if (!akkoord.checked) {
-        errorBox.classList.remove('d-none');
-        errorBox.querySelector('.alert').textContent = 'Je moet akkoord gaan met de voorwaarden om door te gaan.';
-        return;
-      }
-
-      // Disable button and show loading
-      submitBtn.disabled = true;
-      submitBtn.querySelector('.btn-text').textContent = 'Bezig met verwerken...';
-      errorBox.classList.add('d-none');
-
-      // Collect form data
-      var data = {
-        email: document.getElementById('trialEmail').value,
-        bedrijfsnaam: document.getElementById('trialBedrijfsnaam').value,
-        source: 'studiolee-3-free-trial'
-      };
-
-      fetch('https://n8n.aireclamestudio.nl/webhook/Client-sign-up', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      })
-      .then(function(response) {
-        if (response.ok) {
-          form.classList.add('d-none');
-          successBox.classList.remove('d-none');
-        } else {
-          throw new Error('Er is iets misgegaan bij het versturen van je aanmelding.');
-        }
-      })
-      .catch(function(err) {
-        errorBox.classList.remove('d-none');
-        errorBox.querySelector('.alert').textContent = err.message || 'Er is een fout opgetreden. Probeer het later opnieuw.';
-        submitBtn.disabled = false;
-        submitBtn.querySelector('.btn-text').textContent = 'Start Voor €1';
-      });
-    });
-  })();
-  </script>
 
     <script>
     // Handle both forms with fetch.
@@ -640,6 +587,21 @@
         setFormLoading(form, loadingText);
 
         var data = new FormData(form);
+        // Toestemming gaat ALTIJD expliciet mee, ook als een vinkje uit staat: een ontbrekend veld
+        // las de flow als 'geen toestemming' en de gedeelde lead-ledger kreeg er niets van mee.
+        // De ledger-namen (consent_contact/_promotion/_version) naast de accountnamen die de
+        // klanten-tabel leest (consent_account/_promotie/_versie).
+        if (id === 'freeTrialForm') {
+          var akkoord = form.querySelector('input[name="consent_account"]');
+          var promotie = form.querySelector('input[name="consent_promotie"]');
+          var versie = form.querySelector('input[name="consent_versie"]');
+          var ja = function (el) { return el && el.checked ? 'ja' : 'nee'; };
+          data.set('consent_account', ja(akkoord));
+          data.set('consent_promotie', ja(promotie));
+          data.set('consent_contact', ja(akkoord));
+          data.set('consent_promotion', ja(promotie));
+          if (versie) data.set('consent_version', versie.value);
+        }
         var successId = (id === 'freeScanForm') ? 'scanSuccess' : 'trialSuccess';
         var errorId = (id === 'freeScanForm') ? 'scanError' : 'trialError';
 
