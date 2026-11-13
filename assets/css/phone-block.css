@@ -10,7 +10,7 @@
 .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
 .sticker { position:absolute; width:25%; height:25%; transform:translate(-50%,-50%); pointer-events:none; }
 .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-.l-finger { position:absolute; width:24.2%; aspect-ratio:1; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; touch-action:none; }
+.l-finger { position:absolute; width:24.2%; aspect-ratio:1; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; touch-action:pan-y; }
 .l-finger.grabbing { cursor:grabbing; }
 .l-finger img { width:100%; height:100%; object-fit:contain; }
 .l-hub { position:absolute; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:6;
@@ -48,6 +48,7 @@ a.rz:hover, a.rz:focus-visible, a.rz.on { box-shadow:0 0 30px rgba(193,255,114,0
 .phone-click-zone { position:absolute; top:5%; left:55%; width:30%; height:90%; z-index:1; cursor:pointer; }
 /* Ringing: the whole telephone trembles (a still photo, no film over it). */
 .phone-stage.ringing { animation:shake .09s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .phone-stage.ringing { animation:none; } }
 @keyframes shake { 0%,100%{transform:translate(0,0)} 25%{transform:translate(-1.5px,0.5px)} 75%{transform:translate(1.5px,-0.5px)} }
 @media(max-width:768px) {
   /* On a phone the stage zooms onto the telephone (2.4x, dial centred: left = 50% - 69.5% x 2.4), so each dial zone is at least 44 px to tap; the bubble sits under it. */

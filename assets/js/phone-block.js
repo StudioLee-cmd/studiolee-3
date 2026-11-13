@@ -44,9 +44,8 @@
   function dn(e){if(e.target.closest('.rz')||e.target.closest('.l-hub'))return;drag=true;plate.classList.add('grabbing');sM=ma(e);sA=a;v=0;if(raf)cancelAnimationFrame(raf);stopSpin();e.preventDefault();}
   function mv(e){if(!drag)return;var m=ma(e);a=sA+(m-sM);v=a-lA;lA=a;turn();e.preventDefault();}
   function up(){if(!drag)return;drag=false;plate.classList.remove('grabbing');a=((a%360)+540)%360-180;(function c(){if(Math.abs(a)<0.3){a=0;turn();return;}a*=0.88;turn();raf=requestAnimationFrame(c);})();}
-  plate.addEventListener('mousedown',dn);plate.addEventListener('touchstart',dn,{passive:false});
-  window.addEventListener('mousemove',mv);window.addEventListener('touchmove',mv,{passive:false});
-  window.addEventListener('mouseup',up);window.addEventListener('touchend',up);
+  // Turning is for the mouse: on a phone a swipe over the dial scrolls the page, a tap on a service picks it.
+  plate.addEventListener('mousedown',dn);window.addEventListener('mousemove',mv);window.addEventListener('mouseup',up);
   function startSpin(){}
   function stopSpin(){}
 
