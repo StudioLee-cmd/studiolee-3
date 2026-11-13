@@ -90,7 +90,8 @@
       // i: index into order; -1 = the whole route (all lit, the summary under it)
       var cur = i >= 0 ? order[i] : Infinity, fresh = [];
       steps.forEach(function (s) { var n = +s.getAttribute('data-step'); s.classList.toggle('is-now', n === cur); s.classList.toggle('is-done', n < cur); s.classList.toggle('is-next', n > cur); });
-      edges.forEach(function (e) { var nb = +e.b.getAttribute('data-step'), on = nb <= cur; if (on && !e.lit && nb === cur) fresh.push(e); light(e, on, !quiet && on && nb === cur); });
+      // a line lights once both its ends are reached (a line back to an earlier step lights with the later one)
+      edges.forEach(function (e) { var last = Math.max(+e.a.getAttribute('data-step'), +e.b.getAttribute('data-step')), on = last <= cur; if (on && !e.lit && last === cur) fresh.push(e); light(e, on, !quiet && on && last === cur); });
       var warn = i >= 0 && steps.some(function (s) { return +s.getAttribute('data-step') === cur && s.classList.contains('rt-warn'); });
       now.classList.toggle('rt-w', warn);
       nowN.textContent = i >= 0 ? String(i + 1) : '✓'; nowT.textContent = i >= 0 ? say(cur) : (fig.getAttribute('data-sum') || say(order[order.length - 1]));
