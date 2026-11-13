@@ -19,6 +19,7 @@
 .owl-carousel,.owl-carousel .owl-item{-webkit-tap-highlight-color:transparent;position:relative}.owl-carousel{display:none;width:100%;z-index:1}.owl-carousel .owl-stage{position:relative;-ms-touch-action:pan-Y;touch-action:manipulation;-moz-backface-visibility:hidden}.owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item,.owl-carousel .owl-wrapper{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none}.owl-carousel .owl-item img{display:block;width:100%}.owl-carousel .owl-dots.disabled,.owl-carousel .owl-nav.disabled{display:none}.no-js .owl-carousel,.owl-carousel.owl-loaded{display:block}.owl-carousel .owl-dot,.owl-carousel .owl-nav .owl-next,.owl-carousel .owl-nav .owl-prev{cursor:pointer;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel .owl-nav button.owl-next,.owl-carousel .owl-nav button.owl-prev,.owl-carousel button.owl-dot{background:0 0;color:inherit;border:none;padding:0!important;font:inherit}.owl-carousel.owl-loading{opacity:0;display:block}.owl-carousel.owl-hidden{opacity:0}.owl-carousel.owl-refresh .owl-item{visibility:hidden}.owl-carousel.owl-drag .owl-item{-ms-touch-action:pan-y;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel.owl-grab{cursor:move;cursor:grab}.owl-carousel.owl-rtl{direction:rtl}.owl-carousel.owl-rtl .owl-item{float:right}.owl-carousel .animated{animation-duration:1s;animation-fill-mode:both}.owl-carousel .owl-animated-in{z-index:0}.owl-carousel .owl-animated-out{z-index:1}.owl-carousel .fadeOut{animation-name:fadeOut}@keyframes fadeOut{0%{opacity:1}100%{opacity:0}}.owl-height{transition:height .5s ease-in-out}.owl-carousel .owl-item .owl-lazy{opacity:0;transition:opacity .4s ease}.owl-carousel .owl-item .owl-lazy:not([src]),.owl-carousel .owl-item .owl-lazy[src^=""]{max-height:0}.owl-carousel .owl-item img.owl-lazy{transform-style:preserve-3d}.owl-carousel .owl-video-wrapper{position:relative;height:100%;background:#000}.owl-carousel .owl-video-play-icon{position:absolute;height:80px;width:80px;left:50%;top:50%;margin-left:-40px;margin-top:-40px;background:url(owl.video.play.png) no-repeat;cursor:pointer;z-index:1;-webkit-backface-visibility:hidden;transition:transform .1s ease}.owl-carousel .owl-video-play-icon:hover{-ms-transform:scale(1.3,1.3);transform:scale(1.3,1.3)}.owl-carousel .owl-video-playing .owl-video-play-icon,.owl-carousel .owl-video-playing .owl-video-tn{display:none}.owl-carousel .owl-video-tn{opacity:0;height:100%;background-position:center center;background-repeat:no-repeat;background-size:contain;transition:opacity .4s ease}.owl-carousel .owl-video-frame{position:relative;z-index:1;height:100%;width:100%}</style>
   <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/route.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -368,20 +369,28 @@
       </div>
     </section>
 
-
-    <!-- Video Section -->
-    <section class="py-5 py-lg-7">
+    <!-- Zo werkt het: the route of this service, built in the page (clusters/content/motion/route, scene studiolee/seo) -->
+    <section class="rt-section pt-0 pb-5 pb-lg-11 pb-xl-12 bg-dark">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-8">
-            <div class="ratio ratio-16x9 rounded-4 overflow-hidden" style="background: #1F2A2E;">
-              <div class="d-flex flex-column align-items-center justify-content-center text-center p-4">
-                <iconify-icon icon="solar:play-circle-bold" style="font-size: 64px; color: #C1FF72; opacity: 0.6;"></iconify-icon>
-                <p class="text-white text-opacity-50 mt-3 mb-0">Video binnenkort beschikbaar</p>
-              </div>
-            </div>
+        <div class="row gap-5 gap-xl-0 mb-6 mb-xl-8">
+          <div class="col-xl-4 col-xxl-4">
+            <div class="d-flex align-items-center gap-7 py-2"><hr class="border-line bg-white"><span class="badge text-dark bg-primary">Zo werkt het</span></div>
           </div>
+          <div class="col-xl-8 col-xxl-7"><h2 class="mb-0 text-white" id="zo-werkt-seo">Hoe word je gevonden in Google?</h2></div>
         </div>
+        <div class="row justify-content-center"><div class="col-12 col-xxl-11">
+<figure class="rt rt--studiolee rt--loop" data-route aria-labelledby="zo-werkt-seo" data-edges="[[&quot;woorden&quot;, &quot;artikel&quot;], [&quot;artikel&quot;, &quot;specialist&quot;], [&quot;specialist&quot;, &quot;google&quot;], [&quot;google&quot;, &quot;groei&quot;], [&quot;groei&quot;, &quot;woorden&quot;, {&quot;label&quot;: &quot;opnieuw&quot;}]]" data-sum="Elk artikel is een pagina meer waarop Google je vindt. Zo bouw je stap voor stap vindbaarheid op, zonder dat het jou tijd kost.">
+<figcaption class="rt-head"><span class="rt-kicker">SEO</span></figcaption>
+<ol class="rt-map" style="--rt-cols:repeat(3,1fr);--rt-mcols:1fr 1fr;--rt-gap:30px 52px;--rt-mgap:26px 14px">
+<li class="rt-step" data-id="woorden" data-step="1" style="--c:1;--r:1/span 2;--mc:1;--mr:1"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11 3a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM21 21l-4.3-4.3"/></svg></span><span class="rt-label">Zoekwoorden</span><span class="rt-sub">waar jouw klanten op zoeken</span><span class="rt-say">Wij zoeken met data uit op welke woorden jouw klanten zoeken.</span></li>
+<li class="rt-step" data-id="artikel" data-step="2" style="--c:2;--r:1;--mc:2;--mr:1"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span><span class="rt-label">Artikel</span><span class="rt-sub">AI schrijft de eerste versie</span><span class="rt-say">AI schrijft de eerste versie van elk artikel voor jouw website.</span></li>
+<li class="rt-step" data-id="specialist" data-step="3" style="--c:3;--r:1;--mc:2;--mr:2"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1M22 4 12 14l-3-3"/></svg></span><span class="rt-label">Specialist controleert</span><span class="rt-sub">en verfijnt elke tekst</span><span class="rt-say">Een specialist controleert en verfijnt het voor het online gaat.</span></li>
+<li class="rt-step" data-id="google" data-step="4" style="--c:3;--r:2;--mc:2;--mr:3"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span class="rt-label">Google neemt het op</span><span class="rt-sub">pagina voor pagina</span><span class="rt-say">Google neemt elke nieuwe pagina op.</span></li>
+<li class="rt-step" data-id="groei" data-step="5" style="--c:2;--r:2;--mc:1;--mr:3"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 7l-8.5 8.5-5-5L2 17M16 7h6v6"/></svg></span><span class="rt-label">Vindbaarheid groeit</span><span class="rt-sub">meer bezoekers en aanvragen</span><span class="rt-show"><span class="rt-chip">en dan het volgende onderwerp</span></span><span class="rt-say">Met elke pagina word je beter gevonden, en dan begint het volgende onderwerp.</span></li>
+</ol>
+<p class="rt-hint">Wijs een stap aan of tik erop om hem rustig te lezen.</p>
+</figure>
+        </div></div>
       </div>
     </section>
     <!--  Feature 1: AI-gedreven Content -->
@@ -1132,6 +1141,7 @@
 
 <div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
 <script src="/assets/js/cookie-banner.js" defer></script>
+<script src="/assets/js/route.js" defer></script>
 </body>
 
 </html>
