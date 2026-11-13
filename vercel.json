@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/dashboard",
+      "destination": "/ai-marketing-bureau",
+      "permanent": true
+    },
+    {
       "source": "/review-pakket",
       "destination": "/reviews",
       "permanent": true
