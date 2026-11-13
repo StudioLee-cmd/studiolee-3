@@ -16,8 +16,8 @@
     var screen = fig.querySelector('.wt-screen'), cap = fig.querySelector('.wt-cap'), dots = fig.querySelector('.wt-steps');
     var stage = el('div', 'wt-stage'); screen.appendChild(stage);
     var pointer = el('span', 'wt-pointer', '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M5 3l14 8-6.2 1.6L10 19z" fill="#111" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><i class="wt-ripple"></i>');
-    screen.appendChild(pointer);
-    var mark = el('span', 'wt-mark'); screen.appendChild(mark);
+    var layer = el('div', 'wt-layer'); screen.appendChild(layer); layer.appendChild(pointer);
+    var mark = el('span', 'wt-mark'); layer.appendChild(mark);
     var mode = null, frames = [], imgs = [], i = 0, timer = null, playing = false, inView = false, held = false;
 
     function build() {
@@ -52,7 +52,7 @@
         return { s: s, tx: tx, ty: ty };
       }
       if (mode === 'm') {
-        var y = f.cursor ? f.cursor.y : 0, pan = Math.max(0, Math.min(y - 40, 100 - 100 * (screen.clientHeight / Math.max(1, im.clientHeight || screen.clientHeight))));
+        var y = f.cursor ? f.cursor.y : 0, pan = Math.max(0, Math.min(y - 40, 100 - 100 * (stage.clientHeight / Math.max(1, im.clientHeight || stage.clientHeight))));
         im.style.transform = 'translateY(' + (-pan * (im.clientHeight || 0) / 100) + 'px)';
         return { s: 1, tx: 0, ty: 0, py: pan };
       }
@@ -63,7 +63,7 @@
       var f = frames[k]; if (!f.cursor) { pointer.classList.remove('on'); mark.classList.remove('on'); return; }
       var x = f.cursor.x, y = f.cursor.y;
       if (mode === 'd') { x = 50 + (x - 50 + v.tx) * v.s; y = 50 + (y - 50 + v.ty) * v.s; }
-      if (mode === 'm') { var im = imgs[k].firstChild; y = (y - (v.py || 0)) * (im.clientHeight || screen.clientHeight) / screen.clientHeight; }
+      if (mode === 'm') { var im = imgs[k].firstChild; y = (y - (v.py || 0)) * (im.clientHeight || stage.clientHeight) / stage.clientHeight; }
       pointer.style.left = x + '%'; pointer.style.top = y + '%'; mark.style.left = x + '%'; mark.style.top = y + '%';
       pointer.classList.add('on'); mark.classList.remove('on');
       clearTimeout(pointer._t); pointer.classList.remove('click');

@@ -5,7 +5,9 @@
 .wt { --wt-ink: #1F2A2E; --wt-lime: #C1FF72; --wt-paper: #F4F6F8; margin: 0; position: relative; }
 .wt-screen { position: relative; overflow: hidden; aspect-ratio: 1360 / 850; background: #e9edf1; border-radius: 14px; isolation: isolate; }
 .wt.wt-is-m .wt-screen { aspect-ratio: 390 / 640; max-width: 420px; margin-inline: auto; }
-.wt-stage, .wt-frame { position: absolute; inset: 0; }
+.wt-stage, .wt-frame, .wt-layer { position: absolute; inset: 0; }
+.wt-stage { overflow: hidden; }
+.wt-layer { pointer-events: none; z-index: 3; }
 .wt-frame { opacity: 0; transition: opacity .6s ease; }
 .wt-frame.is-on { opacity: 1; }
 .wt-frame img { position: absolute; left: 0; top: 0; width: 100%; height: auto; transform-origin: 50% 50%; transition: transform 1.1s cubic-bezier(.45,0,.2,1); will-change: transform; }
@@ -55,11 +57,11 @@ body[data-look="studio"] .wt-sec { background: var(--wt-paper, #F4F6F8); color: 
 body[data-look="studio"] .wt-sec .wt-lede { color: #4a5559; }
 body[data-look="studio"] .wt-screen { border-radius: 12px; padding-top: 30px; background: #fff; box-shadow: 0 1px 0 rgba(31,42,46,.06), 0 30px 70px -30px rgba(31,42,46,.35); border: 1px solid rgba(31,42,46,.1); }
 body[data-look="studio"] .wt-screen::before { content: ""; position: absolute; left: 14px; top: 11px; width: 52px; height: 9px; z-index: 4; background: radial-gradient(circle at 4.5px 4.5px, #d5dade 4px, transparent 4.5px) 0 0 / 18px 9px repeat-x; }
-body[data-look="studio"] .wt-stage { top: 30px; }
+body[data-look="studio"] .wt-stage, body[data-look="studio"] .wt-layer { top: 30px; }
 body[data-look="studio"] .wt.wt-is-m .wt-screen { padding-top: 0; border-radius: 34px; border: 8px solid #1F2A2E; }
-body[data-look="studio"] .wt.wt-is-m .wt-stage { top: 0; }
+body[data-look="studio"] .wt.wt-is-m .wt-stage, body[data-look="studio"] .wt.wt-is-m .wt-layer { top: 0; }
 body[data-look="studio"] .wt.wt-is-m .wt-screen::before { display: none; }
-body[data-look="studio"] .wt-mark { border-radius: 10px; border: 2px solid #1F2A2E; background: rgba(193,255,114,.18); width: 120px; height: 46px; margin: -23px 0 0 -60px; }
+body[data-look="studio"] .wt-mark { border-radius: 10px; border: 2px solid #1F2A2E; background: transparent; box-shadow: 0 0 0 4px rgba(193,255,114,.45); width: 120px; height: 46px; margin: -23px 0 0 -60px; }
 body[data-look="studio"] .wt-mark.on { opacity: 1; }
 body[data-look="studio"] .wt-cap { display: none; }
 body[data-look="studio"] .wt-steps { flex-direction: column; gap: 0; margin-top: 0; }
@@ -99,14 +101,14 @@ body[data-look="editorial"] .wt-steps .wt-dot-bar::after { background: #1F2A2E; 
 @media (max-width: 991.98px) {
   /* phones and tablets: every advantage under its own heading, each walkthrough plays when it comes in view */
   .wt-sec-tour .wt-tabs { display: none; }
-  .wt-sec-tour .wt-panel[hidden] { display: block; }
+  .wt-sec-tour .wt-panel[hidden] { display: block !important; }
   .wt-sec-tour .wt-panel + .wt-panel { margin-top: 56px; }
   .wt-panel-h { display: block; font-size: 1.4rem; margin-bottom: 8px; }
   .wt-tabtext { display: block; }
 }
 
 /* studio: the main walkthrough puts its numbered steps beside the screen */
-@media (min-width: 992px) { body[data-look="studio"] .wt-main { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.9fr); gap: 40px; align-items: center; } body[data-look="studio"] .wt-main .wt-steps { grid-column: 1; grid-row: 1; } body[data-look="studio"] .wt-main .wt-frameset { grid-column: 2; grid-row: 1; } }
+@media (min-width: 992px) { body[data-look="studio"] .wt-main { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2.6fr); gap: 36px; align-items: center; } body[data-look="studio"] .wt-main .wt-steps { grid-column: 1; grid-row: 1; } body[data-look="studio"] .wt-main .wt-frameset { grid-column: 2; grid-row: 1; } }
 body[data-look="studio"] .wt-compact .wt-cap { display: block; margin-top: 16px; color: #1F2A2E; }
 body[data-look="studio"] .wt-compact .wt-steps { flex-direction: row; gap: 6px; margin-top: 10px; }
 body[data-look="studio"] .wt-compact .wt-dot { padding: 10px 0 0; border-top: 0; }
