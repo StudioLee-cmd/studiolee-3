@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="nl">
 <head>
+  <script>try{localStorage.getItem("cookie_consent")||document.documentElement.classList.add("cb-ask")}catch(e){}</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 — Pagina niet gevonden | STUDIOLEE</title>
@@ -343,9 +344,7 @@
         // Show cookie banner if it exists, otherwise prompt
         var banner = document.getElementById('ck-banner');
         if (banner) { banner.style.display = 'flex'; return; }
-        // The cookie question sits at the chat button (assets/js/cookie-banner.js): open it there
-        var ask = document.getElementById('cb-open');
-        if (ask && document.getElementById('cb-ask').hidden) ask.click();
+        // No banner on this page — redirect to accept cookies first
         document.getElementById('btnCall').textContent = 'Accepteer eerst cookies';
         return;
       }

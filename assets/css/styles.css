@@ -17552,3 +17552,32 @@ section::after {
 @media (prefers-reduced-motion: reduce) {
   .sl-reveal { animation: none; }
 }
+
+/* ===== Cookie question (assets/js/cookie-banner.js): a bar at the top of the page, in space reserved before the first paint
+   (the html class cb-ask is set in each page's head when no answer is stored), so it pushes the page down without a jump
+   and never lies over content. ===== */
+html.cb-ask { --cb-h: 56px; }
+@media (max-width: 600px) { html.cb-ask { --cb-h: 100px; } }
+html.cb-ask body { padding-top: var(--cb-h); }
+html.cb-ask header.position-fixed { top: var(--cb-h) !important; }
+#cb { position: absolute; top: 0; left: 0; right: 0; height: var(--cb-h, 56px); z-index: 1000; box-sizing: border-box; overflow: hidden;
+  background: #141419; border-bottom: 1px solid rgba(255,255,255,.08); font-family: 'Outfit', sans-serif; }
+#cb > div { max-width: 1140px; height: 100%; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; gap: 12px; box-sizing: border-box; }
+#cb img { width: 30px; height: 30px; flex-shrink: 0; animation: ckspin 3s linear infinite; }
+#cb p { flex: 1; margin: 0; color: rgba(255,255,255,.85); font-size: 14px; line-height: 1.35; }
+#cb p a { color: #C1FF72; text-decoration: underline; }
+#cb .cb-b { display: flex; gap: 8px; flex-shrink: 0; }
+#cb button { border-radius: 100px; font-size: 13px; padding: 7px 16px; cursor: pointer; line-height: 1.2; }
+#cb-no { background: transparent; color: rgba(255,255,255,.65); border: 1px solid rgba(255,255,255,.2); }
+#cb-yes { background: #C1FF72; color: #0a0a0f; border: none; font-weight: 700; }
+#cb button:focus-visible { outline: 2px solid #C1FF72; outline-offset: 2px; }
+@keyframes ckspin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@media (max-width: 600px) {
+  #cb > div { flex-wrap: wrap; align-content: center; gap: 8px 10px; padding: 0 14px; }
+  #cb img { width: 24px; height: 24px; }
+  #cb p { font-size: 13px; }
+  #cb .cb-b { width: 100%; }
+  #cb .cb-b button { flex: 1; padding: 8px 10px; }
+}
+@media (prefers-reduced-motion: reduce) { #cb img { animation: none; } }
+@media print { #cb { display: none; } html.cb-ask body { padding-top: 0; } }
