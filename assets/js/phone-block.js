@@ -15,7 +15,7 @@
   };
   var $=function(id){return document.getElementById(id);};
   var overlay=block.querySelector('.game-overlay'),gT=$('gT'),gD=$('gD'),gGo=$('gGo'),form=$('demoAsk'),book=$('demoBook'),hang=$('demoHangup'),err=$('demoError');
-  var plate=$('plate'),wrap=$('wrap'),phone=$('phoneBody'),video=$('phoneVideo');
+  var plate=$('plate'),wrap=$('wrap'),phone=$('phoneBody'),stage=block.querySelector('.phone-stage');
   var picked=null,calling=false,touch=false;
   // What the bubble says at rest is the page's own text: it is read from the markup once and put back after every pick.
   var restT=gT.textContent.trim(),restD=gD.textContent.trim();
@@ -36,18 +36,19 @@
   function stopTyping(){[gT,gD].forEach(function(el){if(el._t){clearTimeout(el._t);el._t=null;}});}
   function hideActions(){gGo.style.display='none';form.style.display='none';book.style.display='none';hang.style.display='none';err.textContent='';}
 
-  // The dial: drag or let it turn slowly
-  var a=0,drag=false,sA=0,sM=0,v=0,lA=0,raf,spin;
+  // The dial rests with every hole over its sticker, so all seven services are in sight; it can be turned by hand and,
+  // like a real rotary dial, springs back to rest when let go (it never turns on its own).
+  var a=0,drag=false,sA=0,sM=0,v=0,lA=0,raf;
   function ma(e){var p=plate.getBoundingClientRect();var cx=p.left+p.width/2,cy=p.top+p.height/2;var x=(e.touches?e.touches[0].clientX:e.clientX)-cx;var y=(e.touches?e.touches[0].clientY:e.clientY)-cy;return Math.atan2(y,x)*180/Math.PI;}
   function turn(){plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';}
   function dn(e){if(e.target.closest('.rz')||e.target.closest('.l-hub'))return;drag=true;plate.classList.add('grabbing');sM=ma(e);sA=a;v=0;if(raf)cancelAnimationFrame(raf);stopSpin();e.preventDefault();}
   function mv(e){if(!drag)return;var m=ma(e);a=sA+(m-sM);v=a-lA;lA=a;turn();e.preventDefault();}
-  function up(){if(!drag)return;drag=false;plate.classList.remove('grabbing');(function c(){if(Math.abs(v)<0.05){startSpin();return;}v*=0.97;a+=v;turn();raf=requestAnimationFrame(c);})();}
+  function up(){if(!drag)return;drag=false;plate.classList.remove('grabbing');a=((a%360)+540)%360-180;(function c(){if(Math.abs(a)<0.3){a=0;turn();return;}a*=0.88;turn();raf=requestAnimationFrame(c);})();}
   plate.addEventListener('mousedown',dn);plate.addEventListener('touchstart',dn,{passive:false});
   window.addEventListener('mousemove',mv);window.addEventListener('touchmove',mv,{passive:false});
   window.addEventListener('mouseup',up);window.addEventListener('touchend',up);
-  function startSpin(){if(spin||calling)return;spin=setInterval(function(){if(drag)return;a+=0.15;turn();},16);}
-  function stopSpin(){clearInterval(spin);spin=null;}
+  function startSpin(){}
+  function stopSpin(){}
 
   function restoreDefault(){
     if(calling)return;
@@ -101,21 +102,20 @@
     if(calling){hangUp();return;}
     var service=picked&&d[picked];
     calling=true;stopSpin();stopTyping();hideActions();
-    if(video){video.style.display='block';var p=video.play();if(p&&p.catch)p.catch(function(){});}
-    phone.classList.add('ringing');overlay.classList.add('visible');gD.textContent='';reveal();
+    stage.classList.add('ringing');overlay.classList.add('visible');gD.textContent='';reveal();
     humanType(gT,'TUUT.. TUUT..',function(){
       setTimeout(function(){humanType(gD,'De telefoon gaat over...',function(){
         setTimeout(function(){
-          phone.classList.remove('ringing');if(video){video.pause();video.style.display='none';}
+          stage.classList.remove('ringing');
           humanType(gT,'*KLIK* HOI!',function(){
-            var line='Bedankt voor het bellen met StudioLee! Lee is er nu even niet. Ik ben zijn AI-assistent: laat je e-mailadres achter, dan plannen we '+(service?'een demo van '+service.n:'een demo')+' voor je in.';
+            var line='Bedankt voor het bellen met StudioLee! Er is nu even niemand aan de lijn. Ik ben de AI-assistent: laat je e-mailadres achter, dan plannen we '+(service?'een demo van '+service.n:'een demo')+' voor je in.';
             humanType(gD,line,function(){form.style.display='flex';hang.style.display='block';block.dataset.demoAsked=service?picked:'any';reveal();});
           });
         },900);
       });},500);
     });
   }
-  function hangUp(){calling=false;phone.classList.remove('ringing');if(video){video.pause();video.style.display='none';}restoreDefault();}
+  function hangUp(){calling=false;stage.classList.remove('ringing');restoreDefault();}
   phone.addEventListener('click',function(e){e.stopPropagation();ring();});
   phone.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();ring();}});
   hang.addEventListener('click',function(e){e.stopPropagation();hangUp();});
@@ -136,7 +136,7 @@
       form.style.display='none';
       try{var u=new URL(book.getAttribute('href'),location.href);u.searchParams.set('email',email);if(picked&&d[picked])u.searchParams.set('notes','Demo van '+d[picked].n);book.setAttribute('href',u.href);}catch(x){}
       humanType(gT,'TOP, GENOTEERD!');
-      gD.textContent='Kies hieronder een moment voor je demo, je e-mailadres staat al ingevuld. Lukt dat nu niet? Dan mailen we je.'+(note||'');
+      gD.textContent='Kies hieronder een moment voor je demo. Je e-mailadres staat al ingevuld.'+(note||'');
       book.textContent='Plan mijn demo';
       book.style.display='inline-block';reveal();
     }

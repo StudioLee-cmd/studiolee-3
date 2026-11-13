@@ -46,8 +46,9 @@ a.rz:hover, a.rz:focus-visible, a.rz.on { box-shadow:0 0 30px rgba(193,255,114,0
 .demo-error { color:#ff9a9a; font-size:13px; min-height:0; }
 .demo-hangup { display:block; background:none; border:none; color:rgba(255,255,255,0.5); font-size:12px; padding:0; margin-top:8px; cursor:pointer; text-decoration:underline; }
 .phone-click-zone { position:absolute; top:5%; left:55%; width:30%; height:90%; z-index:1; cursor:pointer; }
-.phone-click-zone.ringing { animation:shake .08s linear infinite; }
-@keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
+/* Ringing: the whole telephone trembles (a still photo, no film over it). */
+.phone-stage.ringing { animation:shake .09s linear infinite; }
+@keyframes shake { 0%,100%{transform:translate(0,0)} 25%{transform:translate(-1.5px,0.5px)} 75%{transform:translate(1.5px,-0.5px)} }
 @media(max-width:768px) {
   /* On a phone the stage zooms onto the telephone (2.4x, dial centred: left = 50% - 69.5% x 2.4), so each dial zone is at least 44 px to tap; the bubble sits under it. */
   .phone-container { aspect-ratio:730/1024; }
