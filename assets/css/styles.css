@@ -17558,14 +17558,14 @@ section::after {
    and never lies over content. ===== */
 html.cb-ask { --cb-h: 56px; }
 @media (max-width: 600px) { html.cb-ask { --cb-h: 100px; } }
-html.cb-ask body { padding-top: var(--cb-h); }
+html.cb-ask body { padding-top: var(--cb-h); box-shadow: inset 0 var(--cb-h) 0 #141419; } /* the reserved strip is already the bar's colour before the script draws the bar */
 html.cb-ask header.position-fixed { top: var(--cb-h) !important; border-top-color: #141419 !important; }
 /* leaving: the bar folds away and the page and the header move up together */
 html.cb-leaving body { transition: padding-top .28s ease; }
 html.cb-leaving header.position-fixed { transition: top .28s ease !important; }
-html.cb-leaving #cb { transition: height .28s ease, opacity .2s ease; opacity: 0; }
+html.cb-leaving #cb { transition: height .28s ease; }
 #cb { position: absolute; top: 0; left: 0; right: 0; height: var(--cb-h, 56px); z-index: 90; /* under the header, so the open menu lies over it */ box-sizing: border-box; overflow: hidden;
-  background: #141419; border-bottom: 1px solid rgba(255,255,255,.08); font-family: 'Outfit', sans-serif; }
+  background: #141419; font-family: 'Outfit', sans-serif; }
 #cb > div { max-width: 1140px; height: 100%; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; gap: 12px; box-sizing: border-box; }
 #cb img { width: 30px; height: 30px; flex-shrink: 0; }
 #cb p { flex: 1; margin: 0; color: rgba(255,255,255,.85); font-size: 14px; line-height: 1.35; }
