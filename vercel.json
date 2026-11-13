@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/dashboard",
+      "destination": "/ai-marketing-bureau",
+      "permanent": true
+    },
+    {
       "source": "/review-pakket",
       "destination": "/reviews",
       "permanent": true
@@ -44,13 +49,6 @@
     }
   ],
   "routes": [
-    {
-      "src": "/dashboard",
-      "headers": {
-        "Location": "/ai-marketing-bureau"
-      },
-      "status": 308
-    },
     {
       "src": "/blog/lokale-vindbaarheid-verbeteren-mkb-gids",
       "headers": {
