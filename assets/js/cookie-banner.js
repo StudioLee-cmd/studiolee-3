@@ -16,6 +16,22 @@
     s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
     s.setAttribute('data-widget-id', wid);
     document.head.appendChild(s);
+    quietPrompt();
+  }
+  // The chat waits closed, as its button, until the visitor opens it: its greeting bubble ("Vragen over ...") would
+  // otherwise open by itself and lie over the page while scrolling.
+  function quietPrompt() {
+    var tries = 0, t = setInterval(function () {
+      var w = document.querySelector('chat-widget'), r = w && w.shadowRoot;
+      if (r && r.querySelector('.lc_text-widget')) {
+        if (!r.getElementById('sl-quiet')) {
+          var st = document.createElement('style'); st.id = 'sl-quiet';
+          st.textContent = '.lc_text-widget--prompt{display:none!important}';
+          r.appendChild(st);
+        }
+        if (++tries > 60) clearInterval(t); // keep it on while the widget settles (it re-renders once or twice)
+      } else if (++tries > 120) clearInterval(t);
+    }, 250);
   }
   if (c === 'accepted') { root.classList.remove('cb-ask'); loadHL(); return; }
   if (c === 'declined') { root.classList.remove('cb-ask'); return; }
@@ -35,9 +51,16 @@
     function close(choice) {
       try { localStorage.setItem('cookie_consent', choice); } catch (e) {}
       window.removeEventListener('scroll', sync); window.removeEventListener('resize', sync);
+      // fold the bar away: page, header and bar move together, then the reserved space is released
+      root.classList.add('cb-leaving');
       if (header) header.style.removeProperty('top');
-      d.remove();
-      root.classList.remove('cb-ask');
+      root.style.setProperty('--cb-h', '0px');
+      setTimeout(function () {
+        d.remove();
+        root.classList.remove('cb-ask', 'cb-leaving');
+        root.style.removeProperty('--cb-h');
+        document.dispatchEvent(new CustomEvent('studiolee:layout-moved'));
+      }, 300);
       if (choice === 'accepted') loadHL();
     }
     sync();
