@@ -16980,10 +16980,12 @@ ul {
   transition: transform 0.4s cubic-bezier(0.25,0.8,0.25,1);
   z-index: 1055;
   overflow-y: auto;
-  box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+  box-shadow: none;
 }
+/* the shadow only while open: closed, the panel waits off-screen and its shadow fell as a grey strip on every page's right edge */
 .menu-dropdown.is-open {
   transform: translateX(0);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.15);
 }
 .menu-backdrop {
   position: fixed;
@@ -17497,21 +17499,21 @@ section::after {
   }
 }
 
-/* ===== FAQ Typography — Inter for readability ===== */
+/* ===== FAQ Typography: the site's body font, Outfit (Inter here read as a different, plain font beside the page's text) ===== */
 .faq-tl-q {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   letter-spacing: -0.01em;
 }
 .faq-tl-a {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   line-height: 1.75;
 }
 .faq .accordion-button {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   letter-spacing: -0.01em;
 }
 .faq .accordion-body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   line-height: 1.75;
 }
 

@@ -343,7 +343,9 @@
         // Show cookie banner if it exists, otherwise prompt
         var banner = document.getElementById('ck-banner');
         if (banner) { banner.style.display = 'flex'; return; }
-        // No banner on this page — redirect to accept cookies first
+        // The cookie question sits at the chat button (assets/js/cookie-banner.js): open it there
+        var ask = document.getElementById('cb-open');
+        if (ask && document.getElementById('cb-ask').hidden) ask.click();
         document.getElementById('btnCall').textContent = 'Accepteer eerst cookies';
         return;
       }
