@@ -78,6 +78,14 @@
       var bg = st.backgroundColor, hasBg = bg && bg !== 'transparent' && !/rgba\(.*,\s*0\)$/.test(bg);
       if (hasBg || parseFloat(st.borderTopWidth) > 0 || st.backgroundImage !== 'none') add(rr, d);
     }
+    // the seam between two sections: a sticker half on each reads as misplaced
+    var secs = document.querySelectorAll('section,footer');
+    for (var q = 0; q < secs.length; q++) {
+      var sr = secs[q].getBoundingClientRect();
+      if (sr.height < 40) continue;
+      var stop = sr.top + sy;
+      if (stop > 0 && stop < limitY) out.push([0, stop - GAP, vw + sx, stop + GAP]);
+    }
     return out;
   }
 

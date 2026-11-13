@@ -41,7 +41,7 @@
     }
     .amb-hl{display:inline;background:linear-gradient(to right,#C1FF72 0%,#C1FF72 100%);background-size:0% 100%;background-repeat:no-repeat;background-position:left;transition:background-size .8s ease;padding:2px 0;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
     .amb-highlight-wrap:hover .amb-hl,.amb-highlight-wrap:focus-within .amb-hl{background-size:100% 100%}
-    @media (hover:none){.amb-highlight-wrap .amb-hl{background-size:100% 100%}}
+    /* on touch screens the highlight comes with a tap on the block (focus), not as permanent marker */
     @media (max-width:575.98px){.amb-highlight-wrap{padding:36px 24px !important}}
     .amb-step{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:20px;padding:28px;height:100%;transition:transform .3s,box-shadow .3s}
     .amb-step:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08)}
@@ -66,19 +66,19 @@
     .amb-chip-me{background:#C1FF72;color:#1F2A2E;font-weight:600}
     .amb-flow figcaption{font-size:.84rem;color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.09);padding-top:14px;margin-top:2px}
     .amb-flow li:nth-child(1){animation-name:ambOn0}.amb-flow li:nth-child(1) .amb-flow-node{animation-name:ambDot0}.amb-flow li:nth-child(1) .amb-flow-show{animation-name:ambShow0}.amb-flow li:nth-child(2){animation-name:ambOn1}.amb-flow li:nth-child(2) .amb-flow-node{animation-name:ambDot1}.amb-flow li:nth-child(2) .amb-flow-show{animation-name:ambShow1}.amb-flow li:nth-child(3){animation-name:ambOn2}.amb-flow li:nth-child(3) .amb-flow-node{animation-name:ambDot2}.amb-flow li:nth-child(3) .amb-flow-show{animation-name:ambShow2}.amb-flow li:nth-child(4){animation-name:ambOn3}.amb-flow li:nth-child(4) .amb-flow-node{animation-name:ambDot3}.amb-flow li:nth-child(4) .amb-flow-show{animation-name:ambShow3}.amb-flow li:nth-child(5){animation-name:ambOn4}.amb-flow li:nth-child(5) .amb-flow-node{animation-name:ambDot4}.amb-flow li:nth-child(5) .amb-flow-show{animation-name:ambShow4}
-    @keyframes ambOn0{0%,96%{opacity:1}100%{opacity:.32}}
+    @keyframes ambOn0{0%,96%{opacity:1}100%{opacity:.55}}
     @keyframes ambShow0{0%,2%{opacity:0;transform:translateY(8px)}6%,96%{opacity:1;transform:none}100%{opacity:0;transform:translateY(8px)}}
     @keyframes ambDot0{0%,96%{background:#C1FF72;box-shadow:0 0 0 5px rgba(193,255,114,.18)}100%{background:rgba(255,255,255,.18);box-shadow:none}}
-    @keyframes ambOn1{0%,20%{opacity:.32}23%,96%{opacity:1}100%{opacity:.32}}
+    @keyframes ambOn1{0%,20%{opacity:.55}23%,96%{opacity:1}100%{opacity:.55}}
     @keyframes ambShow1{0%,22%{opacity:0;transform:translateY(8px)}26%,96%{opacity:1;transform:none}100%{opacity:0;transform:translateY(8px)}}
     @keyframes ambDot1{0%,20%{background:rgba(255,255,255,.18);box-shadow:none}22%,96%{background:#C1FF72;box-shadow:0 0 0 5px rgba(193,255,114,.18)}100%{background:rgba(255,255,255,.18);box-shadow:none}}
-    @keyframes ambOn2{0%,37%{opacity:.32}40%,96%{opacity:1}100%{opacity:.32}}
+    @keyframes ambOn2{0%,37%{opacity:.55}40%,96%{opacity:1}100%{opacity:.55}}
     @keyframes ambShow2{0%,39%{opacity:0;transform:translateY(8px)}43%,96%{opacity:1;transform:none}100%{opacity:0;transform:translateY(8px)}}
     @keyframes ambDot2{0%,37%{background:rgba(255,255,255,.18);box-shadow:none}39%,96%{background:#C1FF72;box-shadow:0 0 0 5px rgba(193,255,114,.18)}100%{background:rgba(255,255,255,.18);box-shadow:none}}
-    @keyframes ambOn3{0%,54%{opacity:.32}57%,96%{opacity:1}100%{opacity:.32}}
+    @keyframes ambOn3{0%,54%{opacity:.55}57%,96%{opacity:1}100%{opacity:.55}}
     @keyframes ambShow3{0%,56%{opacity:0;transform:translateY(8px)}60%,96%{opacity:1;transform:none}100%{opacity:0;transform:translateY(8px)}}
     @keyframes ambDot3{0%,54%{background:rgba(255,255,255,.18);box-shadow:none}56%,96%{background:#C1FF72;box-shadow:0 0 0 5px rgba(193,255,114,.18)}100%{background:rgba(255,255,255,.18);box-shadow:none}}
-    @keyframes ambOn4{0%,71%{opacity:.32}74%,96%{opacity:1}100%{opacity:.32}}
+    @keyframes ambOn4{0%,71%{opacity:.55}74%,96%{opacity:1}100%{opacity:.55}}
     @keyframes ambShow4{0%,73%{opacity:0;transform:translateY(8px)}77%,96%{opacity:1;transform:none}100%{opacity:0;transform:translateY(8px)}}
     @keyframes ambDot4{0%,71%{background:rgba(255,255,255,.18);box-shadow:none}73%,96%{background:#C1FF72;box-shadow:0 0 0 5px rgba(193,255,114,.18)}100%{background:rgba(255,255,255,.18);box-shadow:none}}
     @keyframes ambTravel{0%{top:6px;opacity:0}2%{opacity:1}3%{top:calc(0% + 6px)}17%{top:calc(0% + 6px)}20%{top:calc(20% + 6px)}34%{top:calc(20% + 6px)}37%{top:calc(40% + 6px)}51%{top:calc(40% + 6px)}54%{top:calc(60% + 6px)}68%{top:calc(60% + 6px)}71%{top:calc(80% + 6px)}85%{top:calc(80% + 6px)} 92%{opacity:1}96%,100%{opacity:0;top:calc(80% + 6px)}}
@@ -705,6 +705,17 @@
         gD.textContent='Draai de schijf of klik op de telefoon';
         picked=null;startSpin();
       }
+      // On a phone the bubble stands under the telephone: whatever it says after a tap is brought into view, never left below the screen.
+      function reveal(){
+        if(window.innerWidth>768)return;
+        setTimeout(function(){
+          var r=overlay.getBoundingClientRect(),vh=window.innerHeight;
+          if(r.bottom>vh-8||r.top<64){
+            var y=window.scrollY+(r.bottom>vh-8?r.bottom-vh+16:r.top-80);
+            try{window.scrollTo({top:y,behavior:'smooth'});}catch(e){window.scrollTo(0,y);}
+          }
+        },60);
+      }
       function show(z,withLink){
         if(calling)return;
         stopSpin();var t=d[z.dataset.t];if(!t)return;
@@ -712,6 +723,7 @@
         block.querySelectorAll('.rz.on').forEach(function(o){if(o!==z)o.classList.remove('on');});z.classList.add('on');
         overlay.classList.add('visible');humanType(gT,t.t);gD.textContent=t.d;
         if(withLink){gGo.href=z.getAttribute('href');gGo.textContent='Bekijk '+t.n;gGo.style.display='inline-block';}
+        if(touch||withLink)reveal();
       }
 
       // Pick a service: hover or focus shows it and a click opens it; a tap shows it with its link, a second tap opens it.
@@ -737,14 +749,14 @@
         var service=picked&&d[picked];
         calling=true;stopSpin();stopTyping();hideActions();
         if(video){video.style.display='block';var p=video.play();if(p&&p.catch)p.catch(function(){});}
-        phone.classList.add('ringing');overlay.classList.add('visible');gD.textContent='';
+        phone.classList.add('ringing');overlay.classList.add('visible');gD.textContent='';reveal();
         humanType(gT,'TUUT.. TUUT..',function(){
           setTimeout(function(){humanType(gD,'De telefoon gaat over...',function(){
             setTimeout(function(){
               phone.classList.remove('ringing');if(video){video.pause();video.style.display='none';}
               humanType(gT,'*KLIK* HOI!',function(){
                 var line='Bedankt voor het bellen met StudioLee! Lee is er nu even niet. Ik ben zijn AI-assistent: laat je e-mailadres achter, dan plannen we '+(service?'een demo van '+service.n:'een demo')+' voor je in.';
-                humanType(gD,line,function(){form.style.display='flex';hang.style.display='block';block.dataset.demoAsked=service?picked:'any';});
+                humanType(gD,line,function(){form.style.display='flex';hang.style.display='block';block.dataset.demoAsked=service?picked:'any';reveal();});
               });
             },900);
           });},500);
@@ -770,7 +782,7 @@
           form.style.display='none';
           humanType(gT,'TOP, GENOTEERD!');
           gD.textContent='We mailen je over de demo. Wil je niet wachten? Kies hieronder meteen een moment.'+(note||'');
-          book.style.display='inline-block';
+          book.style.display='inline-block';reveal();
         }
         if(!LIVE){done(' (Voorbeeld: niets verstuurd.)');return;}
         fetch('https://n8n.aireclamestudio.nl/webhook/eigen-site-demo',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead)})
@@ -863,7 +875,7 @@
                   <li class="hstack gap-3"><iconify-icon icon="lucide:check-circle" class="fs-7 text-primary flex-shrink-0"></iconify-icon><span class="text-white">Maandelijks opzegbaar</span></li>
                 </ul>
                 <a href="/free-trial" class="btn w-100 justify-content-center mt-4">
-                  <span class="btn-text">Probeer 14 dagen voor &euro;1</span>
+                  <span class="btn-text" style="white-space:nowrap">14 dagen voor &euro;1</span>
                   <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
                 </a>
               </div>
