@@ -19,6 +19,7 @@
 .owl-carousel,.owl-carousel .owl-item{-webkit-tap-highlight-color:transparent;position:relative}.owl-carousel{display:none;width:100%;z-index:1}.owl-carousel .owl-stage{position:relative;-ms-touch-action:pan-Y;touch-action:manipulation;-moz-backface-visibility:hidden}.owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item,.owl-carousel .owl-wrapper{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none}.owl-carousel .owl-item img{display:block;width:100%}.owl-carousel .owl-dots.disabled,.owl-carousel .owl-nav.disabled{display:none}.no-js .owl-carousel,.owl-carousel.owl-loaded{display:block}.owl-carousel .owl-dot,.owl-carousel .owl-nav .owl-next,.owl-carousel .owl-nav .owl-prev{cursor:pointer;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel .owl-nav button.owl-next,.owl-carousel .owl-nav button.owl-prev,.owl-carousel button.owl-dot{background:0 0;color:inherit;border:none;padding:0!important;font:inherit}.owl-carousel.owl-loading{opacity:0;display:block}.owl-carousel.owl-hidden{opacity:0}.owl-carousel.owl-refresh .owl-item{visibility:hidden}.owl-carousel.owl-drag .owl-item{-ms-touch-action:pan-y;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel.owl-grab{cursor:move;cursor:grab}.owl-carousel.owl-rtl{direction:rtl}.owl-carousel.owl-rtl .owl-item{float:right}.owl-carousel .animated{animation-duration:1s;animation-fill-mode:both}.owl-carousel .owl-animated-in{z-index:0}.owl-carousel .owl-animated-out{z-index:1}.owl-carousel .fadeOut{animation-name:fadeOut}@keyframes fadeOut{0%{opacity:1}100%{opacity:0}}.owl-height{transition:height .5s ease-in-out}.owl-carousel .owl-item .owl-lazy{opacity:0;transition:opacity .4s ease}.owl-carousel .owl-item .owl-lazy:not([src]),.owl-carousel .owl-item .owl-lazy[src^=""]{max-height:0}.owl-carousel .owl-item img.owl-lazy{transform-style:preserve-3d}.owl-carousel .owl-video-wrapper{position:relative;height:100%;background:#000}.owl-carousel .owl-video-play-icon{position:absolute;height:80px;width:80px;left:50%;top:50%;margin-left:-40px;margin-top:-40px;background:url(owl.video.play.png) no-repeat;cursor:pointer;z-index:1;-webkit-backface-visibility:hidden;transition:transform .1s ease}.owl-carousel .owl-video-play-icon:hover{-ms-transform:scale(1.3,1.3);transform:scale(1.3,1.3)}.owl-carousel .owl-video-playing .owl-video-play-icon,.owl-carousel .owl-video-playing .owl-video-tn{display:none}.owl-carousel .owl-video-tn{opacity:0;height:100%;background-position:center center;background-repeat:no-repeat;background-size:contain;transition:opacity .4s ease}.owl-carousel .owl-video-frame{position:relative;z-index:1;height:100%;width:100%}</style>
   <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/route.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -374,20 +375,29 @@
       </div>
     </section>
 
-
-    <!-- Video Section -->
-    <section class="py-5 py-lg-7">
+    <!-- Zo werkt het: the route of this service, built in the page (clusters/content/motion/route, scene studiolee/social-media) -->
+    <section class="rt-section pt-0 pb-5 pb-lg-11 pb-xl-12 bg-dark">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xl-8">
-            <div class="ratio ratio-16x9 rounded-4 overflow-hidden" style="background: #1F2A2E;">
-              <div class="d-flex flex-column align-items-center justify-content-center text-center p-4">
-                <iconify-icon icon="solar:play-circle-bold" style="font-size: 64px; color: #C1FF72; opacity: 0.6;"></iconify-icon>
-                <p class="text-white text-opacity-50 mt-3 mb-0">Video binnenkort beschikbaar</p>
-              </div>
-            </div>
+        <div class="row gap-5 gap-xl-0 mb-6 mb-xl-8">
+          <div class="col-xl-4 col-xxl-4">
+            <div class="d-flex align-items-center gap-7 py-2"><hr class="border-line bg-white"><span class="badge text-dark bg-primary">Zo werkt het</span></div>
           </div>
+          <div class="col-xl-8 col-xxl-7"><h2 class="mb-0 text-white" id="zo-werkt-social-media">Hoe komt er elke week content op je kanalen?</h2></div>
         </div>
+        <div class="row justify-content-center"><div class="col-12 col-xxl-11">
+<figure class="rt rt--studiolee rt--fan-out" data-route aria-labelledby="zo-werkt-social-media" data-edges="[[&quot;strategie&quot;, &quot;content&quot;], [&quot;content&quot;, &quot;planning&quot;], [&quot;planning&quot;, &quot;ig&quot;], [&quot;planning&quot;, &quot;fb&quot;], [&quot;planning&quot;, &quot;li&quot;], [&quot;planning&quot;, &quot;tt&quot;], [&quot;ig&quot;, &quot;reacties&quot;], [&quot;fb&quot;, &quot;reacties&quot;], [&quot;li&quot;, &quot;reacties&quot;], [&quot;tt&quot;, &quot;reacties&quot;]]" data-sum="Eén planning vult al je kanalen, en de reacties worden opgevolgd.">
+<ol class="rt-map" style="--rt-cols:1fr 1fr 1fr 0.85fr 1fr;--rt-mcols:repeat(4,1fr);--rt-gap:12px 34px;--rt-mgap:16px 8px">
+<li class="rt-step rt-wm" data-id="strategie" data-step="1" style="--c:1;--r:1/span 4;--mc:1/-1;--mr:1"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></span><span class="rt-label">Strategie</span><span class="rt-sub">platformen en contentpijlers</span><span class="rt-say">Eerst de strategie: welke platformen en welke onderwerpen bij jou passen.</span></li>
+<li class="rt-step rt-wm" data-id="content" data-step="2" style="--c:2;--r:1/span 4;--mc:1/-1;--mr:2"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM21 15l-5-5L5 21M9 7a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg></span><span class="rt-label">Content</span><span class="rt-sub">gemaakt per platform</span><span class="rt-say">Dan maken wij de content, per platform in de juiste vorm.</span></li>
+<li class="rt-step rt-wm" data-id="planning" data-step="3" style="--c:3;--r:1/span 4;--mc:1/-1;--mr:3"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg></span><span class="rt-label">Planning</span><span class="rt-sub">op het moment met het meeste bereik</span><span class="rt-say">Alles wordt ingepland op het moment met het meeste bereik.</span></li>
+<li class="rt-step rt-small rt-tight" data-id="ig" data-step="4" style="--c:4;--r:1;--mc:1;--mr:4"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span><span class="rt-txt"><span class="rt-label">Instagram</span><span class="rt-say">De posts worden automatisch geplaatst op al je kanalen.</span></span></li>
+<li class="rt-step rt-small rt-tight" data-id="fb" data-step="4" style="--c:4;--r:2;--mc:2;--mr:4"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span><span class="rt-txt"><span class="rt-label">Facebook</span></span></li>
+<li class="rt-step rt-small rt-tight" data-id="li" data-step="4" style="--c:4;--r:3;--mc:3;--mr:4"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span><span class="rt-txt"><span class="rt-label">LinkedIn</span></span></li>
+<li class="rt-step rt-small rt-tight" data-id="tt" data-step="4" style="--c:4;--r:4;--mc:4;--mr:4"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span><span class="rt-txt"><span class="rt-label">TikTok</span></span></li>
+<li class="rt-step rt-wm" data-id="reacties" data-step="5" style="--c:5;--r:1/span 4;--mc:1/-1;--mr:5"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2zM18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span><span class="rt-label">Reacties</span><span class="rt-sub">community management</span><span class="rt-say">Reacties en berichten worden opgevolgd.</span></li>
+</ol>
+</figure>
+        </div></div>
       </div>
     </section>
     <!--  Feature 1: AI Content Generatie -->
@@ -1324,6 +1334,7 @@
 
 <div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
 <script src="/assets/js/cookie-banner.js" defer></script>
+<script src="/assets/js/route.js" defer></script>
 </body>
 
 </html>
