@@ -45,7 +45,7 @@
     function view(k) {
       var f = frames[k], wrap = imgs[k], im = wrap.firstChild;
       if (mode === 'd' && f.focus) {
-        var s = Math.min(100 / f.focus[2], 100 / f.focus[3], 1.8);
+        var s = Math.min(100 / f.focus[2], 100 / f.focus[3], 2.1);
         var cx = f.focus[0] + f.focus[2] / 2, cy = f.focus[1] + f.focus[3] / 2;
         var tx = Math.max(Math.min(50 - cx, (s - 1) * 50 / s), -(s - 1) * 50 / s), ty = Math.max(Math.min(50 - cy, (s - 1) * 50 / s), -(s - 1) * 50 / s);
         im.style.transform = 'scale(' + s + ') translate(' + tx + '%,' + ty + '%)';

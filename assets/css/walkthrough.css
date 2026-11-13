@@ -108,7 +108,7 @@ body[data-look="editorial"] .wt-steps .wt-dot-bar::after { background: #1F2A2E; 
 }
 
 /* studio: the main walkthrough puts its numbered steps beside the screen */
-@media (min-width: 992px) { body[data-look="studio"] .wt-main { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,2.6fr); gap: 36px; align-items: center; } body[data-look="studio"] .wt-main .wt-steps { grid-column: 1; grid-row: 1; } body[data-look="studio"] .wt-main .wt-frameset { grid-column: 2; grid-row: 1; } }
+@media (min-width: 992px) { body[data-look="studio"] .wt-main { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,3fr); gap: 32px; align-items: center; } body[data-look="studio"] .wt-main .wt-steps { grid-column: 1; grid-row: 1; } body[data-look="studio"] .wt-main .wt-frameset { grid-column: 2; grid-row: 1; } }
 body[data-look="studio"] .wt-compact .wt-cap { display: block; margin-top: 16px; color: #1F2A2E; }
 body[data-look="studio"] .wt-compact .wt-steps { flex-direction: row; gap: 6px; margin-top: 10px; }
 body[data-look="studio"] .wt-compact .wt-dot { padding: 10px 0 0; border-top: 0; }
