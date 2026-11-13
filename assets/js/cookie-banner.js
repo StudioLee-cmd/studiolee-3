@@ -15,18 +15,29 @@
     s.src = 'https://widgets.leadconnectorhq.com/loader.js';
     s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
     s.setAttribute('data-widget-id', wid);
-    document.head.appendChild(s);
     quietPrompt();
+    document.head.appendChild(s);
   }
   // The chat waits closed, as its button, until the visitor opens it: its greeting bubble ("Vragen over ...") would
   // otherwise open by itself and lie over the page while scrolling.
+  var QUIET = '.lc_text-widget--prompt{display:none!important}';
   function quietPrompt() {
+    // the style goes into the widget's shadow root the moment it is made, before anything in it is drawn
+    if (!Element.prototype.__slQuiet) {
+      var attach = Element.prototype.attachShadow;
+      Element.prototype.attachShadow = function () {
+        var r = attach.apply(this, arguments);
+        if (this.tagName === 'CHAT-WIDGET') { var st0 = document.createElement('style'); st0.id = 'sl-quiet'; st0.textContent = QUIET; r.appendChild(st0); }
+        return r;
+      };
+      Element.prototype.__slQuiet = true;
+    }
     var tries = 0, t = setInterval(function () {
       var w = document.querySelector('chat-widget'), r = w && w.shadowRoot;
       if (r && r.querySelector('.lc_text-widget')) {
         if (!r.getElementById('sl-quiet')) {
           var st = document.createElement('style'); st.id = 'sl-quiet';
-          st.textContent = '.lc_text-widget--prompt{display:none!important}';
+          st.textContent = QUIET;
           r.appendChild(st);
         }
         if (++tries > 60) clearInterval(t); // keep it on while the widget settles (it re-renders once or twice)
