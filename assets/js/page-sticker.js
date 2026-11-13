@@ -45,7 +45,7 @@
       acceptNode: function (n) {
         if (!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
         var p = n.parentElement;
-        if (!p || el.contains(p) || p.closest('script,style,noscript,template,#cb-ask,.menu-dropdown,[hidden]')) return NodeFilter.FILTER_REJECT;
+        if (!p || el.contains(p) || p.closest('script,style,noscript,template,.menu-dropdown,[hidden]')) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     });
@@ -55,26 +55,30 @@
       var rs = range.getClientRects();
       for (var i = 0; i < rs.length; i++) add(rs[i], n.parentElement);
     }
-    // media, controls and cards; full-bleed backgrounds and page containers are not obstacles
+    // media, controls and cards. A picture or a video is never free space, however large (a hero photo with logos in
+    // it is content); only plain page containers that fill the screen are not obstacles
     var big = vw * vh * 0.45;
     var els = document.body.querySelectorAll('img,svg,video,canvas,iframe,picture,button,a,input,select,textarea,figure,iconify-icon,[class*="card"],[class*="btn"],li,blockquote,table');
     for (var j = 0; j < els.length; j++) {
       var e = els[j];
-      if (el.contains(e) || e.closest('#cb-ask,.menu-dropdown')) continue;
+      if (el.contains(e) || e.closest('.menu-dropdown')) continue;
       var r = e.getBoundingClientRect();
-      if (r.width * r.height > big) continue;
+      var media = /^(IMG|VIDEO|CANVAS|IFRAME|PICTURE)$/.test(e.tagName);
+      if (!media && r.width * r.height > big) continue;
       var cs = getComputedStyle(e);
       if (cs.visibility === 'hidden' || cs.display === 'none') continue;
       add(r, cs.position === 'fixed' ? null : e);
     }
     // anything with its own visible surface (a coloured panel, a bordered box) counts too
-    var all = document.body.querySelectorAll('div,section>*,aside,form');
+    var all = document.body.querySelectorAll('div,section,section>*,aside,form');
     for (var k = 0; k < all.length; k++) {
       var d = all[k];
-      if (el.contains(d) || d.closest('#cb,.menu-dropdown,header')) continue;
+      if (el.contains(d) || d.closest('.menu-dropdown,header')) continue;
       var rr = d.getBoundingClientRect();
-      if (rr.width * rr.height > big || rr.width < 24 || rr.height < 24) continue;
+      if (rr.width < 24 || rr.height < 24) continue;
       var st = getComputedStyle(d);
+      if (st.backgroundImage !== 'none' && st.backgroundImage.indexOf('url(') >= 0) { add(rr, d); continue; } // a background picture is content too
+      if (rr.width * rr.height > big) continue;
       var bg = st.backgroundColor, hasBg = bg && bg !== 'transparent' && !/rgba\(.*,\s*0\)$/.test(bg);
       if (hasBg || parseFloat(st.borderTopWidth) > 0 || st.backgroundImage !== 'none') add(rr, d);
     }
@@ -119,7 +123,8 @@
         var s = sizes[si];
         // right side first (where the sticker always sat), top to bottom
         for (var y = bands[b][0]; y + s <= bands[b][1]; y += STEP) {
-          for (var x = vw - s - 12; x >= 12; x -= STEP) {
+          var edge = Math.ceil(s * 0.06) + 8;
+          for (var x = vw - s - edge; x >= edge; x -= STEP) {
             if (free(x, y, s, obs)) {
               el.style.width = el.style.height = s + 'px';
               el.style.left = x + 'px';
@@ -193,6 +198,7 @@
         new ResizeObserver(function () { clearTimeout(rt); rt = setTimeout(function () { place(true); }, 250); }).observe(document.body);
       }
     });
+    document.addEventListener('studiolee:layout-moved', function () { setTimeout(go, 320); });
     var t = null, w = window.innerWidth;
     window.addEventListener('resize', function () {
       if (window.innerWidth === w) return; // a phone's address bar, not a new width
