@@ -118,3 +118,9 @@ body[data-look="studio"] .wt-compact .wt-dot-bar { top: 0; bottom: auto; height:
 body[data-look="studio"] .wt-compact .wt-dot.is-on .wt-dot-bar { opacity: 1; background: rgba(127,127,127,.3); }
 .wt-badge { background: #1F2A2E; color: #fff; }
 body[data-look="overlay"] .wt-badge { background: rgba(255,255,255,.1); color: #fff; }
+/* preview only (never on studiolee.nl): which look this is, and the other two */
+.look-switch { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 2000; display: flex; align-items: center; gap: 4px; padding: 5px; border-radius: 999px; background: #1F2A2E; box-shadow: 0 10px 30px rgba(0,0,0,.35); font: 600 13px/1 'Outfit', sans-serif; }
+.look-switch span { color: rgba(255,255,255,.65); padding: 0 8px 0 10px; }
+.look-switch a { color: #fff; text-decoration: none; padding: 9px 13px; border-radius: 999px; min-height: 32px; display: inline-flex; align-items: center; }
+.look-switch a[aria-current="true"] { background: #C1FF72; color: #1F2A2E; }
+@media (max-width: 400px) { .look-switch span { display: none; } }
