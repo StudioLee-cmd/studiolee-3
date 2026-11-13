@@ -39,7 +39,7 @@
     section:not(.bg-dark):not(.bg-primary) a.text-primary:hover {
       color: #3d6228 !important;
     }
-    .amb-hl{display:inline;background:linear-gradient(to right,#C1FF72 0%,#C1FF72 100%);background-size:0% 100%;background-repeat:no-repeat;background-position:left;transition:background-size .8s ease;padding:2px 4px;border-radius:3px}
+    .amb-hl{display:inline;background:linear-gradient(to right,#C1FF72 0%,#C1FF72 100%);background-size:0% 100%;background-repeat:no-repeat;background-position:left;transition:background-size .8s ease;padding:2px 0;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
     .amb-highlight-wrap:hover .amb-hl,.amb-highlight-wrap:focus-within .amb-hl{background-size:100% 100%}
     @media (hover:none){.amb-highlight-wrap .amb-hl{background-size:100% 100%}}
     @media (max-width:575.98px){.amb-highlight-wrap{padding:36px 24px !important}}
@@ -88,25 +88,40 @@
     .amb-dia figcaption{font-size:.95rem;color:rgba(255,255,255,.78);margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
     .amb-dia figcaption strong{color:#C1FF72}
     .amb-cols{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch}
-    .amb-col{background:rgba(255,255,255,.06);border-radius:16px;padding:16px 14px}
+    .amb-col{background:rgba(255,255,255,.06);border-radius:16px;padding:18px 18px;transition:transform .3s,box-shadow .3s,background .3s;outline:none}
+    .amb-col span{transition:background .3s,transform .3s}
+    .amb-cols:hover .amb-col,.amb-cols:focus-within .amb-col{opacity:.55}
+    .amb-cols .amb-col{transition:transform .3s,box-shadow .3s,opacity .3s}
+    .amb-cols .amb-col:hover,.amb-cols .amb-col:focus{opacity:1;transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.35)}
+    .amb-col:not(.amb-col-mid):hover span,.amb-col:not(.amb-col-mid):focus span{background:rgba(193,255,114,.16)}
+    .amb-col-mid:hover span,.amb-col-mid:focus span{background:rgba(31,42,46,.2)}
     .amb-col b{display:block;font-size:.95rem;margin-bottom:10px;line-height:1.25}
     .amb-col span{display:block;font-size:.82rem;background:rgba(255,255,255,.08);border-radius:10px;padding:6px 9px;margin-top:6px}
     .amb-col-mid{background:#C1FF72;color:#1F2A2E}.amb-col-mid span{background:rgba(31,42,46,.12)}
-    .amb-arrow{align-self:center;color:#C1FF72;font-size:1.3rem;animation:ambNudge 2.4s ease-in-out infinite}
+    .amb-arrow{align-self:center;color:#C1FF72;font-size:1.5rem;animation:ambNudge 2.4s ease-in-out infinite}
+    .amb-cols{gap:14px}
+    /* a diagram stays beside the text it explains while that text is read (overflow:clip keeps the page from scrolling sideways without making the wrapper a scroll box, which would stop sticky) */
+    @supports (overflow:clip){.page-wrapper.overflow-hidden{overflow:clip!important}}
+    @media (min-width:1200px){.amb-stick{position:sticky;top:170px}}
+    .amb-col-mid{display:flex;flex-direction:column}.amb-col-mid em{margin-top:auto;padding-top:12px;font-style:normal;font-size:.82rem;font-weight:600;line-height:1.3}
     @keyframes ambNudge{0%,100%{transform:translateX(-3px);opacity:.5}50%{transform:translateX(3px);opacity:1}}
     .amb-rows{display:flex;flex-direction:column;gap:10px}
-    .amb-row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,.06);border-radius:14px;padding:12px 14px}
+    .amb-row{display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,.06);border-radius:14px;padding:12px 14px;transition:transform .3s,background .3s;outline:none;cursor:default}
+    .amb-row:hover,.amb-row:focus{transform:translateX(4px);background:rgba(255,255,255,.1)}
+    .amb-row:hover .amb-ok,.amb-row:focus .amb-ok{animation:none;background:#C1FF72;color:#1F2A2E}
     .amb-row small{display:block;color:rgba(255,255,255,.55);font-size:.74rem}
     .amb-row b{font-size:.93rem;line-height:1.3;font-weight:600}
     .amb-ok{flex-shrink:0;font-size:.78rem;font-weight:700;border-radius:99px;padding:6px 12px;border:1px solid rgba(193,255,114,.6);color:#C1FF72;animation:ambTick 9s ease infinite}
     .amb-row:nth-child(2) .amb-ok{animation-delay:1.5s}.amb-row:nth-child(3) .amb-ok{animation-delay:3s}
     @keyframes ambTick{0%,12%{background:transparent;color:#C1FF72}18%,88%{background:#C1FF72;color:#1F2A2E}100%{background:transparent;color:#C1FF72}}
     .amb-lanes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .amb-lane{background:rgba(255,255,255,.06);border-radius:16px;padding:16px}
+    .amb-lane{background:rgba(255,255,255,.06);border-radius:16px;padding:16px;transition:transform .3s,outline-color .3s;outline:2px solid transparent;cursor:default}
+    .amb-lanes:hover .amb-lane-on:not(:hover),.amb-lanes:focus-within .amb-lane-on:not(:focus){outline-color:transparent}
+    .amb-lane:hover,.amb-lane:focus{outline-color:#C1FF72;transform:translateY(-4px)}
     .amb-lane-h{font-size:1.05rem;font-weight:700;color:#fff;margin:0 0 10px}
     .amb-lane p{font-size:.84rem;margin:0 0 6px;color:rgba(255,255,255,.8)}
     .amb-lane p b{color:#C1FF72;font-weight:700}
-    .amb-lane-on{outline:2px solid #C1FF72}
+    .amb-lane-on{outline-color:#C1FF72}
     .amb-same{grid-column:1/-1;text-align:center;font-size:.84rem;background:#C1FF72;color:#1F2A2E;border-radius:12px;padding:8px;font-weight:700}
     @media (max-width:991.98px){.amb-hero .amb-hero-text{display:contents!important}.amb-hero .amb-hero-row{display:flex;flex-direction:column;gap:24px;margin:0}.amb-hero .amb-hero-row>*{display:contents!important}.amb-hero .amb-o1{order:1}.amb-hero .amb-o2{order:2}.amb-hero .amb-o3{order:3;padding-top:0!important}.amb-hero .amb-flow{order:4}.amb-hero .amb-o5{order:5}}
     @media (max-width:575.98px){.amb-cols{grid-template-columns:1fr}.amb-arrow{transform:rotate(90deg);justify-self:center;animation:none}.amb-lanes{grid-template-columns:1fr}.amb-flow{padding:20px 18px 16px}.amb-dia{padding:20px}}
@@ -311,26 +326,34 @@
     <!-- Wat is een AI marketing bureau en wat levert het op -->
     <section class="py-5 py-lg-7 py-xl-8 bg-light-gray">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6" data-aos="fade-right">
-            <figure class="amb-dia" data-explains="diagram" data-gets="Het voorwerk is al gedaan, jij hoeft alleen nog te beslissen.">
-              <p class="amb-dia-title">Wie doet wat</p>
-              <div class="amb-cols">
-                <div class="amb-col" data-step="1"><b>De software maakt de eerste versie</b><span>Artikel</span><span>Posts voor de week</span><span>Advertentie</span><span>Review-verzoek</span></div>
-                <div class="amb-arrow" aria-hidden="true">&rarr;</div>
-                <div class="amb-col amb-col-mid" data-step="2"><b>Een mens kijkt mee en beslist</b><span>Jij, als je het zelf doet</span><span>Ons team, bij managed</span></div>
-                <div class="amb-arrow" aria-hidden="true">&rarr;</div>
-                <div class="amb-col" data-step="3"><b>Het gaat de deur uit</b><span>Je website en Google</span><span>Social media</span><span>Je klanten</span></div>
-              </div>
-              <figcaption><strong>Wat je eraan hebt:</strong> het voorwerk is al gedaan, jij hoeft alleen nog te beslissen.</figcaption>
-            </figure>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
+        <div class="row g-5 mb-5" data-aos="fade-up">
+          <div class="col-lg-6">
             <span class="badge text-bg-dark mb-3">Wat het is</span>
-            <h2 class="mb-4">Wat doet een AI marketing bureau?</h2>
-            <p class="fs-5 mb-4">Een AI marketing bureau doet je marketing met hulp van AI. De software maakt de eerste versie van een artikel, een post of een advertentie. Een mens kijkt mee en beslist. Zo kost goede marketing minder tijd en minder geld dan bij een bureau dat alles met de hand doet.</p>
+            <h2 class="mb-0">Wat doet een AI marketing bureau?</h2>
+          </div>
+          <div class="col-lg-6">
+            <p class="fs-5 mb-0">Een AI marketing bureau doet je marketing met hulp van AI. De software maakt de eerste versie van een artikel, een post of een advertentie. Een mens kijkt mee en beslist. Zo kost goede marketing minder tijd en minder geld dan bij een bureau dat alles met de hand doet.</p>
+          </div>
+        </div>
+        <div data-aos="fade-up">
+          <figure class="amb-dia" data-explains="diagram" data-gets="Het voorwerk is al gedaan, jij hoeft alleen nog te beslissen.">
+            <p class="amb-dia-title">Wie doet wat</p>
+            <div class="amb-cols">
+              <div class="amb-col" data-step="1" tabindex="0"><b>De software maakt de eerste versie</b><span>Artikel</span><span>Posts voor de week</span><span>Advertentie</span><span>Review-verzoek</span></div>
+              <div class="amb-arrow" aria-hidden="true">&rarr;</div>
+              <div class="amb-col amb-col-mid" data-step="2" tabindex="0"><b>Een mens kijkt mee en beslist</b><span>Jij, als je het zelf doet</span><span>Ons team, bij managed</span><em>Aanpassen, goedkeuren of laten liggen</em></div>
+              <div class="amb-arrow" aria-hidden="true">&rarr;</div>
+              <div class="amb-col" data-step="3" tabindex="0"><b>Het gaat de deur uit</b><span>Je website en Google</span><span>Social media</span><span>Je klanten</span></div>
+            </div>
+            <figcaption><strong>Wat je eraan hebt:</strong> het voorwerk is al gedaan, jij hoeft alleen nog te beslissen.</figcaption>
+          </figure>
+        </div>
+        <div class="row g-5 mt-0">
+          <div class="col-lg-6">
             <p class="fs-5 mb-4">Het is gemaakt voor MKB-ondernemers zonder eigen marketeer die meer klanten willen uit Google, social media en reviews. De software kost vanaf &euro;79 per maand exclusief btw, je probeert het eerst 14 dagen voor &euro;1 en je kunt per maand opzeggen.</p>
-            <p class="fs-5 mb-4">Bij STUDIOLEE krijg je dat op twee manieren. Je doet het zelf met onze software, Ezida. Of je laat het ons doen, met dezelfde software. Wat het je oplevert is in beide gevallen hetzelfde:</p>
+            <p class="fs-5 mb-0">Bij STUDIOLEE krijg je dat op twee manieren. Je doet het zelf met onze software, Ezida. Of je laat het ons doen, met dezelfde software. Wat het je oplevert is in beide gevallen hetzelfde:</p>
+          </div>
+          <div class="col-lg-6">
             <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
               <li class="hstack gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-7 text-primary flex-shrink-0 mt-1"></iconify-icon><span class="fs-5">Je wordt gevonden in Google en in ChatGPT</span></li>
               <li class="hstack gap-3 align-items-start"><iconify-icon icon="lucide:check-circle" class="fs-7 text-primary flex-shrink-0 mt-1"></iconify-icon><span class="fs-5">Elke aanvraag krijgt antwoord, ook in de avond en in het weekend</span></li>
@@ -475,16 +498,16 @@
     <!-- Zo ziet zelf doen eruit -->
     <section class="feature py-5 py-lg-7 py-xl-8">
       <div class="container">
-        <div class="row align-items-center gap-7 gap-xl-0">
-          <div class="col-xl-6" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+        <div class="row align-items-start gap-7 gap-xl-0">
+          <div class="col-xl-6 amb-stick" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
             <figure class="amb-dia" data-explains="diagram" data-gets="Een kwartier lezen en goedkeuren op maandag, de rest van de week loopt het vanzelf.">
               <p class="amb-dia-title">Maandagochtend: dit staat voor je klaar</p>
               <div class="amb-rows">
-                <div class="amb-row" data-step="1"><div><small>Artikel voor je website</small><b>Klaar om te lezen, rond een woord waar je klanten op zoeken</b></div><span class="amb-ok">Goedgekeurd</span></div>
-                <div class="amb-row" data-step="2"><div><small>Social media</small><b>De posts voor deze week, met tekst en beeld</b></div><span class="amb-ok">Goedgekeurd</span></div>
-                <div class="amb-row" data-step="3"><div><small>Advertentie</small><b>Een voorstel met tekst en doelgroep, jij kiest het budget</b></div><span class="amb-ok">Goedgekeurd</span></div>
+                <div class="amb-row" data-step="1" tabindex="0"><div><small>Artikel voor je website</small><b>Klaar om te lezen, rond een woord waar je klanten op zoeken</b></div><span class="amb-ok">Goedgekeurd</span></div>
+                <div class="amb-row" data-step="2" tabindex="0"><div><small>Social media</small><b>De posts voor deze week, met tekst en beeld</b></div><span class="amb-ok">Goedgekeurd</span></div>
+                <div class="amb-row" data-step="3" tabindex="0"><div><small>Advertentie</small><b>Een voorstel met tekst en doelgroep, jij kiest het budget</b></div><span class="amb-ok">Goedgekeurd</span></div>
               </div>
-              <figcaption><strong>Wat je eraan hebt:</strong> een kwartier lezen en goedkeuren op maandag, de rest van de week loopt het vanzelf. Schematisch voorbeeld van het goedkeurscherm.</figcaption>
+              <figcaption><strong>Wat je eraan hebt:</strong> een kwartier lezen en goedkeuren op maandag, de rest van de week loopt het vanzelf.</figcaption>
             </figure>
           </div>
           <div class="col-xl-5 offset-xl-1">
@@ -613,9 +636,9 @@
     .phone-click-zone.ringing { animation:shake .08s linear infinite; }
     @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
     @media(max-width:768px) {
-      /* On a phone the stage zooms onto the telephone, so the dial and its zones are big enough to tap; the bubble sits under it. */
-      .phone-container { aspect-ratio:876/1024; }
-      .phone-stage { inset:auto; top:0; left:-89%; width:200%; height:100%; }
+      /* On a phone the stage zooms onto the telephone (2.4x, dial centred: left = 50% - 69.5% x 2.4), so each dial zone is at least 44 px to tap; the bubble sits under it. */
+      .phone-container { aspect-ratio:730/1024; }
+      .phone-stage { inset:auto; top:0; left:-116.8%; width:240%; height:100%; }
       .game-overlay { position:relative; top:auto; left:auto; width:100%; margin-top:14px; transform:none; }
       .game-overlay.visible { transform:none; }
       .game-box { padding:12px 16px; }
@@ -762,7 +785,7 @@
     <!-- De managed manier -->
     <section class="feature py-5 py-lg-7 py-xl-8 bg-light-gray" id="managed">
       <div class="container">
-        <div class="row align-items-center gap-7 gap-xl-0">
+        <div class="row align-items-start gap-7 gap-xl-0">
           <div class="col-xl-5">
             <div class="d-flex flex-column gap-5" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
               <div class="d-flex align-items-center gap-7 py-2" data-aos="fade-right">
@@ -787,12 +810,12 @@
               </div>
             </div>
           </div>
-          <div class="col-xl-6 offset-xl-1" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+          <div class="col-xl-6 offset-xl-1 amb-stick" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
             <figure class="amb-dia" data-explains="diagram" data-gets="Hetzelfde resultaat, voor ongeveer 15 minuten per maand van jouw tijd.">
               <p class="amb-dia-title">Zelfde software, andere handen</p>
               <div class="amb-lanes">
-                <div class="amb-lane" data-step="1"><div class="amb-lane-h">Zelf doen</div><p><b>Jij:</b> nakijken en goedkeuren</p><p><b>Software:</b> maakt de voorstellen</p><p><b>Jouw tijd:</b> ongeveer een kwartier per week</p></div>
-                <div class="amb-lane amb-lane-on" data-step="2"><div class="amb-lane-h">Managed</div><p><b>Ons team:</b> plan, schrijven, inplannen, bijsturen</p><p><b>Jij:</b> het rapport en een kort moment om af te stemmen</p><p><b>Jouw tijd:</b> ongeveer 15 minuten per maand</p></div>
+                <div class="amb-lane" data-step="1" tabindex="0"><div class="amb-lane-h">Zelf doen</div><p><b>Jij:</b> nakijken en goedkeuren</p><p><b>Software:</b> maakt de voorstellen</p><p><b>Jouw tijd:</b> ongeveer een kwartier per week</p></div>
+                <div class="amb-lane amb-lane-on" data-step="2" tabindex="0"><div class="amb-lane-h">Managed</div><p><b>Ons team:</b> plan, schrijven, inplannen, bijsturen</p><p><b>Jij:</b> het rapport en een kort moment om af te stemmen</p><p><b>Jouw tijd:</b> ongeveer 15 minuten per maand</p></div>
                 <div class="amb-same" data-step="3">Hetzelfde dashboard, je kunt altijd meekijken of wisselen</div>
               </div>
               <figcaption><strong>Wat je eraan hebt:</strong> hetzelfde resultaat, voor ongeveer 15 minuten per maand van jouw tijd.</figcaption>
@@ -1059,142 +1082,7 @@
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
 
-    <script>
-    (function() {
-      var isMobile = window.innerWidth < 768;
-      var stickerUrl = "/assets/images/stickers/world.webp";
-      
-      var el = document.createElement('div');
-      el.id = 'pageSticker';
-      var size = isMobile ? 180 : 260;
-      el.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;z-index:9999;cursor:grab;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.3));transform:rotate(-6deg);transition:filter 0.3s,transform 0.3s;';
-      el.innerHTML = '<img src="' + stickerUrl + '" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">';
-      document.body.appendChild(el);
-      
-      if (isMobile) {
-        el.style.left = (window.innerWidth - size - 16) + 'px';
-        el.style.top = '140px';
-      } else {
-        el.style.left = (window.innerWidth - 320) + 'px';
-        el.style.top = (window.scrollY + 200) + 'px';
-      }
-      
-      var dragging = false, offX, offY;
-      
-      if (isMobile) {
-        // MOBILE: Use touch events directly for reliable long-press drag
-        var longTimer = null;
-        var startX = 0, startY = 0;
-        var THRESHOLD = 10; // pixels of movement allowed before canceling long-press
-        
-        el.addEventListener('touchstart', function(e) {
-          var t = e.touches[0];
-          startX = t.clientX;
-          startY = t.clientY;
-          
-          longTimer = setTimeout(function() {
-            // Long-press activated: start dragging
-            dragging = true;
-            if (navigator.vibrate) navigator.vibrate(30);
-            var rect = el.getBoundingClientRect();
-            offX = startX - rect.left;
-            offY = startY - rect.top;
-            el.style.position = 'fixed';
-            el.style.left = rect.left + 'px';
-            el.style.top = rect.top + 'px';
-            el.style.transition = 'none';
-            el.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
-            el.style.transform = 'rotate(-2deg) scale(1.15)';
-          }, 400);
-        }, {passive: false});
-        
-        el.addEventListener('touchmove', function(e) {
-          var t = e.touches[0];
-          if (!dragging) {
-            // Check if finger moved too far: cancel long-press (it's a scroll)
-            var dx = t.clientX - startX;
-            var dy = t.clientY - startY;
-            if (Math.abs(dx) > THRESHOLD || Math.abs(dy) > THRESHOLD) {
-              clearTimeout(longTimer);
-            }
-            return; // Let the browser scroll normally
-          }
-          // Dragging active: move the sticker
-          e.preventDefault();
-          el.style.left = (t.clientX - offX) + 'px';
-          el.style.top = (t.clientY - offY) + 'px';
-          el.style.transform = 'rotate(' + ((t.clientX - offX) * 0.02 - 4) + 'deg) scale(1.15)';
-        }, {passive: false});
-        
-        el.addEventListener('touchend', function() {
-          clearTimeout(longTimer);
-          if (!dragging) return;
-          dragging = false;
-          // Drop: convert to absolute so it stays on the page
-          var fixedLeft = parseFloat(el.style.left);
-          var fixedTop = parseFloat(el.style.top);
-          el.style.position = 'absolute';
-          el.style.left = (fixedLeft + window.scrollX) + 'px';
-          el.style.top = (fixedTop + window.scrollY) + 'px';
-          el.style.cursor = 'grab';
-          el.style.filter = 'drop-shadow(0 6px 18px rgba(0,0,0,0.3))';
-          el.style.transform = 'rotate(-6deg) scale(1)';
-          el.style.transition = 'filter 0.3s, transform 0.3s';
-        });
-        
-      } else {
-        // DESKTOP: Pointer events, instant drag
-        el.addEventListener('pointerdown', function(e) {
-          dragging = true;
-          el.style.cursor = 'grabbing';
-          el.style.transition = 'none';
-          var rect = el.getBoundingClientRect();
-          offX = e.clientX - rect.left;
-          offY = e.clientY - rect.top;
-          el.style.position = 'fixed';
-          el.style.left = rect.left + 'px';
-          el.style.top = rect.top + 'px';
-          el.style.filter = 'drop-shadow(0 14px 40px rgba(0,0,0,0.5))';
-          el.style.transform = 'rotate(-2deg) scale(1.08)';
-          e.preventDefault();
-        });
-        
-        window.addEventListener('pointermove', function(e) {
-          if (!dragging) return;
-          el.style.left = (e.clientX - offX) + 'px';
-          el.style.top = (e.clientY - offY) + 'px';
-          el.style.transform = 'rotate(' + ((e.clientX - offX) * 0.02 - 4) + 'deg) scale(1.08)';
-        });
-        
-        window.addEventListener('pointerup', function() {
-          if (!dragging) return;
-          dragging = false;
-          var fixedLeft = parseFloat(el.style.left);
-          var fixedTop = parseFloat(el.style.top);
-          el.style.position = 'absolute';
-          el.style.left = (fixedLeft + window.scrollX) + 'px';
-          el.style.top = (fixedTop + window.scrollY) + 'px';
-          el.style.cursor = 'grab';
-          el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
-          el.style.transform = 'rotate(-6deg) scale(1)';
-          el.style.transition = 'filter 0.3s, transform 0.3s';
-        });
-        
-        el.addEventListener('mouseenter', function() {
-          if (!dragging) {
-            el.style.transform = 'rotate(-3deg) scale(1.06)';
-            el.style.filter = 'drop-shadow(0 12px 32px rgba(0,0,0,0.4))';
-          }
-        });
-        el.addEventListener('mouseleave', function() {
-          if (!dragging) {
-            el.style.transform = 'rotate(-6deg) scale(1)';
-            el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
-          }
-        });
-      }
-    })();
-    </script>
+    <script src="/assets/js/page-sticker.js" data-sticker="/assets/images/stickers/world.webp" defer></script>
 
 <div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
 <script src="/assets/js/cookie-banner.js" defer></script>
