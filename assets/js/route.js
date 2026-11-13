@@ -56,11 +56,22 @@
       edges.forEach(function (e) {
         var d = curve(rect(e.a, base), rect(e.b, base)); e.base.setAttribute('d', d); e.on.setAttribute('d', d);
         e.len = e.on.getTotalLength(); e.on.style.strokeDasharray = e.len; if (!e.lit) e.on.style.strokeDashoffset = e.len;
-        if (e.lab) { var p = e.on.getPointAtLength(e.len * 0.5); e.lab.style.left = p.x + 'px'; e.lab.style.top = p.y + 'px'; }
+        if (e.lab) place(e, base);
       });
       // the sentence bar keeps the height of its longest sentence, so the page does not jump while it walks
       fig.style.setProperty('--rt-now-h', '0px'); var h = 0; order.forEach(function (n) { nowT.textContent = say(n); h = Math.max(h, now.offsetHeight); }); if (fig.getAttribute('data-sum')) { nowT.textContent = fig.getAttribute('data-sum'); h = Math.max(h, now.offsetHeight); }
       fig.style.setProperty('--rt-now-h', h + 'px'); show(idx, true);
+    }
+    function place(e, base) {
+      // a line's label sits where it covers no step: the middle of the line, else further along it, else it is left out
+      var boxes = steps.map(function (s) { return rect(s, base); }), w = e.lab.offsetWidth || 70, h = e.lab.offsetHeight || 22;
+      var spots = [0.5, 0.35, 0.65, 0.2, 0.8], free = null;
+      for (var i = 0; i < spots.length && !free; i++) {
+        var p = e.on.getPointAtLength(e.len * spots[i]);
+        if (!boxes.some(function (b) { return p.x + w / 2 > b.x + 2 && p.x - w / 2 < b.x + b.w - 2 && p.y + h / 2 > b.y + 2 && p.y - h / 2 < b.y + b.h - 2; })) free = p;
+      }
+      e.lab.style.display = free ? '' : 'none';
+      if (free) { e.lab.style.left = free.x + 'px'; e.lab.style.top = free.y + 'px'; }
     }
     function light(e, on, animate) {
       e.lit = on; e.on.style.transition = animate ? '' : 'none'; e.on.style.strokeDashoffset = on ? 0 : e.len;
