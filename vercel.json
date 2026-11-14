@@ -1,5 +1,6 @@
 {
   "buildCommand": "node tools/blog-search-index.mjs",
+  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
