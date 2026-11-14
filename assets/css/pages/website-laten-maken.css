@@ -101,3 +101,7 @@
 @media (max-width:991.98px){.wlm-examples .niche-showcase__card{grid-template-columns:minmax(0,1fr)}.wlm-examples .niche-showcase__viewport{aspect-ratio:16/11;min-height:0}}
 /* ranking trade pages keep their banner: on a phone its H1 clears the fixed header and the menu button */
 @media (max-width:991.98px){.banner-inner-section{padding-top:130px;min-height:0}}
+/* "Waarom" cards on the trade pages: the card icon is a 44 px tile (the theme's fs-2 is 12 px), like the feature icons */
+.rounded-4.h-100 > iconify-icon.fs-2{background:var(--bs-primary);color:var(--bs-dark)!important;border-radius:12px;padding:8px;font-size:1.6rem!important;width:44px;height:44px;display:inline-grid;place-items:center;align-self:flex-start}
+/* plan prices in the cost cards read in full contrast */
+.card .card-body > div > .fs-12.fw-bold{color:var(--bs-dark)!important;opacity:1}
