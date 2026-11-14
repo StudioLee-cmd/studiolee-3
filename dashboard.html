@@ -2,6 +2,7 @@
 <html lang="nl">
 
 <head>
+  <script>try{localStorage.getItem("cookie_consent")||document.documentElement.classList.add("cb-ask")}catch(e){}</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Het STUDIOLEE Platform | Alles-in-een Marketing Dashboard</title>
@@ -15,6 +16,7 @@
 .owl-carousel,.owl-carousel .owl-item{-webkit-tap-highlight-color:transparent;position:relative}.owl-carousel{display:none;width:100%;z-index:1}.owl-carousel .owl-stage{position:relative;-ms-touch-action:pan-Y;touch-action:manipulation;-moz-backface-visibility:hidden}.owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item,.owl-carousel .owl-wrapper{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none}.owl-carousel .owl-item img{display:block;width:100%}.owl-carousel .owl-dots.disabled,.owl-carousel .owl-nav.disabled{display:none}.no-js .owl-carousel,.owl-carousel.owl-loaded{display:block}.owl-carousel .owl-dot,.owl-carousel .owl-nav .owl-next,.owl-carousel .owl-nav .owl-prev{cursor:pointer;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel .owl-nav button.owl-next,.owl-carousel .owl-nav button.owl-prev,.owl-carousel button.owl-dot{background:0 0;color:inherit;border:none;padding:0!important;font:inherit}.owl-carousel.owl-loading{opacity:0;display:block}.owl-carousel.owl-hidden{opacity:0}.owl-carousel.owl-refresh .owl-item{visibility:hidden}.owl-carousel.owl-drag .owl-item{-ms-touch-action:pan-y;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel.owl-grab{cursor:move;cursor:grab}.owl-carousel.owl-rtl{direction:rtl}.owl-carousel.owl-rtl .owl-item{float:right}.owl-carousel .animated{animation-duration:1s;animation-fill-mode:both}.owl-carousel .owl-animated-in{z-index:0}.owl-carousel .owl-animated-out{z-index:1}.owl-carousel .fadeOut{animation-name:fadeOut}@keyframes fadeOut{0%{opacity:1}100%{opacity:0}}.owl-height{transition:height .5s ease-in-out}.owl-carousel .owl-item .owl-lazy{opacity:0;transition:opacity .4s ease}.owl-carousel .owl-item .owl-lazy:not([src]),.owl-carousel .owl-item .owl-lazy[src^=""]{max-height:0}.owl-carousel .owl-item img.owl-lazy{transform-style:preserve-3d}.owl-carousel .owl-video-wrapper{position:relative;height:100%;background:#000}.owl-carousel .owl-video-play-icon{position:absolute;height:80px;width:80px;left:50%;top:50%;margin-left:-40px;margin-top:-40px;background:url(owl.video.play.png) no-repeat;cursor:pointer;z-index:1;-webkit-backface-visibility:hidden;transition:transform .1s ease}.owl-carousel .owl-video-play-icon:hover{-ms-transform:scale(1.3,1.3);transform:scale(1.3,1.3)}.owl-carousel .owl-video-playing .owl-video-play-icon,.owl-carousel .owl-video-playing .owl-video-tn{display:none}.owl-carousel .owl-video-tn{opacity:0;height:100%;background-position:center center;background-repeat:no-repeat;background-size:contain;transition:opacity .4s ease}.owl-carousel .owl-video-frame{position:relative;z-index:1;height:100%;width:100%}</style>
   <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
   <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/assets/css/route.css" />
 
   <script type="application/ld+json">
   {
@@ -126,7 +128,7 @@
                     </li>
                   </ul>
                   <div class="hstack gap-3">
-                    <a href="https://cal.com/studiolee" rel="nofollow" target="_blank"
+                    <a href="/gratis-gesprek"
                       class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a>
                   </div>
                 </div>
@@ -147,7 +149,7 @@
   <div class="page-wrapper overflow-hidden">
 
     <!-- Hero -->
-    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end" style="background: linear-gradient(135deg, #1a2428 0%, #2a3a40 100%); min-height: 500px;">
+    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end" style="background: linear-gradient(135deg, #1a2428 0%, #2a3a40 100%); min-height: 500px; padding-top: 150px;">
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
 
@@ -162,14 +164,17 @@
               <a href="/free-trial" class="btn bg-primary text-dark fw-bold px-5 py-3 rounded-pill cta-shine mt-4">Start 14 dagen voor €1</a>
             </div>
             <div class="col-lg-5 mt-5 mt-lg-0">
-              <div class="ratio ratio-16x9 rounded-4 overflow-hidden bg-dark border border-white border-opacity-10">
-                <div class="d-flex align-items-center justify-content-center h-100">
-                  <div class="text-center">
-                    <iconify-icon icon="solar:play-circle-bold-duotone" class="text-primary" style="font-size: 64px;"></iconify-icon>
-                    <p class="text-white text-opacity-50 fs-6 mt-3 mb-0">Platform demo — binnenkort</p>
-                  </div>
-                </div>
-              </div>
+              <!-- the route of the platform, built in the page (clusters/content/motion/route, scene studiolee/platform-demo) -->
+<figure class="rt rt--studiolee rt--tree" data-route data-edges="[[&quot;jij&quot;, &quot;platform&quot;], [&quot;platform&quot;, &quot;social&quot;], [&quot;platform&quot;, &quot;ads&quot;], [&quot;platform&quot;, &quot;geld&quot;]]" data-sum="Social, advertenties en je geld: alles vanuit één platform.">
+<figcaption class="rt-head"><span class="rt-kicker">Het platform</span><h2 class="rt-title">Wat doe je met het platform?</h2></figcaption>
+<ol class="rt-map" style="--rt-cols:repeat(3,1fr);--rt-mcols:1fr 1fr;--rt-gap:26px 16px;--rt-mgap:24px 12px">
+<li class="rt-step rt-wm" data-id="jij" data-step="1" style="--c:1/-1;--r:1;--mc:1/-1;--mr:1"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg></span><span class="rt-label">Jij logt in</span><span class="rt-sub">of wij beheren het voor je</span><span class="rt-say">Je logt zelf in, of je laat ons het platform voor je beheren.</span></li>
+<li class="rt-step rt-wm" data-id="platform" data-step="2" style="--c:1/-1;--r:2;--mc:1/-1;--mr:2"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><span class="rt-label">Eén platform</span><span class="rt-sub">voor je hele marketing</span><span class="rt-say">Alles voor je marketing staat in één platform.</span></li>
+<li class="rt-step" data-id="social" data-step="3" style="--c:1;--r:3;--mc:1;--mr:3"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span><span class="rt-label">Social media</span><span class="rt-sub">plannen en publiceren</span><span class="rt-say">Social media: ideeën, planning en publicatie op al je kanalen.</span></li>
+<li class="rt-step" data-id="ads" data-step="4" style="--c:2;--r:3;--mc:2;--mr:3"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 7l-8.5 8.5-5-5L2 17M16 7h6v6"/></svg></span><span class="rt-label">Advertenties</span><span class="rt-sub">Google en Meta</span><span class="rt-say">Advertenties: Google en Meta campagnes instellen en volgen.</span></li>
+<li class="rt-step rt-wm" data-id="geld" data-step="5" style="--c:3;--r:3;--mc:1/-1;--mr:4"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10h12M4 14h9M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg></span><span class="rt-label">Offertes en facturen</span><span class="rt-sub">online betaald</span><span class="rt-say">Offertes en facturen: versturen en online laten betalen.</span></li>
+</ol>
+</figure>
             </div>
           </div>
         </div>
@@ -382,7 +387,7 @@
       </div>
     </section>
 
-    <!-- Managed Pro Section -->
+    <!-- Managed by StudioLee Section -->
     
     <!-- Module 9: Maandelijks Rapport -->
     <section class="py-5 py-lg-9">
@@ -401,7 +406,7 @@
               <li class="hstack gap-2 text-opacity-70 fs-5"><iconify-icon icon="lucide:check" class="text-primary fs-7 flex-shrink-0"></iconify-icon>Klikken, bezoekers, reviews, social bereik</li>
               <li class="hstack gap-2 text-opacity-70 fs-5"><iconify-icon icon="lucide:check" class="text-primary fs-7 flex-shrink-0"></iconify-icon>Ad-resultaten als je adverteert via het platform</li>
               <li class="hstack gap-2 text-opacity-70 fs-5"><iconify-icon icon="lucide:check" class="text-primary fs-7 flex-shrink-0"></iconify-icon>Vergelijking met vorige maand + actiepunten</li>
-              <li class="hstack gap-2 text-opacity-70 fs-5"><iconify-icon icon="lucide:check" class="text-primary fs-7 flex-shrink-0"></iconify-icon>Inbegrepen bij alle pakketten</li>
+              <li class="hstack gap-2 text-opacity-70 fs-5"><iconify-icon icon="lucide:check" class="text-primary fs-7 flex-shrink-0"></iconify-icon>Onderdeel van het dashboard in Ezida Full en Managed by StudioLee</li>
             </ul>
           </div>
         </div>
@@ -441,7 +446,7 @@
           <div class="col-xl-6" data-aos="fade-left">
             <span class="text-primary fw-bold fs-6">11</span>
             <h2 class="mt-2 mb-4">Afspraakherinneringen</h2>
-            <p class="text-opacity-50 fs-6 mb-3"><em>WhatsApp-koppeling: €20/mo extra</em></p>
+            <p class="text-opacity-50 fs-6 mb-3"><em>WhatsApp-koppeling: zet je erbij als je eenmaal binnen bent</em></p>
             <p class="text-opacity-70 fs-5 mb-4">Minder no-shows, meer omzet. Het platform stuurt automatisch herinneringen via WhatsApp en SMS — 24 uur en 2 uur voor elke afspraak.</p>
             <ul class="list-unstyled d-flex flex-column gap-3">
               <li class="hstack gap-2 text-opacity-70 fs-5"><iconify-icon icon="lucide:check" class="text-primary fs-7 flex-shrink-0"></iconify-icon>WhatsApp + SMS herinneringen</li>
@@ -464,7 +469,7 @@
           <div class="col-xl-6 order-xl-1" data-aos="fade-right">
             <span class="text-primary fw-bold fs-6">12</span>
             <h2 class="text-white mt-2 mb-4">Eigen app voor je klanten</h2>
-            <p class="text-white text-opacity-70 fs-5 mb-2">Optioneel — vanaf €79/mo extra</p>
+            <p class="text-white text-opacity-70 fs-5 mb-2">Optioneel: zet je erbij als je eenmaal binnen bent</p>
             <p class="text-white text-opacity-70 fs-5 mb-4">Je eigen branded app waar klanten afspraken boeken, berichten sturen en hun historie inzien. Jouw merk, jouw app — geen commissie aan externe platforms.</p>
             <ul class="list-unstyled d-flex flex-column gap-3">
               <li class="hstack gap-2 text-white text-opacity-70 fs-5"><iconify-icon icon="lucide:check" class="text-primary fs-7 flex-shrink-0"></iconify-icon>Klanten boeken zelf afspraken</li>
@@ -530,29 +535,35 @@
       <div class="container">
         <div class="row align-items-center gap-5 gap-xl-0">
           <div class="col-xl-6" data-aos="fade-right">
-            <h2 class="text-dark mb-4">Managed Pro: wij doen het voor je</h2>
-            <p class="text-dark fs-5 mb-4 opacity-75">Wil je niet zelf aan de knoppen zitten? Met Managed Pro beheren wij het volledige platform voor je. Inclusief:</p>
+            <h2 class="text-dark mb-4">Managed by StudioLee: wij doen het voor je</h2>
+            <p class="text-dark fs-5 mb-4 opacity-75">Wil je niet zelf aan de knoppen zitten? Met Managed by StudioLee doen wij het werk voor je, vanaf €379 per maand excl. BTW. Wat erin zit bepaalt het eindbedrag, en dat zie je voordat je start. Daarin zit:</p>
             <ul class="list-unstyled d-flex flex-column gap-3">
-              <li class="hstack gap-2 text-dark fs-5"><iconify-icon icon="lucide:check" class="text-dark fs-7 flex-shrink-0"></iconify-icon><strong>Strategie call</strong> — maandelijks bespreken we je groeiplan samen</li>
+              <li class="hstack gap-2 text-dark fs-5"><iconify-icon icon="lucide:check" class="text-dark fs-7 flex-shrink-0"></iconify-icon><span><strong>SEO-artikelen en social media</strong>: door ons gedaan</span></li>
               
-              <li class="hstack gap-2 text-dark fs-5"><iconify-icon icon="lucide:check" class="text-dark fs-7 flex-shrink-0"></iconify-icon><strong>15 minuten update per maand</strong> — volledig op de hoogte blijven</li>
-              <li class="hstack gap-2 text-dark fs-5"><iconify-icon icon="lucide:check" class="text-dark fs-7 flex-shrink-0"></iconify-icon><strong>Dagelijkse content</strong> — SEO, social, reviews, alles draait</li>
-              <li class="hstack gap-2 text-dark fs-5"><iconify-icon icon="lucide:check" class="text-dark fs-7 flex-shrink-0"></iconify-icon><strong>Groei-of-Geld-Terug Garantie</strong> — geen risico voor jou</li>
+              <li class="hstack gap-2 text-dark fs-5"><iconify-icon icon="lucide:check" class="text-dark fs-7 flex-shrink-0"></iconify-icon><span><strong>Een kort gesprek in de eerste maanden</strong>: daarna updates per e-mail</span></li>
+              <li class="hstack gap-2 text-dark fs-5"><iconify-icon icon="lucide:check" class="text-dark fs-7 flex-shrink-0"></iconify-icon><span><strong>De maandelijkse keuzes</strong>: elke maand voor je gemaakt</span></li>
+              <li class="hstack gap-2 text-dark fs-5"><iconify-icon icon="lucide:check" class="text-dark fs-7 flex-shrink-0"></iconify-icon><span><strong>Garantie op betaalde SEO-uitbreidingen</strong>: haal je de afgesproken top-10-posities niet, dan krijg je die uitbreiding terugbetaald</span></li>
             </ul>
             <div class="mt-5 d-flex gap-3 flex-wrap">
               <a href="/tarieven" class="btn btn-dark text-white fw-bold px-5 py-3 rounded-pill">Bekijk tarieven</a>
-              <a href="https://cal.com/studiolee" rel="nofollow" target="_blank" class="btn border-2 border-dark text-dark fw-bold px-5 py-3 rounded-pill">Plan een gesprek</a>
+              <a href="/gratis-gesprek" class="btn border-2 border-dark text-dark fw-bold px-5 py-3 rounded-pill">Plan een gesprek</a>
             </div>
           </div>
           <div class="col-xl-6 text-center" data-aos="fade-left">
-            <div class="ratio ratio-16x9 rounded-4 overflow-hidden bg-dark">
-              <div class="d-flex align-items-center justify-content-center h-100">
-                <div class="text-center">
-                  <iconify-icon icon="solar:play-circle-bold-duotone" class="text-primary" style="font-size: 64px;"></iconify-icon>
-                  <p class="text-white text-opacity-50 fs-6 mt-3 mb-0">Managed Pro uitleg — binnenkort</p>
-                </div>
-              </div>
-            </div>
+            <!-- what Managed Pro takes over, built in the page (clusters/content/motion/route, scene studiolee/managed-pro) -->
+<figure class="rt rt--studiolee rt--lanes" data-route data-edges="[[&quot;call&quot;, &quot;platform&quot;], [&quot;platform&quot;, &quot;seo&quot;], [&quot;platform&quot;, &quot;social&quot;], [&quot;platform&quot;, &quot;reviews&quot;]]" data-sum="Jij: een kort gesprek in de eerste maanden, daarna updates per e-mail. Wij: de rest, elke dag.">
+<figcaption class="rt-head"><span class="rt-kicker">Managed by StudioLee</span><h3 class="rt-title">Wie doet wat in een maand?</h3></figcaption>
+<ol class="rt-map" style="--rt-cols:52px 1fr 1fr 1fr;--rt-mcols:40px 1fr 1fr;--rt-gap:14px 14px;--rt-mgap:10px 10px">
+<li class="rt-lane" aria-hidden="true" style="--c:1/-1;--r:1;--mc:1/-1;--mr:1">Jij</li>
+<li class="rt-lane" aria-hidden="true" style="--c:1/-1;--r:2/span 3;--mc:1/-1;--mr:2/span 3">Wij</li>
+<li class="rt-step rt-small rt-tight" data-id="call" data-step="1" style="--c:2;--r:1;--mc:2;--mr:1"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2zM18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span><span class="rt-txt"><span class="rt-label">Kort gesprek</span><span class="rt-sub">in de eerste maanden</span><span class="rt-say">In de eerste maanden stemmen we in een kort gesprek af wat je wilt.</span></span></li>
+<li class="rt-step rt-small rt-tight" data-id="platform" data-step="2" style="--c:2;--r:2/span 3;--mc:2;--mr:2/span 3"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></span><span class="rt-txt"><span class="rt-label">Het platform</span><span class="rt-sub">wij beheren het</span><span class="rt-say">Wij beheren het platform en maken elke maand de keuzes voor je.</span></span></li>
+<li class="rt-step rt-small rt-tight" data-id="seo" data-step="3" style="--c:3;--r:2;--mc:3;--mr:2"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span><span class="rt-txt"><span class="rt-label">SEO</span><span class="rt-sub">elke dag</span><span class="rt-say">SEO, social en reviews draaien elke dag door.</span></span></li>
+<li class="rt-step rt-small rt-tight" data-id="social" data-step="3" style="--c:3;--r:3;--mc:3;--mr:3"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span><span class="rt-txt"><span class="rt-label">Social</span><span class="rt-sub">elke dag</span></span></li>
+<li class="rt-step rt-small rt-tight" data-id="reviews" data-step="3" style="--c:3;--r:4;--mc:3;--mr:4"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2-6.2 3.2L7 14.2 2 9.3l6.9-1z"/></svg></span><span class="rt-txt"><span class="rt-label">Reviews</span><span class="rt-sub">elke dag</span></span></li>
+<li class="rt-step rt-small rt-tight" data-id="update" data-step="4" style="--c:4;--r:1;--mc:3;--mr:1"><span class="rt-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM12 6v6l4 2"/></svg></span><span class="rt-txt"><span class="rt-label">Updates per e-mail</span><span class="rt-sub">jij blijft op de hoogte</span><span class="rt-say">Daarna blijf je op de hoogte met updates per e-mail.</span></span></li>
+</ol>
+</figure>
           </div>
         </div>
       </div>
@@ -562,7 +573,7 @@
     <section class="py-5 py-lg-11 py-xl-12">
       <div class="container text-center">
         <h2 class="mb-4">Probeer het 14 dagen voor €1</h2>
-        <p class="fs-5 text-opacity-70 mb-5" style="max-width: 550px; margin: 0 auto;">Geen creditcard nodig. Geen verplichtingen. Ontdek wat het platform voor jouw bedrijf kan betekenen.</p>
+        <p class="fs-5 text-opacity-70 mb-5" style="max-width: 550px; margin: 0 auto;">Geen verplichtingen. Het dashboard zit in Ezida Full, vanaf &euro;179 per maand excl. BTW, en je zegt maandelijks op.</p>
         <a href="/free-trial" class="btn bg-primary text-dark fw-bold px-5 py-3 rounded-pill cta-shine">Start nu</a>
       </div>
     </section>
@@ -638,11 +649,11 @@
   <script src="/assets/libs/aos-master/dist/aos.js"></script>
   <script src="/assets/js/custom.js"></script>
   <!-- solar icons -->
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="/assets/libs/iconify-icon/icons.js"></script><script src="/assets/libs/iconify-icon/iconify-icon.min.js"></script>
 
 
-<div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
 <script src="/assets/js/cookie-banner.js" defer></script>
+<script src="/assets/js/route.js" defer></script>
 </body>
 
 </html>
