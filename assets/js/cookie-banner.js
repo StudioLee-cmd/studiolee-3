@@ -1,25 +1,84 @@
-(function(){
-var c=localStorage.getItem("cookie_consent");
-function loadHL(){
-var el=document.querySelector("[data-widget-id]");
-var wid=el?el.getAttribute("data-widget-id"):"";
-if(!wid)return;
-if(document.querySelector("script[src*='leadconnectorhq']"))return;
-var s=document.createElement("script");
-s.src="https://widgets.leadconnectorhq.com/loader.js";
-s.setAttribute("data-resources-url","https://widgets.leadconnectorhq.com/chat-widget/loader.js");
-s.setAttribute("data-widget-id",wid);
-document.head.appendChild(s);
-}
-if(c==="accepted"){loadHL();return;}
-if(c==="declined")return;
-var d=document.createElement("div");
-d.id="cb";
-d.innerHTML='<div style="position:fixed;bottom:0;left:0;right:0;z-index:99999;padding:12px;display:flex;justify-content:center"><div style="max-width:560px;width:100%;background:#141419;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:16px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 -8px 40px rgba(0,0,0,0.4)"><img src="/assets/images/cookie.png" style="width:48px;height:48px;animation:ckspin 3s linear infinite;flex-shrink:0" alt="Cookie"><p style="flex:1;color:rgba(255,255,255,0.8);font-size:14px;line-height:1.5;margin:0">We gebruiken cookies voor onze chatfunctie. Lees ons <a href="/privacy" style="color:#C1FF72;text-decoration:underline">privacybeleid</a>.</p><div style="display:flex;gap:8px;flex-shrink:0"><button id="cb-no" style="background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15);padding:8px 16px;border-radius:100px;font-size:13px;cursor:pointer">Weigeren</button><button id="cb-yes" style="background:#C1FF72;color:#0a0a0f;border:none;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:700;cursor:pointer">Accepteren</button></div></div></div>';
-var st=document.createElement("style");
-st.textContent="@keyframes ckspin{from{transform:rotate(0)}to{transform:rotate(360deg)}}@media(max-width:600px){#cb>div>div{flex-wrap:wrap}#cb>div>div>div:last-child{width:100%;display:flex}#cb>div>div>div:last-child button{flex:1}}@media(prefers-reduced-motion:reduce){#cb img{animation:none}}";
-document.head.appendChild(st);
-document.body.appendChild(d);
-document.getElementById("cb-yes").onclick=function(){localStorage.setItem("cookie_consent","accepted");d.remove();loadHL();};
-document.getElementById("cb-no").onclick=function(){localStorage.setItem("cookie_consent","declined");d.remove();};
+/* Cookie consent for the chat (LeadConnector), the one part of the site that places cookies.
+   The question is a bar at the very top of the page, in space each page reserves before its first paint (the html class
+   cb-ask, set in the page's head while no answer is stored; the bar's look is in styles.css). It pushes the page down
+   instead of lying over it, so it covers nothing and nothing jumps. The fixed header sits under the bar until the bar has
+   scrolled away. Accepteren loads the chat; Weigeren keeps it off. The choice stays in localStorage "cookie_consent". */
+(function () {
+  var root = document.documentElement, c = null;
+  try { c = localStorage.getItem('cookie_consent'); } catch (e) {}
+  function loadHL() {
+    var el = document.querySelector('[data-widget-id]');
+    var wid = el ? el.getAttribute('data-widget-id') : '';
+    if (!wid) return;
+    if (document.querySelector("script[src*='leadconnectorhq']")) return;
+    var s = document.createElement('script');
+    s.src = 'https://widgets.leadconnectorhq.com/loader.js';
+    s.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+    s.setAttribute('data-widget-id', wid);
+    quietPrompt();
+    document.head.appendChild(s);
+  }
+  // The chat waits closed, as its button, until the visitor opens it: its greeting bubble ("Vragen over ...") would
+  // otherwise open by itself and lie over the page while scrolling.
+  var QUIET = '.lc_text-widget--prompt{display:none!important}';
+  function quietPrompt() {
+    // the style goes into the widget's shadow root the moment it is made, before anything in it is drawn
+    if (!Element.prototype.__slQuiet) {
+      var attach = Element.prototype.attachShadow;
+      Element.prototype.attachShadow = function () {
+        var r = attach.apply(this, arguments);
+        if (this.tagName === 'CHAT-WIDGET') { var st0 = document.createElement('style'); st0.id = 'sl-quiet'; st0.textContent = QUIET; r.appendChild(st0); }
+        return r;
+      };
+      Element.prototype.__slQuiet = true;
+    }
+    var tries = 0, t = setInterval(function () {
+      var w = document.querySelector('chat-widget'), r = w && w.shadowRoot;
+      if (r && r.querySelector('.lc_text-widget')) {
+        if (!r.getElementById('sl-quiet')) {
+          var st = document.createElement('style'); st.id = 'sl-quiet';
+          st.textContent = QUIET;
+          r.appendChild(st);
+        }
+        if (++tries > 60) clearInterval(t); // keep it on while the widget settles (it re-renders once or twice)
+      } else if (++tries > 120) clearInterval(t);
+    }, 250);
+  }
+  if (c === 'accepted') { root.classList.remove('cb-ask'); loadHL(); return; }
+  if (c === 'declined') { root.classList.remove('cb-ask'); return; }
+  root.classList.add('cb-ask'); // a page whose head lacks the early line still reserves the space here
+
+  var d = document.createElement('div');
+  d.id = 'cb';
+  d.setAttribute('role', 'region');
+  d.setAttribute('aria-label', 'Cookies');
+  d.innerHTML = '<div><img src="/assets/images/cookie.png" alt=""><p>We gebruiken cookies voor onze chatfunctie. Lees ons <a href="/privacy">privacybeleid</a>.</p>' +
+    '<div class="cb-b"><button type="button" id="cb-no">Weigeren</button><button type="button" id="cb-yes">Accepteren</button></div></div>';
+
+  function mount() {
+    document.body.insertBefore(d, document.body.firstChild);
+    var header = document.querySelector('header.position-fixed');
+    function sync() { if (header) header.style.setProperty('top', Math.max(0, d.offsetHeight - window.scrollY) + 'px', 'important'); }
+    function close(choice) {
+      try { localStorage.setItem('cookie_consent', choice); } catch (e) {}
+      window.removeEventListener('scroll', sync); window.removeEventListener('resize', sync);
+      // fold the bar away: page, header and bar move together, then the reserved space is released
+      root.classList.add('cb-leaving');
+      if (header) header.style.removeProperty('top');
+      root.style.setProperty('--cb-h', '0px');
+      setTimeout(function () {
+        d.remove();
+        root.classList.remove('cb-ask', 'cb-leaving');
+        root.style.removeProperty('--cb-h');
+        document.dispatchEvent(new CustomEvent('studiolee:layout-moved'));
+      }, 300);
+      if (choice === 'accepted') loadHL();
+    }
+    sync();
+    window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    document.getElementById('cb-yes').onclick = function () { close('accepted'); };
+    document.getElementById('cb-no').onclick = function () { close('declined'); };
+  }
+  if (document.body) mount(); else document.addEventListener('DOMContentLoaded', mount);
 })();
