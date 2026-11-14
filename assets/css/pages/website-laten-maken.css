@@ -1,7 +1,8 @@
 /* /website-laten-maken and its trade pages: the top with the route, the price chips, the live example cards.
    Page-scoped: the shared styles.css stays as it is. */
 .wlm-hero{padding:150px 0 72px;background:linear-gradient(160deg,#1F2A2E 0%,#141c1f 100%)}
-.wlm-hero .wlm-h1{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.05;letter-spacing:-.01em}
+.wlm-hero .wlm-h1{font-size:clamp(2rem,3.3vw,3.2rem);line-height:1.08;letter-spacing:-.01em;overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto;hyphenate-limit-chars:12 5 5;-webkit-hyphenate-limit-before:5;-webkit-hyphenate-limit-after:5;max-width:100%}
+.wlm-hero .row>[class*="col-"]{min-width:0}
 .wlm-hero .rt{box-shadow:0 30px 80px rgba(0,0,0,.35)}
 .wlm-price{display:flex;flex-wrap:wrap;gap:12px}
 .wlm-price li{display:flex;flex-direction:column;gap:2px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;min-width:150px}
@@ -101,6 +102,9 @@
 @media (max-width:991.98px){.wlm-examples .niche-showcase__card{grid-template-columns:minmax(0,1fr)}.wlm-examples .niche-showcase__viewport{aspect-ratio:16/11;min-height:0}}
 /* ranking trade pages keep their banner: on a phone its H1 clears the fixed header and the menu button */
 @media (max-width:991.98px){.banner-inner-section{padding-top:130px;min-height:0}}
+/* a long trade word in the banner H1 (schoonmaakbedrijven) breaks inside its column instead of running past it; text unchanged */
+.banner-inner-section h1{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto;hyphenate-limit-chars:12 5 5;-webkit-hyphenate-limit-before:5;-webkit-hyphenate-limit-after:5;max-width:100%}
+.banner-inner-section .row>[class*="col-"]{min-width:0}
 /* "Waarom" cards on the trade pages: the card icon is a 44 px tile (the theme's fs-2 is 12 px), like the feature icons */
 .rounded-4.h-100 > iconify-icon.fs-2{background:var(--bs-primary);color:var(--bs-dark)!important;border-radius:12px;padding:8px;font-size:1.6rem!important;width:44px;height:44px;display:inline-grid;place-items:center;align-self:flex-start}
 /* plan prices in the cost cards read in full contrast */
