@@ -36,7 +36,7 @@
     .vm-step { position:relative; z-index:1; height:100%; }
     .vm-step__node { width:64px; height:64px; border-radius:50%; background:#d4ed31; color:#1a1a1a; display:flex; align-items:center; justify-content:center; font-size:1.6rem; box-shadow:0 8px 24px rgba(0,0,0,0.12); }
     .vm-step__num { position:absolute; top:-8px; left:44px; width:26px; height:26px; border-radius:50%; background:#1a1a1a; color:#fff; font-size:0.78rem; font-weight:700; display:flex; align-items:center; justify-content:center; z-index:2; }
-    .vm-connector { position:absolute; top:32px; left:0; right:0; height:2px; background:repeating-linear-gradient(90deg,rgba(0,0,0,0.18) 0 8px,transparent 8px 16px); z-index:0; }
+    .vm-connector { position:absolute; top:32px; left:calc(var(--bs-gutter-x) * .5); right:calc(var(--bs-gutter-x) * .5); width:auto !important; padding:0 !important; height:2px; background:repeating-linear-gradient(90deg,rgba(0,0,0,0.18) 0 8px,transparent 8px 16px); z-index:0; }
     @media (max-width: 991px){ .vm-connector{ display:none; } }
     .vm-out { background:#1a1a1a; color:#fff; border-radius:1.25rem; }
   </style>
@@ -370,7 +370,7 @@
         <div class="row mt-7">
           <div class="col-lg-10">
             <div class="vm-out p-5 p-lg-6 d-flex flex-column flex-lg-row align-items-lg-center gap-4" data-aos="fade-up" data-aos-duration="1000">
-              <iconify-icon icon="lucide:check-circle" class="fs-1 text-dark wlm-ico flex-shrink-0"></iconify-icon>
+              <iconify-icon icon="solar:info-circle-bold-duotone" class="text-primary flex-shrink-0" style="font-size:2.5rem"></iconify-icon>
               <p class="mb-0 fs-5 text-white text-opacity-90">Het gat dat wij vullen: de standaardsite van je softwareleverancier heeft alleen een filter en een kaart: <strong class="text-primary">geen aparte, rankbare pagina per stad</strong>. En juist die pagina wint de lokale zoekopdracht. Eén pagina per stad pakt &ldquo;uitzendbureau Zwolle&rdquo;; een homepage of filter niet.</p>
             </div>
           </div>
