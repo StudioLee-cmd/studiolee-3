@@ -3,4 +3,5 @@
 .gesprek-card { box-shadow: 0 12px 40px rgba(31, 42, 46, .08); }
 .gesprek-honey { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .gesprek-error:empty { display: none; }
+#gesprekForm[hidden], .gesprek-agenda[hidden] { display: none !important; }
 .gesprek-boek { display: flex; }

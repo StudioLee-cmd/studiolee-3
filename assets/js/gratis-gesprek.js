@@ -13,7 +13,12 @@
   try { var ref = new URL(document.referrer); if (ref.hostname === location.hostname && ref.pathname !== location.pathname) from = from || ref.pathname; } catch (_) { /* no referrer */ }
   var duur = params.get('duur') === '15' ? '15' : '30';
   var boek = Array.prototype.slice.call(document.querySelectorAll('.gesprek-boek'));
-  if (duur === '15') boek.reverse().forEach(function (a) { a.parentNode.insertBefore(a, a.parentNode.querySelector('.gesprek-boek')); });
+  if (duur === '15' && boek.length === 2) {  // the free scan's 15 minutes: that one first
+    boek[1].parentNode.insertBefore(boek[1], boek[0]);
+    boek[1].className = boek[0].className.replace('mt-3', ''); boek[0].className = boek[0].className.replace('btn-primary text-dark', 'btn-outline-dark') + ' mt-3';
+    boek[1].textContent = 'Kies een moment van 15 minuten'; boek[0].textContent = 'Liever 30 minuten';
+    boek.reverse();
+  }
 
   function open(email, note) {
     form.hidden = true;
