@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gratis website scan met direct je uitslag | STUDIOLEE</title>
+  <meta name="description" content="Vul je website in en zie direct wat goed staat, wat beter kan en welk onderdeel het oplost. Gratis en zonder e-mailadres.">
+  <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon-sl.png" />
+  <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <meta property="og:title" content="Gratis website scan | STUDIOLEE" />
+  <meta property="og:description" content="Vul je website in en zie direct wat goed staat, wat beter kan en welk onderdeel het oplost. Gratis en zonder e-mailadres." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:url" content="https://www.studiolee.nl/gratis-scan" />
+  <meta property="og:image" content="https://www.studiolee.nl/assets/images/og/studiolee-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gratis website scan | STUDIOLEE">
+  <meta name="twitter:description" content="Vul je website in en zie direct wat goed staat, wat beter kan en welk onderdeel het oplost. Gratis en zonder e-mailadres.">
+  <meta name="twitter:image" content="https://www.studiolee.nl/assets/images/og/studiolee-og.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logos/apple-touch-icon.png">
+  <link rel="canonical" href="https://www.studiolee.nl/gratis-scan" />
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.studiolee.nl/"}, {"@type": "ListItem", "position": 2, "name": "Gratis website scan", "item": "https://www.studiolee.nl/gratis-scan"}]}</script>
+  <style>
+    /* /gratis-scan: the site's own look (styles.css), plus the scan form, the route at the top and the result cards */
+    .gs-hero{padding-top:200px}
+    @media (max-width:991.98px){.gs-hero{padding-top:150px}}
+    .gs-scan{display:flex;flex-direction:column;gap:10px;margin-top:6px;max-width:640px}
+    .gs-scan-label{color:rgba(255,255,255,.8);font-size:.95rem;font-weight:600}
+    .gs-scan-row{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+    .gs-scan-row .form-control{flex:1 1 260px;min-width:0;border-radius:100px;padding:16px 24px;font-size:1.1rem;border:2px solid #C1FF72;background:#fff;color:#1F2A2E}
+    .gs-scan-btn{flex:0 0 auto}
+    .gs-scan-btn[disabled]{opacity:.7;pointer-events:none}
+    .gs-scan-note{color:rgba(255,255,255,.65);font-size:.88rem;margin:0}
+    .gs-scan-status{color:#C1FF72;font-size:.95rem;margin:0;min-height:1.4em}
+    .gs-scan-status.is-error{color:#ffb4a8}
+    /* the route at the top: what the scan does, step by step; a dot travels it, and during a real scan it follows the scan */
+    .gs-flow{margin:0;background:#161f22;border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:26px 26px 20px;box-shadow:0 24px 60px rgba(0,0,0,.35);color:#fff}
+    .gs-flow-title{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#C1FF72;margin:0 0 18px;font-weight:700}
+    .gs-flow-track{position:relative}
+    .gs-flow ol{list-style:none;margin:0;padding:0;display:grid;grid-auto-rows:1fr}
+    .gs-flow-track:before{content:"";position:absolute;left:6px;top:6px;height:calc(75% + 6px);width:2px;background:rgba(255,255,255,.12)}
+    .gs-flow-fill{position:absolute;left:6px;top:6px;width:2px;height:0;background:#C1FF72;animation:gsFill 16s linear infinite}
+    .gs-flow-travel{position:absolute;left:0;top:6px;width:14px;height:14px;border-radius:50%;background:#C1FF72;box-shadow:0 0 0 6px rgba(193,255,114,.22),0 0 18px rgba(193,255,114,.7);animation:gsTravel 16s cubic-bezier(.6,0,.3,1) infinite;z-index:2}
+    .gs-flow li{position:relative;padding:0 0 16px 32px}
+    .gs-flow-node{position:absolute;left:0;top:6px;width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.18)}
+    .gs-flow-when{font-size:.74rem;color:rgba(255,255,255,.55);display:block;line-height:1.3}
+    .gs-flow-what{font-weight:700;font-size:1rem;line-height:1.3;display:block;margin:1px 0 6px}
+    .gs-flow-show{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.82rem;line-height:1.3}
+    .gs-chip{background:rgba(255,255,255,.08);border-radius:12px;padding:6px 10px;color:#fff}
+    .gs-chip-me{background:#C1FF72;color:#1F2A2E;font-weight:600}
+    .gs-flow figcaption{font-size:.84rem;color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.09);padding-top:14px;margin-top:2px}
+    .gs-flow li:nth-child(1){animation:gsOn0 16s linear infinite}.gs-flow li:nth-child(1) .gs-flow-node{animation:gsDot0 16s linear infinite}
+    .gs-flow li:nth-child(2){animation:gsOn1 16s linear infinite}.gs-flow li:nth-child(2) .gs-flow-node{animation:gsDot1 16s linear infinite}
+    .gs-flow li:nth-child(3){animation:gsOn2 16s linear infinite}.gs-flow li:nth-child(3) .gs-flow-node{animation:gsDot2 16s linear infinite}
+    .gs-flow li:nth-child(4){animation:gsOn3 16s linear infinite}.gs-flow li:nth-child(4) .gs-flow-node{animation:gsDot3 16s linear infinite}
+    @keyframes gsOn0{0%,96%{opacity:1}100%{opacity:.55}}
+    @keyframes gsDot0{0%,96%{background:#C1FF72}100%{background:rgba(255,255,255,.18)}}
+    @keyframes gsOn1{0%,24%{opacity:.55}28%,96%{opacity:1}100%{opacity:.55}}
+    @keyframes gsDot1{0%,25%{background:rgba(255,255,255,.18)}28%,96%{background:#C1FF72}100%{background:rgba(255,255,255,.18)}}
+    @keyframes gsOn2{0%,49%{opacity:.55}53%,96%{opacity:1}100%{opacity:.55}}
+    @keyframes gsDot2{0%,50%{background:rgba(255,255,255,.18)}53%,96%{background:#C1FF72}100%{background:rgba(255,255,255,.18)}}
+    @keyframes gsOn3{0%,74%{opacity:.55}78%,96%{opacity:1}100%{opacity:.55}}
+    @keyframes gsDot3{0%,75%{background:rgba(255,255,255,.18)}78%,96%{background:#C1FF72}100%{background:rgba(255,255,255,.18)}}
+    @keyframes gsTravel{0%{top:6px;opacity:0}3%{opacity:1}20%{top:6px}26%{top:calc(25% + 6px)}45%{top:calc(25% + 6px)}51%{top:calc(50% + 6px)}70%{top:calc(50% + 6px)}76%{top:calc(75% + 6px)}92%{opacity:1}96%,100%{opacity:0;top:calc(75% + 6px)}}
+    @keyframes gsFill{0%{height:0}20%{height:0}26%{height:calc(25%)}45%{height:calc(25%)}51%{height:calc(50%)}70%{height:calc(50%)}76%{height:calc(75%)}96%{height:calc(75%);opacity:1}100%{height:calc(75%);opacity:0}}
+    .gs-flow.is-live li,.gs-flow.is-live .gs-flow-node,.gs-flow.is-live .gs-flow-fill,.gs-flow.is-live .gs-flow-travel{animation:none}
+    .gs-flow.is-live li{opacity:.55;transition:opacity .4s}
+    .gs-flow.is-live li.is-on{opacity:1}
+    .gs-flow.is-live li.is-on .gs-flow-node{background:#C1FF72;box-shadow:0 0 0 5px rgba(193,255,114,.18)}
+    .gs-flow.is-live .gs-flow-travel{transition:top .6s cubic-bezier(.6,0,.3,1);opacity:1}
+    .gs-flow.is-live li.is-now .gs-flow-node{animation:gsPulse 1s ease-in-out infinite}
+    @keyframes gsPulse{0%,100%{box-shadow:0 0 0 3px rgba(193,255,114,.25)}50%{box-shadow:0 0 0 9px rgba(193,255,114,.08)}}
+    @media (prefers-reduced-motion:reduce){.gs-flow li,.gs-flow .gs-flow-node,.gs-flow-fill,.gs-flow-travel{animation:none!important}.gs-flow li{opacity:1}.gs-flow-travel{display:none}}
+    /* the result */
+    .gs-uitslag{background:#f6f7f2}
+    .gs-telling{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+    .gs-count{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:100px;padding:10px 18px;font-weight:600}
+    .gs-count b{font-size:1.25rem;margin-right:4px}
+    .gs-count-fix b{color:#b3261e}.gs-count-good b{color:#3d6228}
+    .gs-eerst{background:#1F2A2E;color:#fff;border-radius:20px;padding:22px 24px;margin-bottom:28px}
+    .gs-eerst p{margin:0}.gs-eerst .gs-k{color:#C1FF72;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+    .gs-eerst .gs-t{font-size:1.15rem;font-weight:700}
+    .gs-punten{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:18px}
+    .gs-finding{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:20px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+    .gs-lane{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#5B8A3C;margin:0}
+    .gs-finding h3{font-size:1.15rem;line-height:1.3;margin:0}
+    .gs-finding dl{margin:0;display:grid;gap:6px}
+    .gs-finding dt{font-size:.8rem;font-weight:700;color:rgba(31,42,46,.6)}
+    .gs-finding dd{margin:0 0 4px;overflow-wrap:anywhere}
+    .gs-sys{background:#eef8df;border-radius:14px;padding:14px 16px;margin-top:auto}
+    .gs-sys-k{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:#1F2A2E;margin:0 0 4px}
+    .gs-sys p{margin:0 0 6px;font-size:.95rem}
+    .gs-sys a{color:#3d6228;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+    .gs-status{display:inline-block;font-size:.78rem;font-weight:700;background:#1F2A2E;color:#C1FF72;border-radius:100px;padding:3px 10px}
+    .gs-status.is-later{background:rgba(31,42,46,.12);color:#1F2A2E}
+    .gs-goed{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+    .gs-goed li{padding-left:26px;position:relative}
+    .gs-goed li:before{content:"";position:absolute;left:4px;top:.45em;width:12px;height:7px;border-left:2px solid #3d6228;border-bottom:2px solid #3d6228;transform:rotate(-45deg)}
+    #gs-uitslag-kop{scroll-margin-top:170px;outline:none}
+    .gs-goed li.gs-more-li{padding-left:0}.gs-goed li.gs-more-li:before{display:none}
+    .gs-more summary{cursor:pointer;font-weight:600;color:#3d6228}.gs-more .gs-goed{margin-top:8px}
+    .gs-open-lane{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:10px 14px;margin-bottom:8px}
+    .gs-open-lane summary{cursor:pointer;font-weight:600}
+    .gs-open-lane ul{margin:8px 0 2px;padding-left:18px;font-size:.92rem}
+    /* the next step */
+    .gs-next .card .btn{align-self:flex-start}
+    .gs-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+    .gs-optin{font-size:.85rem;line-height:1.45;cursor:pointer}
+    .gs-small{font-size:.85rem}
+    /* the system behind it */
+    .gs-parts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:14px}
+    .gs-part{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px}
+    .gs-part p{margin:0}.gs-part-name{font-weight:700;font-size:1.05rem}.gs-part-doet{font-size:.93rem}
+    .gs-part-link{margin-top:auto;color:#3d6228;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header border-4 border-dark border-top position-fixed start-0 top-0 w-100">
+    <div class="container">
+      <div class="header-wrapper d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <a href="/" class="logo-white">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
+          </a>
+          <a href="/" class="logo-dark">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
+          </a>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+
+          <div class="menu-toggle-wrap">
+            <button class="hamburger-btn" aria-label="Menu" onclick="this.classList.toggle('is-open');document.getElementById('slideMenu').classList.toggle('is-open');" >
+              <div class="bar-wrap"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </button>
+            <nav class="menu-dropdown" id="slideMenu">
+              <div class="d-flex flex-column gap-6">
+                <!-- menu header removed -->
+                <div class="d-flex flex-column gap-3">
+                  <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
+                    <li class="header-item">
+                      <a href="/" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:home-angle-bold-duotone"></iconify-icon></span>Home</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/ai-marketing-bureau" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:rocket-2-bold-duotone"></iconify-icon></span>AI Marketing Bureau</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/chatbot" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></span>AI Chatbot</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/voice-ai" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone"></iconify-icon></span>AI Telefonist</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/seo" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:magnifer-zoom-in-bold-duotone"></iconify-icon></span>SEO &amp; Vindbaarheid</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/linkbuilding" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:link-bold-duotone"></iconify-icon></span>Linkbuilding</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/social-media" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:share-circle-bold-duotone"></iconify-icon></span>Social Media</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/reviews" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:star-shine-bold-duotone"></iconify-icon></span>Review Management</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/marketing-uitbesteden" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chart-2-bold-duotone"></iconify-icon></span>Marketing uitbesteden</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/automations" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:settings-minimalistic-bold-duotone"></iconify-icon></span>Automatisering</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/crm" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:users-group-rounded-bold-duotone"></iconify-icon></span>CRM</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/herinneringen" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:bell-bing-bold-duotone"></iconify-icon></span>Herinneringen</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/dashboard" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:monitor-bold-duotone"></iconify-icon></span>Dashboard</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/tarieven" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:wallet-money-bold-duotone"></iconify-icon></span>Tarieven</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/free-trial" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:document-medicine-bold-duotone"></iconify-icon></span>Start Nu</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/website-laten-maken" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:global-bold-duotone"></iconify-icon></span>Website laten maken</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/blog" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:notebook-bold-duotone"></iconify-icon></span>Blog</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/portfolio" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:gallery-wide-bold-duotone"></iconify-icon></span>Portfolio</a>
+                    </li>
+                  </ul>
+                  <div class="hstack gap-3">
+                    <a href="https://cal.com/studiolee" rel="nofollow" target="_blank"
+                      class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a>
+                  </div>
+                </div>
+                <div>
+                  <a class="text-dark" href="tel:+3197010223669">+31 970 102 23669</a>
+                  <a class="fs-8 text-dark fw-bold" href="mailto:tim@studiolee.nl">tim@studiolee.nl</a>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--  Page Wrapper -->
+  <div class="page-wrapper overflow-hidden">
+
+    <!--  De scan: eerst de uitslag, daarna pas een volgende stap -->
+    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end gs-hero" style="background:#1F2A2E;">
+      <div class="container">
+        <div class="pb-5 pb-xl-10 position-relative z-1">
+          <div class="row align-items-center g-4 g-lg-5">
+            <div class="col-lg-7">
+              <div class="d-flex flex-column gap-4">
+                <div class="d-flex align-items-center gap-4">
+                  <img src="/assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
+                  <p class="mb-0 text-white fs-5 text-opacity-70">De scan is voor MKB-ondernemers met een eigen website die willen weten waarom die te weinig aanvragen oplevert.</p>
+                </div>
+                <h1 class="mb-0 fs-14 text-white lh-1">Gratis website scan, met je uitslag direct op je scherm</h1>
+                <p class="mb-0 text-white fs-5 text-opacity-80">De gratis website scan leest je homepage en laat direct op je scherm zien wat goed staat, wat beter kan en welk onderdeel het oplost.</p>
+                <form id="gs-scan" class="gs-scan" novalidate>
+                  <label for="gs-site" class="gs-scan-label">Het adres van je website</label>
+                  <div class="gs-scan-row">
+                    <input id="gs-site" name="website" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="jouwbedrijf.nl" class="form-control" required>
+                    <button type="submit" class="btn gs-scan-btn"><span class="btn-text">Scan mijn website</span><iconify-icon icon="lucide:search" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon></button>
+                  </div>
+                  <p class="gs-scan-note">De scan is gratis en je hoeft er geen e-mailadres voor achter te laten. Ik lees alleen wat openbaar op je site staat en bewaar je adres niet.</p>
+                  <p id="gs-scan-status" class="gs-scan-status" role="status" aria-live="polite"></p>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <figure class="gs-flow" id="gs-flow" data-explains="route" data-gets="Je ziet vooraf wat de scan doet: je homepage lezen, je uitslag tonen en bij elk punt het onderdeel dat het oplost.">
+                <p class="gs-flow-title">Zo werkt de scan</p>
+                <div class="gs-flow-track"><span class="gs-flow-fill" aria-hidden="true"></span><span class="gs-flow-travel" aria-hidden="true"></span><ol>
+                  <li data-step="1"><span class="gs-flow-node" aria-hidden="true"></span><span class="gs-flow-when">Jij, tien seconden</span><span class="gs-flow-what">Je vult het adres van je website in</span><span class="gs-flow-show"><span class="gs-chip">jouwbedrijf.nl</span></span></li>
+                  <li data-step="2"><span class="gs-flow-node" aria-hidden="true"></span><span class="gs-flow-when">Een paar seconden</span><span class="gs-flow-what">Ik lees je homepage, je robots.txt en je sitemap, zoals Google dat doet</span><span class="gs-flow-show"><span class="gs-chip">30 van de 70 punten</span></span></li>
+                  <li data-step="3"><span class="gs-flow-node" aria-hidden="true"></span><span class="gs-flow-when">Direct op je scherm</span><span class="gs-flow-what">Je ziet wat goed staat en wat beter kan, in gewone taal</span><span class="gs-flow-show"><span class="gs-chip">Wat ik zag</span><span class="gs-chip">Wat je eerst doet</span></span></li>
+                  <li data-step="4"><span class="gs-flow-node" aria-hidden="true"></span><span class="gs-flow-when">Bij elk punt</span><span class="gs-flow-what">Je ziet welk onderdeel van mijn systeem het oplost</span><span class="gs-flow-show"><span class="gs-chip gs-chip-me">Het systeem erachter</span></span></li>
+                </ol></div>
+                <figcaption>Geen e-mailadres nodig. Pas na je uitslag kies je zelf of je verder wilt.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container py-3">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav" style="opacity:0.6;font-size:0.78rem">
+        <ol>
+          <li><a href="/" style="color:var(--bs-body-color)">Home</a></li>
+          <li class="active" aria-current="page" style="color:var(--bs-secondary-color)">Gratis website scan</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!--  De uitslag: wordt gevuld door de scan, met per punt het systeem erachter -->
+    <section id="uitslag" class="gs-uitslag py-5 py-lg-9" hidden>
+      <div class="container">
+        <div class="d-flex align-items-center gap-7 py-2 mb-5">
+          <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">01</span>
+          <hr class="border-line">
+          <span class="badge text-bg-dark">Je uitslag</span>
+        </div>
+        <h2 class="mb-2" id="gs-uitslag-kop" tabindex="-1">Je uitslag</h2>
+        <p class="fs-5 mb-5 text-opacity-70" id="gs-uitslag-sub"></p>
+        <div class="gs-telling" id="gs-telling"></div>
+        <div id="gs-eerst"></div>
+        <div class="gs-punten" id="gs-punten"></div>
+        <div class="row g-4 g-lg-5 mt-2">
+          <div class="col-lg-6"><h3 class="h4 mb-3">Wat al goed staat</h3><ul class="gs-goed" id="gs-goed"></ul></div>
+          <div class="col-lg-6"><h3 class="h4 mb-3">Nog niet gemeten</h3><p id="gs-open-tekst" class="mb-3"></p><div id="gs-open"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!--  Pas na de uitslag: de volgende stap -->
+    <section id="volgende-stap" class="gs-next py-5 py-lg-9" hidden>
+      <div class="container">
+        <div class="d-flex align-items-center gap-7 py-2 mb-5">
+          <span class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium">02</span>
+          <hr class="border-line">
+          <span class="badge text-bg-dark">Verder</span>
+        </div>
+        <h2 class="mb-2">Wat je nu kunt doen</h2>
+        <p class="fs-5 mb-6 text-opacity-70">Je uitslag is van jou. Wil je verder, kies dan wat bij je past.</p>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="card bg-primary text-dark h-100 border border-2 border-dark rounded-4"><div class="card-body d-flex flex-column gap-3 p-4">
+              <h3 class="h4 mb-0 text-dark">Het volledige rapport in je mail</h3>
+              <p class="mb-0 text-dark">Een rapport van zeven kaarten over je site, met de drie punten die het meest opleveren en waar je begint. Gratis.</p>
+              <form id="gs-rapport" class="d-flex flex-column gap-3" novalidate>
+                <label for="gs-mail" class="form-label text-dark mb-0">Je e-mailadres</label>
+                <input id="gs-mail" name="email" type="email" autocomplete="email" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" placeholder="voornaam@bedrijf.nl" required>
+                <label for="gs-naam" class="form-label text-dark mb-0">Je voornaam (mag leeg)</label>
+                <input id="gs-naam" name="contactName" type="text" autocomplete="given-name" class="form-control border border-dark rounded-3 px-3 py-3 bg-white">
+                <input type="text" name="hp_field" class="gs-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <label class="d-flex align-items-start gap-2 text-dark gs-optin"><input type="checkbox" id="gs-optin" class="form-check-input mt-1 flex-shrink-0"><span id="gs-optin-tekst">Ja, STUDIOLEE mag mijn e-mailadres gebruiken om na deze scan contact met me op te nemen met tips en aanbod. Geen spam, je kunt je altijd uitschrijven.</span></label>
+                <p class="mb-0 text-dark gs-small">Je adres gebruik ik voor dit rapport; lees mijn <a href="/privacy" class="fw-bold text-dark">privacyverklaring</a>.</p>
+                <button type="submit" class="btn btn-dark w-100 justify-content-center rounded-pill py-3" style="background:#1F2A2E !important;color:#fff !important;"><span class="btn-text text-white">Stuur mij het rapport</span></button>
+                <p id="gs-rapport-status" class="mb-0 text-dark gs-small" role="status" aria-live="polite"></p>
+              </form>
+            </div></div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card bg-dark text-white h-100 rounded-4"><div class="card-body d-flex flex-column gap-3 p-4">
+              <h3 class="h4 mb-0 text-white">Liever dat ik het oppak?</h3>
+              <p class="mb-0 text-white text-opacity-80">Probeer STUDIOLEE 14 dagen voor €1, daarna €79 per maand (excl. btw). Met persoonlijke onboarding, en opzeggen kan altijd vóór het einde van de proefperiode.</p>
+              <a href="/free-trial" class="btn mt-auto" data-stap="proefperiode"><span class="btn-text">Start je proefperiode</span><iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon></a>
+            </div></div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card h-100 rounded-4 border border-2 border-dark"><div class="card-body d-flex flex-column gap-3 p-4">
+              <h3 class="h4 mb-0">Eerst even praten?</h3>
+              <p class="mb-0">In een gratis gesprek van 30 minuten loop ik je uitslag met je door en zeg ik eerlijk wat zin heeft en wat niet.</p>
+              <a href="https://cal.com/studiolee/30min" rel="nofollow" target="_blank" class="btn btn-dark mt-auto" data-stap="gesprek"><span class="btn-text text-white">Plan een gesprek</span><iconify-icon icon="lucide:calendar" class="btn-icon bg-primary text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon></a>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  Het systeem achter de scan: de onderdelen die klanten krijgen -->
+    <section class="gs-systeem py-5 py-lg-11">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <div class="col-xl-4">
+            <h2 class="mb-4">Het systeem achter deze scan</h2>
+            <p class="fs-5 mb-3">Deze scan is geen losse tool. Het is een stukje van het systeem dat elke maand voor mijn klanten draait: dezelfde lijst van 70 punten, dezelfde uitleg in gewone taal en bij elk punt het onderdeel dat het oplost.</p>
+            <p class="mb-0 text-opacity-70">Hier lees ik je homepage. Bij klanten kijk ik verder: elke pagina, je Google-bedrijfsprofiel, je reviews en wat AI-assistenten over je zeggen.</p>
+          </div>
+          <div class="col-xl-8">
+            <ul class="gs-parts">
+            <li class="gs-part"><p class="gs-part-name">Technische SEO</p><p class="gs-part-doet">Bij mijn klanten loopt deze lijst elke maand over elke pagina. Wat niet klopt, zet ik recht, en een pagina die al scoort controleer ik eerst zodat hij niet zakt.</p><a class="gs-part-link" href="/seo">SEO &amp; AI-vindbaarheid</a></li>
+            <li class="gs-part"><p class="gs-part-name">Zoekwoorden en contentplan</p><p class="gs-part-doet">Elke maand zoek ik voor mijn klanten uit waar hun klanten op zoeken en welke artikelen nog ontbreken; daar komt het volgende artikel uit.</p><a class="gs-part-link" href="/seo">SEO &amp; AI-vindbaarheid</a></li>
+            <li class="gs-part"><p class="gs-part-name">Conversie</p><p class="gs-part-doet">Ik kijk waar bezoekers afhaken en wat ze tegenhoudt, en maak per pagina een lijst met wat het eerst moet veranderen.</p><a class="gs-part-link" href="/website-laten-maken">Website laten maken</a></li>
+            <li class="gs-part"><p class="gs-part-name">AI-vindbaarheid</p><p class="gs-part-doet">Ik zorg dat ChatGPT en Google kunnen lezen wie je bent, wat je doet en waar: vragen met antwoorden, bedrijfsgegevens in de code en artikelen die ze kunnen aanhalen.</p><a class="gs-part-link" href="/seo">SEO &amp; AI-vindbaarheid</a></li>
+            <li class="gs-part"><p class="gs-part-name">Lokale vindbaarheid</p><p class="gs-part-doet">Je adres, werkgebied en openingstijden komen op je site en in je Google-bedrijfsprofiel, zodat je in je eigen regio gevonden wordt.</p><a class="gs-part-link" href="/seo">SEO &amp; AI-vindbaarheid</a></li>
+            <li class="gs-part"><p class="gs-part-name">Reviews</p><p class="gs-part-doet">Na een klus gaat er vanzelf een verzoek om een review uit, en de reviews laat je zien op je site.</p><a class="gs-part-link" href="/reviews">Review Management</a></li>
+            <li class="gs-part"><p class="gs-part-name">Autoriteit en links</p><p class="gs-part-doet">Ik regel plaatsingen op echte Nederlandse sites die naar je linken, zodat Google je serieuzer neemt.</p><a class="gs-part-link" href="/linkbuilding">Linkbuilding</a></li>
+            <li class="gs-part"><p class="gs-part-name">Video</p><p class="gs-part-doet">Korte video&#x27;s van je werk, voor je site en je social media.</p><a class="gs-part-link" href="/social-media">Social Media</a></li>
+            <li class="gs-part"><p class="gs-part-name">Bereikbaarheid</p><p class="gs-part-doet">De AI Telefonist neemt op als jij aan het werk bent en de chatbot beantwoordt vragen op je site, dag en nacht, zodat je geen aanvraag mist.</p><a class="gs-part-link" href="/voice-ai">AI Telefonist</a></li>
+            <li class="gs-part"><p class="gs-part-name">Website</p><p class="gs-part-doet">Een nieuwe site die op elke telefoon goed werkt, met deze hele lijst vanaf de eerste dag op orde.</p><a class="gs-part-link" href="/website-laten-maken">Website laten maken</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 mb-8 mb-xl-0">
+          <div class="d-flex flex-column gap-8 pe-xl-5">
+            <a href="/"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE" class="img-fluid mb-5" style="max-height: 100px;"></a>
+            <h2 class="mb-0 text-white">Laten we samenwerken</h2>
+            <div class="d-flex flex-column gap-2">
+              <a href="mailto:tim@studiolee.nl" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
+                tim@studiolee.nl
+              </a>
+              <a href="tel:+3197010223669" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:phone" class="fs-7 text-primary"></iconify-icon>
+                +31 970 102 23669
+              </a>
+            </div>
+          </div>
+        </div>
+                <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <p class="mb-3 text-white text-opacity-50 fs-7 fw-bold">Diensten</p>
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/ai-marketing-bureau">AI Marketing Bureau</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/seo">SEO</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/linkbuilding">Linkbuilding</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/chatbot">AI Chatbot</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/voice-ai">AI Telefonist</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/social-media">Social Media</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/reviews">Reviews</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/marketing-uitbesteden">Marketing uitbesteden</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/automations">Automatisering</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/crm">CRM</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/herinneringen">Herinneringen</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/website-laten-maken">Website laten maken</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/">Home</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/tarieven">Tarieven</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/free-trial">Gratis AI Scan</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/blog">Blog</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/portfolio">Portfolio</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/over-ons">Over ons</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/algemene-voorwaarden">Algemene Voorwaarden</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/privacy">Privacy Policy</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/legal">Bedrijfsgegevens</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-3 mb-8 mb-xl-0">
+          <p class="mb-0 text-white text-opacity-70 text-md-end">&copy; 2026 STUDIOLEE</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="/assets/libs/aos-master/dist/aos.js"></script>
+  <script src="/assets/js/custom.js"></script>
+  <!-- icons, served from studiolee.nl itself -->
+  <script src="/assets/libs/iconify-icon/icons.js"></script><script src="/assets/libs/iconify-icon/iconify-icon.min.js"></script>
+
+  <script type="application/json" id="gs-data">{"rubric_sha256":"a86a5990c89488a47d1e5ef8f749850dd04141fa441eda5625749c41cb825269","lanes":{"seo":"SEO","cro":"Conversie","ai":"AI-vindbaarheid","lokaal":"Lokaal","trends":"Trends","visueel":"Uitstraling"},"signals":{"status_200":{"lane":"seo","weight":3,"route":"technical-seo","ziet":"Je pagina laadt niet normaal; Google en bezoekers krijgen een foutmelding of een omweg.","waarom":"Een pagina die niet gewoon laadt, verschijnt niet in Google en een bezoeker haakt af.","eerst":"Laat je webbouwer zorgen dat je homepage direct een normale pagina geeft.","goed":"Je pagina laadt normaal.","vraag":"of je pagina normaal laadt"},"title_aanwezig":{"lane":"seo","weight":3,"route":"technical-seo","ziet":"In Google staat geen duidelijke titel boven je site.","waarom":"Zonder titel weet een zoeker niet waarom hij op jou moet klikken.","eerst":"Zet een titel met wat je doet en waar, bijvoorbeeld 'Dakdekker in Leiden | Bedrijfsnaam'.","goed":"Er staat een paginatitel.","vraag":"of er een paginatitel staat"},"title_lengte":{"lane":"seo","weight":2,"route":"technical-seo","ziet":"De titel in Google is te kort of wordt afgekapt.","waarom":"Een afgekapte titel vertelt de zoeker niet wat je biedt, dus hij klikt op een ander.","eerst":"Maak de titel tussen de 15 en 65 tekens, met je dienst en je plaats.","goed":"Je titel heeft een goede lengte.","vraag":"of je titel een goede lengte heeft"},"meta_aanwezig":{"lane":"seo","weight":3,"route":"technical-seo","ziet":"Onder je naam in Google staat een willekeurig stukje tekst.","waarom":"Dat tekstje is je advertentie in Google; zonder goede tekst klikken mensen minder.","eerst":"Schrijf per pagina een korte omschrijving van wat de klant er vindt.","goed":"Er staat een omschrijving voor Google.","vraag":"of er een omschrijving voor Google staat"},"meta_lengte":{"lane":"seo","weight":2,"route":"technical-seo","ziet":"De omschrijving in Google is te kort of wordt halverwege afgebroken.","waarom":"Een halve zin overtuigt niemand om te klikken.","eerst":"Houd de omschrijving tussen de 50 en 165 tekens.","goed":"Je omschrijving heeft een goede lengte.","vraag":"of je omschrijving een goede lengte heeft"},"h1_aanwezig":{"lane":"seo","weight":3,"route":"technical-seo","ziet":"Bovenaan de pagina staat geen duidelijke hoofdkop, of er staan er meerdere.","waarom":"Google en bezoekers zien niet in een oogopslag waar de pagina over gaat.","eerst":"Geef elke pagina precies een hoofdkop die zegt wat je doet.","goed":"Er staat precies een hoofdkop.","vraag":"of er precies een hoofdkop staat"},"h1_leesbaar":{"lane":"seo","weight":2,"route":"technical-seo","open":"of je hoofdkop leesbaar is en niet stuk"},"koppen_structuur":{"lane":"seo","weight":2,"route":"technical-seo","ziet":"De tekst is een lange lap zonder tussenkoppen.","waarom":"Bezoekers scannen; zonder koppen vinden ze niet wat ze zoeken en gaan ze weg.","eerst":"Deel de tekst op met tussenkoppen per dienst of vraag.","goed":"De tekst is opgedeeld met koppen.","vraag":"of de tekst is opgedeeld met koppen"},"og_tags":{"lane":"seo","weight":1,"route":"technical-seo","ziet":"Als iemand je site deelt via WhatsApp of Facebook, verschijnt er geen nette foto en tekst.","waarom":"Een gedeelde link zonder plaatje valt weg en levert minder bezoek op.","eerst":"Laat een deelfoto, titel en omschrijving instellen.","goed":"Een gedeelde link toont een foto en tekst.","vraag":"of een gedeelde link een foto en tekst toont"},"taal_attribuut":{"lane":"seo","weight":1,"route":"technical-seo","ziet":"Je site vertelt de browser niet in welke taal hij is.","waarom":"Google en voorleesprogramma's lezen de site dan minder goed.","eerst":"Laat de taal Nederlands in de code vastleggen.","goed":"De taal van je site staat in de code.","vraag":"of de taal van je site in de code staat"},"viewport":{"lane":"seo","weight":1,"route":"site-rebuild","ziet":"Op een telefoon is je site een verkleinde computerpagina waar je in moet zoomen.","waarom":"De meeste bezoekers komen via de telefoon; inzoomen is een reden om weg te gaan.","eerst":"Laat je site mobielvriendelijk maken; vaak is dit een teken dat een nieuwe site loont.","goed":"Je site schaalt mee op een telefoon.","vraag":"of je site meeschaalt op een telefoon"},"https":{"lane":"seo","weight":3,"route":"technical-seo","ziet":"De browser toont 'niet veilig' bij je site.","waarom":"Klanten vertrouwen een onveilige site niet met hun gegevens, en Google laat je zakken.","eerst":"Zet een beveiligingscertificaat aan bij je hosting; dat is meestal gratis.","goed":"Je site draait veilig op https.","vraag":"of je site op https draait"},"interne_links":{"lane":"seo","weight":2,"route":"technical-seo","ziet":"Vanaf je homepage kom je moeilijk door naar de rest van de site.","waarom":"Wie zijn dienst niet vindt, belt niet; Google vindt je andere pagina's ook slechter.","eerst":"Link vanaf je homepage naar elke dienst en naar contact.","goed":"Je homepage linkt door naar de rest van je site.","vraag":"of je homepage doorlinkt naar de rest van je site"},"indexeerbaarheid":{"lane":"seo","weight":4,"route":"technical-seo","ziet":"Delen van je site zijn voor Google onzichtbaar of slecht vindbaar.","waarom":"Wat Google niet ziet, kan niemand vinden.","eerst":"Laat robots.txt, de sitemap en de noindex-instellingen nalopen.","goed":"Google mag je site lezen en vindt je sitemap.","vraag":"of Google je site mag lezen en je sitemap vindt"},"publicatie_ritme":{"lane":"seo","weight":4,"route":"keyword-research","ziet":"Er is het afgelopen jaar niets nieuws op je site verschenen.","waarom":"Een stilstaande site oogt verlaten en Google beloont sites die bijblijven.","eerst":"Plaats elke maand een stuk over een vraag die klanten echt stellen.","goed":"Er kwam het afgelopen jaar iets nieuws bij.","vraag":"of er het afgelopen jaar iets nieuws bijkwam"},"canonical_redirects":{"lane":"seo","weight":3,"route":"technical-seo","open":"of elke pagina een vast adres heeft, zonder ketens van doorverwijzingen"},"content_dekking":{"lane":"seo","weight":5,"route":"keyword-research","open":"hoeveel artikelen er ontbreken tegenover wat mensen zoeken"},"kannibalisatie":{"lane":"seo","weight":4,"route":"technical-seo","open":"of je eigen pagina's elkaar beconcurreren op dezelfde zoekvraag"},"interne_linkstructuur":{"lane":"seo","weight":4,"route":"technical-seo","open":"hoe je pagina's over de hele site naar elkaar linken"},"schema_markup":{"lane":"seo","weight":3,"route":"technical-seo","open":"gestructureerde gegevens per soort pagina"},"core_web_vitals":{"lane":"seo","weight":3,"route":"technical-seo","open":"laadsnelheid en hoe rustig de pagina opbouwt"},"autoriteit_extern":{"lane":"seo","weight":4,"route":"authority","open":"welke andere sites naar je linken"},"propositie_helder":{"lane":"cro","weight":4,"route":"cro","open":"of meteen duidelijk is wat je doet, voor wie en waar"},"cta_aanwezig":{"lane":"cro","weight":4,"route":"cro","ziet":"Er is geen duidelijke knop om te bellen, te mailen of een offerte te vragen.","waarom":"Een bezoeker die wil, weet niet wat de volgende stap is.","eerst":"Zet een duidelijke knop neer, zoals 'Vraag een offerte aan' of 'Bel direct'.","goed":"Er staat een duidelijke knop om iets te doen.","vraag":"of er een duidelijke knop staat om iets te doen"},"contactroutes":{"lane":"cro","weight":3,"route":"phone-contact","ziet":"Er is maar een manier om contact op te nemen, of geen.","waarom":"Niet iedereen wil bellen; wie liever appt of mailt, haakt af.","eerst":"Bied bellen, WhatsApp en een kort formulier naast elkaar aan.","goed":"Er zijn meerdere manieren om contact op te nemen.","vraag":"of er meerdere manieren zijn om contact op te nemen"},"sociale_bewijskracht":{"lane":"cro","weight":3,"route":"reviews","ziet":"Je site laat geen klantervaringen of beoordelingen zien.","waarom":"Zonder bewijs van tevreden klanten moet de bezoeker je op je woord geloven.","eerst":"Zet een paar echte klantreacties met naam en plaats op je homepage.","goed":"Er staan klantreacties of beoordelingen.","vraag":"of er klantreacties of beoordelingen staan"},"autoriteit_signalen":{"lane":"cro","weight":3,"route":"cro","ziet":"Er staan geen voorbeelden van werk, ervaring of keurmerken.","waarom":"Een klant wil zien dat je dit vaker en goed gedaan hebt.","eerst":"Laat drie projecten zien met foto's en wat er is gedaan.","goed":"Er staan voorbeelden van werk of ervaring.","vraag":"of er voorbeelden van werk of ervaring staan"},"vertrouwen_zakelijk":{"lane":"cro","weight":3,"route":"cro","ziet":"Adres, KVK-nummer of voorwaarden zijn niet te vinden.","waarom":"Zonder zakelijke gegevens twijfelt een klant of je een echt bedrijf bent.","eerst":"Zet adres, KVK en voorwaarden in de voettekst.","goed":"Je zakelijke gegevens zijn te vinden.","vraag":"of je zakelijke gegevens te vinden zijn"},"prijs_transparantie":{"lane":"cro","weight":2,"route":"cro","ziet":"Er staat nergens iets over wat het ongeveer kost.","waarom":"Bezoekers die geen idee van de prijs hebben, durven vaak niet te bellen.","eerst":"Noem een vanafprijs of leg uit hoe de prijs tot stand komt.","goed":"Er staat iets over wat het kost.","vraag":"of er iets staat over wat het kost"},"video_aanwezig":{"lane":"cro","weight":2,"route":"video","ziet":"Er staat geen video op je site.","waarom":"Een korte video van je werk wekt sneller nieuwsgierigheid en vertrouwen dan tekst.","eerst":"Zet een korte video van een klus of van jezelf op je homepage.","goed":"Er staat een video op je pagina.","vraag":"of er een video op je pagina staat"},"cta_boven_de_vouw":{"lane":"cro","weight":3,"route":"cro","open":"of je actieknop zonder scrollen te zien is, op computer en telefoon"},"mobiele_weergave":{"lane":"cro","weight":3,"route":"site-rebuild","open":"hoe de pagina er op een telefoon uitziet"},"visuele_hierarchie":{"lane":"cro","weight":3,"route":"cro","open":"of het ontwerp het oog naar de actie leidt"},"formulier_frictie":{"lane":"cro","weight":3,"route":"cro","open":"hoeveel velden en stappen je contactformulier kost"},"laadtijd_beleving":{"lane":"cro","weight":2,"route":"technical-seo","open":"hoe snel de pagina bruikbaar is"},"funnel_meting":{"lane":"cro","weight":4,"route":"cro","open":"waar bezoekers echt afhaken, uit je statistieken"},"concurrent_vergelijking":{"lane":"cro","weight":3,"route":"cro","open":"hoe je site staat tegenover de nummer 1 in je vak"},"wie_wat_waar":{"lane":"ai","weight":4,"route":"ai-findability","open":"of de tekst zegt wie je bent, wat je doet en waar"},"faq_structuur":{"lane":"ai","weight":3,"route":"ai-findability","ziet":"Er staan geen veelgestelde vragen met antwoorden.","waarom":"AI-assistenten en Google halen hun antwoorden juist uit zulke vragen.","eerst":"Zet de tien vragen die klanten echt stellen met een kort antwoord op je site.","goed":"Er staan vragen met antwoorden.","vraag":"of er vragen met antwoorden staan"},"eigen_artikelen":{"lane":"ai","weight":3,"route":"ai-findability","ziet":"Er is geen kennis- of artikelensectie.","waarom":"Zonder eigen artikelen heeft een AI-assistent niets om jou op te noemen.","eerst":"Begin een kennisbank met een artikel per veelgestelde vraag.","goed":"Je hebt een eigen blog of kennisbank.","vraag":"of je een eigen blog of kennisbank hebt"},"diensten_uitgelegd":{"lane":"ai","weight":2,"route":"ai-findability","open":"of je diensten worden uitgelegd en niet alleen opgesomd"},"meta_zeggingskracht":{"lane":"ai","weight":2,"route":"ai-findability","open":"of je omschrijving in Google echt iets zegt"},"schema_organization":{"lane":"ai","weight":4,"route":"ai-findability","ziet":"Machines lezen niet wie je bedrijf is.","waarom":"AI-assistenten en Google koppelen je dan niet aan je naam en plaats.","eerst":"Laat je bedrijfsgegevens als gestructureerde gegevens toevoegen.","goed":"Je bedrijfsgegevens staan leesbaar in de code.","vraag":"of je bedrijfsgegevens leesbaar in de code staan"},"ai_crawlers_toegelaten":{"lane":"ai","weight":4,"route":"ai-findability","ziet":"AI-assistenten worden van je site geweerd.","waarom":"Wat ze niet mogen lezen, kunnen ze ook niet aanbevelen.","eerst":"Laat robots.txt AI-crawlers toelaten.","goed":"AI-assistenten mogen je site lezen.","vraag":"of AI-assistenten je site mogen lezen"},"entity_consistentie":{"lane":"ai","weight":3,"route":"ai-findability","open":"of je bedrijfsnaam overal op dezelfde manier staat"},"genoemd_in_ai":{"lane":"ai","weight":5,"route":"ai-findability","open":"of ChatGPT en Perplexity je noemen"},"externe_vermeldingen":{"lane":"ai","weight":4,"route":"ai-findability","open":"vermeldingen van je bedrijf op andere sites"},"answer_first_diepte":{"lane":"ai","weight":3,"route":"ai-findability","open":"of je pagina's een vraag eerst kort beantwoorden, over de hele site"},"adres_of_plaats":{"lane":"lokaal","weight":4,"route":"local","ziet":"Er staat geen adres of vestigingsplaats.","waarom":"Een klant wil weten of je in de buurt zit; Google ook.","eerst":"Zet je plaats en adres zichtbaar op je homepage.","goed":"Er staat een adres of plaats.","vraag":"of er een adres of plaats staat"},"telefoonnummer":{"lane":"lokaal","weight":3,"route":"phone-contact","ziet":"Er staat geen telefoonnummer op de pagina.","waarom":"Wie snel wil bellen en geen nummer vindt, belt de volgende.","eerst":"Zet je nummer bovenaan, klikbaar op de telefoon.","goed":"Er staat een telefoonnummer.","vraag":"of er een telefoonnummer staat"},"werkgebied":{"lane":"lokaal","weight":2,"route":"local","ziet":"Je werkgebied wordt niet genoemd.","waarom":"Een klant weet niet of je bij hem langskomt, en Google ook niet.","eerst":"Noem de plaatsen en de regio waar je werkt.","goed":"Je werkgebied wordt genoemd.","vraag":"of je werkgebied wordt genoemd"},"openingstijden":{"lane":"lokaal","weight":2,"route":"local","ziet":"Er staan geen openingstijden of bereikbaarheidstijden.","waarom":"Een klant weet niet wanneer hij je kan bereiken.","eerst":"Zet de tijden waarop je bereikbaar bent bij je contactgegevens.","goed":"Je openingstijden staan erop.","vraag":"of je openingstijden erop staan"},"gbp_compleet":{"lane":"lokaal","weight":5,"route":"local","open":"of je Google-bedrijfsprofiel er is en compleet is"},"reviews_vs_nummer1":{"lane":"lokaal","weight":4,"route":"reviews","open":"je aantal reviews tegenover de nummer 1 in je plaats"},"local_pack":{"lane":"lokaal","weight":4,"route":"local","open":"je plek in het kaartje met bedrijven in Google"},"nap_consistentie":{"lane":"lokaal","weight":3,"route":"local","open":"of naam, adres en telefoon overal op het web hetzelfde zijn"},"kaart_route_widget":{"lane":"lokaal","weight":2,"route":"local","open":"een kaart, route of reviewblok op de pagina"},"schema_lokaal":{"lane":"lokaal","weight":4,"route":"local","ziet":"Google leest je adres en openingstijden niet als gegevens.","waarom":"Je mist daardoor extra's in de lokale zoekresultaten.","eerst":"Laat je lokale bedrijfsgegevens als gestructureerde gegevens toevoegen.","goed":"Je lokale bedrijfsgegevens staan in de code.","vraag":"of je lokale bedrijfsgegevens in de code staan"},"zoekvraag_richting":{"lane":"trends","weight":5,"route":"keyword-research","open":"of er in je markt meer of minder gezocht wordt"},"seizoen_patroon":{"lane":"trends","weight":3,"route":"keyword-research","open":"wanneer de vraag in je markt piekt en zakt"},"nieuwe_zoektermen":{"lane":"trends","weight":4,"route":"keyword-research","open":"welke zoektermen nieuw opkomen in je markt"},"concurrent_beweging":{"lane":"trends","weight":4,"route":"keyword-research","open":"wie er zichtbaarheid wint in je markt"},"eigen_aandeel":{"lane":"trends","weight":4,"route":"keyword-research","open":"welk deel van die vraag bij jouw site uitkomt"},"ontwerp_verzorgd":{"lane":"visueel","weight":4,"route":"site-rebuild","open":"of het ontwerp verzorgd en van nu oogt"},"vertrouwen_uitstraling":{"lane":"visueel","weight":3,"route":"cro","open":"of er bovenaan iets staat dat vertrouwen geeft, zoals echte foto's of reviews"},"tekst_contrast":{"lane":"visueel","weight":3,"route":"cro","open":"of de tekst in het eerste scherm goed leesbaar is"},"telefoon_boven_vouw":{"lane":"visueel","weight":3,"route":"phone-contact","open":"of je telefoonnummer zonder scrollen te zien is"},"telefoon_leesbaar":{"lane":"visueel","weight":3,"route":"phone-contact","open":"of je telefoonnummer groot en goed leesbaar is"},"email_leesbaar":{"lane":"visueel","weight":2,"route":"cro","open":"of je e-mailadres klikbaar en goed leesbaar is"},"email_in_beeld":{"lane":"visueel","weight":2,"route":"cro","open":"of je e-mailadres in de eerste twee schermen staat"}},"routes":{"technical-seo":{"label":"Technische SEO","dienst":"SEO & AI-vindbaarheid","href":"/seo","doet":"Bij mijn klanten loopt deze lijst elke maand over elke pagina. Wat niet klopt, zet ik recht, en een pagina die al scoort controleer ik eerst zodat hij niet zakt.","status":"Dit pak ik voor je op"},"keyword-research":{"label":"Zoekwoorden en contentplan","dienst":"SEO & AI-vindbaarheid","href":"/seo","doet":"Elke maand zoek ik voor mijn klanten uit waar hun klanten op zoeken en welke artikelen nog ontbreken; daar komt het volgende artikel uit.","status":"Dit pak ik voor je op"},"cro":{"label":"Conversie","dienst":"Website laten maken","href":"/website-laten-maken","doet":"Ik kijk waar bezoekers afhaken en wat ze tegenhoudt, en maak per pagina een lijst met wat het eerst moet veranderen.","status":"Op aanvraag"},"ai-findability":{"label":"AI-vindbaarheid","dienst":"SEO & AI-vindbaarheid","href":"/seo","doet":"Ik zorg dat ChatGPT en Google kunnen lezen wie je bent, wat je doet en waar: vragen met antwoorden, bedrijfsgegevens in de code en artikelen die ze kunnen aanhalen.","status":"Op aanvraag"},"local":{"label":"Lokale vindbaarheid","dienst":"SEO & AI-vindbaarheid","href":"/seo","doet":"Je adres, werkgebied en openingstijden komen op je site en in je Google-bedrijfsprofiel, zodat je in je eigen regio gevonden wordt.","status":"Op aanvraag"},"reviews":{"label":"Reviews","dienst":"Review Management","href":"/reviews","doet":"Na een klus gaat er vanzelf een verzoek om een review uit, en de reviews laat je zien op je site.","status":"Op aanvraag"},"authority":{"label":"Autoriteit en links","dienst":"Linkbuilding","href":"/linkbuilding","doet":"Ik regel plaatsingen op echte Nederlandse sites die naar je linken, zodat Google je serieuzer neemt.","status":"Op aanvraag"},"video":{"label":"Video","dienst":"Social Media","href":"/social-media","doet":"Korte video's van je werk, voor je site en je social media.","status":"Op aanvraag"},"phone-contact":{"label":"Bereikbaarheid","dienst":"AI Telefonist","href":"/voice-ai","doet":"De AI Telefonist neemt op als jij aan het werk bent en de chatbot beantwoordt vragen op je site, dag en nacht, zodat je geen aanvraag mist.","status":"Op aanvraag"},"site-rebuild":{"label":"Website","dienst":"Website laten maken","href":"/website-laten-maken","doet":"Een nieuwe site die op elke telefoon goed werkt, met deze hele lijst vanaf de eerste dag op orde.","status":"Op aanvraag"}}}</script>
+  <script>
+  (function () {
+    'use strict';
+    var DATA = JSON.parse(document.getElementById('gs-data').textContent);
+    var SCAN_API = '/api/gratis-scan';
+    var REPORT_ROUTE = 'https://n8n.aireclamestudio.nl/webhook/free-scan'; // the same route as the label sites and /free-trial
+    var SOURCE = 'studiolee.nl/gratis-scan'; // so scans and requests from this page are counted apart
+    var $ = function (id) { return document.getElementById(id); };
+    var flow = $('gs-flow'), steps = flow ? flow.querySelectorAll('li[data-step]') : [];
+    var last = null;
+
+    function track(name, data) { try { if (window.va) window.va('event', { name: name, data: data || {} }); } catch (e) { /* counting never blocks the page */ } }
+    function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+    function sentence(s) { s = String(s || '').trim(); return s ? s.charAt(0).toUpperCase() + s.slice(1) + (/[.!?…]$/.test(s) ? '' : '.') : ''; }
+
+    function live(at) {
+      if (!flow) return;
+      if (!at) { flow.classList.remove('is-live'); return; }
+      flow.classList.add('is-live');
+      for (var i = 0; i < steps.length; i++) {
+        steps[i].classList.toggle('is-on', i < at);
+        steps[i].classList.toggle('is-now', i === at - 1);
+      }
+      var travel = flow.querySelector('.gs-flow-travel');
+      if (travel) travel.style.top = 'calc(' + ((at - 1) * 25) + '% + 6px)';
+    }
+
+    function status(text, error) { var s = $('gs-scan-status'); s.textContent = text || ''; s.classList.toggle('is-error', !!error); }
+
+    function finding(id, sig, got) {
+      var route = DATA.routes[sig.route];
+      var card = el('article', 'gs-finding');
+      card.appendChild(el('p', 'gs-lane', DATA.lanes[sig.lane]));
+      card.appendChild(el('h3', null, sig.ziet));
+      var dl = el('dl');
+      [['Wat ik zag', sentence(got.note)], ['Waarom dit uitmaakt', sig.waarom], ['Wat je eerst doet', sig.eerst]].forEach(function (row) {
+        if (!row[1]) return;
+        dl.appendChild(el('dt', null, row[0])); dl.appendChild(el('dd', null, row[1]));
+      });
+      card.appendChild(dl);
+      var sys = el('div', 'gs-sys');
+      sys.appendChild(el('p', 'gs-sys-k', 'Het systeem erachter'));
+      var p = el('p');
+      p.appendChild(el('strong', null, route.label));
+      p.appendChild(document.createTextNode(', onderdeel van '));
+      var a = el('a', null, route.dienst); a.href = route.href; p.appendChild(a);
+      p.appendChild(document.createTextNode('. ' + route.doet));
+      sys.appendChild(p);
+      sys.appendChild(el('span', 'gs-status' + (route.status === 'Op aanvraag' ? ' is-later' : ''), route.status));
+      card.appendChild(sys);
+      return card;
+    }
+
+    function render(r) {
+      var issues = [], wins = [], open = {};
+      Object.keys(DATA.signals).forEach(function (id) {
+        var sig = DATA.signals[id], got = r.signals[id];
+        if (got && got.value === false) issues.push([id, sig, got]);
+        else if (got && got.value === true) wins.push([id, sig, got]);
+        else (open[sig.lane] = open[sig.lane] || []).push(got && got.note ? sentence(sig.vraag || sig.open) + ' (' + got.note + ')' : sentence(sig.vraag || sig.open));
+      });
+      issues.sort(function (a, b) { return b[1].weight - a[1].weight; });
+      wins.sort(function (a, b) { return b[1].weight - a[1].weight; });
+      var total = Object.keys(DATA.signals).length, openN = total - issues.length - wins.length;
+
+      $('gs-uitslag-kop').textContent = 'Je uitslag voor ' + r.host;
+      $('gs-uitslag-sub').textContent = 'Gelezen op ' + new Date(r.read_at).toLocaleString('nl-NL', { dateStyle: 'long', timeStyle: 'short' }) + ': ' + r.read.join(', ') + '.' +
+        (r.thin ? ' In de broncode van je pagina staat weinig tekst, of de tekst wordt pas in de browser opgebouwd. Deze snelle check leest de broncode, dus de punten over je tekst staan onder Nog niet gemeten; het rapport in je mail leest de pagina zoals een bezoeker hem ziet.' : '');
+      var tel = $('gs-telling'); tel.textContent = '';
+      [['gs-count gs-count-fix', issues.length, issues.length === 1 ? 'punt om te verbeteren' : 'punten om te verbeteren'],
+       ['gs-count gs-count-good', wins.length, 'staan goed'], ['gs-count', openN, 'nog niet gemeten']].forEach(function (c) {
+        var s = el('span', c[0]); s.appendChild(el('b', null, String(c[1]))); s.appendChild(document.createTextNode(c[2])); tel.appendChild(s);
+      });
+      var first = $('gs-eerst'); first.textContent = '';
+      if (issues.length) {
+        var box = el('div', 'gs-eerst');
+        box.appendChild(el('p', 'gs-k', 'Hier begin je'));
+        box.appendChild(el('p', 'gs-t', issues[0][1].eerst));
+        box.appendChild(el('p', null, issues[0][1].ziet + ' ' + issues[0][1].waarom));
+        first.appendChild(box);
+      }
+      var list = $('gs-punten'); list.textContent = '';
+      if (!issues.length) list.appendChild(el('p', 'fs-5', 'In wat ik kon meten, vond ik geen knelpunten. Kijk hieronder wat ik niet heb gemeten.'));
+      issues.forEach(function (i) { list.appendChild(finding(i[0], i[1], i[2])); });
+      var good = $('gs-goed'); good.textContent = '';
+      wins.slice(0, 6).forEach(function (w) { good.appendChild(el('li', null, w[1].goed)); });
+      if (wins.length > 6) {
+        var more = el('details', 'gs-more'); more.appendChild(el('summary', null, 'En nog ' + (wins.length - 6) + ' punten die goed staan'));
+        var ul2 = el('ul', 'gs-goed'); wins.slice(6).forEach(function (w) { ul2.appendChild(el('li', null, w[1].goed)); });
+        more.appendChild(ul2); var li = el('li', 'gs-more-li'); li.appendChild(more); good.appendChild(li);
+      }
+      if (!wins.length) good.appendChild(el('li', null, 'Nog niets van wat ik kon meten.'));
+      $('gs-open-tekst').textContent = openN + ' van de ' + total + ' punten heb ik hier niet gemeten; ze tellen niet mee en zijn geen fout. Bij klanten meet ik ze wel.';
+      var ob = $('gs-open'); ob.textContent = '';
+      Object.keys(DATA.lanes).forEach(function (lane) {
+        if (!open[lane]) return;
+        var d = el('details', 'gs-open-lane');
+        d.appendChild(el('summary', null, DATA.lanes[lane] + ': ' + open[lane].length + (open[lane].length === 1 ? ' punt' : ' punten')));
+        var ul = el('ul'); open[lane].forEach(function (t) { ul.appendChild(el('li', null, t)); }); d.appendChild(ul); ob.appendChild(d);
+      });
+      return issues.length;
+    }
+
+    function show(id) { var s = $(id); if (s) s.hidden = false; }
+
+    $('gs-scan').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var site = $('gs-site').value.trim();
+      if (!site) { status('Vul het adres van je website in, bijvoorbeeld jouwbedrijf.nl.', true); $('gs-site').focus(); return; }
+      var btn = this.querySelector('button[type="submit"]');
+      btn.disabled = true; status('Ik lees je site...'); live(2);
+      fetch(SCAN_API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ website: site }) })
+        .then(function (res) { return res.json().catch(function () { return { ok: false, message: 'Er ging iets mis bij het lezen van je site. Probeer het zo nog een keer.' }; }); })
+        .then(function (r) {
+          btn.disabled = false;
+          if (!r.ok) {
+            live(0); status(r.message || 'Dat lukte niet. Probeer het zo nog een keer.', true);
+            if (r.reason === 'geweigerd' || r.reason === 'geen-pagina') { last = { target: /^https?:\/\//i.test(site) ? site : 'https://' + site }; show('volgende-stap'); }
+            track('gratis_scan_fout', { reden: r.reason || 'onbekend' });
+            return;
+          }
+          last = r;
+          var n = render(r);
+          live(4); status('Je uitslag staat hieronder.');
+          show('uitslag'); show('volgende-stap');
+          var kop = $('gs-uitslag-kop'); kop.scrollIntoView({ behavior: 'smooth', block: 'start' }); kop.focus({ preventScroll: true });
+          track('gratis_scan_uitslag', { verbeterpunten: n });
+        })
+        .catch(function () { btn.disabled = false; live(0); status('Ik kreeg geen antwoord. Controleer je verbinding en probeer het nog een keer.', true); });
+    });
+
+    document.addEventListener('click', function (ev) {
+      var a = ev.target.closest && ev.target.closest('[data-stap]');
+      if (a) track('gratis_scan_volgende_stap', { stap: a.getAttribute('data-stap') });
+    });
+
+    $('gs-rapport').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var form = this, out = $('gs-rapport-status'), mail = $('gs-mail').value.trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail)) { out.textContent = 'Vul een geldig e-mailadres in.'; $('gs-mail').focus(); return; }
+      var site = last ? last.target : $('gs-site').value.trim();
+      if (!site) { out.textContent = 'Scan eerst je website hierboven.'; return; }
+      var btn = form.querySelector('button[type="submit"]'); btn.disabled = true; out.textContent = 'Versturen...';
+      var body = { website: site, email: mail, contactName: $('gs-naam').value.trim(), hp_field: form.querySelector('[name="hp_field"]').value,
+        consent: { optin_email: $('gs-optin').checked, tekst: $('gs-optin-tekst').textContent }, source: SOURCE };
+      fetch(REPORT_ROUTE, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+        .then(function (res) {
+          if (!res.ok) throw new Error(String(res.status));
+          form.querySelectorAll('input,button').forEach(function (i) { i.disabled = true; });
+          out.textContent = 'Verstuurd. Het rapport staat binnen een paar minuten in je mailbox; kijk ook even in je spam.';
+          track('gratis_scan_volgende_stap', { stap: 'rapport' });
+        })
+        .catch(function () { btn.disabled = false; out.textContent = 'Versturen lukte niet. Probeer het nog een keer, of mail tim@studiolee.nl.'; });
+    });
+  })();
+
+  </script>
+
+<div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
+<script src="/assets/js/cookie-banner.js" defer></script>
+
+</body>
+
+</html>
