@@ -10,3 +10,4 @@
 .gesprek-error:empty { display: none; }
 #gesprekForm[hidden], .gesprek-agenda[hidden] { display: none !important; }
 .gesprek-boek { display: flex; }
+.gesprek-boek.btn-outline-dark, .gesprek-boek.btn-outline-dark:hover, .gesprek-boek.btn-outline-dark:focus { background: #fff !important; color: #1F2A2E !important; border: 2px solid #1F2A2E !important; }
