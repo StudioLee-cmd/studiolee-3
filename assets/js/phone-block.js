@@ -93,7 +93,8 @@
   });
   block.addEventListener('pointermove',function(e){if(e.pointerType==='mouse')touch=false;});
   var hub=block.querySelector('.l-hub');
-  hub.addEventListener('mouseenter',function(){if(calling)return;stopSpin();hideActions();overlay.classList.add('visible');humanType(gT,hub.dataset.t||'STUDIOLEE HOME');gD.textContent=hub.dataset.d||'Terug naar de homepage';});
+  // The hub in the middle of the dial is part of the phone: a click there rings, the same as a click on the body or Enter.
+  hub.addEventListener('mouseenter',function(){if(calling)return;stopSpin();hideActions();overlay.classList.add('visible');humanType(gT,'BEL STUDIOLEE');gD.textContent='Klik om te bellen en vraag een demo aan';});
   hub.addEventListener('mouseleave',restoreDefault);
 
   // Ring the phone: it rings, the AI assistant answers and asks for the demo. E-mail first, then the booking; it never starts a call.
@@ -116,6 +117,11 @@
   }
   function hangUp(){calling=false;stage.classList.remove('ringing');restoreDefault();}
   phone.addEventListener('click',function(e){e.stopPropagation();ring();});
+  hub.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();ring();});
+  // A click on the dial that does not turn it (no drag) rings as well; turning it by hand never does.
+  var downAt=null;
+  plate.addEventListener('mousedown',function(e){downAt=[e.clientX,e.clientY];});
+  plate.addEventListener('click',function(e){if(downAt&&Math.abs(e.clientX-downAt[0])+Math.abs(e.clientY-downAt[1])<6){e.stopPropagation();ring();}downAt=null;});
   phone.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();ring();}});
   hang.addEventListener('click',function(e){e.stopPropagation();hangUp();});
 

@@ -20,6 +20,8 @@
   display:flex; align-items:center; justify-content:center; transition:transform .2s,box-shadow .2s; cursor:pointer; }
 .l-hub:hover { transform:translate(-50%,-50%) scale(1.1); box-shadow:0 0 30px rgba(193,255,114,0.4),0 0 0 2px rgba(139,115,85,0.3),inset 0 2px 8px rgba(0,0,0,0.4),0 4px 20px rgba(0,0,0,0.4); }
 .l-hub img { width:60%; height:60%; object-fit:contain; }
+button.l-hub { padding:0; appearance:none; -webkit-appearance:none; }
+.l-hub:focus-visible { outline:2px solid var(--lime); outline-offset:3px; }
 .l-zones { z-index:5; pointer-events:none; }
 a.rz { position:absolute; width:25%; height:25%; border-radius:50%; transform:translate(-50%,-50%);
   transition:box-shadow .2s, background .2s; text-decoration:none; display:block; pointer-events:auto; -webkit-tap-highlight-color:transparent; }
