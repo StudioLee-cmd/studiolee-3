@@ -1,4 +1,5 @@
-/* Cookie consent for the chat (LeadConnector), the one part of the site that places cookies.
+/* Cookie consent for the chat (LeadConnector), the one part of the site that places cookies. The chat is off the site
+   (14-11), so a page without [data-widget-id] shows no bar at all.
    The question is a bar at the very top of the page, in space each page reserves before its first paint (the html class
    cb-ask, set in the page's head while no answer is stored; the bar's look is in styles.css). It pushes the page down
    instead of lying over it, so it covers nothing and nothing jumps. The fixed header sits under the bar until the bar has
@@ -44,6 +45,8 @@
       } else if (++tries > 120) clearInterval(t);
     }, 250);
   }
+  // Nothing to ask on a page without the chat: the site places no other cookies, so no bar (and no reserved space, see styles.css).
+  if (!document.querySelector('[data-widget-id]')) { root.classList.remove('cb-ask'); return; }
   if (c === 'accepted') { root.classList.remove('cb-ask'); loadHL(); return; }
   if (c === 'declined') { root.classList.remove('cb-ask'); return; }
   root.classList.add('cb-ask'); // a page whose head lacks the early line still reserves the space here
