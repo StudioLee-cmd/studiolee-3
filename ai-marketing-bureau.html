@@ -139,8 +139,8 @@
   </style>
 </head>
 
-<body data-look="studio">
-  <script>(function(){if(/(^|\.)studiolee\.nl$/.test(location.hostname))return;var L={studio:"Studio",overlay:"Overlay",editorial:"Editorial"},l=(location.search.match(/[?&]look=(studio|overlay|editorial)/)||[])[1]||"studio";document.body.setAttribute("data-look",l);document.addEventListener("DOMContentLoaded",function(){var b=document.createElement("nav");b.className="look-switch";b.setAttribute("aria-label","Kies een look (alleen in de preview)");var h="<span>Preview, look:</span>";for(var k in L){var q=new URLSearchParams(location.search);q.set("look",k);h+="<a href=\"?"+q.toString()+"\""+(k===l?" aria-current=\"true\"":"")+">"+L[k]+"</a>";}b.innerHTML=h;document.body.appendChild(b);});})();</script>
+<body data-look="editorial">
+  <script>(function(){if(/(^|\.)studiolee\.nl$/.test(location.hostname))return;var L={studio:"Studio",overlay:"Overlay",editorial:"Editorial"},l=(location.search.match(/[?&]look=(studio|overlay|editorial)/)||[])[1]||"editorial";document.body.setAttribute("data-look",l);document.addEventListener("DOMContentLoaded",function(){var b=document.createElement("nav");b.className="look-switch";b.setAttribute("aria-label","Kies een look (alleen in de preview)");var h="<span>Preview, look:</span>";for(var k in L){var q=new URLSearchParams(location.search);q.set("look",k);h+="<a href=\"?"+q.toString()+"\""+(k===l?" aria-current=\"true\"":"")+">"+L[k]+"</a>";}b.innerHTML=h;document.body.appendChild(b);});})();</script>
   <header class="header border-4 border-dark border-top position-fixed start-0 top-0 w-100">
     <div class="container">
       <div class="header-wrapper d-flex align-items-center justify-content-between">
