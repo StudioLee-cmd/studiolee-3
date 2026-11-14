@@ -1,6 +1,11 @@
 /* /gratis-gesprek: the e-mail address first, then the agenda (finding 3e48516fea51dc40). */
-.gesprek-section { background: #f6f6f1; }
-.gesprek-card { box-shadow: 0 12px 40px rgba(31, 42, 46, .08); }
+.gesprek-hero { background: #1F2A2E; padding: 150px 0 80px; }
+@media (max-width: 991.98px) { .gesprek-hero { padding: 116px 0 48px; } }
+.gesprek-hero h1 { font-size: clamp(2.6rem, 4.8vw, 4.5rem); line-height: 1; }
+.gesprek-leaf { width: 40px; flex: 0 0 40px; margin-top: 4px; }
+.gesprek-card { box-shadow: 0 16px 48px rgba(0, 0, 0, .25); font-size: 1.05rem; }
+.gesprek-h2 { font-size: clamp(1.6rem, 2.4vw, 2rem); line-height: 1.15; }
+.gesprek-small { font-size: .85rem; line-height: 1.45; }
 .gesprek-honey { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .gesprek-error:empty { display: none; }
 #gesprekForm[hidden], .gesprek-agenda[hidden] { display: none !important; }

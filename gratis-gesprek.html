@@ -133,41 +133,28 @@
 <!--  Page Wrapper -->
   <div class="page-wrapper overflow-hidden">
 
-    <!--  Banner Section -->
-    <section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
-      style="background-image: url(/assets/images/backgrounds/privacy-policy-banner.webp);">
+    <!--  One screen: what the talk is, and the e-mail address first, then the agenda -->
+    <section class="gesprek-hero position-relative">
       <div class="container">
-        <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
-          <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-3">
-            <ol>
-              <li><a href="/">Home</a></li>
-              <li class="active" aria-current="page">Gratis gesprek</li>
-            </ol>
-          </nav>
-          <div class="row align-items-center">
-            <div class="col-xl-6">
-              <div class="d-flex align-items-center gap-4">
-                <img src="/assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
-                <p class="mb-0 text-white fs-5 text-opacity-70">In een gratis gesprek kijken we samen naar je website en je marketing, en hoor je wat STUDIOLEE voor je bedrijf kan doen.</p>
-              </div>
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6 pe-lg-5">
+            <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-4">
+              <ol>
+                <li><a href="/">Home</a></li>
+                <li class="active" aria-current="page">Gratis gesprek</li>
+              </ol>
+            </nav>
+            <h1 class="text-white mb-4">Plan een gratis gesprek</h1>
+            <div class="d-flex align-items-start gap-3">
+              <img src="/assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid gesprek-leaf">
+              <p class="mb-0 text-white fs-5 text-opacity-70">In een gratis gesprek kijken we samen naar je website en je marketing, en hoor je wat STUDIOLEE voor je bedrijf kan doen.</p>
             </div>
           </div>
-          <div class="d-flex align-items-end gap-3">
-            <h1 class="mb-0 fs-16 text-white lh-1">Plan een gratis gesprek</h1>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--  Form Section: the e-mail address first, then the agenda -->
-    <section class="gesprek-section py-5 py-lg-11">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-7 col-xl-6">
-            <div class="gesprek-card border border-dark rounded-4 p-4 p-md-5 bg-white">
-              <h2 class="mb-3">Eerst je e-mailadres, dan een moment</h2>
-              <p class="fs-5 mb-2">Het gesprek is voor MKB-ondernemers die meer klanten willen uit Google, social media en reviews.</p>
-              <p class="fs-5 mb-4">Kies zelf 15 of 30 minuten; het gesprek is gratis en vrijblijvend.</p>
+          <div class="col-lg-6 col-xl-5 offset-xl-1">
+            <div class="gesprek-card rounded-4 p-4 p-md-5 bg-white">
+              <h2 class="mb-3 gesprek-h2">Eerst je e-mailadres, dan een moment</h2>
+              <p class="mb-2">Het gesprek is voor MKB-ondernemers die meer klanten willen uit Google, social media en reviews.</p>
+              <p class="mb-4">Kies zelf 15 of 30 minuten; het gesprek is gratis en vrijblijvend.</p>
               <form id="gesprekForm" class="d-flex flex-column gap-3" novalidate>
                 <label for="gesprekEmail" class="form-label text-dark mb-0 fw-bold">Je e-mailadres</label>
                 <input type="email" id="gesprekEmail" name="email" autocomplete="email" class="form-control border border-dark rounded-3 px-3 py-3 bg-white" placeholder="voornaam@bedrijf.nl" required>
@@ -178,11 +165,11 @@
                 </div>
                 <p class="gesprek-error text-danger mb-0" role="alert" aria-live="polite"></p>
                 <button type="submit" class="btn btn-dark w-100 justify-content-center rounded-pill py-3 fw-bold">Verder naar de agenda</button>
-                <p class="fs-7 text-dark text-opacity-70 mb-0">We gebruiken je e-mailadres alleen voor dit gesprek. Lees de <a href="/privacy" class="text-dark text-decoration-underline">privacyverklaring</a>.</p>
+                <p class="gesprek-small text-dark text-opacity-70 mb-0">We gebruiken je e-mailadres alleen voor dit gesprek. Lees de <a href="/privacy" class="text-dark text-decoration-underline">privacyverklaring</a>.</p>
               </form>
               <div class="gesprek-agenda" hidden>
-                <p class="fs-5 fw-bold mb-2">Genoteerd, dank je.</p>
-                <p class="fs-5 mb-4 gesprek-agenda-tekst">Kies nu een moment in de agenda. Je e-mailadres staat er al in.</p>
+                <p class="fw-bold mb-2">Genoteerd, dank je.</p>
+                <p class="mb-4 gesprek-agenda-tekst">Kies nu een moment in de agenda. Je e-mailadres staat er al in.</p>
                 <a class="btn btn-primary text-dark fw-bold w-100 justify-content-center rounded-pill py-3 gesprek-boek" data-duur="30" href="https://cal.com/studiolee/30min">Kies een moment van 30 minuten</a>
                 <a class="btn btn-outline-dark fw-bold w-100 justify-content-center rounded-pill py-3 mt-3 gesprek-boek" data-duur="15" href="https://cal.com/studiolee/15min">Liever 15 minuten</a>
               </div>
