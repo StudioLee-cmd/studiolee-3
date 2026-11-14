@@ -99,3 +99,5 @@
 .wlm-examples .niche-showcase__card{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);color:#fff}
 .wlm-examples .niche-showcase__viewport{min-width:0;min-height:320px}
 @media (max-width:991.98px){.wlm-examples .niche-showcase__card{grid-template-columns:minmax(0,1fr)}.wlm-examples .niche-showcase__viewport{aspect-ratio:16/11;min-height:0}}
+/* ranking trade pages keep their banner: on a phone its H1 clears the fixed header and the menu button */
+@media (max-width:991.98px){.banner-inner-section{padding-top:130px;min-height:0}}
