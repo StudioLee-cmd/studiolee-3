@@ -90,3 +90,7 @@
       }
     .wlm-cta .btn{white-space:nowrap}
 @media (max-width:575.98px){.wlm-features .p-5,.why-niche .p-5,[class*="why-"] .p-5{padding:1.5rem!important}.wlm-pricing .card-body{padding:1.5rem!important}.wlm-cta .btn{width:100%;justify-content:space-between}}
+/* portfolio: the live site on a computer, its phone view in the corner */
+.wlm-pf .niche-tpl-card__viewport{aspect-ratio:16/11}
+.wlm-pf__phone{position:absolute;right:14px;bottom:14px;width:23%;max-width:96px;height:auto;z-index:2;border-radius:12px;border:3px solid #1F2A2E;box-shadow:0 10px 30px rgba(0,0,0,.3);background:#fff}
+.wlm-hero--pf{padding-bottom:56px}
