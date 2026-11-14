@@ -1016,6 +1016,20 @@
       </div>
     </div>
 
+    
+    <script>
+    (function () {
+      var f = document.getElementById('freeWebsiteForm');
+      if (!f || !window.fetch) return;
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var b = f.querySelector('button[type=submit]'); if (b) { b.disabled = true; b.textContent = 'Versturen...'; }
+        fetch(f.action, {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(f)).toString()})
+          .then(function () { f.outerHTML = '<div class="py-4" role="status"><p class="fs-5 text-white mb-2">Dank je, je aanvraag is binnen.</p><p class="text-white text-opacity-70 mb-0">We maken een ontwerp van je website en mailen je zodra het klaar is.</p></div>'; })
+          .catch(function () { f.submit(); });
+      });
+    })();
+    </script>
     <script src="/assets/js/page-sticker.js" data-sticker="/assets/images/stickers/windmill.webp" defer></script>
 
 <script src="/assets/js/cookie-banner.js" defer></script>
