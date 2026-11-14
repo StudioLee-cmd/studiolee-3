@@ -1021,7 +1021,14 @@
               <input type="tel" class="form-control bg-transparent border-bottom border-white border-opacity-25 text-white rounded-0 px-0" name="telefoon" placeholder="Telefoon" required>
               <input type="text" class="form-control bg-transparent border-bottom border-white border-opacity-25 text-white rounded-0 px-0" name="branche" placeholder="Branche (bijv. Kapper, Loodgieter)" required>
               <input type="text" class="form-control bg-transparent border-bottom border-white border-opacity-25 text-white rounded-0 px-0" name="stad" placeholder="Stad / Regio" required>
-              <button type="submit" class="btn btn-primary text-dark fw-bold py-3 mt-3 rounded-pill">Gratis ontwerp aanvragen</button>
+              <label class="d-flex gap-2 align-items-start small text-white text-opacity-75 mt-2" for="fwConsent">
+                <input type="checkbox" id="fwConsent" name="consent_contact" value="ja" class="mt-1 flex-shrink-0" style="width:18px;height:18px;accent-color:#C1FF72" required>
+                <span>Ja, STUDIOLEE mag me mailen en bellen over dit ontwerp.</span>
+              </label>
+              <input type="hidden" name="consent_text" value="Ja, STUDIOLEE mag me mailen en bellen over dit ontwerp.">
+              <input type="hidden" name="consent_version" value="studiolee-gratis-ontwerp-2026-11-14">
+              <p class="small text-white text-opacity-60 mb-0">We gebruiken je gegevens alleen voor dit ontwerp. Lees de <a href="/privacy" class="text-white text-decoration-underline">privacyverklaring</a>.</p>
+              <button type="submit" class="btn btn-primary text-dark fw-bold py-3 mt-2 rounded-pill">Gratis ontwerp aanvragen</button>
             </form>
           </div>
         </div>
@@ -1036,6 +1043,11 @@
       f.addEventListener('submit', function (e) {
         e.preventDefault();
         var b = f.querySelector('button[type=submit]'); if (b) { b.disabled = true; b.textContent = 'Versturen...'; }
+        // Only the live site sends: a preview or a local copy never writes a real request.
+        if (!/^(www\.)?studiolee\.nl$/.test(location.hostname)) {
+          f.outerHTML = '<div class="py-4" role="status"><p class="fs-5 text-white mb-2">Voorbeeld: niet verstuurd.</p><p class="text-white text-opacity-70 mb-0">Op www.studiolee.nl gaat je aanvraag hier echt de deur uit en mailen we je zodra je ontwerp klaar is.</p></div>';
+          return;
+        }
         fetch(f.action, {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: new URLSearchParams(new FormData(f)).toString()})
           .then(function () { f.outerHTML = '<div class="py-4" role="status"><p class="fs-5 text-white mb-2">Dank je, je aanvraag is binnen.</p><p class="text-white text-opacity-70 mb-0">We maken een ontwerp van je website en mailen je zodra het klaar is.</p></div>'; })
           .catch(function () { f.submit(); });

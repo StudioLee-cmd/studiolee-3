@@ -670,6 +670,19 @@
         }
 
         hideError();
+        // Only the live site sends: a preview or a local copy never writes a real scan request or sign-up.
+        if (!/^(www\.)?studiolee\.nl$/.test(location.hostname)) {
+          done();
+          showSuccess();
+          var s = document.getElementById(successId);
+          if (s && !s.querySelector('.preview-note')) {
+            var n = document.createElement('p');
+            n.className = 'preview-note small mt-2 mb-0';
+            n.textContent = 'Voorbeeld: niets verstuurd. Op www.studiolee.nl gaat dit formulier echt de deur uit.';
+            s.appendChild(n);
+          }
+          return;
+        }
         fetch(form.action, {method:'POST', body: data})
           .then(function(response){
             if (!response || !response.ok) { done(); showError(); return; }
