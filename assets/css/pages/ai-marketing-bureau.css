@@ -1,0 +1,59 @@
+/* /ai-marketing-bureau (and its two preview variants): page-scoped styles for the do-it-yourself steps, the who-does-what
+   table and the three plans. The walkthrough looks themselves live in /assets/css/walkthrough.css (body[data-look]). */
+.amb-how { border-top: 1px solid rgba(127,127,127,.25); padding-top: 32px; }
+.amb-how-h { font-size: 1.35rem; margin: 0 0 20px; }
+.amb-how-list { list-style: none; counter-reset: amb; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px; }
+.amb-how-list li { counter-increment: amb; position: relative; padding-top: 46px; }
+.amb-how-list li::before { content: counter(amb); position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: .9rem; background: #C1FF72; color: #1F2A2E; }
+.amb-how-list b { display: block; font-size: 1.02rem; margin-bottom: 6px; }
+.amb-how-list span { display: block; font-size: .95rem; line-height: 1.55; opacity: .82; }
+.amb-how-foot { margin: 26px 0 0; font-size: 1rem; }
+@media (max-width: 1199.98px) { .amb-how-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575.98px) { .amb-how-list { grid-template-columns: 1fr; gap: 18px; } .amb-how-list li { padding: 0 0 0 46px; } }
+
+.amb-who { border-top: 2px solid #1F2A2E; }
+.amb-who-row { display: grid; grid-template-columns: 1.1fr 1.3fr 1.4fr 1.4fr; gap: 20px; padding: 16px 0; border-bottom: 1px solid rgba(31,42,46,.12); align-items: baseline; font-size: 1rem; line-height: 1.5; color: #4a5559; }
+.amb-who-head { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; color: #1F2A2E; padding: 12px 0; }
+.amb-who-row [role="rowheader"] { font-weight: 700; color: #1F2A2E; font-size: 1.08rem; }
+.amb-who-row [role="rowheader"] a { color: #1F2A2E; text-decoration: underline; text-decoration-color: #C1FF72; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+.amb-who-row [role="rowheader"] a:hover { background: #C1FF72; }
+.amb-who-foot { margin: 22px 0 0; font-size: 1rem; }
+@media (max-width: 767.98px) {
+  .amb-who-head { display: none; }
+  .amb-who-row { grid-template-columns: 1fr; gap: 4px; padding: 16px 0; }
+  .amb-who-row [role="cell"]::before { content: attr(data-who) ": "; font-weight: 700; color: #1F2A2E; }
+}
+
+.amb-plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 30px; align-items: stretch; }
+.amb-plan { background: #fff; color: #1F2A2E; border: 1px solid rgba(31,42,46,.12); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+.amb-plan.is-pick { border: 2px solid #1F2A2E; box-shadow: 0 18px 40px rgba(31,42,46,.12); }
+.amb-plan .amb-plan-who { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #6b7579; margin: 0; }
+.amb-plan h3 { font-size: 1.45rem; margin: 0; }
+.amb-plan .amb-amount { margin: 0; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.amb-plan .amb-amount b { font-size: 2.3rem; line-height: 1; }
+.amb-plan .amb-amount small { font-size: 1rem; font-weight: 600; }
+.amb-plan .amb-amount span, .amb-plan .amb-note { color: #6b7579; font-size: .93rem; }
+.amb-plan .amb-note { margin: -6px 0 0; }
+.amb-plan ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.amb-plan li { position: relative; padding-left: 24px; line-height: 1.45; }
+.amb-plan li::before { content: ""; position: absolute; left: 2px; top: 6px; width: 12px; height: 7px; border-left: 2px solid #3f6b17; border-bottom: 2px solid #3f6b17; transform: rotate(-45deg); }
+.amb-plan .amb-plan-cta { margin-top: auto; padding-top: 8px; }
+.amb-plan .amb-plan-cta a { display: flex; align-items: center; justify-content: center; width: 100%; border-radius: 999px; padding: 13px 18px; font-weight: 700; text-decoration: none; background: #1F2A2E; color: #fff; min-height: 48px; }
+.amb-plan .amb-plan-cta a.amb-light { background: transparent; color: #1F2A2E; border: 2px solid #1F2A2E; }
+.amb-plan .amb-plan-cta a:hover { background: #C1FF72; color: #1F2A2E; }
+@media (max-width: 991.98px) { .amb-plans { grid-template-columns: 1fr; } }
+
+/* preview variants only (noindex pages): which look this is, and the other two */
+.amb-variant { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 2000; display: flex; align-items: center; gap: 4px; padding: 5px; border-radius: 999px; background: #1F2A2E; box-shadow: 0 10px 30px rgba(0,0,0,.35); font: 600 13px/1.2 'Outfit', sans-serif; max-width: calc(100vw - 20px); }
+.amb-variant span { color: rgba(255,255,255,.75); padding: 0 8px 0 10px; }
+.amb-variant a { color: #fff; text-decoration: none; padding: 9px 12px; border-radius: 999px; min-height: 36px; display: inline-flex; align-items: center; white-space: nowrap; }
+.amb-variant a[aria-current="page"] { background: #C1FF72; color: #1F2A2E; }
+.amb-variant b { font-weight: 600; } .amb-v-short { display: none; }
+@media (max-width: 575.98px) { .amb-v-long { display: none; } .amb-v-short { display: inline; } .amb-variant span { padding: 0 2px 0 8px; } .amb-variant a { padding: 9px 8px; } }
+.wt-sec a.wt-link { color: inherit; text-decoration: underline; text-decoration-color: #C1FF72; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+/* two walkthrough sections in a row keep a line between them */
+.wt-sec + .wt-sec { border-top: 1px solid rgba(31,42,46,.1); }
+body[data-look="overlay"] .wt-sec + .wt-sec { border-top-color: rgba(255,255,255,.09); }
+/* the plans on a white section: the cards on paper grey, the pick in white with its dark edge */
+.amb-prices .amb-plan { background: #F4F6F8; border-color: transparent; }
+.amb-prices .amb-plan.is-pick { background: #fff; border-color: #1F2A2E; }
