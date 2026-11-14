@@ -5,12 +5,12 @@
 body.mp { --mp-ink: #1F2A2E; --mp-muted: #4a5559; --mp-paper: #F4F6F8; --mp-line: #DDE3E6; --mp-lime: #C1FF72; --mp-dark: #1F2A2E; }
 
 /* Hero: what it is and what it costs on the left, the route it takes on the right */
-body.mp .mp-hero { background: var(--mp-dark); align-items: stretch !important; }
+body.mp .mp-hero { background: var(--mp-dark); min-height: 0; padding-top: 128px; }
 body.mp .mp-hero .container { position: relative; z-index: 1; }
 body.mp .mp-hero-row { padding-bottom: 56px; }
 body.mp .mp-kicker { color: rgba(255,255,255,.72); font-size: 1.05rem; margin: 0; }
 body.mp .mp-kicker b { color: var(--mp-lime); font-weight: 500; }
-body.mp .mp-hero h1 { color: #fff; font-size: clamp(2.3rem, 4.3vw, 4.1rem); line-height: 1.04; margin: 0; letter-spacing: -.01em; }
+body.mp .mp-hero h1 { color: #fff; font-size: clamp(2.2rem, 3.6vw, 3.6rem) !important; line-height: 1.06; margin: 0; letter-spacing: -.01em; }
 body.mp .mp-hero .mp-what { color: rgba(255,255,255,.86); font-size: 1.15rem; line-height: 1.5; margin: 0; max-width: 40rem; }
 body.mp .mp-hero .mp-price { display: inline-flex; align-items: baseline; gap: 10px; flex-wrap: wrap; color: #fff; margin: 0; }
 body.mp .mp-hero .mp-price strong { font-size: 1.6rem; color: var(--mp-lime); font-weight: 600; }
@@ -19,7 +19,7 @@ body.mp .mp-actions { display: flex; flex-wrap: wrap; gap: 14px 22px; align-item
 body.mp .mp-link { color: #fff; font-weight: 700; display: inline-flex; gap: 8px; align-items: center; text-decoration: none; }
 body.mp .mp-link:hover { color: var(--mp-lime); }
 body.mp .mp-hero .rt { box-shadow: 0 30px 60px rgba(0,0,0,.28); }
-@media (max-width: 991.98px) { body.mp .mp-hero-row { padding-bottom: 36px; } }
+@media (max-width: 991.98px) { body.mp .mp-hero { padding-top: 118px; } body.mp .mp-hero-row { padding-bottom: 36px; } }
 
 /* Sections */
 body.mp .mp-sec { padding: 72px 0; }
