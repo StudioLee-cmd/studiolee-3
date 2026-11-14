@@ -1,0 +1,117 @@
+/* Page styles of the reworked main pages: /crm, /automations, /reviews, /tarieven, /free-trial.
+   Scoped to body.mp so nothing here reaches another page. The product screens use walkthrough.css,
+   the route explainers route.css. */
+
+body.mp { --mp-ink: #1F2A2E; --mp-muted: #4a5559; --mp-paper: #F4F6F8; --mp-line: #DDE3E6; --mp-lime: #C1FF72; --mp-dark: #1F2A2E; }
+
+/* Hero: what it is and what it costs on the left, the route it takes on the right */
+body.mp .mp-hero { background: var(--mp-dark); min-height: 0; padding-top: 128px; }
+body.mp .mp-hero .container { position: relative; z-index: 1; }
+body.mp .mp-hero-row { padding-bottom: 56px; }
+body.mp .mp-kicker { color: rgba(255,255,255,.72); font-size: 1.05rem; margin: 0; }
+body.mp .mp-kicker b { color: var(--mp-lime); font-weight: 500; }
+body.mp .mp-hero h1 { color: #fff; font-size: clamp(2.2rem, 3.6vw, 3.6rem) !important; line-height: 1.06; margin: 0; letter-spacing: -.01em; }
+body.mp .mp-hero .mp-what { color: rgba(255,255,255,.86); font-size: 1.15rem; line-height: 1.5; margin: 0; max-width: 40rem; }
+body.mp .mp-hero .mp-price { display: inline-flex; align-items: baseline; gap: 10px; flex-wrap: wrap; color: #fff; margin: 0; }
+body.mp .mp-hero .mp-price strong { font-size: 1.6rem; color: var(--mp-lime); font-weight: 600; }
+body.mp .mp-hero .mp-price span { color: rgba(255,255,255,.7); font-size: .98rem; }
+body.mp .mp-actions { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; }
+body.mp .mp-link { color: #fff; font-weight: 700; display: inline-flex; gap: 8px; align-items: center; text-decoration: none; }
+body.mp .mp-link:hover { color: var(--mp-lime); }
+body.mp .mp-hero .rt { box-shadow: 0 30px 60px rgba(0,0,0,.28); }
+@media (max-width: 991.98px) { body.mp .mp-hero { padding-top: 118px; } body.mp .mp-hero-row { padding-bottom: 36px; } }
+
+/* Sections */
+body.mp .mp-sec { padding: 72px 0; }
+body.mp .mp-sec.mp-paper { background: var(--mp-paper); }
+body.mp .mp-sec.mp-darkbg { background: var(--mp-dark); color: #fff; }
+body.mp .mp-sec.mp-darkbg h2, body.mp .mp-sec.mp-darkbg h3 { color: #fff; }
+body.mp .mp-sec h2 { font-size: clamp(1.8rem, 2.6vw, 2.6rem); line-height: 1.12; margin: 0 0 14px; }
+body.mp .mp-lede { font-size: 1.12rem; line-height: 1.55; color: var(--mp-muted); margin: 0; }
+body.mp .mp-darkbg .mp-lede { color: rgba(255,255,255,.75); }
+body.mp .mp-tag { display: inline-block; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; color: var(--mp-ink); background: var(--mp-lime); border-radius: 999px; padding: 4px 12px; margin-bottom: 14px; }
+@media (max-width: 767.98px) { body.mp .mp-sec { padding: 52px 0; } }
+
+/* What you get: plain cards, one line of what it does for you */
+body.mp .mp-get { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 32px; }
+body.mp .mp-get > div { background: #fff; border: 1px solid var(--mp-line); border-radius: 18px; padding: 22px; }
+body.mp .mp-paper .mp-get > div { background: #fff; }
+body.mp .mp-get h3 { font-size: 1.15rem; margin: 10px 0 6px; color: var(--mp-ink); }
+body.mp .mp-get p { margin: 0; color: var(--mp-muted); font-size: 1rem; line-height: 1.5; }
+body.mp .mp-get iconify-icon { font-size: 26px; color: var(--mp-ink); background: var(--mp-lime); border-radius: 12px; padding: 8px; }
+@media (max-width: 991.98px) { body.mp .mp-get { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 575.98px) { body.mp .mp-get { grid-template-columns: 1fr; } }
+
+/* Who does what: you, the AI, a specialist */
+body.mp .mp-who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+body.mp .mp-who > div { border-top: 3px solid var(--mp-ink); padding-top: 16px; }
+body.mp .mp-darkbg .mp-who > div { border-top-color: var(--mp-lime); }
+body.mp .mp-who h3 { font-size: 1.2rem; margin: 0 0 8px; }
+body.mp .mp-who p { margin: 0; line-height: 1.55; }
+body.mp .mp-darkbg .mp-who p { color: rgba(255,255,255,.78); }
+@media (max-width: 767.98px) { body.mp .mp-who { grid-template-columns: 1fr; } }
+
+/* Plans and prices */
+body.mp .mp-plans { display: grid; grid-template-columns: repeat(var(--mp-cols, 3), minmax(0, 1fr)); gap: 18px; margin-top: 30px; align-items: stretch; }
+body.mp .mp-plan { background: #fff; color: var(--mp-ink); border: 1px solid var(--mp-line); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+body.mp .mp-plan.is-pick { border: 2px solid var(--mp-ink); box-shadow: 0 18px 40px rgba(31,42,46,.12); }
+body.mp .mp-plan .mp-plan-who { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--mp-muted); margin: 0; }
+body.mp .mp-plan h3 { font-size: 1.45rem; margin: 0; color: var(--mp-ink); }
+body.mp .mp-plan .mp-amount { margin: 0; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+body.mp .mp-plan .mp-amount b { font-size: 2.3rem; line-height: 1; color: var(--mp-ink); }
+body.mp .mp-plan .mp-amount span { color: var(--mp-muted); font-size: .95rem; }
+body.mp .mp-plan .mp-note { color: var(--mp-muted); font-size: .92rem; margin: -6px 0 0; }
+body.mp .mp-plan ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+body.mp .mp-plan li { display: flex; gap: 10px; align-items: flex-start; line-height: 1.45; }
+body.mp .mp-plan li iconify-icon { flex: 0 0 auto; margin-top: 3px; color: #3f6b17; }
+body.mp .mp-plan .mp-plan-cta { margin-top: auto; padding-top: 8px; }
+body.mp .mp-plan .mp-plan-cta a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; border-radius: 999px; padding: 13px 18px; font-weight: 700; text-decoration: none; background: var(--mp-ink); color: #fff; }
+body.mp .mp-plan .mp-plan-cta a.mp-light { background: transparent; color: var(--mp-ink); border: 2px solid var(--mp-ink); }
+body.mp .mp-plan .mp-plan-cta a:hover { background: var(--mp-lime); color: var(--mp-ink); }
+@media (max-width: 991.98px) { body.mp .mp-plans { grid-template-columns: 1fr; } }
+
+/* Small price tables (add-ons, buy-once) */
+body.mp .mp-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 18px; overflow: hidden; border: 1px solid var(--mp-line); }
+body.mp .mp-table th, body.mp .mp-table td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--mp-line); vertical-align: top; line-height: 1.45; }
+body.mp .mp-table th { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--mp-muted); background: #fafbfc; }
+body.mp .mp-table td.mp-num { white-space: nowrap; font-weight: 700; color: var(--mp-ink); }
+body.mp .mp-table tr:last-child td { border-bottom: 0; }
+@media (max-width: 575.98px) {
+  body.mp .mp-table thead { display: none; }
+  body.mp .mp-table tr { display: block; border-bottom: 1px solid var(--mp-line); padding: 12px 16px; }
+  body.mp .mp-table td { display: block; border: 0; padding: 2px 0; }
+}
+
+/* One system: where this service sits, with the software story on /ai-marketing-bureau */
+body.mp .mp-system { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+body.mp .mp-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+body.mp .mp-chips a { display: inline-block; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); color: #fff; text-decoration: none; font-weight: 500; }
+body.mp .mp-chips a:hover, body.mp .mp-chips a[aria-current] { background: var(--mp-lime); color: var(--mp-ink); border-color: var(--mp-lime); }
+@media (max-width: 991.98px) { body.mp .mp-system { grid-template-columns: 1fr; gap: 24px; } }
+
+/* FAQ as plain details, readable without script */
+body.mp .mp-faq { display: flex; flex-direction: column; gap: 10px; margin-top: 26px; }
+body.mp .mp-faq details { background: #fff; border: 1px solid var(--mp-line); border-radius: 16px; padding: 0 20px; }
+body.mp .mp-faq summary { cursor: pointer; list-style: none; padding: 18px 30px 18px 0; font-weight: 700; color: var(--mp-ink); position: relative; font-size: 1.05rem; }
+body.mp .mp-faq summary::-webkit-details-marker { display: none; }
+body.mp .mp-faq summary::after { content: "+"; position: absolute; right: 0; top: 14px; font-size: 1.5rem; font-weight: 400; }
+body.mp .mp-faq details[open] summary::after { content: "\2212"; }
+body.mp .mp-faq details p { margin: 0 0 18px; color: var(--mp-muted); line-height: 1.6; }
+
+/* Closing call to action */
+body.mp .mp-cta { background: var(--mp-lime); padding: 64px 0; text-align: center; }
+body.mp .mp-cta h2 { color: var(--mp-ink); font-size: clamp(1.8rem, 2.8vw, 2.6rem); margin: 0 0 10px; }
+body.mp .mp-cta p { color: var(--mp-ink); opacity: .8; font-size: 1.1rem; margin: 0 auto 26px; max-width: 40rem; }
+body.mp .mp-cta .mp-actions { justify-content: center; }
+body.mp .mp-btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 14px 24px; font-weight: 700; text-decoration: none; background: var(--mp-ink); color: #fff; }
+body.mp .mp-btn.mp-btn-line { background: transparent; color: var(--mp-ink); border: 2px solid var(--mp-ink); }
+body.mp .mp-btn.mp-btn-lime { background: var(--mp-lime); color: var(--mp-ink); }
+body.mp .mp-btn:hover { filter: brightness(1.08); color: inherit; }
+body.mp .mp-btn.mp-btn-lime:hover { color: var(--mp-ink); }
+body.mp .mp-cta .mp-btn:hover { color: #fff; }
+body.mp .mp-cta .mp-btn.mp-btn-line:hover { color: var(--mp-ink); }
+
+/* Long text sections keep a readable measure */
+body.mp .mp-prose p { font-size: 1.06rem; line-height: 1.65; color: var(--mp-muted); max-width: 46rem; }
+body.mp .mp-prose a { color: #3f6b17; text-decoration: underline; text-underline-offset: 3px; }
+body.mp .mp-sec .wt { margin-top: 30px; }
