@@ -48,6 +48,23 @@
   new MutationObserver(scan).observe(document.documentElement, { childList: true, subtree: true });
 }());
 // STUDIOLEE-BOOKING-CONTEXT:END
+// STUDIOLEE-EMAIL-FIRST:START
+/* No booking without the e-mail address first (owner 30-10): a click on a cal.com/studiolee link that carries no
+   e-mail address goes to /gratis-gesprek, which asks for it and then opens the agenda with it filled in. */
+(function () {
+  'use strict';
+  if (typeof document === 'undefined') return;
+  document.addEventListener('click', function (event) {
+    var a = event.target.closest && event.target.closest('a[href*="cal.com/studiolee"]');
+    if (!a) return;
+    var u;
+    try { u = new URL(a.getAttribute('href'), location.href); } catch (_) { return; }
+    if (u.searchParams.get('email')) return;
+    event.preventDefault();
+    location.href = '/gratis-gesprek' + (/\/15min/.test(u.pathname) ? '?duur=15' : '');
+  }, true);
+}());
+// STUDIOLEE-EMAIL-FIRST:END
 
 $(function () {
 
