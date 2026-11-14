@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "slug": "excel-naar-crm-zonder-dataverlies",
+      "title": "Van Excel naar CRM zonder data te verliezen",
+      "date": "2026-11-14",
+      "cluster": "crm",
+      "image": "/assets/images/blog/excel-naar-crm-zonder-dataverlies.jpg"
+    },
+    {
       "slug": "marketing-uitbesteden-afspraken-contract",
       "title": "Marketing uitbesteden: 7 afspraken die je vastlegt voor je tekent",
       "date": "2026-11-12",

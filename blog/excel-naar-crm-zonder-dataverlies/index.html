@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Van Excel naar CRM zonder data te verliezen — STUDIOLEE</title>
+  <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon-sl.png" />
+  <link rel="stylesheet" href="/assets/libs/aos-master/dist/aos.css">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+<meta name="cluster" content="crm">
+    <meta name="description" content="Je klantenlijst van Excel naar een CRM systeem verhuizen zonder klanten, nummers of notities kwijt te raken: opschonen, ontdubbelen, importeren en controleren.">
+  <link rel="canonical" href="https://www.studiolee.nl/blog/excel-naar-crm-zonder-dataverlies" />
+  <meta property="og:title" content="Van Excel naar CRM zonder data te verliezen — STUDIOLEE" />
+  <meta property="og:description" content="Je klantenlijst van Excel naar een CRM systeem verhuizen zonder klanten, nummers of notities kwijt te raken: opschonen, ontdubbelen, importeren en controleren." />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:url" content="https://www.studiolee.nl/blog/excel-naar-crm-zonder-dataverlies" />
+  <meta property="og:image" content="https://www.studiolee.nl/assets/images/blog/excel-naar-crm-zonder-dataverlies.jpg" />
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Van Excel naar CRM zonder data te verliezen — STUDIOLEE">
+  <meta name="twitter:description" content="Je klantenlijst van Excel naar een CRM systeem verhuizen zonder klanten, nummers of notities kwijt te raken: opschonen, ontdubbelen, importeren en controleren.">
+  <meta name="twitter:image" content="https://www.studiolee.nl/assets/images/blog/excel-naar-crm-zonder-dataverlies.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logos/apple-touch-icon.png">
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Van Excel naar CRM zonder data te verliezen", "description": "Je klantenlijst van Excel naar een CRM systeem verhuizen zonder klanten, nummers of notities kwijt te raken: opschonen, ontdubbelen, importeren en controleren.", "url": "https://www.studiolee.nl/blog/excel-naar-crm-zonder-dataverlies", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "image": "https://www.studiolee.nl/assets/images/blog/excel-naar-crm-zonder-dataverlies.jpg", "author": {"@type": "Person", "name": "Tim van der Lee", "url": "https://nl.linkedin.com/in/tim-van-der-lee-86118917b"}, "publisher": {"@type": "Organization", "name": "STUDIOLEE", "url": "https://www.studiolee.nl", "logo": {"@type": "ImageObject", "url": "https://www.studiolee.nl/assets/images/logos/studiolee-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.studiolee.nl/blog/excel-naar-crm-zonder-dataverlies"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.studiolee.nl/"}, {"@type": "ListItem", "position": 2, "name": "Kennisbank", "item": "https://www.studiolee.nl/blog"}, {"@type": "ListItem", "position": 3, "name": "Van Excel naar CRM zonder data te verliezen", "item": "https://www.studiolee.nl/blog/excel-naar-crm-zonder-dataverlies"}]}</script>
+</head>
+<body>
+<header class="header border-4 border-dark border-top position-fixed start-0 top-0 w-100">
+    <div class="container">
+      <div class="header-wrapper d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <a href="/" class="logo-white">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
+          </a>
+          <a href="/" class="logo-dark">
+            <img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE logo" class="img-fluid" style="max-height: 120px;">
+          </a>
+        </div>
+        <div class="d-flex align-items-center gap-4">
+
+          <div class="menu-toggle-wrap">
+            <button class="hamburger-btn" aria-label="Menu" onclick="this.classList.toggle('is-open');document.getElementById('slideMenu').classList.toggle('is-open');" >
+              <div class="bar-wrap"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+            </button>
+            <nav class="menu-dropdown" id="slideMenu">
+              <div class="d-flex flex-column gap-6">
+                <!-- menu header removed -->
+                <div class="d-flex flex-column gap-3">
+                  <ul class="header-menu list-unstyled mb-0 d-flex flex-column gap-2">
+                    <li class="header-item">
+                      <a href="/" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:home-angle-bold-duotone"></iconify-icon></span>Home</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/ai-marketing-bureau" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:rocket-2-bold-duotone"></iconify-icon></span>AI Marketing Bureau</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/chatbot" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chat-round-dots-bold-duotone"></iconify-icon></span>AI Chatbot</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/voice-ai" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:phone-calling-rounded-bold-duotone"></iconify-icon></span>AI Telefonist</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/seo" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:magnifer-zoom-in-bold-duotone"></iconify-icon></span>SEO &amp; Vindbaarheid</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/linkbuilding" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:link-bold-duotone"></iconify-icon></span>Linkbuilding</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/social-media" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:share-circle-bold-duotone"></iconify-icon></span>Social Media</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/reviews" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:star-shine-bold-duotone"></iconify-icon></span>Review Management</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/marketing-uitbesteden" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:chart-2-bold-duotone"></iconify-icon></span>Marketing uitbesteden</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/automations" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:settings-minimalistic-bold-duotone"></iconify-icon></span>Automatisering</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/crm" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:users-group-rounded-bold-duotone"></iconify-icon></span>CRM</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/herinneringen" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:bell-bing-bold-duotone"></iconify-icon></span>Herinneringen</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/dashboard" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:monitor-bold-duotone"></iconify-icon></span>Dashboard</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/tarieven" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:wallet-money-bold-duotone"></iconify-icon></span>Tarieven</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/free-trial" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:document-medicine-bold-duotone"></iconify-icon></span>Start Nu</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/website-laten-maken" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:global-bold-duotone"></iconify-icon></span>Website laten maken</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/blog" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:notebook-bold-duotone"></iconify-icon></span>Blog</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/portfolio" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:gallery-wide-bold-duotone"></iconify-icon></span>Portfolio</a>
+                    </li>
+                  </ul>
+                  <div class="hstack gap-3">
+                    <a href="https://cal.com/studiolee" rel="nofollow" target="_blank"
+                      class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a>
+                  </div>
+                </div>
+                <div>
+                  <a class="text-dark" href="tel:+3197010223669">+31 970 102 23669</a>
+                  <a class="fs-8 text-dark fw-bold" href="mailto:tim@studiolee.nl">tim@studiolee.nl</a>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-wrapper overflow-hidden">
+<section class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
+  style="background-image: url(/assets/images/blog/excel-naar-crm-zonder-dataverlies.jpg); background-size: cover; background-position: center;">
+  <div class="container">
+    <div class="d-flex flex-column gap-4 pb-5 pb-xl-10 position-relative z-1">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav mb-4">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li class="active" aria-current="page">Van Excel naar CRM zonder data te verliezen</li>
+        </ol>
+      </nav>
+      <div class="blog-meta-bar">
+        <a href="/blog/author/tim-van-der-lee">Tim van der Lee</a>
+        <span class="separator"></span>
+        <span><span class="date-label">Geschreven:</span> 14 november 2026</span>
+        <span class="separator"></span>
+        <span><span class="date-label">Bijgewerkt:</span> 14 november 2026</span>
+      </div>
+      <div>
+        <h1 class="mb-0 fs-15 text-white lh-1">Van Excel naar CRM zonder data te verliezen</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="blog-detail py-4 py-lg-5">
+  <div class="container">
+    <div class="d-flex flex-column gap-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8 mx-auto">
+          <div>
+<p class="fs-5 mb-4">Wie ooit verhuisd is, kent het moment. Alles staat in dozen, de bus is geladen, en in het nieuwe huis blijkt dat niemand op de dozen heeft geschreven wat erin zit. De bestekla staat op zolder, de winterjassen in de keuken, en die ene doos met de belangrijke papieren is nergens. Er is niets kwijt, maar je kunt ook niets vinden. Precies zo gaat het mis als je een klantenlijst van Excel naar een CRM systeem overzet zonder plan.</p>
+
+<p class="fs-5 mb-4">Dit artikel gaat over die verhuizing zelf: hoe je jouw Excel-bestand opschoont, ontdubbelt en importeert zonder dat er een klant, een telefoonnummer of een notitie achterblijft. Niet welk CRM je kiest en niet hoe je het hele systeem inricht, alleen de overstap van sheet naar systeem.</p>
+
+<div class="my-4 px-4 py-3 rounded-3" style="background:#f5f5f5;color:#1a1a1a">
+  <p class="fs-6 mb-2" style="color:#1a1a1a"><strong>In het kort:</strong></p>
+  <ul class="fs-6 mb-0" style="color:#1a1a1a">
+    <li>Je Excel is geen rommel: er staat vaak jaren klantkennis in. Die wil je meenemen, niet weggooien.</li>
+    <li>Maak eerst een kopie en tel je rijen. Zonder telling weet je achteraf nooit of er iets mist.</li>
+    <li>Schoon vier kolommen op voor de import: naam, telefoon, e-mail en laatste contact.</li>
+    <li>Voeg dubbele klanten samen vóór de import, niet erna.</li>
+    <li>Doe eerst een proefimport van 20 rijen, dan pas de rest.</li>
+    <li>Draai één week naast elkaar en sluit Excel daarna echt af.</li>
+  </ul>
+</div>
+
+<h2 class="mt-5 mb-3 fs-8">Wat er in je Excel al goed staat</h2>
+
+<p class="fs-5 mb-4">Laten we eerlijk beginnen: die sheet heeft je jaren geholpen. Een installateur met 6 jaar klanten in één bestand heeft al gedaan waar veel bedrijven nooit aan toekomen: alles op één plek bijhouden. Excel is niet slecht. Het volgt alleen niet vanzelf op, niet laat zien wie al 8 maanden niets van je hoorde, en niet meekijkt als je collega dezelfde klant op een tweede tabblad zet.</p>
+
+<p class="fs-5 mb-4">Een <a href="/crm" class="text-primary">CRM voor het MKB</a> doet dat wel, maar alleen met wat je erin meeneemt. Kijk daarom eerst wat dat is. In een MKB-sheet vind je vaak dezelfde vijf soorten informatie:</p>
+
+<ol class="fs-5 mb-4">
+  <li><strong>Contactgegevens:</strong> naam, bedrijfsnaam, telefoon, e-mail, adres.</li>
+  <li><strong>Historie:</strong> wanneer was het laatste contact, wat is er gedaan of geleverd.</li>
+  <li><strong>Status:</strong> klant, lead, offerte uitstaand, oud-klant.</li>
+  <li><strong>Notities:</strong> "belt liever na 16:00", "heeft een hond, aanbellen achterom".</li>
+  <li><strong>Eigen codes:</strong> een kleurtje, een sterretje, een X in kolom Q waarvan niemand meer weet wat hij betekent.</li>
+</ol>
+
+<p class="fs-5 mb-4">Die laatste groep is het gevaarlijkst. Een kleur in Excel gaat bij een import vrijwel altijd verloren, want een CRM leest tekst en geen opmaak. Denk aan de rode rijen die "wanbetaler" betekenden, of de groene die "vaste klant" betekenden. Zet die betekenis vóór de import om in tekst, in een eigen kolom. Anders verhuist de doos wel, maar zonder etiket.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Voor je begint: een kopie en een telling</h2>
+
+<p class="fs-5 mb-4">De eerste stap duurt 10 minuten en voorkomt het grootste deel van de paniek achteraf. Zo pak je hem aan:</p>
+
+<ul class="fs-5 mb-4">
+  <li>Sla het bestand op als kopie met de datum in de naam, bijvoorbeeld <em>klanten-origineel-14-11.xlsx</em>. Dit bestand raak je daarna niet meer aan.</li>
+  <li>Werk alleen in een tweede kopie, de werkversie.</li>
+  <li>Tel het aantal rijen per tabblad en schrijf het op. Bijvoorbeeld: 1.240 rijen op "Klanten", 310 op "Leads", 85 op "Oud".</li>
+  <li>Noteer ook hoeveel rijen een e-mailadres hebben en hoeveel een telefoonnummer.</li>
+</ul>
+
+<p class="fs-5 mb-4">Die telling is je inventarislijst: na de import vergelijk je het CRM ermee. Klopt het, dan weet je dat er niets is achtergebleven. Klopt het niet, dan weet je waar je moet zoeken. Zonder die telling heb je alleen een gevoel, en een gevoel is geen controle.</p>
+
+<h2 class="mt-5 mb-3 fs-8">De vier kolommen die je eerst moet opschonen</h2>
+
+<p class="fs-5 mb-4">Je hoeft niet het hele bestand perfect te maken. Vier kolommen bepalen of je CRM straks werkt. De rest kun je ook later bijwerken.</p>
+
+<h3 class="mt-5 mb-3 fs-8">Naam: één klant, één schrijfwijze</h3>
+
+<p class="fs-5 mb-4">Excel vindt "Jan de Vries", "J. de Vries" en "de Vries, Jan" drie verschillende mensen. Een CRM ook. Kies één vorm en houd je eraan. Splits voornaam en achternaam in twee kolommen, want bijna elk CRM wil dat bij de import, en je hebt het straks nodig om mails te beginnen met "Hoi Jan". Zakelijke klanten krijgen een aparte kolom voor de bedrijfsnaam, zodat "Bakkerij De Vries" en Jan de Vries als bedrijf en contactpersoon aan elkaar hangen.</p>
+
+<h3 class="mt-5 mb-3 fs-8">Telefoon: één notatie voor alles</h3>
+
+<p class="fs-5 mb-4">Telefoonnummers zijn de grootste bron van stille fouten. Excel haalt de eerste nul weg, zodat 0612345678 opeens 612345678 is. Of er staan spaties, streepjes en haakjes door elkaar. Kies één notatie, het liefst de internationale vorm met +31, en zet de kolom op "tekst" zodat Excel niets meer weghaalt. Een CRM dat straks automatische <a href="/herinneringen" class="text-primary">herinneringen via WhatsApp of sms</a> verstuurt, heeft niets aan een nummer zonder landcode.</p>
+
+<h3 class="mt-5 mb-3 fs-8">E-mail: ontdekken wat niet klopt</h3>
+
+<p class="fs-5 mb-4">Zoek naar adressen zonder @, met een spatie erin, of met typfouten zoals "gmial.com" in plaats van "gmail.com" of "hotmial.com" in plaats van "hotmail.com". Een filter op "bevat geen @" laat je in 2 minuten de foute rijen zien. Twee adressen in één cel ("jan@... / info@...") splits je: het eerste in het e-mailveld, het tweede in een tweede e-mailkolom.</p>
+
+<h3 class="mt-5 mb-3 fs-8">Laatste contact: een echte datum</h3>
+
+<p class="fs-5 mb-4">Deze kolom is goud waard, want hij bepaalt straks wie je opvolgt. Maar in veel sheets staat er "voorjaar", "vorig jaar" of "zie mail". Maak er overal een datum van, ook als het een schatting is. Weet je alleen het jaar, zet dan 1 januari van dat jaar en schrijf in de notitie dat het een schatting is. Een CRM kan sorteren op een datum, niet op "voorjaar".</p>
+
+<h2 class="mt-5 mb-3 fs-8">Dubbele klanten samenvoegen</h2>
+
+<div class="my-4"><img src="/assets/images/blog/excel-naar-crm-zonder-dataverlies-2.jpg" alt="Dubbele klanten samenvoegen" class="img-fluid rounded-3"></div>
+
+<p class="fs-5 mb-4">Hier gaat het in de praktijk het vaakst mis. Wie dubbelingen meeneemt, krijgt in het CRM twee kaarten voor één klant. De ene collega belt kaart A, de andere mailt kaart B, en de klant krijgt twee keer dezelfde herinnering. Dan denkt de klant dat je je zaken niet op orde hebt.</p>
+
+<h3 class="mt-5 mb-3 fs-8">Zo vind je ze</h3>
+
+<p class="fs-5 mb-4">Sorteer de werkversie op telefoonnummer en daarna op e-mailadres. Dubbelingen staan dan onder elkaar. Excel heeft een functie "Duplicaten verwijderen", maar gebruik die niet blind: hij gooit de tweede rij weg, ook als daar de nieuwste notitie in staat. Markeer liever eerst. Een simpele formule die telt hoe vaak een nummer voorkomt, laat je in één kolom zien welke rijen dubbel zijn.</p>
+
+<p class="fs-5 mb-4">Let ook op de verstopte dubbelingen: dezelfde klant met een privé- en een werkadres, of een stel dat op één tabblad onder de man staat en op een ander onder de vrouw. Die vind je alleen door op achternaam plus postcode te sorteren.</p>
+
+<h3 class="mt-5 mb-3 fs-8">Welke versie wint</h3>
+
+<p class="fs-5 mb-4">Bij elke dubbeling kies je één hoofdrij en voeg je de rest erin samen. Een vuistregel die werkt:</p>
+
+<ol class="fs-5 mb-4">
+  <li>Het meest recente contact wint voor telefoon en e-mail.</li>
+  <li>Notities voeg je samen, je gooit nooit een notitie weg.</li>
+  <li>De oudste klantdatum blijft staan, zodat je weet hoe lang iemand al klant is.</li>
+  <li>Twijfel je, zet dan beide gegevens in de notitie en beslis later.</li>
+</ol>
+
+<p class="fs-5 mb-4">Stel dat je 1.240 rijen hebt en daar 140 dubbelingen in vindt. Dan importeer je straks 1.100 klanten, en dat getal schrijf je op naast je originele telling. Zo weet je bij de controle precies welk verschil verklaard is.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Welke kolom waar landt</h2>
+
+<p class="fs-5 mb-4">Voor je importeert, maak je een kort lijstje van welke Excel-kolom naar welk CRM-veld gaat. Dit heet de veldkoppeling, en het is het etiket op elke doos. Een voorbeeld voor een gemiddelde MKB-sheet:</p>
+
+<div class="table-responsive my-4">
+<table class="table" style="background:#f5f5f5;color:#1a1a1a">
+  <thead>
+    <tr style="background:#1F2A2E;color:#ffffff">
+      <th scope="col">Excel-kolom</th>
+      <th scope="col">CRM-veld</th>
+      <th scope="col">Let op</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Voornaam</td><td>Voornaam</td><td>Gesplitst?</td></tr>
+    <tr><td>Achternaam</td><td>Achternaam</td><td>Tussenvoegsel mee</td></tr>
+    <tr><td>Bedrijf</td><td>Bedrijfsnaam</td><td>Koppelt contact</td></tr>
+    <tr><td>Tel</td><td>Telefoon</td><td>Met +31</td></tr>
+    <tr><td>Mail</td><td>E-mail</td><td>Gecontroleerd</td></tr>
+    <tr><td>Laatst gesproken</td><td>Laatste contact</td><td>Echte datum</td></tr>
+    <tr><td>Status</td><td>Tag of fase</td><td>Vaste woorden</td></tr>
+    <tr><td>Opmerkingen</td><td>Notitie</td><td>Alles mee</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="fs-5 mb-4">Kolommen die nergens passen, zoals die mysterieuze X in kolom Q, gooi je niet weg. Je zet ze in een extra veld of in de notitie. Een goed CRM laat je eigen velden aanmaken, dus je hoeft je bedrijf niet in een standaardformulier te persen.</p>
+
+<p class="fs-5 mb-4">Bij de statuskolom loont het om strak te zijn. Als er "klant", "Klant", "vaste klant" en "KLANT!!" door elkaar staat, krijg je vier verschillende tags. Kies vooraf maximaal 5 vaste woorden en vervang de rest.</p>
+
+<h2 class="mt-5 mb-3 fs-8">De import zelf, stap voor stap</h2>
+
+<p class="fs-5 mb-4">Met een schone werkversie en een veldkoppeling is de import zelf het kleinste deel van het werk. Zo loop je hem door:</p>
+
+<ol class="fs-5 mb-4">
+  <li><strong>Sla je werkversie op als CSV.</strong> Bijna elk CRM leest CSV. Kies UTF-8 als codering, anders worden letters als ë en é rare tekens.</li>
+  <li><strong>Doe een proefimport van 20 rijen.</strong> Kies er bewust een paar lastige tussen: een klant met tussenvoegsel, een zakelijke klant, een rij met een lange notitie.</li>
+  <li><strong>Controleer die 20 kaarten één voor één.</strong> Staat het telefoonnummer goed, is de datum een datum, staat de notitie erbij, hangt het contact aan het bedrijf?</li>
+  <li><strong>Pas je bestand of koppeling aan.</strong> Wat bij 20 rijen misgaat, gaat bij 1.100 rijen ook mis.</li>
+  <li><strong>Verwijder de proefkaarten</strong> en importeer daarna het volledige bestand.</li>
+  <li><strong>Vergelijk de telling.</strong> Het aantal kaarten in het CRM moet gelijk zijn aan je telling min de samengevoegde dubbelingen.</li>
+  <li><strong>Steek tien willekeurige klanten na.</strong> Zoek ze op in het CRM en vergelijk ze met het origineel.</li>
+</ol>
+
+<p class="fs-5 mb-4">Die proefimport scheelt je een week puin ruimen. In de praktijk zit bij de eerste proef bijna altijd één fout: datums die als tekst binnenkomen, of een notitiekolom die is afgekapt. Die fout vind je liever in 20 kaarten dan in 1.100.</p>
+
+<p class="fs-5 mb-4">Lees ook <a href="/blog/crm-implementatie-in-5-dagen-mkb" class="text-primary">hoe je een CRM in 5 dagen live zet</a> als je na de import verder wilt met velden, kanalen en opvolging.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Wat je de eerste week nog naast elkaar draait</h2>
+
+<p class="fs-5 mb-4">Na de import is de verleiding groot om Excel direct dicht te gooien. Doe dat niet. Houd één week een overgangsregel aan:</p>
+
+<ul class="fs-5 mb-4">
+  <li><strong>Nieuwe klanten gaan alleen nog in het CRM.</strong> Excel krijgt vanaf dag 1 geen nieuwe rijen meer.</li>
+  <li><strong>Excel is alleen-lezen.</strong> Zet het bestand op "alleen lezen" of verplaats het naar een map "archief", zodat niemand er per ongeluk in verder werkt.</li>
+  <li><strong>Zoek je iets op, zoek het eerst in het CRM.</strong> Vind je het daar niet, dan heb je een gat gevonden. Zet het erin en noteer wat er misging.</li>
+  <li><strong>Spreek één moment per dag af</strong> van 5 minuten om de gevonden gaten te bespreken, als je met meer mensen werkt.</li>
+</ul>
+
+<p class="fs-5 mb-4">Neem bijvoorbeeld een schildersbedrijf met 3 mensen. De eigenaar importeert op maandag, de planner zoekt dinsdag een klant op en vindt hem niet: die stond op een vierde tabblad dat niemand had meegeteld. Dat is precies waarom je die week nodig hebt. Je vindt de laatste dozen die nog in de oude schuur stonden.</p>
+
+<p class="fs-5 mb-4">Gebruik die week ook om de eerste <a href="/automations" class="text-primary">automatische opvolging</a> aan te zetten, bijvoorbeeld een herinnering voor elke offerte die 7 dagen openstaat. Dan merkt je team direct wat het CRM doet dat Excel nooit deed, en dat helpt meer dan elke uitleg.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Wanneer je Excel definitief sluit</h2>
+
+<p class="fs-5 mb-4">Excel sluit je af als drie dingen kloppen:</p>
+
+<ol class="fs-5 mb-4">
+  <li>Je telling klopt: het aantal kaarten in het CRM verklaart elk verschil met het origineel.</li>
+  <li>Een hele week lang is niemand meer iets tegengekomen dat alleen in Excel stond.</li>
+  <li>Iedereen in je team heeft minstens één klant zelf opgezocht en bijgewerkt in het CRM.</li>
+</ol>
+
+<p class="fs-5 mb-4">Daarna gaat het originele bestand naar een archiefmap, met de datum erbij, en blijft het daar. Niet weggooien: je hebt het misschien over een half jaar nog nodig om één oude notitie terug te vinden. Wel weghalen van bureaubladen, gedeelde mappen en snelkoppelingen, want een bestand dat makkelijk te openen is, wordt geopend. Een tweede waarheid naast je CRM is hoe je over 6 maanden weer twee lijsten hebt.</p>
+
+<p class="fs-5 mb-4">Let op de AVG bij die archiefkopie. Klantgegevens die je niet meer gebruikt, mag je niet eindeloos bewaren. Spreek met jezelf een termijn af, bijvoorbeeld 12 maanden, en verwijder het archief daarna.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Wat de overstap aan tijd kost</h2>
+
+<p class="fs-5 mb-4">De meeste ondernemers schatten de migratie te groot, en stellen hem jaren uit, of te klein, waardoor ze op vrijdagmiddag "even" importeren en maandag met 300 dubbele kaarten zitten.</p>
+
+<h3 class="mt-5 mb-3 fs-8">Rekenvoorbeeld: 1.100 klanten in één werkweek</h3>
+
+<p class="fs-5 mb-4">Stel: een installatiebedrijf met 1.240 rijen in Excel, 140 dubbelingen, en een eigenaar die zelf de migratie doet tegen een eigen uurwaarde van €60.</p>
+
+<div class="table-responsive my-4">
+<table class="table" style="background:#f5f5f5;color:#1a1a1a">
+  <thead>
+    <tr style="background:#1F2A2E;color:#ffffff">
+      <th scope="col">Stap</th>
+      <th scope="col">Tijd</th>
+      <th scope="col">Eigen tijd in geld</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Kopie en telling</td><td>30 minuten</td><td>€30</td></tr>
+    <tr><td>Vier kolommen opschonen</td><td>4 uur</td><td>€240</td></tr>
+    <tr><td>Dubbelingen samenvoegen</td><td>3 uur</td><td>€180</td></tr>
+    <tr><td>Veldkoppeling</td><td>1 uur</td><td>€60</td></tr>
+    <tr><td>Proefimport en controle</td><td>1,5 uur</td><td>€90</td></tr>
+    <tr><td>Volledige import en telling</td><td>1 uur</td><td>€60</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="fs-5 mb-4">Samen is dat 11 uur, of €660 aan eigen tijd. Daar staat tegenover dat dezelfde eigenaar nu elke week een half uur zoekt naar klantgegevens in drie tabbladen. Over een jaar is dat 26 uur, meer dan twee keer de hele migratie.</p>
+
+<p class="fs-5 mb-4">Wil je die 11 uur niet zelf besteden, dan kun je de migratie laten doen. Hoe dat zich verhoudt tot de maandkosten van een systeem, lees je in <a href="/blog/crm-kosten-klein-bedrijf-per-maand" class="text-primary">wat een CRM kost voor een klein bedrijf</a>. Bij ons <a href="/ai-marketing-bureau" class="text-primary">AI marketing bureau</a> hoort de verhuizing van je klantenlijst bij de opstart van het CRM, zonder extra kosten voor de migratie.</p>
+
+<h2 class="mt-5 mb-3 fs-8">Veelgestelde vragen</h2>
+
+<div class="faq-timeline mb-5">
+  <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+    <div class="faq-tl-q">Kan ik mijn Excel-bestand direct importeren zonder opschonen?</div>
+    <div class="faq-tl-a">Technisch wel, maar dan verhuis je ook alle dubbelingen, foute nummers en lege datums mee: een duurder Excel met dezelfde problemen. Het opschonen is juist het deel dat je CRM bruikbaar maakt.</div>
+  </div>
+  <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+    <div class="faq-tl-q">Wat gebeurt er met mijn notities en opmerkingen?</div>
+    <div class="faq-tl-a">Die gaan mee als je ze aan een notitieveld koppelt. Controleer bij de proefimport of lange notities niet worden afgekapt. Sommige systemen hebben een maximum per veld, dan splits je een lange notitie over twee velden.</div>
+  </div>
+  <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+    <div class="faq-tl-q">Hoe lang moet ik Excel en het CRM naast elkaar gebruiken?</div>
+    <div class="faq-tl-a">Eén week is voor de meeste MKB-bedrijven genoeg. Hoe langer twee lijsten bestaan, hoe groter de kans dat iemand weer in Excel gaat werken.</div>
+  </div>
+  <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+    <div class="faq-tl-q">Moet ik alle oud-klanten meenemen?</div>
+    <div class="faq-tl-a">Neem iedereen mee met wie je de afgelopen 2 tot 3 jaar contact had. Oudere klanten kun je in een aparte groep zetten of in het archief laten. Wel meenemen als je ze nog wilt benaderen: een oud-klant die je opnieuw mailt is vaak de makkelijkste nieuwe opdracht.</div>
+  </div>
+  <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+    <div class="faq-tl-q">Kan ik de migratie terugdraaien als het misgaat?</div>
+    <div class="faq-tl-a">Ja, zolang je je originele kopie niet hebt aangeraakt. Daarom is stap 1 die kopie met datum. In het ergste geval verwijder je alle geïmporteerde kaarten en begin je opnieuw met je werkversie.</div>
+  </div>
+  <div class="faq-tl-item" onclick="this.classList.toggle('open')">
+    <div class="faq-tl-q">Welk CRM past het best bij mijn Excel-gewoontes?</div>
+    <div class="faq-tl-a">Dat is een andere vraag dan de migratie zelf. Lees daarvoor <a href="/blog/welk-crm-voor-mkb-5-keuzes-vergeleken" class="text-primary">welk CRM voor MKB past: 5 keuzes vergeleken</a>.</div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan ik mijn Excel-bestand direct importeren zonder opschonen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technisch wel, maar dan verhuis je ook alle dubbelingen, foute nummers en lege datums mee: een duurder Excel met dezelfde problemen. Het opschonen is juist het deel dat je CRM bruikbaar maakt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er met mijn notities en opmerkingen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die gaan mee als je ze aan een notitieveld koppelt. Controleer bij de proefimport of lange notities niet worden afgekapt. Sommige systemen hebben een maximum per veld, dan splits je een lange notitie over twee velden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe lang moet ik Excel en het CRM naast elkaar gebruiken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eén week is voor de meeste MKB-bedrijven genoeg. Hoe langer twee lijsten bestaan, hoe groter de kans dat iemand weer in Excel gaat werken."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik alle oud-klanten meenemen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neem iedereen mee met wie je de afgelopen 2 tot 3 jaar contact had. Oudere klanten kun je in een aparte groep zetten of in het archief laten. Wel meenemen als je ze nog wilt benaderen: een oud-klant die je opnieuw mailt is vaak de makkelijkste nieuwe opdracht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik de migratie terugdraaien als het misgaat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, zolang je je originele kopie niet hebt aangeraakt. Daarom is stap 1 die kopie met datum. In het ergste geval verwijder je alle geïmporteerde kaarten en begin je opnieuw met je werkversie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welk CRM past het best bij mijn Excel-gewoontes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is een andere vraag dan de migratie zelf. Lees daarvoor welk CRM voor MKB past: 5 keuzes vergeleken."
+      }
+    }
+  ]
+}
+</script>
+
+<h2 class="mt-5 mb-3 fs-8">Klaar om je klantenlijst te verhuizen?</h2>
+
+<p class="fs-5 mb-4">Een goede verhuizing herken je niet aan de bus, maar aan de eerste avond in het nieuwe huis. Je pakt de doos met "keuken" erop, en het bestek zit erin. Zo werkt het ook met je klanten: de week na de import zoek je Jan de Vries op, en hij staat er, met zijn nummer, zijn laatste klus en de notitie dat hij liever na vieren gebeld wordt. Dat lukt alleen als je de dozen hebt gelabeld voordat ze de bus in gingen.</p>
+
+<p class="fs-5 mb-4">Wil je weten hoe jouw Excel er nu voor staat en hoeveel werk de overstap is? <a href="/free-trial" class="text-primary">Start met een gratis AI-scan</a> of plan daar een gratis gesprek: dan kijken we samen naar je klantenlijst en zeggen eerlijk of je het zelf kunt of dat het slimmer is om het te laten doen.</p>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-10 col-xl-8 mx-auto">
+        <div class="bg-dark p-5 text-center" data-aos="fade-up">
+          <h2 class="text-white fs-8 mb-3">Klaar om te groeien?</h2>
+          <p class="text-white text-opacity-70 mb-4">Ontdek hoe STUDIOLEE jouw bedrijf kan transformeren.</p>
+          <a href="/free-trial" class="btn btn-primary text-dark fw-bold px-5 py-3">Start nu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container"><div class="row justify-content-center"><div class="col-lg-10 col-xl-8 mx-auto"><p class="lees-ook my-5 px-4 py-3 rounded-3 fs-6 text-dark" style="background-color: rgba(193, 255, 114, 0.18);"><strong class="text-dark">Lees ook:</strong> <a href="/blog/crm-implementatie-in-5-dagen-mkb" class="text-dark fw-semibold">CRM implementatie in 5 dagen: roadmap voor MKB</a> &rarr;</p></div></div></div>
+</div>
+
+<section class="related-articles py-5">
+      <div class="container">
+        <h2 class="mb-4">Gerelateerde artikelen</h2>
+        <div class="row g-4" id="related-articles-grid" data-slug="excel-naar-crm-zonder-dataverlies" data-cluster="crm">
+          <p class="text-muted">Laden...</p>
+        </div>
+      </div>
+    </section>
+    <script src="/assets/js/related-articles.js"></script>
+    <footer class="footer bg-dark py-5 py-lg-11 py-xl-12">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-5 mb-8 mb-xl-0">
+          <div class="d-flex flex-column gap-8 pe-xl-5">
+            <a href="/"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE" class="img-fluid mb-5" style="max-height: 100px;"></a>
+            <h2 class="mb-0 text-white">Laten we samenwerken</h2>
+            <div class="d-flex flex-column gap-2">
+              <a href="mailto:tim@studiolee.nl" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
+                tim@studiolee.nl
+              </a>
+              <a href="tel:+3197010223669" class="link-hover hstack gap-3 text-white fs-5">
+                <iconify-icon icon="lucide:phone" class="fs-7 text-primary"></iconify-icon>
+                +31 970 102 23669
+              </a>
+            </div>
+          </div>
+        </div>
+                <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <p class="mb-3 text-white text-opacity-50 fs-7 fw-bold">Diensten</p>
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/ai-marketing-bureau">AI Marketing Bureau</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/seo">SEO</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/linkbuilding">Linkbuilding</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/chatbot">AI Chatbot</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/voice-ai">AI Telefonist</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/social-media">Social Media</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/reviews">Reviews</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/marketing-uitbesteden">Marketing uitbesteden</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/automations">Automatisering</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/crm">CRM</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/herinneringen">Herinneringen</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/website-laten-maken">Website laten maken</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/">Home</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/tarieven">Tarieven</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/free-trial">Gratis AI Scan</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/blog">Blog</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/portfolio">Portfolio</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/over-ons">Over ons</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+          <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a class="link-hover fs-5 text-white" href="/algemene-voorwaarden">Algemene Voorwaarden</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/privacy">Privacy Policy</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/legal">Bedrijfsgegevens</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-xl-3 mb-8 mb-xl-0">
+          <p class="mb-0 text-white text-opacity-70 text-md-end">&copy; 2026 STUDIOLEE</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/libs/aos-master/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="/assets/js/custom.js"></script>
+<div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
+<script src="/assets/js/cookie-banner.js" defer></script>
+</body>
+</html>
