@@ -2,6 +2,7 @@
 <html lang="nl">
 
 <head>
+  <script>try{localStorage.getItem("cookie_consent")||document.documentElement.classList.add("cb-ask")}catch(e){}</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Website laten maken voor het MKB — vanaf €79/mo | STUDIOLEE</title>
@@ -218,7 +219,7 @@
                     </li>
                   </ul>
                   <div class="hstack gap-3">
-                    <a href="https://cal.com/studiolee" rel="nofollow" target="_blank"
+                    <a href="/gratis-gesprek"
                       class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a>
                   </div>
                 </div>
@@ -760,7 +761,7 @@
                   <span class="fs-5">Groei-of-Geld-Terug Garantie</span>
                 </li>
               </ul>
-              <a href="https://cal.com/studiolee" rel="nofollow" target="_blank" class="btn" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+              <a href="/gratis-gesprek" class="btn" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
                 <span class="btn-text">Bespreek je project</span>
                 <iconify-icon icon="lucide:arrow-up-right"
                   class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
@@ -1133,7 +1134,7 @@
                 <iconify-icon icon="lucide:arrow-up-right"
                   class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
               </a>
-              <a href="https://cal.com/studiolee" rel="nofollow" target="_blank" class="btn border border-dark">
+              <a href="/gratis-gesprek" class="btn border border-dark">
                 <span class="btn-text">Plan Een Gesprek</span>
                 <iconify-icon icon="lucide:arrow-up-right"
                   class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
@@ -1212,7 +1213,7 @@
   <script src="/assets/libs/aos-master/dist/aos.js"></script>
   <script src="/assets/js/custom.js"></script>
   <!-- solar icons -->
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="/assets/libs/iconify-icon/icons.js"></script><script src="/assets/libs/iconify-icon/iconify-icon.min.js"></script>
 
 
     <!-- Free Website Request Modal -->
@@ -1241,142 +1242,7 @@
       </div>
     </div>
 
-    <script>
-    (function() {
-      var isMobile = window.innerWidth < 768;
-      var stickerUrl = "/assets/images/stickers/windmill.webp";
-      
-      var el = document.createElement('div');
-      el.id = 'pageSticker';
-      var size = isMobile ? 180 : 260;
-      el.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;z-index:9999;cursor:grab;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.3));transform:rotate(-6deg);transition:filter 0.3s,transform 0.3s;';
-      el.innerHTML = '<img src="' + stickerUrl + '" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">';
-      document.body.appendChild(el);
-      
-      if (isMobile) {
-        el.style.left = (window.innerWidth - size - 16) + 'px';
-        el.style.top = '140px';
-      } else {
-        el.style.left = (window.innerWidth - 320) + 'px';
-        el.style.top = (window.scrollY + 200) + 'px';
-      }
-      
-      var dragging = false, offX, offY;
-      
-      if (isMobile) {
-        // MOBILE: Use touch events directly for reliable long-press drag
-        var longTimer = null;
-        var startX = 0, startY = 0;
-        var THRESHOLD = 10; // pixels of movement allowed before canceling long-press
-        
-        el.addEventListener('touchstart', function(e) {
-          var t = e.touches[0];
-          startX = t.clientX;
-          startY = t.clientY;
-          
-          longTimer = setTimeout(function() {
-            // Long-press activated — start dragging
-            dragging = true;
-            if (navigator.vibrate) navigator.vibrate(30);
-            var rect = el.getBoundingClientRect();
-            offX = startX - rect.left;
-            offY = startY - rect.top;
-            el.style.position = 'fixed';
-            el.style.left = rect.left + 'px';
-            el.style.top = rect.top + 'px';
-            el.style.transition = 'none';
-            el.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
-            el.style.transform = 'rotate(-2deg) scale(1.15)';
-          }, 400);
-        }, {passive: false});
-        
-        el.addEventListener('touchmove', function(e) {
-          var t = e.touches[0];
-          if (!dragging) {
-            // Check if finger moved too far — cancel long-press (it's a scroll)
-            var dx = t.clientX - startX;
-            var dy = t.clientY - startY;
-            if (Math.abs(dx) > THRESHOLD || Math.abs(dy) > THRESHOLD) {
-              clearTimeout(longTimer);
-            }
-            return; // Let the browser scroll normally
-          }
-          // Dragging active — move the sticker
-          e.preventDefault();
-          el.style.left = (t.clientX - offX) + 'px';
-          el.style.top = (t.clientY - offY) + 'px';
-          el.style.transform = 'rotate(' + ((t.clientX - offX) * 0.02 - 4) + 'deg) scale(1.15)';
-        }, {passive: false});
-        
-        el.addEventListener('touchend', function() {
-          clearTimeout(longTimer);
-          if (!dragging) return;
-          dragging = false;
-          // Drop: convert to absolute so it stays on the page
-          var fixedLeft = parseFloat(el.style.left);
-          var fixedTop = parseFloat(el.style.top);
-          el.style.position = 'absolute';
-          el.style.left = (fixedLeft + window.scrollX) + 'px';
-          el.style.top = (fixedTop + window.scrollY) + 'px';
-          el.style.cursor = 'grab';
-          el.style.filter = 'drop-shadow(0 6px 18px rgba(0,0,0,0.3))';
-          el.style.transform = 'rotate(-6deg) scale(1)';
-          el.style.transition = 'filter 0.3s, transform 0.3s';
-        });
-        
-      } else {
-        // DESKTOP: Pointer events, instant drag
-        el.addEventListener('pointerdown', function(e) {
-          dragging = true;
-          el.style.cursor = 'grabbing';
-          el.style.transition = 'none';
-          var rect = el.getBoundingClientRect();
-          offX = e.clientX - rect.left;
-          offY = e.clientY - rect.top;
-          el.style.position = 'fixed';
-          el.style.left = rect.left + 'px';
-          el.style.top = rect.top + 'px';
-          el.style.filter = 'drop-shadow(0 14px 40px rgba(0,0,0,0.5))';
-          el.style.transform = 'rotate(-2deg) scale(1.08)';
-          e.preventDefault();
-        });
-        
-        window.addEventListener('pointermove', function(e) {
-          if (!dragging) return;
-          el.style.left = (e.clientX - offX) + 'px';
-          el.style.top = (e.clientY - offY) + 'px';
-          el.style.transform = 'rotate(' + ((e.clientX - offX) * 0.02 - 4) + 'deg) scale(1.08)';
-        });
-        
-        window.addEventListener('pointerup', function() {
-          if (!dragging) return;
-          dragging = false;
-          var fixedLeft = parseFloat(el.style.left);
-          var fixedTop = parseFloat(el.style.top);
-          el.style.position = 'absolute';
-          el.style.left = (fixedLeft + window.scrollX) + 'px';
-          el.style.top = (fixedTop + window.scrollY) + 'px';
-          el.style.cursor = 'grab';
-          el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
-          el.style.transform = 'rotate(-6deg) scale(1)';
-          el.style.transition = 'filter 0.3s, transform 0.3s';
-        });
-        
-        el.addEventListener('mouseenter', function() {
-          if (!dragging) {
-            el.style.transform = 'rotate(-3deg) scale(1.06)';
-            el.style.filter = 'drop-shadow(0 12px 32px rgba(0,0,0,0.4))';
-          }
-        });
-        el.addEventListener('mouseleave', function() {
-          if (!dragging) {
-            el.style.transform = 'rotate(-6deg) scale(1)';
-            el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
-          }
-        });
-      }
-    })();
-    </script>
+    <script src="/assets/js/page-sticker.js" data-sticker="/assets/images/stickers/windmill.webp" defer></script>
 
 <script src="/assets/js/cookie-banner.js" defer></script>
 </body>

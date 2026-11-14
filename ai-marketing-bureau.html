@@ -2,6 +2,7 @@
 <html lang="nl">
 
 <head>
+  <script>try{localStorage.getItem("cookie_consent")||document.documentElement.classList.add("cb-ask")}catch(e){}</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Marketing Bureau voor het MKB — STUDIOLEE</title>
@@ -96,6 +97,7 @@
     .svc-card:hover .svc-link{opacity:1;transform:translateY(0)}
     @media(max-width:768px){.services-sticker-grid{grid-template-columns:1fr 1fr}}
   </style>
+  <link rel="stylesheet" href="/assets/css/phone-block.css" />
 </head>
 
 <body>
@@ -427,228 +429,59 @@
         <div class="text-center mb-5" data-aos="fade-up">
           <span class="badge mb-3" style="background:rgba(255,255,255,0.1);color:#fff">Diensten</span>
           <h2 class="text-white mb-3">Alles wat je nodig hebt, in &eacute;&eacute;n systeem</h2>
-          <p class="text-white text-opacity-50">Draai het wiel. Klik op een dienst. Of bel direct met Lee.</p>
+          <p class="text-white text-opacity-50">Zeven diensten, één systeem: elke dienst op de schijf leidt naar wat hij je oplevert.</p>
         </div>
 
-        <div class="phone-container" id="wrap">
-          <div class="phone-click-zone" id="phoneBody"></div>
-          <video id="phoneVideo" loop muted playsinline style="display:none;position:absolute;top:0;left:39%;width:61%;height:100%;object-fit:contain;z-index:0"><source src="/assets/video/phone-ring.mp4" type="video/mp4"></video>
-          <div class="l-numplate">
-            <div class="numplate-bg"></div>
-            <div class="sticker" style="left:15%;top:50%"><img src="/assets/images/stickers/world.webp" alt="SEO"></div>
-            <div class="sticker" style="left:24%;top:24%"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot" loading="lazy"></div>
-            <div class="sticker" style="left:50%;top:15%"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI" loading="lazy"></div>
-            <div class="sticker" style="left:76%;top:24%"><img src="/assets/images/stickers/ferris.webp" alt="Reviews" loading="lazy"></div>
-            <div class="sticker" style="left:85%;top:50%"><img src="/assets/images/stickers/gear.webp" alt="Automatisering" loading="lazy"></div>
-            <div class="sticker" style="left:50%;top:85%"><img src="/assets/images/stickers/washing.webp" alt="Website" loading="lazy"></div>
-            <div class="sticker" style="left:24%;top:76%"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen" loading="lazy"></div>
+        <div class="phone-block" data-phone-block>
+          <div class="phone-container" id="wrap">
+            <div class="phone-stage">
+              <div class="phone-click-zone" id="phoneBody" role="button" tabindex="0" aria-label="Bel StudioLee en vraag een demo aan"></div>
+              <div class="l-numplate">
+                <div class="numplate-bg"></div>
+                <div class="sticker" style="left:15%;top:50%"><img src="/assets/images/stickers/world.webp" alt="SEO"></div>
+                <div class="sticker" style="left:24%;top:24%"><img src="/assets/images/stickers/hourglass.webp" alt="Chatbot" loading="lazy"></div>
+                <div class="sticker" style="left:50%;top:15%"><img src="/assets/images/stickers/draaitafel.webp" alt="Voice AI" loading="lazy"></div>
+                <div class="sticker" style="left:76%;top:24%"><img src="/assets/images/stickers/ferris.webp" alt="Reviews" loading="lazy"></div>
+                <div class="sticker" style="left:85%;top:50%"><img src="/assets/images/stickers/gear.webp" alt="Automatisering" loading="lazy"></div>
+                <div class="sticker" style="left:50%;top:85%"><img src="/assets/images/stickers/washing.webp" alt="Website" loading="lazy"></div>
+                <div class="sticker" style="left:24%;top:76%"><img src="/assets/images/stickers/windmill.webp" alt="Herinneringen" loading="lazy"></div>
+              </div>
+              <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="STUDIOLEE AI marketing bureau: illustratie van diensten op een bord" draggable="false"></div>
+              <a href="/" class="l-hub" title="Home"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
+              <!-- The service zones sit in a layer with the numplate's own geometry, each on its sticker, so they stay on the stickers at every screen size. -->
+              <div class="l-zones">
+                <a class="rz" href="/seo" data-t="seo" style="left:15%;top:50%" aria-label="SEO &amp; vindbaarheid"></a>
+                <a class="rz" href="/chatbot" data-t="chatbot" style="left:24%;top:24%" aria-label="AI chatbot"></a>
+                <a class="rz" href="/voice-ai" data-t="voice" style="left:50%;top:15%" aria-label="Voice AI"></a>
+                <a class="rz" href="/reviews" data-t="reviews" style="left:76%;top:24%" aria-label="Review management"></a>
+                <a class="rz" href="/automations" data-t="auto" style="left:85%;top:50%" aria-label="Automatisering"></a>
+                <a class="rz" href="/website-laten-maken" data-t="website" style="left:50%;top:85%" aria-label="Website laten maken"></a>
+                <a class="rz" href="/herinneringen" data-t="herinner" style="left:24%;top:76%" aria-label="Herinneringen"></a>
+              </div>
+            </div>
           </div>
-          <div class="l-finger" id="plate"><img src="/assets/images/ai-marketing-bureau/plate-final.png" alt="STUDIOLEE AI marketing bureau — illustratie van diensten op een bord" draggable="false" loading="lazy"></div>
-          <a href="/" class="l-hub" onclick="event.stopPropagation()" title="Home"><img src="/assets/images/logos/logo-badge2.webp" alt="STUDIOLEE"></a>
-          <a class="rz" href="/seo" data-t="seo" style="left:63%;top:50%"></a>
-          <a class="rz" href="/chatbot" data-t="chatbot" style="left:64.5%;top:43%"></a>
-          <a class="rz" href="/voice-ai" data-t="voice" style="left:69.5%;top:40%"></a>
-          <a class="rz" href="/reviews" data-t="reviews" style="left:74.5%;top:43%"></a>
-          <a class="rz" href="/automations" data-t="auto" style="left:76%;top:50%"></a>
-          <a class="rz" href="/website-laten-maken" data-t="website" style="left:69.5%;top:60%"></a>
-          <a class="rz" href="/herinneringen" data-t="herinner" style="left:64.5%;top:57%"></a>
-          <div class="game-overlay visible">
+          <div class="game-overlay visible" aria-live="polite">
             <div class="game-box">
               <div class="game-title" id="gT">KIES EEN DIENST<span class="cur"></span></div>
-              <div class="game-desc" id="gD">Draai de schijf of klik op de telefoon</div>
-              <button class="call-btn-inline" id="btnCall" style="display:none" onclick="event.stopPropagation();startVapiCall()">Bel Met Lee</button>
+              <div class="game-desc" id="gD">Kies een dienst op de schijf, of bel voor een demo</div>
+              <a class="call-btn-inline" id="gGo" href="#" style="display:none">Bekijk dienst</a>
+              <form class="demo-ask" id="demoAsk" style="display:none" novalidate>
+                <input type="text" name="website" tabindex="-1" autocomplete="off" class="demo-hp" aria-hidden="true">
+                <label class="visually-hidden" for="demoEmail">Je e-mailadres</label>
+                <input type="email" id="demoEmail" name="email" placeholder="jij@bedrijf.nl" autocomplete="email" required>
+                <label class="demo-consent"><input type="checkbox" name="consent_contact" id="demoConsent"> <span>Ja, StudioLee mag me mailen over deze demo.</span></label>
+                <button type="submit" class="call-btn-inline">Plan mijn demo</button>
+                <div class="demo-error" id="demoError" role="alert"></div>
+              </form>
+              <a class="call-btn-inline" id="demoBook" href="https://cal.com/studiolee/30min" rel="nofollow" target="_blank" style="display:none">Kies meteen een moment</a>
+              <button type="button" class="demo-hangup" id="demoHangup" style="display:none">Ophangen</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <style>
-    .phone-container, .phone-container * { --lime: #C1FF72; --dark: #1F2A2E; }
-    .phone-container {
-      position:relative;
-      width:100%; max-width:900px; margin:0 auto;
-      aspect-ratio:1752/1024;
-      background:url('/assets/images/ai-marketing-bureau/phone-body-wide.jpg') 0 0 / 100% 100% no-repeat;
-    }
-    .l-numplate { position:absolute; width:15vw; height:15vw; max-width:260px; max-height:260px; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:2; overflow:hidden; border-radius:50%; clip-path:circle(48%); }
-    .numplate-bg { position:absolute; inset:0; background:radial-gradient(circle, #f5f0e0 0%, #ebe5d0 80%, #c0b898 100%); border-radius:50%; box-shadow:inset 0 2px 8px rgba(0,0,0,0.15); }
-    .sticker { position:absolute; width:48px; height:48px; transform:translate(-50%,-50%); pointer-events:none; }
-    .sticker img { width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-    .l-finger { position:absolute; width:17vw; height:17vw; max-width:300px; max-height:300px; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:3; cursor:grab; user-select:none; }
-    .l-finger.grabbing { cursor:grabbing; }
-    .l-finger img { width:100%; height:100%; object-fit:contain; }
-    .l-hub { position:absolute; top:50%; left:69.5%; transform:translate(-50%,-50%); z-index:4;
-      width:60px; height:60px; background:radial-gradient(circle, #2a3a3e 0%, var(--dark) 70%);
-      border-radius:50%; border:3px solid #8B7355;
-      box-shadow:0 0 0 2px rgba(139,115,85,0.3), inset 0 2px 8px rgba(0,0,0,0.4), 0 4px 20px rgba(0,0,0,0.4);
-      display:flex; align-items:center; justify-content:center; transition:transform .2s,box-shadow .2s; cursor:pointer; }
-    .l-hub:hover { transform:translate(-50%,-50%) scale(1.1); box-shadow:0 0 30px rgba(193,255,114,0.4),0 0 0 2px rgba(139,115,85,0.3),inset 0 2px 8px rgba(0,0,0,0.4),0 4px 20px rgba(0,0,0,0.4); }
-    .l-hub img { width:36px; height:36px; object-fit:contain; }
-    a.rz { position:absolute; width:48px; height:48px; border-radius:50%; z-index:5; transform:translate(-50%,-50%);
-      transition:box-shadow .2s, background .2s; text-decoration:none; display:block; pointer-events:auto; }
-    a.rz:hover { box-shadow:0 0 30px rgba(193,255,114,0.5); background:rgba(193,255,114,0.15); }
-    .game-overlay { position:absolute; top:30%; left:82%; z-index:10; pointer-events:none; opacity:0; transform:scale(0.8) translateY(10px); transition:all .3s cubic-bezier(0.34,1.56,0.64,1); }
-    .game-overlay.visible { opacity:1; transform:scale(1) translateY(0); pointer-events:auto; }
-    .game-box { display:inline-block; background:#0a0a0f; border:3px solid var(--lime); border-radius:4px; padding:16px 22px; min-width:260px; position:relative; box-shadow:0 0 20px rgba(193,255,114,0.15), 0 8px 32px rgba(0,0,0,0.6); }
-    .game-box::before { content:''; position:absolute; left:-12px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:12px solid var(--lime); }
-    .game-box::after { content:''; position:absolute; left:-8px; top:50%; transform:translateY(-50%); width:0; height:0; border-top:8px solid transparent; border-bottom:8px solid transparent; border-right:10px solid #0a0a0f; }
-    .game-title { font-family:'Enligas','Outfit',sans-serif; font-size:18px; font-weight:700; color:var(--lime); margin-bottom:4px; min-height:14px; white-space:nowrap; }
-    .game-desc { color:rgba(255,255,255,0.7); font-size:15px; min-height:16px; }
-    .game-title .cur { display:inline-block; width:12px; height:3px; background:var(--lime); animation:blink .5s step-end infinite; vertical-align:middle; margin-left:1px; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-    .call-btn-inline { font-family:'Enligas','Outfit',sans-serif; font-size:14px; font-weight:700; color:var(--dark); background:var(--lime); border:none; padding:8px 20px; border-radius:99px; cursor:pointer; margin-top:10px; pointer-events:auto; transition:transform .2s; }
-    .call-btn-inline:hover { transform:scale(1.05); }
-    .call-btn-inline.hangup { background:rgba(220,50,50,0.9); color:#fff; }
-    .phone-click-zone { position:absolute; top:5%; left:55%; width:30%; height:90%; z-index:1; cursor:pointer; }
-    .phone-click-zone.ringing { animation:shake .08s linear infinite; }
-    @keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-1.5deg)} 75%{transform:rotate(1.5deg)} }
-    #vapi-support-btn, .vapi-btn, [id^="vapi"] { display:none !important; }
-    @media(max-width:768px) {
-      .l-numplate { width:28vw; height:28vw; }
-      .l-finger { width:32vw; height:32vw; }
-      /* Speech bubble: compact, centered above the dial with a downward arrow */
-      .game-overlay { left:50%; top:2%; transform-origin:top center; transform:translateX(-50%) scale(0.8) translateY(-10px); }
-      .game-overlay.visible { transform:translateX(-50%) scale(1) translateY(0); }
-      .game-box { min-width:0; max-width:88vw; padding:8px 14px; }
-      .game-title { font-size:12px; margin-bottom:2px; min-height:0; }
-      .game-desc { font-size:11px; min-height:0; }
-      .call-btn-inline { font-size:11px; padding:5px 14px; margin-top:6px; }
-      .game-box::before { left:50%; top:auto; bottom:-12px; transform:translateX(-50%); border:10px solid transparent; border-top:12px solid var(--lime); border-bottom:0; }
-      .game-box::after { left:50%; top:auto; bottom:-8px; transform:translateX(-50%); border:8px solid transparent; border-top:10px solid #0a0a0f; border-bottom:0; }
-    }
-    </style>
-
-    <script>
-    (function(){
-      var d={
-        seo:{t:'SEO & VINDBAARHEID',d:'Gevonden worden op Google en in ChatGPT'},
-        chatbot:{t:'AI CHATBOT',d:'24/7 leadopvang op je website'},
-        voice:{t:'VOICE AI',d:'AI telefonist die elk gesprek opneemt'},
-        reviews:{t:'REVIEW MANAGEMENT',d:'5-sterren reviews op autopilot'},
-        auto:{t:'AUTOMATISERING',d:'N8N workflows en AI-systemen'},
-        website:{t:'WEBSITE LATEN MAKEN',d:'SEO-geoptimaliseerd, live in 2 weken'},
-        herinner:{t:'HERINNERINGEN',d:'50-70% minder no-shows'}
-      };
-
-      function humanType(el,text,onDone){
-        if(window._typeTimer){clearTimeout(window._typeTimer);window._typeTimer=null;}
-        var out='',pos=0,mistakes=0;
-        function step(){
-          if(pos>=text.length&&mistakes<=0){el.innerHTML=out+'<span class="cur"></span>';if(onDone)onDone();return;}
-          if(mistakes>0){out=out.slice(0,-1);mistakes--;el.innerHTML=out+'<span class="cur"></span>';window._typeTimer=setTimeout(step,55);return;}
-          if(pos>2&&Math.random()<0.15){var wrong='QWRTYPSDFJKLZXCVBN';var typoLen=1+Math.floor(Math.random()*2);for(var t=0;t<typoLen;t++)out+=wrong[Math.floor(Math.random()*wrong.length)];mistakes=typoLen;el.innerHTML=out+'<span class="cur"></span>';window._typeTimer=setTimeout(step,300);return;}
-          out+=text[pos];pos++;el.innerHTML=out+'<span class="cur"></span>';
-          var delay=35+Math.random()*45;if(text[pos-1]===' ')delay=70+Math.random()*80;if(Math.random()<0.04)delay+=250;
-          window._typeTimer=setTimeout(step,delay);
-        }
-        el.innerHTML='<span class="cur"></span>';window._typeTimer=setTimeout(step,100);
-      }
-
-      var plate=document.getElementById('plate'),wrap=document.getElementById('wrap');
-      var a=0,drag=false,sA=0,sM=0,v=0,lA=0,raf,calling=false;
-
-      function ma(e){var r=wrap.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left-r.width*0.695;var y=(e.touches?e.touches[0].clientY:e.clientY)-r.top-r.height*0.50;return Math.atan2(y,x)*180/Math.PI;}
-      function dn(e){if(e.target.closest('.rz')||e.target.closest('.l-hub'))return;e.stopPropagation();drag=true;plate.classList.add('grabbing');sM=ma(e);sA=a;v=0;if(raf)cancelAnimationFrame(raf);stopA();e.preventDefault();}
-      function mv(e){if(!drag)return;var m=ma(e);a=sA+(m-sM);v=a-lA;lA=a;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';e.preventDefault();}
-      function up(){if(!drag)return;drag=false;plate.classList.remove('grabbing');function c(){if(Math.abs(v)<0.05){startA();return;}v*=0.97;a+=v;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';raf=requestAnimationFrame(c);}c();}
-
-      plate.addEventListener('mousedown',dn);plate.addEventListener('touchstart',dn,{passive:false});
-      window.addEventListener('mousemove',mv);window.addEventListener('touchmove',mv,{passive:false});
-      window.addEventListener('mouseup',up);window.addEventListener('touchend',up);
-
-      var ai;
-      function startA(){if(ai)return;ai=setInterval(function(){if(drag)return;a+=0.15;plate.style.transform='translate(-50%,-50%) rotate('+a+'deg)';},16);}
-      function stopA(){clearInterval(ai);ai=null;}
-
-      function restoreDefault(){
-        document.querySelector('.game-overlay').classList.add('visible');
-        document.getElementById('gT').innerHTML='KIES EEN DIENST<span class="cur"></span>';
-        document.getElementById('gD').textContent='Draai de schijf of klik op de telefoon';
-        document.getElementById('btnCall').style.display='none';
-      }
-
-      document.querySelectorAll('.rz').forEach(function(z){
-        z.addEventListener('click',function(e){e.stopPropagation();});
-        z.addEventListener('mouseenter',function(){
-          if(calling)return;
-          stopA();var t=d[z.dataset.t];
-          if(t){document.querySelector('.game-overlay').classList.add('visible');humanType(document.getElementById('gT'),t.t);document.getElementById('gD').textContent=t.d;document.getElementById('btnCall').style.display='none';}
-        });
-        z.addEventListener('mouseleave',function(){
-          if(calling)return;
-          if(window._typeTimer){clearTimeout(window._typeTimer);window._typeTimer=null;}
-          restoreDefault();startA();
-        });
-      });
-
-      // Hub hover — links to homepage
-      var hub=document.querySelector('.l-hub');
-      hub.addEventListener('mouseenter',function(){
-        if(calling)return;
-        stopA();
-        document.querySelector('.game-overlay').classList.add('visible');
-        humanType(document.getElementById('gT'),'STUDIOLEE HOME');
-        document.getElementById('gD').textContent='Terug naar de homepage';
-        document.getElementById('btnCall').style.display='none';
-      });
-      hub.addEventListener('mouseleave',function(){
-        if(calling)return;
-        if(window._typeTimer){clearTimeout(window._typeTimer);window._typeTimer=null;}
-        restoreDefault();startA();
-      });
-
-      document.getElementById('phoneBody').addEventListener('click',function(e){
-        if(calling){endVapiCall();return;}
-        calling=true;
-        var video=document.getElementById('phoneVideo');
-        if(video){video.style.display='block';video.play();}
-        this.classList.add('ringing');
-        var overlay=document.querySelector('.game-overlay'),titleEl=document.getElementById('gT'),descEl=document.getElementById('gD'),btnCall=document.getElementById('btnCall');
-        overlay.classList.add('visible');btnCall.style.display='none';descEl.textContent='';
-        humanType(titleEl,'TUUT.. TUUT..',function(){
-          setTimeout(function(){humanType(descEl,'De telefoon gaat over...',function(){
-            setTimeout(function(){btnCall.style.display='inline-block';btnCall.textContent='Bel Met Lee';btnCall.className='call-btn-inline';},400);
-          });},600);
-        });
-      });
-
-      window.startVapiCall=function(){
-        var consent=localStorage.getItem('cookie_consent');
-        if(consent!=='accepted'){
-          var banner=document.getElementById('ck-banner');
-          if(banner){banner.style.display='flex';return;}
-          document.getElementById('btnCall').textContent='Accepteer eerst cookies';
-          return;
-        }
-        var btnCall=document.getElementById('btnCall');btnCall.textContent='Verbinden...';
-        function doCall(){
-          try{
-            var instance=window.vapiSDK.run({apiKey:'5cf7462d-30fe-4d70-9ea1-89ce0bd65ec5',assistant:'752f8e59-08dd-4f11-9bf1-71f86bd865a4',config:{position:'bottom-right'}});
-            if(instance&&typeof instance.start==='function')instance.start('752f8e59-08dd-4f11-9bf1-71f86bd865a4');
-            window._vapiInstance=instance;
-            btnCall.textContent='Ophangen';btnCall.className='call-btn-inline hangup';
-            btnCall.onclick=function(e){e.stopPropagation();endVapiCall();};
-            setTimeout(function(){document.querySelectorAll('[id^="vapi"],.vapi-btn,#vapi-support-btn').forEach(function(el){el.style.display='none';});},500);
-            if(instance&&typeof instance.on==='function')instance.on('call-end',function(){endVapiCall();});
-          }catch(err){console.error('VAPI error:',err);btnCall.textContent='Fout — probeer opnieuw';}
-        }
-        if(window.vapiSDK){doCall();}
-        else{var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';s.onload=function(){var poll=setInterval(function(){if(window.vapiSDK){clearInterval(poll);doCall();}},200);};s.onerror=function(){btnCall.textContent='Laden mislukt';};document.body.appendChild(s);}
-      };
-
-      window.endVapiCall=function(){
-        if(window._vapiInstance&&typeof window._vapiInstance.stop==='function')window._vapiInstance.stop();
-        calling=false;
-        document.getElementById('phoneBody').classList.remove('ringing');
-        var video=document.getElementById('phoneVideo');
-        if(video){video.pause();video.style.display='none';}
-        restoreDefault();
-      };
-
-      startA();
-    })();
-    </script>
+    <script src="/assets/js/phone-block.js" defer></script>
 
     <!-- ═══ SECTION 7: AI TOOLS — Spinning Orbit with Flip Cards ═══ -->
     <section class="py-5 py-lg-7 py-xl-8 bg-dark">
@@ -1235,145 +1068,10 @@
   <script src="/assets/libs/aos-master/dist/aos.js"></script>
   <script src="/assets/js/custom.js"></script>
   <!-- solar icons -->
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="/assets/libs/iconify-icon/icons.js"></script><script src="/assets/libs/iconify-icon/iconify-icon.min.js"></script>
 
 
-    <script>
-    (function() {
-      var isMobile = window.innerWidth < 768;
-      var stickerUrl = "/assets/images/stickers/world.webp";
-      
-      var el = document.createElement('div');
-      el.id = 'pageSticker';
-      var size = isMobile ? 180 : 260;
-      el.style.cssText = 'position:absolute;width:' + size + 'px;height:' + size + 'px;z-index:9999;cursor:grab;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.3));transform:rotate(-6deg);transition:filter 0.3s,transform 0.3s;';
-      el.innerHTML = '<img src="' + stickerUrl + '" alt="" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">';
-      document.body.appendChild(el);
-      
-      if (isMobile) {
-        el.style.left = (window.innerWidth - size - 16) + 'px';
-        el.style.top = '140px';
-      } else {
-        el.style.left = (window.innerWidth - 320) + 'px';
-        el.style.top = (window.scrollY + 200) + 'px';
-      }
-      
-      var dragging = false, offX, offY;
-      
-      if (isMobile) {
-        // MOBILE: Use touch events directly for reliable long-press drag
-        var longTimer = null;
-        var startX = 0, startY = 0;
-        var THRESHOLD = 10; // pixels of movement allowed before canceling long-press
-        
-        el.addEventListener('touchstart', function(e) {
-          var t = e.touches[0];
-          startX = t.clientX;
-          startY = t.clientY;
-          
-          longTimer = setTimeout(function() {
-            // Long-press activated — start dragging
-            dragging = true;
-            if (navigator.vibrate) navigator.vibrate(30);
-            var rect = el.getBoundingClientRect();
-            offX = startX - rect.left;
-            offY = startY - rect.top;
-            el.style.position = 'fixed';
-            el.style.left = rect.left + 'px';
-            el.style.top = rect.top + 'px';
-            el.style.transition = 'none';
-            el.style.filter = 'drop-shadow(0 10px 30px rgba(0,0,0,0.5))';
-            el.style.transform = 'rotate(-2deg) scale(1.15)';
-          }, 400);
-        }, {passive: false});
-        
-        el.addEventListener('touchmove', function(e) {
-          var t = e.touches[0];
-          if (!dragging) {
-            // Check if finger moved too far — cancel long-press (it's a scroll)
-            var dx = t.clientX - startX;
-            var dy = t.clientY - startY;
-            if (Math.abs(dx) > THRESHOLD || Math.abs(dy) > THRESHOLD) {
-              clearTimeout(longTimer);
-            }
-            return; // Let the browser scroll normally
-          }
-          // Dragging active — move the sticker
-          e.preventDefault();
-          el.style.left = (t.clientX - offX) + 'px';
-          el.style.top = (t.clientY - offY) + 'px';
-          el.style.transform = 'rotate(' + ((t.clientX - offX) * 0.02 - 4) + 'deg) scale(1.15)';
-        }, {passive: false});
-        
-        el.addEventListener('touchend', function() {
-          clearTimeout(longTimer);
-          if (!dragging) return;
-          dragging = false;
-          // Drop: convert to absolute so it stays on the page
-          var fixedLeft = parseFloat(el.style.left);
-          var fixedTop = parseFloat(el.style.top);
-          el.style.position = 'absolute';
-          el.style.left = (fixedLeft + window.scrollX) + 'px';
-          el.style.top = (fixedTop + window.scrollY) + 'px';
-          el.style.cursor = 'grab';
-          el.style.filter = 'drop-shadow(0 6px 18px rgba(0,0,0,0.3))';
-          el.style.transform = 'rotate(-6deg) scale(1)';
-          el.style.transition = 'filter 0.3s, transform 0.3s';
-        });
-        
-      } else {
-        // DESKTOP: Pointer events, instant drag
-        el.addEventListener('pointerdown', function(e) {
-          dragging = true;
-          el.style.cursor = 'grabbing';
-          el.style.transition = 'none';
-          var rect = el.getBoundingClientRect();
-          offX = e.clientX - rect.left;
-          offY = e.clientY - rect.top;
-          el.style.position = 'fixed';
-          el.style.left = rect.left + 'px';
-          el.style.top = rect.top + 'px';
-          el.style.filter = 'drop-shadow(0 14px 40px rgba(0,0,0,0.5))';
-          el.style.transform = 'rotate(-2deg) scale(1.08)';
-          e.preventDefault();
-        });
-        
-        window.addEventListener('pointermove', function(e) {
-          if (!dragging) return;
-          el.style.left = (e.clientX - offX) + 'px';
-          el.style.top = (e.clientY - offY) + 'px';
-          el.style.transform = 'rotate(' + ((e.clientX - offX) * 0.02 - 4) + 'deg) scale(1.08)';
-        });
-        
-        window.addEventListener('pointerup', function() {
-          if (!dragging) return;
-          dragging = false;
-          var fixedLeft = parseFloat(el.style.left);
-          var fixedTop = parseFloat(el.style.top);
-          el.style.position = 'absolute';
-          el.style.left = (fixedLeft + window.scrollX) + 'px';
-          el.style.top = (fixedTop + window.scrollY) + 'px';
-          el.style.cursor = 'grab';
-          el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
-          el.style.transform = 'rotate(-6deg) scale(1)';
-          el.style.transition = 'filter 0.3s, transform 0.3s';
-        });
-        
-        el.addEventListener('mouseenter', function() {
-          if (!dragging) {
-            el.style.transform = 'rotate(-3deg) scale(1.06)';
-            el.style.filter = 'drop-shadow(0 12px 32px rgba(0,0,0,0.4))';
-          }
-        });
-        el.addEventListener('mouseleave', function() {
-          if (!dragging) {
-            el.style.transform = 'rotate(-6deg) scale(1)';
-            el.style.filter = 'drop-shadow(0 8px 24px rgba(0,0,0,0.35))';
-          }
-        });
-      }
-    })();
-    </script>
+    <script src="/assets/js/page-sticker.js" data-sticker="/assets/images/stickers/world.webp" defer></script>
 
 <script src="/assets/js/cookie-banner.js" defer></script>
 </body>
