@@ -1,0 +1,103 @@
+/* /website-laten-maken and its trade pages: the top with the route, the price chips, the live example cards.
+   Page-scoped: the shared styles.css stays as it is. */
+.wlm-hero{padding:150px 0 72px;background:linear-gradient(160deg,#1F2A2E 0%,#141c1f 100%)}
+.wlm-hero .wlm-h1{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.05;letter-spacing:-.01em}
+.wlm-hero .rt{box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.wlm-price{display:flex;flex-wrap:wrap;gap:12px}
+.wlm-price li{display:flex;flex-direction:column;gap:2px;padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;min-width:150px}
+.wlm-price strong{font-size:1.6rem;line-height:1;color:var(--bs-primary)}
+.wlm-price span{font-size:.86rem;color:rgba(255,255,255,.75)}
+.wlm-anchor{position:relative;top:-90px;display:block;height:0}
+.wlm-features .wlm-ico{background:var(--bs-primary);border-radius:12px;padding:8px;font-size:1.6rem!important;width:44px;height:44px;display:inline-grid;place-items:center}
+.wlm-examples .niche-tpl-card__viewport{aspect-ratio:16/11}
+.wlm-examples .badge{letter-spacing:.04em}
+@media (max-width:1199.98px){.wlm-hero{padding:120px 0 56px}}
+@media (max-width:575.98px){.wlm-hero{padding:104px 0 40px}.wlm-price li{min-width:0;flex:1 1 140px}.wlm-hero .hstack .btn{width:100%;justify-content:space-between}}
+
+/* The example card and the design showcase, as the trade pages had them inline (moved here with the rework). */
+
+      .niche-tpl-card { background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; position:relative; }
+      .niche-tpl-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(0,0,0,0.14); border-color:rgba(212,237,49,0.5); }
+      .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; background:#f6f4ef; }
+      .niche-tpl-card__poster { position:absolute; top:0; left:0; width:100%; height:auto; display:block; transform:translateY(0); transition:transform 9s linear; z-index:1; }
+      .niche-tpl-card:hover .niche-tpl-card__poster { transform:translateY(-86%); }
+      .niche-tpl-card__playbadge { position:absolute; top:14px; left:14px; z-index:3; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; backdrop-filter:blur(6px); }
+      .niche-tpl-card__playbadge iconify-icon { font-size:0.95rem; color:#d4ed31; }
+      .niche-tpl-card:hover .niche-tpl-card__playbadge { background:#d4ed31; color:#1a1a1a; }
+      .niche-tpl-card:hover .niche-tpl-card__playbadge iconify-icon { color:#1a1a1a; }
+      .niche-tpl-card__shadebar { position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); opacity:0; transition:opacity .35s ease; z-index:2; pointer-events:none; }
+      .niche-tpl-card:hover .niche-tpl-card__shadebar { opacity:1; }
+      .niche-tpl-card__visit { position:absolute; bottom:16px; right:16px; z-index:3; width:52px; height:52px; border-radius:50%; background:#d4ed31; color:#1a1a1a; display:flex; align-items:center; justify-content:center; font-size:1.35rem; opacity:0; transform:translateY(8px); transition:opacity .3s ease,transform .3s ease; }
+      .niche-tpl-card:hover .niche-tpl-card__visit { opacity:1; transform:translateY(0); }
+      .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
+      .niche-tpl-card__body h4 { margin-bottom:0; }
+      .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.95rem; display:inline-flex; align-items:center; gap:0.5rem; color:#1a1a1a; }
+      .niche-tpl-card__cta iconify-icon { color:#d4ed31; background:#1a1a1a; padding:4px; border-radius:50%; font-size:1.1rem; }
+      /* Locked placeholder cards */
+      .niche-tpl-card--locked { background:#f4f1ec; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; position:relative; cursor:not-allowed; opacity:0.78; filter:grayscale(0.4); }
+      .niche-tpl-card--locked .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.85rem; }
+      .niche-tpl-card--locked .niche-tpl-card__lockicon { font-size:3rem; color:rgba(0,0,0,0.35); }
+      .niche-tpl-card--locked .niche-tpl-card__lockbadge { position:absolute; top:14px; left:14px; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; }
+      .niche-tpl-card--locked .niche-tpl-card__lockbadge iconify-icon { font-size:0.9rem; color:#d4ed31; }
+      .niche-tpl-card--locked .niche-tpl-card__lockcaption { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(0,0,0,0.45); }
+      .niche-tpl-card--locked .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
+      .niche-tpl-card--locked .niche-tpl-card__body h4 { margin-bottom:0; color:#555; }
+      .niche-tpl-card--locked .niche-tpl-card__body p { color:rgba(0,0,0,0.55); }
+      .niche-tpl-card--locked .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.9rem; display:inline-flex; align-items:center; gap:0.5rem; color:rgba(0,0,0,0.5); }
+      .niche-tpl-card--locked.tpl-editorial .niche-tpl-card__viewport { background:linear-gradient(135deg,#f0ede8 0%,#d4cfc4 100%); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__viewport { background:linear-gradient(135deg,#0a0a0a 0%,#444 100%); }
+      .niche-tpl-card--locked.tpl-premium .niche-tpl-card__viewport { background:linear-gradient(135deg,#1a1612 0%,#3a2a20 100%); }
+      .niche-tpl-card--locked.tpl-warm .niche-tpl-card__viewport { background:linear-gradient(135deg,#f5e8d4 0%,#e0c8a0 100%); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockicon, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockicon { color:rgba(255,255,255,0.5); }
+      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockcaption, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockcaption { color:rgba(255,255,255,0.55); }
+    
+
+      .niche-showcase { background:#141414; color:#fff; position:relative; overflow:hidden; }
+      .niche-showcase::before { content:""; position:absolute; top:-30%; right:-10%; width:55%; height:120%; background:radial-gradient(closest-side,rgba(212,237,49,0.16),rgba(212,237,49,0)); pointer-events:none; }
+      .niche-showcase__eyebrow { display:inline-flex; align-items:center; gap:0.5rem; background:#d4ed31; color:#141414; border-radius:99px; padding:6px 16px; font-size:0.72rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:1.25rem; }
+      .niche-showcase__eyebrow iconify-icon { font-size:0.95rem; }
+      .niche-showcase h2 { color:#fff; text-wrap:balance; }
+      .niche-showcase__lead { color:rgba(255,255,255,0.72); }
+      .niche-showcase__card { display:grid; grid-template-columns:1.35fr 1fr; background:#1c1c1c; border:1px solid rgba(255,255,255,0.12); border-radius:1.5rem; overflow:hidden; transition:border-color .3s ease,transform .3s ease,box-shadow .3s ease; }
+      .niche-showcase__card:hover { border-color:rgba(212,237,49,0.55); transform:translateY(-6px); box-shadow:0 30px 70px rgba(0,0,0,0.45); }
+      .niche-showcase__viewport { position:relative; overflow:hidden; min-height:100%; aspect-ratio:16/11; background:#0d0d0d; }
+      .niche-showcase__poster { position:absolute; top:0; left:0; width:100%; height:auto; display:block; transform:translateY(0); transition:transform 11s linear; }
+      .niche-showcase__card:hover .niche-showcase__poster { transform:translateY(-84%); }
+      .niche-showcase__playbadge { position:absolute; top:16px; left:16px; z-index:3; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; backdrop-filter:blur(6px); }
+      .niche-showcase__playbadge iconify-icon { font-size:0.95rem; color:#d4ed31; }
+      .niche-showcase__card:hover .niche-showcase__playbadge { background:#d4ed31; color:#141414; }
+      .niche-showcase__card:hover .niche-showcase__playbadge iconify-icon { color:#141414; }
+      .niche-showcase__body { padding:2.5rem; display:flex; flex-direction:column; gap:0.85rem; }
+      .niche-showcase__tier { font-size:0.7rem; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; color:#d4ed31; }
+      .niche-showcase__body h3 { color:#fff; font-size:2rem; margin:0; }
+      .niche-showcase__body p { color:rgba(255,255,255,0.7); margin:0; font-size:1rem; }
+      .niche-showcase__marks { list-style:none; padding:0; margin:0.35rem 0 0; display:flex; flex-direction:column; gap:0.6rem; }
+      .niche-showcase__marks li { display:flex; align-items:flex-start; gap:0.65rem; color:rgba(255,255,255,0.82); font-size:0.93rem; line-height:1.45; }
+      .niche-showcase__marks iconify-icon { color:#d4ed31; font-size:1.1rem; flex:0 0 auto; margin-top:2px; }
+      .niche-showcase__cta { margin-top:auto; padding-top:1.5rem; display:inline-flex; align-items:center; gap:0.6rem; font-weight:800; font-size:1rem; color:#d4ed31; }
+      .niche-showcase__cta iconify-icon { background:#d4ed31; color:#141414; border-radius:50%; padding:5px; font-size:1.2rem; }
+      .niche-showcase__ladder { margin:2.5rem 0 0; display:flex; align-items:flex-start; gap:0.7rem; color:rgba(255,255,255,0.6); font-size:0.95rem; }
+      .niche-showcase__ladder iconify-icon { color:#d4ed31; font-size:1.15rem; flex:0 0 auto; margin-top:2px; }
+      @media (max-width: 991.98px) {
+        .niche-showcase__card { grid-template-columns:1fr; }
+        .niche-showcase__viewport { aspect-ratio:16/10; }
+        .niche-showcase__body { padding:1.75rem; }
+        .niche-showcase__body h3 { font-size:1.6rem; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .niche-showcase__poster, .niche-showcase__card { transition:none; }
+        .niche-showcase__card:hover .niche-showcase__poster { transform:translateY(0); }
+      }
+    .wlm-cta .btn{white-space:nowrap}
+@media (max-width:575.98px){.wlm-features .p-5,.why-niche .p-5,[class*="why-"] .p-5{padding:1.5rem!important}.wlm-pricing .card-body{padding:1.5rem!important}.wlm-cta .btn{width:100%;justify-content:space-between}}
+/* portfolio: the live site on a computer, its phone view in the corner */
+.wlm-pf .niche-tpl-card__viewport{aspect-ratio:16/11}
+.wlm-pf__phone{position:absolute;right:14px;bottom:14px;width:23%;max-width:96px;height:auto;z-index:2;border-radius:12px;border:3px solid #1F2A2E;box-shadow:0 10px 30px rgba(0,0,0,.3);background:#fff}
+.wlm-hero--pf{padding-bottom:56px}
+#freeWebsiteForm .form-control::placeholder{color:rgba(255,255,255,.6)}
+/* the design showcase inside the examples section: its tracks never grow past the card */
+.wlm-examples .niche-showcase__card{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);color:#fff}
+.wlm-examples .niche-showcase__viewport{min-width:0;min-height:320px}
+@media (max-width:991.98px){.wlm-examples .niche-showcase__card{grid-template-columns:minmax(0,1fr)}.wlm-examples .niche-showcase__viewport{aspect-ratio:16/11;min-height:0}}
+/* ranking trade pages keep their banner: on a phone its H1 clears the fixed header and the menu button */
+@media (max-width:991.98px){.banner-inner-section{padding-top:130px;min-height:0}}
