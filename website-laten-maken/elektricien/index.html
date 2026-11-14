@@ -252,22 +252,6 @@
       .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.95rem; display:inline-flex; align-items:center; gap:0.5rem; color:#1a1a1a; }
       .niche-tpl-card__cta iconify-icon { color:#d4ed31; background:#1a1a1a; padding:4px; border-radius:50%; font-size:1.1rem; }
       /* Locked placeholder cards */
-      .niche-tpl-card--locked { background:#f4f1ec; border:1px solid rgba(0,0,0,0.08); border-radius:1.25rem; overflow:hidden; height:100%; display:flex; flex-direction:column; position:relative; cursor:not-allowed; opacity:0.78; filter:grayscale(0.4); }
-      .niche-tpl-card--locked .niche-tpl-card__viewport { position:relative; overflow:hidden; aspect-ratio:16/10; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.85rem; }
-      .niche-tpl-card--locked .niche-tpl-card__lockicon { font-size:3rem; color:rgba(0,0,0,0.35); }
-      .niche-tpl-card--locked .niche-tpl-card__lockbadge { position:absolute; top:14px; left:14px; background:rgba(0,0,0,0.78); color:#fff; padding:6px 12px 6px 8px; border-radius:99px; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:inline-flex; align-items:center; gap:6px; }
-      .niche-tpl-card--locked .niche-tpl-card__lockbadge iconify-icon { font-size:0.9rem; color:#d4ed31; }
-      .niche-tpl-card--locked .niche-tpl-card__lockcaption { font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(0,0,0,0.45); }
-      .niche-tpl-card--locked .niche-tpl-card__body { padding:1.5rem; display:flex; flex-direction:column; gap:0.55rem; flex:1; }
-      .niche-tpl-card--locked .niche-tpl-card__body h4 { margin-bottom:0; color:#555; }
-      .niche-tpl-card--locked .niche-tpl-card__body p { color:rgba(0,0,0,0.55); }
-      .niche-tpl-card--locked .niche-tpl-card__cta { margin-top:auto; padding-top:0.85rem; font-weight:700; font-size:0.9rem; display:inline-flex; align-items:center; gap:0.5rem; color:rgba(0,0,0,0.5); }
-      .niche-tpl-card--locked.tpl-editorial .niche-tpl-card__viewport { background:linear-gradient(135deg,#f0ede8 0%,#d4cfc4 100%); }
-      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__viewport { background:linear-gradient(135deg,#0a0a0a 0%,#444 100%); }
-      .niche-tpl-card--locked.tpl-premium .niche-tpl-card__viewport { background:linear-gradient(135deg,#1a1612 0%,#3a2a20 100%); }
-      .niche-tpl-card--locked.tpl-warm .niche-tpl-card__viewport { background:linear-gradient(135deg,#f5e8d4 0%,#e0c8a0 100%); }
-      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockicon, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockicon { color:rgba(255,255,255,0.5); }
-      .niche-tpl-card--locked.tpl-freestyle .niche-tpl-card__lockcaption, .niche-tpl-card--locked.tpl-premium .niche-tpl-card__lockcaption { color:rgba(255,255,255,0.55); }
     </style>
 
     <section id="templates" class="templates-grid py-5 py-lg-7 py-xl-8 bg-light-gray" style="scroll-margin-top:90px">
@@ -360,27 +344,11 @@
             </a>
           </div>
 
-          <!-- 6. FREESTYLE 3 - locked -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-            <div class="niche-tpl-card niche-tpl-card--locked tpl-freestyle">
-              <div class="niche-tpl-card__viewport">
-                <span class="niche-tpl-card__lockbadge"><iconify-icon icon="lucide:lock"></iconify-icon>Binnenkort</span>
-                <iconify-icon icon="lucide:lock" class="niche-tpl-card__lockicon"></iconify-icon>
-                <span class="niche-tpl-card__lockcaption">Demo in productie</span>
-              </div>
-              <div class="niche-tpl-card__body">
-                <div class="d-flex align-items-center gap-2"><span class="badge bg-primary text-dark fw-bold">FREESTYLE 3</span></div>
-                <h4 class="mb-0 mt-2">Volledig Maatwerk</h4>
-                <p class="mb-0 fs-6 text-dark text-opacity-70 flex-grow-1">Geen template, maar een uniek maatwerk-design voor jouw installatiebedrijf. Eigen merk, eigen specialisaties, eigen werkgebied-logica.</p>
-                <span class="niche-tpl-card__cta"><iconify-icon icon="lucide:lock"></iconify-icon>Demo binnenkort beschikbaar</span>
-              </div>
-            </div>
-          </div>
 
         </div>
         <div class="row mt-7">
           <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
-            <p class="mb-4 fs-6 text-dark text-opacity-60"><iconify-icon icon="lucide:info" class="me-1"></iconify-icon>De live demo&apos;s zijn echte werkende websites, geen mockups. Klik om in een nieuw tabblad te openen. Meer stijlen volgen binnenkort.</p>
+            <p class="mb-4 fs-6 text-dark text-opacity-60"><iconify-icon icon="lucide:info" class="me-1"></iconify-icon>De live demo&apos;s zijn echte werkende websites, geen mockups. Klik om in een nieuw tabblad te openen.</p>
             <a href="/gratis-gesprek" class="btn mx-auto">
               <span class="btn-text">Plan een gratis kennismaking</span>
               <iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
@@ -439,7 +407,7 @@
             <div class="d-flex flex-column gap-3 p-5 border border-dark border-opacity-10 rounded-4 h-100">
               <iconify-icon icon="solar:gallery-favourite-bold-duotone" class="fs-2 text-primary"></iconify-icon>
               <h4 class="mb-0">Voor/na bewijs</h4>
-              <p class="mb-0 fs-6 text-dark text-opacity-70">Een nieuwe groepenkast ziet niemand normaal. Voor/na fotos overtuigen klanten 4&times; sterker dan elke alinea tekst.</p>
+              <p class="mb-0 fs-6 text-dark text-opacity-70">Een nieuwe groepenkast ziet niemand normaal. Voor/na foto's overtuigen klanten 4&times; sterker dan elke alinea tekst.</p>
             </div>
           </div>
         </div>
@@ -508,7 +476,7 @@
         <div class="row mt-6">
           <div class="col-lg-9 mx-auto" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
             <div class="bg-white p-5 rounded-4 border border-dark border-opacity-10">
-              <p class="mb-0 fs-6 text-dark text-opacity-80">Madebysens rekent &euro;799 setup + &euro;25/mo, in jaar 1 betaal je daar &euro;1.099. Bij STUDIOLEE betaal je geen setup-kosten: Ezida Start kost &euro;79 per maand. Daarvoor krijg je je website op maat met storingsformulier, NEN1010 trust strip en sticky bel-knop, hosting en een AI-chatbot met beperkt gebruik. Lokale SEO zet je erbij als je eenmaal binnen bent. Koppelingen met je eigen software zitten in Ezida Full, vanaf &euro;179 per maand. In Managed by StudioLee, vanaf &euro;379 per maand, doen wij het werk voor je, zoals SEO-artikelen en social media. Maandelijks opzegbaar.</p>
+              <p class="mb-0 fs-6 text-dark text-opacity-80">Madebysens rekent &euro;799 setup + &euro;25 per maand, in jaar 1 betaal je daar &euro;1.099. Bij STUDIOLEE betaal je geen setup-kosten: Ezida Start kost &euro;79 per maand. Daarvoor krijg je je website op maat met storingsformulier, NEN1010 trust strip en sticky bel-knop, hosting en een AI-chatbot met beperkt gebruik. Lokale SEO zet je erbij als je eenmaal binnen bent. Koppelingen met je eigen software zitten in Ezida Full, vanaf &euro;179 per maand. In Managed by StudioLee, vanaf &euro;379 per maand, doen wij het werk voor je, zoals SEO-artikelen en social media. Maandelijks opzegbaar.</p>
             </div>
           </div>
         </div>
