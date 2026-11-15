@@ -109,6 +109,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.studiolee.nl/gratis-scan</loc>
+    <lastmod>2026-11-15T00:00:00+00:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://www.studiolee.nl/marketing-uitbesteden</loc>
     <lastmod>2026-04-30T17:31:10+00:00</lastmod>
     <priority>0.8</priority>
