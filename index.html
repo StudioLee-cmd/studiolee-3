@@ -2,6 +2,7 @@
 <html lang="nl">
 
 <head>
+  <script>try{localStorage.getItem("cookie_consent")||document.documentElement.classList.add("cb-ask")}catch(e){}</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STUDIOLEE | AI-Powered Groeipartner voor het MKB</title>
@@ -130,21 +131,27 @@
       "itemListElement": [
         {
           "@type": "Offer",
-          "itemOffered": {"@type": "Service", "name": "Managed Basis", "description": "Website op maat, wekelijkse SEO-content, AI chatbot, Voice AI en hosting.", "url": "https://www.studiolee.nl/tarieven"},
+          "itemOffered": {"@type": "Service", "name": "Ezida Start", "description": "Website op maat door ons opgezet, hosting en SSL, AI-chatbot met beperkt gebruik.", "url": "https://www.studiolee.nl/tarieven"},
           "price": "79", "priceCurrency": "EUR",
           "priceSpecification": {"@type": "UnitPriceSpecification", "price": "79", "priceCurrency": "EUR", "unitText": "maand", "description": "Excl. BTW, maandelijks opzegbaar"}
         },
         {
           "@type": "Offer",
-          "itemOffered": {"@type": "Service", "name": "Managed Pro", "description": "Full-service managed marketing met dagelijkse SEO-content, social media en dedicated accountmanager.", "url": "https://www.studiolee.nl/tarieven"},
-          "price": "279", "priceCurrency": "EUR",
-          "priceSpecification": {"@type": "UnitPriceSpecification", "price": "279", "priceCurrency": "EUR", "unitText": "maand", "description": "Excl. BTW, maandelijks opzegbaar"}
+          "itemOffered": {"@type": "Service", "name": "Ezida Full", "description": "Alles uit Ezida Start, plus de AI-telefonist, de basis van het dashboard en de koppelingen met eigen software; gebruik bovenop het maandbedrag.", "url": "https://www.studiolee.nl/tarieven"},
+          "priceCurrency": "EUR",
+          "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": "179", "priceCurrency": "EUR", "unitText": "maand", "description": "Vanaf, excl. BTW, maandelijks opzegbaar"}
         },
         {
           "@type": "Offer",
-          "itemOffered": {"@type": "Service", "name": "One-Time Build", "description": "Eenmalig website project op maat met jaarlijks onderhoud.", "url": "https://www.studiolee.nl/tarieven"},
-          "price": "800", "priceCurrency": "EUR",
-          "priceSpecification": {"@type": "UnitPriceSpecification", "price": "800", "priceCurrency": "EUR", "unitText": "eenmalig", "description": "Excl. BTW, vanaf €200/jaar onderhoud"}
+          "itemOffered": {"@type": "Service", "name": "Managed by StudioLee", "description": "Wij doen het werk: SEO-artikelen, social media en de maandelijkse keuzes; wat erin zit bepaalt het eindbedrag.", "url": "https://www.studiolee.nl/tarieven"},
+          "priceCurrency": "EUR",
+          "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": "379", "priceCurrency": "EUR", "unitText": "maand", "description": "Vanaf, excl. BTW, maandelijks opzegbaar"}
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {"@type": "Service", "name": "Website eenmalig", "description": "Een website tot 10 pagina's, met het eerste jaar beheer en hosting; daarna €200 per jaar.", "url": "https://www.studiolee.nl/tarieven"},
+          "price": "1000", "priceCurrency": "EUR",
+          "priceSpecification": {"@type": "UnitPriceSpecification", "price": "1000", "priceCurrency": "EUR", "unitText": "eenmalig", "description": "Excl. BTW"}
         }
       ]
     },
@@ -197,7 +204,7 @@
             "name": "Hoe ziet de start van een samenwerking eruit?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We starten altijd met een vrijblijvend gratis kennismakingsgesprek via Calendly. Daarna kies je het pakket dat past (Managed Basis vanaf 79 euro per maand of Managed Pro op maat) en gaan we direct aan de slag. Bij Managed Basis sta je binnen 2 weken live met website, AI Chatbot en Voice AI."
+                "text": "We starten altijd met een vrijblijvend gratis kennismakingsgesprek: je laat je e-mailadres achter en kiest daarna een moment in de agenda. Daarna kies je het abonnement dat past (Ezida Start voor 79 euro per maand, Ezida Full vanaf 179 euro per maand of Managed by StudioLee vanaf 379 euro per maand) en gaan we direct aan de slag. Met Ezida Start sta je binnen 2 weken live met je website en AI-chatbot."
             }
         },
         {
@@ -213,7 +220,7 @@
             "name": "Bouwen jullie ook websites?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Ja. Professionele websites op maat, SEO-geoptimaliseerd, binnen 2 weken live. Vanaf €79/mo inclusief hosting. Bekijk onze tarieven."
+                "text": "Ja. Professionele websites op maat, SEO-geoptimaliseerd, binnen 2 weken live. Met Ezida Start €79 per maand inclusief hosting en AI-chatbot, of eenmalig €1.000 voor een website tot 10 pagina's met het eerste jaar beheer en hosting. Bekijk onze tarieven."
             }
         },
         {
@@ -221,7 +228,7 @@
             "name": "Hoe waarborgen jullie kwaliteit en resultaat?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Met de Groei-of-Geld-Terug Garantie bij Managed Pro. Plus maandelijkse rapportages met harde cijfers."
+                "text": "Met maandelijkse rapportages met harde cijfers, en in je dashboard zie je per taak wat er gedaan is en door wie: jij, de AI of een specialist."
             }
         },
         {
@@ -236,7 +243,7 @@
 }
   </script>
 <style>
-/* gear only spins during movement — controlled by JS */
+/* gear only spins during movement, controlled by JS */
 </style>
 
   <style>
@@ -315,6 +322,15 @@
                       <a href="/social-media" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:share-circle-bold-duotone"></iconify-icon></span>Social Media</a>
                     </li>
                     <li class="header-item">
+                      <a href="/conversie-optimalisatie" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:graph-up-bold-duotone"></iconify-icon></span>Conversie optimalisatie</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/ux-ui-design" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:palette-bold-duotone"></iconify-icon></span>UX/UI design</a>
+                    </li>
+                    <li class="header-item">
+                      <a href="/nieuwsbrief" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:file-send-bold-duotone"></iconify-icon></span>Nieuwsbrief</a>
+                    </li>
+                    <li class="header-item">
                       <a href="/reviews" class="header-link hstack gap-2 fs-7 fw-bold text-dark"><span class="menu-icon-circle"><iconify-icon icon="solar:star-shine-bold-duotone"></iconify-icon></span>Review Management</a>
                     </li>
                     <li class="header-item">
@@ -349,7 +365,7 @@
                     </li>
                   </ul>
                   <div class="hstack gap-3">
-                    <a href="https://cal.com/studiolee" rel="nofollow" target="_blank"
+                    <a href="/gratis-gesprek"
                       class="btn btn-primary text-dark fw-bold fs-6 px-3 py-3 w-100 hstack justify-content-center cta-shine rounded-pill">Plan Een Gratis Gesprek</a>
                   </div>
                 </div>
@@ -425,7 +441,7 @@
                   <div class="d-flex flex-column gap-6" data-aos="fade-up" data-aos-delay="100"
                     data-aos-duration="1000">
                     <h2 class="mb-0">Jij focust op je werk. Wij zorgen voor je groei.</h2>
-                    <p class="fs-5 mb-0">Website, SEO, social media, reviews, AI-vindbaarheid: alles-in-één, volledig op maat. Geen technische kennis nodig. Vanaf €79 per maand.</p>
+                    <p class="fs-5 mb-0">Website, SEO, social media, reviews, AI-vindbaarheid: alles-in-één, volledig op maat. Geen technische kennis nodig. Ezida Start €79 per maand, Ezida Full vanaf €179, Managed by StudioLee vanaf €379.</p>
                   </div>
                 </div>
               </div>
@@ -433,15 +449,15 @@
                 <div class="col-md-6 col-lg-4 mb-7 mb-lg-0">
                   <div class="d-flex flex-column gap-6 pt-9 border-top" data-aos="fade-up" data-aos-delay="200"
                     data-aos-duration="1000">
-                    <h2 class="mb-0 fs-14"><span class="fs-5 fw-normal">Vanaf </span>€79/mo</h2>
-                    <p class="mb-0">Alles-in-één, op maat. Jij focust op je klanten, wij op je groei.</p>
+                    <h2 class="mb-0 fs-14">€79 per maand</h2>
+                    <p class="mb-0">Ezida Start: je website met AI-chatbot. Meer kan: Ezida Full vanaf €179, Managed by StudioLee vanaf €379.</p>
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-7 mb-lg-0">
                   <div class="d-flex flex-column gap-6 pt-9 border-top" data-aos="fade-up" data-aos-delay="300"
                     data-aos-duration="1000">
-                    <h2 class="mb-0 fs-14">Garantie</h2>
-                    <p class="mb-0">Groei-of-Geld-Terug. Het risico ligt 100% bij ons.</p>
+                    <h2 class="mb-0 fs-14">Jij kiest</h2>
+                    <p class="mb-0">Per taak kies je wie het doet: jij zelf, de AI of een specialist van StudioLee.</p>
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-7 mb-lg-0">
@@ -498,6 +514,27 @@
             <div class="item">
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                  <img src="/assets/images/labels/dakdekkerai.webp" alt="DakdekkerAI" class="img-fluid" loading="lazy">
+                  <video muted loop preload="none" src="/assets/video/dakdekkerai.mp4"></video>
+                  <div class="portfolio-overlay">
+                    <a href="https://www.dakdekkerai.nl" target="_blank"
+                      class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
+                      <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="portfolio-details d-flex flex-column gap-3">
+                  <h3 class="mb-0">DakdekkerAI</h3>
+                  <div class="hstack gap-2">
+                    <span class="badge text-dark border">Niche Website</span>
+                    <span class="badge text-dark border">Automatisering</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="portfolio d-flex flex-column gap-6">
+                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/kapperai.webp" alt="KapperAI" class="img-fluid" loading="lazy">
                   <video muted loop preload="none" src="/assets/video/kapperai.mp4"></video>
                   <div class="portfolio-overlay">
@@ -540,27 +577,6 @@
             <div class="item">
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
-                  <img src="/assets/images/labels/elektroai.webp" alt="ElektroAI" class="img-fluid" loading="lazy">
-                  <video muted loop preload="none" src="/assets/video/elektroai.mp4"></video>
-                  <div class="portfolio-overlay">
-                    <a href="https://www.elektroai.nl" target="_blank"
-                      class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                      <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                    </a>
-                  </div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3">
-                  <h3 class="mb-0">ElektroAI</h3>
-                  <div class="hstack gap-2">
-                    <span class="badge text-dark border">Review Management</span>
-                    <span class="badge text-dark border">SEO</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/hovenierai.webp" alt="HovenierAI" class="img-fluid" loading="lazy">
                   <video muted loop preload="none" src="/assets/video/hovenierai.mp4"></video>
                   <div class="portfolio-overlay">
@@ -582,92 +598,11 @@
             <div class="item">
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
-                  <img src="/assets/images/labels/dakdekkerai.webp" alt="DakdekkerAI" class="img-fluid" loading="lazy">
-                  <video muted loop preload="none" src="/assets/video/dakdekkerai.mp4"></video>
-                  <div class="portfolio-overlay">
-                    <a href="https://www.dakdekkerai.nl" target="_blank"
-                      class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
-                      <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
-                    </a>
-                  </div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3">
-                  <h3 class="mb-0">DakdekkerAI</h3>
-                  <div class="hstack gap-2">
-                    <span class="badge text-dark border">Niche Website</span>
-                    <span class="badge text-dark border">Automatisering</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
-                  <img src="/assets/images/labels/salonsmart.webp" alt="SalonSmart" class="img-fluid" loading="lazy">
-                  <video muted loop preload="none" src="/assets/video/salonsmart.mp4"></video>
-                  <div class="portfolio-overlay"><a href="https://www.salonsmart.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">SalonSmart</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">Review Management</span></div></div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/reparatieai.webp" alt="ReparatieAI" class="img-fluid" loading="lazy">
                   <video muted loop preload="none" src="/assets/video/reparatieai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.reparatieai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">ReparatieAI</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">Lead Generation</span></div></div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
-                  <img src="/assets/images/labels/verhuizerai.webp" alt="VerhuizerAI" class="img-fluid" loading="lazy">
-                  <video muted loop preload="none" src="/assets/video/verhuizerai.mp4"></video>
-                  <div class="portfolio-overlay"><a href="https://www.verhuizerai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">VerhuizerAI</h3><div class="hstack gap-2"><span class="badge text-dark border">SEO</span><span class="badge text-dark border">Social Media</span></div></div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
-                  <img src="/assets/images/labels/kliniekai.webp" alt="KliniekAI" class="img-fluid" loading="lazy">
-                  <video muted loop preload="none" src="/assets/video/kliniekai.mp4"></video>
-                  <div class="portfolio-overlay"><a href="https://www.kliniekai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">KliniekAI</h3><div class="hstack gap-2"><span class="badge text-dark border">AI Chatbot</span><span class="badge text-dark border">Review Management</span></div></div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
-                  <img src="/assets/images/labels/dierenartsai.webp" alt="DierenartsAI" class="img-fluid" loading="lazy">
-                  <video muted loop preload="none" src="/assets/video/dierenartsai.mp4"></video>
-                  <div class="portfolio-overlay"><a href="https://www.dierenartsai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">DierenartsAI</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">AI Telefonist</span></div></div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
-                  <img src="/assets/images/labels/rijschoolai.webp" alt="RijschoolAI" class="img-fluid" loading="lazy">
-                  <video muted loop preload="none" src="/assets/video/rijschoolai.mp4"></video>
-                  <div class="portfolio-overlay"><a href="https://www.rijschoolai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">RijschoolAI</h3><div class="hstack gap-2"><span class="badge text-dark border">SEO</span><span class="badge text-dark border">Niche Website</span></div></div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="portfolio d-flex flex-column gap-6">
-                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
-                  <img src="/assets/images/labels/tafelai.webp" alt="TafelAI" class="img-fluid" loading="lazy">
-                  <video muted loop preload="none" src="/assets/video/tafelai.mp4"></video>
-                  <div class="portfolio-overlay"><a href="https://www.tafelai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
-                </div>
-                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">TafelAI</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">Review Management</span></div></div>
               </div>
             </div>
             <div class="item">
@@ -683,11 +618,72 @@
             <div class="item">
               <div class="portfolio d-flex flex-column gap-6">
                 <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                  <img src="/assets/images/labels/rijschoolai.webp" alt="RijschoolAI" class="img-fluid" loading="lazy">
+                  <video muted loop preload="none" src="/assets/video/rijschoolai.mp4"></video>
+                  <div class="portfolio-overlay"><a href="https://www.rijschoolai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+                </div>
+                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">RijschoolAI</h3><div class="hstack gap-2"><span class="badge text-dark border">SEO</span><span class="badge text-dark border">Niche Website</span></div></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="portfolio d-flex flex-column gap-6">
+                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                  <img src="/assets/images/labels/verhuizerai.webp" alt="VerhuizerAI" class="img-fluid" loading="lazy">
+                  <video muted loop preload="none" src="/assets/video/verhuizerai.mp4"></video>
+                  <div class="portfolio-overlay"><a href="https://www.verhuizerai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+                </div>
+                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">VerhuizerAI</h3><div class="hstack gap-2"><span class="badge text-dark border">SEO</span><span class="badge text-dark border">Social Media</span></div></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="portfolio d-flex flex-column gap-6">
+                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                  <img src="/assets/images/labels/elektroai.webp" alt="ElektroAI" class="img-fluid" loading="lazy">
+                  <video muted loop preload="none" src="/assets/video/elektroai.mp4"></video>
+                  <div class="portfolio-overlay">
+                    <a href="https://www.elektroai.nl" target="_blank"
+                      class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center">
+                      <iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="portfolio-details d-flex flex-column gap-3">
+                  <h3 class="mb-0">ElektroAI</h3>
+                  <div class="hstack gap-2">
+                    <span class="badge text-dark border">Review Management</span>
+                    <span class="badge text-dark border">SEO</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="portfolio d-flex flex-column gap-6">
+                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                  <img src="/assets/images/labels/dierenartsai.webp" alt="DierenartsAI" class="img-fluid" loading="lazy">
+                  <video muted loop preload="none" src="/assets/video/dierenartsai.mp4"></video>
+                  <div class="portfolio-overlay"><a href="https://www.dierenartsai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+                </div>
+                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">DierenartsAI</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">AI Telefonist</span></div></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="portfolio d-flex flex-column gap-6">
+                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
                   <img src="/assets/images/labels/woningai.webp" alt="WoningAI" class="img-fluid" loading="lazy">
                   <video muted loop preload="none" src="/assets/video/woningai.mp4"></video>
                   <div class="portfolio-overlay"><a href="https://www.woningai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
                 </div>
                 <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">WoningAI</h3><div class="hstack gap-2"><span class="badge text-dark border">Niche Website</span><span class="badge text-dark border">Lead Generation</span></div></div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="portfolio d-flex flex-column gap-6">
+                <div class="portfolio-img position-relative overflow-hidden" onmouseenter="var v=this.querySelector('video');if(v){v.style.opacity=1;v.play()}" onmouseleave="var v=this.querySelector('video');if(v){v.style.opacity=0;v.pause();v.currentTime=0}">
+                  <img src="/assets/images/labels/kliniekai.webp" alt="KliniekAI" class="img-fluid" loading="lazy">
+                  <video muted loop preload="none" src="/assets/video/kliniekai.mp4"></video>
+                  <div class="portfolio-overlay"><a href="https://www.kliniekai.nl"  target="_blank" class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"><iconify-icon icon="lucide:arrow-up-right" class="fs-8 text-dark"></iconify-icon></a></div>
+                </div>
+                <div class="portfolio-details d-flex flex-column gap-3"><h3 class="mb-0">KliniekAI</h3><div class="hstack gap-2"><span class="badge text-dark border">AI Chatbot</span><span class="badge text-dark border">Review Management</span></div></div>
               </div>
             </div>
             <div class="item">
@@ -726,29 +722,29 @@
             </div>
           </div>
           <div class="services-sticker-grid">
-            <a href="/seo" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/seo-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/seo-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">01</span><div class="svc-title">AI &amp; Google Vindbaarheid</div><p class="svc-desc">Dominantie in ChatGPT en Google met dagelijkse SEO-content.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/world.webp" alt="Cuphead wereldbol — SEO dienst"></div></a>
+            <a href="/seo" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/seo-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/seo-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">01</span><div class="svc-title">AI &amp; Google Vindbaarheid</div><p class="svc-desc">Dominantie in ChatGPT en Google met dagelijkse SEO-content.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/world.webp" alt="Cuphead wereldbol, SEO dienst"></div></a>
 
-            <a href="/chatbot" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/services-chatbot.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/chatbot-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">02</span><div class="svc-title">AI Chatbot</div><p class="svc-desc">24/7 leadopvang. Draait op jouw kennis.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/hourglass.webp" alt="Cuphead zandloper — Chatbot dienst"></div></a>
+            <a href="/chatbot" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/services-chatbot.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/chatbot-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">02</span><div class="svc-title">AI Chatbot</div><p class="svc-desc">24/7 leadopvang. Draait op jouw kennis.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/hourglass.webp" alt="Cuphead zandloper: Chatbot dienst"></div></a>
 
-            <a href="/voice-ai" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/voice-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/voice-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">03</span><div class="svc-title">AI Telefonist</div><p class="svc-desc">Gemiste oproepen? Nooit meer.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/draaitafel.webp" alt="Cuphead draaitafel — Voice AI dienst"></div></a>
+            <a href="/voice-ai" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/voice-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/voice-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">03</span><div class="svc-title">AI Telefonist</div><p class="svc-desc">Gemiste oproepen? Nooit meer.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/draaitafel.webp" alt="Cuphead draaitafel: Voice AI dienst"></div></a>
 
-            <a href="/reviews" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/reviews-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/reviews-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">04</span><div class="svc-title">Review Management</div><p class="svc-desc">5-sterren reviews op autopilot.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/ferris.webp" alt="Cuphead reuzenrad — Reviews dienst"></div></a>
+            <a href="/reviews" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/reviews-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/reviews-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">04</span><div class="svc-title">Review Management</div><p class="svc-desc">5-sterren reviews op autopilot.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/ferris.webp" alt="Cuphead reuzenrad: Reviews dienst"></div></a>
 
-            <a href="/social-media" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/social-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/social-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">05</span><div class="svc-title">Social Media</div><p class="svc-desc">Content, beheer en scheduling.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/discoball.webp" alt="Cuphead discobal — Social Media dienst"></div></a>
+            <a href="/social-media" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/social-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/social-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">05</span><div class="svc-title">Social Media</div><p class="svc-desc">Content, beheer en scheduling.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/discoball.webp" alt="Cuphead discobal: Social Media dienst"></div></a>
 
-            <a href="/marketing-uitbesteden" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/marketing-uitbesteden-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/marketing-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">06</span><div class="svc-title">Marketing uitbesteden</div><p class="svc-desc">Alles-in-één, meetbaar resultaat.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/helikopter.webp" alt="Cuphead helikopter — Marketing dienst"></div></a>
+            <a href="/marketing-uitbesteden" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/marketing-uitbesteden-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/marketing-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">06</span><div class="svc-title">Marketing uitbesteden</div><p class="svc-desc">Alles-in-één, meetbaar resultaat.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/helikopter.webp" alt="Cuphead helikopter: Marketing dienst"></div></a>
 
-            <a href="/automations" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/automations-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/automations-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">07</span><div class="svc-title">Automatisering</div><p class="svc-desc">N8N workflows en AI-systemen.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/gear.webp" alt="Cuphead tandwiel — Automatisering dienst"></div></a>
+            <a href="/automations" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/automations-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/automations-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">07</span><div class="svc-title">Automatisering</div><p class="svc-desc">N8N workflows en AI-systemen.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/gear.webp" alt="Cuphead tandwiel: Automatisering dienst"></div></a>
 
-            <a href="/herinneringen" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/herinneringen-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/herinneringen-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">08</span><div class="svc-title">Herinneringen</div><p class="svc-desc">50-70% minder no-shows.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/washing.webp" alt="Cuphead wasmachine — Herinneringen dienst"></div></a>
+            <a href="/herinneringen" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/herinneringen-hero.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/herinneringen-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">08</span><div class="svc-title">Herinneringen</div><p class="svc-desc">50-70% minder no-shows.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/washing.webp" alt="Cuphead wasmachine: Herinneringen dienst"></div></a>
 
-            <a href="/website-laten-maken" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/website-laten-maken-section.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/website-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">09</span><div class="svc-title">Website laten maken</div><p class="svc-desc">Binnen 2 weken live, vanaf €79/mo.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/windmill.webp" alt="Cuphead windmolen — Website dienst"></div></a>
+            <a href="/website-laten-maken" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/website-laten-maken-section.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/website-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">09</span><div class="svc-title">Website laten maken</div><p class="svc-desc">Binnen 2 weken live, €79 per maand.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/windmill.webp" alt="Cuphead windmolen: Website dienst"></div></a>
 
             <a href="/ai-marketing-bureau" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/services/ai-bureau-default.webp)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/services/ai-bureau-hover.webp)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">10</span><div class="svc-title">AI Marketing Bureau</div><p class="svc-desc">Full-service AI bureau voor het MKB.</p><span class="svc-link">Meer info →</span></div><div class="svc-sticker"><img src="/assets/images/stickers/world.webp" alt="AI Marketing Bureau"></div></a>
 
             <a href="/linkbuilding" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/linkbuilding/linkbuilding-hero.jpg)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/linkbuilding/linkbuilding-supporting.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">11</span><div class="svc-title">Linkbuilding</div><p class="svc-desc">Witte-hoed backlinks die je rankings verzetten.</p><span class="svc-link">Meer info →</span></div></a>
 
-            <a href="/crm" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/crm/crm-hero.jpg)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/crm/crm-supporting.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">12</span><div class="svc-title">CRM voor MKB</div><p class="svc-desc">Alles-in-één klantbeheer met AI, vanaf €79/mo.</p><span class="svc-link">Meer info →</span></div></a>
+            <a href="/crm" class="svc-card"><div class="svc-bg" style="background-image:url(/assets/images/crm/crm-hero.jpg)"></div><div class="svc-bg-hover" style="background-image:url(/assets/images/crm/crm-supporting.jpg)"></div><div class="svc-overlay"></div><div class="svc-content"><span class="svc-num">12</span><div class="svc-title">CRM voor MKB</div><p class="svc-desc">Alles-in-één klantbeheer met AI, in Ezida Full vanaf €179 per maand.</p><span class="svc-link">Meer info →</span></div></a>
           </div>
         </div>
       </div>
@@ -783,7 +779,7 @@
               </div>
               <div class="ds-details" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease 0.05s;">
                 <div style="padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
-                  <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; Geen herinneringen &mdash; no-shows</p>
+                  <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; Geen herinneringen, no-shows</p>
                   <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; Geen nieuwsbrief of follow-up</p>
                   <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; Geen centraal CRM of inbox</p>
                   <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; Offertes en facturen met de hand</p>
@@ -822,7 +818,7 @@
               <div style="position: absolute; top: 20px; right: 20px; width: 32px; height: 32px; border-radius: 50%; background: #C1FF72; opacity: 0.6;"></div>
               <div class="ds-top">
                 <h3 style="color: #C1FF72; font-size: 1.35rem;" class="mb-3">Met STUDIOLEE</h3>
-                <p class="text-white text-opacity-60 mb-0" style="font-size: 0.93rem;">25+ tools in &eacute;&eacute;n systeem, vanaf &euro;79/mo. AI telefonist, chatbot, <a href="/crm" class="text-primary">CRM</a>, facturatie, reviews, SEO, social media, nieuwsbrieven, herinneringen &mdash; alles draait. Jij werkt, wij groeien.</p>
+                <p class="text-white text-opacity-60 mb-0" style="font-size: 0.93rem;">25+ tools in &eacute;&eacute;n systeem: Ezida Start &euro;79 per maand, Ezida Full vanaf &euro;179 per maand, Managed by StudioLee vanaf &euro;379 per maand. AI telefonist, chatbot, <a href="/crm" class="text-primary">CRM</a>, facturatie, reviews, SEO, social media, nieuwsbrieven, herinneringen: alles draait. Jij werkt, wij groeien.</p>
               </div>
               <div class="ds-details" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease 0.05s;">
                 <div style="padding-top: 16px; margin-top: 16px; border-top: 1px solid rgba(193,255,114,0.15);">
@@ -831,7 +827,7 @@
                   <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; Automatische herinneringen</p>
                   <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; Reviews van 6 naar 60+</p>
                   <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; Wekelijks blog + social media</p>
-                  <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; CRM, inbox, agenda &mdash; alles centraal</p>
+                  <p class="text-white text-opacity-50 mb-1" style="font-size: 0.85rem;">&rarr; CRM, inbox, agenda: alles centraal</p>
                   <p class="text-white text-opacity-50 mb-0" style="font-size: 0.85rem;">&rarr; Maandrapport met harde cijfers</p>
                 </div>
               </div>
@@ -897,10 +893,10 @@
                     <div class="position-relative z-1">
                       <div class="pb-6 border-bottom">
                         <h2 class="mb-0">100%</h2>
-                        <p class="mb-0">Hands-off voor jou</p>
+                        <p class="mb-0">Uit handen als je wilt: per taak jij, de AI of een specialist</p>
                       </div>
                       <div class="hstack gap-6 pt-6">
-                        <img src="/assets/images/authors/tim-van-der-lee.webp" alt="Tim van der Lee — Oprichter STUDIOLEE"
+                        <img src="/assets/images/authors/tim-van-der-lee.webp" alt="Tim van der Lee: Oprichter STUDIOLEE"
                           class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="64" height="64" loading="lazy">
                         <div>
                           <h5 class="mb-0">Tim van der Lee</h5>
@@ -929,7 +925,7 @@
                       <div class="d-flex align-items-center gap-3">
                         <iconify-icon icon="mdi:instagram" style="font-size: 36px; color: #C1FF72;"></iconify-icon>
                         <iconify-icon icon="mdi:facebook" style="font-size: 36px; color: #C1FF72; opacity: 0.85;"></iconify-icon>
-                        <iconify-icon icon="mdi:tiktok" style="font-size: 36px; color: #C1FF72; opacity: 0.7;"></iconify-icon>
+                        <iconify-icon icon="simple-icons:tiktok" style="font-size: 36px; color: #C1FF72; opacity: 0.7;"></iconify-icon>
                         <a href="https://www.youtube.com/@DIGITAL.STUDIOLEE" target="_blank" rel="nofollow noopener"><iconify-icon icon="mdi:youtube" style="font-size: 36px; color: #C1FF72; opacity: 0.55;"></iconify-icon></a>
                       </div>
                     </div>
@@ -990,7 +986,7 @@
             </div>
           </div>
           <div class="row gap-7 gap-lg-0">
-            <!-- Kooijman Installaties — real client -->
+            <!-- Kooijman Installaties, real client -->
             <div class="col-lg-4 col-xl-3 d-flex align-items-stretch">
               <div class="card bg-primary w-100" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <div class="card-body d-flex flex-column gap-5 gap-xl-7 justify-content-between">
@@ -999,7 +995,7 @@
                     <h4 class="mb-0">Sinds STUDIOLEE onze website heeft opgezet, krijgen we wekelijks offerte-aanvragen via Google. Onze uitstraling is nu net zo professioneel als ons vakwerk.</h4>
                   </div>
                   <div class="hstack gap-3">
-                    <img src="/assets/images/testimonial/testimonial-kooijman.webp" alt="Kooijman Installaties — technisch installatiebedrijf Woerden" class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="60" height="60" loading="lazy">
+                    <img src="/assets/images/testimonial/testimonial-kooijman.webp" alt="Kooijman Installaties, technisch installatiebedrijf Woerden" class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="60" height="60" loading="lazy">
                     <div>
                       <h5 class="mb-1 fw-normal">Kooijman Installaties</h5>
                       <p class="mb-0">Installatiebedrijf, Woerden</p>
@@ -1008,7 +1004,7 @@
                 </div>
               </div>
             </div>
-            <!-- Igor Kapsalon — real client -->
+            <!-- Igor Kapsalon, real client -->
             <div class="col-lg-4 col-xl-6 d-flex align-items-stretch">
               <div class="card bg-dark w-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 <div class="card-body d-flex flex-column gap-5 gap-xl-7 justify-content-between">
@@ -1026,7 +1022,7 @@
                     </div>
                   </div>
                   <div class="hstack gap-3">
-                    <img src="/assets/images/testimonial/testimonial-igor.webp" alt="Hairstudio Igor — kapsalon Woerden" class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="60" height="60" loading="lazy">
+                    <img src="/assets/images/testimonial/testimonial-igor.webp" alt="Hairstudio Igor, kapsalon Woerden" class="img-fluid rounded-circle overflow-hidden flex-shrink-0" width="60" height="60" loading="lazy">
                     <div>
                       <h5 class="mb-1 fw-normal text-white">Hairstudio Igor</h5>
                       <p class="mb-0 text-white text-opacity-70">Kapsalon, Woerden</p>
@@ -1035,7 +1031,7 @@
                 </div>
               </div>
             </div>
-            <!-- Mirror card — your future success -->
+            <!-- Mirror card, your future success -->
             <div class="col-lg-4 col-xl-3 d-flex align-items-stretch">
               <div class="card w-100 overflow-hidden" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" style="background: linear-gradient(135deg, #f0f9e4 0%, #e8f5d6 50%, #f5fff0 100%); border: 2px dashed rgba(193,255,114,0.6);">
                 <div class="card-body d-flex flex-column gap-5 gap-xl-7 justify-content-between">
@@ -1045,7 +1041,7 @@
                   </div>
                   <div>
                     <div class="hstack gap-3 mb-4">
-                      <img src="/assets/images/testimonial/testimonial-mirror.webp" alt="Jouw succesverhaal — dit wordt jouw plek" class="img-fluid flex-shrink-0 rounded" width="60" height="75" style="object-fit: cover;" loading="lazy">
+                      <img src="/assets/images/testimonial/testimonial-mirror.webp" alt="Jouw succesverhaal: dit wordt jouw plek" class="img-fluid flex-shrink-0 rounded" width="60" height="75" style="object-fit: cover;" loading="lazy">
                       <div>
                         <h5 class="mb-1 fw-normal" style="color: rgba(31,42,46,0.7);">Jouw bedrijfsnaam</h5>
                         <p class="mb-0" style="color: rgba(31,42,46,0.5);">Jouw branche</p>
@@ -1161,7 +1157,7 @@
       <div class="container text-center">
         <h2 class="text-dark mb-3" style="max-width: 700px; margin: 0 auto;">Waar wacht je nog op? Laat het draaien.</h2>
         <p class="text-dark fs-5 mb-5 opacity-75" style="max-width: 500px; margin: 0 auto;">Eén gesprek en alles draait. Geen verplichtingen.</p>
-        <a href="https://cal.com/studiolee" target="_blank" rel="nofollow" class="btn btn-dark text-white fw-bold px-4 py-2 rounded-pill cta-shine">Plan een gratis gesprek</a>
+        <a href="/gratis-gesprek" class="btn btn-dark text-white fw-bold px-4 py-2 rounded-pill cta-shine">Plan een gratis gesprek</a>
         <div class="mt-5 d-flex justify-content-center gap-4 flex-wrap">
           <a href="mailto:tim@studiolee.nl" class="text-dark text-opacity-50 fs-6" style="text-decoration: none;">tim@studiolee.nl</a>
           <span class="text-dark text-opacity-25">|</span>
@@ -1200,6 +1196,9 @@
             <li><a class="link-hover fs-5 text-white" href="/chatbot">AI Chatbot</a></li>
             <li><a class="link-hover fs-5 text-white" href="/voice-ai">AI Telefonist</a></li>
             <li><a class="link-hover fs-5 text-white" href="/social-media">Social Media</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/conversie-optimalisatie">Conversie optimalisatie</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/ux-ui-design">UX/UI design</a></li>
+            <li><a class="link-hover fs-5 text-white" href="/nieuwsbrief">Nieuwsbrief</a></li>
             <li><a class="link-hover fs-5 text-white" href="/reviews">Reviews</a></li>
             <li><a class="link-hover fs-5 text-white" href="/marketing-uitbesteden">Marketing uitbesteden</a></li>
             <li><a class="link-hover fs-5 text-white" href="/automations">Automatisering</a></li>
@@ -1241,9 +1240,7 @@
   <script src="/assets/libs/aos-master/dist/aos.js"></script>
   <script src="/assets/js/custom.js"></script>
   <!-- solar icons -->
-  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-
-    <!-- HighLevel chat widget: loaded via cookie consent -->
+  <script src="/assets/libs/iconify-icon/icons.js"></script><script src="/assets/libs/iconify-icon/iconify-icon.min.js"></script>
 
     <!-- Services Sticker Grid CSS -->
     <style>
@@ -1280,7 +1277,6 @@
     </style>
 
 
-<div data-widget-id="69c4ef18d9121c5778d93245" style="display:none"></div>
 <script src="/assets/js/cookie-banner.js" defer></script>
 </body>
 

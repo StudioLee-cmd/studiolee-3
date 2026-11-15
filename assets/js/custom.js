@@ -48,6 +48,23 @@
   new MutationObserver(scan).observe(document.documentElement, { childList: true, subtree: true });
 }());
 // STUDIOLEE-BOOKING-CONTEXT:END
+// STUDIOLEE-EMAIL-FIRST:START
+/* No booking without the e-mail address first (owner 30-10): a click on a cal.com/studiolee link that carries no
+   e-mail address goes to /gratis-gesprek, which asks for it and then opens the agenda with it filled in. */
+(function () {
+  'use strict';
+  if (typeof document === 'undefined') return;
+  document.addEventListener('click', function (event) {
+    var a = event.target.closest && event.target.closest('a[href*="cal.com/studiolee"]');
+    if (!a) return;
+    var u;
+    try { u = new URL(a.getAttribute('href'), location.href); } catch (_) { return; }
+    if (u.searchParams.get('email')) return;
+    event.preventDefault();
+    location.href = '/gratis-gesprek' + (/\/15min/.test(u.pathname) ? '?duur=15' : '');
+  }, true);
+}());
+// STUDIOLEE-EMAIL-FIRST:END
 
 $(function () {
 
@@ -61,29 +78,23 @@ $(function () {
     });
 
 
-    // Featured Owl Carousel
-    $('.featured-projects-slider .owl-carousel').owlCarousel({
-        center: true,
-        loop: true,
+    // Featured Owl Carousel: it shows what is worth showing, so it never repeats a project to fill the row
+    var $featured = $('.featured-projects-slider .owl-carousel');
+    var featuredCount = $featured.children().length;
+    $featured.owlCarousel({
+        center: featuredCount > 4,
+        loop: featuredCount > 4,
         margin: 30,
         nav: false,
         dots: false,
-        autoplay: true,
+        autoplay: featuredCount > 4,
         autoplayTimeout: 5000,
         autoplayHoverPause: false,
         responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            },
-            1200: {
-                items: 4
-            }
+            0: { items: 1, loop: featuredCount > 1, autoplay: featuredCount > 1 },
+            600: { items: 2, loop: featuredCount > 2, autoplay: featuredCount > 2 },
+            1000: { items: 3, loop: featuredCount > 3, autoplay: featuredCount > 3 },
+            1200: { items: 4 }
         }
     })
 
