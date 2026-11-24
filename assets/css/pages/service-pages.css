@@ -4,7 +4,7 @@
 body.mp .blog-hover-card { display: flex; flex-direction: column; border-radius: 16px; overflow: hidden; background: #141419; border: 1px solid rgba(255,255,255,.06); height: 100%; transition: transform .3s ease, box-shadow .3s ease; }
 body.mp .blog-hover-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,.25); }
 body.mp .blog-hover-card-img { position: relative; aspect-ratio: 16/9; overflow: hidden; flex-shrink: 0; }
-body.mp .blog-hover-card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .5s ease; }
+body.mp .blog-hover-card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: left bottom; transition: opacity .5s ease; }
 body.mp .blog-hover-img-primary { opacity: 1; z-index: 2; }
 body.mp .blog-hover-img-secondary { opacity: 0; z-index: 1; }
 body.mp .blog-hover-card:hover .blog-hover-img-primary { opacity: 0; }
