@@ -17597,8 +17597,8 @@ html.cb-leaving #cb { transition: height .28s ease; }
    missing it"). The tile sits in the picture's bottom-left corner (clusters/seo/own-sites/image-format.json label.shown), so
    the picture is anchored there, the darkening layer leaves that corner clear and the banner's words stand above it.
    A banner of a real screenshot (assets/images/templates/) needs none of this. */
-.banner-inner-section[style*="/assets/images/"]:not([style*="/templates/"]) { background-position: left bottom !important; }
-.banner-inner-section[style*="/assets/images/"]:not([style*="/templates/"])::before {
+.banner-inner-section[style*="images/"]:not([style*="/templates/"]) { background-position: left bottom !important; }
+.banner-inner-section[style*="images/"]:not([style*="/templates/"])::before {
   -webkit-mask-image: radial-gradient(ellipse clamp(240px, 26vw, 380px) clamp(180px, 19vw, 280px) at 0 100%, transparent 0, transparent 72%, #000 100%);
   mask-image: radial-gradient(ellipse clamp(240px, 26vw, 380px) clamp(180px, 19vw, 280px) at 0 100%, transparent 0, transparent 72%, #000 100%); }
-.banner-inner-section[style*="/assets/images/"]:not([style*="/templates/"]) .container > .position-relative.z-1 { padding-bottom: clamp(150px, 18vw, 250px) !important; }
+.banner-inner-section[style*="images/"]:not([style*="/templates/"]) .container > .position-relative.z-1 { padding-bottom: clamp(150px, 18vw, 250px) !important; }
