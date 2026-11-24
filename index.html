@@ -260,7 +260,7 @@
     }
     .portfolio-img:hover > video { opacity: 1; }
     .portfolio-img:hover > img { opacity: 0 !important; }
-    .portfolio-img > img { transition: opacity 0.4s; z-index: 1; }
+    .portfolio-img > img { transition: opacity 0.4s; z-index: 1; object-position: left bottom; }  /* the AI tile stays in the crop */
     .portfolio-overlay { z-index: 2 !important; }
   </style>
   <link rel="canonical" href="https://www.studiolee.nl/" />
@@ -1250,9 +1250,9 @@
     
     
     
-    .svc-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,42,46,0.92) 0%,rgba(31,42,46,0.75) 100%);opacity:1;transition:opacity 0.4s;z-index:1;-webkit-mask-image:radial-gradient(circle at 0 100%,transparent 0,transparent 58px,#000 76px);mask-image:radial-gradient(circle at 0 100%,transparent 0,transparent 58px,#000 76px)}
+    .svc-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(31,42,46,0.92) 0%,rgba(31,42,46,0.75) 100%);opacity:1;transition:opacity 0.4s;z-index:1;-webkit-mask-image:radial-gradient(ellipse 75% 40% at 0 100%,transparent 0,transparent 75%,#000 100%);mask-image:radial-gradient(ellipse 75% 40% at 0 100%,transparent 0,transparent 75%,#000 100%)}
     .svc-card:hover{z-index:10}
-    .svc-content{position:relative;z-index:2}
+    .svc-content{position:relative;z-index:2;padding-bottom:48px}@media(max-width:768px){.svc-content{padding-bottom:64px}}
     .svc-num{font-size:0.6rem;font-weight:700;color:rgba(255,255,255,0.15);letter-spacing:0.15em;margin-bottom:10px;display:block;transition:color 0.3s}
     .svc-card:hover .svc-num{color:#C1FF72}
     .svc-title{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:600;margin-bottom:6px;transition:color 0.3s}
