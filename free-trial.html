@@ -229,7 +229,7 @@
                     <li class="hstack gap-2 fs-5 text-dark"><iconify-icon icon="lucide:check" class="fs-7 text-dark"></iconify-icon> Lokale signalen op je pagina</li>
                   </ul>
                   <form id="freeScanForm" class="d-flex flex-column gap-3"
-                    action="https://n8n.aireclamestudio.nl/webhook/free-scan" method="POST">
+                    action="https://n8n.studiolee.nl/webhook/free-scan" method="POST">
                     <input type="hidden" name="source" value="studiolee-3-free-scan">
                     <!-- free-scan-samenstellen: GEGENEREERD door alpha1/scripts/patch_free_scan_voordeur.py
                          stap 1 van 2: de bezoeker stelt z'n eigen scan samen (principe 4,
@@ -315,7 +315,7 @@
                     <p class="mb-0 text-white" style="font-size:0.9rem;"><iconify-icon icon="lucide:info" class="text-primary me-1"></iconify-icon> Na 14 dagen wordt je abonnement automatisch verlengd vanaf €79/maand (excl. BTW). Je kunt altijd opzeggen vóór het einde van je proefperiode. Dan betaal je verder niets.</p>
                   </div>
                   <form id="freeTrialForm" class="d-flex flex-column gap-3"
-                    action="https://n8n.aireclamestudio.nl/webhook/Client-sign-up" method="POST">
+                    action="https://n8n.studiolee.nl/webhook/Client-sign-up" method="POST">
                     <input type="hidden" name="source" value="studiolee-3-free-trial">
                     <style>
                       /* Scoped: dark-card form controls inside Option 2 */
@@ -556,7 +556,7 @@
         source: 'studiolee-3-free-trial'
       };
 
-      fetch('https://n8n.aireclamestudio.nl/webhook/Client-sign-up', {
+      fetch('https://n8n.studiolee.nl/webhook/Client-sign-up', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
