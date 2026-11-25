@@ -3,6 +3,8 @@
 .phone-block, .phone-block * { --lime: #C1FF72; --dark: #1F2A2E; }
 .phone-block { position:relative; width:100%; max-width:900px; margin:0 auto; }
 .phone-container { position:relative; width:100%; aspect-ratio:1752/1024; overflow:hidden; }
+/* the AI tile element shows only where the stage is zoomed (below); at full size the picture's own tile is in view */
+.phone-container > .ai-tile { display:none; }
 .phone-stage { position:absolute; inset:0; background:url('/assets/images/ai-marketing-bureau/phone-body-wide.jpg') 0 0 / 100% 100% no-repeat; }
 /* Every dial part is sized in % of the stage, so the dial, its stickers and their zones line up at every screen width. */
 .l-numplate, .l-zones { position:absolute; width:21.3%; aspect-ratio:1; top:50%; left:69.5%; transform:translate(-50%,-50%); }
@@ -56,6 +58,8 @@ a.rz:hover, a.rz:focus-visible, a.rz.on { box-shadow:0 0 30px rgba(193,255,114,0
   /* On a phone the stage zooms onto the telephone (2.4x, dial centred: left = 50% - 69.5% x 2.4), so each dial zone is at least 44 px to tap; the bubble sits under it. */
   .phone-container { aspect-ratio:730/1024; }
   .phone-stage { inset:auto; top:0; left:-116.8%; width:240%; height:100%; }
+  /* zoomed onto the dial, the picture's own AI tile is out of view: the label rule's tile stands in the block's corner */
+  .phone-container > .ai-tile { display:block; }
   .game-overlay { position:relative; top:auto; left:auto; width:100%; margin-top:14px; transform:none; }
   .game-overlay.visible { transform:none; }
   .game-box { padding:12px 16px; }
