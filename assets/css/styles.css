@@ -16976,15 +16976,20 @@ ul {
   height: 100vh;
   background: #fff;
   padding: 80px 32px 32px;
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.25,0.8,0.25,1);
+  /* closed, the panel is clipped away in place instead of moved a screen to the right: an element past the right
+     edge widens the layout on iPhone Safari, which then shows every page zoomed out (owner 04-11) */
+  clip-path: inset(0 0 0 100%);
+  visibility: hidden;
+  transition: clip-path 0.4s cubic-bezier(0.25,0.8,0.25,1), visibility 0s linear 0.4s;
   z-index: 1055;
   overflow-y: auto;
   box-shadow: none;
 }
-/* the shadow only while open: closed, the panel waits off-screen and its shadow fell as a grey strip on every page's right edge */
+/* the shadow only while open */
 .menu-dropdown.is-open {
-  transform: translateX(0);
+  clip-path: inset(0 0 0 -60px); /* room for the left shadow */
+  visibility: visible;
+  transition: clip-path 0.4s cubic-bezier(0.25,0.8,0.25,1), visibility 0s;
   box-shadow: -10px 0 40px rgba(0,0,0,0.15);
 }
 .menu-backdrop {
