@@ -17602,3 +17602,25 @@ html.cb-leaving #cb { transition: height .28s ease; }
   -webkit-mask-image: radial-gradient(ellipse clamp(240px, 26vw, 380px) clamp(180px, 19vw, 280px) at 0 100%, transparent 0, transparent 72%, #000 100%);
   mask-image: radial-gradient(ellipse clamp(240px, 26vw, 380px) clamp(180px, 19vw, 280px) at 0 100%, transparent 0, transparent 72%, #000 100%); }
 .banner-inner-section[style*="images/"]:not([style*="/templates/"]) .container > .position-relative.z-1 { padding-bottom: clamp(150px, 18vw, 250px) !important; }
+
+/* The AI label of a picture that moves in its box (a video, a recording that plays on hover): the label rule's tile
+   (#141416, white bold "AI", 52:38) as an element over the box's bottom-left corner, at least 28 CSS px wide on a phone.
+   On the home hero it stands in the first screen's corner, the words above it; in the carousel it shows while the
+   recording plays over the photo (on hover), and the photo's own tile is the label at rest. */
+.ai-tile { position: absolute; left: 12px; bottom: 12px; z-index: 5; width: 44px; height: 32px; border-radius: 8px; background: #141416;
+  color: #fff; font: 700 17px/32px Helvetica, Arial, sans-serif; text-align: center; letter-spacing: 0; pointer-events: none; }
+.banner-section > .ai-tile { bottom: auto; top: min(calc(100% - 44px), calc(100svh - 44px)); }
+.portfolio-img > .ai-tile { opacity: 0; transition: opacity .4s; }
+.portfolio-img:hover > .ai-tile { opacity: 1; }
+@media (max-width: 575.98px) { .banner-section > .ai-tile + .container { margin-bottom: 48px; } }
+
+/* An example card shows a frame of a real page of an own site (its heading and trade photo, 16:10), whole and still,
+   anchored at its bottom left where its AI tile is; nothing scrolls, so it says nothing about hovering. A tall design
+   that still scrolls on hover carries the tile as an element (.ai-tile) over its card's corner. */
+.niche-tpl-card__viewport > .niche-tpl-card__poster--frame { height: 100%; object-fit: cover; object-position: left bottom; transform: none !important; transition: none; }
+.niche-tpl-card__viewport:has(> .niche-tpl-card__poster--frame) > .niche-tpl-card__playbadge { display: none; }
+
+/* Below 768 px a picture whose box shows only a narrow part of it (an article's banner, a home grid tile) shows its own
+   phone crop instead: the picture's centre at that box's shape with its own AI tile, so the subject stays and the label
+   is in view (written by Northstar's clusters/seo/page_images.py phone-crops, named on the element as --bg-phone). */
+@media (max-width: 767.98px) { [style*="--bg-phone"] { background-image: var(--bg-phone) !important; background-position: left bottom !important; } }
