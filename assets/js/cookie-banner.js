@@ -1,8 +1,8 @@
 (function(){
+var widgetId="";if(!widgetId)return;
 var c=localStorage.getItem("cookie_consent");
 function loadHL(){
-var el=document.querySelector("[data-widget-id]");
-var wid=el?el.getAttribute("data-widget-id"):"";
+var wid=widgetId;
 if(!wid)return;
 if(document.querySelector("script[src*='leadconnectorhq']"))return;
 var s=document.createElement("script");
