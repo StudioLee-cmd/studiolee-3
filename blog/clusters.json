@@ -1,6 +1,20 @@
 {
   "posts": [
     {
+      "slug": "ai-zoekmachine-optimalisatie-geciteerde-bron",
+      "title": "AI-zoekmachines: word een geciteerde bron",
+      "date": "2026-11-27",
+      "cluster": "ai-zoekgedrag",
+      "image": "/assets/images/blog/ai-zoekmachine-optimalisatie-geciteerde-bron.jpg"
+    },
+    {
+      "slug": "e-maillijst-opbouwen-mkb-aanmeldmomenten",
+      "title": "E-maillijst opbouwen: 5 aanmeldmomenten",
+      "date": "2026-11-27",
+      "cluster": "email-marketing",
+      "image": "/assets/images/blog/e-maillijst-opbouwen-mkb-aanmeldmomenten.jpg"
+    },
+    {
       "slug": "email-of-whatsapp-klantcommunicatie-mkb",
       "title": "E-mail of WhatsApp: wat je klant echt opent",
       "date": "2026-11-15",
